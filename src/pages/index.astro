@@ -1,11 +1,14 @@
 ---
-import c from '../content/pages/trang-chu.json';
+import raw from '../content/pages/trang-chu.json';
+import { withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Tabs from '../components/Tabs.astro';
 import { url } from '../lib/routes';
 import { CATEGORIES, getNews, newsUrl } from '../lib/news';
+
+const c = withDefaults(raw, 'src/content/pages/trang-chu.json');
 
 const latest = (await getNews()).slice(0, 3);
 

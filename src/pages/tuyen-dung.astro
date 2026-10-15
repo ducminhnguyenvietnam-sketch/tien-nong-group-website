@@ -1,9 +1,12 @@
 ---
-import c from '../content/pages/tuyen-dung.json';
+import raw from '../content/pages/tuyen-dung.json';
+import { withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Select from '../components/Select.astro';
 import { url, link } from '../lib/routes';
+
+const c = withDefaults(raw, 'src/content/pages/tuyen-dung.json');
 
 const opt = (arr: string[], all: string) => [{ value: 'all', label: all }, ...[...new Set(arr)].map((v) => ({ value: v, label: v }))];
 ---

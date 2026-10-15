@@ -1,5 +1,6 @@
 ---
-import c from '../content/pages/giai-phap-du-an.json';
+import raw from '../content/pages/giai-phap-du-an.json';
+import { withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Checkbox from '../components/Checkbox.astro';
@@ -7,6 +8,8 @@ import ImageSlot from '../components/ImageSlot.astro';
 import Input from '../components/Input.astro';
 import Select from '../components/Select.astro';
 import { url } from '../lib/routes';
+
+const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
 
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Giải pháp">

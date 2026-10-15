@@ -1,11 +1,15 @@
 ---
-import c from '../../content/pages/tin-tuc.json';
-import site from '../../content/site.json';
+import raw from '../../content/pages/tin-tuc.json';
+import { withDefaults } from '../../lib/content';
+import siteRaw from '../../content/site.json';
 import Layout from '../../layouts/Layout.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
 import { render } from 'astro:content';
 import { url, link } from '../../lib/routes';
 import { CATEGORIES, formatDate, getNews, newsUrl, readingTime, type NewsEntry } from '../../lib/news';
+const site = withDefaults(siteRaw, 'src/content/site.json');
+
+const c = withDefaults(raw, 'src/content/pages/tin-tuc.json');
 
 export async function getStaticPaths() {
   const all = await getNews();

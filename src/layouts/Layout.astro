@@ -11,12 +11,15 @@ interface Props {
   active?: string;
   /** Page wrapper background; the article page uses the card surface. */
   background?: string;
+  /** Keep this page out of search engines (internal tools). */
+  noindex?: boolean;
 }
 const {
   title,
   description = 'Tiến Nông Group — hơn 30 năm khoa học phụng sự nhà nông. Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam.',
   active = '',
   background = 'var(--surface-page)',
+  noindex = false,
 } = Astro.props;
 const fullTitle = title ? `${title} · Tiến Nông Group` : 'Tiến Nông Group';
 ---
@@ -28,6 +31,7 @@ const fullTitle = title ? `${title} · Tiến Nông Group` : 'Tiến Nông Group
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <meta name="theme-color" content="#00954f" />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
 <link rel="icon" type="image/svg+xml" href={asset("favicon.svg")} />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

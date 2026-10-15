@@ -1,10 +1,13 @@
 ---
-import c from '../content/pages/san-pham.json';
+import raw from '../content/pages/san-pham.json';
+import { withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Select from '../components/Select.astro';
 import Tabs from '../components/Tabs.astro';
 import { url, link } from '../lib/routes';
+
+const c = withDefaults(raw, 'src/content/pages/san-pham.json');
 
 const lineLabel = (key: string) => (c.lines.find((l) => l.key === key)?.label ?? '').replace('Phân bón ', '').toUpperCase();
 ---

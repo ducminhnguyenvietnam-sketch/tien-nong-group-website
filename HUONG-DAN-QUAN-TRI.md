@@ -24,24 +24,33 @@ Người được mời đăng nhập bằng email, không cần tài khoản Gi
 
 ## 3. Thay ảnh
 
-Mỗi ô ảnh có 4 dòng:
+Cách nhanh nhất là **căn ảnh trước, tải lên một lần**:
 
-- **Ảnh** — kéo thả ảnh vào hoặc bấm để chọn. Dòng mô tả bên dưới cho biết kích thước khung (ví dụ
-  *Khung ảnh khoảng 576×420 px — nên dùng ảnh rộng ít nhất 1152 px*).
-- **Giữ phần nào của ảnh khi khung cắt bớt** — ảnh luôn lấp đầy khung, phần thừa bị cắt. Chọn
-  *Phía trên* nếu muốn giữ khuôn mặt/phần trên, *Phía dưới* nếu muốn giữ phần dưới…
-- **Phóng to** — phóng ảnh lên 110–200% để cắt sát hơn (phóng về phía điểm đã chọn ở trên).
+1. Mở công cụ **Căn ảnh vừa khung**:
+   https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/
+   (dưới mỗi ô ảnh trong trang quản trị đều có sẵn đường dẫn mở đúng vị trí ảnh đó).
+2. Chọn vị trí ảnh, chọn ảnh từ máy hoặc điện thoại.
+3. Kéo ảnh để chọn phần hiển thị, kéo thanh **Phóng to** nếu cần. Phần bên dưới cho xem trước ảnh
+   trên điện thoại và ở các vị trí khác (ví dụ ảnh bài viết còn hiện ở thẻ tin, ô tin nổi bật).
+4. Bấm **Tải ảnh đã căn** — ảnh được cắt đúng khung và nén nhẹ sẵn.
+5. Trong trang quản trị, ở ô **Ảnh**, tải tệp vừa lưu lên, giữ *Ở giữa* và *Không phóng (100%)*,
+   rồi bấm **Save**.
+
+Ảnh trên website sẽ hiện đúng như trong công cụ, không cần sửa đi sửa lại.
+
+Các ô khác của mỗi ảnh:
+
+- **Giữ phần nào của ảnh khi khung cắt bớt** / **Phóng to** — chỉ cần dùng nếu tải ảnh chưa căn.
 - **Mô tả ảnh** — một câu mô tả nội dung ảnh (tốt cho Google).
 
 Để trống ô **Ảnh** thì website hiện khung chờ ảnh như bản thiết kế.
-
-Mẹo: ảnh nên là JPG/WebP, dung lượng dưới 500 KB để trang tải nhanh (có thể nén tại squoosh.app).
 
 ## 4. Sửa chữ
 
 Mỗi dòng chữ trên trang là một ô riêng, tên ô ghi loại chữ và vài chữ đầu, ví dụ
 *Tiêu đề: Khoa học nền tảng, đồng ruộng là thước đo*. Sửa trực tiếp rồi bấm **Save**.
 
+- Để xoá một dòng chữ, xoá hết chữ trong ô rồi Save — website sẽ để trống chỗ đó.
 - Các ô **Đường dẫn** (link mạng xã hội, bài báo, PDF…): dán địa chỉ đầy đủ `https://…`.
   Để trống thì liên kết chưa dẫn đi đâu.
 - Ô có chữ **Tệp/đường dẫn** (catalogue, hồ sơ năng lực…): tải PDF lên trực tiếp.

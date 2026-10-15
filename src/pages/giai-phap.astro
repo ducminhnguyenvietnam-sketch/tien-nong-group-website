@@ -1,10 +1,13 @@
 ---
-import c from '../content/pages/giai-phap.json';
+import raw from '../content/pages/giai-phap.json';
+import { withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Input from '../components/Input.astro';
 import { url } from '../lib/routes';
+
+const c = withDefaults(raw, 'src/content/pages/giai-phap.json');
 
 // The finder opens on the last issue, as in the design.
 const defaultIssue = c.finder_issues.length - 1;
