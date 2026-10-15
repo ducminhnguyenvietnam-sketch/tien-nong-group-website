@@ -1,0 +1,448 @@
+{
+  "seo": {
+    "title": "Sản phẩm",
+    "description": ""
+  },
+  "s01_tieu_de": {
+    "t1": "Trang chủ",
+    "t2": "/ Sản phẩm",
+    "t3": "SẢN PHẨM",
+    "t4": "Dinh dưỡng chuẩn xác cho từng loại cây trồng",
+    "t5": "Mọi sản phẩm đều có mã số phân bón, được sản xuất theo ISO 9001 và kiểm định chất lượng tại phòng thí nghiệm VILAS 1519.",
+    "link1": "",
+    "t6": "Tải catalogue sản phẩm (PDF) →",
+    "t7": "Tìm đại lý gần nhất →"
+  },
+  "s02_danh_sach": {
+    "t1": "Tìm sản phẩm",
+    "f1": "Tên sản phẩm, công thức NPK…",
+    "f2": "Cây trồng",
+    "f3": "Sắp xếp",
+    "t2": "sản phẩm",
+    "t3": "Xóa bộ lọc",
+    "t4": "Không tìm thấy sản phẩm phù hợp. Hãy thử bỏ bớt bộ lọc hoặc",
+    "t5": "liên hệ kỹ sư Tiến Nông",
+    "t6": "để được tư vấn."
+  },
+  "s03_tu_van": {
+    "t1": "Cần tư vấn lựa chọn sản phẩm phù hợp?",
+    "t2": "Kỹ sư nông học của Tiến Nông sẽ tư vấn chương trình dinh dưỡng phù hợp với từng loại cây trồng và điều kiện canh tác.",
+    "t3": "Giải pháp theo cây trồng",
+    "t4": "Gọi kỹ sư tư vấn"
+  },
+  "lines_all_label": "Tất cả",
+  "lines": [
+    {
+      "key": "cd",
+      "label": "Phân bón chuyên dụng"
+    },
+    {
+      "key": "dd",
+      "label": "Phân bón đa dụng"
+    },
+    {
+      "key": "hc",
+      "label": "Phân bón hữu cơ"
+    },
+    {
+      "key": "cnc",
+      "label": "Phân bón công nghệ cao"
+    },
+    {
+      "key": "tvl",
+      "label": "Phân bón trung vi lượng"
+    }
+  ],
+  "crops_all_label": "Tất cả cây trồng",
+  "crops": [
+    "Lúa",
+    "Ngô",
+    "Cà phê",
+    "Cây ăn quả",
+    "Rau màu",
+    "Chè",
+    "Mía",
+    "Cây công nghiệp"
+  ],
+  "sort_popular_label": "Phổ biến nhất",
+  "sort_name_label": "Tên A–Z",
+  "products": [
+    {
+      "name": "NPK 12-3-10+2SiO₂hh Tiến Nông (Lúa 2)",
+      "line": "cd",
+      "npk": [
+        {
+          "value": "12",
+          "unit": "N"
+        },
+        {
+          "value": "3",
+          "unit": "P₂O₅"
+        },
+        {
+          "value": "10",
+          "unit": "K₂O"
+        },
+        {
+          "value": "2",
+          "unit": "SiO₂"
+        }
+      ],
+      "crops": [
+        "Lúa"
+      ],
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh bao bì (nền trung tính)"
+      }
+    },
+    {
+      "name": "NPK 8-6-4+1,5SiO₂hh Tiến Nông (Lúa 1)",
+      "line": "cd",
+      "npk": [
+        {
+          "value": "8",
+          "unit": "N"
+        },
+        {
+          "value": "6",
+          "unit": "P₂O₅"
+        },
+        {
+          "value": "4",
+          "unit": "K₂O"
+        },
+        {
+          "value": "1,5",
+          "unit": "SiO₂"
+        }
+      ],
+      "crops": [
+        "Lúa"
+      ],
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh bao bì (nền trung tính)"
+      }
+    },
+    {
+      "name": "NPK 15-15-15+1SiO₂hh Tiến Nông",
+      "line": "dd",
+      "npk": [
+        {
+          "value": "15",
+          "unit": "N"
+        },
+        {
+          "value": "15",
+          "unit": "P₂O₅"
+        },
+        {
+          "value": "15",
+          "unit": "K₂O"
+        },
+        {
+          "value": "1",
+          "unit": "SiO₂"
+        }
+      ],
+      "crops": [
+        "Lúa",
+        "Ngô",
+        "Rau màu",
+        "Cây ăn quả",
+        "Cây công nghiệp"
+      ],
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh bao bì (nền trung tính)"
+      }
+    },
+    {
+      "name": "NK 15-18+5S Tiến Nông (Con rồng đỏ)",
+      "line": "dd",
+      "npk": [
+        {
+          "value": "15",
+          "unit": "N"
+        },
+        {
+          "value": "18",
+          "unit": "K₂O"
+        },
+        {
+          "value": "5",
+          "unit": "S"
+        }
+      ],
+      "crops": [
+        "Lúa",
+        "Ngô",
+        "Cây ăn quả"
+      ],
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh bao bì (nền trung tính)"
+      }
+    },
+    {
+      "name": "NPK 16-16-8+TE Tiến Nông (Cây Ngô)",
+      "line": "cd",
+      "npk": [
+        {
+          "value": "16",
+          "unit": "N"
+        },
+        {
+          "value": "16",
+          "unit": "P₂O₅"
+        },
+        {
+          "value": "8",
+          "unit": "K₂O"
+        }
+      ],
+      "crops": [
+        "Ngô"
+      ],
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh bao bì (nền trung tính)"
+      }
+    },
+    {
+      "name": "NPK 10-6-16+1SiO₂hh Tiến Nông (Cây Chè)",
+      "line": "cd",
+      "npk": [
+        {
+          "value": "10",
+          "unit": "N"
+        },
+        {
+          "value": "6",
+          "unit": "P₂O₅"
+        },
+        {
+          "value": "16",
+          "unit": "K₂O"
+        },
+        {
+          "value": "1",
+          "unit": "SiO₂"
+        }
+      ],
+      "crops": [
+        "Chè"
+      ],
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh bao bì (nền trung tính)"
+      }
+    },
+    {
+      "name": "NPK 8-10-3+2,5SiO₂hh Tiến Nông",
+      "line": "dd",
+      "npk": [
+        {
+          "value": "8",
+          "unit": "N"
+        },
+        {
+          "value": "10",
+          "unit": "P₂O₅"
+        },
+        {
+          "value": "3",
+          "unit": "K₂O"
+        },
+        {
+          "value": "2,5",
+          "unit": "SiO₂"
+        }
+      ],
+      "crops": [
+        "Lúa",
+        "Ngô",
+        "Mía"
+      ],
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh bao bì (nền trung tính)"
+      }
+    },
+    {
+      "name": "NPK 20-10-10+MNC Tiến Nông",
+      "line": "dd",
+      "npk": [
+        {
+          "value": "20",
+          "unit": "N"
+        },
+        {
+          "value": "10",
+          "unit": "P₂O₅"
+        },
+        {
+          "value": "10",
+          "unit": "K₂O"
+        }
+      ],
+      "crops": [
+        "Lúa",
+        "Ngô",
+        "Rau màu",
+        "Mía"
+      ],
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh bao bì (nền trung tính)"
+      }
+    },
+    {
+      "name": "Đạm vàng Tiến Nông bổ sung vi lượng",
+      "line": "dd",
+      "npk": [
+        {
+          "value": "46",
+          "unit": "N"
+        }
+      ],
+      "crops": [
+        "Lúa",
+        "Ngô",
+        "Rau màu",
+        "Mía",
+        "Chè"
+      ],
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh bao bì (nền trung tính)"
+      }
+    },
+    {
+      "name": "Hữu cơ – Humic Tiến Nông",
+      "line": "hc",
+      "npk": [
+        {
+          "value": "[%]",
+          "unit": "Hữu cơ"
+        },
+        {
+          "value": "[%]",
+          "unit": "Humic"
+        }
+      ],
+      "crops": [
+        "Cây ăn quả",
+        "Cà phê",
+        "Rau màu",
+        "Cây công nghiệp"
+      ],
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh bao bì (nền trung tính)"
+      }
+    },
+    {
+      "name": "Phân bón hỗn hợp NPK 6-6-6+MNC Tiến Nông loại đặc biệt",
+      "line": "cnc",
+      "npk": [
+        {
+          "value": "6",
+          "unit": "N"
+        },
+        {
+          "value": "6",
+          "unit": "P₂O₅"
+        },
+        {
+          "value": "6",
+          "unit": "K₂O"
+        }
+      ],
+      "crops": [
+        "Cây ăn quả",
+        "Rau màu",
+        "Cà phê"
+      ],
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh bao bì (nền trung tính)"
+      }
+    },
+    {
+      "name": "Phân trung lượng Lân PA Tiến Nông",
+      "line": "tvl",
+      "npk": [
+        {
+          "value": "[%]",
+          "unit": "P₂O₅"
+        },
+        {
+          "value": "[%]",
+          "unit": "CaO"
+        }
+      ],
+      "crops": [
+        "Lúa",
+        "Ngô",
+        "Mía",
+        "Cây công nghiệp"
+      ],
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh bao bì (nền trung tính)"
+      }
+    },
+    {
+      "name": "Điều hòa pH đất 1 Tiến Nông",
+      "line": "tvl",
+      "npk": [
+        {
+          "value": "[%]",
+          "unit": "CaO"
+        },
+        {
+          "value": "[%]",
+          "unit": "MgO"
+        }
+      ],
+      "crops": [
+        "Lúa",
+        "Rau màu",
+        "Cây ăn quả",
+        "Cà phê"
+      ],
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh bao bì (nền trung tính)"
+      }
+    }
+  ]
+}

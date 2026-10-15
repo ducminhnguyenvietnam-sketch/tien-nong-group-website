@@ -1,0 +1,150 @@
+{
+  "seo": {
+    "title": "Con người & Tuyển dụng",
+    "description": ""
+  },
+  "s01_hero": {
+    "t1": "Trang chủ",
+    "t2": "/ Con người & Tuyển dụng",
+    "t3": "CON NGƯỜI TIẾN NÔNG",
+    "t4": "Gắn bó bền lâu, cùng nhau phát triển",
+    "t5": "Tại Tiến Nông, nhiều cán bộ, nhân viên đã đồng hành cùng doanh nghiệp hơn 20 năm. Chúng tôi trân trọng mỗi chặng đường cống hiến và luôn tìm kiếm những người cùng chung đam mê với nông nghiệp.",
+    "t6": "Xem vị trí đang tuyển →",
+    "t7": "Văn hóa Tiến Nông",
+    "img_hr_hero_1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chân dung người lao động thâm niên"
+    },
+    "img_hr_hero_2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Tập thể trong chuyến du lịch"
+    },
+    "img_hr_hero_3_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Kỹ sư trẻ tại phòng lab"
+    }
+  },
+  "s02_con_so": {
+    "t1": "[x]",
+    "t2": "cán bộ, nhân viên",
+    "t3": "[x]",
+    "t4": "người gắn bó trên 20 năm",
+    "t5": "[x] năm",
+    "t6": "thâm niên trung bình",
+    "t7": "3",
+    "t8": "nhà máy · [x] văn phòng vùng"
+  },
+  "s03_dai_ngo": {
+    "t1": "ĐÃI NGỘ & GHI NHẬN",
+    "t2": "Sự ghi nhận xứng đáng cho mỗi chặng đường",
+    "t3": "Ngoài chế độ lương thưởng cạnh tranh, Tiến Nông có những hình thức tri ân riêng dành cho người lao động gắn bó lâu năm.",
+    "img_ben_1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chuyến du lịch nước ngoài toàn công ty"
+    },
+    "t4": "Du lịch nước ngoài",
+    "t5": "Hành trình khám phá dành cho toàn thể cán bộ, nhân viên.",
+    "img_ben_2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Lễ trao vàng tri ân"
+    },
+    "t6": "Tặng vàng tri ân",
+    "t7": "Dành cho người lao động gắn bó lâu năm cùng doanh nghiệp.",
+    "img_ben_3_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Lễ trao Bảo Bình tài lộc"
+    },
+    "t8": "Bảo Bình tài lộc",
+    "t9": "Vinh danh những thành viên có thâm niên cống hiến.",
+    "t10": "Lương thưởng cạnh tranh",
+    "t11": "Gắn với hiệu quả công việc và thâm niên",
+    "t12": "Bảo hiểm đầy đủ",
+    "t13": "Theo quy định và [chế độ bổ sung]",
+    "t14": "Đào tạo chuyên môn",
+    "t15": "Cùng chuyên gia R&D và đối tác",
+    "t16": "Môi trường gần gũi",
+    "t17": "Làm việc cùng nhau như một gia đình"
+  },
+  "s04_cau_chuyen": {
+    "img_hr_story_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chân dung người lao động gắn bó 20+ năm tại nơi làm việc"
+    },
+    "t1": "CÂU CHUYỆN GẮN BÓ",
+    "t2": "“[Trích lời chia sẻ của người lao động về hành trình hơn 20 năm cùng Tiến Nông.]”",
+    "t3": "[Họ tên]",
+    "t4": "[Vị trí] · Gắn bó từ [năm]"
+  },
+  "s05_vi_tri_tuyen_dung": {
+    "t1": "CƠ HỘI NGHỀ NGHIỆP",
+    "t2": "Vị trí đang tuyển",
+    "t3": "vị trí",
+    "f1": "Khối",
+    "f2": "Địa điểm",
+    "t4": "Hiện chưa có vị trí phù hợp. Gửi hồ sơ tới",
+    "t5": "[email tuyển dụng]",
+    "t6": "để được liên hệ khi có cơ hội.",
+    "t7": "Danh sách vị trí ở trên là dữ liệu mẫu để minh họa giao diện."
+  },
+  "jobs_apply_label": "Ứng tuyển →",
+  "jobs": [
+    {
+      "title": "Kỹ sư nông học vùng",
+      "dept": "Kinh doanh – Kỹ thuật",
+      "loc": "Thanh Hóa",
+      "due": "[dd/mm]",
+      "link": ""
+    },
+    {
+      "title": "Kỹ sư nông học vùng",
+      "dept": "Kinh doanh – Kỹ thuật",
+      "loc": "Gia Lai",
+      "due": "[dd/mm]",
+      "link": ""
+    },
+    {
+      "title": "Chuyên viên nghiên cứu công thức phân bón",
+      "dept": "Nghiên cứu Phát triển",
+      "loc": "Thanh Hóa",
+      "due": "[dd/mm]",
+      "link": ""
+    },
+    {
+      "title": "Kỹ thuật viên phòng thí nghiệm",
+      "dept": "Nghiên cứu Phát triển",
+      "loc": "Thanh Hóa",
+      "due": "[dd/mm]",
+      "link": ""
+    },
+    {
+      "title": "Kỹ sư vận hành dây chuyền",
+      "dept": "Sản xuất",
+      "loc": "Bỉm Sơn",
+      "due": "[dd/mm]",
+      "link": ""
+    },
+    {
+      "title": "Chuyên viên xuất khẩu (tiếng Anh)",
+      "dept": "Văn phòng",
+      "loc": "Thanh Hóa",
+      "due": "[dd/mm]",
+      "link": ""
+    }
+  ],
+  "jobs_all_depts": "Tất cả khối",
+  "jobs_all_locations": "Tất cả địa điểm"
+}

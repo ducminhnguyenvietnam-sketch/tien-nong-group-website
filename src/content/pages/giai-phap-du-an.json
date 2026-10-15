@@ -1,0 +1,128 @@
+{
+  "seo": {
+    "title": "Giải pháp cho dự án",
+    "description": ""
+  },
+  "s01_hero": {
+    "t1": "Trang chủ",
+    "t2": "Giải pháp",
+    "t3": "/ Cho dự án",
+    "t4": "GIẢI PHÁP CHO DỰ ÁN",
+    "t5": "Chương trình dinh dưỡng thiết kế riêng cho từng dự án",
+    "t6": "Với các dự án quy mô lớn, Tiến Nông không chỉ cung cấp sản phẩm theo tấn. Chúng tôi khảo sát, phân tích, thiết kế và đồng hành vận hành một chương trình dinh dưỡng trọn gói, phù hợp với mục tiêu và điều kiện của từng công trình.",
+    "t7": "Yêu cầu tư vấn dự án →",
+    "t8": "Quy trình triển khai",
+    "img_proj_hero_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Thảm cỏ sân golf / cảnh quan khu đô thị"
+    }
+  },
+  "s02_nhom_khach_hang": {
+    "t1": "01 · LĨNH VỰC PHỤC VỤ",
+    "t2": "Giải pháp chuyên biệt cho từng loại hình dự án",
+    "img_seg_1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Sân golf"
+    },
+    "t3": "Sân golf",
+    "t4": "Giữ thảm cỏ xanh đều, chịu được tần suất sử dụng cao, phục hồi nhanh và tối ưu chi phí bảo dưỡng.",
+    "t5": "Fairway · Green · Tee",
+    "img_seg_2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Cảnh quan khu đô thị"
+    },
+    "t6": "Cảnh quan đô thị & bất động sản",
+    "t7": "Duy trì cây xanh, thảm cỏ và hoa cảnh luôn đẹp quanh năm, góp phần nâng cao giá trị dự án.",
+    "t8": "Khu đô thị · Resort · Công viên",
+    "img_seg_3_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Cây xanh khu công nghiệp"
+    },
+    "t9": "Khu công nghiệp & nhà máy",
+    "t10": "Phát triển hệ thống cây xanh trên nền đất san lấp, đáp ứng tiêu chuẩn tỷ lệ cây xanh và môi trường.",
+    "t11": "KCN · Nhà máy · Kho vận",
+    "img_seg_4_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Nhà kính công nghệ cao"
+    },
+    "t12": "Nông nghiệp công nghệ cao",
+    "t13": "Chương trình dinh dưỡng chính xác cho nhà kính, nhà màng, tưới nhỏ giọt và trang trại quy mô lớn.",
+    "t14": "Nhà kính · Trang trại · Vùng nguyên liệu"
+  },
+  "s03_quy_trinh": {
+    "t1": "02 · QUY TRÌNH TRIỂN KHAI",
+    "t2": "Quy trình năm bước, một đầu mối xuyên suốt",
+    "t3": "01",
+    "t4": "Khảo sát hiện trạng",
+    "t5": "Kỹ sư khảo sát thực địa, ghi nhận hiện trạng cây trồng và điều kiện canh tác.",
+    "t6": "02",
+    "t7": "Phân tích đất",
+    "t8": "Lấy mẫu và phân tích tại phòng thí nghiệm VILAS 1519.",
+    "t9": "03",
+    "t10": "Thiết kế chương trình",
+    "t11": "Đề xuất sản phẩm, liều lượng, lịch bón và dự toán chi phí.",
+    "t12": "04",
+    "t13": "Cung ứng theo lịch",
+    "t14": "Giao hàng đúng tiến độ từ hệ thống 3 nhà máy và mạng lưới phân phối.",
+    "t15": "05",
+    "t16": "Giám sát & điều chỉnh",
+    "t17": "Theo dõi định kỳ, báo cáo kết quả và điều chỉnh chương trình khi cần."
+  },
+  "s04_nang_luc": {
+    "t1": "03 · NĂNG LỰC BẢO ĐẢM",
+    "t2": "Năng lực bảo đảm cho mỗi dự án",
+    "t3": "Hơn 30 năm nghiên cứu và sản xuất dinh dưỡng cây trồng là nền tảng để Tiến Nông đáp ứng các yêu cầu khắt khe về chất lượng, tiến độ và tính ổn định của dự án.",
+    "t4": "Phòng thí nghiệm VILAS 1519",
+    "t5": "Kết quả phân tích có giá trị pháp lý",
+    "t6": "Doanh nghiệp KH&CN",
+    "t7": "Đội ngũ R&D thiết kế công thức riêng",
+    "t8": "650.000 tấn/năm",
+    "t9": "Năng lực cung ứng ổn định từ 3 nhà máy",
+    "t10": "ISO 9001 · ISO 14001",
+    "t11": "Quản lý chất lượng và môi trường"
+  },
+  "s05_yeu_cau_tu_van": {
+    "t1": "04 · YÊU CẦU TƯ VẤN",
+    "t2": "Trao đổi cùng chuyên gia dự án",
+    "t3": "Quý khách vui lòng gửi thông tin sơ bộ, chuyên gia của Tiến Nông sẽ liên hệ trong vòng 2 ngày làm việc để sắp xếp buổi khảo sát.",
+    "t4": "Đầu mối dự án",
+    "t5": "[Họ tên · Chức danh]",
+    "t6": "[Số điện thoại] · [email dự án]",
+    "t7": "ĐÃ GỬI",
+    "t8": "Cảm ơn Quý khách đã gửi yêu cầu.",
+    "t9": "Chuyên gia dự án của Tiến Nông sẽ liên hệ trong vòng 2 ngày làm việc.",
+    "t10": "Gửi yêu cầu khác",
+    "f1": "Họ và tên *",
+    "f2": "Nguyễn Văn A",
+    "f3": "Đơn vị / công ty *",
+    "f4": "Tên chủ đầu tư hoặc đơn vị quản lý",
+    "f5": "Số điện thoại *",
+    "f6": "09xx xxx xxx",
+    "f7": "Email",
+    "f8": "ten@congty.vn",
+    "f9": "Loại dự án *",
+    "f10": "Diện tích (ha)",
+    "f11": "VD: 45",
+    "f12": "Địa điểm dự án",
+    "f13": "Tỉnh / thành phố",
+    "f14": "Tôi đồng ý để Tiến Nông xử lý dữ liệu cá nhân theo Chính sách bảo mật.",
+    "t11": "Gửi yêu cầu"
+  },
+  "project_types": [
+    "Sân golf",
+    "Cảnh quan đô thị & bất động sản",
+    "Khu công nghiệp & nhà máy",
+    "Nông nghiệp công nghệ cao",
+    "Khác"
+  ]
+}

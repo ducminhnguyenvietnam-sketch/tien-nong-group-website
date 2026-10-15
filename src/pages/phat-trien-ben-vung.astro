@@ -1,97 +1,90 @@
 ---
+import c from '../content/pages/phat-trien-ben-vung.json';
 import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import { url } from '../lib/routes';
 
-const PROGRAMS = [
-  { tag: 'KHUYẾN HỌC', year: '2026', title: 'Ủng hộ 1,55 tỷ đồng cho công tác khuyến học tỉnh Thanh Hóa', body: 'Đồng hành cùng Hội Khuyến học tỉnh chăm lo cho học sinh có hoàn cảnh khó khăn và học sinh giỏi.', ph: 'Lễ trao biển ủng hộ khuyến học' },
-  { tag: 'BIỂN ĐẢO', year: '[năm]', title: 'Đồng hành cùng chương trình “Triệu mầm xanh” vì Trường Sa xanh', body: 'Góp phần phủ xanh các đảo tiền tiêu bằng giải pháp dinh dưỡng cho cây trồng trên đất cát, đất nhiễm mặn.', ph: 'Cây xanh trên đảo Trường Sa' },
-  { tag: 'BIỂN ĐẢO', year: '[năm]', title: 'Cuộc thi “Em viết thư gửi Chiến sĩ Trường Sa”', body: 'Khơi dậy tình yêu biển đảo trong thế hệ trẻ thông qua những lá thư gửi các chiến sĩ.', ph: 'Học sinh viết thư' },
-  { tag: 'GIÁO DỤC', year: '[năm]', title: 'Đón học sinh, sinh viên tham quan trải nghiệm thực tế', body: 'Mở cửa nhà máy và phòng thí nghiệm để thế hệ trẻ hiểu hơn về nông nghiệp khoa học.', ph: 'Sinh viên tham quan nhà máy' },
-  { tag: 'NGƯỜI YẾU THẾ', year: '[năm]', title: '[Tên chương trình hỗ trợ người yếu thế]', body: '[Mô tả ngắn: đối tượng, địa bàn, giá trị hỗ trợ.]', ph: 'Hoạt động hỗ trợ người yếu thế' },
-  { tag: 'NGƯỜI YẾU THẾ', year: '[năm]', title: '[Tên chương trình cứu trợ thiên tai]', body: '[Mô tả ngắn: đối tượng, địa bàn, giá trị hỗ trợ.]', ph: 'Cứu trợ đồng bào vùng lũ' },
-];
 const TAGS = ['Tất cả', 'KHUYẾN HỌC', 'BIỂN ĐẢO', 'GIÁO DỤC', 'NGƯỜI YẾU THẾ'];
 const LABEL: Record<string, string> = { 'Tất cả': 'Tất cả', 'KHUYẾN HỌC': 'Khuyến học', 'BIỂN ĐẢO': 'Biển đảo', 'GIÁO DỤC': 'Giáo dục', 'NGƯỜI YẾU THẾ': 'Người yếu thế' };
 ---
-<Layout title="Phát triển bền vững" active="Phát triển bền vững">
+<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Phát triển bền vững">
 <section style="background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) 0;display:flex;flex-direction:column;gap:clamp(28px,4vw,48px)">
-<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">Trang chủ</a> / Phát triển bền vững</span>
+<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_hero.t1}</a> {c.s01_hero.t2}</span>
 <div style="display:flex;flex-direction:column;gap:24px;max-width:1000px">
-<div style="display:flex;flex-direction:column;gap:16px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">PHÁT TRIỂN BỀN VỮNG</span><h1 style="margin:0;font:800 clamp(36px,4.8vw,62px)/1.08 var(--font-display);letter-spacing:-.015em;text-wrap:balance">Vì nền nông nghiệp bền vững và cộng đồng thịnh vượng</h1></div>
-<p style="margin:0;font-size:18px;color:var(--text-secondary);text-align:justify;text-wrap:pretty">Phát triển bền vững tại Tiến Nông bắt nguồn từ sứ mệnh “Phụng sự để nông dân giàu có, Việt Nam thịnh vượng”: sản xuất có trách nhiệm với môi trường, đồng hành cùng nhà nông và sẻ chia với cộng đồng.</p>
+<div style="display:flex;flex-direction:column;gap:16px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s01_hero.t3}</span><h1 style="margin:0;font:800 clamp(36px,4.8vw,62px)/1.08 var(--font-display);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero.t4}</h1></div>
+<p style="margin:0;font-size:18px;color:var(--text-secondary);text-align:justify;text-wrap:pretty">{c.s01_hero.t5}</p>
 </div>
-<div style="position:relative;height:clamp(260px,36vw,500px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-hero" shape="rounded" radius="24" placeholder="Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh" /></div>
+<div style="position:relative;height:clamp(260px,36vw,500px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-hero" shape="rounded" radius="24" placeholder="Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh" image={c.s01_hero.img_esg_hero_1} /></div>
 </div>
 <div style="max-width:1280px;margin:0 auto;padding:40px clamp(20px,4vw,56px) 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 72px)/4),calc((900px - 100%)*999),calc((100% - 24px)/2)),1fr));gap:24px">
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--amber-600)">[x] tỷ đồng</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">đóng góp cho cộng đồng (lũy kế)</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--amber-600)">[x]</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">lượt nông dân được tập huấn</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--amber-600)">[x]</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">suất học bổng đã trao</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--green-700)">ISO 14001</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">hệ thống quản lý môi trường</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--amber-600)">{c.s01_hero.t6}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t7}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--amber-600)">{c.s01_hero.t8}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t9}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--amber-600)">{c.s01_hero.t10}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t11}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--green-700)">{c.s01_hero.t12}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t13}</span></div>
 </div></section>
 
 <nav style="position:sticky;top:108px;z-index:20;background:var(--surface-page);border-top:1px solid var(--border-default);border-bottom:1px solid var(--border-default)">
 <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px);display:flex;gap:28px;overflow-x:auto;white-space:nowrap;font-size:14px;font-weight:600">
-<a href="#moi-truong" style="color:var(--text-secondary);padding:14px 0">Sản xuất xanh</a><a href="#nha-nong" style="color:var(--text-secondary);padding:14px 0">Đồng hành cùng nhà nông</a><a href="#cong-dong" style="color:var(--text-secondary);padding:14px 0">Vì cộng đồng</a><a href="#nguoi-lao-dong" style="color:var(--text-secondary);padding:14px 0">Người lao động</a><a href="#lo-trinh" style="color:var(--text-secondary);padding:14px 0">Lộ trình</a>
+<a href="#moi-truong" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t14}</a><a href="#nha-nong" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t15}</a><a href="#cong-dong" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t16}</a><a href="#nguoi-lao-dong" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t17}</a><a href="#lo-trinh" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t18}</a>
 </div></nav>
 
 <section id="moi-truong" style="scroll-margin-top:160px;position:relative;min-height:560px;background:var(--gray-800);display:flex">
-<div style="position:absolute;inset:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-plant" shape="rect" placeholder="Flycam khuôn viên nhà máy với cây xanh" /></div>
+<div style="position:absolute;inset:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-plant" shape="rect" placeholder="Flycam khuôn viên nhà máy với cây xanh" image={c.s02_san_xuat_xanh.img_esg_plant_1} /></div>
 <div style="position:relative;max-width:1280px;width:100%;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,56px);display:flex;align-items:flex-end;justify-content:flex-end;pointer-events:none">
 <div style="background:var(--surface-card);border-radius:var(--radius-xl);padding:clamp(28px,3vw,40px);max-width:560px;display:flex;flex-direction:column;gap:16px;pointer-events:auto;box-shadow:var(--shadow-lg)">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">01 · SẢN XUẤT XANH</span>
-<h2 style="margin:0;font:800 clamp(26px,3vw,38px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Sản xuất quy mô lớn, hài hòa cùng môi trường</h2>
-<p style="margin:0;color:var(--text-secondary);text-align:justify;text-wrap:pretty">Các nhà máy của Tiến Nông vận hành theo hệ thống quản lý môi trường ISO 14001, với khuôn viên xanh và quy trình kiểm soát phát thải trong toàn bộ dây chuyền.</p>
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s02_san_xuat_xanh.t1}</span>
+<h2 style="margin:0;font:800 clamp(26px,3vw,38px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s02_san_xuat_xanh.t2}</h2>
+<p style="margin:0;color:var(--text-secondary);text-align:justify;text-wrap:pretty">{c.s02_san_xuat_xanh.t3}</p>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:12px;border-top:1px solid var(--border-default);font-size:15px">
-<div><strong style="display:block">[x]%</strong><span style="color:var(--text-secondary)">diện tích cây xanh</span></div>
-<div><strong style="display:block">[Hệ thống]</strong><span style="color:var(--text-secondary)">xử lý bụi, khí thải</span></div>
-<div><strong style="display:block">[Hệ thống]</strong><span style="color:var(--text-secondary)">xử lý nước thải</span></div>
-<div><strong style="display:block">[Nếu có]</strong><span style="color:var(--text-secondary)">năng lượng mặt trời</span></div>
+<div><strong style="display:block">{c.s02_san_xuat_xanh.t4}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t5}</span></div>
+<div><strong style="display:block">{c.s02_san_xuat_xanh.t6}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t7}</span></div>
+<div><strong style="display:block">{c.s02_san_xuat_xanh.t8}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t9}</span></div>
+<div><strong style="display:block">{c.s02_san_xuat_xanh.t10}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t11}</span></div>
 </div></div></div></section>
 
 <section id="nha-nong" style="scroll-margin-top:160px;background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px 72px;align-items:center">
 <div style="display:flex;flex-direction:column;gap:20px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">02 · ĐỒNG HÀNH CÙNG NHÀ NÔNG</span>
-<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Nâng cao nhận thức về canh tác bền vững</h2>
-<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">Tiến Nông phối hợp với chính quyền, hội nông dân và các cơ quan khuyến nông tổ chức chương trình tập huấn, giúp nhà nông sử dụng phân bón hiệu quả và bảo vệ đất canh tác lâu dài.</p>
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s03_dong_hanh_cung_nha_nong.t1}</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s03_dong_hanh_cung_nha_nong.t2}</h2>
+<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.s03_dong_hanh_cung_nha_nong.t3}</p>
 <div style="display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
-<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--green-500)"></span><span><strong>Bón phân cân đối, đúng cách:</strong> giảm lãng phí và hạn chế tác động đến môi trường</span></div>
-<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--green-500)"></span><span><strong>Bảo vệ sức khỏe đất:</strong> tăng cường hữu cơ, phục hồi đất bạc màu</span></div>
-<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--green-500)"></span><span><strong>Hội thảo đầu bờ:</strong> chia sẻ kinh nghiệm từ các mô hình hiệu quả</span></div>
+<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--green-500)"></span><span><strong>{c.s03_dong_hanh_cung_nha_nong.t4}</strong> {c.s03_dong_hanh_cung_nha_nong.t5}</span></div>
+<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--green-500)"></span><span><strong>{c.s03_dong_hanh_cung_nha_nong.t6}</strong> {c.s03_dong_hanh_cung_nha_nong.t7}</span></div>
+<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--green-500)"></span><span><strong>{c.s03_dong_hanh_cung_nha_nong.t8}</strong> {c.s03_dong_hanh_cung_nha_nong.t9}</span></div>
 </div></div>
 <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:260px 200px;gap:14px">
-<div style="position:relative;grid-column:span 2;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-farm-1" shape="rounded" radius="16" placeholder="Lớp tập huấn kỹ thuật cho nông dân" /></div>
-<div style="position:relative;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-farm-2" shape="rounded" radius="16" placeholder="Hội thảo đầu bờ" /></div>
-<div style="position:relative;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-farm-3" shape="rounded" radius="16" placeholder="Kỹ sư hướng dẫn tại ruộng" /></div>
+<div style="position:relative;grid-column:span 2;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-farm-1" shape="rounded" radius="16" placeholder="Lớp tập huấn kỹ thuật cho nông dân" image={c.s03_dong_hanh_cung_nha_nong.img_esg_farm_1_1} /></div>
+<div style="position:relative;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-farm-2" shape="rounded" radius="16" placeholder="Hội thảo đầu bờ" image={c.s03_dong_hanh_cung_nha_nong.img_esg_farm_2_1} /></div>
+<div style="position:relative;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-farm-3" shape="rounded" radius="16" placeholder="Kỹ sư hướng dẫn tại ruộng" image={c.s03_dong_hanh_cung_nha_nong.img_esg_farm_3_1} /></div>
 </div></div></section>
 
 <section id="cong-dong" style="scroll-margin-top:160px;background:var(--surface-page)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:14px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">03 · VÌ CỘNG ĐỒNG</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Sẻ chia lợi ích, vun đắp cộng đồng</h2></div>
-<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">Những chương trình được duy trì qua nhiều năm, tập trung vào giáo dục, biển đảo và hỗ trợ người yếu thế.</p>
+<div style="display:flex;flex-direction:column;gap:14px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s04_vi_cong_dong.t1}</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s04_vi_cong_dong.t2}</h2></div>
+<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.s04_vi_cong_dong.t3}</p>
 </div>
 <div data-filter-group="prog" style="display:flex;gap:8px;flex-wrap:wrap">{TAGS.map((t, k) => <button type="button" class="chip" data-filter={k === 0 ? '*' : t} aria-pressed={k === 0 ? 'true' : 'false'} style="padding:8px 16px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);color:var(--text-primary);font:600 15px var(--font-body);cursor:pointer">{LABEL[t]}</button>)}</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:24px">
-{PROGRAMS.map((p, k) => (
-<div data-filter-item="prog" data-tags={p.tag} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`prog-${k}`} shape="rect" placeholder={p.ph} /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{p.tag} · {p.year}</span><strong style="font-size:18px;line-height:1.35">{p.title}</strong><span style="color:var(--text-secondary);font-size:15px">{p.body}</span></div></div>
+{c.programs.map((p, k) => (
+<div data-filter-item="prog" data-tags={p.tag} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`prog-${k}`} shape="rect" placeholder={p.image.alt} image={p.image} /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{p.tag} · {p.year}</span><strong style="font-size:18px;line-height:1.35">{p.title}</strong><span style="color:var(--text-secondary);font-size:15px">{p.body}</span></div></div>
 ))}
 </div></div></section>
 
 <section id="nguoi-lao-dong" style="scroll-margin-top:160px;background:var(--green-800);color:#fff">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:640px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-200)">04 · NGƯỜI LAO ĐỘNG</span><h2 style="margin:0;font:800 clamp(28px,3vw,40px)/1.15 var(--font-display);text-wrap:balance">Gắn bó bền lâu, cùng nhau phát triển</h2><span style="color:var(--green-100);text-align:justify">Môi trường làm việc an toàn, đãi ngộ xứng đáng và sự ghi nhận dành cho mỗi chặng đường cống hiến.</span></div>
-<a href={url('tuyen-dung')} style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">Con người Tiến Nông →</a>
+<div style="display:flex;flex-direction:column;gap:14px;max-width:640px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-200)">{c.s05_nguoi_lao_dong.t1}</span><h2 style="margin:0;font:800 clamp(28px,3vw,40px)/1.15 var(--font-display);text-wrap:balance">{c.s05_nguoi_lao_dong.t2}</h2><span style="color:var(--green-100);text-align:justify">{c.s05_nguoi_lao_dong.t3}</span></div>
+<a href={url('tuyen-dung')} style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s05_nguoi_lao_dong.t4}</a>
 </div></section>
 
 <section id="lo-trinh" style="scroll-margin-top:160px;background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:680px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">05 · LỘ TRÌNH</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Hướng tới báo cáo phát triển bền vững đầu tiên</h2><p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">Chúng tôi đang chuẩn hóa việc đo lường và công bố các chỉ số môi trường, xã hội và quản trị, hướng tới minh bạch theo thông lệ quốc tế.</p></div>
+<div style="display:flex;flex-direction:column;gap:14px;max-width:680px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s06_lo_trinh.t1}</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s06_lo_trinh.t2}</h2><p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.s06_lo_trinh.t3}</p></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 32px)/3),calc((692px - 100%)*999),100%),1fr));gap:0;border-top:2px solid var(--green-500)">
-<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:800 24px var(--font-display);color:var(--green-700)">Hiện tại</span><strong>Thực hành</strong><span style="color:var(--text-secondary);font-size:15px;text-align:justify">ISO 14001, chương trình cộng đồng và tập huấn nhà nông được duy trì thường xuyên</span></div>
-<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:800 24px var(--font-display);color:var(--green-700)">[Năm]</span><strong>Đo lường</strong><span style="color:var(--text-secondary);font-size:15px">Xây dựng bộ chỉ số và hệ thống thu thập dữ liệu</span></div>
-<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:800 24px var(--font-display);color:var(--green-700)">[Năm]</span><strong>Công bố</strong><span style="color:var(--text-secondary);font-size:15px">Phát hành báo cáo phát triển bền vững đầu tiên</span></div>
+<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:800 24px var(--font-display);color:var(--green-700)">{c.s06_lo_trinh.t4}</span><strong>{c.s06_lo_trinh.t5}</strong><span style="color:var(--text-secondary);font-size:15px;text-align:justify">{c.s06_lo_trinh.t6}</span></div>
+<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:800 24px var(--font-display);color:var(--green-700)">{c.s06_lo_trinh.t7}</span><strong>{c.s06_lo_trinh.t8}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s06_lo_trinh.t9}</span></div>
+<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:800 24px var(--font-display);color:var(--green-700)">{c.s06_lo_trinh.t10}</span><strong>{c.s06_lo_trinh.t11}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s06_lo_trinh.t12}</span></div>
 </div></div></section>
 </Layout>

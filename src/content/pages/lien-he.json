@@ -1,0 +1,188 @@
+{
+  "seo": {
+    "title": "Liên hệ & Đại lý",
+    "description": ""
+  },
+  "s01_lien_he": {
+    "t1": "Trang chủ",
+    "t2": "/ Liên hệ & Đại lý",
+    "t3": "LIÊN HỆ",
+    "t4": "Kết nối với Tiến Nông",
+    "t5": "TƯ VẤN KỸ THUẬT",
+    "t6": "[Hotline kỹ sư]",
+    "t7": "Hỏi về cây trồng, cách bón phân",
+    "t8": "MUA HÀNG & ĐẠI LÝ",
+    "t9": "02373.729.729",
+    "t10": "Đặt hàng, chính sách đại lý",
+    "t11": "DỰ ÁN & XUẤT KHẨU",
+    "t12": "[email dự án]",
+    "t13": "Khách hàng dự án, đối tác quốc tế",
+    "t14": "BÁO CHÍ & TUYỂN DỤNG",
+    "t15": "info@tiennong.vn",
+    "t16": "Truyền thông, hồ sơ ứng tuyển"
+  },
+  "s02_tim_dai_ly": {
+    "t1": "TÌM ĐẠI LÝ",
+    "t2": "Hệ thống 10.000 điểm bán trên toàn quốc",
+    "f1": "Tỉnh / thành phố",
+    "t3": "đại lý tại",
+    "t4": "Danh sách đại lý là dữ liệu mẫu. Bản chính thức sẽ kết nối với dữ liệu hệ thống phân phối.",
+    "img_dealer_map_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Bản đồ đại lý (Google Maps nhúng)"
+    },
+    "t5": "Trở thành đại lý Tiến Nông",
+    "t6": "Cùng hệ thống hơn 200 nhà phân phối mang giải pháp khoa học đến nhà nông.",
+    "t7": "Đăng ký làm đại lý"
+  },
+  "s03_van_phong_nha_may": {
+    "t1": "Trụ sở & nhà máy",
+    "t2": "Trụ sở chính",
+    "t3": "274B Bà Triệu, phường Hàm Rồng, tỉnh Thanh Hóa",
+    "t4": "02373.729.729",
+    "t5": "Nhà máy Bỉm Sơn",
+    "t6": "[Địa chỉ], tỉnh Thanh Hóa",
+    "t7": "[Số điện thoại]",
+    "t8": "Nhà máy Gia Lai",
+    "t9": "[Địa chỉ], tỉnh Gia Lai",
+    "t10": "[Số điện thoại]",
+    "t11": "[Nhà máy 3]",
+    "t12": "[Địa chỉ]",
+    "t13": "[Số điện thoại]"
+  },
+  "s04_gui_lien_he": {
+    "t1": "Gửi yêu cầu",
+    "t2": "Chọn nhu cầu để yêu cầu được chuyển đến đúng bộ phận.",
+    "t3": "ĐÃ GỬI",
+    "t4": "Cảm ơn Quý khách đã liên hệ Tiến Nông.",
+    "t5": "Bộ phận",
+    "t6": "sẽ phản hồi qua thông tin Quý khách cung cấp.",
+    "t7": "Gửi yêu cầu khác",
+    "f1": "Nhu cầu *",
+    "f2": "Họ và tên *",
+    "f3": "Nguyễn Văn A",
+    "f4": "Số điện thoại *",
+    "f5": "09xx xxx xxx",
+    "f6": "Email",
+    "f7": "ten@email.com",
+    "f8": "Tỉnh / thành phố",
+    "f9": "VD: Thanh Hóa",
+    "t8": "Nội dung",
+    "f10": "Mô tả ngắn gọn nhu cầu",
+    "f11": "Tôi đồng ý để Tiến Nông xử lý dữ liệu cá nhân theo Chính sách bảo mật.",
+    "t9": "Gửi yêu cầu"
+  },
+  "provinces": [
+    {
+      "name": "Thanh Hóa",
+      "dealers": [
+        {
+          "name": "Đại lý vật tư nông nghiệp [Tên]",
+          "type": "Nhà phân phối",
+          "address": "[Địa chỉ], Thanh Hóa",
+          "phone": "[SĐT]",
+          "map": ""
+        },
+        {
+          "name": "Cửa hàng VTNN [Tên]",
+          "type": "Điểm bán",
+          "address": "[Địa chỉ], Thanh Hóa",
+          "phone": "[SĐT]",
+          "map": ""
+        },
+        {
+          "name": "Cửa hàng VTNN [Tên]",
+          "type": "Điểm bán",
+          "address": "[Địa chỉ], Thanh Hóa",
+          "phone": "[SĐT]",
+          "map": ""
+        },
+        {
+          "name": "HTX dịch vụ nông nghiệp [Tên]",
+          "type": "Điểm bán",
+          "address": "[Địa chỉ], Thanh Hóa",
+          "phone": "[SĐT]",
+          "map": ""
+        }
+      ]
+    },
+    {
+      "name": "Nghệ An",
+      "dealers": [
+        {
+          "name": "Đại lý vật tư nông nghiệp [Tên]",
+          "type": "Nhà phân phối",
+          "address": "[Địa chỉ], Nghệ An",
+          "phone": "[SĐT]",
+          "map": ""
+        },
+        {
+          "name": "Cửa hàng VTNN [Tên]",
+          "type": "Điểm bán",
+          "address": "[Địa chỉ], Nghệ An",
+          "phone": "[SĐT]",
+          "map": ""
+        }
+      ]
+    },
+    {
+      "name": "Gia Lai",
+      "dealers": [
+        {
+          "name": "Đại lý vật tư nông nghiệp [Tên]",
+          "type": "Nhà phân phối",
+          "address": "[Địa chỉ], Gia Lai",
+          "phone": "[SĐT]",
+          "map": ""
+        },
+        {
+          "name": "Cửa hàng VTNN [Tên]",
+          "type": "Điểm bán",
+          "address": "[Địa chỉ], Gia Lai",
+          "phone": "[SĐT]",
+          "map": ""
+        },
+        {
+          "name": "Cửa hàng VTNN [Tên]",
+          "type": "Điểm bán",
+          "address": "[Địa chỉ], Gia Lai",
+          "phone": "[SĐT]",
+          "map": ""
+        }
+      ]
+    },
+    {
+      "name": "Đắk Lắk",
+      "dealers": [
+        {
+          "name": "Đại lý vật tư nông nghiệp [Tên]",
+          "type": "Nhà phân phối",
+          "address": "[Địa chỉ], Đắk Lắk",
+          "phone": "[SĐT]",
+          "map": ""
+        }
+      ]
+    },
+    {
+      "name": "Hà Nội",
+      "dealers": [
+        {
+          "name": "Cửa hàng VTNN [Tên]",
+          "type": "Điểm bán",
+          "address": "[Địa chỉ], Hà Nội",
+          "phone": "[SĐT]",
+          "map": ""
+        }
+      ]
+    }
+  ],
+  "needs": [
+    "Tư vấn kỹ thuật",
+    "Đăng ký làm đại lý",
+    "Giải pháp cho dự án",
+    "Hợp tác xuất khẩu",
+    "Khác"
+  ]
+}

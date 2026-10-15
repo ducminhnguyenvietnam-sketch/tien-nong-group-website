@@ -1,0 +1,225 @@
+{
+  "seo": {
+    "title": "Giải pháp theo cây trồng",
+    "description": ""
+  },
+  "s01_hero": {
+    "img_sol_hero_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Cận cảnh bông lúa chín trên cánh đồng"
+    },
+    "t1": "Trang chủ / Giải pháp / Theo cây trồng",
+    "t2": "GIẢI PHÁP DINH DƯỠNG",
+    "t3": "Đất khỏe. Cây khỏe. Nông nghiệp hiệu quả hơn.",
+    "t4": "Mỗi loại cây, mỗi chân đất có nhu cầu dinh dưỡng riêng. Tiến Nông xây dựng chương trình bón phân dựa trên phân tích đất và đặc điểm sinh trưởng của từng cây trồng.",
+    "t5": "Tìm giải pháp cho cây trồng →",
+    "t6": "Giải pháp cho dự án"
+  },
+  "s02_cay_trong": {
+    "t1": "01 · THEO CÂY TRỒNG",
+    "t2": "Mỗi nhóm cây trồng, một chương trình dinh dưỡng riêng",
+    "t3": "Chương trình được thiết kế theo từng giai đoạn sinh trưởng, từ bón lót đến nuôi quả, giúp cây phát triển cân đối và tối ưu chi phí đầu tư.",
+    "img_cg_1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Lúa, ngô"
+    },
+    "t4": "Cây lương thực",
+    "t5": "Lúa · Ngô · Khoai · Sắn",
+    "img_cg_2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Rau màu"
+    },
+    "t6": "Rau màu & cây thực phẩm",
+    "t7": "Rau ăn lá · Rau ăn quả · Củ",
+    "img_cg_3_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Cây ăn quả"
+    },
+    "t8": "Cây ăn quả",
+    "t9": "Cam · Bưởi · Sầu riêng · Thanh long",
+    "img_cg_4_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Cà phê, chè"
+    },
+    "t10": "Cây công nghiệp",
+    "t11": "Cà phê · Chè · Hồ tiêu · Mía",
+    "img_cg_5_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Hoa, cây cảnh"
+    },
+    "t12": "Hoa, cây cảnh & cảnh quan",
+    "t13": "Hoa · Cây cảnh · Thảm cỏ",
+    "img_cg_6_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Cây dược liệu"
+    },
+    "t14": "Cây dược liệu",
+    "t15": "Sâm · Đinh lăng · Nghệ"
+  },
+  "s03_theo_van_de": {
+    "t1": "02 · THEO VẤN ĐỀ",
+    "t2": "Nhận diện đúng vấn đề để chọn đúng giải pháp",
+    "t3": "Phần lớn tình trạng cây sinh trưởng kém bắt nguồn từ đất. Chọn vấn đề đang gặp phải để xem hướng xử lý phù hợp."
+  },
+  "s04_suc_khoe_dat": {
+    "img_soil_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Bàn tay cầm nắm đất có cây con"
+    },
+    "t1": "03 · SỨC KHỎE ĐẤT",
+    "t2": "Đất là nền tảng của sản xuất nông nghiệp",
+    "t3": "01",
+    "t4": "Đánh giá đất",
+    "t5": "Lấy mẫu và phân tích tại phòng thí nghiệm VILAS 1519",
+    "t6": "02",
+    "t7": "Xác định nhu cầu cây trồng",
+    "t8": "Theo giống, giai đoạn và mục tiêu năng suất",
+    "t9": "03",
+    "t10": "Xây dựng chương trình bón phân",
+    "t11": "Cân đối đa – trung – vi lượng và hữu cơ",
+    "t12": "04",
+    "t13": "Theo dõi & điều chỉnh",
+    "t14": "Kỹ sư đồng hành trong suốt vụ mùa"
+  },
+  "s05_tim_giai_phap": {
+    "t1": "04 · TÌM GIẢI PHÁP",
+    "t2": "Tìm giải pháp phù hợp cho từng cây trồng",
+    "t3": "1. Cây trồng",
+    "t4": "2. Vấn đề đang gặp",
+    "t5": "ĐỀ XUẤT SƠ BỘ",
+    "t6": "Đây là định hướng chung. Kỹ sư Tiến Nông sẽ tư vấn liều lượng cụ thể theo chân đất và giống cây trồng thực tế.",
+    "f1": "Số điện thoại",
+    "f2": "09xx xxx xxx",
+    "f3": "Tỉnh / thành phố",
+    "f4": "VD: Thanh Hóa",
+    "t7": "Nhận tư vấn từ kỹ sư"
+  },
+  "s06_mo_hinh_thuc_te": {
+    "t1": "05 · MÔ HÌNH THỰC TẾ",
+    "t2": "Giải pháp được kiểm chứng trên đồng ruộng",
+    "t3": "Tất cả mô hình →",
+    "img_model_1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Mô hình lúa"
+    },
+    "t4": "LÚA · THANH HÓA",
+    "t5": "[Tên mô hình]",
+    "t6": "+[x]%",
+    "t7": "năng suất",
+    "t8": "[x] ha",
+    "t9": "diện tích",
+    "img_model_2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Mô hình cà phê"
+    },
+    "t10": "CÀ PHÊ · GIA LAI",
+    "t11": "[Tên mô hình]",
+    "t12": "+[x]%",
+    "t13": "năng suất",
+    "t14": "[x] ha",
+    "t15": "diện tích",
+    "img_model_3_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Mô hình cây ăn quả"
+    },
+    "t16": "CÂY ĂN QUẢ · [TỈNH]",
+    "t17": "[Tên mô hình]",
+    "t18": "+[x]%",
+    "t19": "năng suất",
+    "t20": "[x] ha",
+    "t21": "diện tích"
+  },
+  "s07_phan_7": {
+    "t1": "Giải pháp chuyên biệt cho sân golf, cảnh quan và khu công nghiệp",
+    "t2": "Tiến Nông thiết kế chương trình dinh dưỡng riêng cho từng dự án.",
+    "t3": "Giải pháp cho dự án →"
+  },
+  "problems_fix_label": "Hướng xử lý:",
+  "problems": [
+    {
+      "title": "Đất chua, bạc màu, suy giảm độ phì",
+      "cause": "Canh tác liên tục, bón nhiều phân hóa học thiếu cân đối và ít bổ sung hữu cơ khiến đất mất cấu trúc, pH giảm.",
+      "fix": "Điều hòa pH đất, bổ sung phân hữu cơ và vi sinh để phục hồi cấu trúc và hệ sinh vật đất."
+    },
+    {
+      "title": "Thiếu hụt hoặc mất cân đối dinh dưỡng",
+      "cause": "Bón theo thói quen, không theo nhu cầu của cây ở từng giai đoạn sinh trưởng.",
+      "fix": "Sử dụng phân bón chuyên dụng theo cây trồng và giai đoạn, kết hợp phân tích đất định kỳ."
+    },
+    {
+      "title": "Cây vàng lá, sinh trưởng kém, năng suất không ổn định",
+      "cause": "Thường do thiếu trung – vi lượng (Ca, Mg, S, Zn, B…) hoặc rễ hoạt động kém.",
+      "fix": "Bổ sung trung – vi lượng, cải thiện môi trường rễ và điều chỉnh chương trình bón."
+    },
+    {
+      "title": "Hiệu quả sử dụng phân bón chưa cao",
+      "cause": "Phân bón bị rửa trôi, bay hơi hoặc bị đất giữ chặt, cây không hấp thu được.",
+      "fix": "Chọn sản phẩm có công nghệ nâng cao hiệu suất sử dụng và bón đúng thời điểm, đúng cách."
+    }
+  ],
+  "finder_crops": [
+    "Lúa",
+    "Ngô",
+    "Rau màu",
+    "Cây ăn quả",
+    "Cà phê",
+    "Chè",
+    "Mía"
+  ],
+  "finder_issues": [
+    {
+      "label": "Đất chua, bạc màu",
+      "steps": [
+        "Phân tích pH và hữu cơ trong đất",
+        "Bón vôi hoặc sản phẩm điều hòa pH đất trước vụ",
+        "Bổ sung phân hữu cơ – Humic kết hợp NPK chuyên dụng"
+      ]
+    },
+    {
+      "label": "Thiếu dinh dưỡng",
+      "steps": [
+        "Xác định giai đoạn sinh trưởng hiện tại",
+        "Dùng NPK chuyên dụng theo đúng giai đoạn",
+        "Bổ sung trung – vi lượng khi cây có biểu hiện thiếu"
+      ]
+    },
+    {
+      "label": "Vàng lá, kém phát triển",
+      "steps": [
+        "Kiểm tra rễ và độ ẩm đất",
+        "Bổ sung phân trung – vi lượng",
+        "Điều chỉnh lượng đạm, tăng kali cho giai đoạn nuôi hạt, nuôi quả"
+      ]
+    },
+    {
+      "label": "Muốn tăng năng suất",
+      "steps": [
+        "Phân tích đất làm căn cứ",
+        "Áp dụng chương trình bón cân đối của Tiến Nông",
+        "Theo dõi và điều chỉnh cùng kỹ sư trong suốt vụ"
+      ]
+    }
+  ]
+}

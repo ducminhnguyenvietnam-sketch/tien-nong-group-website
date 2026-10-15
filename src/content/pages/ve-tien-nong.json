@@ -1,0 +1,309 @@
+{
+  "seo": {
+    "title": "Về Tiến Nông",
+    "description": ""
+  },
+  "s01_hero": {
+    "t1": "Trang chủ",
+    "t2": "/ Về Tiến Nông",
+    "t3": "VỀ TIẾN NÔNG",
+    "t4": "Hơn 30 năm đồng hành cùng nông nghiệp Việt Nam",
+    "t5": "Thành lập ngày 04/01/1995 tại Thanh Hóa, CTCP Công Nông nghiệp Tiến Nông nghiên cứu, sản xuất và phân phối các giải pháp dinh dưỡng cây trồng cho nhà nông trên khắp cả nước và hơn 10 thị trường quốc tế.",
+    "img_about_hero_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Ảnh tập thể cán bộ, nhân viên trước trụ sở Tiến Nông"
+    },
+    "t6": "1995",
+    "t7": "năm thành lập",
+    "t8": "650.000",
+    "t9": "tấn/năm · 3 nhà máy",
+    "t10": "200+",
+    "t11": "nhà phân phối",
+    "t12": "10.000",
+    "t13": "điểm bán",
+    "t14": "200.000+",
+    "t15": "hộ nông dân tin dùng",
+    "t16": "10+",
+    "t17": "quốc gia xuất khẩu",
+    "t18": "Thư ngỏ",
+    "t19": "Sứ mệnh & giá trị",
+    "t20": "Lịch sử",
+    "t21": "Lãnh đạo",
+    "t22": "Thành tựu",
+    "t23": "Năng lực",
+    "t24": "Hệ sinh thái"
+  },
+  "s02_thu_ngo": {
+    "img_ceo_portrait_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chân dung Tổng Giám đốc Nguyễn Hồng Phong"
+    },
+    "t1": "THƯ NGỎ CỦA TỔNG GIÁM ĐỐC",
+    "t2": "“Mùa vụ không chỉ là những gì chúng tôi trồng trọt, mà là những cuộc đời chúng tôi cùng vun đắp và tương lai chúng tôi cùng kiến tạo.”",
+    "t3": "Hơn ba thập kỷ qua, Tiến Nông kiên định với một lựa chọn: lấy khoa học làm nền tảng và lấy lợi ích của nhà nông làm thước đo cho mọi quyết định. Chúng tôi tin rằng khi người nông dân được canh tác hiệu quả hơn, mỗi vụ mùa sẽ góp phần vào sự thịnh vượng chung của đất nước.",
+    "t4": "Nguyễn Hồng Phong",
+    "t5": "Tổng Giám đốc"
+  },
+  "s03_su_menh_gia_tri": {
+    "t1": "SỨ MỆNH",
+    "t2": "Phụng sự để nông dân giàu có, Việt Nam thịnh vượng",
+    "t3": "TẦM NHÌN",
+    "t4": "Doanh nghiệp sáng tạo dẫn đầu trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam",
+    "t5": "MỤC TIÊU",
+    "t6": "Phục vụ 1 triệu hộ nông dân Việt Nam",
+    "t7": "GIÁ TRỊ CỐT LÕI",
+    "t8": "01",
+    "t9": "Đam mê chân chính",
+    "t10": "Tận tâm với nông nghiệp và khoa học, bền bỉ theo đuổi những giá trị thực cho nhà nông.",
+    "t11": "02",
+    "t12": "Khát vọng cháy bỏng",
+    "t13": "Không ngừng vươn lên, cống hiến trọn vẹn trong lĩnh vực mình đã chọn.",
+    "t14": "03",
+    "t15": "Sáng tạo không ngừng",
+    "t16": "Đổi mới để giữ vị thế dẫn đầu về dinh dưỡng cây trồng tại Việt Nam và vươn ra thế giới.",
+    "t17": "04",
+    "t18": "Sẻ chia lợi ích",
+    "t19": "Lợi ích của nhà nông luôn được đặt lên trên hết trong mọi quyết định."
+  },
+  "s04_lich_su": {
+    "t1": "LỊCH SỬ PHÁT TRIỂN",
+    "t2": "Những dấu mốc trên hành trình hơn ba thập kỷ"
+  },
+  "s05_lanh_dao": {
+    "t1": "BAN LÃNH ĐẠO",
+    "t2": "Đội ngũ lãnh đạo",
+    "img_lead_1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chân dung (nền đồng nhất)"
+    },
+    "t3": "Nguyễn Hồng Phong",
+    "t4": "Tổng Giám đốc",
+    "img_lead_2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chân dung (nền đồng nhất)"
+    },
+    "t5": "[Họ và tên]",
+    "t6": "[Chức danh]",
+    "img_lead_3_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chân dung (nền đồng nhất)"
+    },
+    "t7": "[Họ và tên]",
+    "t8": "[Chức danh]",
+    "img_lead_4_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chân dung (nền đồng nhất)"
+    },
+    "t9": "[Họ và tên]",
+    "t10": "[Chức danh]",
+    "img_lead_5_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chân dung (nền đồng nhất)"
+    },
+    "t11": "[Họ và tên]",
+    "t12": "[Chức danh]"
+  },
+  "s06_thanh_tuu": {
+    "t1": "THÀNH TỰU & GHI NHẬN",
+    "t2": "Những ghi nhận xứng đáng cho hơn ba thập kỷ cống hiến",
+    "t3": "Những danh hiệu dưới đây là sự ghi nhận cho hơn ba thập kỷ kiên trì với chất lượng, khoa học và trách nhiệm với nhà nông.",
+    "img_award_hc_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Ảnh Huân chương"
+    },
+    "t4": "NHÀ NƯỚC · [NĂM]",
+    "t5": "Huân chương Lao động hạng Ba",
+    "t6": "Chủ tịch nước trao tặng",
+    "img_award_bk_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Ảnh Bằng khen"
+    },
+    "t7": "NHÀ NƯỚC · 2022",
+    "t8": "Bằng khen của Thủ tướng Chính phủ",
+    "t9": "Thủ tướng Chính phủ trao tặng",
+    "t10": "KHOA HỌC & CÔNG NGHỆ",
+    "t11": "Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam",
+    "t12": "[Số GCN · năm cấp]",
+    "t13": "Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam",
+    "t14": "[Năm]",
+    "t15": "CHẤT LƯỢNG & THƯƠNG HIỆU",
+    "t16": "6 lần đạt Giải thưởng Sao Vàng Đất Việt",
+    "t17": "[Các năm]",
+    "t18": "Giải thưởng Chất lượng Việt Nam",
+    "t19": "2002",
+    "t20": "Thương hiệu Vàng Nông nghiệp Việt Nam, 3 năm liên tiếp",
+    "t21": "[Các năm]",
+    "t22": "KHU VỰC ASEAN",
+    "t23": "Thương hiệu nổi tiếng ASEAN",
+    "t24": "2011",
+    "t25": "Top 10 Thương hiệu mạnh ASEAN",
+    "t26": "[Năm]",
+    "t27": "Hệ thống quản lý:",
+    "t28": "ISO 9001:2015 · ISO 14001:2015 · Phòng thí nghiệm VILAS 1519",
+    "t29": "Tải hồ sơ năng lực (PDF)"
+  },
+  "s07_nang_luc": {
+    "t1": "NĂNG LỰC",
+    "t2": "Chuỗi giá trị khép kín, từ phòng thí nghiệm đến đồng ruộng",
+    "img_cap_rd_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Phòng thí nghiệm"
+    },
+    "t3": "NGHIÊN CỨU",
+    "t4": "Trung tâm Nghiên cứu Phát triển & phòng thí nghiệm VILAS 1519",
+    "t5": "Nghiên cứu công thức, phân tích đất và kiểm định chất lượng sản phẩm.",
+    "t6": "Khoa học & Công nghệ →",
+    "img_cap_mfg_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Dây chuyền sản xuất"
+    },
+    "t7": "SẢN XUẤT",
+    "t8": "3 nhà máy, công suất thiết kế 650.000 tấn/năm",
+    "t9": "Nhà máy Bỉm Sơn (Thanh Hóa), Gia Lai và [Nhà máy 3], vận hành theo ISO 9001 và ISO 14001.",
+    "t10": "Hệ thống nhà máy →",
+    "img_cap_dist_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Bản đồ mạng lưới phân phối & xuất khẩu"
+    },
+    "t11": "PHÂN PHỐI",
+    "t12": "200+ nhà phân phối, 10.000 điểm bán, 10+ quốc gia",
+    "t13": "Mạng lưới phủ khắp cả nước và các thị trường xuất khẩu trong khu vực.",
+    "t14": "Tìm đại lý →"
+  },
+  "s08_he_sinh_thai": {
+    "t1": "HỆ SINH THÁI TIẾN NÔNG",
+    "t2": "Công ty thành viên & liên kết",
+    "img_eco_1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Logo"
+    },
+    "t3": "Tiến Nông Garden",
+    "img_eco_2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Logo"
+    },
+    "t4": "Hacheco",
+    "img_eco_3_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Logo"
+    },
+    "t5": "Sao Khuê",
+    "img_eco_4_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Logo"
+    },
+    "t6": "Tiến Lực",
+    "img_eco_5_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Logo"
+    },
+    "t7": "Phú Hưng"
+  },
+  "s09_phan_9": {
+    "t1": "Cùng Tiến Nông kiến tạo những mùa vụ thịnh vượng",
+    "t2": "Liên hệ hợp tác",
+    "t3": "Cơ hội nghề nghiệp"
+  },
+  "milestones": [
+    {
+      "year": "1995",
+      "title": "Thành lập tại Thanh Hóa",
+      "body": "Ngày 04/01/1995, Tiến Nông ra đời với khát vọng mang đến cho nhà nông những sản phẩm dinh dưỡng cây trồng chất lượng, giá trị thực.",
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh tư liệu: biển hiệu xí nghiệp năm 1995"
+      }
+    },
+    {
+      "year": "2002",
+      "title": "Giải thưởng Chất lượng Việt Nam",
+      "body": "Hệ thống quản lý chất lượng và sản phẩm của Tiến Nông được ghi nhận ở cấp quốc gia.",
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh lễ nhận giải 2002"
+      }
+    },
+    {
+      "year": "2011",
+      "title": "Thương hiệu nổi tiếng ASEAN",
+      "body": "Thương hiệu Tiến Nông được ghi nhận trong khu vực, mở đường cho các thị trường xuất khẩu.",
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh lễ nhận giải 2011"
+      }
+    },
+    {
+      "year": "2012",
+      "title": "Doanh nghiệp Khoa học & Công nghệ đầu tiên của ngành",
+      "body": "[Bổ sung: năm được công nhận, số giấy chứng nhận và ý nghĩa của danh hiệu.]",
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh giấy chứng nhận DN KH&CN"
+      }
+    },
+    {
+      "year": "2022",
+      "title": "Bằng khen của Thủ tướng Chính phủ",
+      "body": "Ghi nhận những đóng góp của Tiến Nông cho sự phát triển của nông nghiệp và cộng đồng.",
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh Bằng khen Thủ tướng"
+      }
+    },
+    {
+      "year": "2026",
+      "title": "3 nhà máy, 650.000 tấn/năm, 10+ quốc gia",
+      "body": "Tiến Nông phục vụ hơn 200.000 hộ nông dân, hướng tới mục tiêu 1 triệu hộ nông dân Việt Nam.",
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh flycam nhà máy hiện nay"
+      }
+    }
+  ]
+}

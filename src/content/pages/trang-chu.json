@@ -1,0 +1,276 @@
+{
+  "seo": {
+    "title": "",
+    "description": ""
+  },
+  "s01_hero_a": {
+    "img_hero_a_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Video / ảnh flycam: nhà máy Tiến Nông giữa cánh đồng lúa"
+    },
+    "t1": "TIẾN NÔNG GROUP · TỪ 1995",
+    "t2": "Hơn 30 năm khoa học phụng sự nhà nông",
+    "t3": "Nghiên cứu, sản xuất và đồng hành cùng nhà nông với các giải pháp dinh dưỡng cây trồng được kiểm chứng từ phòng thí nghiệm đến đồng ruộng.",
+    "t4": "Khám phá giải pháp →",
+    "t5": "Tìm đại lý gần nhất"
+  },
+  "s02_uy_tin": {
+    "t1": "200.000+",
+    "t2": "hộ nông dân tin dùng",
+    "t3": "10.000",
+    "t4": "điểm bán trên toàn quốc",
+    "t5": "200+",
+    "t6": "nhà phân phối",
+    "t7": "650.000",
+    "t8": "tấn/năm · 3 nhà máy",
+    "t9": "Huân chương",
+    "t10": "Lao động hạng Ba",
+    "t11": "Bằng khen",
+    "t12": "Thủ tướng Chính phủ · 2022",
+    "t13": "Doanh nghiệp KH&CN đầu tiên",
+    "t14": "ngành dinh dưỡng cây trồng",
+    "t15": "6 lần đạt",
+    "t16": "Sao Vàng Đất Việt",
+    "t17": "Số liệu 2025 ·",
+    "t18": "Xem tất cả thành tựu →"
+  },
+  "s03_khoa_hoc_cong_nghe": {
+    "t1": "01 · KHOA HỌC & CÔNG NGHỆ",
+    "t2": "Khoa học nền tảng, đồng ruộng là thước đo",
+    "t3": "Là doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam, Tiến Nông đầu tư bài bản cho Trung tâm Nghiên cứu Phát triển và phòng thí nghiệm đạt chuẩn VILAS 1519. Mỗi công thức đều được nghiên cứu trên đất, trên cây và kiểm chứng tại đồng ruộng trước khi đến tay nhà nông.",
+    "img_rd_main_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Phòng thí nghiệm VILAS 1519 đang vận hành"
+    },
+    "t4": "R&D",
+    "t5": "Trung tâm Nghiên cứu Phát triển",
+    "t6": "Công nghệ phân bón, công nghệ sinh học",
+    "t7": "VILAS 1519",
+    "t8": "Phân tích & kiểm định chất lượng",
+    "t9": "Kiểm soát chất lượng theo từng lô",
+    "t10": "ĐẤT – CÂY",
+    "t11": "Sức khỏe đất & dinh dưỡng",
+    "t12": "Phân tích đất làm cơ sở xây dựng công thức",
+    "t13": "ỨNG DỤNG",
+    "t14": "Từ nghiên cứu đến đồng ruộng",
+    "t15": "Mô hình trình diễn tại các vùng sản xuất trọng điểm",
+    "t16": "[số]",
+    "t17": "nhà khoa học & kỹ sư",
+    "t18": "[số]",
+    "t19": "đề tài nghiên cứu",
+    "t20": "[số]",
+    "t21": "mẫu đất phân tích/năm",
+    "t22": "Tìm hiểu Khoa học & Công nghệ →"
+  },
+  "s04_giai_phap_theo_doi_tuong": {
+    "t1": "02 · GIẢI PHÁP",
+    "t2": "Giải pháp phù hợp cho từng đối tác",
+    "img_aud_farmer_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Nông dân trên ruộng"
+    },
+    "t3": "Nông dân",
+    "t4": "Giải pháp dinh dưỡng theo cây trồng, quy trình bón phân khoa học và đội ngũ kỹ sư tư vấn tận nơi.",
+    "t5": "Giải pháp theo cây trồng →",
+    "img_aud_dealer_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Cửa hàng đại lý vật tư nông nghiệp"
+    },
+    "t6": "Đại lý & nhà phân phối",
+    "t7": "Chính sách hợp tác minh bạch, hỗ trợ bán hàng và hội thảo kỹ thuật, cùng hệ thống hơn 200 nhà phân phối.",
+    "t8": "Trở thành đại lý →",
+    "img_aud_project_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Sân golf / cảnh quan đô thị / nhà kính"
+    },
+    "t9": "Khách hàng dự án",
+    "t10": "Chương trình dinh dưỡng thiết kế riêng cho sân golf, cảnh quan, khu công nghiệp và nông nghiệp công nghệ cao.",
+    "t11": "Yêu cầu tư vấn dự án →",
+    "img_aud_export_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Container hàng xuất khẩu / kho"
+    },
+    "t12": "Đối tác xuất khẩu",
+    "t13": "Sản phẩm có mặt tại hơn 10 quốc gia, năng lực cung ứng ổn định 650.000 tấn mỗi năm.",
+    "t14": "Hợp tác xuất khẩu →"
+  },
+  "s05_san_pham": {
+    "t1": "03 · SẢN PHẨM",
+    "t2": "Dinh dưỡng chuẩn xác cho từng loại cây, từng giai đoạn sinh trưởng",
+    "img_line_1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Bao bì dòng Chuyên dụng"
+    },
+    "t3": "Phân bón chuyên dụng",
+    "t4": "Công thức chuyên biệt cho lúa, ngô, cà phê, cây ăn quả…",
+    "img_line_2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Bao bì dòng Đa dụng"
+    },
+    "t5": "Phân bón đa dụng",
+    "t6": "Tỷ lệ NPK cân đối, phù hợp với nhiều loại cây trồng",
+    "img_line_3_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Bao bì dòng Hữu cơ"
+    },
+    "t7": "Phân bón hữu cơ",
+    "t8": "Bổ sung hữu cơ, cải tạo đất, hướng tới canh tác bền vững",
+    "img_line_4_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Bao bì dòng Hàm lượng cao"
+    },
+    "t9": "Phân bón hàm lượng cao",
+    "t10": "Hàm lượng cao cho thâm canh và nông nghiệp công nghệ cao",
+    "img_crop_lua_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Lúa"
+    },
+    "t11": "Lúa",
+    "img_crop_ngo_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Ngô"
+    },
+    "t12": "Ngô",
+    "img_crop_caphe_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Cà phê"
+    },
+    "t13": "Cà phê",
+    "img_crop_anqua_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Cây ăn quả"
+    },
+    "t14": "Cây ăn quả",
+    "img_crop_rau_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Rau màu"
+    },
+    "t15": "Rau màu",
+    "img_crop_congnghiep_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Cây công nghiệp"
+    },
+    "t16": "Cây công nghiệp",
+    "t17": "Xem tất cả sản phẩm →"
+  },
+  "s06_nha_may_xanh": {
+    "img_plant_flycam_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Flycam nhà máy Bỉm Sơn: cây xanh, khuôn viên sạch đẹp"
+    },
+    "t1": "04 · SẢN XUẤT XANH",
+    "t2": "Sản xuất quy mô lớn, hài hòa cùng môi trường",
+    "t3": "Ba nhà máy với tổng công suất thiết kế 650.000 tấn/năm, vận hành theo tiêu chuẩn ISO 9001 về chất lượng và ISO 14001 về môi trường, trong khuôn viên xanh, sạch và an toàn.",
+    "t4": "Bỉm Sơn",
+    "t5": "THANH HOÁ",
+    "t6": "Gia Lai",
+    "t7": "TÂY NGUYÊN",
+    "t8": "Hoằng Hoá",
+    "t9": "THANH HOÁ",
+    "t10": "Khám phá hệ thống nhà máy →"
+  },
+  "s07_con_nguoi": {
+    "img_people_1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chân dung người lao động gắn bó 20+ năm"
+    },
+    "img_people_2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chuyến du lịch nước ngoài toàn công ty"
+    },
+    "img_people_3_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Lễ trao Bảo Bình tài lộc"
+    },
+    "t1": "05 · CON NGƯỜI",
+    "t2": "Gắn bó bền lâu, cùng nhau phát triển",
+    "t3": "Nhiều cán bộ, nhân viên đã đồng hành cùng Tiến Nông hơn 20 năm. Chúng tôi xây dựng môi trường làm việc gần gũi, chế độ đãi ngộ xứng đáng và sự ghi nhận dành cho mỗi chặng đường cống hiến.",
+    "t4": "Lương thưởng cạnh tranh",
+    "t5": "Gắn với hiệu quả công việc và thâm niên",
+    "t6": "Du lịch nước ngoài",
+    "t7": "Hành trình dành cho toàn thể cán bộ, nhân viên",
+    "t8": "Tặng vàng",
+    "t9": "Tri ân người lao động gắn bó lâu năm",
+    "t10": "Bảo Bình tài lộc",
+    "t11": "Vinh danh những chặng đường cống hiến",
+    "t12": "Cơ hội nghề nghiệp →",
+    "t13": "Văn hóa Tiến Nông"
+  },
+  "s08_vi_cong_dong": {
+    "t1": "06 · PHÁT TRIỂN BỀN VỮNG",
+    "t2": "Vì nền nông nghiệp bền vững và cộng đồng",
+    "t3": "phát triển thịnh vượng",
+    "t4": "Xác định “Sẻ chia lợi ích” là giá trị cốt lõi, Tiến Nông đồng hành cùng nhà nông và các địa phương, từ những lớp tập huấn kỹ thuật đến công tác khuyến học và các chương trình hướng về biển đảo.",
+    "img_csr_1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Lớp tập huấn kỹ thuật cho nông dân"
+    },
+    "t5": "NÂNG CAO NHẬN THỨC",
+    "t6": "Tập huấn bón phân cân đối, bảo vệ sức khỏe đất cho nhà nông",
+    "img_csr_2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Lễ trao học bổng khuyến học Thanh Hóa"
+    },
+    "t7": "KHUYẾN HỌC",
+    "t8": "Ủng hộ 1,55 tỷ đồng cho công tác khuyến học tỉnh Thanh Hóa năm 2026",
+    "img_csr_3_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chương trình Triệu mầm xanh Trường Sa"
+    },
+    "t9": "BIỂN ĐẢO",
+    "t10": "Đồng hành cùng chương trình “Triệu mầm xanh” vì Trường Sa xanh",
+    "t11": "Phát triển bền vững tại Tiến Nông →"
+  },
+  "s09_tin_tuc": {
+    "t1": "Tin tức",
+    "t2": "Tất cả tin tức →"
+  },
+  "product_tab_line": "Theo dòng sản phẩm",
+  "product_tab_crop": "Theo cây trồng"
+}
