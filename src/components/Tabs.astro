@@ -1,0 +1,31 @@
+---
+/**
+ * Design-system Tabs (TiNNNgDesignSystem.Tabs). Clicking a tab updates
+ * aria-selected and dispatches a bubbling `tabs:change` event with the value.
+ */
+interface Props {
+  items: { value: string; label: string }[];
+  value: string;
+  id?: string;
+  label?: string;
+}
+const { items, value, id, label } = Astro.props;
+---
+<div role="tablist" id={id} aria-label={label} data-tabs style="display:flex;gap:var(--space-6);border-bottom:1px solid var(--border-default);font-family:var(--font-body)">
+  {items.map((item) => (
+    <button type="button" role="tab" class="ds-tab" data-value={item.value} aria-selected={item.value === value ? 'true' : 'false'}
+      style="padding:10px 2px;cursor:pointer;line-height:inherit;font-size:var(--text-base);font-weight:var(--weight-semibold);margin-bottom:-1px;transition:color var(--duration-fast) var(--ease-standard);background:none;border-top:0;border-left:0;border-right:0;font-family:inherit">
+      {item.label}
+    </button>
+  ))}
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-tabs]').forEach((list) => {
+    list.addEventListener('click', (e) => {
+      const tab = (e.target as HTMLElement).closest<HTMLElement>('[role="tab"]');
+      if (!tab) return;
+      list.querySelectorAll('[role="tab"]').forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
+      list.dispatchEvent(new CustomEvent('tabs:change', { detail: tab.dataset.value, bubbles: true }));
+    });
+  });
+</script>

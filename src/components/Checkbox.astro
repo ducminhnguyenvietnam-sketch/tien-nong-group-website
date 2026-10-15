@@ -1,0 +1,20 @@
+---
+/** Design-system Checkbox (TiNNNgDesignSystem.Checkbox). */
+interface Props {
+  label: string;
+  checked?: boolean;
+  name?: string;
+  required?: boolean;
+  disabled?: boolean;
+  [key: string]: unknown;
+}
+const { label, checked, name, required, disabled, ...rest } = Astro.props;
+---
+<label class="ds-check" style={`display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:var(--text-base);color:var(--text-primary);cursor:${disabled ? 'not-allowed' : 'pointer'};opacity:${disabled ? 0.5 : 1}`}>
+  <input type="checkbox" checked={checked} name={name} required={required} disabled={disabled} {...rest}
+    style="position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none" />
+  <span class="ds-check-box" style="flex:none;width:20px;height:20px;border-radius:6px;border:1.5px solid var(--border-strong);background:var(--surface-card);display:flex;align-items:center;justify-content:center;transition:all var(--duration-fast) var(--ease-standard)">
+    <svg width="12" height="10" viewBox="0 0 12 10" fill="none" style="display:none" aria-hidden="true"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+  </span>
+  {label}
+</label>
