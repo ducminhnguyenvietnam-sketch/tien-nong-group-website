@@ -1,0 +1,59 @@
+{
+  "company": {
+    "name": "Công ty Cổ phần Công Nông nghiệp Tiến Nông",
+    "address": "274B Bà Triệu, phường Hàm Rồng, tỉnh Thanh Hóa",
+    "phone": "02373.729.729",
+    "email": "info@tiennong.vn",
+    "tax_code_label": "Mã số doanh nghiệp:",
+    "tax_code": "[cần bổ sung]",
+    "copyright": "© 2026 Công ty Cổ phần Công Nông nghiệp Tiến Nông"
+  },
+  "social": {
+    "facebook": "",
+    "youtube": "",
+    "tiktok": "",
+    "zalo": ""
+  },
+  "legal": {
+    "privacy_label": "Chính sách bảo mật",
+    "privacy_url": "",
+    "terms_label": "Điều khoản sử dụng",
+    "terms_url": "",
+    "ministry_badge": "Logo Bộ Công Thương"
+  },
+  "header": {
+    "top_jobs": "Tuyển dụng",
+    "top_dealers": "Tìm đại lý",
+    "top_contact": "Liên hệ",
+    "english_url": "",
+    "cta": "Tìm đại lý",
+    "menu_open": "☰ Menu",
+    "menu_close": "✕ Đóng",
+    "nav": {
+      "ve_tien_nong": "Về Tiến Nông",
+      "khoa_hoc_cong_nghe": "Khoa học & Công nghệ",
+      "san_pham": "Sản phẩm",
+      "giai_phap": "Giải pháp",
+      "phat_trien_ben_vung": "Phát triển bền vững",
+      "nong_dan": "Nông dân Tiến Nông",
+      "tin_tuc": "Tin tức"
+    }
+  },
+  "footer": {
+    "col1_title": "Tiến Nông",
+    "col1_about": "Về chúng tôi",
+    "col1_science": "Khoa học & Công nghệ",
+    "col1_sustainability": "Phát triển bền vững",
+    "col1_jobs": "Tuyển dụng",
+    "col2_title": "Sản phẩm & giải pháp",
+    "col2_products": "Sản phẩm",
+    "col2_crop_solutions": "Giải pháp theo cây trồng",
+    "col2_project_solutions": "Giải pháp cho dự án",
+    "col2_farmers": "Nông dân Tiến Nông",
+    "col3_title": "Kết nối",
+    "col3_dealers": "Tìm đại lý",
+    "col3_contact": "Liên hệ",
+    "col3_news": "Tin tức",
+    "floating_button": "Liên hệ tư vấn"
+  }
+}

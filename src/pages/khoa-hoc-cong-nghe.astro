@@ -1,27 +1,21 @@
 ---
+import c from '../content/pages/khoa-hoc-cong-nghe.json';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import { url } from '../lib/routes';
 
-const DOMAINS = [
-  { name: 'Công nghệ phân bón', ph: 'Dây chuyền thử nghiệm công thức phân bón', body: 'Nghiên cứu công thức và công nghệ sản xuất giúp dinh dưỡng được cây hấp thu hiệu quả hơn, giảm thất thoát ra môi trường.', focus: ['NPK phức hợp và bổ sung trung – vi lượng', 'Công nghệ bổ sung Silic hữu hiệu', 'Phân bón tan chậm, phân bón lỏng'] },
-  { name: 'Công nghệ sinh học', ph: 'Nuôi cấy vi sinh trong phòng thí nghiệm', body: 'Ứng dụng vi sinh vật có ích để cải tạo đất, tăng sức đề kháng cho cây và giảm phụ thuộc vào hóa chất.', focus: ['Chủng vi sinh cố định đạm, phân giải lân', 'Chế phẩm sinh học xử lý phụ phẩm nông nghiệp', 'Phân bón hữu cơ vi sinh'] },
-  { name: 'Sức khỏe đất & cây trồng', ph: 'Kỹ sư lấy mẫu đất tại ruộng', body: 'Đánh giá toàn diện đặc tính đất và tình trạng dinh dưỡng của cây, làm cơ sở cho chương trình bón phân cân đối.', focus: ['Bản đồ dinh dưỡng đất theo vùng', 'Chẩn đoán thiếu hụt dinh dưỡng', 'Cải tạo đất bạc màu, chua phèn'] },
-  { name: 'Phân tích & kiểm định chất lượng', ph: 'Thiết bị phân tích phòng VILAS', body: 'Kiểm soát chất lượng từ nguyên liệu đầu vào đến từng lô thành phẩm theo tiêu chuẩn VILAS 1519 và các TCVN hiện hành.', focus: ['Kiểm định theo TCVN', 'Kiểm soát nguyên liệu đầu vào', 'Truy xuất theo lô sản xuất'] },
-  { name: 'Dữ liệu & nông nghiệp số', ph: 'Kỹ sư sử dụng thiết bị đo tại đồng ruộng', body: '[Bổ sung: sản phẩm hoặc dự án cụ thể, ví dụ ứng dụng tư vấn bón phân, cảm biến đồng ruộng, cơ sở dữ liệu đất.]', focus: ['[Hạng mục 1]', '[Hạng mục 2]', '[Hạng mục 3]'] },
-];
 ---
-<Layout title="Khoa học & Công nghệ" active="Khoa học & Công nghệ">
+<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Khoa học & Công nghệ">
 <section style="position:relative;min-height:min(72vh,640px);background:var(--green-900);display:flex">
-<div style="position:absolute;inset:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="khcn-hero" shape="rect" placeholder="Nhà khoa học thao tác trong phòng thí nghiệm VILAS 1519" /></div>
+<div style="position:absolute;inset:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="khcn-hero" shape="rect" placeholder="Nhà khoa học thao tác trong phòng thí nghiệm VILAS 1519" image={c.s01_hero.img_khcn_hero_1} /></div>
 <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,53,26,.82) 0%,rgba(2,53,26,.5) 50%,rgba(2,53,26,0) 80%)"></div>
 <div style="position:relative;max-width:1280px;width:100%;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(56px,7vw,96px);display:flex;flex-direction:column;justify-content:space-between;gap:48px;pointer-events:none;color:#fff">
-<span style="font-size:13px;color:var(--green-100)">Trang chủ / Khoa học &amp; Công nghệ</span>
+<span style="font-size:13px;color:var(--green-100)">{c.s01_hero.t1}</span>
 <div style="max-width:760px;display:flex;flex-direction:column;gap:20px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-100)">KHOA HỌC &amp; CÔNG NGHỆ</span>
-<h1 style="margin:0;font:800 clamp(34px,4.8vw,60px)/1.08 var(--font-display);letter-spacing:-.015em;text-wrap:balance">Khoa học phụng sự nông nghiệp</h1>
-<p style="margin:0;font-size:19px;line-height:1.55;color:var(--green-50);text-align:justify;text-wrap:pretty">Mỗi giải pháp của Tiến Nông đều bắt nguồn từ nghiên cứu về đất, về cây và được kiểm chứng trên đồng ruộng trước khi đến tay nhà nông.</p>
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-100)">{c.s01_hero.t2}</span>
+<h1 style="margin:0;font:800 clamp(34px,4.8vw,60px)/1.08 var(--font-display);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero.t3}</h1>
+<p style="margin:0;font-size:19px;line-height:1.55;color:var(--green-50);text-align:justify;text-wrap:pretty">{c.s01_hero.t4}</p>
 </div></div></section>
 
 <section style="background:var(--surface-card);border-bottom:1px solid var(--border-default)">
@@ -29,51 +23,51 @@ const DOMAINS = [
 <div style="display:flex;gap:20px;align-items:flex-start">
 <span style="flex:none;width:8px;align-self:stretch;border-radius:4px;background:var(--amber-400)"></span>
 <div style="display:flex;flex-direction:column;gap:10px">
-<h2 style="margin:0;font:800 clamp(26px,2.8vw,36px)/1.25 var(--font-display);text-wrap:balance">Doanh nghiệp Khoa học &amp; Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam</h2>
-<span style="color:var(--text-tertiary);font-size:14px">Giấy chứng nhận số [số GCN] · cấp năm [năm]</span>
+<h2 style="margin:0;font:800 clamp(26px,2.8vw,36px)/1.25 var(--font-display);text-wrap:balance">{c.s02_dinh_vi.t1}</h2>
+<span style="color:var(--text-tertiary);font-size:14px">{c.s02_dinh_vi.t2}</span>
 </div></div>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 32px">
-<div style="display:flex;flex-direction:column;padding-top:14px;border-top:2px solid var(--green-500)"><span style="font:800 34px/1.1 var(--font-display);color:var(--amber-600)">[số]</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">nhà khoa học &amp; kỹ sư</span></div>
-<div style="display:flex;flex-direction:column;padding-top:14px;border-top:2px solid var(--green-500)"><span style="font:800 34px/1.1 var(--font-display);color:var(--amber-600)">[số]</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">đề tài nghiên cứu đã thực hiện</span></div>
-<div style="display:flex;flex-direction:column;padding-top:14px;border-top:2px solid var(--green-500)"><span style="font:800 34px/1.1 var(--font-display);color:var(--amber-600)">[số]</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">mẫu phân tích mỗi năm</span></div>
-<div style="display:flex;flex-direction:column;padding-top:14px;border-top:2px solid var(--green-500)"><span style="font:800 34px/1.1 var(--font-display);color:var(--amber-600)">[số]</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">sản phẩm từ kết quả nghiên cứu</span></div>
+<div style="display:flex;flex-direction:column;padding-top:14px;border-top:2px solid var(--green-500)"><span style="font:800 34px/1.1 var(--font-display);color:var(--amber-600)">{c.s02_dinh_vi.t3}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s02_dinh_vi.t4}</span></div>
+<div style="display:flex;flex-direction:column;padding-top:14px;border-top:2px solid var(--green-500)"><span style="font:800 34px/1.1 var(--font-display);color:var(--amber-600)">{c.s02_dinh_vi.t5}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s02_dinh_vi.t6}</span></div>
+<div style="display:flex;flex-direction:column;padding-top:14px;border-top:2px solid var(--green-500)"><span style="font:800 34px/1.1 var(--font-display);color:var(--amber-600)">{c.s02_dinh_vi.t7}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s02_dinh_vi.t8}</span></div>
+<div style="display:flex;flex-direction:column;padding-top:14px;border-top:2px solid var(--green-500)"><span style="font:800 34px/1.1 var(--font-display);color:var(--amber-600)">{c.s02_dinh_vi.t9}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s02_dinh_vi.t10}</span></div>
 </div></div></section>
 
 <section style="background:var(--surface-page)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
 <div style="display:flex;flex-direction:column;gap:14px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">01 · TRUNG TÂM NGHIÊN CỨU PHÁT TRIỂN</span>
-<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Bốn phòng chuyên môn, một mục tiêu chung</h2>
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s03_trung_tam_r_d.t1}</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s03_trung_tam_r_d.t2}</h2>
 </div>
-<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">Trung tâm quy tụ đội ngũ chuyên gia về nông hóa, thổ nhưỡng và công nghệ sinh học, phối hợp chặt chẽ để chuyển hóa kết quả nghiên cứu thành sản phẩm và quy trình canh tác hiệu quả.</p>
+<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.s03_trung_tam_r_d.t3}</p>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 60px)/4),calc((1100px - 100%)*999),calc((100% - 20px)/2)),1fr));gap:20px">
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-1" shape="rect" placeholder="Phòng Thí nghiệm chất lượng" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">Phòng Thí nghiệm chất lượng</strong><span style="color:var(--text-secondary);font-size:15px;text-align:justify">Phân tích, kiểm định nguyên liệu và thành phẩm theo tiêu chuẩn VILAS 1519.</span></div></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-2" shape="rect" placeholder="Phòng Công nghệ sinh học" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">Phòng Công nghệ sinh học</strong><span style="color:var(--text-secondary);font-size:15px;text-align:justify">Nghiên cứu vi sinh vật có ích và chế phẩm sinh học cho đất và cây trồng.</span></div></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-3" shape="rect" placeholder="Phòng Sức khỏe đất & cây trồng" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">Phòng Sức khỏe đất &amp; cây trồng</strong><span style="color:var(--text-secondary);font-size:15px;text-align:justify">Đánh giá dinh dưỡng đất, theo dõi sinh trưởng và đề xuất chương trình bón phân.</span></div></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-4" shape="rect" placeholder="Phòng Công nghệ phân bón" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">Phòng Công nghệ phân bón</strong><span style="color:var(--text-secondary);font-size:15px">Phát triển công thức và công nghệ sản xuất phân bón thế hệ mới.</span></div></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-1" shape="rect" placeholder="Phòng Thí nghiệm chất lượng" image={c.s03_trung_tam_r_d.img_lab_1_1} /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">{c.s03_trung_tam_r_d.t4}</strong><span style="color:var(--text-secondary);font-size:15px;text-align:justify">{c.s03_trung_tam_r_d.t5}</span></div></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-2" shape="rect" placeholder="Phòng Công nghệ sinh học" image={c.s03_trung_tam_r_d.img_lab_2_1} /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">{c.s03_trung_tam_r_d.t6}</strong><span style="color:var(--text-secondary);font-size:15px;text-align:justify">{c.s03_trung_tam_r_d.t7}</span></div></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-3" shape="rect" placeholder="Phòng Sức khỏe đất & cây trồng" image={c.s03_trung_tam_r_d.img_lab_3_1} /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">{c.s03_trung_tam_r_d.t8}</strong><span style="color:var(--text-secondary);font-size:15px;text-align:justify">{c.s03_trung_tam_r_d.t9}</span></div></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-4" shape="rect" placeholder="Phòng Công nghệ phân bón" image={c.s03_trung_tam_r_d.img_lab_4_1} /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">{c.s03_trung_tam_r_d.t10}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_trung_tam_r_d.t11}</span></div></div>
 </div></div></section>
 
 <section style="background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
 <div style="display:flex;flex-direction:column;gap:14px;max-width:680px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">02 · LĨNH VỰC NGHIÊN CỨU</span>
-<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Nền tảng khoa học cho nông nghiệp thế hệ mới</h2>
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s04_linh_vuc_nghien_cuu.t1}</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s04_linh_vuc_nghien_cuu.t2}</h2>
 </div>
 <div data-picker style="display:flex;flex-wrap:wrap;gap:32px 48px;align-items:flex-start">
 <div role="tablist" aria-orientation="vertical" aria-label="Lĩnh vực nghiên cứu" style="flex:1 1 260px;max-width:340px;display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
-{DOMAINS.map((d, k) => <button type="button" role="tab" class="dom-tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'} style="display:flex;gap:14px;align-items:baseline;text-align:left;padding:18px 0 18px 16px;border:0;border-bottom:1px solid var(--border-default);border-left:3px solid transparent;background:none;font:600 17px var(--font-body);color:var(--text-secondary);cursor:pointer"><span style="font:600 13px var(--font-mono);color:var(--text-tertiary)">{String(k + 1).padStart(2, '0')}</span>{d.name}</button>)}
+{c.domains.map((d, k) => <button type="button" role="tab" class="dom-tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'} style="display:flex;gap:14px;align-items:baseline;text-align:left;padding:18px 0 18px 16px;border:0;border-bottom:1px solid var(--border-default);border-left:3px solid transparent;background:none;font:600 17px var(--font-body);color:var(--text-secondary);cursor:pointer"><span style="font:600 13px var(--font-mono);color:var(--text-tertiary)">{String(k + 1).padStart(2, '0')}</span>{d.name}</button>)}
 </div>
-{DOMAINS.map((d, k) => (
+{c.domains.map((d, k) => (
 <div role="tabpanel" data-pick-panel={k} hidden={k !== 0} style="flex:999 1 520px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px 40px">
-<div style="position:relative;height:380px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`dom-${k}`} shape="rounded" radius="16" placeholder={d.ph} /></div>
+<div style="position:relative;height:380px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`dom-${k}`} shape="rounded" radius="16" placeholder={d.image.alt} image={d.image} /></div>
 <div style="display:flex;flex-direction:column;gap:16px">
 <h3 style="margin:0;font:700 26px/1.3 var(--font-display)">{d.name}</h3>
 <p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{d.body}</p>
 <div style="display:flex;flex-direction:column;gap:10px;padding-top:12px;border-top:1px solid var(--border-default)">
-<span style="font:600 12px var(--font-mono);color:var(--text-tertiary);letter-spacing:.06em">HƯỚNG NGHIÊN CỨU TRỌNG TÂM</span>
-{d.focus.map((f) => <div style="display:flex;gap:10px;align-items:baseline"><span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--green-500);transform:translateY(-2px)"></span><span>{f}</span></div>)}
+<span style="font:600 12px var(--font-mono);color:var(--text-tertiary);letter-spacing:.06em">{c.domains_topics_label}</span>
+{d.topics.map((f) => <div style="display:flex;gap:10px;align-items:baseline"><span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--green-500);transform:translateY(-2px)"></span><span>{f}</span></div>)}
 </div></div></div>
 ))}
 </div></div></section>
@@ -81,61 +75,61 @@ const DOMAINS = [
 <section style="background:var(--green-800);color:#fff">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:48px">
 <div style="display:flex;flex-direction:column;gap:14px;max-width:700px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-200)">03 · TỪ NGHIÊN CỨU ĐẾN ĐỒNG RUỘNG</span>
-<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Quy trình năm bước từ phòng thí nghiệm đến đồng ruộng</h2>
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-200)">{c.s05_quy_trinh.t1}</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s05_quy_trinh.t2}</h2>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 0px)/5),calc((1000px - 100%)*999),100%),1fr));gap:0;border-top:1px solid var(--green-600)">
-<div style="padding:24px 20px 8px 0;display:flex;flex-direction:column;gap:10px"><span style="font:800 40px/1 var(--font-display);color:var(--amber-400)">01</span><strong style="font-size:18px;line-height:1.35">Khảo sát &amp; phân tích đất</strong><span style="color:var(--green-100);font-size:15px">Lấy mẫu tại vùng trồng, xác định đặc tính đất và nhu cầu dinh dưỡng.</span></div>
-<div style="padding:24px 20px 8px 0;display:flex;flex-direction:column;gap:10px"><span style="font:800 40px/1 var(--font-display);color:var(--amber-400)">02</span><strong style="font-size:18px;line-height:1.35">Nghiên cứu công thức</strong><span style="color:var(--green-100);font-size:15px">Thiết kế tỷ lệ dinh dưỡng phù hợp từng loại cây, từng giai đoạn.</span></div>
-<div style="padding:24px 20px 8px 0;display:flex;flex-direction:column;gap:10px"><span style="font:800 40px/1 var(--font-display);color:var(--amber-400)">03</span><strong style="font-size:18px;line-height:1.35">Thử nghiệm nhà lưới</strong><span style="color:var(--green-100);font-size:15px">Đánh giá hiệu quả trong điều kiện có kiểm soát.</span></div>
-<div style="padding:24px 20px 8px 0;display:flex;flex-direction:column;gap:10px"><span style="font:800 40px/1 var(--font-display);color:var(--amber-400)">04</span><strong style="font-size:18px;line-height:1.35">Trình diễn đồng ruộng</strong><span style="color:var(--green-100);font-size:15px">Kiểm chứng năng suất và chất lượng trên các mô hình thực tế.</span></div>
-<div style="padding:24px 0 8px 0;display:flex;flex-direction:column;gap:10px"><span style="font:800 40px/1 var(--font-display);color:var(--amber-400)">05</span><strong style="font-size:18px;line-height:1.35">Sản xuất &amp; kiểm định</strong><span style="color:var(--green-100);font-size:15px">Sản xuất theo ISO 9001, kiểm định chất lượng theo từng lô.</span></div>
+<div style="padding:24px 20px 8px 0;display:flex;flex-direction:column;gap:10px"><span style="font:800 40px/1 var(--font-display);color:var(--amber-400)">{c.s05_quy_trinh.t3}</span><strong style="font-size:18px;line-height:1.35">{c.s05_quy_trinh.t4}</strong><span style="color:var(--green-100);font-size:15px">{c.s05_quy_trinh.t5}</span></div>
+<div style="padding:24px 20px 8px 0;display:flex;flex-direction:column;gap:10px"><span style="font:800 40px/1 var(--font-display);color:var(--amber-400)">{c.s05_quy_trinh.t6}</span><strong style="font-size:18px;line-height:1.35">{c.s05_quy_trinh.t7}</strong><span style="color:var(--green-100);font-size:15px">{c.s05_quy_trinh.t8}</span></div>
+<div style="padding:24px 20px 8px 0;display:flex;flex-direction:column;gap:10px"><span style="font:800 40px/1 var(--font-display);color:var(--amber-400)">{c.s05_quy_trinh.t9}</span><strong style="font-size:18px;line-height:1.35">{c.s05_quy_trinh.t10}</strong><span style="color:var(--green-100);font-size:15px">{c.s05_quy_trinh.t11}</span></div>
+<div style="padding:24px 20px 8px 0;display:flex;flex-direction:column;gap:10px"><span style="font:800 40px/1 var(--font-display);color:var(--amber-400)">{c.s05_quy_trinh.t12}</span><strong style="font-size:18px;line-height:1.35">{c.s05_quy_trinh.t13}</strong><span style="color:var(--green-100);font-size:15px">{c.s05_quy_trinh.t14}</span></div>
+<div style="padding:24px 0 8px 0;display:flex;flex-direction:column;gap:10px"><span style="font:800 40px/1 var(--font-display);color:var(--amber-400)">{c.s05_quy_trinh.t15}</span><strong style="font-size:18px;line-height:1.35">{c.s05_quy_trinh.t16}</strong><span style="color:var(--green-100);font-size:15px">{c.s05_quy_trinh.t17}</span></div>
 </div></div></section>
 
 <section style="background:var(--surface-page)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px 72px;align-items:center">
-<div style="position:relative;height:460px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="vilas" shape="rounded" radius="20" placeholder="Thiết bị phân tích hiện đại trong phòng thí nghiệm" /></div>
+<div style="position:relative;height:460px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="vilas" shape="rounded" radius="20" placeholder="Thiết bị phân tích hiện đại trong phòng thí nghiệm" image={c.s06_vilas_1519.img_vilas_1} /></div>
 <div style="display:flex;flex-direction:column;gap:20px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">04 · PHÒNG THÍ NGHIỆM VILAS 1519</span>
-<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Kết quả phân tích đạt chuẩn quốc tế</h2>
-<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">Phòng thí nghiệm của Tiến Nông được công nhận theo Hệ thống công nhận phòng thí nghiệm Việt Nam (VILAS), phù hợp tiêu chuẩn ISO/IEC 17025. Kết quả phân tích có giá trị pháp lý và được thừa nhận rộng rãi.</p>
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s06_vilas_1519.t1}</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s06_vilas_1519.t2}</h2>
+<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.s06_vilas_1519.t3}</p>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">Phân tích đất</strong><span style="font-size:14px;color:var(--text-secondary)">pH, hữu cơ, đa – trung – vi lượng</span></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">Phân tích phân bón</strong><span style="font-size:14px;color:var(--text-secondary)">Hàm lượng dinh dưỡng, độ ẩm</span></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">Nguyên liệu đầu vào</strong><span style="font-size:14px;color:var(--text-secondary)">Kiểm soát trước khi sản xuất</span></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">Phân tích mô lá</strong><span style="font-size:14px;color:var(--text-secondary)">[Cần xác nhận phạm vi]</span></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">{c.s06_vilas_1519.t4}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s06_vilas_1519.t5}</span></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">{c.s06_vilas_1519.t6}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s06_vilas_1519.t7}</span></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">{c.s06_vilas_1519.t8}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s06_vilas_1519.t9}</span></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">{c.s06_vilas_1519.t10}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s06_vilas_1519.t11}</span></div>
 </div>
-<div style="display:flex;gap:12px;flex-wrap:wrap"><a href={url('lien-he', 'lien-he-form')} style="text-decoration:none;display:inline-flex"><Button as="span" >Yêu cầu phân tích đất →</Button></a></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap"><a href={url('lien-he', 'lien-he-form')} style="text-decoration:none;display:inline-flex"><Button as="span" >{c.s06_vilas_1519.t12}</Button></a></div>
 </div></div></section>
 
 <section style="background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
 <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
 <div style="display:flex;flex-direction:column;gap:14px;max-width:680px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">05 · THÀNH QUẢ NGHIÊN CỨU</span>
-<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;">Khoa học được chuyển hóa thành sản phẩm và giải pháp</h2>
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s07_thanh_qua.t1}</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;">{c.s07_thanh_qua.t2}</h2>
 </div>
-<a href={url('san-pham')} style="font-weight:600">Xem sản phẩm →</a>
+<a href={url('san-pham')} style="font-weight:600">{c.s07_thanh_qua.t3}</a>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/3),calc((948px - 100%)*999),100%),1fr));gap:24px">
-<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="res-1" shape="rounded" radius="16" placeholder="Bao bì NPK bổ sung Silic" /></div><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">CÔNG NGHỆ PHÂN BÓN</span><strong style="font-size:19px;line-height:1.35">NPK bổ sung Silic hữu hiệu (SiO₂hh)</strong><span style="color:var(--text-secondary);font-size:15px">Giúp cây cứng cáp, tăng khả năng chống đổ và chống chịu sâu bệnh.</span></div>
-<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="res-2" shape="rounded" radius="16" placeholder="Mô hình NPK – hữu cơ – vi sinh" /></div><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">GIẢI PHÁP TÍCH HỢP</span><strong style="font-size:19px;line-height:1.35">Kết hợp NPK – hữu cơ – vi sinh</strong><span style="color:var(--text-secondary);font-size:15px">Nâng cao hiệu quả sử dụng phân bón đồng thời cải thiện sức khỏe đất.</span></div>
-<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="res-3" shape="rounded" radius="16" placeholder="Phân bón hữu cơ, phân bón lỏng" /></div><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">DINH DƯỠNG THẾ HỆ MỚI</span><strong style="font-size:19px;line-height:1.35">Phân bón hữu cơ, phân bón lỏng và các dạng dinh dưỡng mới</strong><span style="color:var(--text-secondary);font-size:15px">Đáp ứng nhu cầu canh tác bền vững và nông nghiệp công nghệ cao.</span></div>
+<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="res-1" shape="rounded" radius="16" placeholder="Bao bì NPK bổ sung Silic" image={c.s07_thanh_qua.img_res_1_1} /></div><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{c.s07_thanh_qua.t4}</span><strong style="font-size:19px;line-height:1.35">{c.s07_thanh_qua.t5}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s07_thanh_qua.t6}</span></div>
+<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="res-2" shape="rounded" radius="16" placeholder="Mô hình NPK – hữu cơ – vi sinh" image={c.s07_thanh_qua.img_res_2_1} /></div><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{c.s07_thanh_qua.t7}</span><strong style="font-size:19px;line-height:1.35">{c.s07_thanh_qua.t8}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s07_thanh_qua.t9}</span></div>
+<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="res-3" shape="rounded" radius="16" placeholder="Phân bón hữu cơ, phân bón lỏng" image={c.s07_thanh_qua.img_res_3_1} /></div><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{c.s07_thanh_qua.t10}</span><strong style="font-size:19px;line-height:1.35">{c.s07_thanh_qua.t11}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s07_thanh_qua.t12}</span></div>
 </div></div></section>
 
 <section style="background:var(--surface-page);border-top:1px solid var(--border-default)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px 64px;align-items:center">
 <div style="display:flex;flex-direction:column;gap:14px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">06 · HỢP TÁC NGHIÊN CỨU</span>
-<h2 style="margin:0;font:800 clamp(28px,3vw,40px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Kết nối cùng viện nghiên cứu và trường đại học</h2>
-<p style="margin:0;color:var(--text-secondary);text-align:justify;text-wrap:pretty">Tiến Nông chào đón các nhà khoa học, viện nghiên cứu và trường đại học cùng hợp tác nghiên cứu, thử nghiệm và đào tạo.</p>
-<div><a href={url('lien-he', 'lien-he-form')} style="text-decoration:none;display:inline-flex"><Button as="span" variant="secondary">Đề xuất hợp tác</Button></a></div>
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s08_doi_tac_nghien_cuu.t1}</span>
+<h2 style="margin:0;font:800 clamp(28px,3vw,40px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s08_doi_tac_nghien_cuu.t2}</h2>
+<p style="margin:0;color:var(--text-secondary);text-align:justify;text-wrap:pretty">{c.s08_doi_tac_nghien_cuu.t3}</p>
+<div><a href={url('lien-he', 'lien-he-form')} style="text-decoration:none;display:inline-flex"><Button as="span" variant="secondary">{c.s08_doi_tac_nghien_cuu.t4}</Button></a></div>
 </div>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-1" shape="rounded" radius="8" fit="contain" placeholder="Logo" /></div><span style="font-weight:600;font-size:15px">[Viện / trường đối tác]</span></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-2" shape="rounded" radius="8" fit="contain" placeholder="Logo" /></div><span style="font-weight:600;font-size:15px">[Viện / trường đối tác]</span></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-3" shape="rounded" radius="8" fit="contain" placeholder="Logo" /></div><span style="font-weight:600;font-size:15px">[Viện / trường đối tác]</span></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-4" shape="rounded" radius="8" fit="contain" placeholder="Logo" /></div><span style="font-weight:600;font-size:15px">[Viện / trường đối tác]</span></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-1" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_doi_tac_nghien_cuu.img_part_1_1} /></div><span style="font-weight:600;font-size:15px">{c.s08_doi_tac_nghien_cuu.t5}</span></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-2" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_doi_tac_nghien_cuu.img_part_2_1} /></div><span style="font-weight:600;font-size:15px">{c.s08_doi_tac_nghien_cuu.t6}</span></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-3" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_doi_tac_nghien_cuu.img_part_3_1} /></div><span style="font-weight:600;font-size:15px">{c.s08_doi_tac_nghien_cuu.t7}</span></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-4" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_doi_tac_nghien_cuu.img_part_4_1} /></div><span style="font-weight:600;font-size:15px">{c.s08_doi_tac_nghien_cuu.t8}</span></div>
 </div></div></section>
 </Layout>
 

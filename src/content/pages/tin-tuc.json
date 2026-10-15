@@ -1,0 +1,62 @@
+{
+  "seo": {
+    "title": "Tin tức",
+    "description": ""
+  },
+  "s01_tin_noi_bat": {
+    "t1": "Trang chủ",
+    "t2": "/ Tin tức",
+    "t3": "Tin tức"
+  },
+  "s02_danh_sach": {
+    "f1": "Tìm bài viết",
+    "f2": "Tìm bài viết…",
+    "t1": "Chưa có bài viết phù hợp.",
+    "t5": "Sau →"
+  },
+  "s03_bao_chi": {
+    "t1": "Báo chí nói về Tiến Nông",
+    "t2": "Liên hệ truyền thông →",
+    "link1": "",
+    "img_press_1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Logo báo"
+    },
+    "t3": "[Tiêu đề bài báo]",
+    "t4": "[Tên báo] · [ngày] · Đọc bài gốc ↗",
+    "link2": "",
+    "img_press_2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Logo báo"
+    },
+    "t5": "[Tiêu đề bài báo]",
+    "t6": "[Tên báo] · [ngày] · Đọc bài gốc ↗",
+    "link3": "",
+    "img_press_3_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Logo báo"
+    },
+    "t7": "[Tiêu đề bài báo]",
+    "t8": "[Tên báo] · [ngày] · Đọc bài gốc ↗"
+  },
+  "article": {
+    "breadcrumb_home": "Trang chủ",
+    "breadcrumb_news": "Tin tức",
+    "minutes_read": "phút đọc",
+    "share_facebook": "Facebook",
+    "share_zalo": "Zalo",
+    "copy_link": "Sao chép liên kết",
+    "copied": "Đã sao chép",
+    "album_more": "Xem toàn bộ album →",
+    "tags_label": "Chủ đề:",
+    "related_title": "Bài viết liên quan",
+    "related_all": "Tất cả tin tức →"
+  },
+  "all_categories": "Tất cả"
+}

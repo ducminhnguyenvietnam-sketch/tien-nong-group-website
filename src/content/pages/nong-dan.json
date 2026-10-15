@@ -1,0 +1,133 @@
+{
+  "seo": {
+    "title": "Nông dân Tiến Nông",
+    "description": ""
+  },
+  "s01_hero": {
+    "img_farmer_hero_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Nông dân và kỹ sư Tiến Nông trên cánh đồng"
+    },
+    "t1": "Trang chủ / Nông dân Tiến Nông",
+    "t2": "CỘNG ĐỒNG NÔNG DÂN TIẾN NÔNG",
+    "t3": "Đồng hành cùng nhà nông trên mọi miền đất nước",
+    "t4": "Kết nối hơn 200.000 hộ nông dân để chia sẻ kiến thức, kinh nghiệm canh tác và những mô hình hiệu quả.",
+    "t5": "Tham gia cộng đồng →",
+    "link1": "",
+    "t6": "Hotline kỹ sư: [số]"
+  },
+  "s02_dang_ky": {
+    "t1": "THAM GIA CỘNG ĐỒNG",
+    "t2": "Trở thành thành viên Nông dân Tiến Nông",
+    "t3": "Dành cho nông dân, chủ trang trại, hợp tác xã và tổ hợp tác muốn được hỗ trợ kỹ thuật và kết nối với cộng đồng canh tác hiệu quả.",
+    "t4": "Cập nhật kiến thức và mô hình canh tác hiệu quả",
+    "t5": "Được kỹ sư nông học tư vấn miễn phí",
+    "t6": "Ưu tiên tham gia hội thảo đầu bờ, chương trình thực tế",
+    "t7": "Kết nối với cộng đồng nhà nông trên toàn quốc",
+    "t8": "ĐÃ GỬI ĐĂNG KÝ",
+    "t9": "Cảm ơn bà con đã đăng ký!",
+    "t10": "Kỹ sư Tiến Nông phụ trách khu vực sẽ liên hệ qua số điện thoại đã đăng ký.",
+    "t11": "Đăng ký thêm thành viên",
+    "f1": "Họ và tên *",
+    "f2": "Nguyễn Văn A",
+    "f3": "Số điện thoại / Zalo *",
+    "f4": "09xx xxx xxx",
+    "f5": "Tỉnh / thành phố *",
+    "f6": "VD: Thanh Hóa",
+    "f7": "Cây trồng chính *",
+    "f8": "Tôi đồng ý để Tiến Nông xử lý dữ liệu cá nhân theo Chính sách bảo mật.",
+    "t12": "Gửi đăng ký",
+    "t13": "Hoặc nhắn Zalo OA Tiến Nông để đăng ký nhanh."
+  },
+  "s03_cau_chuyen_nha_nong": {
+    "t1": "CÂU CHUYỆN NHÀ NÔNG",
+    "t2": "Những câu chuyện thật, những mùa vàng thật",
+    "t3": "Hành trình thay đổi trên chính đồng ruộng của những người nông dân đồng hành cùng Tiến Nông.",
+    "img_story_1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chân dung nông dân trên ruộng"
+    },
+    "t4": "LÚA · [XÃ, TỈNH]",
+    "t5": "“[Trích lời nông dân về sự thay đổi sau khi áp dụng giải pháp Tiến Nông.]”",
+    "t6": "+[x]%",
+    "t7": "năng suất",
+    "t8": "−[x]%",
+    "t9": "chi phí phân bón",
+    "t10": "[Họ tên] · [x] ha lúa",
+    "img_story_2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chân dung nông dân vườn cà phê"
+    },
+    "t11": "CÀ PHÊ · [XÃ, TỈNH]",
+    "t12": "“[Trích lời nông dân về sự thay đổi sau khi áp dụng giải pháp Tiến Nông.]”",
+    "t13": "+[x]%",
+    "t14": "năng suất",
+    "t15": "[x] năm",
+    "t16": "đồng hành",
+    "t17": "[Họ tên] · [x] ha cà phê",
+    "t18": "Xem thêm câu chuyện →"
+  },
+  "s04_hoi_thao_dau_bo": {
+    "t1": "LỊCH HỘI THẢO ĐẦU BỜ",
+    "t2": "Kỹ sư Tiến Nông đồng hành tại địa phương",
+    "t3": "Lịch được cập nhật hằng tháng. Liên hệ đại lý gần nhất để đăng ký tham dự.",
+    "t4": "[dd]",
+    "t5": "Th. [mm]",
+    "t6": "[Chủ đề hội thảo]",
+    "t7": "[Xã, huyện, tỉnh] · [Cây trồng]",
+    "t8": "Đăng ký",
+    "t9": "[dd]",
+    "t10": "Th. [mm]",
+    "t11": "[Chủ đề hội thảo]",
+    "t12": "[Xã, huyện, tỉnh] · [Cây trồng]",
+    "t13": "Đăng ký",
+    "t14": "[dd]",
+    "t15": "Th. [mm]",
+    "t16": "[Chủ đề hội thảo]",
+    "t17": "[Xã, huyện, tỉnh] · [Cây trồng]",
+    "t18": "Đăng ký"
+  },
+  "s05_hoi_dap": {
+    "t1": "NHÀ NÔNG HỎI · TIẾN NÔNG TRẢ LỜI",
+    "t2": "Giải đáp những thắc mắc thường gặp",
+    "t3": "Chưa tìm thấy câu trả lời? Gọi hotline kỹ sư hoặc gửi câu hỏi qua Zalo OA Tiến Nông."
+  },
+  "faq": [
+    {
+      "q": "Nên bón phân Tiến Nông vào thời điểm nào là tốt nhất?",
+      "a": "Mỗi cây trồng có các giai đoạn bón khác nhau (lót, thúc, nuôi quả). Hướng dẫn chi tiết được in trên bao bì và trang thông tin từng sản phẩm. Kỹ sư Tiến Nông có thể tư vấn lịch bón theo giống và mùa vụ tại địa phương."
+    },
+    {
+      "q": "Làm thế nào để cải tạo đất bạc màu, kém dinh dưỡng?",
+      "a": "Nên phân tích đất để xác định nguyên nhân, sau đó kết hợp điều hòa pH, bổ sung phân hữu cơ – vi sinh và bón NPK cân đối theo nhu cầu cây trồng."
+    },
+    {
+      "q": "Có thể kết hợp phân Tiến Nông với phân hữu cơ không?",
+      "a": "Có. Kết hợp phân hữu cơ giúp cải thiện cấu trúc đất và tăng hiệu quả hấp thu dinh dưỡng của phân NPK."
+    },
+    {
+      "q": "Tiến Nông có hỗ trợ tư vấn kỹ thuật tại địa phương không?",
+      "a": "Có. Đội ngũ kỹ sư nông học của Tiến Nông thường xuyên tổ chức hội thảo đầu bờ và tư vấn trực tiếp. Đăng ký thành viên hoặc gọi hotline để được hỗ trợ."
+    },
+    {
+      "q": "Làm sao để phân biệt sản phẩm Tiến Nông chính hãng?",
+      "a": "[Bổ sung: tem chống giả, mã QR truy xuất, đặc điểm nhận diện bao bì.]"
+    }
+  ],
+  "form_crops": [
+    "Lúa",
+    "Ngô",
+    "Rau màu",
+    "Cây ăn quả",
+    "Cà phê",
+    "Chè",
+    "Mía",
+    "Khác"
+  ]
+}

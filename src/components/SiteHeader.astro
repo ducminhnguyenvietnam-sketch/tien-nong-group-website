@@ -1,16 +1,20 @@
 ---
 import Button from './Button.astro';
-import { NAV, asset, url } from '../lib/routes';
+import site from '../content/site.json';
+import { NAV, asset, link, url } from '../lib/routes';
 
 interface Props { active?: string }
 const { active = '' } = Astro.props;
-const items = NAV.map(([label, slug]) => ({ label, href: url(slug), active: label === active }));
+const h = site.header;
+const navLabels: Record<string, string> = h.nav;
+// `active` names the nav item by its built-in label; the shown label comes from the CMS.
+const items = NAV.map(([key, slug]) => ({ label: navLabels[slug.replace(/-/g, '_')] || key, href: url(slug), active: key === active }));
 ---
 <header style="position:sticky;top:0;z-index:30;display:block">
 <div style="font-family:var(--font-body);background:var(--surface-card);border-bottom:1px solid var(--border-default)">
 <div style="background:var(--green-800);color:var(--green-100);font-size:13px">
 <div style="max-width:1280px;margin:0 auto;padding:6px clamp(20px,4vw,56px);display:flex;justify-content:flex-end;gap:24px;flex-wrap:wrap">
-<a href={url('tuyen-dung')} style="color:var(--green-100);text-decoration:none">Tuyển dụng</a><a href={url('lien-he', 'dai-ly')} style="color:var(--green-100);text-decoration:none">Tìm đại lý</a><a href={url('lien-he')} style="color:var(--green-100);text-decoration:none">Liên hệ</a><span style="display:flex;gap:6px"><strong style="color:#fff">VI</strong><span>/</span><a href="#" style="color:var(--green-100);text-decoration:none" title="Bản tiếng Anh sẽ có sau">EN</a></span>
+<a href={url('tuyen-dung')} style="color:var(--green-100);text-decoration:none">{h.top_jobs}</a><a href={url('lien-he', 'dai-ly')} style="color:var(--green-100);text-decoration:none">{h.top_dealers}</a><a href={url('lien-he')} style="color:var(--green-100);text-decoration:none">{h.top_contact}</a><span style="display:flex;gap:6px"><strong style="color:#fff">VI</strong><span>/</span><a href={link(h.english_url)} style="color:var(--green-100);text-decoration:none">EN</a></span>
 </div></div>
 <div style="max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:20px">
 <a href={url('trang-chu')} style="flex:none;display:block"><img src={asset("assets/logo-full.png")} alt="Tiến Nông" style="height:52px;width:auto;display:block" /></a>
@@ -20,11 +24,11 @@ const items = NAV.map(([label, slug]) => ({ label, href: url(slug), active: labe
   ? <a href={item.href} aria-current="page" style="color:var(--green-700);text-decoration:none;padding:8px 0;border-bottom:2px solid var(--green-500)">{item.label}</a>
   : <a href={item.href} style="color:var(--text-primary);text-decoration:none;padding:8px 0;border-bottom:2px solid transparent">{item.label}</a>)}
 </nav>
-<a href={url('lien-he', 'dai-ly')} style="flex:none;white-space:nowrap;text-decoration:none"><Button as="span">Tìm đại lý</Button></a>
+<a href={url('lien-he', 'dai-ly')} style="flex:none;white-space:nowrap;text-decoration:none"><Button as="span">{h.cta}</Button></a>
 </div>
 <div class="hdr-narrow" style="align-items:center;gap:12px">
-<a href={url('lien-he', 'dai-ly')} style="flex:none;white-space:nowrap;text-decoration:none"><Button as="span">Tìm đại lý</Button></a>
-<button type="button" data-menu-toggle aria-expanded="false" aria-controls="hdr-panel" aria-label="Menu" style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:var(--radius-md);border:1px solid var(--border-strong);background:var(--surface-card);font:600 15px var(--font-body);color:var(--text-primary);cursor:pointer;white-space:nowrap">☰ Menu</button>
+<a href={url('lien-he', 'dai-ly')} style="flex:none;white-space:nowrap;text-decoration:none"><Button as="span">{h.cta}</Button></a>
+<button type="button" data-menu-toggle aria-expanded="false" aria-controls="hdr-panel" aria-label="Menu" data-open={h.menu_close} data-closed={h.menu_open} style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:var(--radius-md);border:1px solid var(--border-strong);background:var(--surface-card);font:600 15px var(--font-body);color:var(--text-primary);cursor:pointer;white-space:nowrap">{h.menu_open}</button>
 </div>
 </div>
 <nav id="hdr-panel" class="hdr-panel" aria-label="Chính" hidden style="border-top:1px solid var(--border-default);background:var(--surface-card)">
@@ -43,7 +47,7 @@ const items = NAV.map(([label, slug]) => ({ label, href: url(slug), active: labe
       const open = panel.hidden;
       panel.hidden = !open;
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.textContent = open ? '✕ Đóng' : '☰ Menu';
+      toggle.textContent = (open ? toggle.dataset.open : toggle.dataset.closed) ?? '';
     });
   }
 </script>

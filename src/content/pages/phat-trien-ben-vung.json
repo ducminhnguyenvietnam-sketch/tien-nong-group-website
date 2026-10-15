@@ -1,0 +1,179 @@
+{
+  "seo": {
+    "title": "Phát triển bền vững",
+    "description": ""
+  },
+  "s01_hero": {
+    "t1": "Trang chủ",
+    "t2": "/ Phát triển bền vững",
+    "t3": "PHÁT TRIỂN BỀN VỮNG",
+    "t4": "Vì nền nông nghiệp bền vững và cộng đồng thịnh vượng",
+    "t5": "Phát triển bền vững tại Tiến Nông bắt nguồn từ sứ mệnh “Phụng sự để nông dân giàu có, Việt Nam thịnh vượng”: sản xuất có trách nhiệm với môi trường, đồng hành cùng nhà nông và sẻ chia với cộng đồng.",
+    "img_esg_hero_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh"
+    },
+    "t6": "[x] tỷ đồng",
+    "t7": "đóng góp cho cộng đồng (lũy kế)",
+    "t8": "[x]",
+    "t9": "lượt nông dân được tập huấn",
+    "t10": "[x]",
+    "t11": "suất học bổng đã trao",
+    "t12": "ISO 14001",
+    "t13": "hệ thống quản lý môi trường",
+    "t14": "Sản xuất xanh",
+    "t15": "Đồng hành cùng nhà nông",
+    "t16": "Vì cộng đồng",
+    "t17": "Người lao động",
+    "t18": "Lộ trình"
+  },
+  "s02_san_xuat_xanh": {
+    "img_esg_plant_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Flycam khuôn viên nhà máy với cây xanh"
+    },
+    "t1": "01 · SẢN XUẤT XANH",
+    "t2": "Sản xuất quy mô lớn, hài hòa cùng môi trường",
+    "t3": "Các nhà máy của Tiến Nông vận hành theo hệ thống quản lý môi trường ISO 14001, với khuôn viên xanh và quy trình kiểm soát phát thải trong toàn bộ dây chuyền.",
+    "t4": "[x]%",
+    "t5": "diện tích cây xanh",
+    "t6": "[Hệ thống]",
+    "t7": "xử lý bụi, khí thải",
+    "t8": "[Hệ thống]",
+    "t9": "xử lý nước thải",
+    "t10": "[Nếu có]",
+    "t11": "năng lượng mặt trời"
+  },
+  "s03_dong_hanh_cung_nha_nong": {
+    "t1": "02 · ĐỒNG HÀNH CÙNG NHÀ NÔNG",
+    "t2": "Nâng cao nhận thức về canh tác bền vững",
+    "t3": "Tiến Nông phối hợp với chính quyền, hội nông dân và các cơ quan khuyến nông tổ chức chương trình tập huấn, giúp nhà nông sử dụng phân bón hiệu quả và bảo vệ đất canh tác lâu dài.",
+    "t4": "Bón phân cân đối, đúng cách:",
+    "t5": "giảm lãng phí và hạn chế tác động đến môi trường",
+    "t6": "Bảo vệ sức khỏe đất:",
+    "t7": "tăng cường hữu cơ, phục hồi đất bạc màu",
+    "t8": "Hội thảo đầu bờ:",
+    "t9": "chia sẻ kinh nghiệm từ các mô hình hiệu quả",
+    "img_esg_farm_1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Lớp tập huấn kỹ thuật cho nông dân"
+    },
+    "img_esg_farm_2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Hội thảo đầu bờ"
+    },
+    "img_esg_farm_3_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Kỹ sư hướng dẫn tại ruộng"
+    }
+  },
+  "s04_vi_cong_dong": {
+    "t1": "03 · VÌ CỘNG ĐỒNG",
+    "t2": "Sẻ chia lợi ích, vun đắp cộng đồng",
+    "t3": "Những chương trình được duy trì qua nhiều năm, tập trung vào giáo dục, biển đảo và hỗ trợ người yếu thế."
+  },
+  "s05_nguoi_lao_dong": {
+    "t1": "04 · NGƯỜI LAO ĐỘNG",
+    "t2": "Gắn bó bền lâu, cùng nhau phát triển",
+    "t3": "Môi trường làm việc an toàn, đãi ngộ xứng đáng và sự ghi nhận dành cho mỗi chặng đường cống hiến.",
+    "t4": "Con người Tiến Nông →"
+  },
+  "s06_lo_trinh": {
+    "t1": "05 · LỘ TRÌNH",
+    "t2": "Hướng tới báo cáo phát triển bền vững đầu tiên",
+    "t3": "Chúng tôi đang chuẩn hóa việc đo lường và công bố các chỉ số môi trường, xã hội và quản trị, hướng tới minh bạch theo thông lệ quốc tế.",
+    "t4": "Hiện tại",
+    "t5": "Thực hành",
+    "t6": "ISO 14001, chương trình cộng đồng và tập huấn nhà nông được duy trì thường xuyên",
+    "t7": "[Năm]",
+    "t8": "Đo lường",
+    "t9": "Xây dựng bộ chỉ số và hệ thống thu thập dữ liệu",
+    "t10": "[Năm]",
+    "t11": "Công bố",
+    "t12": "Phát hành báo cáo phát triển bền vững đầu tiên"
+  },
+  "programs": [
+    {
+      "tag": "KHUYẾN HỌC",
+      "year": "2026",
+      "title": "Ủng hộ 1,55 tỷ đồng cho công tác khuyến học tỉnh Thanh Hóa",
+      "body": "Đồng hành cùng Hội Khuyến học tỉnh chăm lo cho học sinh có hoàn cảnh khó khăn và học sinh giỏi.",
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Lễ trao biển ủng hộ khuyến học"
+      }
+    },
+    {
+      "tag": "BIỂN ĐẢO",
+      "year": "[năm]",
+      "title": "Đồng hành cùng chương trình “Triệu mầm xanh” vì Trường Sa xanh",
+      "body": "Góp phần phủ xanh các đảo tiền tiêu bằng giải pháp dinh dưỡng cho cây trồng trên đất cát, đất nhiễm mặn.",
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Cây xanh trên đảo Trường Sa"
+      }
+    },
+    {
+      "tag": "BIỂN ĐẢO",
+      "year": "[năm]",
+      "title": "Cuộc thi “Em viết thư gửi Chiến sĩ Trường Sa”",
+      "body": "Khơi dậy tình yêu biển đảo trong thế hệ trẻ thông qua những lá thư gửi các chiến sĩ.",
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Học sinh viết thư"
+      }
+    },
+    {
+      "tag": "GIÁO DỤC",
+      "year": "[năm]",
+      "title": "Đón học sinh, sinh viên tham quan trải nghiệm thực tế",
+      "body": "Mở cửa nhà máy và phòng thí nghiệm để thế hệ trẻ hiểu hơn về nông nghiệp khoa học.",
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Sinh viên tham quan nhà máy"
+      }
+    },
+    {
+      "tag": "NGƯỜI YẾU THẾ",
+      "year": "[năm]",
+      "title": "[Tên chương trình hỗ trợ người yếu thế]",
+      "body": "[Mô tả ngắn: đối tượng, địa bàn, giá trị hỗ trợ.]",
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Hoạt động hỗ trợ người yếu thế"
+      }
+    },
+    {
+      "tag": "NGƯỜI YẾU THẾ",
+      "year": "[năm]",
+      "title": "[Tên chương trình cứu trợ thiên tai]",
+      "body": "[Mô tả ngắn: đối tượng, địa bàn, giá trị hỗ trợ.]",
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Cứu trợ đồng bào vùng lũ"
+      }
+    }
+  ]
+}

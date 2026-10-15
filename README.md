@@ -18,25 +18,35 @@ Pushing to `main` deploys the site to GitHub Pages (`.github/workflows/deploy.ym
 
 | Path | What |
 | --- | --- |
-| `src/pages/` | One file per page (`index.astro` = Trang chủ, `ve-tien-nong.astro`, …) |
+| `src/pages/` | One file per page (`index.astro` = Trang chủ, …); `tin-tuc/[slug].astro` renders each article |
 | `src/layouts/Layout.astro` | `<head>`, fonts, sticky header, footer, shared scripts |
 | `src/components/` | `SiteHeader`, `SiteFooter`, `ImageSlot`, and the design-system `Button`, `Input`, `Select`, `Checkbox`, `Tabs` |
 | `src/styles/` | Design tokens and base copied from the design system, plus `global.css` |
 | `src/scripts/` | Small vanilla scripts: `picker` (timeline/tabs), `chipfilter`, `accordion`, `forms`, `nowrap` |
-| `src/lib/routes.ts` | Page slugs, main navigation and the `url()` helper |
+| `src/lib/` | `routes.ts` (slugs, nav, `url()`, `asset()`, `link()`), `news.ts` (article helpers) |
 
-## Photos
+## Editing content (Pages CMS)
 
-Every photo position is an `<ImageSlot id="…">` that shows a labelled placeholder
-describing the photo needed. To fill one, put a file named after the slot id in
-`public/images/` — e.g. `public/images/hero-a.jpg` (`.webp`, `.avif`, `.jpg`, `.jpeg`
-or `.png`) — and rebuild. The id is printed under each placeholder.
+All text, photos, links and lists are edited in [Pages CMS](https://app.pagescms.org)
+(configured by `.pages.yml`); each save commits to `main` and redeploys. Staff guide (Vietnamese):
+[`HUONG-DAN-QUAN-TRI.md`](HUONG-DAN-QUAN-TRI.md).
+
+| Content | File |
+| --- | --- |
+| Page text, photos, links and lists, per section | `src/content/pages/<page>.json` |
+| News articles (one per file; pages at `/tin-tuc/<file>/`) | `src/content/news/*.md` |
+| Company info, social links, menu and footer labels | `src/content/site.json` |
+| Uploaded photos and documents | `public/uploads/` |
+
+Pages read their text as `{c.<section>.<key>}`. A photo is
+`{ src, focus, zoom, alt }` and is rendered by `ImageSlot`; an empty `src` shows the
+design's labelled placeholder. If you change a page's structure, update both its JSON
+file and the matching entry in `.pages.yml`.
 
 ## Not wired up yet
 
 - **Forms** (Nông dân, Liên hệ, Giải pháp cho dự án) validate and show the design's
   "sent" panel but post nowhere: add the endpoint in `src/scripts/forms.ts`.
-- **Placeholder links (`href="#"`)**: social accounts, PDFs (catalogue, hồ sơ năng lực,
-  SDS), press articles, privacy policy / terms, job detail pages, the EN switch.
-- **Content in [ngoặc vuông]** and sample data (dealers, jobs, articles) still need real values,
-  as listed in the design chat.
+- **Empty links** (they render as `#`): social accounts, PDFs, press articles, privacy policy /
+  terms, job detail pages, the EN switch — fill them in the CMS.
+- **Content in [ngoặc vuông]** and sample data (dealers, jobs, article bodies) still need real values.

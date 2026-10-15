@@ -1,0 +1,87 @@
+---
+import c from '../../content/pages/tin-tuc.json';
+import Layout from '../../layouts/Layout.astro';
+import ImageSlot from '../../components/ImageSlot.astro';
+import Tabs from '../../components/Tabs.astro';
+import { link, url } from '../../lib/routes';
+import { CATEGORIES, formatDate, getNews, newsUrl } from '../../lib/news';
+
+const news = await getNews();
+const [feat, ...rest] = news;
+const side = rest.slice(0, 3);
+const catItems = [{ value: 'all', label: c.all_categories }, ...Object.entries(CATEGORIES).map(([value, label]) => ({ value, label }))];
+---
+<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Tin tức">
+<section style="background:var(--surface-card)">
+<div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(48px,6vw,72px);display:flex;flex-direction:column;gap:28px">
+<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_tin_noi_bat.t1}</a> {c.s01_tin_noi_bat.t2}</span>
+<h1 style="margin:0;font:800 clamp(34px,4.4vw,56px)/1.1 var(--font-display);letter-spacing:-.015em;text-wrap:balance">{c.s01_tin_noi_bat.t3}</h1>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:32px 48px">
+{feat && <a href={newsUrl(feat)} style="display:flex;flex-direction:column;gap:16px;color:var(--text-primary)"><div style="position:relative;height:clamp(260px,30vw,400px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${feat.id}`} shape="rounded" radius="16" placeholder={feat.data.cover.alt || "Ảnh bài nổi bật"} image={feat.data.cover} /></div><span style="font-size:14px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{CATEGORIES[feat.data.category]}</strong> · {formatDate(feat.data.date)}</span><strong style="font:800 clamp(22px,2.4vw,30px)/1.3 var(--font-display);text-wrap:balance">{feat.data.title}</strong><span style="color:var(--text-secondary);text-align:justify">{feat.data.summary}</span></a>}
+<div style="display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
+{side.map((n) => <a href={newsUrl(n)} style="display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--border-default);color:var(--text-primary)"><div style="position:relative;height:96px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${n.id}`} shape="rounded" radius="10" placeholder="Ảnh" image={n.data.cover} /></div><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:var(--green-600);font-weight:600">{CATEGORIES[n.data.category]}</span><strong style="line-height:1.4">{n.data.title}</strong></div></a>)}
+</div></div></div></section>
+
+<section style="background:var(--surface-page)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(48px,6vw,72px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap">
+<div style="overflow-x:auto;max-width:100%"><Tabs id="news-tabs" label="Chuyên mục" items={catItems} value="all" /></div>
+<label style="display:flex;flex:0 1 280px;min-width:200px"><input id="news-q" type="search" aria-label={c.s02_danh_sach.f1} placeholder={c.s02_danh_sach.f2} style="width:100%;padding:10px 14px;border-radius:var(--radius-md);border:1px solid var(--border-default);font:16px var(--font-body);background:var(--surface-card);color:var(--text-primary);outline-color:var(--green-500)" /></label>
+</div>
+<div id="news-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:32px 24px">
+{news.map((n) => (
+<a href={newsUrl(n)} data-cat={n.data.category} data-title={n.data.title.toLowerCase()} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:210px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${n.id}`} shape="rounded" radius="12" placeholder="Ảnh bài viết" image={n.data.cover} /></div><span style="font-size:13px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{CATEGORIES[n.data.category]}</strong> · {formatDate(n.data.date)}</span><strong style="font-size:18px;line-height:1.4">{n.data.title}</strong></a>
+))}
+</div>
+<div id="news-empty" hidden style="padding:40px;text-align:center;border:1px dashed var(--border-strong);border-radius:var(--radius-lg);color:var(--text-secondary)">{c.s02_danh_sach.t1}</div>
+<div id="news-pages" style="display:flex;justify-content:center;gap:8px" data-next={c.s02_danh_sach.t5}></div>
+</div></section>
+
+<section style="background:var(--surface-card);border-top:1px solid var(--border-default)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap"><h2 style="margin:0;font:800 clamp(26px,2.8vw,36px)/1.2 var(--font-display)">{c.s03_bao_chi.t1}</h2><a href={url('lien-he', 'lien-he-form')} style="font-weight:600">{c.s03_bao_chi.t2}</a></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 32px)/3),calc((872px - 100%)*999),100%),1fr));gap:16px">
+<a href={link(c.s03_bao_chi.link1)} style="display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid var(--border-default);border-radius:var(--radius-lg);color:var(--text-primary)"><div style="position:relative;height:36px;width:140px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="press-1" shape="rounded" radius="6" fit="contain" placeholder="Logo báo" image={c.s03_bao_chi.img_press_1_1} /></div><strong style="line-height:1.4">{c.s03_bao_chi.t3}</strong><span style="font-size:13px;color:var(--text-tertiary)">{c.s03_bao_chi.t4}</span></a>
+<a href={link(c.s03_bao_chi.link2)} style="display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid var(--border-default);border-radius:var(--radius-lg);color:var(--text-primary)"><div style="position:relative;height:36px;width:140px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="press-2" shape="rounded" radius="6" fit="contain" placeholder="Logo báo" image={c.s03_bao_chi.img_press_2_1} /></div><strong style="line-height:1.4">{c.s03_bao_chi.t5}</strong><span style="font-size:13px;color:var(--text-tertiary)">{c.s03_bao_chi.t6}</span></a>
+<a href={link(c.s03_bao_chi.link3)} style="display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid var(--border-default);border-radius:var(--radius-lg);color:var(--text-primary)"><div style="position:relative;height:36px;width:140px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="press-3" shape="rounded" radius="6" fit="contain" placeholder="Logo báo" image={c.s03_bao_chi.img_press_3_1} /></div><strong style="line-height:1.4">{c.s03_bao_chi.t7}</strong><span style="font-size:13px;color:var(--text-tertiary)">{c.s03_bao_chi.t8}</span></a>
+</div></div></section>
+</Layout>
+
+<script>
+  const PER_PAGE = 9;
+  const q = document.getElementById('news-q') as HTMLInputElement;
+  const pager = document.getElementById('news-pages')!;
+  const cards = [...document.querySelectorAll<HTMLElement>('#news-grid [data-cat]')];
+  let cat = 'all';
+  let page = 1;
+  const btnStyle = 'width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-md);border:1px solid var(--border-default);color:var(--text-primary);background:var(--surface-card);font:inherit;cursor:pointer';
+  const curStyle = 'width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-md);background:var(--green-500);color:#fff;font-weight:700';
+  function render() {
+    const qq = q.value.trim().toLowerCase();
+    const match = cards.filter((el) => (cat === 'all' || el.dataset.cat === cat) && (!qq || el.dataset.title!.includes(qq)));
+    const pages = Math.max(1, Math.ceil(match.length / PER_PAGE));
+    page = Math.min(page, pages);
+    cards.forEach((el) => { el.hidden = true; });
+    match.slice((page - 1) * PER_PAGE, page * PER_PAGE).forEach((el) => { el.hidden = false; });
+    document.getElementById('news-empty')!.hidden = match.length > 0;
+    pager.replaceChildren();
+    if (pages < 2) return;
+    for (let i = 1; i <= pages; i++) {
+      const b = document.createElement(i === page ? 'span' : 'button');
+      b.textContent = String(i);
+      b.setAttribute('style', i === page ? curStyle : btnStyle);
+      if (i !== page) b.addEventListener('click', () => { page = i; render(); pager.scrollIntoView({ block: 'end' }); });
+      pager.append(b);
+    }
+    if (page < pages) {
+      const next = document.createElement('button');
+      next.textContent = pager.dataset.next ?? '→';
+      next.setAttribute('style', btnStyle.replace('width:40px;', 'padding:0 14px;'));
+      next.addEventListener('click', () => { page += 1; render(); });
+      pager.append(next);
+    }
+  }
+  document.getElementById('news-tabs')!.addEventListener('tabs:change', (e) => { cat = (e as CustomEvent<string>).detail; page = 1; render(); });
+  q.addEventListener('input', () => { page = 1; render(); });
+  render();
+</script>

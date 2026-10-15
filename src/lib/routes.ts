@@ -1,7 +1,7 @@
 /** Page slugs, mirroring the 13 pages of the design's publish file. */
 export const PAGES = [
   'trang-chu', 've-tien-nong', 'khoa-hoc-cong-nghe', 'san-pham', 'chi-tiet-san-pham', 'giai-phap',
-  'giai-phap-du-an', 'phat-trien-ben-vung', 'nong-dan', 'tuyen-dung', 'tin-tuc', 'bai-viet', 'lien-he',
+  'giai-phap-du-an', 'phat-trien-ben-vung', 'nong-dan', 'tuyen-dung', 'tin-tuc', 'lien-he',
 ] as const;
 export type PageSlug = (typeof PAGES)[number];
 
@@ -26,4 +26,14 @@ export function url(slug: PageSlug, hash?: string): string {
 /** URL for a file in public/, prefixed with the deploy base path. */
 export function asset(path: string): string {
   return `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
+}
+
+/**
+ * href for a link edited in the CMS: empty stays "#", uploaded files (/uploads/…)
+ * get the deploy base path, anything else (https://…, mailto:, #anchor) is kept.
+ */
+export function link(value?: string | null): string {
+  const v = (value ?? '').trim();
+  if (!v) return '#';
+  return v.startsWith('/') && !v.startsWith('//') ? asset(v) : v;
 }

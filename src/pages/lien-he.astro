@@ -1,81 +1,71 @@
 ---
+import c from '../content/pages/lien-he.json';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Checkbox from '../components/Checkbox.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Input from '../components/Input.astro';
 import Select from '../components/Select.astro';
-import { url } from '../lib/routes';
+import { url, link } from '../lib/routes';
 
-const PROV: Record<string, string> = { th: 'Thanh Hóa', na: 'Nghệ An', gl: 'Gia Lai', dl: 'Đắk Lắk', hn: 'Hà Nội' };
-const DEALERS: Record<string, string[][]> = {
-  th: [['Đại lý vật tư nông nghiệp [Tên]', 'Nhà phân phối', '[Địa chỉ], Thanh Hóa'], ['Cửa hàng VTNN [Tên]', 'Điểm bán', '[Địa chỉ], Thanh Hóa'], ['Cửa hàng VTNN [Tên]', 'Điểm bán', '[Địa chỉ], Thanh Hóa'], ['HTX dịch vụ nông nghiệp [Tên]', 'Điểm bán', '[Địa chỉ], Thanh Hóa']],
-  na: [['Đại lý vật tư nông nghiệp [Tên]', 'Nhà phân phối', '[Địa chỉ], Nghệ An'], ['Cửa hàng VTNN [Tên]', 'Điểm bán', '[Địa chỉ], Nghệ An']],
-  gl: [['Đại lý vật tư nông nghiệp [Tên]', 'Nhà phân phối', '[Địa chỉ], Gia Lai'], ['Cửa hàng VTNN [Tên]', 'Điểm bán', '[Địa chỉ], Gia Lai'], ['Cửa hàng VTNN [Tên]', 'Điểm bán', '[Địa chỉ], Gia Lai']],
-  dl: [['Đại lý vật tư nông nghiệp [Tên]', 'Nhà phân phối', '[Địa chỉ], Đắk Lắk']],
-  hn: [['Cửa hàng VTNN [Tên]', 'Điểm bán', '[Địa chỉ], Hà Nội']],
-};
-const NEEDS = [['ky-thuat', 'Tư vấn kỹ thuật'], ['dai-ly', 'Đăng ký làm đại lý'], ['du-an', 'Giải pháp cho dự án'], ['xuat-khau', 'Hợp tác xuất khẩu'], ['khac', 'Khác']];
-const provOptions = Object.entries(PROV).map(([value, label]) => ({ value, label }));
-const needOptions = NEEDS.map(([value, label]) => ({ value, label }));
 ---
-<Layout title="Liên hệ & Đại lý" active="">
+<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
 <section style="background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:32px">
-<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">Trang chủ</a> / Liên hệ &amp; Đại lý</span>
-<div style="display:flex;flex-direction:column;gap:14px;max-width:760px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">LIÊN HỆ</span><h1 style="margin:0;font:800 clamp(34px,4.4vw,56px)/1.1 var(--font-display);letter-spacing:-.015em;text-wrap:balance">Kết nối với Tiến Nông</h1></div>
+<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_lien_he.t1}</a> {c.s01_lien_he.t2}</span>
+<div style="display:flex;flex-direction:column;gap:14px;max-width:760px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s01_lien_he.t3}</span><h1 style="margin:0;font:800 clamp(34px,4.4vw,56px)/1.1 var(--font-display);letter-spacing:-.015em;text-wrap:balance">{c.s01_lien_he.t4}</h1></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/4),calc((1008px - 100%)*999),calc((100% - 16px)/2)),1fr));gap:16px">
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">TƯ VẤN KỸ THUẬT</span><strong style="font-size:20px">[Hotline kỹ sư]</strong><span style="color:var(--text-secondary);font-size:15px">Hỏi về cây trồng, cách bón phân</span></div>
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">MUA HÀNG &amp; ĐẠI LÝ</span><strong style="font-size:20px">02373.729.729</strong><span style="color:var(--text-secondary);font-size:15px">Đặt hàng, chính sách đại lý</span></div>
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">DỰ ÁN &amp; XUẤT KHẨU</span><strong style="font-size:20px">[email dự án]</strong><span style="color:var(--text-secondary);font-size:15px">Khách hàng dự án, đối tác quốc tế</span></div>
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">BÁO CHÍ &amp; TUYỂN DỤNG</span><strong style="font-size:20px">info@tiennong.vn</strong><span style="color:var(--text-secondary);font-size:15px">Truyền thông, hồ sơ ứng tuyển</span></div>
+<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t5}</span><strong style="font-size:20px">{c.s01_lien_he.t6}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t7}</span></div>
+<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t8}</span><strong style="font-size:20px">{c.s01_lien_he.t9}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t10}</span></div>
+<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t11}</span><strong style="font-size:20px">{c.s01_lien_he.t12}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t13}</span></div>
+<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t14}</span><strong style="font-size:20px">{c.s01_lien_he.t15}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t16}</span></div>
 </div></div></section>
 
 <section id="dai-ly" style="background:var(--surface-page);scroll-margin-top:120px">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:680px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">TÌM ĐẠI LÝ</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Hệ thống 10.000 điểm bán trên toàn quốc</h2></div>
+<div style="display:flex;flex-direction:column;gap:14px;max-width:680px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s02_tim_dai_ly.t1}</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s02_tim_dai_ly.t2}</h2></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:24px;align-items:stretch">
 <div style="display:flex;flex-direction:column;gap:16px">
-<Select id="dealer-prov" label="Tỉnh / thành phố" options={provOptions} value="th" />
-<span style="font-size:14px;color:var(--text-secondary)"><strong id="dealer-count" style="color:var(--text-primary)">{DEALERS.th.length}</strong> đại lý tại <span id="dealer-prov-name">{PROV.th}</span></span>
+<Select id="dealer-prov" label={c.s02_tim_dai_ly.f1} options={c.provinces.map((p, i) => ({ value: String(i), label: p.name }))} />
+<span style="font-size:14px;color:var(--text-secondary)"><strong id="dealer-count" style="color:var(--text-primary)">{c.provinces[0]?.dealers.length ?? 0}</strong> {c.s02_tim_dai_ly.t3} <span id="dealer-prov-name">{c.provinces[0]?.name}</span></span>
 <div style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;max-height:420px;overflow-y:auto">
-{Object.entries(DEALERS).flatMap(([prov, list]) => list.map(([name, type, addr]) => (
-<div data-prov={prov} hidden={prov !== 'th'} style="display:flex;flex-direction:column;gap:4px;padding:16px 20px;border-bottom:1px solid var(--border-default)"><div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><strong>{name}</strong><span style="font:600 11px var(--font-mono);color:var(--green-700);background:var(--green-50);padding:2px 8px;border-radius:var(--radius-full)">{type}</span></div><span style="font-size:14px;color:var(--text-secondary)">{addr}</span><a href="#" style="font-size:14px;font-weight:600">[SĐT] · Chỉ đường</a></div>
+{c.provinces.flatMap((p, pi) => p.dealers.map((d) => (
+<div data-prov={pi} hidden={pi !== 0} style="display:flex;flex-direction:column;gap:4px;padding:16px 20px;border-bottom:1px solid var(--border-default)"><div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><strong>{d.name}</strong><span style="font:600 11px var(--font-mono);color:var(--green-700);background:var(--green-50);padding:2px 8px;border-radius:var(--radius-full)">{d.type}</span></div><span style="font-size:14px;color:var(--text-secondary)">{d.address}</span><a href={link(d.map)} style="font-size:14px;font-weight:600">{d.phone} · Chỉ đường</a></div>
 )))}
 </div>
-<span style="font-size:13px;color:var(--text-tertiary)">Danh sách đại lý là dữ liệu mẫu. Bản chính thức sẽ kết nối với dữ liệu hệ thống phân phối.</span>
+<span style="font-size:13px;color:var(--text-tertiary)">{c.s02_tim_dai_ly.t4}</span>
 </div>
-<div style="position:relative;min-height:420px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="dealer-map" shape="rounded" radius="16" placeholder="Bản đồ đại lý (Google Maps nhúng)" /></div>
+<div style="position:relative;min-height:420px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="dealer-map" shape="rounded" radius="16" placeholder="Bản đồ đại lý (Google Maps nhúng)" image={c.s02_tim_dai_ly.img_dealer_map_1} /></div>
 </div>
-<div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:22px 24px;background:var(--green-800);color:#fff;border-radius:var(--radius-lg)"><div><strong style="font-size:19px;display:block">Trở thành đại lý Tiến Nông</strong><span style="color:var(--green-100);text-align:justify">Cùng hệ thống hơn 200 nhà phân phối mang giải pháp khoa học đến nhà nông.</span></div><a href="#lien-he-form" style="background:#fff;color:var(--green-700);font-weight:700;padding:12px 20px;border-radius:var(--radius-md)">Đăng ký làm đại lý</a></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:22px 24px;background:var(--green-800);color:#fff;border-radius:var(--radius-lg)"><div><strong style="font-size:19px;display:block">{c.s02_tim_dai_ly.t5}</strong><span style="color:var(--green-100);text-align:justify">{c.s02_tim_dai_ly.t6}</span></div><a href="#lien-he-form" style="background:#fff;color:var(--green-700);font-weight:700;padding:12px 20px;border-radius:var(--radius-md)">{c.s02_tim_dai_ly.t7}</a></div>
 </div></section>
 
 <section style="background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
-<h2 style="margin:0;font:800 clamp(26px,2.8vw,36px)/1.2 var(--font-display)">Trụ sở &amp; nhà máy</h2>
+<h2 style="margin:0;font:800 clamp(26px,2.8vw,36px)/1.2 var(--font-display)">{c.s03_van_phong_nha_may.t1}</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/4),calc((1088px - 100%)*999),calc((100% - 16px)/2)),1fr));gap:16px">
-<div style="border-top:3px solid var(--green-500);padding-top:16px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">Trụ sở chính</strong><span style="color:var(--text-secondary)">274B Bà Triệu, phường Hàm Rồng, tỉnh Thanh Hóa</span><span>02373.729.729</span></div>
-<div style="border-top:3px solid var(--border-strong);padding-top:16px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">Nhà máy Bỉm Sơn</strong><span style="color:var(--text-secondary)">[Địa chỉ], tỉnh Thanh Hóa</span><span>[Số điện thoại]</span></div>
-<div style="border-top:3px solid var(--border-strong);padding-top:16px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">Nhà máy Gia Lai</strong><span style="color:var(--text-secondary)">[Địa chỉ], tỉnh Gia Lai</span><span>[Số điện thoại]</span></div>
-<div style="border-top:3px solid var(--border-strong);padding-top:16px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">[Nhà máy 3]</strong><span style="color:var(--text-secondary)">[Địa chỉ]</span><span>[Số điện thoại]</span></div>
+<div style="border-top:3px solid var(--green-500);padding-top:16px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{c.s03_van_phong_nha_may.t2}</strong><span style="color:var(--text-secondary)">{c.s03_van_phong_nha_may.t3}</span><span>{c.s03_van_phong_nha_may.t4}</span></div>
+<div style="border-top:3px solid var(--border-strong);padding-top:16px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{c.s03_van_phong_nha_may.t5}</strong><span style="color:var(--text-secondary)">{c.s03_van_phong_nha_may.t6}</span><span>{c.s03_van_phong_nha_may.t7}</span></div>
+<div style="border-top:3px solid var(--border-strong);padding-top:16px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{c.s03_van_phong_nha_may.t8}</strong><span style="color:var(--text-secondary)">{c.s03_van_phong_nha_may.t9}</span><span>{c.s03_van_phong_nha_may.t10}</span></div>
+<div style="border-top:3px solid var(--border-strong);padding-top:16px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{c.s03_van_phong_nha_may.t11}</strong><span style="color:var(--text-secondary)">{c.s03_van_phong_nha_may.t12}</span><span>{c.s03_van_phong_nha_may.t13}</span></div>
 </div></div></section>
 
 <section id="lien-he-form" style="background:var(--surface-page);scroll-margin-top:120px">
 <div style="max-width:880px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:24px">
-<div style="display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font:800 clamp(26px,2.8vw,36px)/1.2 var(--font-display)">Gửi yêu cầu</h2><span style="color:var(--text-secondary)">Chọn nhu cầu để yêu cầu được chuyển đến đúng bộ phận.</span></div>
+<div style="display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font:800 clamp(26px,2.8vw,36px)/1.2 var(--font-display)">{c.s04_gui_lien_he.t1}</h2><span style="color:var(--text-secondary)">{c.s04_gui_lien_he.t2}</span></div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:16px">
-<div id="contact-sent" hidden style="display:flex;flex-direction:column;gap:8px;padding:16px 0"><span style="font:700 13px var(--font-mono);color:var(--green-600)">ĐÃ GỬI</span><strong style="font-size:22px">Cảm ơn Quý khách đã liên hệ Tiến Nông.</strong><span style="color:var(--text-secondary)">Bộ phận <span id="need-label">{NEEDS[0][1].toLowerCase()}</span> sẽ phản hồi qua thông tin Quý khách cung cấp.</span><button type="button" data-form-again style="align-self:flex-start;background:none;border:0;padding:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">Gửi yêu cầu khác</button></div>
+<div id="contact-sent" hidden style="display:flex;flex-direction:column;gap:8px;padding:16px 0"><span style="font:700 13px var(--font-mono);color:var(--green-600)">{c.s04_gui_lien_he.t3}</span><strong style="font-size:22px">{c.s04_gui_lien_he.t4}</strong><span style="color:var(--text-secondary)">{c.s04_gui_lien_he.t5} <span id="need-label">{c.needs[0]?.toLowerCase()}</span> {c.s04_gui_lien_he.t6}</span><button type="button" data-form-again style="align-self:flex-start;background:none;border:0;padding:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.s04_gui_lien_he.t7}</button></div>
 <form id="contact-form" data-lead-form data-sent="contact-sent" style="display:flex;flex-direction:column;gap:16px">
-<Select id="contact-need" name="need" label="Nhu cầu *" options={needOptions} value="ky-thuat" />
+<Select id="contact-need" name="need" label={c.s04_gui_lien_he.f1} options={c.needs.map((v) => ({ value: v, label: v }))} />
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 42px)/4),calc((922px - 100%)*999),calc((100% - 14px)/2)),1fr));gap:14px">
-<Input label="Họ và tên *" name="name" autocomplete="name" required placeholder="Nguyễn Văn A" />
-<Input label="Số điện thoại *" name="phone" type="tel" autocomplete="tel" required placeholder="09xx xxx xxx" />
-<Input label="Email" name="email" type="email" autocomplete="email" placeholder="ten@email.com" />
-<Input label="Tỉnh / thành phố" name="province" placeholder="VD: Thanh Hóa" />
+<Input label={c.s04_gui_lien_he.f2} name="name" autocomplete="name" required placeholder={c.s04_gui_lien_he.f3} />
+<Input label={c.s04_gui_lien_he.f4} name="phone" type="tel" autocomplete="tel" required placeholder={c.s04_gui_lien_he.f5} />
+<Input label={c.s04_gui_lien_he.f6} name="email" type="email" autocomplete="email" placeholder={c.s04_gui_lien_he.f7} />
+<Input label={c.s04_gui_lien_he.f8} name="province" placeholder={c.s04_gui_lien_he.f9} />
 </div>
-<label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:14px;font-weight:500">Nội dung</span><textarea name="message" rows="4" placeholder="Mô tả ngắn gọn nhu cầu" style="padding:10px 14px;border-radius:var(--radius-md);border:1px solid var(--border-default);font:16px var(--font-body);resize:vertical;outline-color:var(--green-500)"></textarea></label>
-<Checkbox label="Tôi đồng ý để Tiến Nông xử lý dữ liệu cá nhân theo Chính sách bảo mật." name="consent" data-consent required />
-<Button size="lg" type="submit">Gửi yêu cầu</Button>
+<label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:14px;font-weight:500">{c.s04_gui_lien_he.t8}</span><textarea name="message" rows="4" placeholder={c.s04_gui_lien_he.f10} style="padding:10px 14px;border-radius:var(--radius-md);border:1px solid var(--border-default);font:16px var(--font-body);resize:vertical;outline-color:var(--green-500)"></textarea></label>
+<Checkbox label={c.s04_gui_lien_he.f11} name="consent" data-consent required />
+<Button size="lg" type="submit">{c.s04_gui_lien_he.t9}</Button>
 </form>
 </div></div></section>
 </Layout>

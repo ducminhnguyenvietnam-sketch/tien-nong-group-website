@@ -1,74 +1,56 @@
 ---
+import c from '../content/pages/san-pham.json';
 import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Select from '../components/Select.astro';
 import Tabs from '../components/Tabs.astro';
-import { url } from '../lib/routes';
+import { url, link } from '../lib/routes';
 
-const LINES: Record<string, string> = { all: 'Tất cả', cd: 'Phân bón chuyên dụng', dd: 'Phân bón đa dụng', hc: 'Phân bón hữu cơ', cnc: 'Phân bón công nghệ cao', tvl: 'Phân bón trung vi lượng' };
-const CROPS = ['Lúa', 'Ngô', 'Cà phê', 'Cây ăn quả', 'Rau màu', 'Chè', 'Mía', 'Cây công nghiệp'];
-const P = [
-  { name: 'NPK 12-3-10+2SiO₂hh Tiến Nông (Lúa 2)', line: 'cd', npk: [['12', 'N'], ['3', 'P₂O₅'], ['10', 'K₂O'], ['2', 'SiO₂']], crops: ['Lúa'], pop: 1 },
-  { name: 'NPK 8-6-4+1,5SiO₂hh Tiến Nông (Lúa 1)', line: 'cd', npk: [['8', 'N'], ['6', 'P₂O₅'], ['4', 'K₂O'], ['1,5', 'SiO₂']], crops: ['Lúa'], pop: 2 },
-  { name: 'NPK 10-6-16+1SiO₂hh Tiến Nông (Cây Chè)', line: 'cd', npk: [['10', 'N'], ['6', 'P₂O₅'], ['16', 'K₂O'], ['1', 'SiO₂']], crops: ['Chè'], pop: 6 },
-  { name: 'NPK 16-16-8+TE Tiến Nông (Cây Ngô)', line: 'cd', npk: [['16', 'N'], ['16', 'P₂O₅'], ['8', 'K₂O']], crops: ['Ngô'], pop: 5 },
-  { name: 'NPK 15-15-15+1SiO₂hh Tiến Nông', line: 'dd', npk: [['15', 'N'], ['15', 'P₂O₅'], ['15', 'K₂O'], ['1', 'SiO₂']], crops: ['Lúa', 'Ngô', 'Rau màu', 'Cây ăn quả', 'Cây công nghiệp'], pop: 3 },
-  { name: 'NPK 8-10-3+2,5SiO₂hh Tiến Nông', line: 'dd', npk: [['8', 'N'], ['10', 'P₂O₅'], ['3', 'K₂O'], ['2,5', 'SiO₂']], crops: ['Lúa', 'Ngô', 'Mía'], pop: 7 },
-  { name: 'NPK 20-10-10+MNC Tiến Nông', line: 'dd', npk: [['20', 'N'], ['10', 'P₂O₅'], ['10', 'K₂O']], crops: ['Lúa', 'Ngô', 'Rau màu', 'Mía'], pop: 8 },
-  { name: 'NK 15-18+5S Tiến Nông (Con rồng đỏ)', line: 'dd', npk: [['15', 'N'], ['18', 'K₂O'], ['5', 'S']], crops: ['Lúa', 'Ngô', 'Cây ăn quả'], pop: 4 },
-  { name: 'Đạm vàng Tiến Nông bổ sung vi lượng', line: 'dd', npk: [['46', 'N']], crops: ['Lúa', 'Ngô', 'Rau màu', 'Mía', 'Chè'], pop: 9 },
-  { name: 'Hữu cơ – Humic Tiến Nông', line: 'hc', npk: [['[%]', 'Hữu cơ'], ['[%]', 'Humic']], crops: ['Cây ăn quả', 'Cà phê', 'Rau màu', 'Cây công nghiệp'], pop: 10 },
-  { name: 'Phân bón hỗn hợp NPK 6-6-6+MNC Tiến Nông loại đặc biệt', line: 'cnc', npk: [['6', 'N'], ['6', 'P₂O₅'], ['6', 'K₂O']], crops: ['Cây ăn quả', 'Rau màu', 'Cà phê'], pop: 11 },
-  { name: 'Phân trung lượng Lân PA Tiến Nông', line: 'tvl', npk: [['[%]', 'P₂O₅'], ['[%]', 'CaO']], crops: ['Lúa', 'Ngô', 'Mía', 'Cây công nghiệp'], pop: 12 },
-  { name: 'Điều hòa pH đất 1 Tiến Nông', line: 'tvl', npk: [['[%]', 'CaO'], ['[%]', 'MgO']], crops: ['Lúa', 'Rau màu', 'Cây ăn quả', 'Cà phê'], pop: 13 },
-];
-const lineItems = Object.entries(LINES).map(([value, label]) => ({ value, label }));
-const cropOptions = [{ value: 'all', label: 'Tất cả cây trồng' }, ...CROPS.map((c) => ({ value: c, label: c }))];
-const sortOptions = [{ value: 'pop', label: 'Phổ biến nhất' }, { value: 'name', label: 'Tên A–Z' }];
+const lineLabel = (key: string) => (c.lines.find((l) => l.key === key)?.label ?? '').replace('Phân bón ', '').toUpperCase();
 ---
-<Layout title="Sản phẩm" active="Sản phẩm">
+<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Sản phẩm">
 <section style="background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) 40px;display:flex;flex-direction:column;gap:28px">
-<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">Trang chủ</a> / Sản phẩm</span>
+<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_tieu_de.t1}</a> {c.s01_tieu_de.t2}</span>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px 64px;align-items:end">
 <div style="display:flex;flex-direction:column;gap:14px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">SẢN PHẨM</span>
-<h1 style="margin:0;font:800 clamp(34px,4.4vw,56px)/1.1 var(--font-display);letter-spacing:-.015em;text-wrap:balance">Dinh dưỡng chuẩn xác cho từng loại cây trồng</h1>
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s01_tieu_de.t3}</span>
+<h1 style="margin:0;font:800 clamp(34px,4.4vw,56px)/1.1 var(--font-display);letter-spacing:-.015em;text-wrap:balance">{c.s01_tieu_de.t4}</h1>
 </div>
 <div style="display:flex;flex-direction:column;gap:14px">
-<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">Mọi sản phẩm đều có mã số phân bón, được sản xuất theo ISO 9001 và kiểm định chất lượng tại phòng thí nghiệm VILAS 1519.</p>
-<div style="display:flex;gap:16px;flex-wrap:wrap"><a href="#" style="font-weight:600">Tải catalogue sản phẩm (PDF) →</a><a href={url('lien-he')} style="font-weight:600">Tìm đại lý gần nhất →</a></div>
+<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.s01_tieu_de.t5}</p>
+<div style="display:flex;gap:16px;flex-wrap:wrap"><a href={link(c.s01_tieu_de.link1)} style="font-weight:600">{c.s01_tieu_de.t6}</a><a href={url('lien-he')} style="font-weight:600">{c.s01_tieu_de.t7}</a></div>
 </div></div>
-<div style="overflow-x:auto"><Tabs id="line-tabs" label="Dòng sản phẩm" items={lineItems} value="all" /></div>
+<div style="overflow-x:auto"><Tabs id="line-tabs" label="Dòng sản phẩm" items={[{ value: 'all', label: c.lines_all_label }, ...c.lines.map((l) => ({ value: l.key, label: l.label }))]} value="all" /></div>
 </div></section>
 
 <section style="background:var(--surface-page)">
 <div style="max-width:1280px;margin:0 auto;padding:32px clamp(20px,4vw,56px) clamp(64px,8vw,104px);display:flex;flex-direction:column;gap:28px">
 <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end">
-<label style="display:flex;flex-direction:column;gap:6px;flex:2 1 320px;min-width:0"><span style="font-size:14px;font-weight:500">Tìm sản phẩm</span><input id="prod-q" type="search" placeholder="Tên sản phẩm, công thức NPK…" style="padding:10px 14px;border-radius:var(--radius-md);border:1px solid var(--border-default);font:16px var(--font-body);background:var(--surface-card);color:var(--text-primary);outline-color:var(--green-500)" /></label>
-<div style="flex:1 1 200px;min-width:0"><Select id="prod-crop" label="Cây trồng" options={cropOptions} value="all" /></div>
-<div style="flex:1 1 200px;min-width:0"><Select id="prod-sort" label="Sắp xếp" options={sortOptions} value="pop" /></div>
+<label style="display:flex;flex-direction:column;gap:6px;flex:2 1 320px;min-width:0"><span style="font-size:14px;font-weight:500">{c.s02_danh_sach.t1}</span><input id="prod-q" type="search" placeholder={c.s02_danh_sach.f1} style="padding:10px 14px;border-radius:var(--radius-md);border:1px solid var(--border-default);font:16px var(--font-body);background:var(--surface-card);color:var(--text-primary);outline-color:var(--green-500)" /></label>
+<div style="flex:1 1 200px;min-width:0"><Select id="prod-crop" label={c.s02_danh_sach.f2} options={[{ value: 'all', label: c.crops_all_label }, ...c.crops.map((v) => ({ value: v, label: v }))]} value="all" /></div>
+<div style="flex:1 1 200px;min-width:0"><Select id="prod-sort" label={c.s02_danh_sach.f3} options={[{ value: 'pop', label: c.sort_popular_label }, { value: 'name', label: c.sort_name_label }]} value="pop" /></div>
 </div>
-<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:15px;color:var(--text-secondary)"><span><strong id="prod-count" style="color:var(--text-primary)">{P.length}</strong> sản phẩm</span><button type="button" id="prod-reset" hidden style="background:none;border:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">Xóa bộ lọc</button></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:15px;color:var(--text-secondary)"><span><strong id="prod-count" style="color:var(--text-primary)">{c.products.length}</strong> {c.s02_danh_sach.t2}</span><button type="button" id="prod-reset" hidden style="background:none;border:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.s02_danh_sach.t3}</button></div>
 <div id="prod-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px">
-{P.map((p, i) => (
-<a data-line={p.line} data-crops={p.crops.join('|')} data-name={p.name.toLowerCase()} data-pop={p.pop} href={url('chi-tiet-san-pham')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary);transition:box-shadow .15s" class="hover-lift">
-<div style="position:relative;height:250px;background:var(--surface-sunken);padding:16px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`prod-${i}`} shape="rounded" radius="10" fit="contain" placeholder="Ảnh bao bì (nền trung tính)" /></div>
+{c.products.map((p, i) => (
+<a data-line={p.line} data-crops={p.crops.join('|')} data-name={p.name.toLowerCase()} data-pop={i} href={url('chi-tiet-san-pham')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary);transition:box-shadow .15s" class="hover-lift">
+<div style="position:relative;height:250px;background:var(--surface-sunken);padding:16px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`prod-${i}`} shape="rounded" radius="10" fit="contain" placeholder={p.image.alt} image={p.image} /></div>
 <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1">
-<span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{LINES[p.line].replace('Phân bón ', '').toUpperCase()}</span>
+<span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{lineLabel(p.line)}</span>
 <strong style="font-size:17px;line-height:1.35;flex:1">{p.name}</strong>
-<div style="display:flex;gap:6px;flex-wrap:wrap">{p.npk.map(([v, k]) => <span style="display:flex;flex-direction:column;align-items:center;min-width:52px;padding:4px 8px;border-radius:var(--radius-sm);background:var(--green-50)"><span style="font:700 15px var(--font-display);color:var(--green-800)">{v}</span><span style="font-size:11px;color:var(--text-secondary)">{k}</span></span>)}</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap">{p.npk.map(({ value: v, unit: k }) => <span style="display:flex;flex-direction:column;align-items:center;min-width:52px;padding:4px 8px;border-radius:var(--radius-sm);background:var(--green-50)"><span style="font:700 15px var(--font-display);color:var(--green-800)">{v}</span><span style="font-size:11px;color:var(--text-secondary)">{k}</span></span>)}</div>
 <span style="font-size:13px;color:var(--text-tertiary)">{'Phù hợp: ' + p.crops.join(', ')}</span>
 </div></a>
 ))}
 </div>
-<div id="prod-empty" hidden style="padding:48px;text-align:center;background:var(--surface-card);border:1px dashed var(--border-strong);border-radius:var(--radius-lg);color:var(--text-secondary)">Không tìm thấy sản phẩm phù hợp. Hãy thử bỏ bớt bộ lọc hoặc <a href={url('lien-he')}>liên hệ kỹ sư Tiến Nông</a> để được tư vấn.</div>
+<div id="prod-empty" hidden style="padding:48px;text-align:center;background:var(--surface-card);border:1px dashed var(--border-strong);border-radius:var(--radius-lg);color:var(--text-secondary)">{c.s02_danh_sach.t4} <a href={url('lien-he')}>{c.s02_danh_sach.t5}</a> {c.s02_danh_sach.t6}</div>
 </div></section>
 
 <section style="background:var(--green-800);color:#fff">
 <div style="max-width:1280px;margin:0 auto;padding:56px clamp(20px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
-<div style="display:flex;flex-direction:column;gap:8px;max-width:640px"><h2 style="margin:0;font:800 clamp(24px,2.8vw,34px)/1.2 var(--font-display);text-wrap:balance">Cần tư vấn lựa chọn sản phẩm phù hợp?</h2><span style="color:var(--green-100);text-align:justify">Kỹ sư nông học của Tiến Nông sẽ tư vấn chương trình dinh dưỡng phù hợp với từng loại cây trồng và điều kiện canh tác.</span></div>
-<div style="display:flex;gap:12px;flex-wrap:wrap"><a href={url('giai-phap')} style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">Giải pháp theo cây trồng</a><a href={url('lien-he')} style="color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md);border:1px solid rgba(255,255,255,.7)">Gọi kỹ sư tư vấn</a></div>
+<div style="display:flex;flex-direction:column;gap:8px;max-width:640px"><h2 style="margin:0;font:800 clamp(24px,2.8vw,34px)/1.2 var(--font-display);text-wrap:balance">{c.s03_tu_van.t1}</h2><span style="color:var(--green-100);text-align:justify">{c.s03_tu_van.t2}</span></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap"><a href={url('giai-phap')} style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s03_tu_van.t3}</a><a href={url('lien-he')} style="color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md);border:1px solid rgba(255,255,255,.7)">{c.s03_tu_van.t4}</a></div>
 </div></section>
 </Layout>
 

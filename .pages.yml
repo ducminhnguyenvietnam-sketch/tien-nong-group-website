@@ -1,0 +1,4011 @@
+# Pages CMS configuration — https://pagescms.org/docs/configuration/
+# Generated once from the page content files; edit by hand from now on.
+media:
+  input: public/uploads
+  output: /uploads
+settings:
+  content:
+    merge: true
+components:
+  photo:
+    type: object
+    fields:
+    - name: src
+      label: Ảnh
+      type: image
+      description: Kéo thả hoặc chọn ảnh. Để trống sẽ hiện khung chờ ảnh.
+    - name: focus
+      label: Giữ phần nào của ảnh khi khung cắt bớt
+      type: select
+      default: center
+      options:
+        values:
+        - value: center
+          label: Ở giữa
+        - value: top
+          label: Phía trên
+        - value: bottom
+          label: Phía dưới
+        - value: left
+          label: Bên trái
+        - value: right
+          label: Bên phải
+        - value: top left
+          label: Góc trên bên trái
+        - value: top right
+          label: Góc trên bên phải
+        - value: bottom left
+          label: Góc dưới bên trái
+        - value: bottom right
+          label: Góc dưới bên phải
+    - name: zoom
+      label: Phóng to
+      type: select
+      default: '100'
+      options:
+        values:
+        - value: '100'
+          label: Không phóng (100%)
+        - value: '110'
+          label: 110%
+        - value: '125'
+          label: 125%
+        - value: '150'
+          label: 150%
+        - value: '175'
+          label: 175%
+        - value: '200'
+          label: 200%
+    - name: alt
+      label: Mô tả ảnh
+      type: string
+      description: Một câu mô tả nội dung ảnh (cho Google và người khiếm thị).
+content:
+- name: news
+  label: Tin tức – bài viết
+  type: collection
+  path: src/content/news
+  format: yaml-frontmatter
+  filename: '{primary}.md'
+  view:
+    fields:
+    - title
+    - category
+    - date
+    primary: title
+    sort:
+    - date
+    - title
+    default:
+      sort: date
+      order: desc
+  fields:
+  - name: title
+    label: Tiêu đề
+    type: string
+    required: true
+  - name: category
+    label: Chuyên mục
+    type: select
+    required: true
+    default: tn
+    options:
+      values:
+      - value: tn
+        label: Tin Tiến Nông
+      - value: khcn
+        label: Khoa học & Công nghệ
+      - value: kt
+        label: Kiến thức nông nghiệp
+      - value: nd
+        label: Nông dân & mô hình
+      - value: cd
+        label: Vì cộng đồng
+  - name: date
+    label: Ngày đăng
+    type: date
+    description: Bài mới nhất hiện trước.
+  - name: author
+    label: Tác giả
+    type: string
+    default: Phòng Truyền thông
+  - name: featured
+    label: Ghim làm tin nổi bật
+    type: boolean
+    description: Tin nổi bật hiện ô lớn đầu trang Tin tức.
+  - name: summary
+    label: Tóm tắt (sapo)
+    type: text
+    description: Hiện ở danh sách tin và in đậm ở đầu bài.
+  - name: cover
+    label: Ảnh đại diện
+    component: photo
+    description: Khung ảnh khoảng 1040×560 px trên máy tính — nên dùng ảnh rộng ít nhất 2080 px.
+  - name: cover_caption
+    label: Chú thích ảnh đại diện
+    type: string
+  - name: body
+    label: Nội dung bài viết
+    type: rich-text
+    options:
+      format: markdown
+  - name: album
+    label: Album ảnh cuối bài
+    component: photo
+    list: true
+  - name: album_link
+    label: Đường dẫn xem toàn bộ album
+    type: string
+    description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+  - name: tags
+    label: Chủ đề (thẻ)
+    type: string
+    list: true
+- name: pages
+  label: Các trang
+  type: group
+  items:
+  - name: trang_chu
+    label: Trang chủ
+    type: file
+    path: src/content/pages/trang-chu.json
+    format: json
+    fields:
+    - name: seo
+      label: Tiêu đề tab trình duyệt & mô tả Google
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề trang
+        type: string
+        description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+      - name: description
+        label: Mô tả ngắn cho Google
+        type: text
+    - name: s01_hero_a
+      label: 01 · Hero A
+      type: object
+      fields:
+      - name: img_hero_a_1
+        label: 'Ảnh: Video / ảnh flycam: nhà máy Tiến Nông giữa cánh đồng lúa'
+        component: photo
+        description: Khung ảnh khoảng 1440×702 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
+      - name: t1
+        label: 'Nhãn in hoa: TIẾN NÔNG GROUP · TỪ 1995'
+        type: string
+      - name: t2
+        label: 'Tiêu đề chính: Hơn 30 năm khoa học phụng sự nhà nông'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Nghiên cứu, sản xuất và đồng hành cùng nhà nôn…'
+        type: text
+      - name: t4
+        label: 'Nút: Khám phá giải pháp →'
+        type: string
+      - name: t5
+        label: 'Nút: Tìm đại lý gần nhất'
+        type: string
+    - name: s02_uy_tin
+      label: 02 · Uy tín
+      type: object
+      fields:
+      - name: t1
+        label: 'Chữ: 200.000+'
+        type: string
+      - name: t2
+        label: 'Chữ: hộ nông dân tin dùng'
+        type: string
+      - name: t3
+        label: 'Chữ: 10.000'
+        type: string
+      - name: t4
+        label: 'Chữ: điểm bán trên toàn quốc'
+        type: string
+      - name: t5
+        label: 'Chữ: 200+'
+        type: string
+      - name: t6
+        label: 'Chữ: nhà phân phối'
+        type: string
+      - name: t7
+        label: 'Chữ: 650.000'
+        type: string
+      - name: t8
+        label: 'Chữ: tấn/năm · 3 nhà máy'
+        type: string
+      - name: t9
+        label: 'Chữ: Huân chương'
+        type: string
+      - name: t10
+        label: 'Chữ: Lao động hạng Ba'
+        type: string
+      - name: t11
+        label: 'Chữ: Bằng khen'
+        type: string
+      - name: t12
+        label: 'Chữ: Thủ tướng Chính phủ · 2022'
+        type: string
+      - name: t13
+        label: 'Chữ: Doanh nghiệp KH&CN đầu tiên'
+        type: string
+      - name: t14
+        label: 'Chữ: ngành dinh dưỡng cây trồng'
+        type: string
+      - name: t15
+        label: 'Chữ: 6 lần đạt'
+        type: string
+      - name: t16
+        label: 'Chữ: Sao Vàng Đất Việt'
+        type: string
+      - name: t17
+        label: 'Chữ: Số liệu 2025 ·'
+        type: string
+      - name: t18
+        label: 'Liên kết: Xem tất cả thành tựu →'
+        type: string
+    - name: s03_khoa_hoc_cong_nghe
+      label: 03 · Khoa học & Công nghệ
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 01 · KHOA HỌC & CÔNG NGHỆ'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Khoa học nền tảng, đồng ruộng là thước đo'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Là doanh nghiệp Khoa học & Công nghệ đầu tiên …'
+        type: text
+      - name: img_rd_main_1
+        label: 'Ảnh: Phòng thí nghiệm VILAS 1519 đang vận hành'
+        component: photo
+        description: Khung ảnh khoảng 576×420 px trên máy tính — nên dùng ảnh rộng ít nhất 1152 px.
+      - name: t4
+        label: 'Nhãn in hoa: R&D'
+        type: string
+      - name: t5
+        label: 'Chữ đậm: Trung tâm Nghiên cứu Phát triển'
+        type: string
+      - name: t6
+        label: 'Chữ: Công nghệ phân bón, công nghệ sinh học'
+        type: string
+      - name: t7
+        label: 'Nhãn in hoa: VILAS 1519'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: Phân tích & kiểm định chất lượng'
+        type: string
+      - name: t9
+        label: 'Chữ: Kiểm soát chất lượng theo từng lô'
+        type: string
+      - name: t10
+        label: 'Nhãn in hoa: ĐẤT – CÂY'
+        type: string
+      - name: t11
+        label: 'Chữ đậm: Sức khỏe đất & dinh dưỡng'
+        type: string
+      - name: t12
+        label: 'Chữ: Phân tích đất làm cơ sở xây dựng công thức'
+        type: string
+      - name: t13
+        label: 'Nhãn in hoa: ỨNG DỤNG'
+        type: string
+      - name: t14
+        label: 'Chữ đậm: Từ nghiên cứu đến đồng ruộng'
+        type: string
+      - name: t15
+        label: 'Chữ: Mô hình trình diễn tại các vùng sản xuất trọng…'
+        type: string
+      - name: t16
+        label: 'Chữ: [số]'
+        type: string
+      - name: t17
+        label: 'Chữ: nhà khoa học & kỹ sư'
+        type: string
+      - name: t18
+        label: 'Chữ: [số]'
+        type: string
+      - name: t19
+        label: 'Chữ: đề tài nghiên cứu'
+        type: string
+      - name: t20
+        label: 'Chữ: [số]'
+        type: string
+      - name: t21
+        label: 'Chữ: mẫu đất phân tích/năm'
+        type: string
+      - name: t22
+        label: 'Liên kết: Tìm hiểu Khoa học & Công nghệ →'
+        type: string
+    - name: s04_giai_phap_theo_doi_tuong
+      label: 04 · Giải pháp theo đối tượng
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 02 · GIẢI PHÁP'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Giải pháp phù hợp cho từng đối tác'
+        type: string
+      - name: img_aud_farmer_1
+        label: 'Ảnh: Nông dân trên ruộng'
+        component: photo
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
+      - name: t3
+        label: 'Chữ đậm: Nông dân'
+        type: string
+      - name: t4
+        label: 'Chữ: Giải pháp dinh dưỡng theo cây trồng, quy trình…'
+        type: text
+      - name: t5
+        label: 'Chữ: Giải pháp theo cây trồng →'
+        type: string
+      - name: img_aud_dealer_1
+        label: 'Ảnh: Cửa hàng đại lý vật tư nông nghiệp'
+        component: photo
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
+      - name: t6
+        label: 'Chữ đậm: Đại lý & nhà phân phối'
+        type: string
+      - name: t7
+        label: 'Chữ: Chính sách hợp tác minh bạch, hỗ trợ bán hàng …'
+        type: text
+      - name: t8
+        label: 'Chữ: Trở thành đại lý →'
+        type: string
+      - name: img_aud_project_1
+        label: 'Ảnh: Sân golf / cảnh quan đô thị / nhà kính'
+        component: photo
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
+      - name: t9
+        label: 'Chữ đậm: Khách hàng dự án'
+        type: string
+      - name: t10
+        label: 'Chữ: Chương trình dinh dưỡng thiết kế riêng cho sân…'
+        type: text
+      - name: t11
+        label: 'Chữ: Yêu cầu tư vấn dự án →'
+        type: string
+      - name: img_aud_export_1
+        label: 'Ảnh: Container hàng xuất khẩu / kho'
+        component: photo
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
+      - name: t12
+        label: 'Chữ đậm: Đối tác xuất khẩu'
+        type: string
+      - name: t13
+        label: 'Chữ: Sản phẩm có mặt tại hơn 10 quốc gia, năng lực …'
+        type: string
+      - name: t14
+        label: 'Chữ: Hợp tác xuất khẩu →'
+        type: string
+    - name: s05_san_pham
+      label: 05 · Sản phẩm
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 03 · SẢN PHẨM'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Dinh dưỡng chuẩn xác cho từng loại cây, từng g…'
+        type: string
+      - name: img_line_1_1
+        label: 'Ảnh: Bao bì dòng Chuyên dụng'
+        component: photo
+        description: Khung ảnh khoảng 277×260 px trên máy tính — nên dùng ảnh rộng ít nhất 554 px.
+      - name: t3
+        label: 'Chữ đậm: Phân bón chuyên dụng'
+        type: string
+      - name: t4
+        label: 'Chữ: Công thức chuyên biệt cho lúa, ngô, cà phê, câ…'
+        type: string
+      - name: img_line_2_1
+        label: 'Ảnh: Bao bì dòng Đa dụng'
+        component: photo
+        description: Khung ảnh khoảng 277×260 px trên máy tính — nên dùng ảnh rộng ít nhất 554 px.
+      - name: t5
+        label: 'Chữ đậm: Phân bón đa dụng'
+        type: string
+      - name: t6
+        label: 'Chữ: Tỷ lệ NPK cân đối, phù hợp với nhiều loại cây …'
+        type: string
+      - name: img_line_3_1
+        label: 'Ảnh: Bao bì dòng Hữu cơ'
+        component: photo
+        description: Khung ảnh khoảng 277×260 px trên máy tính — nên dùng ảnh rộng ít nhất 554 px.
+      - name: t7
+        label: 'Chữ đậm: Phân bón hữu cơ'
+        type: string
+      - name: t8
+        label: 'Chữ: Bổ sung hữu cơ, cải tạo đất, hướng tới canh tá…'
+        type: string
+      - name: img_line_4_1
+        label: 'Ảnh: Bao bì dòng Hàm lượng cao'
+        component: photo
+        description: Khung ảnh khoảng 277×260 px trên máy tính — nên dùng ảnh rộng ít nhất 554 px.
+      - name: t9
+        label: 'Chữ đậm: Phân bón hàm lượng cao'
+        type: string
+      - name: t10
+        label: 'Chữ: Hàm lượng cao cho thâm canh và nông nghiệp côn…'
+        type: string
+      - name: img_crop_lua_1
+        label: 'Ảnh: Lúa'
+        component: photo
+        description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
+      - name: t11
+        label: 'Chữ: Lúa'
+        type: string
+      - name: img_crop_ngo_1
+        label: 'Ảnh: Ngô'
+        component: photo
+        description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
+      - name: t12
+        label: 'Chữ: Ngô'
+        type: string
+      - name: img_crop_caphe_1
+        label: 'Ảnh: Cà phê'
+        component: photo
+        description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
+      - name: t13
+        label: 'Chữ: Cà phê'
+        type: string
+      - name: img_crop_anqua_1
+        label: 'Ảnh: Cây ăn quả'
+        component: photo
+        description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
+      - name: t14
+        label: 'Chữ: Cây ăn quả'
+        type: string
+      - name: img_crop_rau_1
+        label: 'Ảnh: Rau màu'
+        component: photo
+        description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
+      - name: t15
+        label: 'Chữ: Rau màu'
+        type: string
+      - name: img_crop_congnghiep_1
+        label: 'Ảnh: Cây công nghiệp'
+        component: photo
+        description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
+      - name: t16
+        label: 'Chữ: Cây công nghiệp'
+        type: string
+      - name: t17
+        label: 'Liên kết: Xem tất cả sản phẩm →'
+        type: string
+    - name: s06_nha_may_xanh
+      label: 06 · Nhà máy xanh
+      type: object
+      fields:
+      - name: img_plant_flycam_1
+        label: 'Ảnh: Flycam nhà máy Bỉm Sơn: cây xanh, khuôn viên sạch đẹp'
+        component: photo
+        description: Khung ảnh khoảng 1440×600 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
+      - name: t1
+        label: 'Nhãn in hoa: 04 · SẢN XUẤT XANH'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Sản xuất quy mô lớn, hài hòa cùng môi trường'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Ba nhà máy với tổng công suất thiết kế 650.000…'
+        type: text
+      - name: t4
+        label: 'Chữ đậm: Bỉm Sơn'
+        type: string
+      - name: t5
+        label: 'Nhãn in hoa: THANH HOÁ'
+        type: string
+      - name: t6
+        label: 'Chữ đậm: Gia Lai'
+        type: string
+      - name: t7
+        label: 'Nhãn in hoa: TÂY NGUYÊN'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: Hoằng Hoá'
+        type: string
+      - name: t9
+        label: 'Nhãn in hoa: THANH HOÁ'
+        type: string
+      - name: t10
+        label: 'Liên kết: Khám phá hệ thống nhà máy →'
+        type: string
+    - name: s07_con_nguoi
+      label: 07 · Con người
+      type: object
+      fields:
+      - name: img_people_1_1
+        label: 'Ảnh: Chân dung người lao động gắn bó 20+ năm'
+        component: photo
+        description: Khung ảnh khoảng 267×494 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px.
+      - name: img_people_2_1
+        label: 'Ảnh: Chuyến du lịch nước ngoài toàn công ty'
+        component: photo
+        description: Khung ảnh khoảng 267×280 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px.
+      - name: img_people_3_1
+        label: 'Ảnh: Lễ trao Bảo Bình tài lộc'
+        component: photo
+        description: Khung ảnh khoảng 267×200 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px.
+      - name: t1
+        label: 'Nhãn in hoa: 05 · CON NGƯỜI'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Gắn bó bền lâu, cùng nhau phát triển'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Nhiều cán bộ, nhân viên đã đồng hành cùng Tiến…'
+        type: text
+      - name: t4
+        label: 'Chữ đậm: Lương thưởng cạnh tranh'
+        type: string
+      - name: t5
+        label: 'Chữ: Gắn với hiệu quả công việc và thâm niên'
+        type: string
+      - name: t6
+        label: 'Chữ đậm: Du lịch nước ngoài'
+        type: string
+      - name: t7
+        label: 'Chữ: Hành trình dành cho toàn thể cán bộ, nhân viên'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: Tặng vàng'
+        type: string
+      - name: t9
+        label: 'Chữ: Tri ân người lao động gắn bó lâu năm'
+        type: string
+      - name: t10
+        label: 'Chữ đậm: Bảo Bình tài lộc'
+        type: string
+      - name: t11
+        label: 'Chữ: Vinh danh những chặng đường cống hiến'
+        type: string
+      - name: t12
+        label: 'Nút: Cơ hội nghề nghiệp →'
+        type: string
+      - name: t13
+        label: 'Nút: Văn hóa Tiến Nông'
+        type: string
+    - name: s08_vi_cong_dong
+      label: 08 · Vì cộng đồng
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 06 · PHÁT TRIỂN BỀN VỮNG'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Vì nền nông nghiệp bền vững và cộng đồng'
+        type: string
+      - name: t3
+        label: 'Tiêu đề: phát triển thịnh vượng'
+        type: string
+      - name: t4
+        label: 'Đoạn văn: Xác định “Sẻ chia lợi ích” là giá trị cốt lõi,…'
+        type: text
+      - name: img_csr_1_1
+        label: 'Ảnh: Lớp tập huấn kỹ thuật cho nông dân'
+        component: photo
+        description: Khung ảnh khoảng 376×240 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
+      - name: t5
+        label: 'Nhãn in hoa: NÂNG CAO NHẬN THỨC'
+        type: string
+      - name: t6
+        label: 'Chữ đậm: Tập huấn bón phân cân đối, bảo vệ sức khỏe đất…'
+        type: string
+      - name: img_csr_2_1
+        label: 'Ảnh: Lễ trao học bổng khuyến học Thanh Hóa'
+        component: photo
+        description: Khung ảnh khoảng 376×240 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
+      - name: t7
+        label: 'Nhãn in hoa: KHUYẾN HỌC'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: Ủng hộ 1,55 tỷ đồng cho công tác khuyến học tỉ…'
+        type: string
+      - name: img_csr_3_1
+        label: 'Ảnh: Chương trình Triệu mầm xanh Trường Sa'
+        component: photo
+        description: Khung ảnh khoảng 376×240 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
+      - name: t9
+        label: 'Nhãn in hoa: BIỂN ĐẢO'
+        type: string
+      - name: t10
+        label: 'Chữ đậm: Đồng hành cùng chương trình “Triệu mầm xanh” v…'
+        type: string
+      - name: t11
+        label: 'Liên kết: Phát triển bền vững tại Tiến Nông →'
+        type: string
+    - name: s09_tin_tuc
+      label: 09 · Tin tức
+      type: object
+      fields:
+      - name: t1
+        label: 'Tiêu đề: Tin tức'
+        type: string
+      - name: t2
+        label: 'Liên kết: Tất cả tin tức →'
+        type: string
+    - name: product_tab_line
+      label: Mục Sản phẩm – tên tab 1
+      type: string
+    - name: product_tab_crop
+      label: Mục Sản phẩm – tên tab 2
+      type: string
+  - name: ve_tien_nong
+    label: Về Tiến Nông
+    type: file
+    path: src/content/pages/ve-tien-nong.json
+    format: json
+    fields:
+    - name: seo
+      label: Tiêu đề tab trình duyệt & mô tả Google
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề trang
+        type: string
+        description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+      - name: description
+        label: Mô tả ngắn cho Google
+        type: text
+    - name: s01_hero
+      label: 01 · Hero
+      type: object
+      fields:
+      - name: t1
+        label: 'Liên kết: Trang chủ'
+        type: string
+      - name: t2
+        label: 'Chữ: / Về Tiến Nông'
+        type: string
+      - name: t3
+        label: 'Nhãn in hoa: VỀ TIẾN NÔNG'
+        type: string
+      - name: t4
+        label: 'Tiêu đề chính: Hơn 30 năm đồng hành cùng nông nghiệp Việt Nam'
+        type: string
+      - name: t5
+        label: 'Đoạn văn: Thành lập ngày 04/01/1995 tại Thanh Hóa, CTCP …'
+        type: text
+      - name: img_about_hero_1
+        label: 'Ảnh: Ảnh tập thể cán bộ, nhân viên trước trụ sở Tiến Nông'
+        component: photo
+        description: Khung ảnh khoảng 1168×560 px trên máy tính — nên dùng ảnh rộng ít nhất 2336 px.
+      - name: t6
+        label: 'Chữ: 1995'
+        type: string
+      - name: t7
+        label: 'Chữ: năm thành lập'
+        type: string
+      - name: t8
+        label: 'Chữ: 650.000'
+        type: string
+      - name: t9
+        label: 'Chữ: tấn/năm · 3 nhà máy'
+        type: string
+      - name: t10
+        label: 'Chữ: 200+'
+        type: string
+      - name: t11
+        label: 'Chữ: nhà phân phối'
+        type: string
+      - name: t12
+        label: 'Chữ: 10.000'
+        type: string
+      - name: t13
+        label: 'Chữ: điểm bán'
+        type: string
+      - name: t14
+        label: 'Chữ: 200.000+'
+        type: string
+      - name: t15
+        label: 'Chữ: hộ nông dân tin dùng'
+        type: string
+      - name: t16
+        label: 'Chữ: 10+'
+        type: string
+      - name: t17
+        label: 'Chữ: quốc gia xuất khẩu'
+        type: string
+      - name: t18
+        label: 'Liên kết: Thư ngỏ'
+        type: string
+      - name: t19
+        label: 'Liên kết: Sứ mệnh & giá trị'
+        type: string
+      - name: t20
+        label: 'Liên kết: Lịch sử'
+        type: string
+      - name: t21
+        label: 'Liên kết: Lãnh đạo'
+        type: string
+      - name: t22
+        label: 'Liên kết: Thành tựu'
+        type: string
+      - name: t23
+        label: 'Liên kết: Năng lực'
+        type: string
+      - name: t24
+        label: 'Liên kết: Hệ sinh thái'
+        type: string
+    - name: s02_thu_ngo
+      label: 02 · Thư ngỏ
+      type: object
+      fields:
+      - name: img_ceo_portrait_1
+        label: 'Ảnh: Chân dung Tổng Giám đốc Nguyễn Hồng Phong'
+        component: photo
+        description: Khung ảnh khoảng 420×525 px trên máy tính — nên dùng ảnh rộng ít nhất 840 px.
+      - name: t1
+        label: 'Nhãn in hoa: THƯ NGỎ CỦA TỔNG GIÁM ĐỐC'
+        type: string
+      - name: t2
+        label: 'Đoạn văn: “Mùa vụ không chỉ là những gì chúng tôi trồng …'
+        type: text
+      - name: t3
+        label: 'Đoạn văn: Hơn ba thập kỷ qua, Tiến Nông kiên định với mộ…'
+        type: text
+      - name: t4
+        label: 'Chữ đậm: Nguyễn Hồng Phong'
+        type: string
+      - name: t5
+        label: 'Chữ: Tổng Giám đốc'
+        type: string
+    - name: s03_su_menh_gia_tri
+      label: 03 · Sứ mệnh & giá trị
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: SỨ MỆNH'
+        type: string
+      - name: t2
+        label: 'Chữ: Phụng sự để nông dân giàu có, Việt Nam thịnh v…'
+        type: string
+      - name: t3
+        label: 'Nhãn in hoa: TẦM NHÌN'
+        type: string
+      - name: t4
+        label: 'Chữ: Doanh nghiệp sáng tạo dẫn đầu trong lĩnh vực d…'
+        type: string
+      - name: t5
+        label: 'Nhãn in hoa: MỤC TIÊU'
+        type: string
+      - name: t6
+        label: 'Chữ: Phục vụ 1 triệu hộ nông dân Việt Nam'
+        type: string
+      - name: t7
+        label: 'Nhãn in hoa: GIÁ TRỊ CỐT LÕI'
+        type: string
+      - name: t8
+        label: 'Chữ: 01'
+        type: string
+      - name: t9
+        label: 'Chữ đậm: Đam mê chân chính'
+        type: string
+      - name: t10
+        label: 'Chữ: Tận tâm với nông nghiệp và khoa học, bền bỉ th…'
+        type: string
+      - name: t11
+        label: 'Chữ: 02'
+        type: string
+      - name: t12
+        label: 'Chữ đậm: Khát vọng cháy bỏng'
+        type: string
+      - name: t13
+        label: 'Chữ: Không ngừng vươn lên, cống hiến trọn vẹn trong…'
+        type: string
+      - name: t14
+        label: 'Chữ: 03'
+        type: string
+      - name: t15
+        label: 'Chữ đậm: Sáng tạo không ngừng'
+        type: string
+      - name: t16
+        label: 'Chữ: Đổi mới để giữ vị thế dẫn đầu về dinh dưỡng câ…'
+        type: string
+      - name: t17
+        label: 'Chữ: 04'
+        type: string
+      - name: t18
+        label: 'Chữ đậm: Sẻ chia lợi ích'
+        type: string
+      - name: t19
+        label: 'Chữ: Lợi ích của nhà nông luôn được đặt lên trên hế…'
+        type: string
+    - name: s04_lich_su
+      label: 04 · Lịch sử
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: LỊCH SỬ PHÁT TRIỂN'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Những dấu mốc trên hành trình hơn ba thập kỷ'
+        type: string
+    - name: s05_lanh_dao
+      label: 05 · Lãnh đạo
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: BAN LÃNH ĐẠO'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Đội ngũ lãnh đạo'
+        type: string
+      - name: img_lead_1_1
+        label: 'Ảnh: Chân dung (nền đồng nhất)'
+        component: photo
+        description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
+      - name: t3
+        label: 'Chữ đậm: Nguyễn Hồng Phong'
+        type: string
+      - name: t4
+        label: 'Chữ: Tổng Giám đốc'
+        type: string
+      - name: img_lead_2_1
+        label: 'Ảnh: Chân dung (nền đồng nhất)'
+        component: photo
+        description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
+      - name: t5
+        label: 'Chữ đậm: [Họ và tên]'
+        type: string
+      - name: t6
+        label: 'Chữ: [Chức danh]'
+        type: string
+      - name: img_lead_3_1
+        label: 'Ảnh: Chân dung (nền đồng nhất)'
+        component: photo
+        description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
+      - name: t7
+        label: 'Chữ đậm: [Họ và tên]'
+        type: string
+      - name: t8
+        label: 'Chữ: [Chức danh]'
+        type: string
+      - name: img_lead_4_1
+        label: 'Ảnh: Chân dung (nền đồng nhất)'
+        component: photo
+        description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
+      - name: t9
+        label: 'Chữ đậm: [Họ và tên]'
+        type: string
+      - name: t10
+        label: 'Chữ: [Chức danh]'
+        type: string
+      - name: img_lead_5_1
+        label: 'Ảnh: Chân dung (nền đồng nhất)'
+        component: photo
+        description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
+      - name: t11
+        label: 'Chữ đậm: [Họ và tên]'
+        type: string
+      - name: t12
+        label: 'Chữ: [Chức danh]'
+        type: string
+    - name: s06_thanh_tuu
+      label: 06 · Thành tựu
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: THÀNH TỰU & GHI NHẬN'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Những ghi nhận xứng đáng cho hơn ba thập kỷ cố…'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Những danh hiệu dưới đây là sự ghi nhận cho hơ…'
+        type: text
+      - name: img_award_hc_1
+        label: 'Ảnh: Ảnh Huân chương'
+        component: photo
+        description: Khung ảnh khoảng 96×120 px trên máy tính — nên dùng ảnh rộng ít nhất 192 px.
+      - name: t4
+        label: 'Nhãn in hoa: NHÀ NƯỚC · [NĂM]'
+        type: string
+      - name: t5
+        label: 'Chữ đậm: Huân chương Lao động hạng Ba'
+        type: string
+      - name: t6
+        label: 'Chữ: Chủ tịch nước trao tặng'
+        type: string
+      - name: img_award_bk_1
+        label: 'Ảnh: Ảnh Bằng khen'
+        component: photo
+        description: Khung ảnh khoảng 96×120 px trên máy tính — nên dùng ảnh rộng ít nhất 192 px.
+      - name: t7
+        label: 'Nhãn in hoa: NHÀ NƯỚC · 2022'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: Bằng khen của Thủ tướng Chính phủ'
+        type: string
+      - name: t9
+        label: 'Chữ: Thủ tướng Chính phủ trao tặng'
+        type: string
+      - name: t10
+        label: 'Nhãn in hoa: KHOA HỌC & CÔNG NGHỆ'
+        type: string
+      - name: t11
+        label: 'Chữ đậm: Doanh nghiệp Khoa học & Công nghệ đầu tiên tro…'
+        type: text
+      - name: t12
+        label: 'Chữ: [Số GCN · năm cấp]'
+        type: string
+      - name: t13
+        label: 'Chữ đậm: Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam'
+        type: string
+      - name: t14
+        label: 'Chữ: [Năm]'
+        type: string
+      - name: t15
+        label: 'Nhãn in hoa: CHẤT LƯỢNG & THƯƠNG HIỆU'
+        type: string
+      - name: t16
+        label: 'Chữ đậm: 6 lần đạt Giải thưởng Sao Vàng Đất Việt'
+        type: string
+      - name: t17
+        label: 'Chữ: [Các năm]'
+        type: string
+      - name: t18
+        label: 'Chữ đậm: Giải thưởng Chất lượng Việt Nam'
+        type: string
+      - name: t19
+        label: 'Chữ: 2002'
+        type: string
+      - name: t20
+        label: 'Chữ đậm: Thương hiệu Vàng Nông nghiệp Việt Nam, 3 năm l…'
+        type: string
+      - name: t21
+        label: 'Chữ: [Các năm]'
+        type: string
+      - name: t22
+        label: 'Nhãn in hoa: KHU VỰC ASEAN'
+        type: string
+      - name: t23
+        label: 'Chữ đậm: Thương hiệu nổi tiếng ASEAN'
+        type: string
+      - name: t24
+        label: 'Chữ: 2011'
+        type: string
+      - name: t25
+        label: 'Chữ đậm: Top 10 Thương hiệu mạnh ASEAN'
+        type: string
+      - name: t26
+        label: 'Chữ: [Năm]'
+        type: string
+      - name: t27
+        label: 'Chữ đậm: Hệ thống quản lý:'
+        type: string
+      - name: t28
+        label: 'Chữ: ISO 9001:2015 · ISO 14001:2015 · Phòng thí ngh…'
+        type: string
+      - name: t29
+        label: 'Nút: Tải hồ sơ năng lực (PDF)'
+        type: string
+    - name: s07_nang_luc
+      label: 07 · Năng lực
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: NĂNG LỰC'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Chuỗi giá trị khép kín, từ phòng thí nghiệm đế…'
+        type: string
+      - name: img_cap_rd_1
+        label: 'Ảnh: Phòng thí nghiệm'
+        component: photo
+        description: Khung ảnh khoảng 371×220 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
+      - name: t3
+        label: 'Nhãn in hoa: NGHIÊN CỨU'
+        type: string
+      - name: t4
+        label: 'Chữ đậm: Trung tâm Nghiên cứu Phát triển & phòng thí ng…'
+        type: string
+      - name: t5
+        label: 'Chữ: Nghiên cứu công thức, phân tích đất và kiểm đị…'
+        type: string
+      - name: t6
+        label: 'Liên kết: Khoa học & Công nghệ →'
+        type: string
+      - name: img_cap_mfg_1
+        label: 'Ảnh: Dây chuyền sản xuất'
+        component: photo
+        description: Khung ảnh khoảng 371×220 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
+      - name: t7
+        label: 'Nhãn in hoa: SẢN XUẤT'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: 3 nhà máy, công suất thiết kế 650.000 tấn/năm'
+        type: string
+      - name: t9
+        label: 'Chữ: Nhà máy Bỉm Sơn (Thanh Hóa), Gia Lai và [Nhà m…'
+        type: string
+      - name: t10
+        label: 'Liên kết: Hệ thống nhà máy →'
+        type: string
+      - name: img_cap_dist_1
+        label: 'Ảnh: Bản đồ mạng lưới phân phối & xuất khẩu'
+        component: photo
+        description: Khung ảnh khoảng 371×220 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
+      - name: t11
+        label: 'Nhãn in hoa: PHÂN PHỐI'
+        type: string
+      - name: t12
+        label: 'Chữ đậm: 200+ nhà phân phối, 10.000 điểm bán, 10+ quốc …'
+        type: string
+      - name: t13
+        label: 'Chữ: Mạng lưới phủ khắp cả nước và các thị trường x…'
+        type: string
+      - name: t14
+        label: 'Liên kết: Tìm đại lý →'
+        type: string
+    - name: s08_he_sinh_thai
+      label: 08 · Hệ sinh thái
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: HỆ SINH THÁI TIẾN NÔNG'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Công ty thành viên & liên kết'
+        type: string
+      - name: img_eco_1_1
+        label: 'Ảnh: Logo'
+        component: photo
+        description: Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px.
+      - name: t3
+        label: 'Chữ đậm: Tiến Nông Garden'
+        type: string
+      - name: img_eco_2_1
+        label: 'Ảnh: Logo'
+        component: photo
+        description: Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px.
+      - name: t4
+        label: 'Chữ đậm: Hacheco'
+        type: string
+      - name: img_eco_3_1
+        label: 'Ảnh: Logo'
+        component: photo
+        description: Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px.
+      - name: t5
+        label: 'Chữ đậm: Sao Khuê'
+        type: string
+      - name: img_eco_4_1
+        label: 'Ảnh: Logo'
+        component: photo
+        description: Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px.
+      - name: t6
+        label: 'Chữ đậm: Tiến Lực'
+        type: string
+      - name: img_eco_5_1
+        label: 'Ảnh: Logo'
+        component: photo
+        description: Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px.
+      - name: t7
+        label: 'Chữ đậm: Phú Hưng'
+        type: string
+    - name: s09_phan_9
+      label: 09 · Phần 9
+      type: object
+      fields:
+      - name: t1
+        label: 'Tiêu đề: Cùng Tiến Nông kiến tạo những mùa vụ thịnh vượng'
+        type: string
+      - name: t2
+        label: 'Liên kết: Liên hệ hợp tác'
+        type: string
+      - name: t3
+        label: 'Liên kết: Cơ hội nghề nghiệp'
+        type: string
+    - name: milestones
+      label: Lịch sử – các mốc (kéo để sắp xếp)
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.year} · {fields.title}'
+      fields:
+      - name: year
+        label: Năm
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: body
+        label: Nội dung
+        type: text
+      - name: image
+        label: Ảnh
+        component: photo
+        description: Khung ảnh khoảng 556×360 px trên máy tính — nên dùng ảnh rộng ít nhất 1112 px.
+  - name: khoa_hoc_cong_nghe
+    label: Khoa học & Công nghệ
+    type: file
+    path: src/content/pages/khoa-hoc-cong-nghe.json
+    format: json
+    fields:
+    - name: seo
+      label: Tiêu đề tab trình duyệt & mô tả Google
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề trang
+        type: string
+        description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+      - name: description
+        label: Mô tả ngắn cho Google
+        type: text
+    - name: s01_hero
+      label: 01 · Hero
+      type: object
+      fields:
+      - name: img_khcn_hero_1
+        label: 'Ảnh: Nhà khoa học thao tác trong phòng thí nghiệm VILAS 1519'
+        component: photo
+        description: Khung ảnh khoảng 1440×640 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
+      - name: t1
+        label: 'Chữ: Trang chủ / Khoa học & Công nghệ'
+        type: string
+      - name: t2
+        label: 'Nhãn in hoa: KHOA HỌC & CÔNG NGHỆ'
+        type: string
+      - name: t3
+        label: 'Tiêu đề chính: Khoa học phụng sự nông nghiệp'
+        type: string
+      - name: t4
+        label: 'Đoạn văn: Mỗi giải pháp của Tiến Nông đều bắt nguồn từ n…'
+        type: text
+    - name: s02_dinh_vi
+      label: 02 · Định vị
+      type: object
+      fields:
+      - name: t1
+        label: 'Tiêu đề: Doanh nghiệp Khoa học & Công nghệ đầu tiên tro…'
+        type: text
+      - name: t2
+        label: 'Chữ: Giấy chứng nhận số [số GCN] · cấp năm [năm]'
+        type: string
+      - name: t3
+        label: 'Chữ: [số]'
+        type: string
+      - name: t4
+        label: 'Chữ: nhà khoa học & kỹ sư'
+        type: string
+      - name: t5
+        label: 'Chữ: [số]'
+        type: string
+      - name: t6
+        label: 'Chữ: đề tài nghiên cứu đã thực hiện'
+        type: string
+      - name: t7
+        label: 'Chữ: [số]'
+        type: string
+      - name: t8
+        label: 'Chữ: mẫu phân tích mỗi năm'
+        type: string
+      - name: t9
+        label: 'Chữ: [số]'
+        type: string
+      - name: t10
+        label: 'Chữ: sản phẩm từ kết quả nghiên cứu'
+        type: string
+    - name: s03_trung_tam_r_d
+      label: 03 · Trung tâm R&D
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 01 · TRUNG TÂM NGHIÊN CỨU PHÁT TRIỂN'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Bốn phòng chuyên môn, một mục tiêu chung'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Trung tâm quy tụ đội ngũ chuyên gia về nông hó…'
+        type: text
+      - name: img_lab_1_1
+        label: 'Ảnh: Phòng Thí nghiệm chất lượng'
+        component: photo
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
+      - name: t4
+        label: 'Chữ đậm: Phòng Thí nghiệm chất lượng'
+        type: string
+      - name: t5
+        label: 'Chữ: Phân tích, kiểm định nguyên liệu và thành phẩm…'
+        type: string
+      - name: img_lab_2_1
+        label: 'Ảnh: Phòng Công nghệ sinh học'
+        component: photo
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
+      - name: t6
+        label: 'Chữ đậm: Phòng Công nghệ sinh học'
+        type: string
+      - name: t7
+        label: 'Chữ: Nghiên cứu vi sinh vật có ích và chế phẩm sinh…'
+        type: string
+      - name: img_lab_3_1
+        label: 'Ảnh: Phòng Sức khỏe đất & cây trồng'
+        component: photo
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
+      - name: t8
+        label: 'Chữ đậm: Phòng Sức khỏe đất & cây trồng'
+        type: string
+      - name: t9
+        label: 'Chữ: Đánh giá dinh dưỡng đất, theo dõi sinh trưởng …'
+        type: string
+      - name: img_lab_4_1
+        label: 'Ảnh: Phòng Công nghệ phân bón'
+        component: photo
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
+      - name: t10
+        label: 'Chữ đậm: Phòng Công nghệ phân bón'
+        type: string
+      - name: t11
+        label: 'Chữ: Phát triển công thức và công nghệ sản xuất phâ…'
+        type: string
+    - name: s04_linh_vuc_nghien_cuu
+      label: 04 · Lĩnh vực nghiên cứu
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 02 · LĨNH VỰC NGHIÊN CỨU'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Nền tảng khoa học cho nông nghiệp thế hệ mới'
+        type: string
+    - name: s05_quy_trinh
+      label: 05 · Quy trình
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 03 · TỪ NGHIÊN CỨU ĐẾN ĐỒNG RUỘNG'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Quy trình năm bước từ phòng thí nghiệm đến đồn…'
+        type: string
+      - name: t3
+        label: 'Chữ: 01'
+        type: string
+      - name: t4
+        label: 'Chữ đậm: Khảo sát & phân tích đất'
+        type: string
+      - name: t5
+        label: 'Chữ: Lấy mẫu tại vùng trồng, xác định đặc tính đất …'
+        type: string
+      - name: t6
+        label: 'Chữ: 02'
+        type: string
+      - name: t7
+        label: 'Chữ đậm: Nghiên cứu công thức'
+        type: string
+      - name: t8
+        label: 'Chữ: Thiết kế tỷ lệ dinh dưỡng phù hợp từng loại câ…'
+        type: string
+      - name: t9
+        label: 'Chữ: 03'
+        type: string
+      - name: t10
+        label: 'Chữ đậm: Thử nghiệm nhà lưới'
+        type: string
+      - name: t11
+        label: 'Chữ: Đánh giá hiệu quả trong điều kiện có kiểm soát.'
+        type: string
+      - name: t12
+        label: 'Chữ: 04'
+        type: string
+      - name: t13
+        label: 'Chữ đậm: Trình diễn đồng ruộng'
+        type: string
+      - name: t14
+        label: 'Chữ: Kiểm chứng năng suất và chất lượng trên các mô…'
+        type: string
+      - name: t15
+        label: 'Chữ: 05'
+        type: string
+      - name: t16
+        label: 'Chữ đậm: Sản xuất & kiểm định'
+        type: string
+      - name: t17
+        label: 'Chữ: Sản xuất theo ISO 9001, kiểm định chất lượng t…'
+        type: string
+    - name: s06_vilas_1519
+      label: 06 · VILAS 1519
+      type: object
+      fields:
+      - name: img_vilas_1
+        label: 'Ảnh: Thiết bị phân tích hiện đại trong phòng thí nghiệm'
+        component: photo
+        description: Khung ảnh khoảng 548×460 px trên máy tính — nên dùng ảnh rộng ít nhất 1096 px.
+      - name: t1
+        label: 'Nhãn in hoa: 04 · PHÒNG THÍ NGHIỆM VILAS 1519'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Kết quả phân tích đạt chuẩn quốc tế'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Phòng thí nghiệm của Tiến Nông được công nhận …'
+        type: text
+      - name: t4
+        label: 'Chữ đậm: Phân tích đất'
+        type: string
+      - name: t5
+        label: 'Chữ: pH, hữu cơ, đa – trung – vi lượng'
+        type: string
+      - name: t6
+        label: 'Chữ đậm: Phân tích phân bón'
+        type: string
+      - name: t7
+        label: 'Chữ: Hàm lượng dinh dưỡng, độ ẩm'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: Nguyên liệu đầu vào'
+        type: string
+      - name: t9
+        label: 'Chữ: Kiểm soát trước khi sản xuất'
+        type: string
+      - name: t10
+        label: 'Chữ đậm: Phân tích mô lá'
+        type: string
+      - name: t11
+        label: 'Chữ: [Cần xác nhận phạm vi]'
+        type: string
+      - name: t12
+        label: 'Nút: Yêu cầu phân tích đất →'
+        type: string
+    - name: s07_thanh_qua
+      label: 07 · Thành quả
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 05 · THÀNH QUẢ NGHIÊN CỨU'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Khoa học được chuyển hóa thành sản phẩm và giả…'
+        type: string
+      - name: t3
+        label: 'Liên kết: Xem sản phẩm →'
+        type: string
+      - name: img_res_1_1
+        label: 'Ảnh: Bao bì NPK bổ sung Silic'
+        component: photo
+        description: Khung ảnh khoảng 373×240 px trên máy tính — nên dùng ảnh rộng ít nhất 746 px.
+      - name: t4
+        label: 'Nhãn in hoa: CÔNG NGHỆ PHÂN BÓN'
+        type: string
+      - name: t5
+        label: 'Chữ đậm: NPK bổ sung Silic hữu hiệu (SiO₂hh)'
+        type: string
+      - name: t6
+        label: 'Chữ: Giúp cây cứng cáp, tăng khả năng chống đổ và c…'
+        type: string
+      - name: img_res_2_1
+        label: 'Ảnh: Mô hình NPK – hữu cơ – vi sinh'
+        component: photo
+        description: Khung ảnh khoảng 373×240 px trên máy tính — nên dùng ảnh rộng ít nhất 746 px.
+      - name: t7
+        label: 'Nhãn in hoa: GIẢI PHÁP TÍCH HỢP'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: Kết hợp NPK – hữu cơ – vi sinh'
+        type: string
+      - name: t9
+        label: 'Chữ: Nâng cao hiệu quả sử dụng phân bón đồng thời c…'
+        type: string
+      - name: img_res_3_1
+        label: 'Ảnh: Phân bón hữu cơ, phân bón lỏng'
+        component: photo
+        description: Khung ảnh khoảng 373×240 px trên máy tính — nên dùng ảnh rộng ít nhất 746 px.
+      - name: t10
+        label: 'Nhãn in hoa: DINH DƯỠNG THẾ HỆ MỚI'
+        type: string
+      - name: t11
+        label: 'Chữ đậm: Phân bón hữu cơ, phân bón lỏng và các dạng din…'
+        type: string
+      - name: t12
+        label: 'Chữ: Đáp ứng nhu cầu canh tác bền vững và nông nghi…'
+        type: string
+    - name: s08_doi_tac_nghien_cuu
+      label: 08 · Đối tác nghiên cứu
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 06 · HỢP TÁC NGHIÊN CỨU'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Kết nối cùng viện nghiên cứu và trường đại học'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Tiến Nông chào đón các nhà khoa học, viện nghi…'
+        type: text
+      - name: t4
+        label: 'Nút: Đề xuất hợp tác'
+        type: string
+      - name: img_part_1_1
+        label: 'Ảnh: Logo'
+        component: photo
+        description: Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px.
+      - name: t5
+        label: 'Chữ: [Viện / trường đối tác]'
+        type: string
+      - name: img_part_2_1
+        label: 'Ảnh: Logo'
+        component: photo
+        description: Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px.
+      - name: t6
+        label: 'Chữ: [Viện / trường đối tác]'
+        type: string
+      - name: img_part_3_1
+        label: 'Ảnh: Logo'
+        component: photo
+        description: Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px.
+      - name: t7
+        label: 'Chữ: [Viện / trường đối tác]'
+        type: string
+      - name: img_part_4_1
+        label: 'Ảnh: Logo'
+        component: photo
+        description: Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px.
+      - name: t8
+        label: 'Chữ: [Viện / trường đối tác]'
+        type: string
+    - name: domains_topics_label
+      label: Lĩnh vực nghiên cứu – nhãn danh sách hướng nghiên cứu
+      type: string
+    - name: domains
+      label: Lĩnh vực nghiên cứu
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.name}'
+      fields:
+      - name: name
+        label: Tên lĩnh vực
+        type: string
+      - name: body
+        label: Mô tả
+        type: text
+      - name: topics
+        label: Hướng nghiên cứu trọng tâm
+        type: string
+        list: true
+      - name: image
+        label: Ảnh
+        component: photo
+        description: Khung ảnh khoảng 410×380 px trên máy tính — nên dùng ảnh rộng ít nhất 820 px.
+  - name: san_pham
+    label: Sản phẩm
+    type: file
+    path: src/content/pages/san-pham.json
+    format: json
+    fields:
+    - name: seo
+      label: Tiêu đề tab trình duyệt & mô tả Google
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề trang
+        type: string
+        description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+      - name: description
+        label: Mô tả ngắn cho Google
+        type: text
+    - name: s01_tieu_de
+      label: 01 · Tiêu đề
+      type: object
+      fields:
+      - name: t1
+        label: 'Liên kết: Trang chủ'
+        type: string
+      - name: t2
+        label: 'Chữ: / Sản phẩm'
+        type: string
+      - name: t3
+        label: 'Nhãn in hoa: SẢN PHẨM'
+        type: string
+      - name: t4
+        label: 'Tiêu đề chính: Dinh dưỡng chuẩn xác cho từng loại cây trồng'
+        type: string
+      - name: t5
+        label: 'Đoạn văn: Mọi sản phẩm đều có mã số phân bón, được sản x…'
+        type: text
+      - name: link1
+        label: Tệp/đường dẫn cho “Tải catalogue sản phẩm (PDF) →”
+        type: file
+        description: Tải tệp lên (ví dụ PDF) hoặc để trống nếu chưa có.
+      - name: t6
+        label: 'Liên kết: Tải catalogue sản phẩm (PDF) →'
+        type: string
+      - name: t7
+        label: 'Liên kết: Tìm đại lý gần nhất →'
+        type: string
+    - name: s02_danh_sach
+      label: 02 · Danh sách
+      type: object
+      fields:
+      - name: t1
+        label: 'Chữ: Tìm sản phẩm'
+        type: string
+      - name: f1
+        label: 'Gợi ý trong ô: Tên sản phẩm, công thức NPK…'
+        type: string
+      - name: f2
+        label: 'Nhãn ô nhập: Cây trồng'
+        type: string
+      - name: f3
+        label: 'Nhãn ô nhập: Sắp xếp'
+        type: string
+      - name: t2
+        label: 'Chữ: sản phẩm'
+        type: string
+      - name: t3
+        label: 'Nút: Xóa bộ lọc'
+        type: string
+      - name: t4
+        label: 'Chữ: Không tìm thấy sản phẩm phù hợp. Hãy thử bỏ bớ…'
+        type: string
+      - name: t5
+        label: 'Liên kết: liên hệ kỹ sư Tiến Nông'
+        type: string
+      - name: t6
+        label: 'Chữ: để được tư vấn.'
+        type: string
+    - name: s03_tu_van
+      label: 03 · Tư vấn
+      type: object
+      fields:
+      - name: t1
+        label: 'Tiêu đề: Cần tư vấn lựa chọn sản phẩm phù hợp?'
+        type: string
+      - name: t2
+        label: 'Chữ: Kỹ sư nông học của Tiến Nông sẽ tư vấn chương …'
+        type: text
+      - name: t3
+        label: 'Liên kết: Giải pháp theo cây trồng'
+        type: string
+      - name: t4
+        label: 'Liên kết: Gọi kỹ sư tư vấn'
+        type: string
+    - name: lines_all_label
+      label: Tab "tất cả dòng sản phẩm"
+      type: string
+    - name: lines
+      label: Dòng sản phẩm
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.label}'
+      fields:
+      - name: key
+        label: Mã dòng (không dấu, không đổi sau khi đã dùng)
+        type: string
+      - name: label
+        label: Tên dòng
+        type: string
+    - name: crops_all_label
+      label: Bộ lọc cây trồng – lựa chọn "tất cả"
+      type: string
+    - name: crops
+      label: Cây trồng trong bộ lọc
+      type: string
+      list: true
+    - name: sort_popular_label
+      label: Sắp xếp – "phổ biến"
+      type: string
+    - name: sort_name_label
+      label: Sắp xếp – "theo tên"
+      type: string
+    - name: products
+      label: Danh sách sản phẩm (thứ tự = "phổ biến nhất")
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.name}'
+      fields:
+      - name: name
+        label: Tên sản phẩm
+        type: string
+        required: true
+      - name: line
+        label: Dòng sản phẩm
+        type: select
+        options:
+          values:
+          - value: cd
+            label: Phân bón chuyên dụng
+          - value: dd
+            label: Phân bón đa dụng
+          - value: hc
+            label: Phân bón hữu cơ
+          - value: cnc
+            label: Phân bón công nghệ cao
+          - value: tvl
+            label: Phân bón trung vi lượng
+      - name: npk
+        label: Hàm lượng (ô số liệu)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.value} {fields.unit}'
+        fields:
+        - name: value
+          label: Số
+          type: string
+        - name: unit
+          label: Đơn vị / chất (N, P₂O₅, K₂O…)
+          type: string
+      - name: crops
+        label: Phù hợp với cây
+        type: string
+        list: true
+        description: Ghi đúng tên cây như trong "Cây trồng trong bộ lọc" để lọc được.
+      - name: image
+        label: Ảnh
+        component: photo
+        description: Khung ảnh khoảng 275×250 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Ảnh hiển thị trọn vẹn (không cắt), nên dùng
+          ảnh nền trắng/trong suốt.
+  - name: chi_tiet_san_pham
+    label: Chi tiết sản phẩm (mẫu)
+    type: file
+    path: src/content/pages/chi-tiet-san-pham.json
+    format: json
+    fields:
+    - name: seo
+      label: Tiêu đề tab trình duyệt & mô tả Google
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề trang
+        type: string
+        description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+      - name: description
+        label: Mô tả ngắn cho Google
+        type: text
+    - name: s01_san_pham
+      label: 01 · Sản phẩm
+      type: object
+      fields:
+      - name: t1
+        label: 'Liên kết: Trang chủ'
+        type: string
+      - name: t2
+        label: 'Liên kết: Sản phẩm'
+        type: string
+      - name: t3
+        label: 'Chữ: / Phân bón chuyên dụng'
+        type: string
+      - name: t4
+        label: 'Nhãn in hoa: PHÂN BÓN CHUYÊN DỤNG · CÂY LÚA'
+        type: string
+      - name: t5
+        label: 'Tiêu đề chính: NPK 12-3-10+2SiO₂hh Tiến Nông (Lúa 2)'
+        type: string
+      - name: t6
+        label: 'Đoạn văn: Phân bón hỗn hợp NPK bổ sung Silic hữu hiệu, c…'
+        type: text
+      - name: t7
+        label: 'Chữ: 12%'
+        type: string
+      - name: t8
+        label: 'Chữ: Đạm (N)'
+        type: string
+      - name: t9
+        label: 'Chữ: 3%'
+        type: string
+      - name: t10
+        label: 'Chữ: Lân (P₂O₅hh)'
+        type: string
+      - name: t11
+        label: 'Chữ: 10%'
+        type: string
+      - name: t12
+        label: 'Chữ: Kali (K₂Ohh)'
+        type: string
+      - name: t13
+        label: 'Chữ: 2%'
+        type: string
+      - name: t14
+        label: 'Chữ: Silic (SiO₂hh)'
+        type: string
+      - name: t15
+        label: 'Chữ: Mã số phân bón'
+        type: string
+      - name: t16
+        label: 'Chữ đậm: [mã số]'
+        type: string
+      - name: t17
+        label: 'Chữ: Quy cách'
+        type: string
+      - name: t18
+        label: 'Chữ đậm: [25 kg / 50 kg]'
+        type: string
+      - name: t19
+        label: 'Chữ: Phương thức sử dụng'
+        type: string
+      - name: t20
+        label: 'Chữ đậm: Bón rễ'
+        type: string
+      - name: t21
+        label: 'Chữ: Tiêu chuẩn'
+        type: string
+      - name: t22
+        label: 'Chữ đậm: ISO 9001:2015 · ISO 14001:2015'
+        type: string
+      - name: t23
+        label: 'Nút: Tìm đại lý gần nhất'
+        type: string
+      - name: t24
+        label: 'Nút: Gọi kỹ sư tư vấn'
+        type: string
+      - name: link1
+        label: Tệp/đường dẫn cho “Tải tài liệu kỹ thuật (PDF)”
+        type: file
+        description: Tải tệp lên (ví dụ PDF) hoặc để trống nếu chưa có.
+      - name: t25
+        label: 'Liên kết: Tải tài liệu kỹ thuật (PDF)'
+        type: string
+      - name: link2
+        label: Tệp/đường dẫn cho “Tải phiếu an toàn (SDS)”
+        type: file
+        description: Tải tệp lên (ví dụ PDF) hoặc để trống nếu chưa có.
+      - name: t26
+        label: 'Liên kết: Tải phiếu an toàn (SDS)'
+        type: string
+      - name: t27
+        label: 'Liên kết: Thành phần'
+        type: string
+      - name: t28
+        label: 'Liên kết: Công dụng'
+        type: string
+      - name: t29
+        label: 'Liên kết: Hướng dẫn sử dụng'
+        type: string
+      - name: t30
+        label: 'Liên kết: An toàn & bảo quản'
+        type: string
+      - name: t31
+        label: 'Liên kết: Thông tin pháp lý'
+        type: string
+    - name: s02_thanh_phan
+      label: 02 · Thanh phan
+      type: object
+      fields:
+      - name: t1
+        label: 'Tiêu đề: Thành phần định lượng'
+        type: string
+      - name: t2
+        label: 'Nhãn in hoa: CHỈ TIÊU'
+        type: string
+      - name: t3
+        label: 'Nhãn in hoa: HÀM LƯỢNG'
+        type: string
+      - name: t4
+        label: 'Nhãn in hoa: PHƯƠNG PHÁP THỬ'
+        type: string
+      - name: t5
+        label: 'Chữ: Đạm tổng số (Nts)'
+        type: string
+      - name: t6
+        label: 'Chữ đậm: 12%'
+        type: string
+      - name: t7
+        label: 'Nhãn in hoa: TCVN 5815:2018'
+        type: string
+      - name: t8
+        label: 'Chữ: Lân hữu hiệu (P₂O₅hh)'
+        type: string
+      - name: t9
+        label: 'Chữ đậm: 3%'
+        type: string
+      - name: t10
+        label: 'Nhãn in hoa: TCVN 5815:2018'
+        type: string
+      - name: t11
+        label: 'Chữ: Kali hữu hiệu (K₂Ohh)'
+        type: string
+      - name: t12
+        label: 'Chữ đậm: 10%'
+        type: string
+      - name: t13
+        label: 'Nhãn in hoa: TCVN 8560:2018'
+        type: string
+      - name: t14
+        label: 'Chữ: Silic hữu hiệu (SiO₂hh)'
+        type: string
+      - name: t15
+        label: 'Chữ đậm: 2%'
+        type: string
+      - name: t16
+        label: 'Chữ: [phương pháp]'
+        type: string
+      - name: t17
+        label: 'Chữ: Độ ẩm'
+        type: string
+      - name: t18
+        label: 'Chữ đậm: [%]'
+        type: string
+      - name: t19
+        label: 'Nhãn in hoa: TCVN 5815:2018'
+        type: string
+      - name: t20
+        label: 'Chữ: Kết quả kiểm định tại phòng thí nghiệm VILAS 1…'
+        type: string
+    - name: s03_cong_dung
+      label: 03 · Cong dung
+      type: object
+      fields:
+      - name: t1
+        label: 'Tiêu đề: Công dụng'
+        type: string
+      - name: t2
+        label: 'Nhãn in hoa: ĐẺ NHÁNH'
+        type: string
+      - name: t3
+        label: 'Chữ: Lúa đẻ nhánh khỏe, đẻ tập trung'
+        type: string
+      - name: t4
+        label: 'Nhãn in hoa: LÀM ĐÒNG'
+        type: string
+      - name: t5
+        label: 'Chữ: Đòng to, dài; lúa trổ thoát'
+        type: string
+      - name: t6
+        label: 'Nhãn in hoa: NĂNG SUẤT'
+        type: string
+      - name: t7
+        label: 'Chữ: Bông to, nhiều hạt, hạt chắc mẩy'
+        type: string
+      - name: t8
+        label: 'Nhãn in hoa: CHỐNG CHỊU'
+        type: string
+      - name: t9
+        label: 'Chữ: Cứng cây, đứng lá, chống đổ ngã, hạn chế sâu b…'
+        type: string
+    - name: s04_su_dung
+      label: 04 · Su dung
+      type: object
+      fields:
+      - name: t1
+        label: 'Tiêu đề: Hướng dẫn sử dụng'
+        type: string
+      - name: t2
+        label: 'Nhãn in hoa: BÓN LÓT'
+        type: string
+      - name: t3
+        label: 'Chữ đậm: Dùng NPK Lúa 1'
+        type: string
+      - name: t4
+        label: 'Chữ: Không dùng sản phẩm này'
+        type: string
+      - name: t5
+        label: 'Nhãn in hoa: THÚC ĐẺ NHÁNH'
+        type: string
+      - name: t6
+        label: 'Chữ đậm: 300–350 kg/ha'
+        type: string
+      - name: t7
+        label: 'Chữ: Bón khi lúa bắt đầu đẻ nhánh'
+        type: string
+      - name: t8
+        label: 'Nhãn in hoa: THÚC ĐÒNG'
+        type: string
+      - name: t9
+        label: 'Chữ đậm: 300–350 kg/ha'
+        type: string
+      - name: t10
+        label: 'Chữ: Bón khi lúa phân hóa đòng'
+        type: string
+      - name: t11
+        label: 'Chữ đậm: Cách bón:'
+        type: string
+      - name: t12
+        label: 'Đoạn văn: bón rải đều trên mặt ruộng khi ruộng còn ẩm ho…'
+        type: text
+    - name: s05_an_toan
+      label: 05 · An toan
+      type: object
+      fields:
+      - name: t1
+        label: 'Tiêu đề nhỏ: Cảnh báo an toàn'
+        type: string
+      - name: t2
+        label: 'Chữ: Không nguy hiểm khi tiếp xúc trực tiếp. Không …'
+        type: text
+      - name: t3
+        label: 'Tiêu đề nhỏ: Bảo quản'
+        type: string
+      - name: t4
+        label: 'Chữ: Bảo quản nơi khô ráo, thoáng mát, tránh ánh nắ…'
+        type: text
+    - name: s06_thong_tin
+      label: 06 · Thong tin
+      type: object
+      fields:
+      - name: t1
+        label: 'Tiêu đề: Thông tin pháp lý'
+        type: string
+      - name: t2
+        label: 'Chữ: Mã số phân bón'
+        type: string
+      - name: t3
+        label: 'Chữ đậm: [mã số]'
+        type: string
+      - name: t4
+        label: 'Chữ: Loại phân bón'
+        type: string
+      - name: t5
+        label: 'Chữ đậm: Phân bón hỗn hợp NPK'
+        type: string
+      - name: t6
+        label: 'Chữ: Tiêu chuẩn cơ sở'
+        type: string
+      - name: t7
+        label: 'Chữ đậm: [số TCCS]'
+        type: string
+      - name: t8
+        label: 'Chữ: Hạn sử dụng'
+        type: string
+      - name: t9
+        label: 'Chữ đậm: 36 tháng kể từ NSX'
+        type: string
+      - name: t10
+        label: 'Chữ: Ngày sản xuất'
+        type: string
+      - name: t11
+        label: 'Chữ đậm: In trên bao bì'
+        type: string
+      - name: t12
+        label: 'Chữ: Nơi sản xuất'
+        type: string
+      - name: t13
+        label: 'Chữ đậm: [Nhà máy]'
+        type: string
+    - name: s07_mo_hinh_thuc_te
+      label: 07 · Mô hình thực tế
+      type: object
+      fields:
+      - name: img_pd_model_1
+        label: 'Ảnh: Ruộng lúa mô hình sử dụng NPK Lúa 2'
+        component: photo
+        description: Khung ảnh khoảng 552×320 px trên máy tính — nên dùng ảnh rộng ít nhất 1104 px.
+      - name: t1
+        label: 'Nhãn in hoa: MÔ HÌNH THỰC TẾ'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: [Tên mô hình, địa phương, vụ]'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: [Kết quả: năng suất đạt … tạ/ha, tăng …% so vớ…'
+        type: text
+      - name: t4
+        label: 'Liên kết: Xem mô hình →'
+        type: string
+    - name: s08_san_pham_lien_quan
+      label: 08 · Sản phẩm liên quan
+      type: object
+      fields:
+      - name: t1
+        label: 'Tiêu đề: Chương trình dinh dưỡng cho lúa'
+        type: string
+      - name: t2
+        label: 'Liên kết: Tất cả sản phẩm →'
+        type: string
+      - name: img_rel_1_1
+        label: 'Ảnh: Bao bì'
+        component: photo
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
+      - name: t3
+        label: 'Nhãn in hoa: BÓN LÓT'
+        type: string
+      - name: t4
+        label: 'Chữ đậm: NPK 8-6-4+1,5SiO₂hh Tiến Nông (Lúa 1)'
+        type: string
+      - name: img_rel_2_1
+        label: 'Ảnh: Bao bì'
+        component: photo
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
+      - name: t5
+        label: 'Nhãn in hoa: ĐA DỤNG'
+        type: string
+      - name: t6
+        label: 'Chữ đậm: NPK 15-15-15+1SiO₂hh Tiến Nông'
+        type: string
+      - name: img_rel_3_1
+        label: 'Ảnh: Bao bì'
+        component: photo
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
+      - name: t7
+        label: 'Nhãn in hoa: TRUNG VI LƯỢNG'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: Điều hòa pH đất 1 Tiến Nông'
+        type: string
+      - name: img_rel_4_1
+        label: 'Ảnh: Bao bì'
+        component: photo
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
+      - name: t9
+        label: 'Nhãn in hoa: ĐA DỤNG'
+        type: string
+      - name: t10
+        label: 'Chữ đậm: Đạm vàng Tiến Nông bổ sung vi lượng'
+        type: string
+    - name: views
+      label: Ảnh sản phẩm (các góc)
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.label}'
+      fields:
+      - name: label
+        label: Tên nút
+        type: string
+      - name: image
+        label: Ảnh
+        component: photo
+        description: Khung ảnh khoảng 504×472 px trên máy tính — nên dùng ảnh rộng ít nhất 1008 px. Ảnh hiển thị trọn vẹn (không cắt), nên dùng
+          ảnh nền trắng/trong suốt.
+  - name: giai_phap
+    label: Giải pháp theo cây trồng
+    type: file
+    path: src/content/pages/giai-phap.json
+    format: json
+    fields:
+    - name: seo
+      label: Tiêu đề tab trình duyệt & mô tả Google
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề trang
+        type: string
+        description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+      - name: description
+        label: Mô tả ngắn cho Google
+        type: text
+    - name: s01_hero
+      label: 01 · Hero
+      type: object
+      fields:
+      - name: img_sol_hero_1
+        label: 'Ảnh: Cận cảnh bông lúa chín trên cánh đồng'
+        component: photo
+        description: Khung ảnh khoảng 1440×602 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
+      - name: t1
+        label: 'Chữ: Trang chủ / Giải pháp / Theo cây trồng'
+        type: string
+      - name: t2
+        label: 'Nhãn in hoa: GIẢI PHÁP DINH DƯỠNG'
+        type: string
+      - name: t3
+        label: 'Tiêu đề chính: Đất khỏe. Cây khỏe. Nông nghiệp hiệu quả hơn.'
+        type: string
+      - name: t4
+        label: 'Đoạn văn: Mỗi loại cây, mỗi chân đất có nhu cầu dinh dưỡ…'
+        type: text
+      - name: t5
+        label: 'Liên kết: Tìm giải pháp cho cây trồng →'
+        type: string
+      - name: t6
+        label: 'Liên kết: Giải pháp cho dự án'
+        type: string
+    - name: s02_cay_trong
+      label: 02 · Cây trồng
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 01 · THEO CÂY TRỒNG'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Mỗi nhóm cây trồng, một chương trình dinh dưỡn…'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Chương trình được thiết kế theo từng giai đoạn…'
+        type: text
+      - name: img_cg_1_1
+        label: 'Ảnh: Lúa, ngô'
+        component: photo
+        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
+      - name: t4
+        label: 'Chữ đậm: Cây lương thực'
+        type: string
+      - name: t5
+        label: 'Chữ: Lúa · Ngô · Khoai · Sắn'
+        type: string
+      - name: img_cg_2_1
+        label: 'Ảnh: Rau màu'
+        component: photo
+        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
+      - name: t6
+        label: 'Chữ đậm: Rau màu & cây thực phẩm'
+        type: string
+      - name: t7
+        label: 'Chữ: Rau ăn lá · Rau ăn quả · Củ'
+        type: string
+      - name: img_cg_3_1
+        label: 'Ảnh: Cây ăn quả'
+        component: photo
+        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
+      - name: t8
+        label: 'Chữ đậm: Cây ăn quả'
+        type: string
+      - name: t9
+        label: 'Chữ: Cam · Bưởi · Sầu riêng · Thanh long'
+        type: string
+      - name: img_cg_4_1
+        label: 'Ảnh: Cà phê, chè'
+        component: photo
+        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
+      - name: t10
+        label: 'Chữ đậm: Cây công nghiệp'
+        type: string
+      - name: t11
+        label: 'Chữ: Cà phê · Chè · Hồ tiêu · Mía'
+        type: string
+      - name: img_cg_5_1
+        label: 'Ảnh: Hoa, cây cảnh'
+        component: photo
+        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
+      - name: t12
+        label: 'Chữ đậm: Hoa, cây cảnh & cảnh quan'
+        type: string
+      - name: t13
+        label: 'Chữ: Hoa · Cây cảnh · Thảm cỏ'
+        type: string
+      - name: img_cg_6_1
+        label: 'Ảnh: Cây dược liệu'
+        component: photo
+        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
+      - name: t14
+        label: 'Chữ đậm: Cây dược liệu'
+        type: string
+      - name: t15
+        label: 'Chữ: Sâm · Đinh lăng · Nghệ'
+        type: string
+    - name: s03_theo_van_de
+      label: 03 · Theo vấn đề
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 02 · THEO VẤN ĐỀ'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Nhận diện đúng vấn đề để chọn đúng giải pháp'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Phần lớn tình trạng cây sinh trưởng kém bắt ng…'
+        type: text
+    - name: s04_suc_khoe_dat
+      label: 04 · Sức khỏe đất
+      type: object
+      fields:
+      - name: img_soil_1
+        label: 'Ảnh: Bàn tay cầm nắm đất có cây con'
+        component: photo
+        description: Khung ảnh khoảng 548×480 px trên máy tính — nên dùng ảnh rộng ít nhất 1096 px.
+      - name: t1
+        label: 'Nhãn in hoa: 03 · SỨC KHỎE ĐẤT'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Đất là nền tảng của sản xuất nông nghiệp'
+        type: string
+      - name: t3
+        label: 'Chữ: 01'
+        type: string
+      - name: t4
+        label: 'Chữ đậm: Đánh giá đất'
+        type: string
+      - name: t5
+        label: 'Chữ: Lấy mẫu và phân tích tại phòng thí nghiệm VILA…'
+        type: string
+      - name: t6
+        label: 'Chữ: 02'
+        type: string
+      - name: t7
+        label: 'Chữ đậm: Xác định nhu cầu cây trồng'
+        type: string
+      - name: t8
+        label: 'Chữ: Theo giống, giai đoạn và mục tiêu năng suất'
+        type: string
+      - name: t9
+        label: 'Chữ: 03'
+        type: string
+      - name: t10
+        label: 'Chữ đậm: Xây dựng chương trình bón phân'
+        type: string
+      - name: t11
+        label: 'Chữ: Cân đối đa – trung – vi lượng và hữu cơ'
+        type: string
+      - name: t12
+        label: 'Chữ: 04'
+        type: string
+      - name: t13
+        label: 'Chữ đậm: Theo dõi & điều chỉnh'
+        type: string
+      - name: t14
+        label: 'Chữ: Kỹ sư đồng hành trong suốt vụ mùa'
+        type: string
+    - name: s05_tim_giai_phap
+      label: 05 · Tìm giải pháp
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 04 · TÌM GIẢI PHÁP'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Tìm giải pháp phù hợp cho từng cây trồng'
+        type: string
+      - name: t3
+        label: 'Chữ: 1. Cây trồng'
+        type: string
+      - name: t4
+        label: 'Chữ: 2. Vấn đề đang gặp'
+        type: string
+      - name: t5
+        label: 'Nhãn in hoa: ĐỀ XUẤT SƠ BỘ'
+        type: string
+      - name: t6
+        label: 'Chữ: Đây là định hướng chung. Kỹ sư Tiến Nông sẽ tư…'
+        type: text
+      - name: f1
+        label: 'Nhãn ô nhập: Số điện thoại'
+        type: string
+      - name: f2
+        label: 'Gợi ý trong ô: 09xx xxx xxx'
+        type: string
+      - name: f3
+        label: 'Nhãn ô nhập: Tỉnh / thành phố'
+        type: string
+      - name: f4
+        label: 'Gợi ý trong ô: VD: Thanh Hóa'
+        type: string
+      - name: t7
+        label: 'Nút: Nhận tư vấn từ kỹ sư'
+        type: string
+    - name: s06_mo_hinh_thuc_te
+      label: 06 · Mô hình thực tế
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 05 · MÔ HÌNH THỰC TẾ'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Giải pháp được kiểm chứng trên đồng ruộng'
+        type: string
+      - name: t3
+        label: 'Liên kết: Tất cả mô hình →'
+        type: string
+      - name: img_model_1_1
+        label: 'Ảnh: Mô hình lúa'
+        component: photo
+        description: Khung ảnh khoảng 371×240 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
+      - name: t4
+        label: 'Nhãn in hoa: LÚA · THANH HÓA'
+        type: string
+      - name: t5
+        label: 'Chữ đậm: [Tên mô hình]'
+        type: string
+      - name: t6
+        label: 'Chữ: +[x]%'
+        type: string
+      - name: t7
+        label: 'Chữ: năng suất'
+        type: string
+      - name: t8
+        label: 'Chữ: [x] ha'
+        type: string
+      - name: t9
+        label: 'Chữ: diện tích'
+        type: string
+      - name: img_model_2_1
+        label: 'Ảnh: Mô hình cà phê'
+        component: photo
+        description: Khung ảnh khoảng 371×240 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
+      - name: t10
+        label: 'Nhãn in hoa: CÀ PHÊ · GIA LAI'
+        type: string
+      - name: t11
+        label: 'Chữ đậm: [Tên mô hình]'
+        type: string
+      - name: t12
+        label: 'Chữ: +[x]%'
+        type: string
+      - name: t13
+        label: 'Chữ: năng suất'
+        type: string
+      - name: t14
+        label: 'Chữ: [x] ha'
+        type: string
+      - name: t15
+        label: 'Chữ: diện tích'
+        type: string
+      - name: img_model_3_1
+        label: 'Ảnh: Mô hình cây ăn quả'
+        component: photo
+        description: Khung ảnh khoảng 371×240 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
+      - name: t16
+        label: 'Nhãn in hoa: CÂY ĂN QUẢ · [TỈNH]'
+        type: string
+      - name: t17
+        label: 'Chữ đậm: [Tên mô hình]'
+        type: string
+      - name: t18
+        label: 'Chữ: +[x]%'
+        type: string
+      - name: t19
+        label: 'Chữ: năng suất'
+        type: string
+      - name: t20
+        label: 'Chữ: [x] ha'
+        type: string
+      - name: t21
+        label: 'Chữ: diện tích'
+        type: string
+    - name: s07_phan_7
+      label: 07 · Phần 7
+      type: object
+      fields:
+      - name: t1
+        label: 'Tiêu đề: Giải pháp chuyên biệt cho sân golf, cảnh quan …'
+        type: string
+      - name: t2
+        label: 'Chữ: Tiến Nông thiết kế chương trình dinh dưỡng riê…'
+        type: string
+      - name: t3
+        label: 'Liên kết: Giải pháp cho dự án →'
+        type: string
+    - name: problems_fix_label
+      label: Vấn đề thường gặp – nhãn "Hướng xử lý"
+      type: string
+    - name: problems
+      label: Vấn đề thường gặp
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.title}'
+      fields:
+      - name: title
+        label: Vấn đề
+        type: string
+      - name: cause
+        label: Nguyên nhân
+        type: text
+      - name: fix
+        label: Hướng xử lý
+        type: text
+    - name: finder_crops
+      label: Tìm giải pháp – danh sách cây trồng
+      type: string
+      list: true
+    - name: finder_issues
+      label: Tìm giải pháp – vấn đề & các bước đề xuất
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.label}'
+      fields:
+      - name: label
+        label: Vấn đề
+        type: string
+      - name: steps
+        label: Các bước đề xuất
+        type: string
+        list: true
+      description: Khi mở trang, mục cuối cùng được chọn sẵn.
+  - name: giai_phap_du_an
+    label: Giải pháp cho dự án
+    type: file
+    path: src/content/pages/giai-phap-du-an.json
+    format: json
+    fields:
+    - name: seo
+      label: Tiêu đề tab trình duyệt & mô tả Google
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề trang
+        type: string
+        description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+      - name: description
+        label: Mô tả ngắn cho Google
+        type: text
+    - name: s01_hero
+      label: 01 · Hero
+      type: object
+      fields:
+      - name: t1
+        label: 'Liên kết: Trang chủ'
+        type: string
+      - name: t2
+        label: 'Liên kết: Giải pháp'
+        type: string
+      - name: t3
+        label: 'Chữ: / Cho dự án'
+        type: string
+      - name: t4
+        label: 'Nhãn in hoa: GIẢI PHÁP CHO DỰ ÁN'
+        type: string
+      - name: t5
+        label: 'Tiêu đề chính: Chương trình dinh dưỡng thiết kế riêng cho từn…'
+        type: string
+      - name: t6
+        label: 'Đoạn văn: Với các dự án quy mô lớn, Tiến Nông không chỉ …'
+        type: text
+      - name: t7
+        label: 'Liên kết: Yêu cầu tư vấn dự án →'
+        type: string
+      - name: t8
+        label: 'Liên kết: Quy trình triển khai'
+        type: string
+      - name: img_proj_hero_1
+        label: 'Ảnh: Thảm cỏ sân golf / cảnh quan khu đô thị'
+        component: photo
+        description: Khung ảnh khoảng 552×480 px trên máy tính — nên dùng ảnh rộng ít nhất 1104 px.
+    - name: s02_nhom_khach_hang
+      label: 02 · Nhóm khách hàng
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 01 · LĨNH VỰC PHỤC VỤ'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Giải pháp chuyên biệt cho từng loại hình dự án'
+        type: string
+      - name: img_seg_1_1
+        label: 'Ảnh: Sân golf'
+        component: photo
+        description: Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px.
+      - name: t3
+        label: 'Chữ đậm: Sân golf'
+        type: string
+      - name: t4
+        label: 'Chữ: Giữ thảm cỏ xanh đều, chịu được tần suất sử dụ…'
+        type: text
+      - name: t5
+        label: 'Chữ: Fairway · Green · Tee'
+        type: string
+      - name: img_seg_2_1
+        label: 'Ảnh: Cảnh quan khu đô thị'
+        component: photo
+        description: Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px.
+      - name: t6
+        label: 'Chữ đậm: Cảnh quan đô thị & bất động sản'
+        type: string
+      - name: t7
+        label: 'Chữ: Duy trì cây xanh, thảm cỏ và hoa cảnh luôn đẹp…'
+        type: string
+      - name: t8
+        label: 'Chữ: Khu đô thị · Resort · Công viên'
+        type: string
+      - name: img_seg_3_1
+        label: 'Ảnh: Cây xanh khu công nghiệp'
+        component: photo
+        description: Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px.
+      - name: t9
+        label: 'Chữ đậm: Khu công nghiệp & nhà máy'
+        type: string
+      - name: t10
+        label: 'Chữ: Phát triển hệ thống cây xanh trên nền đất san …'
+        type: text
+      - name: t11
+        label: 'Chữ: KCN · Nhà máy · Kho vận'
+        type: string
+      - name: img_seg_4_1
+        label: 'Ảnh: Nhà kính công nghệ cao'
+        component: photo
+        description: Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px.
+      - name: t12
+        label: 'Chữ đậm: Nông nghiệp công nghệ cao'
+        type: string
+      - name: t13
+        label: 'Chữ: Chương trình dinh dưỡng chính xác cho nhà kính…'
+        type: text
+      - name: t14
+        label: 'Chữ: Nhà kính · Trang trại · Vùng nguyên liệu'
+        type: string
+    - name: s03_quy_trinh
+      label: 03 · Quy trình
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 02 · QUY TRÌNH TRIỂN KHAI'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Quy trình năm bước, một đầu mối xuyên suốt'
+        type: string
+      - name: t3
+        label: 'Chữ: 01'
+        type: string
+      - name: t4
+        label: 'Chữ đậm: Khảo sát hiện trạng'
+        type: string
+      - name: t5
+        label: 'Chữ: Kỹ sư khảo sát thực địa, ghi nhận hiện trạng c…'
+        type: string
+      - name: t6
+        label: 'Chữ: 02'
+        type: string
+      - name: t7
+        label: 'Chữ đậm: Phân tích đất'
+        type: string
+      - name: t8
+        label: 'Chữ: Lấy mẫu và phân tích tại phòng thí nghiệm VILA…'
+        type: string
+      - name: t9
+        label: 'Chữ: 03'
+        type: string
+      - name: t10
+        label: 'Chữ đậm: Thiết kế chương trình'
+        type: string
+      - name: t11
+        label: 'Chữ: Đề xuất sản phẩm, liều lượng, lịch bón và dự t…'
+        type: string
+      - name: t12
+        label: 'Chữ: 04'
+        type: string
+      - name: t13
+        label: 'Chữ đậm: Cung ứng theo lịch'
+        type: string
+      - name: t14
+        label: 'Chữ: Giao hàng đúng tiến độ từ hệ thống 3 nhà máy v…'
+        type: string
+      - name: t15
+        label: 'Chữ: 05'
+        type: string
+      - name: t16
+        label: 'Chữ đậm: Giám sát & điều chỉnh'
+        type: string
+      - name: t17
+        label: 'Chữ: Theo dõi định kỳ, báo cáo kết quả và điều chỉn…'
+        type: string
+    - name: s04_nang_luc
+      label: 04 · Năng lực
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 03 · NĂNG LỰC BẢO ĐẢM'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Năng lực bảo đảm cho mỗi dự án'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Hơn 30 năm nghiên cứu và sản xuất dinh dưỡng c…'
+        type: text
+      - name: t4
+        label: 'Chữ đậm: Phòng thí nghiệm VILAS 1519'
+        type: string
+      - name: t5
+        label: 'Chữ: Kết quả phân tích có giá trị pháp lý'
+        type: string
+      - name: t6
+        label: 'Chữ đậm: Doanh nghiệp KH&CN'
+        type: string
+      - name: t7
+        label: 'Chữ: Đội ngũ R&D thiết kế công thức riêng'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: 650.000 tấn/năm'
+        type: string
+      - name: t9
+        label: 'Chữ: Năng lực cung ứng ổn định từ 3 nhà máy'
+        type: string
+      - name: t10
+        label: 'Chữ đậm: ISO 9001 · ISO 14001'
+        type: string
+      - name: t11
+        label: 'Chữ: Quản lý chất lượng và môi trường'
+        type: string
+    - name: s05_yeu_cau_tu_van
+      label: 05 · Yêu cầu tư vấn
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 04 · YÊU CẦU TƯ VẤN'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Trao đổi cùng chuyên gia dự án'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Quý khách vui lòng gửi thông tin sơ bộ, chuyên…'
+        type: text
+      - name: t4
+        label: 'Chữ: Đầu mối dự án'
+        type: string
+      - name: t5
+        label: 'Chữ đậm: [Họ tên · Chức danh]'
+        type: string
+      - name: t6
+        label: 'Chữ: [Số điện thoại] · [email dự án]'
+        type: string
+      - name: t7
+        label: 'Nhãn in hoa: ĐÃ GỬI'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: Cảm ơn Quý khách đã gửi yêu cầu.'
+        type: string
+      - name: t9
+        label: 'Chữ: Chuyên gia dự án của Tiến Nông sẽ liên hệ tron…'
+        type: string
+      - name: t10
+        label: 'Nút: Gửi yêu cầu khác'
+        type: string
+      - name: f1
+        label: 'Nhãn ô nhập: Họ và tên *'
+        type: string
+      - name: f2
+        label: 'Gợi ý trong ô: Nguyễn Văn A'
+        type: string
+      - name: f3
+        label: 'Nhãn ô nhập: Đơn vị / công ty *'
+        type: string
+      - name: f4
+        label: 'Gợi ý trong ô: Tên chủ đầu tư hoặc đơn vị quản lý'
+        type: string
+      - name: f5
+        label: 'Nhãn ô nhập: Số điện thoại *'
+        type: string
+      - name: f6
+        label: 'Gợi ý trong ô: 09xx xxx xxx'
+        type: string
+      - name: f7
+        label: 'Nhãn ô nhập: Email'
+        type: string
+      - name: f8
+        label: 'Gợi ý trong ô: ten@congty.vn'
+        type: string
+      - name: f9
+        label: 'Nhãn ô nhập: Loại dự án *'
+        type: string
+      - name: f10
+        label: 'Nhãn ô nhập: Diện tích (ha)'
+        type: string
+      - name: f11
+        label: 'Gợi ý trong ô: VD: 45'
+        type: string
+      - name: f12
+        label: 'Nhãn ô nhập: Địa điểm dự án'
+        type: string
+      - name: f13
+        label: 'Gợi ý trong ô: Tỉnh / thành phố'
+        type: string
+      - name: f14
+        label: 'Nhãn ô nhập: Tôi đồng ý để Tiến Nông xử lý dữ liệu cá'
+        type: string
+      - name: t11
+        label: 'Nút: Gửi yêu cầu'
+        type: string
+    - name: project_types
+      label: Form – các loại dự án
+      type: string
+      list: true
+  - name: phat_trien_ben_vung
+    label: Phát triển bền vững
+    type: file
+    path: src/content/pages/phat-trien-ben-vung.json
+    format: json
+    fields:
+    - name: seo
+      label: Tiêu đề tab trình duyệt & mô tả Google
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề trang
+        type: string
+        description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+      - name: description
+        label: Mô tả ngắn cho Google
+        type: text
+    - name: s01_hero
+      label: 01 · Hero
+      type: object
+      fields:
+      - name: t1
+        label: 'Liên kết: Trang chủ'
+        type: string
+      - name: t2
+        label: 'Chữ: / Phát triển bền vững'
+        type: string
+      - name: t3
+        label: 'Nhãn in hoa: PHÁT TRIỂN BỀN VỮNG'
+        type: string
+      - name: t4
+        label: 'Tiêu đề chính: Vì nền nông nghiệp bền vững và cộng đồng thịnh…'
+        type: string
+      - name: t5
+        label: 'Đoạn văn: Phát triển bền vững tại Tiến Nông bắt nguồn từ…'
+        type: text
+      - name: img_esg_hero_1
+        label: 'Ảnh: Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh'
+        component: photo
+        description: Khung ảnh khoảng 1168×500 px trên máy tính — nên dùng ảnh rộng ít nhất 2336 px.
+      - name: t6
+        label: 'Chữ: [x] tỷ đồng'
+        type: string
+      - name: t7
+        label: 'Chữ: đóng góp cho cộng đồng (lũy kế)'
+        type: string
+      - name: t8
+        label: 'Chữ: [x]'
+        type: string
+      - name: t9
+        label: 'Chữ: lượt nông dân được tập huấn'
+        type: string
+      - name: t10
+        label: 'Chữ: [x]'
+        type: string
+      - name: t11
+        label: 'Chữ: suất học bổng đã trao'
+        type: string
+      - name: t12
+        label: 'Nhãn in hoa: ISO 14001'
+        type: string
+      - name: t13
+        label: 'Chữ: hệ thống quản lý môi trường'
+        type: string
+      - name: t14
+        label: 'Liên kết: Sản xuất xanh'
+        type: string
+      - name: t15
+        label: 'Liên kết: Đồng hành cùng nhà nông'
+        type: string
+      - name: t16
+        label: 'Liên kết: Vì cộng đồng'
+        type: string
+      - name: t17
+        label: 'Liên kết: Người lao động'
+        type: string
+      - name: t18
+        label: 'Liên kết: Lộ trình'
+        type: string
+    - name: s02_san_xuat_xanh
+      label: 02 · Sản xuất xanh
+      type: object
+      fields:
+      - name: img_esg_plant_1
+        label: 'Ảnh: Flycam khuôn viên nhà máy với cây xanh'
+        component: photo
+        description: Khung ảnh khoảng 1440×588 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
+      - name: t1
+        label: 'Nhãn in hoa: 01 · SẢN XUẤT XANH'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Sản xuất quy mô lớn, hài hòa cùng môi trường'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Các nhà máy của Tiến Nông vận hành theo hệ thố…'
+        type: text
+      - name: t4
+        label: 'Chữ đậm: [x]%'
+        type: string
+      - name: t5
+        label: 'Chữ: diện tích cây xanh'
+        type: string
+      - name: t6
+        label: 'Chữ đậm: [Hệ thống]'
+        type: string
+      - name: t7
+        label: 'Chữ: xử lý bụi, khí thải'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: [Hệ thống]'
+        type: string
+      - name: t9
+        label: 'Chữ: xử lý nước thải'
+        type: string
+      - name: t10
+        label: 'Chữ đậm: [Nếu có]'
+        type: string
+      - name: t11
+        label: 'Chữ: năng lượng mặt trời'
+        type: string
+    - name: s03_dong_hanh_cung_nha_nong
+      label: 03 · Đồng hành cùng nhà nông
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 02 · ĐỒNG HÀNH CÙNG NHÀ NÔNG'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Nâng cao nhận thức về canh tác bền vững'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Tiến Nông phối hợp với chính quyền, hội nông d…'
+        type: text
+      - name: t4
+        label: 'Chữ đậm: Bón phân cân đối, đúng cách:'
+        type: string
+      - name: t5
+        label: 'Chữ: giảm lãng phí và hạn chế tác động đến môi trường'
+        type: string
+      - name: t6
+        label: 'Chữ đậm: Bảo vệ sức khỏe đất:'
+        type: string
+      - name: t7
+        label: 'Chữ: tăng cường hữu cơ, phục hồi đất bạc màu'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: Hội thảo đầu bờ:'
+        type: string
+      - name: t9
+        label: 'Chữ: chia sẻ kinh nghiệm từ các mô hình hiệu quả'
+        type: string
+      - name: img_esg_farm_1_1
+        label: 'Ảnh: Lớp tập huấn kỹ thuật cho nông dân'
+        component: photo
+        description: Khung ảnh khoảng 548×260 px trên máy tính — nên dùng ảnh rộng ít nhất 1096 px.
+      - name: img_esg_farm_2_1
+        label: 'Ảnh: Hội thảo đầu bờ'
+        component: photo
+        description: Khung ảnh khoảng 267×200 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px.
+      - name: img_esg_farm_3_1
+        label: 'Ảnh: Kỹ sư hướng dẫn tại ruộng'
+        component: photo
+        description: Khung ảnh khoảng 267×200 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px.
+    - name: s04_vi_cong_dong
+      label: 04 · Vì cộng đồng
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 03 · VÌ CỘNG ĐỒNG'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Sẻ chia lợi ích, vun đắp cộng đồng'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Những chương trình được duy trì qua nhiều năm,…'
+        type: text
+    - name: s05_nguoi_lao_dong
+      label: 05 · Người lao động
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 04 · NGƯỜI LAO ĐỘNG'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Gắn bó bền lâu, cùng nhau phát triển'
+        type: string
+      - name: t3
+        label: 'Chữ: Môi trường làm việc an toàn, đãi ngộ xứng đáng…'
+        type: text
+      - name: t4
+        label: 'Liên kết: Con người Tiến Nông →'
+        type: string
+    - name: s06_lo_trinh
+      label: 06 · Lộ trình
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: 05 · LỘ TRÌNH'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Hướng tới báo cáo phát triển bền vững đầu tiên'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Chúng tôi đang chuẩn hóa việc đo lường và công…'
+        type: text
+      - name: t4
+        label: 'Chữ: Hiện tại'
+        type: string
+      - name: t5
+        label: 'Chữ đậm: Thực hành'
+        type: string
+      - name: t6
+        label: 'Chữ: ISO 14001, chương trình cộng đồng và tập huấn …'
+        type: string
+      - name: t7
+        label: 'Chữ: [Năm]'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: Đo lường'
+        type: string
+      - name: t9
+        label: 'Chữ: Xây dựng bộ chỉ số và hệ thống thu thập dữ liệu'
+        type: string
+      - name: t10
+        label: 'Chữ: [Năm]'
+        type: string
+      - name: t11
+        label: 'Chữ đậm: Công bố'
+        type: string
+      - name: t12
+        label: 'Chữ: Phát hành báo cáo phát triển bền vững đầu tiên'
+        type: string
+    - name: programs
+      label: Chương trình cộng đồng
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.year} · {fields.title}'
+      fields:
+      - name: tag
+        label: Chủ đề
+        type: select
+        options:
+          values:
+          - value: KHUYẾN HỌC
+            label: Khuyến học
+          - value: BIỂN ĐẢO
+            label: Biển đảo
+          - value: GIÁO DỤC
+            label: Giáo dục
+          - value: NGƯỜI YẾU THẾ
+            label: Người yếu thế
+      - name: year
+        label: Năm
+        type: string
+      - name: title
+        label: Tên chương trình
+        type: string
+      - name: body
+        label: Mô tả
+        type: text
+      - name: image
+        label: Ảnh
+        component: photo
+        description: Khung ảnh khoảng 371×220 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
+  - name: nong_dan
+    label: Nông dân Tiến Nông
+    type: file
+    path: src/content/pages/nong-dan.json
+    format: json
+    fields:
+    - name: seo
+      label: Tiêu đề tab trình duyệt & mô tả Google
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề trang
+        type: string
+        description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+      - name: description
+        label: Mô tả ngắn cho Google
+        type: text
+    - name: s01_hero
+      label: 01 · Hero
+      type: object
+      fields:
+      - name: img_farmer_hero_1
+        label: 'Ảnh: Nông dân và kỹ sư Tiến Nông trên cánh đồng'
+        component: photo
+        description: Khung ảnh khoảng 1440×600 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
+      - name: t1
+        label: 'Chữ: Trang chủ / Nông dân Tiến Nông'
+        type: string
+      - name: t2
+        label: 'Nhãn in hoa: CỘNG ĐỒNG NÔNG DÂN TIẾN NÔNG'
+        type: string
+      - name: t3
+        label: 'Tiêu đề chính: Đồng hành cùng nhà nông trên mọi miền đất nước'
+        type: string
+      - name: t4
+        label: 'Đoạn văn: Kết nối hơn 200.000 hộ nông dân để chia sẻ kiế…'
+        type: text
+      - name: t5
+        label: 'Liên kết: Tham gia cộng đồng →'
+        type: string
+      - name: link1
+        label: 'Đường dẫn cho “Hotline kỹ sư: [số]”'
+        type: string
+        description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+      - name: t6
+        label: 'Liên kết: Hotline kỹ sư: [số]'
+        type: string
+    - name: s02_dang_ky
+      label: 02 · Đăng ký
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: THAM GIA CỘNG ĐỒNG'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Trở thành thành viên Nông dân Tiến Nông'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Dành cho nông dân, chủ trang trại, hợp tác xã …'
+        type: text
+      - name: t4
+        label: 'Chữ: Cập nhật kiến thức và mô hình canh tác hiệu quả'
+        type: string
+      - name: t5
+        label: 'Chữ: Được kỹ sư nông học tư vấn miễn phí'
+        type: string
+      - name: t6
+        label: 'Chữ: Ưu tiên tham gia hội thảo đầu bờ, chương trình…'
+        type: string
+      - name: t7
+        label: 'Chữ: Kết nối với cộng đồng nhà nông trên toàn quốc'
+        type: string
+      - name: t8
+        label: 'Nhãn in hoa: ĐÃ GỬI ĐĂNG KÝ'
+        type: string
+      - name: t9
+        label: 'Chữ đậm: Cảm ơn bà con đã đăng ký!'
+        type: string
+      - name: t10
+        label: 'Chữ: Kỹ sư Tiến Nông phụ trách khu vực sẽ liên hệ q…'
+        type: string
+      - name: t11
+        label: 'Nút: Đăng ký thêm thành viên'
+        type: string
+      - name: f1
+        label: 'Nhãn ô nhập: Họ và tên *'
+        type: string
+      - name: f2
+        label: 'Gợi ý trong ô: Nguyễn Văn A'
+        type: string
+      - name: f3
+        label: 'Nhãn ô nhập: Số điện thoại / Zalo *'
+        type: string
+      - name: f4
+        label: 'Gợi ý trong ô: 09xx xxx xxx'
+        type: string
+      - name: f5
+        label: 'Nhãn ô nhập: Tỉnh / thành phố *'
+        type: string
+      - name: f6
+        label: 'Gợi ý trong ô: VD: Thanh Hóa'
+        type: string
+      - name: f7
+        label: 'Nhãn ô nhập: Cây trồng chính *'
+        type: string
+      - name: f8
+        label: 'Nhãn ô nhập: Tôi đồng ý để Tiến Nông xử lý dữ liệu cá'
+        type: string
+      - name: t12
+        label: 'Nút: Gửi đăng ký'
+        type: string
+      - name: t13
+        label: 'Chữ: Hoặc nhắn Zalo OA Tiến Nông để đăng ký nhanh.'
+        type: string
+    - name: s03_cau_chuyen_nha_nong
+      label: 03 · Câu chuyện nhà nông
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: CÂU CHUYỆN NHÀ NÔNG'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Những câu chuyện thật, những mùa vàng thật'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Hành trình thay đổi trên chính đồng ruộng của …'
+        type: text
+      - name: img_story_1_1
+        label: 'Ảnh: Chân dung nông dân trên ruộng'
+        component: photo
+        description: Khung ảnh khoảng 248×300 px trên máy tính — nên dùng ảnh rộng ít nhất 496 px.
+      - name: t4
+        label: 'Nhãn in hoa: LÚA · [XÃ, TỈNH]'
+        type: string
+      - name: t5
+        label: 'Đoạn văn: “[Trích lời nông dân về sự thay đổi sau khi áp…'
+        type: string
+      - name: t6
+        label: 'Chữ: +[x]%'
+        type: string
+      - name: t7
+        label: 'Chữ: năng suất'
+        type: string
+      - name: t8
+        label: 'Chữ: −[x]%'
+        type: string
+      - name: t9
+        label: 'Chữ: chi phí phân bón'
+        type: string
+      - name: t10
+        label: 'Chữ đậm: [Họ tên] · [x] ha lúa'
+        type: string
+      - name: img_story_2_1
+        label: 'Ảnh: Chân dung nông dân vườn cà phê'
+        component: photo
+        description: Khung ảnh khoảng 248×300 px trên máy tính — nên dùng ảnh rộng ít nhất 496 px.
+      - name: t11
+        label: 'Nhãn in hoa: CÀ PHÊ · [XÃ, TỈNH]'
+        type: string
+      - name: t12
+        label: 'Đoạn văn: “[Trích lời nông dân về sự thay đổi sau khi áp…'
+        type: string
+      - name: t13
+        label: 'Chữ: +[x]%'
+        type: string
+      - name: t14
+        label: 'Chữ: năng suất'
+        type: string
+      - name: t15
+        label: 'Chữ: [x] năm'
+        type: string
+      - name: t16
+        label: 'Chữ: đồng hành'
+        type: string
+      - name: t17
+        label: 'Chữ đậm: [Họ tên] · [x] ha cà phê'
+        type: string
+      - name: t18
+        label: 'Liên kết: Xem thêm câu chuyện →'
+        type: string
+    - name: s04_hoi_thao_dau_bo
+      label: 04 · Hội thảo đầu bờ
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: LỊCH HỘI THẢO ĐẦU BỜ'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Kỹ sư Tiến Nông đồng hành tại địa phương'
+        type: string
+      - name: t3
+        label: 'Chữ: Lịch được cập nhật hằng tháng. Liên hệ đại lý …'
+        type: string
+      - name: t4
+        label: 'Chữ: [dd]'
+        type: string
+      - name: t5
+        label: 'Chữ: Th. [mm]'
+        type: string
+      - name: t6
+        label: 'Chữ đậm: [Chủ đề hội thảo]'
+        type: string
+      - name: t7
+        label: 'Chữ: [Xã, huyện, tỉnh] · [Cây trồng]'
+        type: string
+      - name: t8
+        label: 'Liên kết: Đăng ký'
+        type: string
+      - name: t9
+        label: 'Chữ: [dd]'
+        type: string
+      - name: t10
+        label: 'Chữ: Th. [mm]'
+        type: string
+      - name: t11
+        label: 'Chữ đậm: [Chủ đề hội thảo]'
+        type: string
+      - name: t12
+        label: 'Chữ: [Xã, huyện, tỉnh] · [Cây trồng]'
+        type: string
+      - name: t13
+        label: 'Liên kết: Đăng ký'
+        type: string
+      - name: t14
+        label: 'Chữ: [dd]'
+        type: string
+      - name: t15
+        label: 'Chữ: Th. [mm]'
+        type: string
+      - name: t16
+        label: 'Chữ đậm: [Chủ đề hội thảo]'
+        type: string
+      - name: t17
+        label: 'Chữ: [Xã, huyện, tỉnh] · [Cây trồng]'
+        type: string
+      - name: t18
+        label: 'Liên kết: Đăng ký'
+        type: string
+    - name: s05_hoi_dap
+      label: 05 · Hỏi đáp
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: NHÀ NÔNG HỎI · TIẾN NÔNG TRẢ LỜI'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Giải đáp những thắc mắc thường gặp'
+        type: string
+      - name: t3
+        label: 'Chữ: Chưa tìm thấy câu trả lời? Gọi hotline kỹ sư h…'
+        type: string
+    - name: form_crops
+      label: Form đăng ký – danh sách cây trồng
+      type: string
+      list: true
+    - name: faq
+      label: Hỏi đáp
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.q}'
+      fields:
+      - name: q
+        label: Câu hỏi
+        type: string
+      - name: a
+        label: Trả lời
+        type: text
+  - name: tuyen_dung
+    label: Tuyển dụng
+    type: file
+    path: src/content/pages/tuyen-dung.json
+    format: json
+    fields:
+    - name: seo
+      label: Tiêu đề tab trình duyệt & mô tả Google
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề trang
+        type: string
+        description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+      - name: description
+        label: Mô tả ngắn cho Google
+        type: text
+    - name: s01_hero
+      label: 01 · Hero
+      type: object
+      fields:
+      - name: t1
+        label: 'Liên kết: Trang chủ'
+        type: string
+      - name: t2
+        label: 'Chữ: / Con người & Tuyển dụng'
+        type: string
+      - name: t3
+        label: 'Nhãn in hoa: CON NGƯỜI TIẾN NÔNG'
+        type: string
+      - name: t4
+        label: 'Tiêu đề chính: Gắn bó bền lâu, cùng nhau phát triển'
+        type: string
+      - name: t5
+        label: 'Đoạn văn: Tại Tiến Nông, nhiều cán bộ, nhân viên đã đồng…'
+        type: text
+      - name: t6
+        label: 'Liên kết: Xem vị trí đang tuyển →'
+        type: string
+      - name: t7
+        label: 'Liên kết: Văn hóa Tiến Nông'
+        type: string
+      - name: img_hr_hero_1_1
+        label: 'Ảnh: Chân dung người lao động thâm niên'
+        component: photo
+        description: Khung ảnh khoảng 269×474 px trên máy tính — nên dùng ảnh rộng ít nhất 538 px.
+      - name: img_hr_hero_2_1
+        label: 'Ảnh: Tập thể trong chuyến du lịch'
+        component: photo
+        description: Khung ảnh khoảng 269×260 px trên máy tính — nên dùng ảnh rộng ít nhất 538 px.
+      - name: img_hr_hero_3_1
+        label: 'Ảnh: Kỹ sư trẻ tại phòng lab'
+        component: photo
+        description: Khung ảnh khoảng 269×200 px trên máy tính — nên dùng ảnh rộng ít nhất 538 px.
+    - name: s02_con_so
+      label: 02 · Con số
+      type: object
+      fields:
+      - name: t1
+        label: 'Chữ: [x]'
+        type: string
+      - name: t2
+        label: 'Chữ: cán bộ, nhân viên'
+        type: string
+      - name: t3
+        label: 'Chữ: [x]'
+        type: string
+      - name: t4
+        label: 'Chữ: người gắn bó trên 20 năm'
+        type: string
+      - name: t5
+        label: 'Chữ: [x] năm'
+        type: string
+      - name: t6
+        label: 'Chữ: thâm niên trung bình'
+        type: string
+      - name: t7
+        label: 'Chữ: 3'
+        type: string
+      - name: t8
+        label: 'Chữ: nhà máy · [x] văn phòng vùng'
+        type: string
+    - name: s03_dai_ngo
+      label: 03 · Đãi ngộ
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: ĐÃI NGỘ & GHI NHẬN'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Sự ghi nhận xứng đáng cho mỗi chặng đường'
+        type: string
+      - name: t3
+        label: 'Đoạn văn: Ngoài chế độ lương thưởng cạnh tranh, Tiến Nôn…'
+        type: text
+      - name: img_ben_1_1
+        label: 'Ảnh: Chuyến du lịch nước ngoài toàn công ty'
+        component: photo
+        description: Khung ảnh khoảng 374×200 px trên máy tính — nên dùng ảnh rộng ít nhất 748 px.
+      - name: t4
+        label: 'Chữ đậm: Du lịch nước ngoài'
+        type: string
+      - name: t5
+        label: 'Chữ: Hành trình khám phá dành cho toàn thể cán bộ, …'
+        type: string
+      - name: img_ben_2_1
+        label: 'Ảnh: Lễ trao vàng tri ân'
+        component: photo
+        description: Khung ảnh khoảng 374×200 px trên máy tính — nên dùng ảnh rộng ít nhất 748 px.
+      - name: t6
+        label: 'Chữ đậm: Tặng vàng tri ân'
+        type: string
+      - name: t7
+        label: 'Chữ: Dành cho người lao động gắn bó lâu năm cùng do…'
+        type: string
+      - name: img_ben_3_1
+        label: 'Ảnh: Lễ trao Bảo Bình tài lộc'
+        component: photo
+        description: Khung ảnh khoảng 374×200 px trên máy tính — nên dùng ảnh rộng ít nhất 748 px.
+      - name: t8
+        label: 'Chữ đậm: Bảo Bình tài lộc'
+        type: string
+      - name: t9
+        label: 'Chữ: Vinh danh những thành viên có thâm niên cống h…'
+        type: string
+      - name: t10
+        label: 'Chữ đậm: Lương thưởng cạnh tranh'
+        type: string
+      - name: t11
+        label: 'Chữ: Gắn với hiệu quả công việc và thâm niên'
+        type: string
+      - name: t12
+        label: 'Chữ đậm: Bảo hiểm đầy đủ'
+        type: string
+      - name: t13
+        label: 'Chữ: Theo quy định và [chế độ bổ sung]'
+        type: string
+      - name: t14
+        label: 'Chữ đậm: Đào tạo chuyên môn'
+        type: string
+      - name: t15
+        label: 'Chữ: Cùng chuyên gia R&D và đối tác'
+        type: string
+      - name: t16
+        label: 'Chữ đậm: Môi trường gần gũi'
+        type: string
+      - name: t17
+        label: 'Chữ: Làm việc cùng nhau như một gia đình'
+        type: string
+    - name: s04_cau_chuyen
+      label: 04 · Câu chuyện
+      type: object
+      fields:
+      - name: img_hr_story_1
+        label: 'Ảnh: Chân dung người lao động gắn bó 20+ năm tại nơi làm việc'
+        component: photo
+        description: Khung ảnh khoảng 448×560 px trên máy tính — nên dùng ảnh rộng ít nhất 896 px.
+      - name: t1
+        label: 'Nhãn in hoa: CÂU CHUYỆN GẮN BÓ'
+        type: string
+      - name: t2
+        label: 'Đoạn văn: “[Trích lời chia sẻ của người lao động về hành…'
+        type: string
+      - name: t3
+        label: 'Chữ đậm: [Họ tên]'
+        type: string
+      - name: t4
+        label: 'Chữ: [Vị trí] · Gắn bó từ [năm]'
+        type: string
+    - name: s05_vi_tri_tuyen_dung
+      label: 05 · Vị trí tuyển dụng
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: CƠ HỘI NGHỀ NGHIỆP'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Vị trí đang tuyển'
+        type: string
+      - name: t3
+        label: 'Chữ: vị trí'
+        type: string
+      - name: f1
+        label: 'Nhãn ô nhập: Khối'
+        type: string
+      - name: f2
+        label: 'Nhãn ô nhập: Địa điểm'
+        type: string
+      - name: t4
+        label: 'Chữ: Hiện chưa có vị trí phù hợp. Gửi hồ sơ tới'
+        type: string
+      - name: t5
+        label: 'Chữ đậm: [email tuyển dụng]'
+        type: string
+      - name: t6
+        label: 'Chữ: để được liên hệ khi có cơ hội.'
+        type: string
+      - name: t7
+        label: 'Chữ: Danh sách vị trí ở trên là dữ liệu mẫu để minh…'
+        type: string
+    - name: jobs_apply_label
+      label: Vị trí tuyển dụng – chữ "Ứng tuyển"
+      type: string
+    - name: jobs_all_depts
+      label: Bộ lọc khối – "tất cả"
+      type: string
+    - name: jobs_all_locations
+      label: Bộ lọc địa điểm – "tất cả"
+      type: string
+    - name: jobs
+      label: Vị trí đang tuyển
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.title} · {fields.loc}'
+      fields:
+      - name: title
+        label: Vị trí
+        type: string
+      - name: dept
+        label: Khối
+        type: string
+      - name: loc
+        label: Địa điểm
+        type: string
+      - name: due
+        label: Hạn nộp
+        type: string
+      - name: link
+        label: Đường dẫn chi tiết / ứng tuyển
+        type: string
+        description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+  - name: tin_tuc
+    label: Tin tức (khung trang)
+    type: file
+    path: src/content/pages/tin-tuc.json
+    format: json
+    fields:
+    - name: seo
+      label: Tiêu đề tab trình duyệt & mô tả Google
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề trang
+        type: string
+        description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+      - name: description
+        label: Mô tả ngắn cho Google
+        type: text
+    - name: s01_tin_noi_bat
+      label: 01 · Tin nổi bật
+      type: object
+      fields:
+      - name: t1
+        label: 'Liên kết: Trang chủ'
+        type: string
+      - name: t2
+        label: 'Chữ: / Tin tức'
+        type: string
+      - name: t3
+        label: 'Tiêu đề chính: Tin tức'
+        type: string
+    - name: s02_danh_sach
+      label: 02 · Danh sách
+      type: object
+      fields:
+      - name: f1
+        label: 'Nhãn ô nhập: Tìm bài viết'
+        type: string
+      - name: f2
+        label: 'Gợi ý trong ô: Tìm bài viết…'
+        type: string
+      - name: t1
+        label: 'Chữ: Chưa có bài viết phù hợp.'
+        type: string
+      - name: t5
+        label: 'Liên kết: Sau →'
+        type: string
+    - name: s03_bao_chi
+      label: 03 · Báo chí
+      type: object
+      fields:
+      - name: t1
+        label: 'Tiêu đề: Báo chí nói về Tiến Nông'
+        type: string
+      - name: t2
+        label: 'Liên kết: Liên hệ truyền thông →'
+        type: string
+      - name: link1
+        label: Đường dẫn cho “[Tiêu đề bài báo]”
+        type: string
+        description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+      - name: img_press_1_1
+        label: 'Ảnh: Logo báo'
+        component: photo
+        description: Khung ảnh khoảng 140×36 px trên máy tính — nên dùng ảnh rộng ít nhất 280 px.
+      - name: t3
+        label: 'Chữ đậm: [Tiêu đề bài báo]'
+        type: string
+      - name: t4
+        label: 'Chữ: [Tên báo] · [ngày] · Đọc bài gốc ↗'
+        type: string
+      - name: link2
+        label: Đường dẫn cho “[Tiêu đề bài báo]”
+        type: string
+        description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+      - name: img_press_2_1
+        label: 'Ảnh: Logo báo'
+        component: photo
+        description: Khung ảnh khoảng 140×36 px trên máy tính — nên dùng ảnh rộng ít nhất 280 px.
+      - name: t5
+        label: 'Chữ đậm: [Tiêu đề bài báo]'
+        type: string
+      - name: t6
+        label: 'Chữ: [Tên báo] · [ngày] · Đọc bài gốc ↗'
+        type: string
+      - name: link3
+        label: Đường dẫn cho “[Tiêu đề bài báo]”
+        type: string
+        description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+      - name: img_press_3_1
+        label: 'Ảnh: Logo báo'
+        component: photo
+        description: Khung ảnh khoảng 140×36 px trên máy tính — nên dùng ảnh rộng ít nhất 280 px.
+      - name: t7
+        label: 'Chữ đậm: [Tiêu đề bài báo]'
+        type: string
+      - name: t8
+        label: 'Chữ: [Tên báo] · [ngày] · Đọc bài gốc ↗'
+        type: string
+    - name: all_categories
+      label: Tab "tất cả chuyên mục"
+      type: string
+    - name: article
+      label: Chữ cố định trên trang bài viết
+      type: object
+      fields:
+      - name: breadcrumb_home
+        label: Đường dẫn – Trang chủ
+        type: string
+      - name: breadcrumb_news
+        label: Đường dẫn – Tin tức
+        type: string
+      - name: minutes_read
+        label: Chữ "phút đọc"
+        type: string
+      - name: share_facebook
+        label: Nút chia sẻ Facebook
+        type: string
+      - name: share_zalo
+        label: Nút Zalo
+        type: string
+      - name: copy_link
+        label: Nút sao chép liên kết
+        type: string
+      - name: copied
+        label: Thông báo đã sao chép
+        type: string
+      - name: album_more
+        label: Liên kết xem album
+        type: string
+      - name: tags_label
+        label: Nhãn chủ đề
+        type: string
+      - name: related_title
+        label: Tiêu đề bài liên quan
+        type: string
+      - name: related_all
+        label: Liên kết tất cả tin tức
+        type: string
+  - name: lien_he
+    label: Liên hệ & Đại lý
+    type: file
+    path: src/content/pages/lien-he.json
+    format: json
+    fields:
+    - name: seo
+      label: Tiêu đề tab trình duyệt & mô tả Google
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề trang
+        type: string
+        description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+      - name: description
+        label: Mô tả ngắn cho Google
+        type: text
+    - name: s01_lien_he
+      label: 01 · Liên hệ
+      type: object
+      fields:
+      - name: t1
+        label: 'Liên kết: Trang chủ'
+        type: string
+      - name: t2
+        label: 'Chữ: / Liên hệ & Đại lý'
+        type: string
+      - name: t3
+        label: 'Nhãn in hoa: LIÊN HỆ'
+        type: string
+      - name: t4
+        label: 'Tiêu đề chính: Kết nối với Tiến Nông'
+        type: string
+      - name: t5
+        label: 'Nhãn in hoa: TƯ VẤN KỸ THUẬT'
+        type: string
+      - name: t6
+        label: 'Chữ đậm: [Hotline kỹ sư]'
+        type: string
+      - name: t7
+        label: 'Chữ: Hỏi về cây trồng, cách bón phân'
+        type: string
+      - name: t8
+        label: 'Nhãn in hoa: MUA HÀNG & ĐẠI LÝ'
+        type: string
+      - name: t9
+        label: 'Chữ đậm: 02373.729.729'
+        type: string
+      - name: t10
+        label: 'Chữ: Đặt hàng, chính sách đại lý'
+        type: string
+      - name: t11
+        label: 'Nhãn in hoa: DỰ ÁN & XUẤT KHẨU'
+        type: string
+      - name: t12
+        label: 'Chữ đậm: [email dự án]'
+        type: string
+      - name: t13
+        label: 'Chữ: Khách hàng dự án, đối tác quốc tế'
+        type: string
+      - name: t14
+        label: 'Nhãn in hoa: BÁO CHÍ & TUYỂN DỤNG'
+        type: string
+      - name: t15
+        label: 'Chữ đậm: info@tiennong.vn'
+        type: string
+      - name: t16
+        label: 'Chữ: Truyền thông, hồ sơ ứng tuyển'
+        type: string
+    - name: s02_tim_dai_ly
+      label: 02 · Tìm đại lý
+      type: object
+      fields:
+      - name: t1
+        label: 'Nhãn in hoa: TÌM ĐẠI LÝ'
+        type: string
+      - name: t2
+        label: 'Tiêu đề: Hệ thống 10.000 điểm bán trên toàn quốc'
+        type: string
+      - name: f1
+        label: 'Nhãn ô nhập: Tỉnh / thành phố'
+        type: string
+      - name: t3
+        label: 'Chữ: đại lý tại'
+        type: string
+      - name: t4
+        label: 'Chữ: Danh sách đại lý là dữ liệu mẫu. Bản chính thứ…'
+        type: string
+      - name: img_dealer_map_1
+        label: 'Ảnh: Bản đồ đại lý (Google Maps nhúng)'
+        component: photo
+        description: Khung ảnh khoảng 572×584 px trên máy tính — nên dùng ảnh rộng ít nhất 1144 px.
+      - name: t5
+        label: 'Chữ đậm: Trở thành đại lý Tiến Nông'
+        type: string
+      - name: t6
+        label: 'Chữ: Cùng hệ thống hơn 200 nhà phân phối mang giải …'
+        type: string
+      - name: t7
+        label: 'Liên kết: Đăng ký làm đại lý'
+        type: string
+    - name: s03_van_phong_nha_may
+      label: 03 · Văn phòng & nhà máy
+      type: object
+      fields:
+      - name: t1
+        label: 'Tiêu đề: Trụ sở & nhà máy'
+        type: string
+      - name: t2
+        label: 'Chữ đậm: Trụ sở chính'
+        type: string
+      - name: t3
+        label: 'Chữ: 274B Bà Triệu, phường Hàm Rồng, tỉnh Thanh Hóa'
+        type: string
+      - name: t4
+        label: 'Chữ: 02373.729.729'
+        type: string
+      - name: t5
+        label: 'Chữ đậm: Nhà máy Bỉm Sơn'
+        type: string
+      - name: t6
+        label: 'Chữ: [Địa chỉ], tỉnh Thanh Hóa'
+        type: string
+      - name: t7
+        label: 'Chữ: [Số điện thoại]'
+        type: string
+      - name: t8
+        label: 'Chữ đậm: Nhà máy Gia Lai'
+        type: string
+      - name: t9
+        label: 'Chữ: [Địa chỉ], tỉnh Gia Lai'
+        type: string
+      - name: t10
+        label: 'Chữ: [Số điện thoại]'
+        type: string
+      - name: t11
+        label: 'Chữ đậm: [Nhà máy 3]'
+        type: string
+      - name: t12
+        label: 'Chữ: [Địa chỉ]'
+        type: string
+      - name: t13
+        label: 'Chữ: [Số điện thoại]'
+        type: string
+    - name: s04_gui_lien_he
+      label: 04 · Gửi liên hệ
+      type: object
+      fields:
+      - name: t1
+        label: 'Tiêu đề: Gửi yêu cầu'
+        type: string
+      - name: t2
+        label: 'Chữ: Chọn nhu cầu để yêu cầu được chuyển đến đúng b…'
+        type: string
+      - name: t3
+        label: 'Nhãn in hoa: ĐÃ GỬI'
+        type: string
+      - name: t4
+        label: 'Chữ đậm: Cảm ơn Quý khách đã liên hệ Tiến Nông.'
+        type: string
+      - name: t5
+        label: 'Chữ: Bộ phận'
+        type: string
+      - name: t6
+        label: 'Chữ: sẽ phản hồi qua thông tin Quý khách cung cấp.'
+        type: string
+      - name: t7
+        label: 'Nút: Gửi yêu cầu khác'
+        type: string
+      - name: f1
+        label: 'Nhãn ô nhập: Nhu cầu *'
+        type: string
+      - name: f2
+        label: 'Nhãn ô nhập: Họ và tên *'
+        type: string
+      - name: f3
+        label: 'Gợi ý trong ô: Nguyễn Văn A'
+        type: string
+      - name: f4
+        label: 'Nhãn ô nhập: Số điện thoại *'
+        type: string
+      - name: f5
+        label: 'Gợi ý trong ô: 09xx xxx xxx'
+        type: string
+      - name: f6
+        label: 'Nhãn ô nhập: Email'
+        type: string
+      - name: f7
+        label: 'Gợi ý trong ô: ten@email.com'
+        type: string
+      - name: f8
+        label: 'Nhãn ô nhập: Tỉnh / thành phố'
+        type: string
+      - name: f9
+        label: 'Gợi ý trong ô: VD: Thanh Hóa'
+        type: string
+      - name: t8
+        label: 'Chữ: Nội dung'
+        type: string
+      - name: f10
+        label: 'Gợi ý trong ô: Mô tả ngắn gọn nhu cầu'
+        type: string
+      - name: f11
+        label: 'Nhãn ô nhập: Tôi đồng ý để Tiến Nông xử lý dữ liệu cá'
+        type: string
+      - name: t9
+        label: 'Nút: Gửi yêu cầu'
+        type: string
+    - name: provinces
+      label: Đại lý theo tỉnh
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.name}'
+      fields:
+      - name: name
+        label: Tỉnh / thành phố
+        type: string
+      - name: dealers
+        label: Đại lý
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.name}'
+        fields:
+        - name: name
+          label: Tên đại lý
+          type: string
+        - name: type
+          label: Loại (Nhà phân phối / Điểm bán)
+          type: string
+        - name: address
+          label: Địa chỉ
+          type: string
+        - name: phone
+          label: Số điện thoại
+          type: string
+        - name: map
+          label: Đường dẫn chỉ đường (Google Maps)
+          type: string
+          description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+    - name: needs
+      label: Form liên hệ – các nhu cầu
+      type: string
+      list: true
+      description: Mục đầu tiên được chọn sẵn.
+- name: site
+  label: Thông tin chung (công ty, menu, chân trang, mạng xã hội)
+  type: file
+  path: src/content/site.json
+  format: json
+  fields:
+  - name: company
+    label: Công ty
+    type: object
+    fields:
+    - name: name
+      label: Tên công ty
+      type: string
+    - name: address
+      label: Địa chỉ
+      type: string
+    - name: phone
+      label: Điện thoại
+      type: string
+    - name: email
+      label: Email
+      type: string
+    - name: tax_code_label
+      label: Nhãn mã số DN
+      type: string
+    - name: tax_code
+      label: Mã số doanh nghiệp
+      type: string
+    - name: copyright
+      label: Dòng bản quyền
+      type: string
+  - name: social
+    label: Mạng xã hội
+    type: object
+    fields:
+    - name: facebook
+      label: Facebook
+      type: string
+      description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+    - name: youtube
+      label: YouTube
+      type: string
+      description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+    - name: tiktok
+      label: TikTok
+      type: string
+      description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+    - name: zalo
+      label: Zalo OA
+      type: string
+      description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+  - name: legal
+    label: Pháp lý
+    type: object
+    fields:
+    - name: privacy_label
+      label: Chữ "Chính sách bảo mật"
+      type: string
+    - name: privacy_url
+      label: Đường dẫn Chính sách bảo mật
+      type: string
+      description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+    - name: terms_label
+      label: Chữ "Điều khoản sử dụng"
+      type: string
+    - name: terms_url
+      label: Đường dẫn Điều khoản sử dụng
+      type: string
+      description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+    - name: ministry_badge
+      label: Chữ/ô logo Bộ Công Thương
+      type: string
+  - name: header
+    label: Đầu trang (menu)
+    type: object
+    fields:
+    - name: top_jobs
+      label: Thanh trên – Tuyển dụng
+      type: string
+    - name: top_dealers
+      label: Thanh trên – Tìm đại lý
+      type: string
+    - name: top_contact
+      label: Thanh trên – Liên hệ
+      type: string
+    - name: english_url
+      label: Đường dẫn bản tiếng Anh (EN)
+      type: string
+      description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+    - name: cta
+      label: Nút xanh bên phải
+      type: string
+    - name: menu_open
+      label: Nút menu (điện thoại)
+      type: string
+    - name: menu_close
+      label: Nút đóng menu
+      type: string
+    - name: nav
+      label: Tên các mục menu
+      type: object
+      fields:
+      - name: ve_tien_nong
+        label: 'Mục menu: Về Tiến Nông'
+        type: string
+      - name: khoa_hoc_cong_nghe
+        label: 'Mục menu: Khoa học & Công nghệ'
+        type: string
+      - name: san_pham
+        label: 'Mục menu: Sản phẩm'
+        type: string
+      - name: giai_phap
+        label: 'Mục menu: Giải pháp'
+        type: string
+      - name: phat_trien_ben_vung
+        label: 'Mục menu: Phát triển bền vững'
+        type: string
+      - name: nong_dan
+        label: 'Mục menu: Nông dân Tiến Nông'
+        type: string
+      - name: tin_tuc
+        label: 'Mục menu: Tin tức'
+        type: string
+  - name: footer
+    label: Chân trang
+    type: object
+    fields:
+    - name: col1_title
+      label: Chân trang – Tiến Nông
+      type: string
+    - name: col1_about
+      label: Chân trang – Về chúng tôi
+      type: string
+    - name: col1_science
+      label: Chân trang – Khoa học & Công nghệ
+      type: string
+    - name: col1_sustainability
+      label: Chân trang – Phát triển bền vững
+      type: string
+    - name: col1_jobs
+      label: Chân trang – Tuyển dụng
+      type: string
+    - name: col2_title
+      label: Chân trang – Sản phẩm & giải pháp
+      type: string
+    - name: col2_products
+      label: Chân trang – Sản phẩm
+      type: string
+    - name: col2_crop_solutions
+      label: Chân trang – Giải pháp theo cây trồng
+      type: string
+    - name: col2_project_solutions
+      label: Chân trang – Giải pháp cho dự án
+      type: string
+    - name: col2_farmers
+      label: Chân trang – Nông dân Tiến Nông
+      type: string
+    - name: col3_title
+      label: Chân trang – Kết nối
+      type: string
+    - name: col3_dealers
+      label: Chân trang – Tìm đại lý
+      type: string
+    - name: col3_contact
+      label: Chân trang – Liên hệ
+      type: string
+    - name: col3_news
+      label: Chân trang – Tin tức
+      type: string
+    - name: floating_button
+      label: Chân trang – Liên hệ tư vấn
+      type: string
