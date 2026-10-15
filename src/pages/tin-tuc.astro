@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+import Tabs from '../components/Tabs.astro';
+import { url } from '../lib/routes';
+
+const CATS: Record<string, string> = { all: 'Tất cả', tn: 'Tin Tiến Nông', khcn: 'Khoa học & Công nghệ', kt: 'Kiến thức nông nghiệp', nd: 'Nông dân & mô hình', cd: 'Vì cộng đồng' };
+const POSTS = [
+  ['tn', 'Tiến Nông phát động cuộc thi “Em viết thư gửi Chiến sĩ Trường Sa”'],
+  ['khcn', 'Một ngày tại phòng thí nghiệm VILAS 1519: hành trình kiểm định một lô phân bón'],
+  ['kt', 'Bón phân NPK đúng thời điểm: tiết kiệm chi phí, tăng hiệu quả cho vụ lúa'],
+  ['nd', 'Mô hình lúa áp dụng chương trình dinh dưỡng Tiến Nông tại Thanh Hóa'],
+  ['cd', 'Tiến Nông ủng hộ 1,55 tỷ đồng cho công tác khuyến học tỉnh Thanh Hóa năm 2026'],
+  ['tn', 'Tiến Nông đón đoàn học sinh trường THPT Bỉm Sơn tham quan nhà máy'],
+  ['khcn', 'Công nghệ bổ sung Silic hữu hiệu giúp lúa cứng cây, giảm đổ ngã'],
+  ['kt', 'Nhận biết cây thiếu trung – vi lượng qua biểu hiện trên lá'],
+  ['nd', 'Hội thảo đầu bờ: chia sẻ kinh nghiệm canh tác cà phê bền vững tại Gia Lai'],
+];
+const catItems = Object.entries(CATS).map(([value, label]) => ({ value, label }));
+---
+<Layout title="Tin tức" active="Tin tức">
+<section style="background:var(--surface-card)">
+<div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(48px,6vw,72px);display:flex;flex-direction:column;gap:28px">
+<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">Trang chủ</a> / Tin tức</span>
+<h1 style="margin:0;font:800 clamp(34px,4.4vw,56px)/1.1 var(--font-display);letter-spacing:-.015em;text-wrap:balance">Tin tức</h1>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:32px 48px">
+<a href={url('bai-viet')} style="display:flex;flex-direction:column;gap:16px;color:var(--text-primary)"><div style="position:relative;height:clamp(260px,30vw,400px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="news-feat" shape="rounded" radius="16" placeholder="Ảnh bài nổi bật" /></div><span style="font-size:14px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">Tin Tiến Nông</strong> · [dd/mm/2026]</span><strong style="font:800 clamp(22px,2.4vw,30px)/1.3 var(--font-display);text-wrap:balance">Tiến Nông tiếp đón Trường Cao đẳng FPT Polytechnic Thanh Hóa tham quan trải nghiệm thực tế</strong><span style="color:var(--text-secondary);text-align:justify">Chương trình giúp sinh viên tìm hiểu quy trình sản xuất, hoạt động nghiên cứu và môi trường làm việc tại một doanh nghiệp khoa học công nghệ trong lĩnh vực nông nghiệp.</span></a>
+<div style="display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
+<a href={url('bai-viet')} style="display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--border-default);color:var(--text-primary)"><div style="position:relative;height:96px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="news-s1" shape="rounded" radius="10" placeholder="Ảnh" /></div><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:var(--green-600);font-weight:600">Vì cộng đồng</span><strong style="line-height:1.4">Tiến Nông ủng hộ 1,55 tỷ đồng cho công tác khuyến học tỉnh Thanh Hóa năm 2026</strong></div></a>
+<a href={url('bai-viet')} style="display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--border-default);color:var(--text-primary)"><div style="position:relative;height:96px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="news-s2" shape="rounded" radius="10" placeholder="Ảnh" /></div><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:var(--green-600);font-weight:600">Vì cộng đồng</span><strong style="line-height:1.4">Tiến Nông đồng hành cùng chương trình “Triệu mầm xanh” vì Trường Sa xanh</strong></div></a>
+<a href={url('bai-viet')} style="display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--border-default);color:var(--text-primary)"><div style="position:relative;height:96px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="news-s3" shape="rounded" radius="10" placeholder="Ảnh" /></div><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:var(--green-600);font-weight:600">Nông dân &amp; mô hình</span><strong style="line-height:1.4">Tiến Nông tiếp sức nông dân tiếp cận vật tư nông nghiệp chất lượng, nâng cao hiệu quả sản xuất</strong></div></a>
+</div></div></div></section>
+
+<section style="background:var(--surface-page)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(48px,6vw,72px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap">
+<div style="overflow-x:auto;max-width:100%"><Tabs id="news-tabs" label="Chuyên mục" items={catItems} value="all" /></div>
+<label style="display:flex;flex:0 1 280px;min-width:200px"><input id="news-q" type="search" aria-label="Tìm bài viết" placeholder="Tìm bài viết…" style="width:100%;padding:10px 14px;border-radius:var(--radius-md);border:1px solid var(--border-default);font:16px var(--font-body);background:var(--surface-card);color:var(--text-primary);outline-color:var(--green-500)" /></label>
+</div>
+<div id="news-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:32px 24px">
+{POSTS.map(([c, title], i) => (
+<a href={url('bai-viet')} data-cat={c} data-title={title.toLowerCase()} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:210px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`post-${i}`} shape="rounded" radius="12" placeholder="Ảnh bài viết" /></div><span style="font-size:13px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{CATS[c]}</strong> · [dd/mm/2026]</span><strong style="font-size:18px;line-height:1.4">{title}</strong></a>
+))}
+</div>
+<div id="news-empty" hidden style="padding:40px;text-align:center;border:1px dashed var(--border-strong);border-radius:var(--radius-lg);color:var(--text-secondary)">Chưa có bài viết phù hợp.</div>
+<div style="display:flex;justify-content:center;gap:8px"><span style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-md);background:var(--green-500);color:#fff;font-weight:700">1</span><a href="#" style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-md);border:1px solid var(--border-default);color:var(--text-primary)">2</a><a href="#" style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-md);border:1px solid var(--border-default);color:var(--text-primary)">3</a><a href="#" style="height:40px;padding:0 14px;display:flex;align-items:center;border-radius:var(--radius-md);border:1px solid var(--border-default);color:var(--text-primary)">Sau →</a></div>
+</div></section>
+
+<section style="background:var(--surface-card);border-top:1px solid var(--border-default)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap"><h2 style="margin:0;font:800 clamp(26px,2.8vw,36px)/1.2 var(--font-display)">Báo chí nói về Tiến Nông</h2><a href={url('lien-he', 'lien-he-form')} style="font-weight:600">Liên hệ truyền thông →</a></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 32px)/3),calc((872px - 100%)*999),100%),1fr));gap:16px">
+<a href="#" style="display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid var(--border-default);border-radius:var(--radius-lg);color:var(--text-primary)"><div style="position:relative;height:36px;width:140px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="press-1" shape="rounded" radius="6" fit="contain" placeholder="Logo báo" /></div><strong style="line-height:1.4">[Tiêu đề bài báo]</strong><span style="font-size:13px;color:var(--text-tertiary)">[Tên báo] · [ngày] · Đọc bài gốc ↗</span></a>
+<a href="#" style="display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid var(--border-default);border-radius:var(--radius-lg);color:var(--text-primary)"><div style="position:relative;height:36px;width:140px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="press-2" shape="rounded" radius="6" fit="contain" placeholder="Logo báo" /></div><strong style="line-height:1.4">[Tiêu đề bài báo]</strong><span style="font-size:13px;color:var(--text-tertiary)">[Tên báo] · [ngày] · Đọc bài gốc ↗</span></a>
+<a href="#" style="display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid var(--border-default);border-radius:var(--radius-lg);color:var(--text-primary)"><div style="position:relative;height:36px;width:140px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="press-3" shape="rounded" radius="6" fit="contain" placeholder="Logo báo" /></div><strong style="line-height:1.4">[Tiêu đề bài báo]</strong><span style="font-size:13px;color:var(--text-tertiary)">[Tên báo] · [ngày] · Đọc bài gốc ↗</span></a>
+</div></div></section>
+</Layout>
+
+<script>
+  const q = document.getElementById('news-q') as HTMLInputElement;
+  let cat = 'all';
+  function render() {
+    const qq = q.value.trim().toLowerCase();
+    let n = 0;
+    document.querySelectorAll<HTMLElement>('#news-grid [data-cat]').forEach((el) => {
+      el.hidden = !((cat === 'all' || el.dataset.cat === cat) && (!qq || el.dataset.title!.includes(qq)));
+      if (!el.hidden) n++;
+    });
+    document.getElementById('news-empty')!.hidden = n > 0;
+  }
+  document.getElementById('news-tabs')!.addEventListener('tabs:change', (e) => { cat = (e as CustomEvent<string>).detail; render(); });
+  q.addEventListener('input', render);
+</script>

@@ -1,0 +1,43 @@
+---
+/**
+ * Photo slot. Drop a file named after the slot id into public/images/
+ * (e.g. public/images/hero-a.jpg) and it renders here; until then the slot
+ * shows the design's labelled placeholder describing which photo belongs here.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import { asset } from "../lib/routes";
+
+interface Props {
+  id: string;
+  placeholder?: string;
+  shape?: 'rect' | 'rounded' | 'circle' | 'pill';
+  radius?: number | string;
+  fit?: 'cover' | 'contain';
+  style?: string;
+  alt?: string;
+}
+const { id, placeholder = '', shape = 'rounded', radius = 12, fit = 'cover', style = '', alt } = Astro.props;
+
+const EXTS = ['webp', 'avif', 'jpg', 'jpeg', 'png'];
+const imagesDir = path.join(process.cwd(), 'public', 'images');
+const file = EXTS.map((ext) => `${id}.${ext}`).find((f) => fs.existsSync(path.join(imagesDir, f)));
+const src = file ? asset(`images/${file}`) : null;
+
+const r = shape === 'rect' ? '0' : shape === 'circle' ? '50%' : shape === 'pill' ? '999px' : `${radius}px`;
+const host = `display:block;position:relative;font:13px/1.3 system-ui,-apple-system,sans-serif;width:100%;height:100%;aspect-ratio:3/2;${style}`;
+---
+<div class="img-slot" data-slot={id} style={host}>
+  <div style={`position:absolute;inset:0;overflow:hidden;border-radius:${r};background:rgba(127,127,127,.08)`}>
+    {src
+      ? <img src={src} alt={alt ?? placeholder} loading="lazy" decoding="async" style={`position:absolute;inset:0;width:100%;height:100%;object-fit:${fit}`} />
+      : <>
+          <div role="img" aria-label={placeholder} style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:12px;box-sizing:border-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="opacity:.45" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="m21 15-5-5L5 21" /></svg>
+            <div style="max-width:90%;font-weight:500;letter-spacing:.01em;opacity:.75">{placeholder}</div>
+            <div style="font-size:11px;opacity:.5;font-family:var(--font-mono)">images/{id}</div>
+          </div>
+          <div style={`position:absolute;inset:0;pointer-events:none;border:1.5px dashed currentColor;opacity:.35;border-radius:${r}`}></div>
+        </>}
+  </div>
+</div>

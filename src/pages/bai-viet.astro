@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+import { url } from '../lib/routes';
+---
+<Layout title="Tiến Nông tiếp đón Trường Cao đẳng FPT Polytechnic Thanh Hóa" active="Tin tức" background="var(--surface-card)">
+<article>
+<header style="max-width:820px;margin:0 auto;padding:32px clamp(20px,4vw,40px) 32px;display:flex;flex-direction:column;gap:18px">
+<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">Trang chủ</a> / <a href={url('tin-tuc')} style="color:var(--text-tertiary)">Tin tức</a> / Tin Tiến Nông</span>
+<span style="font:600 13px var(--font-mono);letter-spacing:.1em;color:var(--green-600)">TIN TIẾN NÔNG</span>
+<h1 style="margin:0;font:800 clamp(30px,4vw,46px)/1.2 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Tiến Nông tiếp đón Trường Cao đẳng FPT Polytechnic Thanh Hóa tham quan trải nghiệm thực tế</h1>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 0;border-top:1px solid var(--border-default);border-bottom:1px solid var(--border-default);font-size:14px;color:var(--text-secondary)">
+<span>Phòng Truyền thông · [dd/mm/2026] · 4 phút đọc</span>
+<div style="display:flex;gap:16px;font-weight:600"><a href="#">Facebook</a><a href="#">Zalo</a><button type="button" id="copy-link" style="background:none;border:0;padding:0;font:600 14px var(--font-body);color:var(--text-link);cursor:pointer">Sao chép liên kết</button></div>
+</div>
+</header>
+<div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,4vw,40px)"><figure style="margin:0;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:clamp(260px,44vw,560px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="art-hero" shape="rounded" radius="16" placeholder="Ảnh đại diện bài viết (ảnh đẹp nhất)" /></div><figcaption style="font-size:14px;color:var(--text-tertiary);text-align:center">Sinh viên Trường Cao đẳng FPT Polytechnic Thanh Hóa chụp ảnh lưu niệm tại Tiến Nông.</figcaption></figure></div>
+<div style="max-width:720px;margin:0 auto;padding:40px clamp(20px,4vw,40px) 64px;display:flex;flex-direction:column;gap:22px;font-size:18px;line-height:1.75">
+<p style="margin:0;font-weight:600;font-size:20px;line-height:1.6;text-align:justify">Ngày [dd/mm/2026], Công ty Cổ phần Công Nông nghiệp Tiến Nông đón đoàn giảng viên và sinh viên Trường Cao đẳng FPT Polytechnic Thanh Hóa đến tham quan, tìm hiểu thực tế hoạt động sản xuất và nghiên cứu tại doanh nghiệp.</p>
+<p style="margin:0;text-align:justify">[Nội dung mẫu] Chương trình nằm trong hoạt động kết nối giữa nhà trường và doanh nghiệp, giúp sinh viên có cái nhìn trực quan về môi trường làm việc tại một doanh nghiệp khoa học công nghệ trong lĩnh vực nông nghiệp.</p>
+<h2 style="margin:16px 0 0;font:700 26px/1.3 var(--font-display)">Tìm hiểu quy trình sản xuất hiện đại</h2>
+<p style="margin:0;text-align:justify">[Nội dung mẫu] Đoàn được hướng dẫn tham quan dây chuyền sản xuất, khu vực kiểm soát chất lượng và nghe chia sẻ về quy trình từ nguyên liệu đầu vào đến thành phẩm.</p>
+<figure style="margin:8px 0;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:400px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="art-1" shape="rounded" radius="12" placeholder="Ảnh trong bài 1" /></div><figcaption style="font-size:14px;color:var(--text-tertiary);text-align:center">[Chú thích ảnh]</figcaption></figure>
+<h2 style="margin:16px 0 0;font:700 26px/1.3 var(--font-display)">Trải nghiệm tại phòng thí nghiệm</h2>
+<p style="margin:0;text-align:justify">[Nội dung mẫu] Tại phòng thí nghiệm VILAS 1519, các kỹ sư của Tiến Nông giới thiệu quy trình phân tích mẫu đất và kiểm định chất lượng sản phẩm.</p>
+<blockquote style="margin:8px 0;padding:8px 0 8px 24px;border-left:4px solid var(--green-500);font:600 22px/1.5 var(--font-display);color:var(--green-800)">“[Trích dẫn từ đại diện Tiến Nông hoặc nhà trường.]”<span style="display:block;margin-top:8px;font:500 15px var(--font-body);color:var(--text-secondary)">[Họ tên, chức danh]</span></blockquote>
+<h2 style="margin:16px 0 0;font:700 26px/1.3 var(--font-display)">Gắn kết nhà trường và doanh nghiệp</h2>
+<p style="margin:0;text-align:justify">[Nội dung mẫu] Chuyến tham quan mở ra cơ hội hợp tác về thực tập, tuyển dụng và đào tạo nguồn nhân lực chất lượng cho ngành nông nghiệp.</p>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px"><div style="position:relative;height:150px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="art-g1" shape="rounded" radius="10" placeholder="Album" /></div><div style="position:relative;height:150px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="art-g2" shape="rounded" radius="10" placeholder="Album" /></div><div style="position:relative;height:150px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="art-g3" shape="rounded" radius="10" placeholder="Album" /></div></div>
+<a href="#" style="font-size:15px;font-weight:600">Xem toàn bộ album ([x] ảnh) →</a>
+<div style="display:flex;gap:8px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--border-default);font-size:14px"><span style="color:var(--text-tertiary)">Chủ đề:</span><a href={url('tin-tuc')} style="padding:4px 12px;border-radius:var(--radius-full);background:var(--surface-sunken);color:var(--text-primary)">Giáo dục</a><a href={url('tin-tuc')} style="padding:4px 12px;border-radius:var(--radius-full);background:var(--surface-sunken);color:var(--text-primary)">Tham quan nhà máy</a><a href={url('tuyen-dung')} style="padding:4px 12px;border-radius:var(--radius-full);background:var(--surface-sunken);color:var(--text-primary)">Tuyển dụng</a></div>
+</div>
+</article>
+
+<section style="background:var(--surface-page);border-top:1px solid var(--border-default)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap"><h2 style="margin:0;font:800 clamp(24px,2.6vw,32px)/1.2 var(--font-display)">Bài viết liên quan</h2><a href={url('tin-tuc')} style="font-weight:600">Tất cả tin tức →</a></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/3),calc((888px - 100%)*999),100%),1fr));gap:24px">
+<a href={url('tin-tuc')} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:190px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="rel-a1" shape="rounded" radius="12" placeholder="Ảnh" /></div><span style="font-size:13px;color:var(--green-600);font-weight:600">Tin Tiến Nông</span><strong style="line-height:1.4">Tiến Nông đón đoàn học sinh trường THPT Bỉm Sơn tham quan nhà máy</strong></a>
+<a href={url('tin-tuc')} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:190px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="rel-a2" shape="rounded" radius="12" placeholder="Ảnh" /></div><span style="font-size:13px;color:var(--green-600);font-weight:600">Khoa học &amp; Công nghệ</span><strong style="line-height:1.4">Một ngày tại phòng thí nghiệm VILAS 1519</strong></a>
+<a href={url('tin-tuc')} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:190px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="rel-a3" shape="rounded" radius="12" placeholder="Ảnh" /></div><span style="font-size:13px;color:var(--green-600);font-weight:600">Vì cộng đồng</span><strong style="line-height:1.4">Tiến Nông ủng hộ 1,55 tỷ đồng cho công tác khuyến học tỉnh Thanh Hóa</strong></a>
+</div></div></section>
+</Layout>
+
+<script>
+  const btn = document.getElementById('copy-link')!;
+  btn.addEventListener('click', () => {
+    navigator.clipboard?.writeText(location.href).catch(() => { /* clipboard unavailable */ });
+    btn.textContent = 'Đã sao chép';
+    setTimeout(() => { btn.textContent = 'Sao chép liên kết'; }, 1800);
+  });
+</script>

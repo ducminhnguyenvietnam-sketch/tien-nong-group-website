@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+import Select from '../components/Select.astro';
+import { url } from '../lib/routes';
+
+const JOBS = [
+  { title: 'Kỹ sư nông học vùng', dept: 'Kinh doanh – Kỹ thuật', loc: 'Thanh Hóa', due: '[dd/mm]' },
+  { title: 'Kỹ sư nông học vùng', dept: 'Kinh doanh – Kỹ thuật', loc: 'Gia Lai', due: '[dd/mm]' },
+  { title: 'Chuyên viên nghiên cứu công thức phân bón', dept: 'Nghiên cứu Phát triển', loc: 'Thanh Hóa', due: '[dd/mm]' },
+  { title: 'Kỹ thuật viên phòng thí nghiệm', dept: 'Nghiên cứu Phát triển', loc: 'Thanh Hóa', due: '[dd/mm]' },
+  { title: 'Kỹ sư vận hành dây chuyền', dept: 'Sản xuất', loc: 'Bỉm Sơn', due: '[dd/mm]' },
+  { title: 'Chuyên viên xuất khẩu (tiếng Anh)', dept: 'Văn phòng', loc: 'Thanh Hóa', due: '[dd/mm]' },
+];
+const opt = (arr: string[], all: string) => [{ value: 'all', label: all }, ...[...new Set(arr)].map((v) => ({ value: v, label: v }))];
+const deptOptions = opt(JOBS.map((j) => j.dept), 'Tất cả khối');
+const locOptions = opt(JOBS.map((j) => j.loc), 'Tất cả địa điểm');
+---
+<Layout title="Con người & Tuyển dụng" active="">
+<section style="background:var(--surface-card)">
+<div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:32px">
+<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">Trang chủ</a> / Con người &amp; Tuyển dụng</span>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px 64px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:20px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">CON NGƯỜI TIẾN NÔNG</span>
+<h1 style="margin:0;font:800 clamp(38px,5vw,64px)/1.08 var(--font-display);letter-spacing:-.015em;text-wrap:balance">Gắn bó bền lâu, cùng nhau phát triển</h1>
+<p style="margin:0;font-size:18px;color:var(--text-secondary);text-align:justify;text-wrap:pretty">Tại Tiến Nông, nhiều cán bộ, nhân viên đã đồng hành cùng doanh nghiệp hơn 20 năm. Chúng tôi trân trọng mỗi chặng đường cống hiến và luôn tìm kiếm những người cùng chung đam mê với nông nghiệp.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap"><a href="#vi-tri" style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">Xem vị trí đang tuyển →</a><a href="#van-hoa" style="color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md);border:1px solid var(--border-strong)">Văn hóa Tiến Nông</a></div>
+</div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:260px 200px;gap:14px">
+<div style="position:relative;grid-row:span 2;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="hr-hero-1" shape="rounded" radius="16" placeholder="Chân dung người lao động thâm niên" /></div>
+<div style="position:relative;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="hr-hero-2" shape="rounded" radius="16" placeholder="Tập thể trong chuyến du lịch" /></div>
+<div style="position:relative;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="hr-hero-3" shape="rounded" radius="16" placeholder="Kỹ sư trẻ tại phòng lab" /></div>
+</div></div></div></section>
+
+<section style="background:var(--green-800);color:#fff">
+<div style="max-width:1280px;margin:0 auto;padding:48px clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 84px)/4),calc((900px - 100%)*999),calc((100% - 28px)/2)),1fr));gap:28px">
+<div style="display:flex;flex-direction:column"><span style="font:800 40px/1.1 var(--font-display);color:var(--amber-400)">[x]</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">cán bộ, nhân viên</span></div>
+<div style="display:flex;flex-direction:column"><span style="font:800 40px/1.1 var(--font-display);color:var(--amber-400)">[x]</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">người gắn bó trên 20 năm</span></div>
+<div style="display:flex;flex-direction:column"><span style="font:800 40px/1.1 var(--font-display);color:var(--amber-400)">[x] năm</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">thâm niên trung bình</span></div>
+<div style="display:flex;flex-direction:column"><span style="font:800 40px/1.1 var(--font-display);color:var(--amber-400)">3</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">nhà máy · [x] văn phòng vùng</span></div>
+</div></section>
+
+<section id="van-hoa" style="background:var(--surface-page);scroll-margin-top:120px">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
+<div style="display:flex;flex-direction:column;gap:14px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">ĐÃI NGỘ &amp; GHI NHẬN</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Sự ghi nhận xứng đáng cho mỗi chặng đường</h2></div>
+<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">Ngoài chế độ lương thưởng cạnh tranh, Tiến Nông có những hình thức tri ân riêng dành cho người lao động gắn bó lâu năm.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 40px)/3),calc((880px - 100%)*999),100%),1fr));gap:20px">
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ben-1" shape="rect" placeholder="Chuyến du lịch nước ngoài toàn công ty" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:19px">Du lịch nước ngoài</strong><span style="color:var(--text-secondary);font-size:15px">Hành trình khám phá dành cho toàn thể cán bộ, nhân viên.</span></div></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ben-2" shape="rect" placeholder="Lễ trao vàng tri ân" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:19px">Tặng vàng tri ân</strong><span style="color:var(--text-secondary);font-size:15px">Dành cho người lao động gắn bó lâu năm cùng doanh nghiệp.</span></div></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ben-3" shape="rect" placeholder="Lễ trao Bảo Bình tài lộc" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:19px">Bảo Bình tài lộc</strong><span style="color:var(--text-secondary);font-size:15px">Vinh danh những thành viên có thâm niên cống hiến.</span></div></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 84px)/4),calc((964px - 100%)*999),calc((100% - 28px)/2)),1fr));gap:16px 28px">
+<div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">Lương thưởng cạnh tranh</strong><span style="color:var(--text-secondary);font-size:15px">Gắn với hiệu quả công việc và thâm niên</span></div>
+<div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">Bảo hiểm đầy đủ</strong><span style="color:var(--text-secondary);font-size:15px">Theo quy định và [chế độ bổ sung]</span></div>
+<div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">Đào tạo chuyên môn</strong><span style="color:var(--text-secondary);font-size:15px">Cùng chuyên gia R&amp;D và đối tác</span></div>
+<div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">Môi trường gần gũi</strong><span style="color:var(--text-secondary);font-size:15px">Làm việc cùng nhau như một gia đình</span></div>
+</div></div></section>
+
+<section style="background:var(--surface-card)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:40px 72px;align-items:center">
+<div style="position:relative;aspect-ratio:4/5;max-height:560px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="hr-story" shape="rounded" radius="20" placeholder="Chân dung người lao động gắn bó 20+ năm tại nơi làm việc" /></div>
+<div style="display:flex;flex-direction:column;gap:22px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">CÂU CHUYỆN GẮN BÓ</span>
+<p style="margin:0;font:600 clamp(22px,2.4vw,30px)/1.45 var(--font-display);text-wrap:pretty">“[Trích lời chia sẻ của người lao động về hành trình hơn 20 năm cùng Tiến Nông.]”</p>
+<div style="display:flex;flex-direction:column;padding-top:16px;border-top:1px solid var(--border-default)"><strong style="font-size:17px">[Họ tên]</strong><span style="color:var(--text-secondary)">[Vị trí] · Gắn bó từ [năm]</span></div>
+</div></div></section>
+
+<section id="vi-tri" style="background:var(--surface-page);scroll-margin-top:120px">
+<div style="max-width:1080px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap"><div style="display:flex;flex-direction:column;gap:14px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">CƠ HỘI NGHỀ NGHIỆP</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em">Vị trí đang tuyển</h2></div><span style="color:var(--text-secondary)"><strong id="job-count" style="color:var(--text-primary)">{JOBS.length}</strong> vị trí</span></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+<Select id="job-dept" label="Khối" options={deptOptions} value="all" />
+<Select id="job-loc" label="Địa điểm" options={locOptions} value="all" />
+</div>
+<div style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden">
+{JOBS.map((j) => (
+<a href="#" data-dept={j.dept} data-loc={j.loc} style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--border-default);color:var(--text-primary)" class="hover-tint"><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{j.title}</strong><span style="font-size:14px;color:var(--text-secondary)">{j.dept} · {j.loc} · Hạn nộp {j.due}</span></div><span style="color:var(--green-600);font-weight:600">Ứng tuyển →</span></a>
+))}
+<div id="job-empty" hidden style="padding:32px 24px;color:var(--text-secondary)">Hiện chưa có vị trí phù hợp. Gửi hồ sơ tới <strong>[email tuyển dụng]</strong> để được liên hệ khi có cơ hội.</div>
+</div>
+<span style="font-size:14px;color:var(--text-tertiary)">Danh sách vị trí ở trên là dữ liệu mẫu để minh họa giao diện.</span>
+</div></section>
+</Layout>
+
+<script>
+  const dept = document.getElementById('job-dept') as HTMLSelectElement;
+  const loc = document.getElementById('job-loc') as HTMLSelectElement;
+  function render() {
+    const rows = [...document.querySelectorAll<HTMLElement>('[data-dept]')];
+    let n = 0;
+    rows.forEach((r) => {
+      r.hidden = !((dept.value === 'all' || r.dataset.dept === dept.value) && (loc.value === 'all' || r.dataset.loc === loc.value));
+      if (!r.hidden) n++;
+    });
+    document.getElementById('job-count')!.textContent = String(n);
+    document.getElementById('job-empty')!.hidden = n > 0;
+  }
+  dept.addEventListener('change', render);
+  loc.addEventListener('change', render);
+</script>

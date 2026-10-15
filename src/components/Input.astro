@@ -1,0 +1,28 @@
+---
+/** Design-system Input (TiNNNgDesignSystem.Input). */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props {
+  label?: string;
+  placeholder?: string;
+  type?: HTMLAttributes<'input'>['type'];
+  helper?: string;
+  error?: string;
+  name?: string;
+  id?: string;
+  required?: boolean;
+  disabled?: boolean;
+  value?: string;
+  [key: string]: unknown;
+}
+const { label, placeholder, type = 'text', helper, error, name, id, required, disabled, value, ...rest } = Astro.props;
+---
+<label style="display:flex;flex-direction:column;gap:6px;font-family:var(--font-body);width:100%">
+  {label && <span style="font-size:var(--text-sm);font-weight:var(--weight-medium);color:var(--text-primary)">{label}</span>}
+  <span class="ds-input-box" style={`display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:var(--radius-md);border:1px solid ${error ? 'var(--color-error)' : 'var(--border-default)'};background:${disabled ? 'var(--surface-sunken)' : 'var(--surface-card)'};transition:border-color var(--duration-fast) var(--ease-standard),box-shadow var(--duration-fast) var(--ease-standard)`}>
+    <slot name="icon" />
+    <input type={type} placeholder={placeholder} name={name} id={id} required={required} disabled={disabled} value={value} {...rest}
+      style="border:none;outline:none;flex:1;min-width:0;font-size:var(--text-base);font-family:var(--font-body);background:transparent;color:var(--text-primary)" />
+  </span>
+  {(error || helper) && <span style={`font-size:var(--text-xs);color:${error ? 'var(--color-error)' : 'var(--text-tertiary)'}`}>{error || helper}</span>}
+</label>

@@ -1,0 +1,33 @@
+---
+/**
+ * Design-system Button (TiNNNgDesignSystem.Button). Rendered as a <span> when
+ * it sits inside a link (the design wraps buttons in <a>), otherwise <button>.
+ */
+interface Props {
+  variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
+  size?: 'sm' | 'md' | 'lg';
+  as?: 'button' | 'span';
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  style?: string;
+  [key: string]: unknown;
+}
+const { variant = 'primary', size = 'md', as = 'button', type = 'button', disabled, style = '', ...rest } = Astro.props;
+
+const sizes = {
+  sm: 'padding:8px 14px;font-size:var(--text-sm)',
+  md: 'padding:10px 18px;font-size:var(--text-base)',
+  lg: 'padding:13px 22px;font-size:var(--text-lg)',
+};
+const variants = {
+  primary: 'background:var(--green-500);color:var(--text-on-brand);border:1px solid transparent',
+  secondary: 'background:var(--surface-card);color:var(--green-700);border:1px solid var(--border-strong)',
+  ghost: 'background:transparent;color:var(--green-700);border:1px solid transparent',
+  danger: 'background:var(--color-error);color:#fff;border:1px solid transparent',
+};
+const css = `${sizes[size]};${variants[variant]};font-family:var(--font-body);font-weight:var(--weight-semibold);line-height:normal;border-radius:var(--radius-md);display:inline-flex;align-items:center;gap:8px;cursor:pointer;${style}`;
+const cls = `ds-btn ds-btn--${variant}`;
+---
+{as === 'span'
+  ? <span class={cls} style={css} {...rest}><slot /></span>
+  : <button class={cls} style={css} type={type} disabled={disabled} {...rest}><slot /></button>}

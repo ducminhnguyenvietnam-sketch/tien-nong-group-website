@@ -1,0 +1,21 @@
+---
+import { asset, url } from '../lib/routes';
+---
+<footer style="font-family:var(--font-body);background:var(--gray-900);color:var(--gray-300);font-size:14px;line-height:1.6">
+<div style="max-width:1280px;margin:0 auto;padding:64px clamp(20px,4vw,56px) 28px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-wrap:wrap;gap:32px 40px">
+<div style="flex:1.6 1 260px;min-width:0;display:flex;flex-direction:column;gap:14px;max-width:440px">
+<span style="display:inline-flex;align-self:flex-start;background:#fff;border-radius:10px;padding:6px 12px"><img src={asset("assets/logo-full.png")} alt="Tiến Nông" style="height:44px;width:auto;display:block" /></span>
+<strong style="color:#fff">Công ty Cổ phần Công Nông nghiệp Tiến Nông</strong>
+<span style="line-height:1.8">274B Bà Triệu, phường Hàm Rồng, tỉnh Thanh Hóa<br />02373.729.729 · info@tiennong.vn<br />Mã số doanh nghiệp: [cần bổ sung]</span>
+</div>
+<div style="flex:1 1 150px;display:flex;flex-direction:column;gap:10px"><strong style="color:#fff">Tiến Nông</strong><a href={url('ve-tien-nong')} style="color:var(--gray-300);text-decoration:none">Về chúng tôi</a><a href={url('khoa-hoc-cong-nghe')} style="color:var(--gray-300);text-decoration:none">Khoa học &amp; Công nghệ</a><a href={url('phat-trien-ben-vung')} style="color:var(--gray-300);text-decoration:none">Phát triển bền vững</a><a href={url('tuyen-dung')} style="color:var(--gray-300);text-decoration:none">Tuyển dụng</a></div>
+<div style="flex:1 1 150px;display:flex;flex-direction:column;gap:10px"><strong style="color:#fff">Sản phẩm &amp; giải pháp</strong><a href={url('san-pham')} style="color:var(--gray-300);text-decoration:none">Sản phẩm</a><a href={url('giai-phap')} style="color:var(--gray-300);text-decoration:none">Giải pháp theo cây trồng</a><a href={url('giai-phap-du-an')} style="color:var(--gray-300);text-decoration:none">Giải pháp cho dự án</a><a href={url('nong-dan')} style="color:var(--gray-300);text-decoration:none">Nông dân Tiến Nông</a></div>
+<div style="flex:1 1 150px;display:flex;flex-direction:column;gap:10px"><strong style="color:#fff">Kết nối</strong><a href={url('lien-he', 'dai-ly')} style="color:var(--gray-300);text-decoration:none">Tìm đại lý</a><a href={url('lien-he')} style="color:var(--gray-300);text-decoration:none">Liên hệ</a><a href={url('tin-tuc')} style="color:var(--gray-300);text-decoration:none">Tin tức</a></div>
+</div>
+<div style="display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--gray-700);font-size:13px;color:var(--gray-400)">
+<span>© 2026 Công ty Cổ phần Công Nông nghiệp Tiến Nông</span>
+<div style="display:flex;gap:20px;flex-wrap:wrap"><a href="#" style="color:var(--gray-400);text-decoration:none">Facebook</a><a href="#" style="color:var(--gray-400);text-decoration:none">YouTube</a><a href="#" style="color:var(--gray-400);text-decoration:none">TikTok</a><span style="color:var(--gray-600)">|</span><a href="#" style="color:var(--gray-400);text-decoration:none">Chính sách bảo mật</a><a href="#" style="color:var(--gray-400);text-decoration:none">Điều khoản sử dụng</a><span>Logo Bộ Công Thương</span></div>
+</div></div>
+<a href={url('lien-he')} style="position:fixed;right:24px;bottom:24px;z-index:40;background:var(--green-500);color:#fff;font-weight:600;padding:12px 20px;border-radius:var(--radius-full);box-shadow:var(--shadow-md);text-decoration:none">Liên hệ tư vấn</a>
+</footer>

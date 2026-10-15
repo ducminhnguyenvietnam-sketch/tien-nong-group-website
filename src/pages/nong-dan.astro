@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Checkbox from '../components/Checkbox.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+import Input from '../components/Input.astro';
+import Select from '../components/Select.astro';
+import { url } from '../lib/routes';
+
+const FAQ = [
+  { q: 'Nên bón phân Tiến Nông vào thời điểm nào là tốt nhất?', a: 'Mỗi cây trồng có các giai đoạn bón khác nhau (lót, thúc, nuôi quả). Hướng dẫn chi tiết được in trên bao bì và trang thông tin từng sản phẩm. Kỹ sư Tiến Nông có thể tư vấn lịch bón theo giống và mùa vụ tại địa phương.' },
+  { q: 'Làm thế nào để cải tạo đất bạc màu, kém dinh dưỡng?', a: 'Nên phân tích đất để xác định nguyên nhân, sau đó kết hợp điều hòa pH, bổ sung phân hữu cơ – vi sinh và bón NPK cân đối theo nhu cầu cây trồng.' },
+  { q: 'Có thể kết hợp phân Tiến Nông với phân hữu cơ không?', a: 'Có. Kết hợp phân hữu cơ giúp cải thiện cấu trúc đất và tăng hiệu quả hấp thu dinh dưỡng của phân NPK.' },
+  { q: 'Tiến Nông có hỗ trợ tư vấn kỹ thuật tại địa phương không?', a: 'Có. Đội ngũ kỹ sư nông học của Tiến Nông thường xuyên tổ chức hội thảo đầu bờ và tư vấn trực tiếp. Đăng ký thành viên hoặc gọi hotline để được hỗ trợ.' },
+  { q: 'Làm sao để phân biệt sản phẩm Tiến Nông chính hãng?', a: '[Bổ sung: tem chống giả, mã QR truy xuất, đặc điểm nhận diện bao bì.]' },
+];
+const cropOptions = [['lua', 'Lúa'], ['ngo', 'Ngô'], ['rau', 'Rau màu'], ['aq', 'Cây ăn quả'], ['cp', 'Cà phê'], ['che', 'Chè'], ['mia', 'Mía'], ['khac', 'Khác']].map(([value, label]) => ({ value, label }));
+---
+<Layout title="Nông dân Tiến Nông" active="Nông dân Tiến Nông">
+<section style="position:relative;min-height:min(70vh,600px);background:var(--green-900);display:flex">
+<div style="position:absolute;inset:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="farmer-hero" shape="rect" placeholder="Nông dân và kỹ sư Tiến Nông trên cánh đồng" /></div>
+<div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,53,26,.8) 0%,rgba(2,53,26,.4) 50%,rgba(2,53,26,0) 80%)"></div>
+<div style="position:relative;max-width:1280px;width:100%;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(56px,7vw,96px);display:flex;flex-direction:column;justify-content:space-between;gap:48px;pointer-events:none;color:#fff">
+<span style="font-size:13px;color:var(--green-100)">Trang chủ / Nông dân Tiến Nông</span>
+<div style="max-width:760px;display:flex;flex-direction:column;gap:20px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-100)">CỘNG ĐỒNG NÔNG DÂN TIẾN NÔNG</span>
+<h1 style="margin:0;font:800 clamp(34px,4.8vw,60px)/1.08 var(--font-display);letter-spacing:-.015em;text-wrap:balance">Đồng hành cùng nhà nông trên mọi miền đất nước</h1>
+<p style="margin:0;font-size:19px;line-height:1.55;color:var(--green-50);text-align:justify;text-wrap:pretty">Kết nối hơn 200.000 hộ nông dân để chia sẻ kiến thức, kinh nghiệm canh tác và những mô hình hiệu quả.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;pointer-events:auto"><a href="#dang-ky" style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">Tham gia cộng đồng →</a><a href="#" style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">Hotline kỹ sư: [số]</a></div>
+</div></div></section>
+
+<section id="dang-ky" style="background:var(--surface-card);scroll-margin-top:120px">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 72px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:20px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">THAM GIA CỘNG ĐỒNG</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Trở thành thành viên Nông dân Tiến Nông</h2>
+<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">Dành cho nông dân, chủ trang trại, hợp tác xã và tổ hợp tác muốn được hỗ trợ kỹ thuật và kết nối với cộng đồng canh tác hiệu quả.</p>
+<div style="display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
+<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="color:var(--green-600);font-weight:700">✓</span><span>Cập nhật kiến thức và mô hình canh tác hiệu quả</span></div>
+<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="color:var(--green-600);font-weight:700">✓</span><span>Được kỹ sư nông học tư vấn miễn phí</span></div>
+<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="color:var(--green-600);font-weight:700">✓</span><span>Ưu tiên tham gia hội thảo đầu bờ, chương trình thực tế</span></div>
+<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="color:var(--green-600);font-weight:700">✓</span><span>Kết nối với cộng đồng nhà nông trên toàn quốc</span></div>
+</div></div>
+<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:16px">
+<div id="reg-sent" hidden style="padding:32px 8px;display:flex;flex-direction:column;gap:10px;align-items:flex-start"><span style="font:700 13px var(--font-mono);color:var(--green-600)">ĐÃ GỬI ĐĂNG KÝ</span><strong style="font-size:22px">Cảm ơn bà con đã đăng ký!</strong><span style="color:var(--text-secondary);text-align:justify">Kỹ sư Tiến Nông phụ trách khu vực sẽ liên hệ qua số điện thoại đã đăng ký.</span><button type="button" data-form-again style="background:none;border:0;padding:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">Đăng ký thêm thành viên</button></div>
+<form data-lead-form data-sent="reg-sent" style="display:flex;flex-direction:column;gap:14px">
+<Input label="Họ và tên *" name="name" autocomplete="name" required placeholder="Nguyễn Văn A" />
+<Input label="Số điện thoại / Zalo *" name="phone" type="tel" autocomplete="tel" required placeholder="09xx xxx xxx" />
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px">
+<Input label="Tỉnh / thành phố *" name="province" required placeholder="VD: Thanh Hóa" />
+<Select label="Cây trồng chính *" name="crop" options={cropOptions} value="lua" />
+</div>
+<Checkbox label="Tôi đồng ý để Tiến Nông xử lý dữ liệu cá nhân theo Chính sách bảo mật." name="consent" data-consent required />
+<Button size="lg" type="submit">Gửi đăng ký</Button>
+<span style="font-size:14px;color:var(--text-tertiary)">Hoặc nhắn Zalo OA Tiến Nông để đăng ký nhanh.</span>
+</form>
+</div></div></section>
+
+<section style="background:var(--surface-page)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
+<div style="display:flex;flex-direction:column;gap:14px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">CÂU CHUYỆN NHÀ NÔNG</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Những câu chuyện thật, những mùa vàng thật</h2></div>
+<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">Hành trình thay đổi trên chính đồng ruộng của những người nông dân đồng hành cùng Tiến Nông.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:24px">
+<article style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;min-height:300px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="story-1" shape="rect" placeholder="Chân dung nông dân trên ruộng" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:12px"><span style="font:600 12px var(--font-mono);color:var(--green-600)">LÚA · [XÃ, TỈNH]</span><p style="margin:0;font:600 19px/1.45 var(--font-display);text-align:justify">“[Trích lời nông dân về sự thay đổi sau khi áp dụng giải pháp Tiến Nông.]”</p><div style="display:flex;gap:24px;padding-top:12px;border-top:1px solid var(--border-default);margin-top:auto"><div><div style="font:800 24px var(--font-display);color:var(--amber-600)">+[x]%</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">năng suất</span></div><div><div style="font:800 24px var(--font-display);color:var(--amber-600)">−[x]%</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">chi phí phân bón</span></div></div><strong style="font-size:15px">[Họ tên] · [x] ha lúa</strong></div></article>
+<article style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;min-height:300px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="story-2" shape="rect" placeholder="Chân dung nông dân vườn cà phê" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:12px"><span style="font:600 12px var(--font-mono);color:var(--green-600)">CÀ PHÊ · [XÃ, TỈNH]</span><p style="margin:0;font:600 19px/1.45 var(--font-display);text-align:justify">“[Trích lời nông dân về sự thay đổi sau khi áp dụng giải pháp Tiến Nông.]”</p><div style="display:flex;gap:24px;padding-top:12px;border-top:1px solid var(--border-default);margin-top:auto"><div><div style="font:800 24px var(--font-display);color:var(--amber-600)">+[x]%</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">năng suất</span></div><div><div style="font:800 24px var(--font-display);color:var(--amber-600)">[x] năm</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">đồng hành</span></div></div><strong style="font-size:15px">[Họ tên] · [x] ha cà phê</strong></div></article>
+</div>
+<a href={url('tin-tuc')} style="align-self:flex-start;font-weight:600">Xem thêm câu chuyện →</a>
+</div></section>
+
+<section style="background:var(--surface-card)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:32px 64px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:14px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">LỊCH HỘI THẢO ĐẦU BỜ</span><h2 style="margin:0;font:800 clamp(28px,3vw,40px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Kỹ sư Tiến Nông đồng hành tại địa phương</h2><span style="color:var(--text-secondary);text-align:justify">Lịch được cập nhật hằng tháng. Liên hệ đại lý gần nhất để đăng ký tham dự.</span></div>
+<div style="display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
+<div style="display:grid;grid-template-columns:80px minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border-default)"><div style="text-align:center"><div style="font:800 26px/1 var(--font-display);color:var(--green-700)">[dd]</div><span style="font-size:13px;color:var(--text-tertiary)">Th. [mm]</span></div><div><strong style="display:block">[Chủ đề hội thảo]</strong><span style="font-size:14px;color:var(--text-secondary)">[Xã, huyện, tỉnh] · [Cây trồng]</span></div><a href="#dang-ky" style="font-weight:600;font-size:15px">Đăng ký</a></div>
+<div style="display:grid;grid-template-columns:80px minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border-default)"><div style="text-align:center"><div style="font:800 26px/1 var(--font-display);color:var(--green-700)">[dd]</div><span style="font-size:13px;color:var(--text-tertiary)">Th. [mm]</span></div><div><strong style="display:block">[Chủ đề hội thảo]</strong><span style="font-size:14px;color:var(--text-secondary)">[Xã, huyện, tỉnh] · [Cây trồng]</span></div><a href="#dang-ky" style="font-weight:600;font-size:15px">Đăng ký</a></div>
+<div style="display:grid;grid-template-columns:80px minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border-default)"><div style="text-align:center"><div style="font:800 26px/1 var(--font-display);color:var(--green-700)">[dd]</div><span style="font-size:13px;color:var(--text-tertiary)">Th. [mm]</span></div><div><strong style="display:block">[Chủ đề hội thảo]</strong><span style="font-size:14px;color:var(--text-secondary)">[Xã, huyện, tỉnh] · [Cây trồng]</span></div><a href="#dang-ky" style="font-weight:600;font-size:15px">Đăng ký</a></div>
+</div></div></section>
+
+<section style="background:var(--green-800);color:#fff">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px 72px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:16px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-200)">NHÀ NÔNG HỎI · TIẾN NÔNG TRẢ LỜI</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Giải đáp những thắc mắc thường gặp</h2><span style="color:var(--green-100);text-align:justify">Chưa tìm thấy câu trả lời? Gọi hotline kỹ sư hoặc gửi câu hỏi qua Zalo OA Tiến Nông.</span></div>
+<div data-accordion style="display:flex;flex-direction:column;border-top:1px solid var(--green-600)">
+{FAQ.map((f, k) => (
+<div style="border-bottom:1px solid var(--green-700)">
+<button type="button" data-acc aria-expanded={k === 0 ? 'true' : 'false'} aria-controls={`faq-${k}`} style="width:100%;display:flex;gap:16px;align-items:baseline;text-align:left;padding:20px 0;border:0;background:none;cursor:pointer;font:600 18px/1.4 var(--font-body);color:#fff"><span style="flex:1">{f.q}</span><span data-acc-sign style="font:400 22px var(--font-body);color:var(--amber-400)">{k === 0 ? '−' : '+'}</span></button>
+<p id={`faq-${k}`} hidden={k !== 0} style="margin:0;padding:0 0 22px;color:var(--green-100);text-align:justify;text-wrap:pretty">{f.a}</p>
+</div>
+))}
+</div></div></section>
+</Layout>

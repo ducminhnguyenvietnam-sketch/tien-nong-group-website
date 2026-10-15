@@ -1,0 +1,49 @@
+@import './tokens.css';
+@import './base.css';
+
+/* Page-level rules every design page declared in its <helmet>. */
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+body { background: var(--surface-page); color: var(--text-primary); font-family: var(--font-body); }
+/* Long phrases joined with no-break spaces (nowrap.js) may wrap rather than overflow on phones. */
+@media (max-width: 600px) { body { overflow-wrap: break-word; } }
+a { color: var(--text-link); text-decoration: none; }
+a:hover { color: var(--text-link-hover); }
+
+[hidden] { display: none !important; }
+
+/* Design-system Button: hover = one step darker, press = scale .98 (Button.jsx). */
+.ds-btn { transition: background var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard); }
+.ds-btn:disabled { cursor: not-allowed; opacity: .5; }
+.ds-btn--primary:hover:not(:disabled) { background: var(--green-600) !important; }
+.ds-btn--secondary:hover:not(:disabled), .ds-btn--ghost:hover:not(:disabled) { background: var(--surface-sunken) !important; }
+.ds-btn:active:not(:disabled) { transform: scale(.98); }
+
+/* Design-system Input focus ring (Input.jsx). */
+.ds-input-box:focus-within { border-color: var(--green-500) !important; box-shadow: 0 0 0 3px var(--green-50); }
+.ds-input-box input::placeholder { color: var(--text-tertiary); }
+
+/* Design-system Checkbox (Checkbox.jsx). */
+.ds-check input:checked + .ds-check-box { border-color: var(--green-500); background: var(--green-500); }
+.ds-check input:checked + .ds-check-box svg { display: block; }
+.ds-check input:focus-visible + .ds-check-box { box-shadow: 0 0 0 3px var(--green-50); }
+
+/* Design-system Tabs (Tabs.jsx). */
+.ds-tab { color: var(--text-secondary); border-bottom: 2px solid transparent; }
+.ds-tab[aria-selected="true"] { color: var(--green-700); border-bottom-color: var(--green-500); }
+
+/* Header nav: the design switches between inline nav and a Menu button at 1200px. */
+.hdr-wide { display: contents; }
+.hdr-narrow, .hdr-panel { display: none; }
+@media (max-width: 1199.98px) {
+  .hdr-wide { display: none; }
+  .hdr-narrow { display: flex; }
+  .hdr-panel { display: block; }
+}
+
+/* Hover states the design declared with style-hover. */
+.hover-lift:hover { box-shadow: var(--shadow-md) !important; border-color: var(--border-strong) !important; }
+.hover-tint:hover { background: var(--green-50) !important; }
+
+/* Pill chips used by filters and pickers (active = filled brand green). */
+.chip[aria-pressed='true'] { border-color: var(--green-500) !important; background: var(--green-500) !important; color: #fff !important; }

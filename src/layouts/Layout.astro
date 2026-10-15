@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { asset } from "../lib/routes";
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Header nav label to highlight. */
+  active?: string;
+  /** Page wrapper background; the article page uses the card surface. */
+  background?: string;
+}
+const {
+  title,
+  description = 'Tiến Nông Group — hơn 30 năm khoa học phụng sự nhà nông. Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam.',
+  active = '',
+  background = 'var(--surface-page)',
+} = Astro.props;
+const fullTitle = title ? `${title} · Tiến Nông Group` : 'Tiến Nông Group';
+---
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<meta name="theme-color" content="#00954f" />
+<link rel="icon" type="image/svg+xml" href={asset("favicon.svg")} />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" />
+</head>
+<body>
+<div style={`font-family:var(--font-body);color:var(--text-primary);background:${background};font-size:16px;line-height:1.6`}>
+<SiteHeader active={active} />
+<slot />
+<SiteFooter />
+</div>
+<script src="../scripts/nowrap.js"></script>
+<script src="../scripts/picker.ts"></script>
+<script src="../scripts/chipfilter.ts"></script>
+<script src="../scripts/accordion.ts"></script>
+<script src="../scripts/forms.ts"></script>
+</body>
+</html>

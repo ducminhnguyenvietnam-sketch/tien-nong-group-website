@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+import Tabs from '../components/Tabs.astro';
+import { url } from '../lib/routes';
+
+const tabItems = [{ value: 'line', label: 'Theo dòng sản phẩm' }, { value: 'crop', label: 'Theo cây trồng' }];
+---
+<Layout active="">
+<section style="position:relative;height:min(78vh,720px);min-height:520px;background:var(--gray-800)">
+<ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="hero-a" shape="rect" placeholder="Video / ảnh flycam: nhà máy Tiến Nông giữa cánh đồng lúa" />
+<div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,53,26,.78) 0%,rgba(2,53,26,.45) 45%,rgba(2,53,26,0) 75%)"></div>
+<div style="position:absolute;inset:0;pointer-events:none;display:flex;align-items:center">
+<div style="max-width:1280px;width:100%;margin:0 auto;padding:0 clamp(20px,4vw,56px)">
+<div style="max-width:780px;display:flex;flex-direction:column;gap:22px;color:#fff">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-100)">TIẾN NÔNG GROUP · TỪ 1995</span>
+<h1 style="margin:0;font:800 clamp(34px,5vw,64px)/1.1 var(--font-display);letter-spacing:-.015em;text-wrap:balance">Hơn 30 năm khoa học phụng sự nhà nông</h1>
+<p style="margin:0;font-size:19px;line-height:1.55;color:var(--green-50);max-width:580px;text-align:justify;text-wrap:pretty">Nghiên cứu, sản xuất và đồng hành cùng nhà nông với các giải pháp dinh dưỡng cây trồng được kiểm chứng từ phòng thí nghiệm đến đồng ruộng.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;pointer-events:auto">
+<a href={url('giai-phap')} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg">Khám phá giải pháp →</Button></a>
+<a href={url('lien-he', 'dai-ly')} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg" variant="secondary">Tìm đại lý gần nhất</Button></a>
+</div></div></div></div>
+</section>
+
+
+
+<section style="background:var(--surface-card);border-bottom:1px solid var(--border-default)">
+<div style="max-width:1280px;margin:0 auto;padding:40px clamp(20px,4vw,56px) 44px;display:flex;flex-direction:column;gap:28px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 72px)/4),calc((900px - 100%)*999),calc((100% - 24px)/2)),1fr));gap:24px">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 40px/1.1 var(--font-display);color:var(--green-700);letter-spacing:-.01em">200.000+</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">hộ nông dân tin dùng</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 40px/1.1 var(--font-display);color:var(--green-700);letter-spacing:-.01em">10.000</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">điểm bán trên toàn quốc</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 40px/1.1 var(--font-display);color:var(--green-700);letter-spacing:-.01em">200+</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">nhà phân phối</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 40px/1.1 var(--font-display);color:var(--green-700);letter-spacing:-.01em">650.000</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">tấn/năm · 3 nhà máy</span></div>
+</div>
+<div class="awards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 84px)/4),calc((1084px - 100%)*999),calc((100% - 28px)/2)),1fr));gap:20px 28px;padding-top:24px;border-top:1px solid var(--border-default)">
+<div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;width:6px;align-self:stretch;min-height:44px;border-radius:3px;background:var(--amber-400)"></span><span style="display:flex;flex-direction:column;font:700 14px/1.45 var(--font-body);text-transform:uppercase;letter-spacing:.03em">Huân chương<span style="font-weight:600;color:var(--text-secondary)">Lao động hạng Ba</span></span></div>
+<div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;width:6px;align-self:stretch;min-height:44px;border-radius:3px;background:var(--amber-400)"></span><span style="display:flex;flex-direction:column;font:700 14px/1.45 var(--font-body);text-transform:uppercase;letter-spacing:.03em">Bằng khen<span style="font-weight:600;color:var(--text-secondary)">Thủ tướng Chính phủ · 2022</span></span></div>
+<div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;width:6px;align-self:stretch;min-height:44px;border-radius:3px;background:var(--amber-400)"></span><span style="display:flex;flex-direction:column;font:700 14px/1.45 var(--font-body);text-transform:uppercase;letter-spacing:.03em">Doanh nghiệp KH&amp;CN đầu tiên<span style="font-weight:600;color:var(--text-secondary)">ngành dinh dưỡng cây trồng</span></span></div>
+<div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;width:6px;align-self:stretch;min-height:44px;border-radius:3px;background:var(--amber-400)"></span><span style="display:flex;flex-direction:column;font:700 14px/1.45 var(--font-body);text-transform:uppercase;letter-spacing:.03em">6 lần đạt<span style="font-weight:600;color:var(--text-secondary)">Sao Vàng Đất Việt</span></span></div>
+</div>
+<span style="font-size:13px;color:var(--text-tertiary)">Số liệu 2025 · <a href={url('ve-tien-nong', 'thanh-tuu')}>Xem tất cả thành tựu →</a></span>
+</div></section>
+
+<section id="khoa-hoc" style="background:var(--green-800);color:#fff">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:48px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 64px;align-items:end">
+<div style="display:flex;flex-direction:column;gap:16px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-200)">01 · KHOA HỌC &amp; CÔNG NGHỆ</span>
+<h2 style="margin:0;font:800 clamp(32px,3.8vw,48px)/1.12 var(--font-display);letter-spacing:-.01em;text-wrap:balance; max-width:578px">Khoa học nền tảng, đồng ruộng là thước đo</h2>
+</div>
+<p style="margin:0;font-size:18px;color:var(--green-100);text-align:justify;text-wrap:pretty">Là doanh nghiệp Khoa học &amp; Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam, Tiến Nông đầu tư bài bản cho Trung tâm Nghiên cứu Phát triển và phòng thí nghiệm đạt chuẩn VILAS 1519. Mỗi công thức đều được nghiên cứu trên đất, trên cây và kiểm chứng tại đồng ruộng trước khi đến tay nhà nông.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px">
+<div style="position:relative;height:420px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="rd-main" shape="rounded" radius="16" placeholder="Phòng thí nghiệm VILAS 1519 đang vận hành" /></div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px">
+<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">R&amp;D</span><strong style="font-size:18px;line-height:1.3">Trung tâm Nghiên cứu Phát triển</strong><span style="color:var(--green-100);font-size:14px">Công nghệ phân bón, công nghệ sinh học</span></div>
+<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">VILAS 1519</span><strong style="font-size:18px;line-height:1.3">Phân tích &amp; kiểm định chất lượng</strong><span style="color:var(--green-100);font-size:14px">Kiểm soát chất lượng theo từng lô</span></div>
+<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">ĐẤT – CÂY</span><strong style="font-size:18px;line-height:1.3">Sức khỏe đất &amp; dinh dưỡng</strong><span style="color:var(--green-100);font-size:14px">Phân tích đất làm cơ sở xây dựng công thức</span></div>
+<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">ỨNG DỤNG</span><strong style="font-size:18px;line-height:1.3">Từ nghiên cứu đến đồng ruộng</strong><span style="color:var(--green-100);font-size:14px">Mô hình trình diễn tại các vùng sản xuất trọng điểm</span></div>
+</div></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:28px;border-top:1px solid var(--green-700)">
+<div style="display:flex;gap:40px;flex-wrap:wrap">
+<div style="display:flex;flex-direction:column"><span style="font:800 32px/1.1 var(--font-display);color:var(--amber-400)">[số]</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">nhà khoa học &amp; kỹ sư</span></div>
+<div style="display:flex;flex-direction:column"><span style="font:800 32px/1.1 var(--font-display);color:var(--amber-400)">[số]</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">đề tài nghiên cứu</span></div>
+<div style="display:flex;flex-direction:column"><span style="font:800 32px/1.1 var(--font-display);color:var(--amber-400)">[số]</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">mẫu đất phân tích/năm</span></div>
+</div>
+<a href={url('khoa-hoc-cong-nghe')} style="color:#fff;font-weight:600;border:1px solid var(--green-400);border-radius:var(--radius-md);padding:12px 20px">Tìm hiểu Khoa học &amp; Công nghệ →</a>
+</div></div></section>
+
+<section id="doi-tuong" style="background:var(--surface-page)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:14px;max-width:720px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">02 · GIẢI PHÁP</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Giải pháp phù hợp cho từng đối tác</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 60px)/4),calc((1100px - 100%)*999),calc((100% - 20px)/2)),1fr));gap:20px">
+<a href={url('giai-phap')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-farmer" shape="rect" placeholder="Nông dân trên ruộng" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">Nông dân</strong><span style="color:var(--text-secondary);flex:1;text-align:justify">Giải pháp dinh dưỡng theo cây trồng, quy trình bón phân khoa học và đội ngũ kỹ sư tư vấn tận nơi.</span><span style="color:var(--green-600);font-weight:600">Giải pháp theo cây trồng →</span></div></a>
+<a href={url('lien-he', 'dai-ly')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-dealer" shape="rect" placeholder="Cửa hàng đại lý vật tư nông nghiệp" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">Đại lý &amp; nhà phân phối</strong><span style="color:var(--text-secondary);flex:1;text-align:justify">Chính sách hợp tác minh bạch, hỗ trợ bán hàng và hội thảo kỹ thuật, cùng hệ thống hơn 200 nhà phân phối. </span><span style="color:var(--green-600);font-weight:600">Trở thành đại lý →</span></div></a>
+<a href={url('giai-phap-du-an')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-project" shape="rect" placeholder="Sân golf / cảnh quan đô thị / nhà kính" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">Khách hàng dự án</strong><span style="color:var(--text-secondary);flex:1;text-align:justify">Chương trình dinh dưỡng thiết kế riêng cho sân golf, cảnh quan, khu công nghiệp và nông nghiệp công nghệ cao.</span><span style="color:var(--green-600);font-weight:600">Yêu cầu tư vấn dự án →</span></div></a>
+<a href={url('lien-he')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-export" shape="rect" placeholder="Container hàng xuất khẩu / kho" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">Đối tác xuất khẩu</strong><span style="color:var(--text-secondary);flex:1;text-align:justify">Sản phẩm có mặt tại hơn 10 quốc gia, năng lực cung ứng ổn định 650.000 tấn mỗi năm.</span><span style="color:var(--green-600);font-weight:600">Hợp tác xuất khẩu →</span></div></a>
+</div></div></section>
+
+<section id="san-pham" style="background:var(--surface-card)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;gap:14px;max-width:640px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">03 · SẢN PHẨM</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance; max-width:787px">Dinh dưỡng chuẩn xác cho từng loại cây, từng giai đoạn sinh trưởng</h2>
+</div>
+<Tabs id="product-tabs" label="Xem sản phẩm" items={tabItems} value="line" />
+</div>
+<div data-panel="line" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 60px)/4),calc((1060px - 100%)*999),calc((100% - 20px)/2)),1fr));gap:20px">
+<a href={url('san-pham')} style="display:flex;flex-direction:column;gap:14px;color:var(--text-primary)"><div style="position:relative;height:260px;background:var(--surface-sunken);border-radius:var(--radius-lg)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="line-1" shape="rounded" radius="16" fit="contain" placeholder="Bao bì dòng Chuyên dụng" /></div><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:19px">Phân bón chuyên dụng</strong><span style="color:var(--text-secondary);font-size:15px">Công thức chuyên biệt cho lúa, ngô, cà phê, cây ăn quả…</span></div></a>
+<a href={url('san-pham')} style="display:flex;flex-direction:column;gap:14px;color:var(--text-primary)"><div style="position:relative;height:260px;background:var(--surface-sunken);border-radius:var(--radius-lg)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="line-2" shape="rounded" radius="16" fit="contain" placeholder="Bao bì dòng Đa dụng" /></div><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:19px">Phân bón đa dụng</strong><span style="color:var(--text-secondary);font-size:15px">Tỷ lệ NPK cân đối, phù hợp với nhiều loại cây trồng</span></div></a>
+<a href={url('san-pham')} style="display:flex;flex-direction:column;gap:14px;color:var(--text-primary)"><div style="position:relative;height:260px;background:var(--surface-sunken);border-radius:var(--radius-lg)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="line-3" shape="rounded" radius="16" fit="contain" placeholder="Bao bì dòng Hữu cơ" /></div><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:19px">Phân bón hữu cơ</strong><span style="color:var(--text-secondary);font-size:15px">Bổ sung hữu cơ, cải tạo đất, hướng tới canh tác bền vững</span></div></a>
+<a href={url('san-pham')} style="display:flex;flex-direction:column;gap:14px;color:var(--text-primary)"><div style="position:relative;height:260px;background:var(--surface-sunken);border-radius:var(--radius-lg)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="line-4" shape="rounded" radius="16" fit="contain" placeholder="Bao bì dòng Hàm lượng cao" /></div><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:19px">Phân bón hàm lượng cao</strong><span style="color:var(--text-secondary);font-size:15px">Hàm lượng cao cho thâm canh và nông nghiệp công nghệ cao</span></div></a>
+</div>
+<div data-panel="crop" hidden style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+<a href={url('giai-phap', 'tim-giai-phap')} style="position:relative;height:200px;border-radius:var(--radius-lg);overflow:hidden;display:block"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="crop-lua" shape="rect" placeholder="Lúa" /><span style="position:absolute;left:12px;bottom:12px;background:var(--surface-card);color:var(--text-primary);font-weight:700;padding:6px 12px;border-radius:var(--radius-full);pointer-events:none">Lúa</span></a>
+<a href={url('giai-phap', 'tim-giai-phap')} style="position:relative;height:200px;border-radius:var(--radius-lg);overflow:hidden;display:block"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="crop-ngo" shape="rect" placeholder="Ngô" /><span style="position:absolute;left:12px;bottom:12px;background:var(--surface-card);color:var(--text-primary);font-weight:700;padding:6px 12px;border-radius:var(--radius-full);pointer-events:none">Ngô</span></a>
+<a href={url('giai-phap', 'tim-giai-phap')} style="position:relative;height:200px;border-radius:var(--radius-lg);overflow:hidden;display:block"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="crop-caphe" shape="rect" placeholder="Cà phê" /><span style="position:absolute;left:12px;bottom:12px;background:var(--surface-card);color:var(--text-primary);font-weight:700;padding:6px 12px;border-radius:var(--radius-full);pointer-events:none">Cà phê</span></a>
+<a href={url('giai-phap', 'tim-giai-phap')} style="position:relative;height:200px;border-radius:var(--radius-lg);overflow:hidden;display:block"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="crop-anqua" shape="rect" placeholder="Cây ăn quả" /><span style="position:absolute;left:12px;bottom:12px;background:var(--surface-card);color:var(--text-primary);font-weight:700;padding:6px 12px;border-radius:var(--radius-full);pointer-events:none">Cây ăn quả</span></a>
+<a href={url('giai-phap', 'tim-giai-phap')} style="position:relative;height:200px;border-radius:var(--radius-lg);overflow:hidden;display:block"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="crop-rau" shape="rect" placeholder="Rau màu" /><span style="position:absolute;left:12px;bottom:12px;background:var(--surface-card);color:var(--text-primary);font-weight:700;padding:6px 12px;border-radius:var(--radius-full);pointer-events:none">Rau màu</span></a>
+<a href={url('giai-phap', 'tim-giai-phap')} style="position:relative;height:200px;border-radius:var(--radius-lg);overflow:hidden;display:block"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="crop-congnghiep" shape="rect" placeholder="Cây công nghiệp" /><span style="position:absolute;left:12px;bottom:12px;background:var(--surface-card);color:var(--text-primary);font-weight:700;padding:6px 12px;border-radius:var(--radius-full);pointer-events:none">Cây công nghiệp</span></a>
+</div>
+<a href={url('san-pham')} style="align-self:flex-start;font-weight:600">Xem tất cả sản phẩm →</a>
+</div></section>
+
+<section id="nha-may" style="position:relative;min-height:600px;background:var(--gray-800);display:flex">
+<div style="position:absolute;inset:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="plant-flycam" shape="rect" placeholder="Flycam nhà máy Bỉm Sơn: cây xanh, khuôn viên sạch đẹp" /></div>
+<div style="position:relative;max-width:1280px;width:100%;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,56px);display:flex;align-items:flex-end;pointer-events:none">
+<div style="background:var(--surface-card);border-radius:var(--radius-xl);padding:clamp(28px,3vw,40px);max-width:560px;display:flex;flex-direction:column;gap:16px;pointer-events:auto;box-shadow:var(--shadow-lg)">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">04 · SẢN XUẤT XANH</span>
+<h2 style="margin:0;font:800 clamp(28px,3vw,40px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Sản xuất quy mô lớn, hài hòa cùng môi trường</h2>
+<p style="margin:0;color:var(--text-secondary);text-align:justify;text-wrap:pretty">Ba nhà máy với tổng công suất thiết kế 650.000 tấn/năm, vận hành theo tiêu chuẩn ISO 9001 về chất lượng và ISO 14001 về môi trường, trong khuôn viên xanh, sạch và an toàn.</p>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding-top:12px;border-top:1px solid var(--border-default)">
+<div><strong style="display:block">Bỉm Sơn</strong><span style="font-size:14px;color:var(--text-secondary)">THANH HOÁ</span></div>
+<div><strong style="display:block">Gia Lai</strong><span style="font-size:14px;color:var(--text-secondary)">TÂY NGUYÊN</span></div>
+<div><strong style="display:block">Hoằng Hoá</strong><span style="font-size:14px;color:var(--text-secondary)">THANH HOÁ</span></div>
+</div>
+<a href={url('ve-tien-nong', 'nang-luc')} style="font-weight:600">Khám phá hệ thống nhà máy →</a>
+</div></div></section>
+
+<section id="con-nguoi" style="background:var(--surface-page)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px 72px;align-items:center">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:280px 200px;gap:14px">
+<div style="position:relative;grid-row:span 2;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="people-1" shape="rounded" radius="16" placeholder="Chân dung người lao động gắn bó 20+ năm" /></div>
+<div style="position:relative"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="people-2" shape="rounded" radius="16" placeholder="Chuyến du lịch nước ngoài toàn công ty" /></div>
+<div style="position:relative"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="people-3" shape="rounded" radius="16" placeholder="Lễ trao Bảo Bình tài lộc" /></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">05 · CON NGƯỜI</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Gắn bó bền lâu, cùng nhau phát triển</h2>
+<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">Nhiều cán bộ, nhân viên đã đồng hành cùng Tiến Nông hơn 20 năm. Chúng tôi xây dựng môi trường làm việc gần gũi, chế độ đãi ngộ xứng đáng và sự ghi nhận dành cho mỗi chặng đường cống hiến.</p>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px 24px">
+<div style="display:flex;flex-direction:column;gap:2px;padding-top:14px;border-top:2px solid var(--green-500)"><strong>Lương thưởng cạnh tranh</strong><span style="font-size:14px;color:var(--text-secondary)">Gắn với hiệu quả công việc và thâm niên</span></div>
+<div style="display:flex;flex-direction:column;gap:2px;padding-top:14px;border-top:2px solid var(--green-500)"><strong>Du lịch nước ngoài</strong><span style="font-size:14px;color:var(--text-secondary)">Hành trình dành cho toàn thể cán bộ, nhân viên</span></div>
+<div style="display:flex;flex-direction:column;gap:2px;padding-top:14px;border-top:2px solid var(--green-500)"><strong>Tặng vàng</strong><span style="font-size:14px;color:var(--text-secondary)">Tri ân người lao động gắn bó lâu năm</span></div>
+<div style="display:flex;flex-direction:column;gap:2px;padding-top:14px;border-top:2px solid var(--green-500)"><strong>Bảo Bình tài lộc</strong><span style="font-size:14px;color:var(--text-secondary)">Vinh danh những chặng đường cống hiến</span></div>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:8px">
+<a href={url('tuyen-dung', 'vi-tri')} style="text-decoration:none;display:inline-flex"><Button as="span" >Cơ hội nghề nghiệp →</Button></a>
+<a href={url('tuyen-dung', 'van-hoa')} style="text-decoration:none;display:inline-flex"><Button as="span" variant="ghost">Văn hóa Tiến Nông</Button></a>
+</div></div></div></section>
+
+<section id="ben-vung" style="background:var(--surface-card)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">06 · PHÁT TRIỂN BỀN VỮNG</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance; max-width:817px">Vì nền nông nghiệp bền vững và cộng đồng <br>phát triển thịnh vượng</h2>
+</div>
+<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">Xác định “Sẻ chia lợi ích” là giá trị cốt lõi, Tiến Nông đồng hành cùng nhà nông và các địa phương, từ những lớp tập huấn kỹ thuật đến công tác khuyến học và các chương trình hướng về biển đảo.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 40px)/3),calc((880px - 100%)*999),100%),1fr));gap:20px">
+<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="csr-1" shape="rounded" radius="16" placeholder="Lớp tập huấn kỹ thuật cho nông dân" /></div><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">NÂNG CAO NHẬN THỨC</span><strong style="font-size:19px;line-height:1.35">Tập huấn bón phân cân đối, bảo vệ sức khỏe đất cho nhà nông</strong></div>
+<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="csr-2" shape="rounded" radius="16" placeholder="Lễ trao học bổng khuyến học Thanh Hóa" /></div><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">KHUYẾN HỌC</span><strong style="font-size:19px;line-height:1.35">Ủng hộ 1,55 tỷ đồng cho công tác khuyến học tỉnh Thanh Hóa năm 2026</strong></div>
+<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="csr-3" shape="rounded" radius="16" placeholder="Chương trình Triệu mầm xanh Trường Sa" /></div><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">BIỂN ĐẢO</span><strong style="font-size:19px;line-height:1.35">Đồng hành cùng chương trình “Triệu mầm xanh” vì Trường Sa xanh</strong></div>
+</div>
+<a href={url('phat-trien-ben-vung')} style="align-self:flex-start;font-weight:600">Phát triển bền vững tại Tiến Nông →</a>
+</div></section>
+
+<section id="tin-tuc" style="background:var(--surface-page);border-top:1px solid var(--border-default)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap">
+<h2 style="margin:0;font:800 clamp(28px,3vw,40px)/1.15 var(--font-display)">Tin tức</h2>
+<a href={url('tin-tuc')} style="font-weight:600">Tất cả tin tức →</a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/3),calc((948px - 100%)*999),100%),1fr));gap:24px">
+<a href={url('bai-viet')} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:210px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="news-1" shape="rounded" radius="12" placeholder="Ảnh bài viết" /></div><span style="font-size:13px;color:var(--text-tertiary)">Khoa học &amp; Công nghệ</span><strong style="font-size:18px;line-height:1.4">Tiến Nông tiếp đón Trường Cao đẳng FPT Polytechnic Thanh Hóa tham quan trải nghiệm thực tế</strong></a>
+<a href={url('tin-tuc')} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:210px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="news-2" shape="rounded" radius="12" placeholder="Ảnh bài viết" /></div><span style="font-size:13px;color:var(--text-tertiary)">Vì cộng đồng</span><strong style="font-size:18px;line-height:1.4">Tiến Nông phát động cuộc thi “Em viết thư gửi Chiến sĩ Trường Sa”</strong></a>
+<a href={url('tin-tuc')} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:210px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="news-3" shape="rounded" radius="12" placeholder="Ảnh bài viết" /></div><span style="font-size:13px;color:var(--text-tertiary)">Kiến thức nông nghiệp</span><strong style="font-size:18px;line-height:1.4">Bón phân NPK đúng thời điểm: tiết kiệm chi phí, tăng hiệu quả cho vụ lúa</strong></a>
+</div></div></section>
+</Layout>
+
+<style>
+  /* Phone: the award labels are kept unbroken, so give each its own row. */
+  @media (max-width: 480px) { .awards { grid-template-columns: 1fr !important; } }
+</style>
+<script>
+  document.getElementById('product-tabs')?.addEventListener('tabs:change', (e) => {
+    const v = (e as CustomEvent<string>).detail;
+    document.querySelectorAll<HTMLElement>('#san-pham [data-panel]').forEach((p) => { p.hidden = p.dataset.panel !== v; });
+  });
+</script>

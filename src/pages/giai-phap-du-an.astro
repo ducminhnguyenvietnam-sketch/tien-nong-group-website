@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Checkbox from '../components/Checkbox.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+import Input from '../components/Input.astro';
+import Select from '../components/Select.astro';
+import { url } from '../lib/routes';
+
+const typeOptions = [{ value: 'golf', label: 'Sân golf' }, { value: 'urban', label: 'Cảnh quan đô thị & bất động sản' }, { value: 'kcn', label: 'Khu công nghiệp & nhà máy' }, { value: 'hitech', label: 'Nông nghiệp công nghệ cao' }, { value: 'other', label: 'Khác' }];
+---
+<Layout title="Giải pháp cho dự án" active="Giải pháp">
+<section style="background:var(--surface-card)">
+<div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:32px">
+<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">Trang chủ</a> / <a href={url('giai-phap')} style="color:var(--text-tertiary)">Giải pháp</a> / Cho dự án</span>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px 64px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:20px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">GIẢI PHÁP CHO DỰ ÁN</span>
+<h1 style="margin:0;font:800 clamp(36px,4.6vw,60px)/1.1 var(--font-display);letter-spacing:-.015em;text-wrap:balance">Chương trình dinh dưỡng thiết kế riêng cho từng dự án</h1>
+<p style="margin:0;font-size:18px;color:var(--text-secondary);text-align:justify;text-wrap:pretty">Với các dự án quy mô lớn, Tiến Nông không chỉ cung cấp sản phẩm theo tấn. Chúng tôi khảo sát, phân tích, thiết kế và đồng hành vận hành một chương trình dinh dưỡng trọn gói, phù hợp với mục tiêu và điều kiện của từng công trình.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap"><a href="#tu-van" style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">Yêu cầu tư vấn dự án →</a><a href="#quy-trinh" style="color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md);border:1px solid var(--border-strong)">Quy trình triển khai</a></div>
+</div>
+<div style="position:relative;height:clamp(320px,36vw,480px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="proj-hero" shape="rounded" radius="24" placeholder="Thảm cỏ sân golf / cảnh quan khu đô thị" /></div>
+</div></div></section>
+
+<section style="background:var(--surface-page)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:14px;max-width:680px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">01 · LĨNH VỰC PHỤC VỤ</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Giải pháp chuyên biệt cho từng loại hình dự án</h2></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 60px)/4),calc((2140px - 100%)*999),calc((100% - 20px)/2)),1fr));gap:20px">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;min-height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="seg-1" shape="rect" placeholder="Sân golf" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px"><strong style="font-size:20px">Sân golf</strong><span style="color:var(--text-secondary);font-size:15px;text-align:justify">Giữ thảm cỏ xanh đều, chịu được tần suất sử dụng cao, phục hồi nhanh và tối ưu chi phí bảo dưỡng.</span><span style="font-size:14px;color:var(--text-tertiary)">Fairway · Green · Tee</span></div></div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;min-height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="seg-2" shape="rect" placeholder="Cảnh quan khu đô thị" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px"><strong style="font-size:20px">Cảnh quan đô thị &amp; bất động sản</strong><span style="color:var(--text-secondary);font-size:15px;text-align:justify">Duy trì cây xanh, thảm cỏ và hoa cảnh luôn đẹp quanh năm, góp phần nâng cao giá trị dự án.</span><span style="font-size:14px;color:var(--text-tertiary)">Khu đô thị · Resort · Công viên</span></div></div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;min-height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="seg-3" shape="rect" placeholder="Cây xanh khu công nghiệp" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px"><strong style="font-size:20px">Khu công nghiệp &amp; nhà máy</strong><span style="color:var(--text-secondary);font-size:15px;text-align:justify">Phát triển hệ thống cây xanh trên nền đất san lấp, đáp ứng tiêu chuẩn tỷ lệ cây xanh và môi trường.</span><span style="font-size:14px;color:var(--text-tertiary)">KCN · Nhà máy · Kho vận</span></div></div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;min-height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="seg-4" shape="rect" placeholder="Nhà kính công nghệ cao" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px"><strong style="font-size:20px">Nông nghiệp công nghệ cao</strong><span style="color:var(--text-secondary);font-size:15px;text-align:justify">Chương trình dinh dưỡng chính xác cho nhà kính, nhà màng, tưới nhỏ giọt và trang trại quy mô lớn.</span><span style="font-size:14px;color:var(--text-tertiary)">Nhà kính · Trang trại · Vùng nguyên liệu</span></div></div>
+</div></div></section>
+
+<section id="quy-trinh" style="background:var(--green-800);color:#fff;scroll-margin-top:120px">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:14px;max-width:700px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-200)">02 · QUY TRÌNH TRIỂN KHAI</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Quy trình năm bước, một đầu mối xuyên suốt</h2></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 64px)/5),calc((1000px - 100%)*999),100%),1fr));gap:16px">
+<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:800 36px/1 var(--font-display);color:var(--amber-400)">01</span><strong style="font-size:18px">Khảo sát hiện trạng</strong><span style="color:var(--green-100);font-size:15px;text-align:justify">Kỹ sư khảo sát thực địa, ghi nhận hiện trạng cây trồng và điều kiện canh tác.</span></div>
+<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:800 36px/1 var(--font-display);color:var(--amber-400)">02</span><strong style="font-size:18px">Phân tích đất</strong><span style="color:var(--green-100);font-size:15px">Lấy mẫu và phân tích tại phòng thí nghiệm VILAS 1519.</span></div>
+<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:800 36px/1 var(--font-display);color:var(--amber-400)">03</span><strong style="font-size:18px">Thiết kế chương trình</strong><span style="color:var(--green-100);font-size:15px">Đề xuất sản phẩm, liều lượng, lịch bón và dự toán chi phí.</span></div>
+<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:800 36px/1 var(--font-display);color:var(--amber-400)">04</span><strong style="font-size:18px">Cung ứng theo lịch</strong><span style="color:var(--green-100);font-size:15px">Giao hàng đúng tiến độ từ hệ thống 3 nhà máy và mạng lưới phân phối.</span></div>
+<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:800 36px/1 var(--font-display);color:var(--amber-400)">05</span><strong style="font-size:18px">Giám sát &amp; điều chỉnh</strong><span style="color:var(--green-100);font-size:15px">Theo dõi định kỳ, báo cáo kết quả và điều chỉnh chương trình khi cần.</span></div>
+</div></div></section>
+
+<section style="background:var(--surface-card)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 72px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:16px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">03 · NĂNG LỰC BẢO ĐẢM</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Năng lực bảo đảm cho mỗi dự án</h2>
+<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">Hơn 30 năm nghiên cứu và sản xuất dinh dưỡng cây trồng là nền tảng để Tiến Nông đáp ứng các yêu cầu khắt khe về chất lượng, tiến độ và tính ổn định của dự án.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+<div style="border-top:2px solid var(--green-500);padding-top:14px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">Phòng thí nghiệm VILAS 1519</strong><span style="color:var(--text-secondary);font-size:15px">Kết quả phân tích có giá trị pháp lý</span></div>
+<div style="border-top:2px solid var(--green-500);padding-top:14px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">Doanh nghiệp KH&amp;CN</strong><span style="color:var(--text-secondary);font-size:15px">Đội ngũ R&amp;D thiết kế công thức riêng</span></div>
+<div style="border-top:2px solid var(--green-500);padding-top:14px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">650.000 tấn/năm</strong><span style="color:var(--text-secondary);font-size:15px">Năng lực cung ứng ổn định từ 3 nhà máy</span></div>
+<div style="border-top:2px solid var(--green-500);padding-top:14px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">ISO 9001 · ISO 14001</strong><span style="color:var(--text-secondary);font-size:15px">Quản lý chất lượng và môi trường</span></div>
+</div></div></section>
+
+<section id="tu-van" style="background:var(--surface-page);scroll-margin-top:120px">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 64px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:20px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">04 · YÊU CẦU TƯ VẤN</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">Trao đổi cùng chuyên gia dự án</h2>
+<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">Quý khách vui lòng gửi thông tin sơ bộ, chuyên gia của Tiến Nông sẽ liên hệ trong vòng 2 ngày làm việc để sắp xếp buổi khảo sát.</p>
+<div style="display:flex;flex-direction:column;gap:4px;padding-top:16px;border-top:1px solid var(--border-default)"><span style="font-size:14px;color:var(--text-tertiary)">Đầu mối dự án</span><strong style="font-size:18px">[Họ tên · Chức danh]</strong><span>[Số điện thoại] · [email dự án]</span></div>
+</div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:16px">
+<div id="project-sent" hidden style="display:flex;flex-direction:column;gap:8px;padding:16px 0"><span style="font:700 13px var(--font-mono);color:var(--green-600)">ĐÃ GỬI</span><strong style="font-size:22px">Cảm ơn Quý khách đã gửi yêu cầu.</strong><span style="color:var(--text-secondary)">Chuyên gia dự án của Tiến Nông sẽ liên hệ trong vòng 2 ngày làm việc.</span><button type="button" data-form-again style="align-self:flex-start;background:none;border:0;padding:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">Gửi yêu cầu khác</button></div>
+<form data-lead-form data-sent="project-sent" style="display:flex;flex-direction:column;gap:16px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+<Input label="Họ và tên *" name="name" autocomplete="name" required placeholder="Nguyễn Văn A" />
+<Input label="Đơn vị / công ty *" name="company" autocomplete="organization" required placeholder="Tên chủ đầu tư hoặc đơn vị quản lý" />
+<Input label="Số điện thoại *" name="phone" type="tel" autocomplete="tel" required placeholder="09xx xxx xxx" />
+<Input label="Email" name="email" type="email" autocomplete="email" placeholder="ten@congty.vn" />
+<Select label="Loại dự án *" name="type" options={typeOptions} value="golf" />
+<Input label="Diện tích (ha)" name="area" inputmode="decimal" placeholder="VD: 45" />
+</div>
+<Input label="Địa điểm dự án" name="location" placeholder="Tỉnh / thành phố" />
+<Checkbox label="Tôi đồng ý để Tiến Nông xử lý dữ liệu cá nhân theo Chính sách bảo mật." name="consent" data-consent required />
+<Button size="lg" type="submit">Gửi yêu cầu</Button>
+</form>
+</div></div></section>
+</Layout>
