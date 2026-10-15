@@ -1,10 +1,13 @@
 ---
-import c from '../../content/pages/tin-tuc.json';
+import raw from '../../content/pages/tin-tuc.json';
+import { withDefaults } from '../../lib/content';
 import Layout from '../../layouts/Layout.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
 import Tabs from '../../components/Tabs.astro';
 import { link, url } from '../../lib/routes';
 import { CATEGORIES, formatDate, getNews, newsUrl } from '../../lib/news';
+
+const c = withDefaults(raw, 'src/content/pages/tin-tuc.json');
 
 const news = await getNews();
 const [feat, ...rest] = news;

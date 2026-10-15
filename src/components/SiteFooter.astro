@@ -1,6 +1,9 @@
 ---
-import site from '../content/site.json';
+import siteRaw from '../content/site.json';
+import { withDefaults } from '../lib/content';
 import { asset, link, url } from '../lib/routes';
+
+const site = withDefaults(siteRaw, 'src/content/site.json');
 
 const { company: co, social, legal, footer: f } = site;
 ---

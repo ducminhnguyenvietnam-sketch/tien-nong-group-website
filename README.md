@@ -38,10 +38,19 @@ All text, photos, links and lists are edited in [Pages CMS](https://app.pagescms
 | Company info, social links, menu and footer labels | `src/content/site.json` |
 | Uploaded photos and documents | `public/uploads/` |
 
-Pages read their text as `{c.<section>.<key>}`. A photo is
+Pages read their text as `{c.<section>.<key>}`, always through `withDefaults()`
+(`src/lib/content.ts`): Pages CMS deletes empty fields, lists and groups when it saves, and
+`withDefaults` rebuilds the full shape from `.pages.yml`, so a save can never remove a key the
+templates rely on. A photo is
 `{ src, focus, zoom, alt }` and is rendered by `ImageSlot`; an empty `src` shows the
 design's labelled placeholder. If you change a page's structure, update both its JSON
 file and the matching entry in `.pages.yml`.
+
+**Photo framing tool** — `/cong-cu/can-anh/` (not linked, `noindex`): pick a slot, drag/zoom a
+photo inside the slot's exact frame with phone and other previews, download a cropped JPEG at 2×
+the slot size, then upload it in the CMS. Slot frames live in `src/data/photo-slots.json`
+(measured from the built site at 1440px and 390px); update them if a layout changes size.
+Each photo field in `.pages.yml` links to the tool with `?o=<slot>`.
 
 ## Not wired up yet
 

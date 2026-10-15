@@ -1,8 +1,11 @@
 ---
-import c from '../content/pages/phat-trien-ben-vung.json';
+import raw from '../content/pages/phat-trien-ben-vung.json';
+import { withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import { url } from '../lib/routes';
+
+const c = withDefaults(raw, 'src/content/pages/phat-trien-ben-vung.json');
 
 const TAGS = ['Tất cả', 'KHUYẾN HỌC', 'BIỂN ĐẢO', 'GIÁO DỤC', 'NGƯỜI YẾU THẾ'];
 const LABEL: Record<string, string> = { 'Tất cả': 'Tất cả', 'KHUYẾN HỌC': 'Khuyến học', 'BIỂN ĐẢO': 'Biển đảo', 'GIÁO DỤC': 'Giáo dục', 'NGƯỜI YẾU THẾ': 'Người yếu thế' };

@@ -1,0 +1,2525 @@
+[
+ {
+  "key": "hero-a",
+  "group": "Trang chủ",
+  "label": "Video / ảnh flycam: nhà máy Tiến Nông giữa cánh đồng lúa",
+  "cms": [
+   "Trang chủ",
+   "01 · Hero A",
+   "Ảnh: Video / ảnh flycam: nhà máy Tiến Nông giữa cánh đồng lúa"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 1440,
+    "h": 702,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 390,
+    "h": 702,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "rd-main",
+  "group": "Trang chủ",
+  "label": "Phòng thí nghiệm VILAS 1519 đang vận hành",
+  "cms": [
+   "Trang chủ",
+   "03 · Khoa học & Công nghệ",
+   "Ảnh: Phòng thí nghiệm VILAS 1519 đang vận hành"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 576,
+    "h": 420,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 420,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "aud-farmer",
+  "group": "Trang chủ",
+  "label": "Nông dân trên ruộng",
+  "cms": [
+   "Trang chủ",
+   "04 · Giải pháp theo đối tượng",
+   "Ảnh: Nông dân trên ruộng"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 275,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 163,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "aud-dealer",
+  "group": "Trang chủ",
+  "label": "Cửa hàng đại lý vật tư nông nghiệp",
+  "cms": [
+   "Trang chủ",
+   "04 · Giải pháp theo đối tượng",
+   "Ảnh: Cửa hàng đại lý vật tư nông nghiệp"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 275,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 163,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "aud-project",
+  "group": "Trang chủ",
+  "label": "Sân golf / cảnh quan đô thị / nhà kính",
+  "cms": [
+   "Trang chủ",
+   "04 · Giải pháp theo đối tượng",
+   "Ảnh: Sân golf / cảnh quan đô thị / nhà kính"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 275,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 163,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "aud-export",
+  "group": "Trang chủ",
+  "label": "Container hàng xuất khẩu / kho",
+  "cms": [
+   "Trang chủ",
+   "04 · Giải pháp theo đối tượng",
+   "Ảnh: Container hàng xuất khẩu / kho"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 275,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 163,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "line-1",
+  "group": "Trang chủ",
+  "label": "Bao bì dòng Chuyên dụng",
+  "cms": [
+   "Trang chủ",
+   "05 · Sản phẩm",
+   "Ảnh: Bao bì dòng Chuyên dụng"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 277,
+    "h": 260,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 165,
+    "h": 260,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "line-2",
+  "group": "Trang chủ",
+  "label": "Bao bì dòng Đa dụng",
+  "cms": [
+   "Trang chủ",
+   "05 · Sản phẩm",
+   "Ảnh: Bao bì dòng Đa dụng"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 277,
+    "h": 260,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 165,
+    "h": 260,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "line-3",
+  "group": "Trang chủ",
+  "label": "Bao bì dòng Hữu cơ",
+  "cms": [
+   "Trang chủ",
+   "05 · Sản phẩm",
+   "Ảnh: Bao bì dòng Hữu cơ"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 277,
+    "h": 260,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 165,
+    "h": 260,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "line-4",
+  "group": "Trang chủ",
+  "label": "Bao bì dòng Hàm lượng cao",
+  "cms": [
+   "Trang chủ",
+   "05 · Sản phẩm",
+   "Ảnh: Bao bì dòng Hàm lượng cao"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 277,
+    "h": 260,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 165,
+    "h": 260,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "crop-lua",
+  "group": "Trang chủ",
+  "label": "Lúa",
+  "cms": [
+   "Trang chủ",
+   "05 · Sản phẩm",
+   "Ảnh: Lúa"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 181,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "crop-ngo",
+  "group": "Trang chủ",
+  "label": "Ngô",
+  "cms": [
+   "Trang chủ",
+   "05 · Sản phẩm",
+   "Ảnh: Ngô"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 181,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "crop-caphe",
+  "group": "Trang chủ",
+  "label": "Cà phê",
+  "cms": [
+   "Trang chủ",
+   "05 · Sản phẩm",
+   "Ảnh: Cà phê"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 181,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "crop-anqua",
+  "group": "Trang chủ",
+  "label": "Cây ăn quả",
+  "cms": [
+   "Trang chủ",
+   "05 · Sản phẩm",
+   "Ảnh: Cây ăn quả"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 181,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "crop-rau",
+  "group": "Trang chủ",
+  "label": "Rau màu",
+  "cms": [
+   "Trang chủ",
+   "05 · Sản phẩm",
+   "Ảnh: Rau màu"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 181,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "crop-congnghiep",
+  "group": "Trang chủ",
+  "label": "Cây công nghiệp",
+  "cms": [
+   "Trang chủ",
+   "05 · Sản phẩm",
+   "Ảnh: Cây công nghiệp"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 181,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "plant-flycam",
+  "group": "Trang chủ",
+  "label": "Flycam nhà máy Bỉm Sơn: cây xanh, khuôn viên sạch đẹp",
+  "cms": [
+   "Trang chủ",
+   "06 · Nhà máy xanh",
+   "Ảnh: Flycam nhà máy Bỉm Sơn: cây xanh, khuôn viên sạch đẹp"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 1440,
+    "h": 600,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 390,
+    "h": 600,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "people-1",
+  "group": "Trang chủ",
+  "label": "Chân dung người lao động gắn bó 20+ năm",
+  "cms": [
+   "Trang chủ",
+   "07 · Con người",
+   "Ảnh: Chân dung người lao động gắn bó 20+ năm"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 267,
+    "h": 494,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 168,
+    "h": 494,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "people-2",
+  "group": "Trang chủ",
+  "label": "Chuyến du lịch nước ngoài toàn công ty",
+  "cms": [
+   "Trang chủ",
+   "07 · Con người",
+   "Ảnh: Chuyến du lịch nước ngoài toàn công ty"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 267,
+    "h": 280,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 168,
+    "h": 280,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "people-3",
+  "group": "Trang chủ",
+  "label": "Lễ trao Bảo Bình tài lộc",
+  "cms": [
+   "Trang chủ",
+   "07 · Con người",
+   "Ảnh: Lễ trao Bảo Bình tài lộc"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 267,
+    "h": 200,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 168,
+    "h": 200,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "csr-1",
+  "group": "Trang chủ",
+  "label": "Lớp tập huấn kỹ thuật cho nông dân",
+  "cms": [
+   "Trang chủ",
+   "08 · Vì cộng đồng",
+   "Ảnh: Lớp tập huấn kỹ thuật cho nông dân"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 376,
+    "h": 240,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 240,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "csr-2",
+  "group": "Trang chủ",
+  "label": "Lễ trao học bổng khuyến học Thanh Hóa",
+  "cms": [
+   "Trang chủ",
+   "08 · Vì cộng đồng",
+   "Ảnh: Lễ trao học bổng khuyến học Thanh Hóa"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 376,
+    "h": 240,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 240,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "csr-3",
+  "group": "Trang chủ",
+  "label": "Chương trình Triệu mầm xanh Trường Sa",
+  "cms": [
+   "Trang chủ",
+   "08 · Vì cộng đồng",
+   "Ảnh: Chương trình Triệu mầm xanh Trường Sa"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 376,
+    "h": 240,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 240,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "about-hero",
+  "group": "Về Tiến Nông",
+  "label": "Ảnh tập thể cán bộ, nhân viên trước trụ sở Tiến Nông",
+  "cms": [
+   "Về Tiến Nông",
+   "01 · Hero",
+   "Ảnh: Ảnh tập thể cán bộ, nhân viên trước trụ sở Tiến Nông"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 1168,
+    "h": 560,
+    "radius": "24px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 280,
+    "radius": "24px"
+   }
+  ]
+ },
+ {
+  "key": "ceo-portrait",
+  "group": "Về Tiến Nông",
+  "label": "Chân dung Tổng Giám đốc Nguyễn Hồng Phong",
+  "cms": [
+   "Về Tiến Nông",
+   "02 · Thư ngỏ",
+   "Ảnh: Chân dung Tổng Giám đốc Nguyễn Hồng Phong"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 420,
+    "h": 525,
+    "radius": "20px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 438,
+    "radius": "20px"
+   }
+  ]
+ },
+ {
+  "key": "lead-1",
+  "group": "Về Tiến Nông",
+  "label": "Chân dung (nền đồng nhất)",
+  "cms": [
+   "Về Tiến Nông",
+   "05 · Lãnh đạo",
+   "Ảnh: Chân dung (nền đồng nhất)"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 214,
+    "h": 268,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 101,
+    "h": 126,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "lead-2",
+  "group": "Về Tiến Nông",
+  "label": "Chân dung (nền đồng nhất)",
+  "cms": [
+   "Về Tiến Nông",
+   "05 · Lãnh đạo",
+   "Ảnh: Chân dung (nền đồng nhất)"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 214,
+    "h": 268,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 101,
+    "h": 126,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "lead-3",
+  "group": "Về Tiến Nông",
+  "label": "Chân dung (nền đồng nhất)",
+  "cms": [
+   "Về Tiến Nông",
+   "05 · Lãnh đạo",
+   "Ảnh: Chân dung (nền đồng nhất)"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 214,
+    "h": 268,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 101,
+    "h": 126,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "lead-4",
+  "group": "Về Tiến Nông",
+  "label": "Chân dung (nền đồng nhất)",
+  "cms": [
+   "Về Tiến Nông",
+   "05 · Lãnh đạo",
+   "Ảnh: Chân dung (nền đồng nhất)"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 214,
+    "h": 268,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 101,
+    "h": 126,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "lead-5",
+  "group": "Về Tiến Nông",
+  "label": "Chân dung (nền đồng nhất)",
+  "cms": [
+   "Về Tiến Nông",
+   "05 · Lãnh đạo",
+   "Ảnh: Chân dung (nền đồng nhất)"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 214,
+    "h": 268,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 101,
+    "h": 126,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "award-hc",
+  "group": "Về Tiến Nông",
+  "label": "Ảnh Huân chương",
+  "cms": [
+   "Về Tiến Nông",
+   "06 · Thành tựu",
+   "Ảnh: Ảnh Huân chương"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 96,
+    "h": 120,
+    "radius": "12px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 96,
+    "h": 120,
+    "radius": "12px"
+   }
+  ]
+ },
+ {
+  "key": "award-bk",
+  "group": "Về Tiến Nông",
+  "label": "Ảnh Bằng khen",
+  "cms": [
+   "Về Tiến Nông",
+   "06 · Thành tựu",
+   "Ảnh: Ảnh Bằng khen"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 96,
+    "h": 120,
+    "radius": "12px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 96,
+    "h": 120,
+    "radius": "12px"
+   }
+  ]
+ },
+ {
+  "key": "cap-rd",
+  "group": "Về Tiến Nông",
+  "label": "Phòng thí nghiệm",
+  "cms": [
+   "Về Tiến Nông",
+   "07 · Năng lực",
+   "Ảnh: Phòng thí nghiệm"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 371,
+    "h": 220,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 220,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "cap-mfg",
+  "group": "Về Tiến Nông",
+  "label": "Dây chuyền sản xuất",
+  "cms": [
+   "Về Tiến Nông",
+   "07 · Năng lực",
+   "Ảnh: Dây chuyền sản xuất"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 371,
+    "h": 220,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 220,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "cap-dist",
+  "group": "Về Tiến Nông",
+  "label": "Bản đồ mạng lưới phân phối & xuất khẩu",
+  "cms": [
+   "Về Tiến Nông",
+   "07 · Năng lực",
+   "Ảnh: Bản đồ mạng lưới phân phối & xuất khẩu"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 371,
+    "h": 220,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 220,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "eco-1",
+  "group": "Về Tiến Nông",
+  "label": "Logo",
+  "cms": [
+   "Về Tiến Nông",
+   "08 · Hệ sinh thái",
+   "Ảnh: Logo"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 179,
+    "h": 80,
+    "radius": "8px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 64,
+    "h": 80,
+    "radius": "8px"
+   }
+  ]
+ },
+ {
+  "key": "eco-2",
+  "group": "Về Tiến Nông",
+  "label": "Logo",
+  "cms": [
+   "Về Tiến Nông",
+   "08 · Hệ sinh thái",
+   "Ảnh: Logo"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 179,
+    "h": 80,
+    "radius": "8px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 64,
+    "h": 80,
+    "radius": "8px"
+   }
+  ]
+ },
+ {
+  "key": "eco-3",
+  "group": "Về Tiến Nông",
+  "label": "Logo",
+  "cms": [
+   "Về Tiến Nông",
+   "08 · Hệ sinh thái",
+   "Ảnh: Logo"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 179,
+    "h": 80,
+    "radius": "8px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 64,
+    "h": 80,
+    "radius": "8px"
+   }
+  ]
+ },
+ {
+  "key": "eco-4",
+  "group": "Về Tiến Nông",
+  "label": "Logo",
+  "cms": [
+   "Về Tiến Nông",
+   "08 · Hệ sinh thái",
+   "Ảnh: Logo"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 179,
+    "h": 80,
+    "radius": "8px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 64,
+    "h": 80,
+    "radius": "8px"
+   }
+  ]
+ },
+ {
+  "key": "eco-5",
+  "group": "Về Tiến Nông",
+  "label": "Logo",
+  "cms": [
+   "Về Tiến Nông",
+   "08 · Hệ sinh thái",
+   "Ảnh: Logo"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 179,
+    "h": 80,
+    "radius": "8px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 64,
+    "h": 80,
+    "radius": "8px"
+   }
+  ]
+ },
+ {
+  "key": "ms",
+  "group": "Về Tiến Nông",
+  "label": "Lịch sử – các mốc (kéo để sắp xếp) — ảnh mỗi mốc",
+  "cms": [
+   "Về Tiến Nông",
+   "Lịch sử – các mốc (kéo để sắp xếp)",
+   "Mỗi mốc",
+   "Ảnh"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 556,
+    "h": 360,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 360,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "khcn-hero",
+  "group": "Khoa học & Công nghệ",
+  "label": "Nhà khoa học thao tác trong phòng thí nghiệm VILAS 1519",
+  "cms": [
+   "Khoa học & Công nghệ",
+   "01 · Hero",
+   "Ảnh: Nhà khoa học thao tác trong phòng thí nghiệm VILAS 1519"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 1440,
+    "h": 640,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 390,
+    "h": 640,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "lab-1",
+  "group": "Khoa học & Công nghệ",
+  "label": "Phòng Thí nghiệm chất lượng",
+  "cms": [
+   "Khoa học & Công nghệ",
+   "03 · Trung tâm R&D",
+   "Ảnh: Phòng Thí nghiệm chất lượng"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 275,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 163,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "lab-2",
+  "group": "Khoa học & Công nghệ",
+  "label": "Phòng Công nghệ sinh học",
+  "cms": [
+   "Khoa học & Công nghệ",
+   "03 · Trung tâm R&D",
+   "Ảnh: Phòng Công nghệ sinh học"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 275,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 163,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "lab-3",
+  "group": "Khoa học & Công nghệ",
+  "label": "Phòng Sức khỏe đất & cây trồng",
+  "cms": [
+   "Khoa học & Công nghệ",
+   "03 · Trung tâm R&D",
+   "Ảnh: Phòng Sức khỏe đất & cây trồng"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 275,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 163,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "lab-4",
+  "group": "Khoa học & Công nghệ",
+  "label": "Phòng Công nghệ phân bón",
+  "cms": [
+   "Khoa học & Công nghệ",
+   "03 · Trung tâm R&D",
+   "Ảnh: Phòng Công nghệ phân bón"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 275,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 163,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "vilas",
+  "group": "Khoa học & Công nghệ",
+  "label": "Thiết bị phân tích hiện đại trong phòng thí nghiệm",
+  "cms": [
+   "Khoa học & Công nghệ",
+   "06 · VILAS 1519",
+   "Ảnh: Thiết bị phân tích hiện đại trong phòng thí nghiệm"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 548,
+    "h": 460,
+    "radius": "20px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 460,
+    "radius": "20px"
+   }
+  ]
+ },
+ {
+  "key": "res-1",
+  "group": "Khoa học & Công nghệ",
+  "label": "Bao bì NPK bổ sung Silic",
+  "cms": [
+   "Khoa học & Công nghệ",
+   "07 · Thành quả",
+   "Ảnh: Bao bì NPK bổ sung Silic"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 373,
+    "h": 240,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 240,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "res-2",
+  "group": "Khoa học & Công nghệ",
+  "label": "Mô hình NPK – hữu cơ – vi sinh",
+  "cms": [
+   "Khoa học & Công nghệ",
+   "07 · Thành quả",
+   "Ảnh: Mô hình NPK – hữu cơ – vi sinh"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 373,
+    "h": 240,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 240,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "res-3",
+  "group": "Khoa học & Công nghệ",
+  "label": "Phân bón hữu cơ, phân bón lỏng",
+  "cms": [
+   "Khoa học & Công nghệ",
+   "07 · Thành quả",
+   "Ảnh: Phân bón hữu cơ, phân bón lỏng"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 373,
+    "h": 240,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 240,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "part-1",
+  "group": "Khoa học & Công nghệ",
+  "label": "Logo",
+  "cms": [
+   "Khoa học & Công nghệ",
+   "08 · Đối tác nghiên cứu",
+   "Ảnh: Logo"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 226,
+    "h": 72,
+    "radius": "8px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 125,
+    "h": 72,
+    "radius": "8px"
+   }
+  ]
+ },
+ {
+  "key": "part-2",
+  "group": "Khoa học & Công nghệ",
+  "label": "Logo",
+  "cms": [
+   "Khoa học & Công nghệ",
+   "08 · Đối tác nghiên cứu",
+   "Ảnh: Logo"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 226,
+    "h": 72,
+    "radius": "8px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 125,
+    "h": 72,
+    "radius": "8px"
+   }
+  ]
+ },
+ {
+  "key": "part-3",
+  "group": "Khoa học & Công nghệ",
+  "label": "Logo",
+  "cms": [
+   "Khoa học & Công nghệ",
+   "08 · Đối tác nghiên cứu",
+   "Ảnh: Logo"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 226,
+    "h": 72,
+    "radius": "8px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 125,
+    "h": 72,
+    "radius": "8px"
+   }
+  ]
+ },
+ {
+  "key": "part-4",
+  "group": "Khoa học & Công nghệ",
+  "label": "Logo",
+  "cms": [
+   "Khoa học & Công nghệ",
+   "08 · Đối tác nghiên cứu",
+   "Ảnh: Logo"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 226,
+    "h": 72,
+    "radius": "8px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 125,
+    "h": 72,
+    "radius": "8px"
+   }
+  ]
+ },
+ {
+  "key": "dom",
+  "group": "Khoa học & Công nghệ",
+  "label": "Lĩnh vực nghiên cứu — ảnh mỗi lĩnh vực",
+  "cms": [
+   "Khoa học & Công nghệ",
+   "Lĩnh vực nghiên cứu",
+   "Mỗi lĩnh vực",
+   "Ảnh"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 410,
+    "h": 380,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 380,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "prod",
+  "group": "Sản phẩm",
+  "label": "Danh sách sản phẩm (thứ tự = \"phổ biến nhất\") — ảnh mỗi sản phẩm",
+  "cms": [
+   "Sản phẩm",
+   "Danh sách sản phẩm (thứ tự = \"phổ biến nhất\")",
+   "Mỗi sản phẩm",
+   "Ảnh"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 275,
+    "h": 250,
+    "radius": "10px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 250,
+    "radius": "10px"
+   }
+  ]
+ },
+ {
+  "key": "pd-model",
+  "group": "Chi tiết sản phẩm (mẫu)",
+  "label": "Ruộng lúa mô hình sử dụng NPK Lúa 2",
+  "cms": [
+   "Chi tiết sản phẩm (mẫu)",
+   "07 · Mô hình thực tế",
+   "Ảnh: Ruộng lúa mô hình sử dụng NPK Lúa 2"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 552,
+    "h": 320,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 320,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "rel-1",
+  "group": "Chi tiết sản phẩm (mẫu)",
+  "label": "Bao bì",
+  "cms": [
+   "Chi tiết sản phẩm (mẫu)",
+   "08 · Sản phẩm liên quan",
+   "Ảnh: Bao bì"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 275,
+    "h": 200,
+    "radius": "10px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 200,
+    "radius": "10px"
+   }
+  ]
+ },
+ {
+  "key": "rel-2",
+  "group": "Chi tiết sản phẩm (mẫu)",
+  "label": "Bao bì",
+  "cms": [
+   "Chi tiết sản phẩm (mẫu)",
+   "08 · Sản phẩm liên quan",
+   "Ảnh: Bao bì"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 275,
+    "h": 200,
+    "radius": "10px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 200,
+    "radius": "10px"
+   }
+  ]
+ },
+ {
+  "key": "rel-3",
+  "group": "Chi tiết sản phẩm (mẫu)",
+  "label": "Bao bì",
+  "cms": [
+   "Chi tiết sản phẩm (mẫu)",
+   "08 · Sản phẩm liên quan",
+   "Ảnh: Bao bì"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 275,
+    "h": 200,
+    "radius": "10px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 200,
+    "radius": "10px"
+   }
+  ]
+ },
+ {
+  "key": "rel-4",
+  "group": "Chi tiết sản phẩm (mẫu)",
+  "label": "Bao bì",
+  "cms": [
+   "Chi tiết sản phẩm (mẫu)",
+   "08 · Sản phẩm liên quan",
+   "Ảnh: Bao bì"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 275,
+    "h": 200,
+    "radius": "10px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 200,
+    "radius": "10px"
+   }
+  ]
+ },
+ {
+  "key": "pd-view",
+  "group": "Chi tiết sản phẩm (mẫu)",
+  "label": "Ảnh sản phẩm (các góc) — ảnh mỗi góc ảnh",
+  "cms": [
+   "Chi tiết sản phẩm (mẫu)",
+   "Ảnh sản phẩm (các góc)",
+   "Mỗi góc ảnh",
+   "Ảnh"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 504,
+    "h": 472,
+    "radius": "12px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 302,
+    "h": 312,
+    "radius": "12px"
+   }
+  ]
+ },
+ {
+  "key": "sol-hero",
+  "group": "Giải pháp theo cây trồng",
+  "label": "Cận cảnh bông lúa chín trên cánh đồng",
+  "cms": [
+   "Giải pháp theo cây trồng",
+   "01 · Hero",
+   "Ảnh: Cận cảnh bông lúa chín trên cánh đồng"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 1440,
+    "h": 602,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 390,
+    "h": 600,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "cg-1",
+  "group": "Giải pháp theo cây trồng",
+  "label": "Lúa, ngô",
+  "cms": [
+   "Giải pháp theo cây trồng",
+   "02 · Cây trồng",
+   "Ảnh: Lúa, ngô"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 376,
+    "h": 300,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 300,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "cg-2",
+  "group": "Giải pháp theo cây trồng",
+  "label": "Rau màu",
+  "cms": [
+   "Giải pháp theo cây trồng",
+   "02 · Cây trồng",
+   "Ảnh: Rau màu"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 376,
+    "h": 300,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 300,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "cg-3",
+  "group": "Giải pháp theo cây trồng",
+  "label": "Cây ăn quả",
+  "cms": [
+   "Giải pháp theo cây trồng",
+   "02 · Cây trồng",
+   "Ảnh: Cây ăn quả"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 376,
+    "h": 300,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 300,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "cg-4",
+  "group": "Giải pháp theo cây trồng",
+  "label": "Cà phê, chè",
+  "cms": [
+   "Giải pháp theo cây trồng",
+   "02 · Cây trồng",
+   "Ảnh: Cà phê, chè"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 376,
+    "h": 300,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 300,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "cg-5",
+  "group": "Giải pháp theo cây trồng",
+  "label": "Hoa, cây cảnh",
+  "cms": [
+   "Giải pháp theo cây trồng",
+   "02 · Cây trồng",
+   "Ảnh: Hoa, cây cảnh"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 376,
+    "h": 300,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 300,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "cg-6",
+  "group": "Giải pháp theo cây trồng",
+  "label": "Cây dược liệu",
+  "cms": [
+   "Giải pháp theo cây trồng",
+   "02 · Cây trồng",
+   "Ảnh: Cây dược liệu"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 376,
+    "h": 300,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 300,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "soil",
+  "group": "Giải pháp theo cây trồng",
+  "label": "Bàn tay cầm nắm đất có cây con",
+  "cms": [
+   "Giải pháp theo cây trồng",
+   "04 · Sức khỏe đất",
+   "Ảnh: Bàn tay cầm nắm đất có cây con"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 548,
+    "h": 480,
+    "radius": "20px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 480,
+    "radius": "20px"
+   }
+  ]
+ },
+ {
+  "key": "model-1",
+  "group": "Giải pháp theo cây trồng",
+  "label": "Mô hình lúa",
+  "cms": [
+   "Giải pháp theo cây trồng",
+   "06 · Mô hình thực tế",
+   "Ảnh: Mô hình lúa"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 371,
+    "h": 240,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 240,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "model-2",
+  "group": "Giải pháp theo cây trồng",
+  "label": "Mô hình cà phê",
+  "cms": [
+   "Giải pháp theo cây trồng",
+   "06 · Mô hình thực tế",
+   "Ảnh: Mô hình cà phê"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 371,
+    "h": 240,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 240,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "model-3",
+  "group": "Giải pháp theo cây trồng",
+  "label": "Mô hình cây ăn quả",
+  "cms": [
+   "Giải pháp theo cây trồng",
+   "06 · Mô hình thực tế",
+   "Ảnh: Mô hình cây ăn quả"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 371,
+    "h": 240,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 240,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "proj-hero",
+  "group": "Giải pháp cho dự án",
+  "label": "Thảm cỏ sân golf / cảnh quan khu đô thị",
+  "cms": [
+   "Giải pháp cho dự án",
+   "01 · Hero",
+   "Ảnh: Thảm cỏ sân golf / cảnh quan khu đô thị"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 552,
+    "h": 480,
+    "radius": "24px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 320,
+    "radius": "24px"
+   }
+  ]
+ },
+ {
+  "key": "seg-1",
+  "group": "Giải pháp cho dự án",
+  "label": "Sân golf",
+  "cms": [
+   "Giải pháp cho dự án",
+   "02 · Nhóm khách hàng",
+   "Ảnh: Sân golf"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 260,
+    "h": 240,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 74,
+    "h": 993,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "seg-2",
+  "group": "Giải pháp cho dự án",
+  "label": "Cảnh quan khu đô thị",
+  "cms": [
+   "Giải pháp cho dự án",
+   "02 · Nhóm khách hàng",
+   "Ảnh: Cảnh quan khu đô thị"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 260,
+    "h": 240,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 74,
+    "h": 993,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "seg-3",
+  "group": "Giải pháp cho dự án",
+  "label": "Cây xanh khu công nghiệp",
+  "cms": [
+   "Giải pháp cho dự án",
+   "02 · Nhóm khách hàng",
+   "Ảnh: Cây xanh khu công nghiệp"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 260,
+    "h": 240,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 74,
+    "h": 1009,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "seg-4",
+  "group": "Giải pháp cho dự án",
+  "label": "Nhà kính công nghệ cao",
+  "cms": [
+   "Giải pháp cho dự án",
+   "02 · Nhóm khách hàng",
+   "Ảnh: Nhà kính công nghệ cao"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 260,
+    "h": 240,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 74,
+    "h": 1009,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "esg-hero",
+  "group": "Phát triển bền vững",
+  "label": "Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh",
+  "cms": [
+   "Phát triển bền vững",
+   "01 · Hero",
+   "Ảnh: Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 1168,
+    "h": 500,
+    "radius": "24px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 260,
+    "radius": "24px"
+   }
+  ]
+ },
+ {
+  "key": "esg-plant",
+  "group": "Phát triển bền vững",
+  "label": "Flycam khuôn viên nhà máy với cây xanh",
+  "cms": [
+   "Phát triển bền vững",
+   "02 · Sản xuất xanh",
+   "Ảnh: Flycam khuôn viên nhà máy với cây xanh"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 1440,
+    "h": 588,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 390,
+    "h": 560,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "esg-farm-1",
+  "group": "Phát triển bền vững",
+  "label": "Lớp tập huấn kỹ thuật cho nông dân",
+  "cms": [
+   "Phát triển bền vững",
+   "03 · Đồng hành cùng nhà nông",
+   "Ảnh: Lớp tập huấn kỹ thuật cho nông dân"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 548,
+    "h": 260,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 260,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "esg-farm-2",
+  "group": "Phát triển bền vững",
+  "label": "Hội thảo đầu bờ",
+  "cms": [
+   "Phát triển bền vững",
+   "03 · Đồng hành cùng nhà nông",
+   "Ảnh: Hội thảo đầu bờ"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 267,
+    "h": 200,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 168,
+    "h": 200,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "esg-farm-3",
+  "group": "Phát triển bền vững",
+  "label": "Kỹ sư hướng dẫn tại ruộng",
+  "cms": [
+   "Phát triển bền vững",
+   "03 · Đồng hành cùng nhà nông",
+   "Ảnh: Kỹ sư hướng dẫn tại ruộng"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 267,
+    "h": 200,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 168,
+    "h": 200,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "prog",
+  "group": "Phát triển bền vững",
+  "label": "Chương trình cộng đồng — ảnh mỗi chương trình",
+  "cms": [
+   "Phát triển bền vững",
+   "Chương trình cộng đồng",
+   "Mỗi chương trình",
+   "Ảnh"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 371,
+    "h": 220,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 220,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "farmer-hero",
+  "group": "Nông dân Tiến Nông",
+  "label": "Nông dân và kỹ sư Tiến Nông trên cánh đồng",
+  "cms": [
+   "Nông dân Tiến Nông",
+   "01 · Hero",
+   "Ảnh: Nông dân và kỹ sư Tiến Nông trên cánh đồng"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 1440,
+    "h": 600,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 390,
+    "h": 600,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "story-1",
+  "group": "Nông dân Tiến Nông",
+  "label": "Chân dung nông dân trên ruộng",
+  "cms": [
+   "Nông dân Tiến Nông",
+   "03 · Câu chuyện nhà nông",
+   "Ảnh: Chân dung nông dân trên ruộng"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 248,
+    "h": 300,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 151,
+    "h": 409,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "story-2",
+  "group": "Nông dân Tiến Nông",
+  "label": "Chân dung nông dân vườn cà phê",
+  "cms": [
+   "Nông dân Tiến Nông",
+   "03 · Câu chuyện nhà nông",
+   "Ảnh: Chân dung nông dân vườn cà phê"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 248,
+    "h": 300,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 151,
+    "h": 379,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "hr-hero-1",
+  "group": "Tuyển dụng",
+  "label": "Chân dung người lao động thâm niên",
+  "cms": [
+   "Tuyển dụng",
+   "01 · Hero",
+   "Ảnh: Chân dung người lao động thâm niên"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 269,
+    "h": 474,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 168,
+    "h": 474,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "hr-hero-2",
+  "group": "Tuyển dụng",
+  "label": "Tập thể trong chuyến du lịch",
+  "cms": [
+   "Tuyển dụng",
+   "01 · Hero",
+   "Ảnh: Tập thể trong chuyến du lịch"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 269,
+    "h": 260,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 168,
+    "h": 260,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "hr-hero-3",
+  "group": "Tuyển dụng",
+  "label": "Kỹ sư trẻ tại phòng lab",
+  "cms": [
+   "Tuyển dụng",
+   "01 · Hero",
+   "Ảnh: Kỹ sư trẻ tại phòng lab"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 269,
+    "h": 200,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 168,
+    "h": 200,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "ben-1",
+  "group": "Tuyển dụng",
+  "label": "Chuyến du lịch nước ngoài toàn công ty",
+  "cms": [
+   "Tuyển dụng",
+   "03 · Đãi ngộ",
+   "Ảnh: Chuyến du lịch nước ngoài toàn công ty"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 374,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "ben-2",
+  "group": "Tuyển dụng",
+  "label": "Lễ trao vàng tri ân",
+  "cms": [
+   "Tuyển dụng",
+   "03 · Đãi ngộ",
+   "Ảnh: Lễ trao vàng tri ân"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 374,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "ben-3",
+  "group": "Tuyển dụng",
+  "label": "Lễ trao Bảo Bình tài lộc",
+  "cms": [
+   "Tuyển dụng",
+   "03 · Đãi ngộ",
+   "Ảnh: Lễ trao Bảo Bình tài lộc"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 374,
+    "h": 200,
+    "radius": "0"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 348,
+    "h": 200,
+    "radius": "0"
+   }
+  ]
+ },
+ {
+  "key": "hr-story",
+  "group": "Tuyển dụng",
+  "label": "Chân dung người lao động gắn bó 20+ năm tại nơi làm việc",
+  "cms": [
+   "Tuyển dụng",
+   "04 · Câu chuyện",
+   "Ảnh: Chân dung người lao động gắn bó 20+ năm tại nơi làm việc"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 448,
+    "h": 560,
+    "radius": "20px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 438,
+    "radius": "20px"
+   }
+  ]
+ },
+ {
+  "key": "press-1",
+  "group": "Tin tức (khung trang)",
+  "label": "Logo báo",
+  "cms": [
+   "Tin tức (khung trang)",
+   "03 · Báo chí",
+   "Ảnh: Logo báo"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 140,
+    "h": 36,
+    "radius": "6px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 140,
+    "h": 36,
+    "radius": "6px"
+   }
+  ]
+ },
+ {
+  "key": "press-2",
+  "group": "Tin tức (khung trang)",
+  "label": "Logo báo",
+  "cms": [
+   "Tin tức (khung trang)",
+   "03 · Báo chí",
+   "Ảnh: Logo báo"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 140,
+    "h": 36,
+    "radius": "6px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 140,
+    "h": 36,
+    "radius": "6px"
+   }
+  ]
+ },
+ {
+  "key": "press-3",
+  "group": "Tin tức (khung trang)",
+  "label": "Logo báo",
+  "cms": [
+   "Tin tức (khung trang)",
+   "03 · Báo chí",
+   "Ảnh: Logo báo"
+  ],
+  "fit": "contain",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 140,
+    "h": 36,
+    "radius": "6px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 140,
+    "h": 36,
+    "radius": "6px"
+   }
+  ]
+ },
+ {
+  "key": "dealer-map",
+  "group": "Liên hệ & Đại lý",
+  "label": "Bản đồ đại lý (Google Maps nhúng)",
+  "cms": [
+   "Liên hệ & Đại lý",
+   "02 · Tìm đại lý",
+   "Ảnh: Bản đồ đại lý (Google Maps nhúng)"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 572,
+    "h": 584,
+    "radius": "16px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 350,
+    "h": 420,
+    "radius": "16px"
+   }
+  ]
+ },
+ {
+  "key": "news-cover",
+  "group": "Tin tức – bài viết",
+  "label": "Ảnh đại diện bài viết",
+  "cms": [
+   "Tin tức – bài viết",
+   "(bài viết)",
+   "Ảnh đại diện"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Đầu bài viết – máy tính",
+    "w": 1040,
+    "h": 560,
+    "radius": "16px"
+   },
+   {
+    "name": "Đầu bài viết – điện thoại",
+    "w": 350,
+    "h": 260,
+    "radius": "16px"
+   },
+   {
+    "name": "Tin nổi bật (trang Tin tức)",
+    "w": 560,
+    "h": 400,
+    "radius": "16px"
+   },
+   {
+    "name": "Thẻ tin (trang chủ, danh sách)",
+    "w": 373,
+    "h": 210,
+    "radius": "12px"
+   },
+   {
+    "name": "Ảnh nhỏ (cột tin bên phải)",
+    "w": 140,
+    "h": 96,
+    "radius": "10px"
+   }
+  ]
+ },
+ {
+  "key": "news-album",
+  "group": "Tin tức – bài viết",
+  "label": "Ảnh album cuối bài",
+  "cms": [
+   "Tin tức – bài viết",
+   "(bài viết)",
+   "Album ảnh cuối bài"
+  ],
+  "fit": "cover",
+  "frames": [
+   {
+    "name": "Máy tính",
+    "w": 207,
+    "h": 150,
+    "radius": "10px"
+   },
+   {
+    "name": "Điện thoại",
+    "w": 110,
+    "h": 150,
+    "radius": "10px"
+   }
+  ]
+ }
+]

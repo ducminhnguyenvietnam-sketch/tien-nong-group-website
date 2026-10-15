@@ -1,7 +1,10 @@
 ---
 import Button from './Button.astro';
-import site from '../content/site.json';
+import siteRaw from '../content/site.json';
+import { withDefaults } from '../lib/content';
 import { NAV, asset, link, url } from '../lib/routes';
+
+const site = withDefaults(siteRaw, 'src/content/site.json');
 
 interface Props { active?: string }
 const { active = '' } = Astro.props;

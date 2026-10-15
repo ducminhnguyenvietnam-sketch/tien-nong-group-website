@@ -1,9 +1,12 @@
 ---
-import c from '../content/pages/chi-tiet-san-pham.json';
+import raw from '../content/pages/chi-tiet-san-pham.json';
+import { withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import { url, link } from '../lib/routes';
+
+const c = withDefaults(raw, 'src/content/pages/chi-tiet-san-pham.json');
 
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Sản phẩm">
