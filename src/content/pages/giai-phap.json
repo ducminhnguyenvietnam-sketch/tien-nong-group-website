@@ -1,11 +1,9 @@
 {
   "seo": {
-    "title": "Giải pháp theo cây trồng",
-    "description": ""
+    "title": "Giải pháp theo cây trồng"
   },
   "s01_hero": {
     "img_sol_hero_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Cận cảnh bông lúa chín trên cánh đồng"
@@ -22,7 +20,7 @@
     "t2": "Mỗi nhóm cây trồng, một chương trình dinh dưỡng riêng",
     "t3": "Chương trình được thiết kế theo từng giai đoạn sinh trưởng, từ bón lót đến nuôi quả, giúp cây phát triển cân đối và tối ưu chi phí đầu tư.",
     "img_cg_1_1": {
-      "src": "",
+      "src": "/uploads/HD&KD5 - Copy-1.png",
       "focus": "center",
       "zoom": "100",
       "alt": "Lúa, ngô"
@@ -30,7 +28,6 @@
     "t4": "Cây lương thực",
     "t5": "Lúa · Ngô · Khoai · Sắn",
     "img_cg_2_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Rau màu"
@@ -38,7 +35,6 @@
     "t6": "Rau màu & cây thực phẩm",
     "t7": "Rau ăn lá · Rau ăn quả · Củ",
     "img_cg_3_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Cây ăn quả"
@@ -46,7 +42,6 @@
     "t8": "Cây ăn quả",
     "t9": "Cam · Bưởi · Sầu riêng · Thanh long",
     "img_cg_4_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Cà phê, chè"
@@ -54,7 +49,6 @@
     "t10": "Cây công nghiệp",
     "t11": "Cà phê · Chè · Hồ tiêu · Mía",
     "img_cg_5_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Hoa, cây cảnh"
@@ -62,7 +56,6 @@
     "t12": "Hoa, cây cảnh & cảnh quan",
     "t13": "Hoa · Cây cảnh · Thảm cỏ",
     "img_cg_6_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Cây dược liệu"
@@ -77,7 +70,6 @@
   },
   "s04_suc_khoe_dat": {
     "img_soil_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Bàn tay cầm nắm đất có cây con"
@@ -115,7 +107,6 @@
     "t2": "Giải pháp được kiểm chứng trên đồng ruộng",
     "t3": "Tất cả mô hình →",
     "img_model_1_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Mô hình lúa"
@@ -127,7 +118,6 @@
     "t8": "[x] ha",
     "t9": "diện tích",
     "img_model_2_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Mô hình cà phê"
@@ -139,7 +129,6 @@
     "t14": "[x] ha",
     "t15": "diện tích",
     "img_model_3_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Mô hình cây ăn quả"
