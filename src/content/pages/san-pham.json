@@ -1,7 +1,6 @@
 {
   "seo": {
-    "title": "Sản phẩm",
-    "description": ""
+    "title": "Sản phẩm"
   },
   "s01_tieu_de": {
     "t1": "Trang chủ",
@@ -9,7 +8,6 @@
     "t3": "SẢN PHẨM",
     "t4": "Dinh dưỡng chuẩn xác cho từng loại cây trồng",
     "t5": "Mọi sản phẩm đều có mã số phân bón, được sản xuất theo ISO 9001 và kiểm định chất lượng tại phòng thí nghiệm VILAS 1519.",
-    "link1": "",
     "t6": "Tải catalogue sản phẩm (PDF) →",
     "t7": "Tìm đại lý gần nhất →"
   },
@@ -92,7 +90,7 @@
         "Lúa"
       ],
       "image": {
-        "src": "",
+        "src": "/uploads/lua 2.png",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh bao bì (nền trung tính)"
@@ -123,7 +121,6 @@
         "Lúa"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh bao bì (nền trung tính)"
@@ -158,7 +155,6 @@
         "Cây công nghiệp"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh bao bì (nền trung tính)"
@@ -187,7 +183,6 @@
         "Cây ăn quả"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh bao bì (nền trung tính)"
@@ -214,7 +209,6 @@
         "Ngô"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh bao bì (nền trung tính)"
@@ -245,7 +239,6 @@
         "Chè"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh bao bì (nền trung tính)"
@@ -278,7 +271,6 @@
         "Mía"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh bao bì (nền trung tính)"
@@ -308,7 +300,6 @@
         "Mía"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh bao bì (nền trung tính)"
@@ -331,7 +322,6 @@
         "Chè"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh bao bì (nền trung tính)"
@@ -357,7 +347,6 @@
         "Cây công nghiệp"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh bao bì (nền trung tính)"
@@ -386,7 +375,6 @@
         "Cà phê"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh bao bì (nền trung tính)"
@@ -412,7 +400,6 @@
         "Cây công nghiệp"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh bao bì (nền trung tính)"
@@ -438,7 +425,6 @@
         "Cà phê"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh bao bì (nền trung tính)"
