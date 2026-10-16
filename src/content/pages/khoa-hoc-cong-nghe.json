@@ -1,11 +1,9 @@
 {
   "seo": {
-    "title": "Khoa học & Công nghệ",
-    "description": ""
+    "title": "Khoa học & Công nghệ"
   },
   "s01_hero": {
     "img_khcn_hero_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Nhà khoa học thao tác trong phòng thí nghiệm VILAS 1519"
@@ -32,7 +30,7 @@
     "t2": "Bốn phòng chuyên môn, một mục tiêu chung",
     "t3": "Trung tâm quy tụ đội ngũ chuyên gia về nông hóa, thổ nhưỡng và công nghệ sinh học, phối hợp chặt chẽ để chuyển hóa kết quả nghiên cứu thành sản phẩm và quy trình canh tác hiệu quả.",
     "img_lab_1_1": {
-      "src": "",
+      "src": "/uploads/a7.jpg",
       "focus": "center",
       "zoom": "100",
       "alt": "Phòng Thí nghiệm chất lượng"
@@ -40,7 +38,7 @@
     "t4": "Phòng Thí nghiệm chất lượng",
     "t5": "Phân tích, kiểm định nguyên liệu và thành phẩm theo tiêu chuẩn VILAS 1519.",
     "img_lab_2_1": {
-      "src": "",
+      "src": "/uploads/DJI_20260408155414_0033_D.MP4_snapshot_00.05_[2026.08.21_15.14.33]-1.jpg",
       "focus": "center",
       "zoom": "100",
       "alt": "Phòng Công nghệ sinh học"
@@ -48,7 +46,7 @@
     "t6": "Phòng Công nghệ sinh học",
     "t7": "Nghiên cứu vi sinh vật có ích và chế phẩm sinh học cho đất và cây trồng.",
     "img_lab_3_1": {
-      "src": "",
+      "src": "/uploads/HD&KD5 - Copy.png",
       "focus": "center",
       "zoom": "100",
       "alt": "Phòng Sức khỏe đất & cây trồng"
@@ -56,7 +54,6 @@
     "t8": "Phòng Sức khỏe đất & cây trồng",
     "t9": "Đánh giá dinh dưỡng đất, theo dõi sinh trưởng và đề xuất chương trình bón phân.",
     "img_lab_4_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Phòng Công nghệ phân bón"
@@ -89,7 +86,6 @@
   },
   "s06_vilas_1519": {
     "img_vilas_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Thiết bị phân tích hiện đại trong phòng thí nghiệm"
@@ -112,7 +108,6 @@
     "t2": "Khoa học được chuyển hóa thành sản phẩm và giải pháp",
     "t3": "Xem sản phẩm →",
     "img_res_1_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Bao bì NPK bổ sung Silic"
@@ -121,7 +116,6 @@
     "t5": "NPK bổ sung Silic hữu hiệu (SiO₂hh)",
     "t6": "Giúp cây cứng cáp, tăng khả năng chống đổ và chống chịu sâu bệnh.",
     "img_res_2_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Mô hình NPK – hữu cơ – vi sinh"
@@ -130,7 +124,6 @@
     "t8": "Kết hợp NPK – hữu cơ – vi sinh",
     "t9": "Nâng cao hiệu quả sử dụng phân bón đồng thời cải thiện sức khỏe đất.",
     "img_res_3_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Phân bón hữu cơ, phân bón lỏng"
@@ -145,28 +138,24 @@
     "t3": "Tiến Nông chào đón các nhà khoa học, viện nghiên cứu và trường đại học cùng hợp tác nghiên cứu, thử nghiệm và đào tạo.",
     "t4": "Đề xuất hợp tác",
     "img_part_1_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Logo"
     },
     "t5": "[Viện / trường đối tác]",
     "img_part_2_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Logo"
     },
     "t6": "[Viện / trường đối tác]",
     "img_part_3_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Logo"
     },
     "t7": "[Viện / trường đối tác]",
     "img_part_4_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Logo"
@@ -184,7 +173,6 @@
         "Phân bón tan chậm, phân bón lỏng"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Dây chuyền thử nghiệm công thức phân bón"
@@ -199,7 +187,6 @@
         "Phân bón hữu cơ vi sinh"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Nuôi cấy vi sinh trong phòng thí nghiệm"
@@ -214,7 +201,6 @@
         "Cải tạo đất bạc màu, chua phèn"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Kỹ sư lấy mẫu đất tại ruộng"
@@ -229,7 +215,6 @@
         "Truy xuất theo lô sản xuất"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Thiết bị phân tích phòng VILAS"
@@ -244,7 +229,6 @@
         "[Hạng mục 3]"
       ],
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Kỹ sư sử dụng thiết bị đo tại đồng ruộng"
