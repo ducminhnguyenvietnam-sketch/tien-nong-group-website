@@ -4,9 +4,10 @@
   },
   "s01_hero": {
     "img_khcn_hero_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Nhà khoa học thao tác trong phòng thí nghiệm VILAS 1519"
+      "alt": "Nhà khoa học thao tác trong phòng thí nghiệm VILAS 1519",
+      "src": "/uploads/khcn-hero-mvat01c5.jpg"
     },
     "t1": "Trang chủ / Khoa học & Công nghệ",
     "t2": "KHOA HỌC & CÔNG NGHỆ",
