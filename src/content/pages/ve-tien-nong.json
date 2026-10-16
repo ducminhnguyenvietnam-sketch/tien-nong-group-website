@@ -1,7 +1,6 @@
 {
   "seo": {
-    "title": "Về Tiến Nông",
-    "description": ""
+    "title": "Về Tiến Nông"
   },
   "s01_hero": {
     "t1": "Trang chủ",
@@ -10,7 +9,7 @@
     "t4": "Hơn 30 năm đồng hành cùng nông nghiệp Việt Nam",
     "t5": "Thành lập ngày 04/01/1995 tại Thanh Hóa, CTCP Công Nông nghiệp Tiến Nông nghiên cứu, sản xuất và phân phối các giải pháp dinh dưỡng cây trồng cho nhà nông trên khắp cả nước và hơn 10 thị trường quốc tế.",
     "img_about_hero_1": {
-      "src": "",
+      "src": "/uploads/Copy of THW09151.jpg",
       "focus": "center",
       "zoom": "100",
       "alt": "Ảnh tập thể cán bộ, nhân viên trước trụ sở Tiến Nông"
@@ -37,7 +36,7 @@
   },
   "s02_thu_ngo": {
     "img_ceo_portrait_1": {
-      "src": "",
+      "src": "/uploads/Anh chan dung a Phong T8.2018 - Copy.jpg",
       "focus": "center",
       "zoom": "100",
       "alt": "Chân dung Tổng Giám đốc Nguyễn Hồng Phong"
@@ -77,7 +76,7 @@
     "t1": "BAN LÃNH ĐẠO",
     "t2": "Đội ngũ lãnh đạo",
     "img_lead_1_1": {
-      "src": "",
+      "src": "/uploads/Anh chan dung a Phong T8.2018 - Copy-1.jpg",
       "focus": "center",
       "zoom": "100",
       "alt": "Chân dung (nền đồng nhất)"
@@ -85,7 +84,6 @@
     "t3": "Nguyễn Hồng Phong",
     "t4": "Tổng Giám đốc",
     "img_lead_2_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Chân dung (nền đồng nhất)"
@@ -93,7 +91,6 @@
     "t5": "[Họ và tên]",
     "t6": "[Chức danh]",
     "img_lead_3_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Chân dung (nền đồng nhất)"
@@ -101,7 +98,6 @@
     "t7": "[Họ và tên]",
     "t8": "[Chức danh]",
     "img_lead_4_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Chân dung (nền đồng nhất)"
@@ -109,7 +105,6 @@
     "t9": "[Họ và tên]",
     "t10": "[Chức danh]",
     "img_lead_5_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Chân dung (nền đồng nhất)"
@@ -122,7 +117,6 @@
     "t2": "Những ghi nhận xứng đáng cho hơn ba thập kỷ cống hiến",
     "t3": "Những danh hiệu dưới đây là sự ghi nhận cho hơn ba thập kỷ kiên trì với chất lượng, khoa học và trách nhiệm với nhà nông.",
     "img_award_hc_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Ảnh Huân chương"
@@ -131,7 +125,6 @@
     "t5": "Huân chương Lao động hạng Ba",
     "t6": "Chủ tịch nước trao tặng",
     "img_award_bk_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Ảnh Bằng khen"
@@ -164,7 +157,7 @@
     "t1": "NĂNG LỰC",
     "t2": "Chuỗi giá trị khép kín, từ phòng thí nghiệm đến đồng ruộng",
     "img_cap_rd_1": {
-      "src": "",
+      "src": "/uploads/DJI_20260408155414_0033_D.MP4_snapshot_00.05_[2026.08.21_15.14.33].jpg",
       "focus": "center",
       "zoom": "100",
       "alt": "Phòng thí nghiệm"
@@ -174,7 +167,7 @@
     "t5": "Nghiên cứu công thức, phân tích đất và kiểm định chất lượng sản phẩm.",
     "t6": "Khoa học & Công nghệ →",
     "img_cap_mfg_1": {
-      "src": "",
+      "src": "/uploads/C7948.MP4_snapshot_00.02_[2026.08.21_16.01.52].jpg",
       "focus": "center",
       "zoom": "100",
       "alt": "Dây chuyền sản xuất"
@@ -184,7 +177,6 @@
     "t9": "Nhà máy Bỉm Sơn (Thanh Hóa), Gia Lai và [Nhà máy 3], vận hành theo ISO 9001 và ISO 14001.",
     "t10": "Hệ thống nhà máy →",
     "img_cap_dist_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Bản đồ mạng lưới phân phối & xuất khẩu"
@@ -198,35 +190,30 @@
     "t1": "HỆ SINH THÁI TIẾN NÔNG",
     "t2": "Công ty thành viên & liên kết",
     "img_eco_1_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Logo"
     },
     "t3": "Tiến Nông Garden",
     "img_eco_2_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Logo"
     },
     "t4": "Hacheco",
     "img_eco_3_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Logo"
     },
     "t5": "Sao Khuê",
     "img_eco_4_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Logo"
     },
     "t6": "Tiến Lực",
     "img_eco_5_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Logo"
@@ -244,7 +231,6 @@
       "title": "Thành lập tại Thanh Hóa",
       "body": "Ngày 04/01/1995, Tiến Nông ra đời với khát vọng mang đến cho nhà nông những sản phẩm dinh dưỡng cây trồng chất lượng, giá trị thực.",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh tư liệu: biển hiệu xí nghiệp năm 1995"
@@ -255,7 +241,6 @@
       "title": "Giải thưởng Chất lượng Việt Nam",
       "body": "Hệ thống quản lý chất lượng và sản phẩm của Tiến Nông được ghi nhận ở cấp quốc gia.",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh lễ nhận giải 2002"
@@ -266,7 +251,6 @@
       "title": "Thương hiệu nổi tiếng ASEAN",
       "body": "Thương hiệu Tiến Nông được ghi nhận trong khu vực, mở đường cho các thị trường xuất khẩu.",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh lễ nhận giải 2011"
@@ -277,7 +261,6 @@
       "title": "Doanh nghiệp Khoa học & Công nghệ đầu tiên của ngành",
       "body": "[Bổ sung: năm được công nhận, số giấy chứng nhận và ý nghĩa của danh hiệu.]",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh giấy chứng nhận DN KH&CN"
@@ -288,7 +271,6 @@
       "title": "Bằng khen của Thủ tướng Chính phủ",
       "body": "Ghi nhận những đóng góp của Tiến Nông cho sự phát triển của nông nghiệp và cộng đồng.",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh Bằng khen Thủ tướng"
@@ -299,7 +281,6 @@
       "title": "3 nhà máy, 650.000 tấn/năm, 10+ quốc gia",
       "body": "Tiến Nông phục vụ hơn 200.000 hộ nông dân, hướng tới mục tiêu 1 triệu hộ nông dân Việt Nam.",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh flycam nhà máy hiện nay"
