@@ -1,33 +1,35 @@
 ---
-title: "Tiến Nông tiếp đón Trường Cao đẳng FPT Polytechnic Thanh Hóa tham quan trải nghiệm thực tế"
-category: "tn"
-date:
-author: "Phòng Truyền thông"
+title: Tiến Nông tiếp đón Trường Cao đẳng FPT Polytechnic Thanh Hóa tham quan
+  trải nghiệm thực tế
+category: tn
+date: 2026-10-16
+author: Phòng Truyền thông
 featured: true
-summary: "Ngày [dd/mm/2026], Công ty Cổ phần Công Nông nghiệp Tiến Nông đón đoàn giảng viên và sinh viên Trường Cao đẳng FPT Polytechnic Thanh Hóa đến tham quan, tìm hiểu thực tế hoạt động sản xuất và nghiên cứu tại doanh nghiệp."
+summary: Ngày [dd/mm/2026], Công ty Cổ phần Công Nông nghiệp Tiến Nông đón đoàn
+  giảng viên và sinh viên Trường Cao đẳng FPT Polytechnic Thanh Hóa đến tham
+  quan, tìm hiểu thực tế hoạt động sản xuất và nghiên cứu tại doanh nghiệp.
 cover:
-  src: ""
-  focus: "center"
+  src: /uploads/truong fpt.jpg
+  focus: center
   zoom: "100"
-  alt: "Ảnh đại diện bài viết (ảnh đẹp nhất)"
-cover_caption: "Sinh viên Trường Cao đẳng FPT Polytechnic Thanh Hóa chụp ảnh lưu niệm tại Tiến Nông."
+  alt: Ảnh đại diện bài viết (ảnh đẹp nhất)
+cover_caption: Sinh viên Trường Cao đẳng FPT Polytechnic Thanh Hóa chụp ảnh lưu
+  niệm tại Tiến Nông.
 album:
-  - src: ""
-    focus: "center"
+  - focus: center
     zoom: "100"
-    alt: "Album"
-  - src: ""
-    focus: "center"
+    alt: Album
+  - focus: center
     zoom: "100"
-    alt: "Album"
-  - src: ""
-    focus: "center"
+    alt: Album
+  - focus: center
     zoom: "100"
-    alt: "Album"
-album_link: ""
-tags: ["Giáo dục", "Tham quan nhà máy", "Tuyển dụng"]
+    alt: Album
+tags:
+  - Giáo dục
+  - Tham quan nhà máy
+  - Tuyển dụng
 ---
-
 [Nội dung mẫu] Chương trình nằm trong hoạt động kết nối giữa nhà trường và doanh nghiệp, giúp sinh viên có cái nhìn trực quan về môi trường làm việc tại một doanh nghiệp khoa học công nghệ trong lĩnh vực nông nghiệp.
 
 ## Tìm hiểu quy trình sản xuất hiện đại
