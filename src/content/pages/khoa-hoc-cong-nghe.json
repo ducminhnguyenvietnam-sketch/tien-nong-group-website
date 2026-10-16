@@ -55,9 +55,10 @@
     "t8": "Phòng Sức khỏe đất & cây trồng",
     "t9": "Đánh giá dinh dưỡng đất, theo dõi sinh trưởng và đề xuất chương trình bón phân.",
     "img_lab_4_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Phòng Công nghệ phân bón"
+      "alt": "Phòng Công nghệ phân bón",
+      "src": "/uploads/lab-4-mvat28v3.jpg"
     },
     "t10": "Phòng Công nghệ phân bón",
     "t11": "Phát triển công thức và công nghệ sản xuất phân bón thế hệ mới."
