@@ -1,7 +1,6 @@
 {
   "seo": {
-    "title": "Phát triển bền vững",
-    "description": ""
+    "title": "Phát triển bền vững"
   },
   "s01_hero": {
     "t1": "Trang chủ",
@@ -10,7 +9,7 @@
     "t4": "Vì nền nông nghiệp bền vững và cộng đồng thịnh vượng",
     "t5": "Phát triển bền vững tại Tiến Nông bắt nguồn từ sứ mệnh “Phụng sự để nông dân giàu có, Việt Nam thịnh vượng”: sản xuất có trách nhiệm với môi trường, đồng hành cùng nhà nông và sẻ chia với cộng đồng.",
     "img_esg_hero_1": {
-      "src": "",
+      "src": "/uploads/SX4.jpg",
       "focus": "center",
       "zoom": "100",
       "alt": "Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh"
@@ -31,7 +30,6 @@
   },
   "s02_san_xuat_xanh": {
     "img_esg_plant_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Flycam khuôn viên nhà máy với cây xanh"
@@ -59,19 +57,16 @@
     "t8": "Hội thảo đầu bờ:",
     "t9": "chia sẻ kinh nghiệm từ các mô hình hiệu quả",
     "img_esg_farm_1_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Lớp tập huấn kỹ thuật cho nông dân"
     },
     "img_esg_farm_2_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Hội thảo đầu bờ"
     },
     "img_esg_farm_3_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Kỹ sư hướng dẫn tại ruộng"
@@ -109,7 +104,6 @@
       "title": "Ủng hộ 1,55 tỷ đồng cho công tác khuyến học tỉnh Thanh Hóa",
       "body": "Đồng hành cùng Hội Khuyến học tỉnh chăm lo cho học sinh có hoàn cảnh khó khăn và học sinh giỏi.",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Lễ trao biển ủng hộ khuyến học"
@@ -121,7 +115,6 @@
       "title": "Đồng hành cùng chương trình “Triệu mầm xanh” vì Trường Sa xanh",
       "body": "Góp phần phủ xanh các đảo tiền tiêu bằng giải pháp dinh dưỡng cho cây trồng trên đất cát, đất nhiễm mặn.",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Cây xanh trên đảo Trường Sa"
@@ -133,7 +126,6 @@
       "title": "Cuộc thi “Em viết thư gửi Chiến sĩ Trường Sa”",
       "body": "Khơi dậy tình yêu biển đảo trong thế hệ trẻ thông qua những lá thư gửi các chiến sĩ.",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Học sinh viết thư"
@@ -145,7 +137,6 @@
       "title": "Đón học sinh, sinh viên tham quan trải nghiệm thực tế",
       "body": "Mở cửa nhà máy và phòng thí nghiệm để thế hệ trẻ hiểu hơn về nông nghiệp khoa học.",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Sinh viên tham quan nhà máy"
@@ -157,7 +148,6 @@
       "title": "[Tên chương trình hỗ trợ người yếu thế]",
       "body": "[Mô tả ngắn: đối tượng, địa bàn, giá trị hỗ trợ.]",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Hoạt động hỗ trợ người yếu thế"
@@ -169,7 +159,6 @@
       "title": "[Tên chương trình cứu trợ thiên tai]",
       "body": "[Mô tả ngắn: đối tượng, địa bàn, giá trị hỗ trợ.]",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Cứu trợ đồng bào vùng lũ"
