@@ -38,7 +38,7 @@ const lineLabel = (key: string) => (c.lines.find((l) => l.key === key)?.label ??
 <div id="prod-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px">
 {c.products.map((p, i) => (
 <a data-line={p.line} data-crops={p.crops.join('|')} data-name={p.name.toLowerCase()} data-pop={i} href={url('chi-tiet-san-pham')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary);transition:box-shadow .15s" class="hover-lift">
-<div style="position:relative;height:250px;background:var(--surface-sunken);padding:16px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`prod-${i}`} shape="rounded" radius="10" fit="contain" placeholder={p.image.alt} image={p.image} /></div>
+<div style="position:relative;height:250px;background:var(--surface-sunken);padding:16px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`prod-${i}`} shape="rounded" radius="10" fit="contain" placeholder={p.image.alt} image={p.image} cms={`src/content/pages/san-pham.json#products.${i}.image`} /></div>
 <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1">
 <span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{lineLabel(p.line)}</span>
 <strong style="font-size:17px;line-height:1.35;flex:1">{p.name}</strong>

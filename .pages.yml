@@ -13,49 +13,18 @@ components:
     - name: src
       label: Ảnh
       type: image
-      description: Kéo thả hoặc chọn ảnh. Để trống sẽ hiện khung chờ ảnh.
+      description: 'Cách dễ nhất: thay và căn ảnh ngay trên website — mở https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/?sua-anh
+        rồi bấm vào ảnh. Hoặc tải ảnh lên tại đây.'
     - name: focus
-      label: Giữ phần nào của ảnh khi khung cắt bớt
-      type: select
+      label: Điểm căn ảnh
+      type: string
       default: center
-      options:
-        values:
-        - value: center
-          label: Ở giữa
-        - value: top
-          label: Phía trên
-        - value: bottom
-          label: Phía dưới
-        - value: left
-          label: Bên trái
-        - value: right
-          label: Bên phải
-        - value: top left
-          label: Góc trên bên trái
-        - value: top right
-          label: Góc trên bên phải
-        - value: bottom left
-          label: Góc dưới bên trái
-        - value: bottom right
-          label: Góc dưới bên phải
+      description: 'Do chế độ sửa ảnh trên website tự điền (ví dụ "40% 25%"). Có thể ghi: center, top, bottom, left, right.'
     - name: zoom
-      label: Phóng to
-      type: select
+      label: Phóng to (%)
+      type: string
       default: '100'
-      options:
-        values:
-        - value: '100'
-          label: Không phóng (100%)
-        - value: '110'
-          label: 110%
-        - value: '125'
-          label: 125%
-        - value: '150'
-          label: 150%
-        - value: '175'
-          label: 175%
-        - value: '200'
-          label: 200%
+      description: 100 = không phóng. Do chế độ sửa ảnh trên website tự điền.
     - name: alt
       label: Mô tả ảnh
       type: string
@@ -120,7 +89,7 @@ content:
   - name: cover
     label: Ảnh đại diện
     component: photo
-    description: 'Khung ảnh khoảng 1040×560 px trên máy tính — nên dùng ảnh rộng ít nhất 2080 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=news-cover'
+    description: Khung ảnh khoảng 1040×560 px trên máy tính — nên dùng ảnh rộng ít nhất 2080 px.
   - name: cover_caption
     label: Chú thích ảnh đại diện
     type: string
@@ -133,7 +102,6 @@ content:
     label: Album ảnh cuối bài
     component: photo
     list: true
-    description: 'Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=news-album'
   - name: album_link
     label: Đường dẫn xem toàn bộ album
     type: string
@@ -170,8 +138,7 @@ content:
       - name: img_hero_a_1
         label: 'Ảnh: Video / ảnh flycam: nhà máy Tiến Nông giữa cánh đồng lúa'
         component: photo
-        description: 'Khung ảnh khoảng 1440×702 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=hero-a'
+        description: Khung ảnh khoảng 1440×702 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
       - name: t1
         label: 'Nhãn in hoa: TIẾN NÔNG GROUP · TỪ 1995'
         type: string
@@ -261,8 +228,7 @@ content:
       - name: img_rd_main_1
         label: 'Ảnh: Phòng thí nghiệm VILAS 1519 đang vận hành'
         component: photo
-        description: 'Khung ảnh khoảng 576×420 px trên máy tính — nên dùng ảnh rộng ít nhất 1152 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=rd-main'
+        description: Khung ảnh khoảng 576×420 px trên máy tính — nên dùng ảnh rộng ít nhất 1152 px.
       - name: t4
         label: 'Nhãn in hoa: R&D'
         type: string
@@ -333,7 +299,7 @@ content:
       - name: img_aud_farmer_1
         label: 'Ảnh: Nông dân trên ruộng'
         component: photo
-        description: 'Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=aud-farmer'
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
       - name: t3
         label: 'Chữ đậm: Nông dân'
         type: string
@@ -346,7 +312,7 @@ content:
       - name: img_aud_dealer_1
         label: 'Ảnh: Cửa hàng đại lý vật tư nông nghiệp'
         component: photo
-        description: 'Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=aud-dealer'
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
       - name: t6
         label: 'Chữ đậm: Đại lý & nhà phân phối'
         type: string
@@ -359,7 +325,7 @@ content:
       - name: img_aud_project_1
         label: 'Ảnh: Sân golf / cảnh quan đô thị / nhà kính'
         component: photo
-        description: 'Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=aud-project'
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
       - name: t9
         label: 'Chữ đậm: Khách hàng dự án'
         type: string
@@ -372,7 +338,7 @@ content:
       - name: img_aud_export_1
         label: 'Ảnh: Container hàng xuất khẩu / kho'
         component: photo
-        description: 'Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=aud-export'
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
       - name: t12
         label: 'Chữ đậm: Đối tác xuất khẩu'
         type: string
@@ -395,7 +361,7 @@ content:
       - name: img_line_1_1
         label: 'Ảnh: Bao bì dòng Chuyên dụng'
         component: photo
-        description: 'Khung ảnh khoảng 277×260 px trên máy tính — nên dùng ảnh rộng ít nhất 554 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=line-1'
+        description: Khung ảnh khoảng 277×260 px trên máy tính — nên dùng ảnh rộng ít nhất 554 px.
       - name: t3
         label: 'Chữ đậm: Phân bón chuyên dụng'
         type: string
@@ -405,7 +371,7 @@ content:
       - name: img_line_2_1
         label: 'Ảnh: Bao bì dòng Đa dụng'
         component: photo
-        description: 'Khung ảnh khoảng 277×260 px trên máy tính — nên dùng ảnh rộng ít nhất 554 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=line-2'
+        description: Khung ảnh khoảng 277×260 px trên máy tính — nên dùng ảnh rộng ít nhất 554 px.
       - name: t5
         label: 'Chữ đậm: Phân bón đa dụng'
         type: string
@@ -415,7 +381,7 @@ content:
       - name: img_line_3_1
         label: 'Ảnh: Bao bì dòng Hữu cơ'
         component: photo
-        description: 'Khung ảnh khoảng 277×260 px trên máy tính — nên dùng ảnh rộng ít nhất 554 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=line-3'
+        description: Khung ảnh khoảng 277×260 px trên máy tính — nên dùng ảnh rộng ít nhất 554 px.
       - name: t7
         label: 'Chữ đậm: Phân bón hữu cơ'
         type: string
@@ -425,7 +391,7 @@ content:
       - name: img_line_4_1
         label: 'Ảnh: Bao bì dòng Hàm lượng cao'
         component: photo
-        description: 'Khung ảnh khoảng 277×260 px trên máy tính — nên dùng ảnh rộng ít nhất 554 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=line-4'
+        description: Khung ảnh khoảng 277×260 px trên máy tính — nên dùng ảnh rộng ít nhất 554 px.
       - name: t9
         label: 'Chữ đậm: Phân bón hàm lượng cao'
         type: string
@@ -435,42 +401,42 @@ content:
       - name: img_crop_lua_1
         label: 'Ảnh: Lúa'
         component: photo
-        description: 'Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=crop-lua'
+        description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
       - name: t11
         label: 'Chữ: Lúa'
         type: string
       - name: img_crop_ngo_1
         label: 'Ảnh: Ngô'
         component: photo
-        description: 'Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=crop-ngo'
+        description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
       - name: t12
         label: 'Chữ: Ngô'
         type: string
       - name: img_crop_caphe_1
         label: 'Ảnh: Cà phê'
         component: photo
-        description: 'Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=crop-caphe'
+        description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
       - name: t13
         label: 'Chữ: Cà phê'
         type: string
       - name: img_crop_anqua_1
         label: 'Ảnh: Cây ăn quả'
         component: photo
-        description: 'Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=crop-anqua'
+        description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
       - name: t14
         label: 'Chữ: Cây ăn quả'
         type: string
       - name: img_crop_rau_1
         label: 'Ảnh: Rau màu'
         component: photo
-        description: 'Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=crop-rau'
+        description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
       - name: t15
         label: 'Chữ: Rau màu'
         type: string
       - name: img_crop_congnghiep_1
         label: 'Ảnh: Cây công nghiệp'
         component: photo
-        description: 'Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=crop-congnghiep'
+        description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
       - name: t16
         label: 'Chữ: Cây công nghiệp'
         type: string
@@ -484,8 +450,7 @@ content:
       - name: img_plant_flycam_1
         label: 'Ảnh: Flycam nhà máy Bỉm Sơn: cây xanh, khuôn viên sạch đẹp'
         component: photo
-        description: 'Khung ảnh khoảng 1440×600 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=plant-flycam'
+        description: Khung ảnh khoảng 1440×600 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
       - name: t1
         label: 'Nhãn in hoa: 04 · SẢN XUẤT XANH'
         type: string
@@ -523,15 +488,15 @@ content:
       - name: img_people_1_1
         label: 'Ảnh: Chân dung người lao động gắn bó 20+ năm'
         component: photo
-        description: 'Khung ảnh khoảng 267×494 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=people-1'
+        description: Khung ảnh khoảng 267×494 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px.
       - name: img_people_2_1
         label: 'Ảnh: Chuyến du lịch nước ngoài toàn công ty'
         component: photo
-        description: 'Khung ảnh khoảng 267×280 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=people-2'
+        description: Khung ảnh khoảng 267×280 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px.
       - name: img_people_3_1
         label: 'Ảnh: Lễ trao Bảo Bình tài lộc'
         component: photo
-        description: 'Khung ảnh khoảng 267×200 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=people-3'
+        description: Khung ảnh khoảng 267×200 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px.
       - name: t1
         label: 'Nhãn in hoa: 05 · CON NGƯỜI'
         type: string
@@ -590,7 +555,7 @@ content:
       - name: img_csr_1_1
         label: 'Ảnh: Lớp tập huấn kỹ thuật cho nông dân'
         component: photo
-        description: 'Khung ảnh khoảng 376×240 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=csr-1'
+        description: Khung ảnh khoảng 376×240 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
       - name: t5
         label: 'Nhãn in hoa: NÂNG CAO NHẬN THỨC'
         type: string
@@ -600,7 +565,7 @@ content:
       - name: img_csr_2_1
         label: 'Ảnh: Lễ trao học bổng khuyến học Thanh Hóa'
         component: photo
-        description: 'Khung ảnh khoảng 376×240 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=csr-2'
+        description: Khung ảnh khoảng 376×240 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
       - name: t7
         label: 'Nhãn in hoa: KHUYẾN HỌC'
         type: string
@@ -610,7 +575,7 @@ content:
       - name: img_csr_3_1
         label: 'Ảnh: Chương trình Triệu mầm xanh Trường Sa'
         component: photo
-        description: 'Khung ảnh khoảng 376×240 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=csr-3'
+        description: Khung ảnh khoảng 376×240 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
       - name: t9
         label: 'Nhãn in hoa: BIỂN ĐẢO'
         type: string
@@ -675,8 +640,7 @@ content:
       - name: img_about_hero_1
         label: 'Ảnh: Ảnh tập thể cán bộ, nhân viên trước trụ sở Tiến Nông'
         component: photo
-        description: 'Khung ảnh khoảng 1168×560 px trên máy tính — nên dùng ảnh rộng ít nhất 2336 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=about-hero'
+        description: Khung ảnh khoảng 1168×560 px trên máy tính — nên dùng ảnh rộng ít nhất 2336 px.
       - name: t6
         label: 'Chữ: 1995'
         type: string
@@ -741,7 +705,7 @@ content:
       - name: img_ceo_portrait_1
         label: 'Ảnh: Chân dung Tổng Giám đốc Nguyễn Hồng Phong'
         component: photo
-        description: 'Khung ảnh khoảng 420×525 px trên máy tính — nên dùng ảnh rộng ít nhất 840 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=ceo-portrait'
+        description: Khung ảnh khoảng 420×525 px trên máy tính — nên dùng ảnh rộng ít nhất 840 px.
       - name: t1
         label: 'Nhãn in hoa: THƯ NGỎ CỦA TỔNG GIÁM ĐỐC'
         type: string
@@ -841,7 +805,7 @@ content:
       - name: img_lead_1_1
         label: 'Ảnh: Chân dung (nền đồng nhất)'
         component: photo
-        description: 'Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=lead-1'
+        description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t3
         label: 'Chữ đậm: Nguyễn Hồng Phong'
         type: string
@@ -851,7 +815,7 @@ content:
       - name: img_lead_2_1
         label: 'Ảnh: Chân dung (nền đồng nhất)'
         component: photo
-        description: 'Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=lead-2'
+        description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t5
         label: 'Chữ đậm: [Họ và tên]'
         type: string
@@ -861,7 +825,7 @@ content:
       - name: img_lead_3_1
         label: 'Ảnh: Chân dung (nền đồng nhất)'
         component: photo
-        description: 'Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=lead-3'
+        description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t7
         label: 'Chữ đậm: [Họ và tên]'
         type: string
@@ -871,7 +835,7 @@ content:
       - name: img_lead_4_1
         label: 'Ảnh: Chân dung (nền đồng nhất)'
         component: photo
-        description: 'Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=lead-4'
+        description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t9
         label: 'Chữ đậm: [Họ và tên]'
         type: string
@@ -881,7 +845,7 @@ content:
       - name: img_lead_5_1
         label: 'Ảnh: Chân dung (nền đồng nhất)'
         component: photo
-        description: 'Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=lead-5'
+        description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t11
         label: 'Chữ đậm: [Họ và tên]'
         type: string
@@ -904,7 +868,7 @@ content:
       - name: img_award_hc_1
         label: 'Ảnh: Ảnh Huân chương'
         component: photo
-        description: 'Khung ảnh khoảng 96×120 px trên máy tính — nên dùng ảnh rộng ít nhất 192 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=award-hc'
+        description: Khung ảnh khoảng 96×120 px trên máy tính — nên dùng ảnh rộng ít nhất 192 px.
       - name: t4
         label: 'Nhãn in hoa: NHÀ NƯỚC · [NĂM]'
         type: string
@@ -917,7 +881,7 @@ content:
       - name: img_award_bk_1
         label: 'Ảnh: Ảnh Bằng khen'
         component: photo
-        description: 'Khung ảnh khoảng 96×120 px trên máy tính — nên dùng ảnh rộng ít nhất 192 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=award-bk'
+        description: Khung ảnh khoảng 96×120 px trên máy tính — nên dùng ảnh rộng ít nhất 192 px.
       - name: t7
         label: 'Nhãn in hoa: NHÀ NƯỚC · 2022'
         type: string
@@ -1000,7 +964,7 @@ content:
       - name: img_cap_rd_1
         label: 'Ảnh: Phòng thí nghiệm'
         component: photo
-        description: 'Khung ảnh khoảng 371×220 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=cap-rd'
+        description: Khung ảnh khoảng 371×220 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
       - name: t3
         label: 'Nhãn in hoa: NGHIÊN CỨU'
         type: string
@@ -1016,7 +980,7 @@ content:
       - name: img_cap_mfg_1
         label: 'Ảnh: Dây chuyền sản xuất'
         component: photo
-        description: 'Khung ảnh khoảng 371×220 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=cap-mfg'
+        description: Khung ảnh khoảng 371×220 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
       - name: t7
         label: 'Nhãn in hoa: SẢN XUẤT'
         type: string
@@ -1032,7 +996,7 @@ content:
       - name: img_cap_dist_1
         label: 'Ảnh: Bản đồ mạng lưới phân phối & xuất khẩu'
         component: photo
-        description: 'Khung ảnh khoảng 371×220 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=cap-dist'
+        description: Khung ảnh khoảng 371×220 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
       - name: t11
         label: 'Nhãn in hoa: PHÂN PHỐI'
         type: string
@@ -1058,35 +1022,35 @@ content:
       - name: img_eco_1_1
         label: 'Ảnh: Logo'
         component: photo
-        description: 'Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=eco-1'
+        description: Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px.
       - name: t3
         label: 'Chữ đậm: Tiến Nông Garden'
         type: string
       - name: img_eco_2_1
         label: 'Ảnh: Logo'
         component: photo
-        description: 'Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=eco-2'
+        description: Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px.
       - name: t4
         label: 'Chữ đậm: Hacheco'
         type: string
       - name: img_eco_3_1
         label: 'Ảnh: Logo'
         component: photo
-        description: 'Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=eco-3'
+        description: Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px.
       - name: t5
         label: 'Chữ đậm: Sao Khuê'
         type: string
       - name: img_eco_4_1
         label: 'Ảnh: Logo'
         component: photo
-        description: 'Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=eco-4'
+        description: Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px.
       - name: t6
         label: 'Chữ đậm: Tiến Lực'
         type: string
       - name: img_eco_5_1
         label: 'Ảnh: Logo'
         component: photo
-        description: 'Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=eco-5'
+        description: Khung ảnh khoảng 179×80 px trên máy tính — nên dùng ảnh rộng ít nhất 358 px.
       - name: t7
         label: 'Chữ đậm: Phú Hưng'
         type: string
@@ -1123,8 +1087,7 @@ content:
       - name: image
         label: Ảnh
         component: photo
-        description: 'Khung ảnh khoảng 556×360 px trên máy tính — nên dùng ảnh rộng ít nhất 1112 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=ms'
+        description: Khung ảnh khoảng 556×360 px trên máy tính — nên dùng ảnh rộng ít nhất 1112 px.
   - name: khoa_hoc_cong_nghe
     label: Khoa học & Công nghệ
     type: file
@@ -1149,8 +1112,7 @@ content:
       - name: img_khcn_hero_1
         label: 'Ảnh: Nhà khoa học thao tác trong phòng thí nghiệm VILAS 1519'
         component: photo
-        description: 'Khung ảnh khoảng 1440×640 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=khcn-hero'
+        description: Khung ảnh khoảng 1440×640 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
       - name: t1
         label: 'Chữ: Trang chủ / Khoa học & Công nghệ'
         type: string
@@ -1213,7 +1175,7 @@ content:
       - name: img_lab_1_1
         label: 'Ảnh: Phòng Thí nghiệm chất lượng'
         component: photo
-        description: 'Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=lab-1'
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
       - name: t4
         label: 'Chữ đậm: Phòng Thí nghiệm chất lượng'
         type: string
@@ -1223,7 +1185,7 @@ content:
       - name: img_lab_2_1
         label: 'Ảnh: Phòng Công nghệ sinh học'
         component: photo
-        description: 'Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=lab-2'
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
       - name: t6
         label: 'Chữ đậm: Phòng Công nghệ sinh học'
         type: string
@@ -1233,7 +1195,7 @@ content:
       - name: img_lab_3_1
         label: 'Ảnh: Phòng Sức khỏe đất & cây trồng'
         component: photo
-        description: 'Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=lab-3'
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
       - name: t8
         label: 'Chữ đậm: Phòng Sức khỏe đất & cây trồng'
         type: string
@@ -1243,7 +1205,7 @@ content:
       - name: img_lab_4_1
         label: 'Ảnh: Phòng Công nghệ phân bón'
         component: photo
-        description: 'Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=lab-4'
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
       - name: t10
         label: 'Chữ đậm: Phòng Công nghệ phân bón'
         type: string
@@ -1322,8 +1284,7 @@ content:
       - name: img_vilas_1
         label: 'Ảnh: Thiết bị phân tích hiện đại trong phòng thí nghiệm'
         component: photo
-        description: 'Khung ảnh khoảng 548×460 px trên máy tính — nên dùng ảnh rộng ít nhất 1096 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=vilas'
+        description: Khung ảnh khoảng 548×460 px trên máy tính — nên dùng ảnh rộng ít nhất 1096 px.
       - name: t1
         label: 'Nhãn in hoa: 04 · PHÒNG THÍ NGHIỆM VILAS 1519'
         type: string
@@ -1376,7 +1337,7 @@ content:
       - name: img_res_1_1
         label: 'Ảnh: Bao bì NPK bổ sung Silic'
         component: photo
-        description: 'Khung ảnh khoảng 373×240 px trên máy tính — nên dùng ảnh rộng ít nhất 746 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=res-1'
+        description: Khung ảnh khoảng 373×240 px trên máy tính — nên dùng ảnh rộng ít nhất 746 px.
       - name: t4
         label: 'Nhãn in hoa: CÔNG NGHỆ PHÂN BÓN'
         type: string
@@ -1389,7 +1350,7 @@ content:
       - name: img_res_2_1
         label: 'Ảnh: Mô hình NPK – hữu cơ – vi sinh'
         component: photo
-        description: 'Khung ảnh khoảng 373×240 px trên máy tính — nên dùng ảnh rộng ít nhất 746 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=res-2'
+        description: Khung ảnh khoảng 373×240 px trên máy tính — nên dùng ảnh rộng ít nhất 746 px.
       - name: t7
         label: 'Nhãn in hoa: GIẢI PHÁP TÍCH HỢP'
         type: string
@@ -1402,7 +1363,7 @@ content:
       - name: img_res_3_1
         label: 'Ảnh: Phân bón hữu cơ, phân bón lỏng'
         component: photo
-        description: 'Khung ảnh khoảng 373×240 px trên máy tính — nên dùng ảnh rộng ít nhất 746 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=res-3'
+        description: Khung ảnh khoảng 373×240 px trên máy tính — nên dùng ảnh rộng ít nhất 746 px.
       - name: t10
         label: 'Nhãn in hoa: DINH DƯỠNG THẾ HỆ MỚI'
         type: string
@@ -1431,28 +1392,28 @@ content:
       - name: img_part_1_1
         label: 'Ảnh: Logo'
         component: photo
-        description: 'Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=part-1'
+        description: Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px.
       - name: t5
         label: 'Chữ: [Viện / trường đối tác]'
         type: string
       - name: img_part_2_1
         label: 'Ảnh: Logo'
         component: photo
-        description: 'Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=part-2'
+        description: Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px.
       - name: t6
         label: 'Chữ: [Viện / trường đối tác]'
         type: string
       - name: img_part_3_1
         label: 'Ảnh: Logo'
         component: photo
-        description: 'Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=part-3'
+        description: Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px.
       - name: t7
         label: 'Chữ: [Viện / trường đối tác]'
         type: string
       - name: img_part_4_1
         label: 'Ảnh: Logo'
         component: photo
-        description: 'Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=part-4'
+        description: Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px.
       - name: t8
         label: 'Chữ: [Viện / trường đối tác]'
         type: string
@@ -1480,7 +1441,7 @@ content:
       - name: image
         label: Ảnh
         component: photo
-        description: 'Khung ảnh khoảng 410×380 px trên máy tính — nên dùng ảnh rộng ít nhất 820 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=dom'
+        description: Khung ảnh khoảng 410×380 px trên máy tính — nên dùng ảnh rộng ít nhất 820 px.
   - name: san_pham
     label: Sản phẩm
     type: file
@@ -1653,8 +1614,8 @@ content:
       - name: image
         label: Ảnh
         component: photo
-        description: 'Khung ảnh khoảng 275×250 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Ảnh hiển thị trọn vẹn (không cắt), nên dùng
-          ảnh nền trắng/trong suốt. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=prod'
+        description: Khung ảnh khoảng 275×250 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Ảnh hiển thị trọn vẹn (không cắt), nên dùng
+          ảnh nền trắng/trong suốt.
   - name: chi_tiet_san_pham
     label: Chi tiết sản phẩm (mẫu)
     type: file
@@ -1978,8 +1939,7 @@ content:
       - name: img_pd_model_1
         label: 'Ảnh: Ruộng lúa mô hình sử dụng NPK Lúa 2'
         component: photo
-        description: 'Khung ảnh khoảng 552×320 px trên máy tính — nên dùng ảnh rộng ít nhất 1104 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=pd-model'
+        description: Khung ảnh khoảng 552×320 px trên máy tính — nên dùng ảnh rộng ít nhất 1104 px.
       - name: t1
         label: 'Nhãn in hoa: MÔ HÌNH THỰC TẾ'
         type: string
@@ -2005,7 +1965,7 @@ content:
       - name: img_rel_1_1
         label: 'Ảnh: Bao bì'
         component: photo
-        description: 'Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=rel-1'
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
       - name: t3
         label: 'Nhãn in hoa: BÓN LÓT'
         type: string
@@ -2015,7 +1975,7 @@ content:
       - name: img_rel_2_1
         label: 'Ảnh: Bao bì'
         component: photo
-        description: 'Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=rel-2'
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
       - name: t5
         label: 'Nhãn in hoa: ĐA DỤNG'
         type: string
@@ -2025,7 +1985,7 @@ content:
       - name: img_rel_3_1
         label: 'Ảnh: Bao bì'
         component: photo
-        description: 'Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=rel-3'
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
       - name: t7
         label: 'Nhãn in hoa: TRUNG VI LƯỢNG'
         type: string
@@ -2035,7 +1995,7 @@ content:
       - name: img_rel_4_1
         label: 'Ảnh: Bao bì'
         component: photo
-        description: 'Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=rel-4'
+        description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
       - name: t9
         label: 'Nhãn in hoa: ĐA DỤNG'
         type: string
@@ -2056,8 +2016,8 @@ content:
       - name: image
         label: Ảnh
         component: photo
-        description: 'Khung ảnh khoảng 504×472 px trên máy tính — nên dùng ảnh rộng ít nhất 1008 px. Ảnh hiển thị trọn vẹn (không cắt), nên dùng
-          ảnh nền trắng/trong suốt. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=pd-view'
+        description: Khung ảnh khoảng 504×472 px trên máy tính — nên dùng ảnh rộng ít nhất 1008 px. Ảnh hiển thị trọn vẹn (không cắt), nên dùng
+          ảnh nền trắng/trong suốt.
   - name: giai_phap
     label: Giải pháp theo cây trồng
     type: file
@@ -2082,8 +2042,7 @@ content:
       - name: img_sol_hero_1
         label: 'Ảnh: Cận cảnh bông lúa chín trên cánh đồng'
         component: photo
-        description: 'Khung ảnh khoảng 1440×602 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=sol-hero'
+        description: Khung ảnh khoảng 1440×602 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
       - name: t1
         label: 'Chữ: Trang chủ / Giải pháp / Theo cây trồng'
         type: string
@@ -2118,7 +2077,7 @@ content:
       - name: img_cg_1_1
         label: 'Ảnh: Lúa, ngô'
         component: photo
-        description: 'Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=cg-1'
+        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
       - name: t4
         label: 'Chữ đậm: Cây lương thực'
         type: string
@@ -2128,7 +2087,7 @@ content:
       - name: img_cg_2_1
         label: 'Ảnh: Rau màu'
         component: photo
-        description: 'Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=cg-2'
+        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
       - name: t6
         label: 'Chữ đậm: Rau màu & cây thực phẩm'
         type: string
@@ -2138,7 +2097,7 @@ content:
       - name: img_cg_3_1
         label: 'Ảnh: Cây ăn quả'
         component: photo
-        description: 'Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=cg-3'
+        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
       - name: t8
         label: 'Chữ đậm: Cây ăn quả'
         type: string
@@ -2148,7 +2107,7 @@ content:
       - name: img_cg_4_1
         label: 'Ảnh: Cà phê, chè'
         component: photo
-        description: 'Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=cg-4'
+        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
       - name: t10
         label: 'Chữ đậm: Cây công nghiệp'
         type: string
@@ -2158,7 +2117,7 @@ content:
       - name: img_cg_5_1
         label: 'Ảnh: Hoa, cây cảnh'
         component: photo
-        description: 'Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=cg-5'
+        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
       - name: t12
         label: 'Chữ đậm: Hoa, cây cảnh & cảnh quan'
         type: string
@@ -2168,7 +2127,7 @@ content:
       - name: img_cg_6_1
         label: 'Ảnh: Cây dược liệu'
         component: photo
-        description: 'Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=cg-6'
+        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
       - name: t14
         label: 'Chữ đậm: Cây dược liệu'
         type: string
@@ -2195,8 +2154,7 @@ content:
       - name: img_soil_1
         label: 'Ảnh: Bàn tay cầm nắm đất có cây con'
         component: photo
-        description: 'Khung ảnh khoảng 548×480 px trên máy tính — nên dùng ảnh rộng ít nhất 1096 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=soil'
+        description: Khung ảnh khoảng 548×480 px trên máy tính — nên dùng ảnh rộng ít nhất 1096 px.
       - name: t1
         label: 'Nhãn in hoa: 03 · SỨC KHỎE ĐẤT'
         type: string
@@ -2292,7 +2250,7 @@ content:
       - name: img_model_1_1
         label: 'Ảnh: Mô hình lúa'
         component: photo
-        description: 'Khung ảnh khoảng 371×240 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=model-1'
+        description: Khung ảnh khoảng 371×240 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
       - name: t4
         label: 'Nhãn in hoa: LÚA · THANH HÓA'
         type: string
@@ -2314,7 +2272,7 @@ content:
       - name: img_model_2_1
         label: 'Ảnh: Mô hình cà phê'
         component: photo
-        description: 'Khung ảnh khoảng 371×240 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=model-2'
+        description: Khung ảnh khoảng 371×240 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
       - name: t10
         label: 'Nhãn in hoa: CÀ PHÊ · GIA LAI'
         type: string
@@ -2336,7 +2294,7 @@ content:
       - name: img_model_3_1
         label: 'Ảnh: Mô hình cây ăn quả'
         component: photo
-        description: 'Khung ảnh khoảng 371×240 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=model-3'
+        description: Khung ảnh khoảng 371×240 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
       - name: t16
         label: 'Nhãn in hoa: CÂY ĂN QUẢ · [TỈNH]'
         type: string
@@ -2456,8 +2414,7 @@ content:
       - name: img_proj_hero_1
         label: 'Ảnh: Thảm cỏ sân golf / cảnh quan khu đô thị'
         component: photo
-        description: 'Khung ảnh khoảng 552×480 px trên máy tính — nên dùng ảnh rộng ít nhất 1104 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=proj-hero'
+        description: Khung ảnh khoảng 552×480 px trên máy tính — nên dùng ảnh rộng ít nhất 1104 px.
     - name: s02_nhom_khach_hang
       label: 02 · Nhóm khách hàng
       type: object
@@ -2471,7 +2428,7 @@ content:
       - name: img_seg_1_1
         label: 'Ảnh: Sân golf'
         component: photo
-        description: 'Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=seg-1'
+        description: Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px.
       - name: t3
         label: 'Chữ đậm: Sân golf'
         type: string
@@ -2484,7 +2441,7 @@ content:
       - name: img_seg_2_1
         label: 'Ảnh: Cảnh quan khu đô thị'
         component: photo
-        description: 'Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=seg-2'
+        description: Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px.
       - name: t6
         label: 'Chữ đậm: Cảnh quan đô thị & bất động sản'
         type: string
@@ -2497,7 +2454,7 @@ content:
       - name: img_seg_3_1
         label: 'Ảnh: Cây xanh khu công nghiệp'
         component: photo
-        description: 'Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=seg-3'
+        description: Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px.
       - name: t9
         label: 'Chữ đậm: Khu công nghiệp & nhà máy'
         type: string
@@ -2510,7 +2467,7 @@ content:
       - name: img_seg_4_1
         label: 'Ảnh: Nhà kính công nghệ cao'
         component: photo
-        description: 'Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=seg-4'
+        description: Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px.
       - name: t12
         label: 'Chữ đậm: Nông nghiệp công nghệ cao'
         type: string
@@ -2734,8 +2691,7 @@ content:
       - name: img_esg_hero_1
         label: 'Ảnh: Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh'
         component: photo
-        description: 'Khung ảnh khoảng 1168×500 px trên máy tính — nên dùng ảnh rộng ít nhất 2336 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=esg-hero'
+        description: Khung ảnh khoảng 1168×500 px trên máy tính — nên dùng ảnh rộng ít nhất 2336 px.
       - name: t6
         label: 'Chữ: [x] tỷ đồng'
         type: string
@@ -2782,8 +2738,7 @@ content:
       - name: img_esg_plant_1
         label: 'Ảnh: Flycam khuôn viên nhà máy với cây xanh'
         component: photo
-        description: 'Khung ảnh khoảng 1440×588 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=esg-plant'
+        description: Khung ảnh khoảng 1440×588 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
       - name: t1
         label: 'Nhãn in hoa: 01 · SẢN XUẤT XANH'
         type: string
@@ -2851,16 +2806,15 @@ content:
       - name: img_esg_farm_1_1
         label: 'Ảnh: Lớp tập huấn kỹ thuật cho nông dân'
         component: photo
-        description: 'Khung ảnh khoảng 548×260 px trên máy tính — nên dùng ảnh rộng ít nhất 1096 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=esg-farm-1'
+        description: Khung ảnh khoảng 548×260 px trên máy tính — nên dùng ảnh rộng ít nhất 1096 px.
       - name: img_esg_farm_2_1
         label: 'Ảnh: Hội thảo đầu bờ'
         component: photo
-        description: 'Khung ảnh khoảng 267×200 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=esg-farm-2'
+        description: Khung ảnh khoảng 267×200 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px.
       - name: img_esg_farm_3_1
         label: 'Ảnh: Kỹ sư hướng dẫn tại ruộng'
         component: photo
-        description: 'Khung ảnh khoảng 267×200 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=esg-farm-3'
+        description: Khung ảnh khoảng 267×200 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px.
     - name: s04_vi_cong_dong
       label: 04 · Vì cộng đồng
       type: object
@@ -2963,7 +2917,7 @@ content:
       - name: image
         label: Ảnh
         component: photo
-        description: 'Khung ảnh khoảng 371×220 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=prog'
+        description: Khung ảnh khoảng 371×220 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
   - name: nong_dan
     label: Nông dân Tiến Nông
     type: file
@@ -2988,8 +2942,7 @@ content:
       - name: img_farmer_hero_1
         label: 'Ảnh: Nông dân và kỹ sư Tiến Nông trên cánh đồng'
         component: photo
-        description: 'Khung ảnh khoảng 1440×600 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=farmer-hero'
+        description: Khung ảnh khoảng 1440×600 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
       - name: t1
         label: 'Chữ: Trang chủ / Nông dân Tiến Nông'
         type: string
@@ -3095,7 +3048,7 @@ content:
       - name: img_story_1_1
         label: 'Ảnh: Chân dung nông dân trên ruộng'
         component: photo
-        description: 'Khung ảnh khoảng 248×300 px trên máy tính — nên dùng ảnh rộng ít nhất 496 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=story-1'
+        description: Khung ảnh khoảng 248×300 px trên máy tính — nên dùng ảnh rộng ít nhất 496 px.
       - name: t4
         label: 'Nhãn in hoa: LÚA · [XÃ, TỈNH]'
         type: string
@@ -3120,7 +3073,7 @@ content:
       - name: img_story_2_1
         label: 'Ảnh: Chân dung nông dân vườn cà phê'
         component: photo
-        description: 'Khung ảnh khoảng 248×300 px trên máy tính — nên dùng ảnh rộng ít nhất 496 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=story-2'
+        description: Khung ảnh khoảng 248×300 px trên máy tính — nên dùng ảnh rộng ít nhất 496 px.
       - name: t11
         label: 'Nhãn in hoa: CÀ PHÊ · [XÃ, TỈNH]'
         type: string
@@ -3279,15 +3232,15 @@ content:
       - name: img_hr_hero_1_1
         label: 'Ảnh: Chân dung người lao động thâm niên'
         component: photo
-        description: 'Khung ảnh khoảng 269×474 px trên máy tính — nên dùng ảnh rộng ít nhất 538 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=hr-hero-1'
+        description: Khung ảnh khoảng 269×474 px trên máy tính — nên dùng ảnh rộng ít nhất 538 px.
       - name: img_hr_hero_2_1
         label: 'Ảnh: Tập thể trong chuyến du lịch'
         component: photo
-        description: 'Khung ảnh khoảng 269×260 px trên máy tính — nên dùng ảnh rộng ít nhất 538 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=hr-hero-2'
+        description: Khung ảnh khoảng 269×260 px trên máy tính — nên dùng ảnh rộng ít nhất 538 px.
       - name: img_hr_hero_3_1
         label: 'Ảnh: Kỹ sư trẻ tại phòng lab'
         component: photo
-        description: 'Khung ảnh khoảng 269×200 px trên máy tính — nên dùng ảnh rộng ít nhất 538 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=hr-hero-3'
+        description: Khung ảnh khoảng 269×200 px trên máy tính — nên dùng ảnh rộng ít nhất 538 px.
     - name: s02_con_so
       label: 02 · Con số
       type: object
@@ -3332,7 +3285,7 @@ content:
       - name: img_ben_1_1
         label: 'Ảnh: Chuyến du lịch nước ngoài toàn công ty'
         component: photo
-        description: 'Khung ảnh khoảng 374×200 px trên máy tính — nên dùng ảnh rộng ít nhất 748 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=ben-1'
+        description: Khung ảnh khoảng 374×200 px trên máy tính — nên dùng ảnh rộng ít nhất 748 px.
       - name: t4
         label: 'Chữ đậm: Du lịch nước ngoài'
         type: string
@@ -3342,7 +3295,7 @@ content:
       - name: img_ben_2_1
         label: 'Ảnh: Lễ trao vàng tri ân'
         component: photo
-        description: 'Khung ảnh khoảng 374×200 px trên máy tính — nên dùng ảnh rộng ít nhất 748 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=ben-2'
+        description: Khung ảnh khoảng 374×200 px trên máy tính — nên dùng ảnh rộng ít nhất 748 px.
       - name: t6
         label: 'Chữ đậm: Tặng vàng tri ân'
         type: string
@@ -3352,7 +3305,7 @@ content:
       - name: img_ben_3_1
         label: 'Ảnh: Lễ trao Bảo Bình tài lộc'
         component: photo
-        description: 'Khung ảnh khoảng 374×200 px trên máy tính — nên dùng ảnh rộng ít nhất 748 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=ben-3'
+        description: Khung ảnh khoảng 374×200 px trên máy tính — nên dùng ảnh rộng ít nhất 748 px.
       - name: t8
         label: 'Chữ đậm: Bảo Bình tài lộc'
         type: string
@@ -3390,7 +3343,7 @@ content:
       - name: img_hr_story_1
         label: 'Ảnh: Chân dung người lao động gắn bó 20+ năm tại nơi làm việc'
         component: photo
-        description: 'Khung ảnh khoảng 448×560 px trên máy tính — nên dùng ảnh rộng ít nhất 896 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=hr-story'
+        description: Khung ảnh khoảng 448×560 px trên máy tính — nên dùng ảnh rộng ít nhất 896 px.
       - name: t1
         label: 'Nhãn in hoa: CÂU CHUYỆN GẮN BÓ'
         type: string
@@ -3530,7 +3483,7 @@ content:
       - name: img_press_1_1
         label: 'Ảnh: Logo báo'
         component: photo
-        description: 'Khung ảnh khoảng 140×36 px trên máy tính — nên dùng ảnh rộng ít nhất 280 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=press-1'
+        description: Khung ảnh khoảng 140×36 px trên máy tính — nên dùng ảnh rộng ít nhất 280 px.
       - name: t3
         label: 'Chữ đậm: [Tiêu đề bài báo]'
         type: string
@@ -3544,7 +3497,7 @@ content:
       - name: img_press_2_1
         label: 'Ảnh: Logo báo'
         component: photo
-        description: 'Khung ảnh khoảng 140×36 px trên máy tính — nên dùng ảnh rộng ít nhất 280 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=press-2'
+        description: Khung ảnh khoảng 140×36 px trên máy tính — nên dùng ảnh rộng ít nhất 280 px.
       - name: t5
         label: 'Chữ đậm: [Tiêu đề bài báo]'
         type: string
@@ -3558,7 +3511,7 @@ content:
       - name: img_press_3_1
         label: 'Ảnh: Logo báo'
         component: photo
-        description: 'Khung ảnh khoảng 140×36 px trên máy tính — nên dùng ảnh rộng ít nhất 280 px. Căn ảnh cho vừa khung trước khi tải lên: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=press-3'
+        description: Khung ảnh khoảng 140×36 px trên máy tính — nên dùng ảnh rộng ít nhất 280 px.
       - name: t7
         label: 'Chữ đậm: [Tiêu đề bài báo]'
         type: string
@@ -3696,8 +3649,7 @@ content:
       - name: img_dealer_map_1
         label: 'Ảnh: Bản đồ đại lý (Google Maps nhúng)'
         component: photo
-        description: 'Khung ảnh khoảng 572×584 px trên máy tính — nên dùng ảnh rộng ít nhất 1144 px. Căn ảnh cho vừa khung trước khi tải lên:
-          https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/?o=dealer-map'
+        description: Khung ảnh khoảng 572×584 px trên máy tính — nên dùng ảnh rộng ít nhất 1144 px.
       - name: t5
         label: 'Chữ đậm: Trở thành đại lý Tiến Nông'
         type: string

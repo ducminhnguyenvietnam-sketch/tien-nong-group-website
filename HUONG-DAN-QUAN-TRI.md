@@ -22,28 +22,38 @@ Người được mời đăng nhập bằng email, không cần tài khoản Gi
 | **Thông tin chung** | Tên công ty, địa chỉ, điện thoại, mã số DN, mạng xã hội, tên các mục menu, chân trang. |
 | **Media** | Toàn bộ ảnh và tệp PDF đã tải lên. |
 
-## 3. Thay ảnh
+## 3. Thay ảnh — sửa ngay trên website
 
-Cách nhanh nhất là **căn ảnh trước, tải lên một lần**:
+Ảnh được thay và căn chỉnh **ngay trên trang web thật**, thấy kết quả tức thì:
 
-1. Mở công cụ **Căn ảnh vừa khung**:
-   https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/cong-cu/can-anh/
-   (dưới mỗi ô ảnh trong trang quản trị đều có sẵn đường dẫn mở đúng vị trí ảnh đó).
-2. Chọn vị trí ảnh, chọn ảnh từ máy hoặc điện thoại.
-3. Kéo ảnh để chọn phần hiển thị, kéo thanh **Phóng to** nếu cần. Phần bên dưới cho xem trước ảnh
-   trên điện thoại và ở các vị trí khác (ví dụ ảnh bài viết còn hiện ở thẻ tin, ô tin nổi bật).
-4. Bấm **Tải ảnh đã căn** — ảnh được cắt đúng khung và nén nhẹ sẵn.
-5. Trong trang quản trị, ở ô **Ảnh**, tải tệp vừa lưu lên, giữ *Ở giữa* và *Không phóng (100%)*,
-   rồi bấm **Save**.
+1. Mở website kèm chữ `?sua-anh` ở cuối địa chỉ:
+   **https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/?sua-anh**
+   Góc dưới màn hình hiện thanh **Chế độ sửa ảnh**; mọi ảnh có viền đứt và nút **✎ Thay / căn ảnh**
+   (ô chưa có ảnh: **＋ Thêm ảnh**). Chế độ này vẫn bật khi chuyển sang trang khác.
+2. Bấm vào ảnh cần sửa:
+   - **Chọn ảnh khác…** để lấy ảnh từ máy/điện thoại;
+   - **kéo ảnh ngay trong khung** để chọn phần hiển thị, kéo thanh **Phóng to** nếu cần;
+   - **Về giữa** để căn lại từ đầu.
+3. Bấm **Lưu**. Lần đầu sẽ được hỏi **mã GitHub** (xem bên dưới). Sau khoảng 2 phút bảng báo
+   *Website đã cập nhật ✓*.
+4. Bấm **Thoát** trên thanh dưới cùng để tắt chế độ sửa.
 
-Ảnh trên website sẽ hiện đúng như trong công cụ, không cần sửa đi sửa lại.
+Ảnh tải lên được tự thu nhỏ (tối đa 2400 px) và nén, nên không cần xử lý trước. Có thể căn lại
+ảnh bất cứ lúc nào mà không phải tải lại.
 
-Các ô khác của mỗi ảnh:
+### Mã GitHub (làm một lần trên mỗi máy/điện thoại)
 
-- **Giữ phần nào của ảnh khi khung cắt bớt** / **Phóng to** — chỉ cần dùng nếu tải ảnh chưa căn.
-- **Mô tả ảnh** — một câu mô tả nội dung ảnh (tốt cho Google).
+1. Mở https://github.com/settings/personal-access-tokens/new (đăng nhập GitHub nếu được hỏi).
+2. **Token name**: `Sửa ảnh website`. **Expiration**: chọn thời hạn, ví dụ 1 năm.
+3. **Repository access** → **Only select repositories** → chọn `tien-nong-group-website`.
+4. **Permissions → Repository permissions**: **Contents** = *Read and write*; **Actions** = *Read-only*.
+5. Bấm **Generate token**, sao chép mã (bắt đầu bằng `github_pat_`) và dán vào ô trên website.
 
-Để trống ô **Ảnh** thì website hiện khung chờ ảnh như bản thiết kế.
+Mã chỉ lưu trong trình duyệt của máy đó. Không gửi mã cho người khác; khi đổi máy hoặc mã hết hạn
+thì tạo mã mới. Muốn gỡ mã khỏi máy: bấm **Đã kết nối GitHub ✓ → Ngắt kết nối**.
+
+Vẫn có thể tải ảnh trong trang quản trị (ô **Ảnh** trong từng mục), nhưng khi đó không căn chỉnh
+trực quan được.
 
 ## 4. Sửa chữ
 

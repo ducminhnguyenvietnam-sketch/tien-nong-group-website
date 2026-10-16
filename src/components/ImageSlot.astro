@@ -27,8 +27,10 @@ interface Props {
   fit?: 'cover' | 'contain';
   style?: string;
   alt?: string;
+  /** Where this photo is stored, "<file>#<dot.path>", so the on-site photo editor can save it. */
+  cms?: string;
 }
-const { id, image, placeholder = '', shape = 'rounded', radius = 12, fit = 'cover', style = '', alt } = Astro.props;
+const { id, image, placeholder = '', shape = 'rounded', radius = 12, fit = 'cover', style = '', alt, cms } = Astro.props;
 
 const EXTS = ['webp', 'avif', 'jpg', 'jpeg', 'png'];
 const imagesDir = path.join(process.cwd(), 'public', 'images');
@@ -42,16 +44,16 @@ const imgStyle = `position:absolute;inset:0;width:100%;height:100%;object-fit:${
 const r = shape === 'rect' ? '0' : shape === 'circle' ? '50%' : shape === 'pill' ? '999px' : `${radius}px`;
 const host = `display:block;position:relative;font:13px/1.3 system-ui,-apple-system,sans-serif;width:100%;height:100%;aspect-ratio:3/2;${style}`;
 ---
-<div class="img-slot" data-slot={id} data-fit={fit} data-radius={r} data-ph={placeholder} style={host}>
-  <div style={`position:absolute;inset:0;overflow:hidden;border-radius:${r};background:rgba(127,127,127,.08)`}>
+<div class="img-slot" data-slot={id} data-fit={fit} data-radius={r} data-ph={placeholder} data-cms={cms} data-focus={focus} data-zoom={String(zoom * 100)} data-alt={image?.alt || ''} style={host}>
+  <div class="img-slot__frame" style={`position:absolute;inset:0;overflow:hidden;border-radius:${r};background:rgba(127,127,127,.08)`}>
     {src
-      ? <img src={src} alt={image?.alt || alt || placeholder} loading="lazy" decoding="async" style={imgStyle} />
+      ? <img class="img-slot__img" src={src} alt={image?.alt || alt || placeholder} loading="lazy" decoding="async" style={imgStyle} />
       : <>
-          <div role="img" aria-label={placeholder} style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:12px;box-sizing:border-box">
+          <div class="img-slot__empty" role="img" aria-label={placeholder} style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:12px;box-sizing:border-box">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="opacity:.45" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="m21 15-5-5L5 21" /></svg>
             <div style="max-width:90%;font-weight:500;letter-spacing:.01em;opacity:.75">{placeholder}</div>
           </div>
-          <div style={`position:absolute;inset:0;pointer-events:none;border:1.5px dashed currentColor;opacity:.35;border-radius:${r}`}></div>
+          <div class="img-slot__empty" style={`position:absolute;inset:0;pointer-events:none;border:1.5px dashed currentColor;opacity:.35;border-radius:${r}`}></div>
         </>}
   </div>
 </div>
