@@ -48,5 +48,11 @@ const fullTitle = title ? `${title} · Tiến Nông Group` : 'Tiến Nông Group
 <script src="../scripts/chipfilter.ts"></script>
 <script src="../scripts/accordion.ts"></script>
 <script src="../scripts/forms.ts"></script>
+<script>
+  // On-site photo editor: ?sua-anh turns it on; it stays on (per browser) until "Thoát".
+  let on = new URLSearchParams(location.search).has('sua-anh');
+  try { on ||= localStorage.getItem('tn-edit-photos') === '1'; } catch { /* storage blocked */ }
+  if (on) import('../scripts/photo-editor');
+</script>
 </body>
 </html>

@@ -38,7 +38,7 @@ const c = withDefaults(raw, 'src/content/pages/lien-he.json');
 </div>
 <span style="font-size:13px;color:var(--text-tertiary)">{c.s02_tim_dai_ly.t4}</span>
 </div>
-<div style="position:relative;min-height:420px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="dealer-map" shape="rounded" radius="16" placeholder="Bản đồ đại lý (Google Maps nhúng)" image={c.s02_tim_dai_ly.img_dealer_map_1} /></div>
+<div style="position:relative;min-height:420px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="dealer-map" shape="rounded" radius="16" placeholder="Bản đồ đại lý (Google Maps nhúng)" image={c.s02_tim_dai_ly.img_dealer_map_1} cms="src/content/pages/lien-he.json#s02_tim_dai_ly.img_dealer_map_1" /></div>
 </div>
 <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:22px 24px;background:var(--green-800);color:#fff;border-radius:var(--radius-lg)"><div><strong style="font-size:19px;display:block">{c.s02_tim_dai_ly.t5}</strong><span style="color:var(--green-100);text-align:justify">{c.s02_tim_dai_ly.t6}</span></div><a href="#lien-he-form" style="background:#fff;color:var(--green-700);font-weight:700;padding:12px 20px;border-radius:var(--radius-md)">{c.s02_tim_dai_ly.t7}</a></div>
 </div></section>

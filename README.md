@@ -46,11 +46,12 @@ templates rely on. A photo is
 design's labelled placeholder. If you change a page's structure, update both its JSON
 file and the matching entry in `.pages.yml`.
 
-**Photo framing tool** — `/cong-cu/can-anh/` (not linked, `noindex`): pick a slot, drag/zoom a
-photo inside the slot's exact frame with phone and other previews, download a cropped JPEG at 2×
-the slot size, then upload it in the CMS. Slot frames live in `src/data/photo-slots.json`
-(measured from the built site at 1440px and 390px); update them if a layout changes size.
-Each photo field in `.pages.yml` links to the tool with `?o=<slot>`.
+**On-site photo editor** — open any page with `?sua-anh` (stays on per browser until "Thoát"):
+each `ImageSlot` (tagged with `cms="<file>#<path>"`) gets an edit button; editors upload,
+drag and zoom inside the real frame and save. `src/scripts/photo-editor.ts` resizes the
+upload (≤ 2400 px, JPEG) and makes one commit via the GitHub API with the file in
+`public/uploads/` and `{ src, focus: "X% Y%", zoom }` in the content file, using a fine-grained
+token (Contents: write, Actions: read) stored in the browser. It is only loaded in edit mode.
 
 ## Not wired up yet
 

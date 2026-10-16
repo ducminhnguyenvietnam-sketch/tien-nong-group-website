@@ -25,7 +25,8 @@ export function url(slug: PageSlug, hash?: string): string {
 
 /** URL for a file in public/, prefixed with the deploy base path. */
 export function asset(path: string): string {
-  return `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
+  // encodeURI: uploaded file names may contain spaces (e.g. "truong fpt.jpg").
+  return encodeURI(`${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`);
 }
 
 /**
