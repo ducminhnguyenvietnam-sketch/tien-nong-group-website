@@ -189,9 +189,10 @@
         "Phân bón hữu cơ vi sinh"
       ],
       "image": {
-        "focus": "center",
+        "focus": "50% 48.2%",
         "zoom": "100",
-        "alt": "Nuôi cấy vi sinh trong phòng thí nghiệm"
+        "alt": "Nuôi cấy vi sinh trong phòng thí nghiệm",
+        "src": "/uploads/dom-1-mvc6n073.jpg"
       }
     },
     {
