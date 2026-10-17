@@ -355,9 +355,10 @@
         "Cây công nghiệp"
       ],
       "image": {
-        "focus": "center",
+        "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh bao bì (nền trung tính)"
+        "alt": "Ảnh bao bì (nền trung tính)",
+        "src": "/uploads/prod-9-mvc2hx4o.png"
       }
     },
     {
