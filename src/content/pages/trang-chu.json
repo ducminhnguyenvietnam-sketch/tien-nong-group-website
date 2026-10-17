@@ -1,9 +1,10 @@
 {
   "s01_hero_a": {
     "img_hero_a_1": {
-      "focus": "center",
+      "focus": "50% 0%",
       "zoom": "100",
-      "alt": "Video / ảnh flycam: nhà máy Tiến Nông giữa cánh đồng lúa"
+      "alt": "Video / ảnh flycam: nhà máy Tiến Nông giữa cánh đồng lúa",
+      "src": "/uploads/hero-a-mvbtzbui.jpg"
     },
     "t1": "TIẾN NÔNG GROUP · TỪ 1995",
     "t2": "Hơn 30 năm khoa học phụng sự nhà nông",
