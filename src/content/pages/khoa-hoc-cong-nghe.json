@@ -175,9 +175,10 @@
         "Phân bón tan chậm, phân bón lỏng"
       ],
       "image": {
-        "focus": "center",
-        "zoom": "100",
-        "alt": "Dây chuyền thử nghiệm công thức phân bón"
+        "focus": "0% 100%",
+        "zoom": "104",
+        "alt": "Dây chuyền thử nghiệm công thức phân bón",
+        "src": "/uploads/dom-0-mvc71cte.jpg"
       }
     },
     {
