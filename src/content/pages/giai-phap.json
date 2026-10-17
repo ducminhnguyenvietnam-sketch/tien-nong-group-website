@@ -4,9 +4,10 @@
   },
   "s01_hero": {
     "img_sol_hero_1": {
-      "focus": "center",
+      "focus": "50% 23.5%",
       "zoom": "100",
-      "alt": "Cận cảnh bông lúa chín trên cánh đồng"
+      "alt": "Cận cảnh bông lúa chín trên cánh đồng",
+      "src": "/uploads/sol-hero-mvc2rzfz.jpg"
     },
     "t1": "Trang chủ / Giải pháp / Theo cây trồng",
     "t2": "GIẢI PHÁP DINH DƯỠNG",
