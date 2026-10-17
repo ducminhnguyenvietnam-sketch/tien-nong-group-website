@@ -76,9 +76,10 @@
   },
   "s04_suc_khoe_dat": {
     "img_soil_1": {
-      "focus": "center",
+      "focus": "50% 55%",
       "zoom": "100",
-      "alt": "Bàn tay cầm nắm đất có cây con"
+      "alt": "Bàn tay cầm nắm đất có cây con",
+      "src": "/uploads/soil-mvc3b47j.jpg"
     },
     "t1": "03 · SỨC KHỎE ĐẤT",
     "t2": "Đất là nền tảng của sản xuất nông nghiệp",
