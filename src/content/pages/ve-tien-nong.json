@@ -10,7 +10,7 @@
     "t5": "Thành lập ngày 04/01/1995 tại Thanh Hóa, CTCP Công Nông nghiệp Tiến Nông nghiên cứu, sản xuất và phân phối các giải pháp dinh dưỡng cây trồng cho nhà nông trên khắp cả nước và hơn 10 thị trường quốc tế.",
     "img_about_hero_1": {
       "src": "/uploads/Copy of THW09151.jpg",
-      "focus": "50% 82.1%",
+      "focus": "center",
       "zoom": "100",
       "alt": "Ảnh tập thể cán bộ, nhân viên trước trụ sở Tiến Nông"
     },
@@ -37,8 +37,8 @@
   "s02_thu_ngo": {
     "img_ceo_portrait_1": {
       "src": "/uploads/Anh chan dung a Phong T8.2018 - Copy.jpg",
-      "focus": "41.3% 74%",
-      "zoom": "122",
+      "focus": "center",
+      "zoom": "125",
       "alt": "Chân dung Tổng Giám đốc Nguyễn Hồng Phong"
     },
     "t1": "THƯ NGỎ CỦA TỔNG GIÁM ĐỐC",
@@ -125,7 +125,7 @@
     "t5": "Huân chương Lao động hạng Ba",
     "t6": "Chủ tịch nước trao tặng",
     "img_award_bk_1": {
-      "focus": "50% 50%",
+      "focus": "center",
       "zoom": "100",
       "alt": "Ảnh Bằng khen",
       "src": "/uploads/award-bk-mvbxvhuk.jpg"
@@ -191,14 +191,14 @@
     "t1": "HỆ SINH THÁI TIẾN NÔNG",
     "t2": "Công ty thành viên & liên kết",
     "img_eco_1_1": {
-      "focus": "50% 50%",
+      "focus": "center",
       "zoom": "100",
       "alt": "Logo",
       "src": "/uploads/eco-1-mvbxx1du.jpg"
     },
     "t3": "Tiến Nông Garden",
     "img_eco_2_1": {
-      "focus": "50% 50%",
+      "focus": "center",
       "zoom": "100",
       "alt": "Logo",
       "src": "/uploads/eco-2-mvbxybod.jpg"
@@ -209,19 +209,19 @@
       "zoom": "100",
       "alt": "Logo"
     },
-    "t5": "Sao Khuê",
+    "t5": "Nông nghiệp Hiện đại Tiến Nông",
     "img_eco_4_1": {
       "focus": "center",
       "zoom": "100",
       "alt": "Logo"
     },
-    "t6": "Tiến Lực",
+    "t6": "Đầu tư và Phát triển Nông nghiệp Tiến Nông",
     "img_eco_5_1": {
       "focus": "center",
       "zoom": "100",
       "alt": "Logo"
     },
-    "t7": "Phú Hưng"
+    "t7": "Tiến Nông Gia Lai"
   },
   "s09_phan_9": {
     "t1": "Cùng Tiến Nông kiến tạo những mùa vụ thịnh vượng",
@@ -234,10 +234,10 @@
       "title": "Thành lập tại Thanh Hóa",
       "body": "Ngày 04/01/1995, Tiến Nông ra đời với khát vọng mang đến cho nhà nông những sản phẩm dinh dưỡng cây trồng chất lượng, giá trị thực.",
       "image": {
-        "focus": "50% 50%",
+        "src": "/uploads/ms-0-mvbxqp21.jpg",
+        "focus": "center",
         "zoom": "100",
-        "alt": "Ảnh tư liệu: biển hiệu xí nghiệp năm 1995",
-        "src": "/uploads/ms-0-mvbxqp21.jpg"
+        "alt": "Ảnh tư liệu: biển hiệu xí nghiệp năm 1995"
       }
     },
     {
@@ -275,10 +275,10 @@
       "title": "Bằng khen của Thủ tướng Chính phủ",
       "body": "Ghi nhận những đóng góp của Tiến Nông cho sự phát triển của nông nghiệp và cộng đồng.",
       "image": {
-        "focus": "50% 50%",
+        "src": "/uploads/ms-4-mvbxtgy6.jpg",
+        "focus": "center",
         "zoom": "100",
-        "alt": "Ảnh Bằng khen Thủ tướng",
-        "src": "/uploads/ms-4-mvbxtgy6.jpg"
+        "alt": "Ảnh Bằng khen Thủ tướng"
       }
     },
     {
