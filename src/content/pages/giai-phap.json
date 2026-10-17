@@ -45,9 +45,10 @@
     "t8": "Cây ăn quả",
     "t9": "Cam · Bưởi · Sầu riêng · Thanh long",
     "img_cg_4_1": {
-      "focus": "center",
+      "focus": "46.1% 50%",
       "zoom": "100",
-      "alt": "Cà phê, chè"
+      "alt": "Cà phê, chè",
+      "src": "/uploads/cg-4-mvc37fak.jpg"
     },
     "t10": "Cây công nghiệp",
     "t11": "Cà phê · Chè · Hồ tiêu · Mía",
