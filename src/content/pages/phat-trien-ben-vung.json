@@ -30,9 +30,10 @@
   },
   "s02_san_xuat_xanh": {
     "img_esg_plant_1": {
-      "focus": "center",
+      "focus": "50% 3.9%",
       "zoom": "100",
-      "alt": "Flycam khuôn viên nhà máy với cây xanh"
+      "alt": "Flycam khuôn viên nhà máy với cây xanh",
+      "src": "/uploads/esg-plant-mvby1c2t.jpg"
     },
     "t1": "01 · SẢN XUẤT XANH",
     "t2": "Sản xuất quy mô lớn, hài hòa cùng môi trường",
