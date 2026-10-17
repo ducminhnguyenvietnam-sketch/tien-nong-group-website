@@ -61,9 +61,10 @@
     "t12": "Hoa, cây cảnh & cảnh quan",
     "t13": "Hoa · Cây cảnh · Thảm cỏ",
     "img_cg_6_1": {
-      "focus": "center",
+      "focus": "61.4% 50%",
       "zoom": "100",
-      "alt": "Cây dược liệu"
+      "alt": "Cây dược liệu",
+      "src": "/uploads/cg-6-mvc38s0a.jpg"
     },
     "t14": "Cây dược liệu",
     "t15": "Sâm · Đinh lăng · Nghệ"
