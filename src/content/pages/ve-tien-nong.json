@@ -125,9 +125,10 @@
     "t5": "Huân chương Lao động hạng Ba",
     "t6": "Chủ tịch nước trao tặng",
     "img_award_bk_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Ảnh Bằng khen"
+      "alt": "Ảnh Bằng khen",
+      "src": "/uploads/award-bk-mvbxvhuk.jpg"
     },
     "t7": "NHÀ NƯỚC · 2022",
     "t8": "Bằng khen của Thủ tướng Chính phủ",
