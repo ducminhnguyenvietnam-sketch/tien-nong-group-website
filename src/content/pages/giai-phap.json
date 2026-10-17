@@ -52,9 +52,10 @@
     "t10": "Cây công nghiệp",
     "t11": "Cà phê · Chè · Hồ tiêu · Mía",
     "img_cg_5_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Hoa, cây cảnh"
+      "alt": "Hoa, cây cảnh",
+      "src": "/uploads/cg-5-mvc34pwq.jpg"
     },
     "t12": "Hoa, cây cảnh & cảnh quan",
     "t13": "Hoa · Cây cảnh · Thảm cỏ",
