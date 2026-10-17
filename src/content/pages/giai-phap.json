@@ -114,9 +114,10 @@
     "t2": "Giải pháp được kiểm chứng trên đồng ruộng",
     "t3": "Tất cả mô hình →",
     "img_model_1_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Mô hình lúa"
+      "alt": "Mô hình lúa",
+      "src": "/uploads/model-1-mvc3cafj.jpg"
     },
     "t4": "LÚA · THANH HÓA",
     "t5": "[Tên mô hình]",
