@@ -126,9 +126,10 @@
     "t8": "[x] ha",
     "t9": "diện tích",
     "img_model_2_1": {
-      "focus": "center",
+      "focus": "50% 36.4%",
       "zoom": "100",
-      "alt": "Mô hình cà phê"
+      "alt": "Mô hình cà phê",
+      "src": "/uploads/model-2-mvc3eivz.jpg"
     },
     "t10": "CÀ PHÊ · GIA LAI",
     "t11": "[Tên mô hình]",
