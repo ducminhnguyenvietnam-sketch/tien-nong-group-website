@@ -233,9 +233,10 @@
         "[Hạng mục 3]"
       ],
       "image": {
-        "focus": "center",
-        "zoom": "100",
-        "alt": "Kỹ sư sử dụng thiết bị đo tại đồng ruộng"
+        "focus": "0% 70.6%",
+        "zoom": "106",
+        "alt": "Kỹ sư sử dụng thiết bị đo tại đồng ruộng",
+        "src": "/uploads/dom-4-mvc6sieu.jpg"
       }
     }
   ]
