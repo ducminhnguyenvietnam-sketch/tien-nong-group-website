@@ -231,9 +231,10 @@
       "title": "Thành lập tại Thanh Hóa",
       "body": "Ngày 04/01/1995, Tiến Nông ra đời với khát vọng mang đến cho nhà nông những sản phẩm dinh dưỡng cây trồng chất lượng, giá trị thực.",
       "image": {
-        "focus": "center",
+        "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh tư liệu: biển hiệu xí nghiệp năm 1995"
+        "alt": "Ảnh tư liệu: biển hiệu xí nghiệp năm 1995",
+        "src": "/uploads/ms-0-mvbxqp21.jpg"
       }
     },
     {
