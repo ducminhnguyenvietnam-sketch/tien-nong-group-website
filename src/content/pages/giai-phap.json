@@ -29,9 +29,10 @@
     "t4": "Cây lương thực",
     "t5": "Lúa · Ngô · Khoai · Sắn",
     "img_cg_2_1": {
-      "focus": "center",
+      "focus": "84.5% 50%",
       "zoom": "100",
-      "alt": "Rau màu"
+      "alt": "Rau màu",
+      "src": "/uploads/cg-2-mvc30sn5.jpg"
     },
     "t6": "Rau màu & cây thực phẩm",
     "t7": "Rau ăn lá · Rau ăn quả · Củ",
