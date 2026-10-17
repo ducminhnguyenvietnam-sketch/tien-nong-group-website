@@ -198,9 +198,10 @@
     },
     "t3": "Tiến Nông Garden",
     "img_eco_2_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Logo"
+      "alt": "Logo",
+      "src": "/uploads/eco-2-mvbxybod.jpg"
     },
     "t4": "Hacheco",
     "img_eco_3_1": {
