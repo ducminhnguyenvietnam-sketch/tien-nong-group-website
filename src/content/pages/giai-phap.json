@@ -138,9 +138,10 @@
     "t14": "[x] ha",
     "t15": "diện tích",
     "img_model_3_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Mô hình cây ăn quả"
+      "alt": "Mô hình cây ăn quả",
+      "src": "/uploads/model-3-mvc3gfdy.jpg"
     },
     "t16": "CÂY ĂN QUẢ · [TỈNH]",
     "t17": "[Tên mô hình]",
