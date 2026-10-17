@@ -191,9 +191,10 @@
     "t1": "HỆ SINH THÁI TIẾN NÔNG",
     "t2": "Công ty thành viên & liên kết",
     "img_eco_1_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Logo"
+      "alt": "Logo",
+      "src": "/uploads/eco-1-mvbxx1du.jpg"
     },
     "t3": "Tiến Nông Garden",
     "img_eco_2_1": {
