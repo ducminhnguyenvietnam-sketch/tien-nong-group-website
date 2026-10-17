@@ -436,9 +436,10 @@
         "Cà phê"
       ],
       "image": {
-        "focus": "center",
+        "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh bao bì (nền trung tính)"
+        "alt": "Ảnh bao bì (nền trung tính)",
+        "src": "/uploads/prod-12-mvc2op8x.png"
       }
     }
   ]
