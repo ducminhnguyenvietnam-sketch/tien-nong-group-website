@@ -272,9 +272,10 @@
       "title": "Bằng khen của Thủ tướng Chính phủ",
       "body": "Ghi nhận những đóng góp của Tiến Nông cho sự phát triển của nông nghiệp và cộng đồng.",
       "image": {
-        "focus": "center",
+        "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh Bằng khen Thủ tướng"
+        "alt": "Ảnh Bằng khen Thủ tướng",
+        "src": "/uploads/ms-4-mvbxtgy6.jpg"
       }
     },
     {
