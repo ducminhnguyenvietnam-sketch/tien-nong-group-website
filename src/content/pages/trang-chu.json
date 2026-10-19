@@ -153,9 +153,10 @@
     },
     "t13": "Cà phê",
     "img_crop_anqua_1": {
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Cây ăn quả"
+      "focus": "59.7% 100%",
+      "zoom": "113",
+      "alt": "Cây ăn quả",
+      "src": "/uploads/crop-anqua-mves53t0.jpg"
     },
     "t14": "Cây ăn quả",
     "img_crop_rau_1": {
