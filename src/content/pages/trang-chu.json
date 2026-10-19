@@ -224,9 +224,10 @@
     "t3": "phát triển thịnh vượng",
     "t4": "Xác định “Sẻ chia lợi ích” là giá trị cốt lõi, Tiến Nông đồng hành cùng nhà nông và các địa phương, từ những lớp tập huấn kỹ thuật đến công tác khuyến học và các chương trình hướng về biển đảo.",
     "img_csr_1_1": {
-      "focus": "center",
+      "focus": "0% 50%",
       "zoom": "100",
-      "alt": "Lớp tập huấn kỹ thuật cho nông dân"
+      "alt": "Lớp tập huấn kỹ thuật cho nông dân",
+      "src": "/uploads/csr-1-mvel4ymm.jpg"
     },
     "t5": "NÂNG CAO NHẬN THỨC",
     "t6": "Tập huấn bón phân cân đối, bảo vệ sức khỏe đất cho nhà nông",
