@@ -269,9 +269,10 @@
       "title": "Doanh nghiệp Khoa học & Công nghệ đầu tiên của ngành",
       "body": "[Bổ sung: năm được công nhận, số giấy chứng nhận và ý nghĩa của danh hiệu.]",
       "image": {
-        "focus": "center",
+        "focus": "50% 41.2%",
         "zoom": "100",
-        "alt": "Ảnh giấy chứng nhận DN KH&CN"
+        "alt": "Ảnh giấy chứng nhận DN KH&CN",
+        "src": "/uploads/ms-3-mvexi8li.jpg"
       }
     },
     {
