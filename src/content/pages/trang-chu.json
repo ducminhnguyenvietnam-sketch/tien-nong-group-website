@@ -146,9 +146,10 @@
     },
     "t12": "Ngô",
     "img_crop_caphe_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Cà phê"
+      "alt": "Cà phê",
+      "src": "/uploads/crop-caphe-mveryddr.jpg"
     },
     "t13": "Cà phê",
     "img_crop_anqua_1": {
