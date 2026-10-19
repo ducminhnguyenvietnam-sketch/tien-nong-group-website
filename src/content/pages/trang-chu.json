@@ -139,9 +139,10 @@
     },
     "t11": "Lúa",
     "img_crop_ngo_1": {
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Ngô"
+      "focus": "19.3% 100%",
+      "zoom": "205",
+      "alt": "Ngô",
+      "src": "/uploads/crop-ngo-mverx8nj.jpg"
     },
     "t12": "Ngô",
     "img_crop_caphe_1": {
