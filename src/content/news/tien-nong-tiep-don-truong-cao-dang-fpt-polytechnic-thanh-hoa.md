@@ -1,20 +1,16 @@
 ---
-title: Tiến Nông tiếp đón Trường Cao đẳng FPT Polytechnic Thanh Hóa tham quan
-  trải nghiệm thực tế
+title: Tiến Nông tiếp đón Trường Cao đẳng FPT Polytechnic Thanh Hóa tham quan trải nghiệm thực tế
 category: tn
 date: 2026-10-16
 author: Phòng Truyền thông
 featured: true
-summary: Ngày [dd/mm/2026], Công ty Cổ phần Công Nông nghiệp Tiến Nông đón đoàn
-  giảng viên và sinh viên Trường Cao đẳng FPT Polytechnic Thanh Hóa đến tham
-  quan, tìm hiểu thực tế hoạt động sản xuất và nghiên cứu tại doanh nghiệp.
+summary: Ngày [dd/mm/2026], Công ty Cổ phần Công Nông nghiệp Tiến Nông đón đoàn giảng viên và sinh viên Trường Cao đẳng FPT Polytechnic Thanh Hóa đến tham quan, tìm hiểu thực tế hoạt động sản xuất và nghiên cứu tại doanh nghiệp.
 cover:
-  src: /uploads/truong fpt.jpg
-  focus: center
+  src: /uploads/news-tien-nong-tiep-don-truong-cao-dang--mvekhwej.jpg
+  focus: 43.5% 50%
   zoom: "100"
   alt: Ảnh đại diện bài viết (ảnh đẹp nhất)
-cover_caption: Sinh viên Trường Cao đẳng FPT Polytechnic Thanh Hóa chụp ảnh lưu
-  niệm tại Tiến Nông.
+cover_caption: Sinh viên Trường Cao đẳng FPT Polytechnic Thanh Hóa chụp ảnh lưu niệm tại Tiến Nông.
 album:
   - focus: center
     zoom: "100"
