@@ -167,9 +167,10 @@
     },
     "t15": "Rau màu",
     "img_crop_congnghiep_1": {
-      "focus": "center",
+      "focus": "0% 50%",
       "zoom": "100",
-      "alt": "Cây công nghiệp"
+      "alt": "Cây công nghiệp",
+      "src": "/uploads/crop-congnghiep-mves8q0r.jpg"
     },
     "t16": "Cây công nghiệp",
     "t17": "Xem tất cả sản phẩm →"
