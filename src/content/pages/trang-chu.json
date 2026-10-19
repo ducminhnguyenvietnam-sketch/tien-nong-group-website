@@ -132,9 +132,10 @@
     "t9": "Phân bón hàm lượng cao",
     "t10": "Hàm lượng cao cho thâm canh và nông nghiệp công nghệ cao",
     "img_crop_lua_1": {
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Lúa"
+      "focus": "17.7% 0%",
+      "zoom": "204",
+      "alt": "Lúa",
+      "src": "/uploads/crop-lua-mverqrms.jpg"
     },
     "t11": "Lúa",
     "img_crop_ngo_1": {
