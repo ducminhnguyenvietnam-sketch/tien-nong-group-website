@@ -247,9 +247,10 @@
       "title": "Giải thưởng Chất lượng Việt Nam",
       "body": "Hệ thống quản lý chất lượng và sản phẩm của Tiến Nông được ghi nhận ở cấp quốc gia.",
       "image": {
-        "focus": "center",
+        "focus": "50% 6.1%",
         "zoom": "100",
-        "alt": "Ảnh lễ nhận giải 2002"
+        "alt": "Ảnh lễ nhận giải 2002",
+        "src": "/uploads/ms-1-mvexfj7x.jpg"
       }
     },
     {
