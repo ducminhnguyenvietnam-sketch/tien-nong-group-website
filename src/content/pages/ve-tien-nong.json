@@ -117,9 +117,10 @@
     "t2": "Những ghi nhận xứng đáng cho hơn ba thập kỷ cống hiến",
     "t3": "Những danh hiệu dưới đây là sự ghi nhận cho hơn ba thập kỷ kiên trì với chất lượng, khoa học và trách nhiệm với nhà nông.",
     "img_award_hc_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Ảnh Huân chương"
+      "alt": "Ảnh Huân chương",
+      "src": "/uploads/award-hc-mverpbix.png"
     },
     "t4": "NHÀ NƯỚC · [NĂM]",
     "t5": "Huân chương Lao động hạng Ba",
