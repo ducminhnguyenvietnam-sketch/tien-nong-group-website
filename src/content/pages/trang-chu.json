@@ -160,9 +160,10 @@
     },
     "t14": "Cây ăn quả",
     "img_crop_rau_1": {
-      "focus": "center",
+      "focus": "74.5% 50%",
       "zoom": "100",
-      "alt": "Rau màu"
+      "alt": "Rau màu",
+      "src": "/uploads/crop-rau-mves6oej.jpg"
     },
     "t15": "Rau màu",
     "img_crop_congnghiep_1": {
