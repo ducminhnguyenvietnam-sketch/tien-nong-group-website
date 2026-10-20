@@ -144,9 +144,10 @@
       "title": "Đón học sinh, sinh viên tham quan trải nghiệm thực tế",
       "body": "Mở cửa nhà máy và phòng thí nghiệm để thế hệ trẻ hiểu hơn về nông nghiệp khoa học.",
       "image": {
-        "focus": "center",
-        "zoom": "100",
-        "alt": "Sinh viên tham quan nhà máy"
+        "focus": "50% 51.3%",
+        "zoom": "103",
+        "alt": "Sinh viên tham quan nhà máy",
+        "src": "/uploads/prog-3-mvgd470k.jpg"
       }
     },
     {
