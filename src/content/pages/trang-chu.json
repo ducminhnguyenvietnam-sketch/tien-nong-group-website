@@ -112,9 +112,10 @@
     "t3": "Phân bón chuyên dụng",
     "t4": "Công thức chuyên biệt cho lúa, ngô, cà phê, cây ăn quả…",
     "img_line_2_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Bao bì dòng Đa dụng"
+      "alt": "Bao bì dòng Đa dụng",
+      "src": "/uploads/line-2-mvg6slxi.png"
     },
     "t5": "Phân bón đa dụng",
     "t6": "Tỷ lệ NPK cân đối, phù hợp với nhiều loại cây trồng",
