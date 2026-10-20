@@ -84,9 +84,10 @@
     "t7": "Chính sách hợp tác minh bạch, hỗ trợ bán hàng và hội thảo kỹ thuật, cùng hệ thống hơn 200 nhà phân phối.",
     "t8": "Trở thành đại lý →",
     "img_aud_project_1": {
-      "focus": "center",
+      "focus": "50% 0%",
       "zoom": "100",
-      "alt": "Sân golf / cảnh quan đô thị / nhà kính"
+      "alt": "Sân golf / cảnh quan đô thị / nhà kính",
+      "src": "/uploads/aud-project-mvger7ed.jpg"
     },
     "t9": "Khách hàng dự án",
     "t10": "Chương trình dinh dưỡng thiết kế riêng cho sân golf, cảnh quan, khu công nghiệp và nông nghiệp công nghệ cao.",
