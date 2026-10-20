@@ -104,9 +104,10 @@
     "t1": "03 · SẢN PHẨM",
     "t2": "Dinh dưỡng chuẩn xác cho từng loại cây, từng giai đoạn sinh trưởng",
     "img_line_1_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Bao bì dòng Chuyên dụng"
+      "alt": "Bao bì dòng Chuyên dụng",
+      "src": "/uploads/line-1-mvg6cmhw.png"
     },
     "t3": "Phân bón chuyên dụng",
     "t4": "Công thức chuyên biệt cho lúa, ngô, cà phê, cây ăn quả…",
