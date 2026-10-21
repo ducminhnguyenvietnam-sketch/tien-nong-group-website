@@ -28,8 +28,8 @@
     "t3": "đại lý tại",
     "t4": "Danh sách đại lý là dữ liệu mẫu. Bản chính thức sẽ kết nối với dữ liệu hệ thống phân phối.",
     "img_dealer_map_1": {
-      "src": "",
-      "focus": "center",
+      "src": "/uploads/dealer-map-mvhx31y5.jpg",
+      "focus": "0% 50%",
       "zoom": "100",
       "alt": "Bản đồ đại lý (Google Maps nhúng)"
     },
