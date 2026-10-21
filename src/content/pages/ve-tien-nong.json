@@ -295,6 +295,15 @@
         "zoom": "100",
         "alt": "Ảnh flycam nhà máy hiện nay"
       }
+    },
+    {
+      "year": "1996",
+      "title": "Thành lập xí nghiệp sản xuất phân bón Tiến Nông số 2",
+      "body": "Địa chỉ tại 274B Bà Triệu, phường Hàm Rồng, tỉnh Thanh Hóa. Nay là trụ sở của công ty",
+      "image": {
+        "focus": "center",
+        "zoom": "100"
+      }
     }
   ]
 }
