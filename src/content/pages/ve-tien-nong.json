@@ -360,8 +360,10 @@
       "title": "Chứng chỉ công nhận VALAS 262",
       "body": "Thể hiện năng lực nghiên cứu vi sinh chuyên sâu. Nhằm mang đến những giải pháp DDCT đột phá và hiệu quả cho nền nông nghiệp xanh, bền vững",
       "image": {
-        "focus": "center",
-        "zoom": "100"
+        "focus": "50% 50%",
+        "zoom": "100",
+        "src": "/uploads/ms-12-mvhxj3h5.jpg",
+        "alt": ""
       }
     }
   ]
