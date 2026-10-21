@@ -88,9 +88,10 @@
   },
   "s06_vilas_1519": {
     "img_vilas_1": {
-      "focus": "center",
+      "focus": "50.7% 50%",
       "zoom": "100",
-      "alt": "Thiết bị phân tích hiện đại trong phòng thí nghiệm"
+      "alt": "Thiết bị phân tích hiện đại trong phòng thí nghiệm",
+      "src": "/uploads/vilas-mvhvkkg5.jpg"
     },
     "t1": "04 · PHÒNG THÍ NGHIỆM VILAS 1519",
     "t2": "Kết quả phân tích đạt chuẩn quốc tế",
