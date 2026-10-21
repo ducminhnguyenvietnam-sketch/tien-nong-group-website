@@ -263,6 +263,15 @@
       }
     },
     {
+      "year": "2007",
+      "title": "Thành lập nhà máy DDCT Tiến Nông 3",
+      "body": "Nhà máy với dây chuyền sản xuất hiện đại. Năng lực sản xuất trên 100.000 tấn/ 1 năm",
+      "image": {
+        "focus": "center",
+        "zoom": "100"
+      }
+    },
+    {
       "year": "2011",
       "title": "Thương hiệu nổi tiếng ASEAN",
       "body": "Thương hiệu Tiến Nông được ghi nhận trong khu vực, mở đường cho các thị trường xuất khẩu.",
@@ -275,6 +284,15 @@
     },
     {
       "year": "2012",
+      "title": "Thành lập Trung tâm Nghiên cứu Phát triển KH&CN Tiến Nông",
+      "body": "Là hạt nhân đổi mới sáng tạo, nơi hội tụ đội ngũ chuyên gia, kĩ sư và hệ thống thiết bị nghiên cứu hiện đại",
+      "image": {
+        "focus": "center",
+        "zoom": "100"
+      }
+    },
+    {
+      "year": "2012",
       "title": "Doanh nghiệp Khoa học & Công nghệ đầu tiên của ngành",
       "body": "[Bổ sung: năm được công nhận, số giấy chứng nhận và ý nghĩa của danh hiệu.]",
       "image": {
@@ -282,6 +300,24 @@
         "focus": "50% 41.2%",
         "zoom": "100",
         "alt": "Ảnh giấy chứng nhận DN KH&CN"
+      }
+    },
+    {
+      "year": "2014",
+      "title": "Thành lập Nhà máy DDCT Tiến Nông Bỉm Sơn",
+      "body": "Với quy mô 22 ha, hệ thống nhà máy hiện đại, công nghệ tiên tiến sẵn sàng đáp ứng mọi nhu cầu về dinh dưỡng cây trồng trên cả nước và khu vực ASEAN",
+      "image": {
+        "focus": "center",
+        "zoom": "100"
+      }
+    },
+    {
+      "year": "2021",
+      "title": "Thành lập Nhà máy DDCT Tiến Nông Gia Lai",
+      "body": "Mở rộng hiện diện thương hiệu Tiến Nông tại khu vực Tây Nguyên",
+      "image": {
+        "focus": "center",
+        "zoom": "100"
       }
     },
     {
@@ -303,15 +339,6 @@
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh flycam nhà máy hiện nay"
-      }
-    },
-    {
-      "year": "2007",
-      "title": "Thành lập nhà máy DDCT Tiến Nông 3",
-      "body": "Nhà máy với dây chuyền sản xuất hiện đại. Năng lực sản xuất trên 100.000 tấn/ 1 năm",
-      "image": {
-        "focus": "center",
-        "zoom": "100"
       }
     }
   ]
