@@ -224,9 +224,10 @@
         "Truy xuất theo lô sản xuất"
       ],
       "image": {
-        "focus": "center",
+        "focus": "55.6% 50%",
         "zoom": "100",
-        "alt": "Thiết bị phân tích phòng VILAS"
+        "alt": "Thiết bị phân tích phòng VILAS",
+        "src": "/uploads/dom-3-mvhy22ck.jpg"
       }
     },
     {
