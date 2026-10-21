@@ -136,7 +136,7 @@
     "t9": "Thủ tướng Chính phủ trao tặng",
     "t10": "KHOA HỌC & CÔNG NGHỆ",
     "t11": "Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam",
-    "t12": "[Số GCN · năm cấp]",
+    "t12": "[228/DNKHCN · 2014]",
     "t13": "Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam",
     "t14": "[Năm]",
     "t15": "CHẤT LƯỢNG & THƯƠNG HIỆU",
@@ -267,10 +267,9 @@
       "title": "Thành lập nhà máy DDCT Tiến Nông 3",
       "body": "Nhà máy với dây chuyền sản xuất hiện đại. Năng lực sản xuất trên 100.000 tấn/ 1 năm",
       "image": {
-        "focus": "11.9% 100%",
-        "zoom": "100",
         "src": "/uploads/ms-3-mvhwhk4s.jpg",
-        "alt": ""
+        "focus": "11.9% 100%",
+        "zoom": "100"
       }
     },
     {
@@ -289,10 +288,9 @@
       "title": "Thành lập Trung tâm Nghiên cứu Phát triển KH&CN Tiến Nông",
       "body": "Là hạt nhân đổi mới sáng tạo, nơi hội tụ đội ngũ chuyên gia, kĩ sư và hệ thống thiết bị nghiên cứu hiện đại",
       "image": {
-        "focus": "50% 50%",
-        "zoom": "100",
         "src": "/uploads/ms-5-mvhwg8yo.jpg",
-        "alt": ""
+        "focus": "50% 50%",
+        "zoom": "100"
       }
     },
     {
@@ -311,10 +309,9 @@
       "title": "Thành lập Nhà máy DDCT Tiến Nông Bỉm Sơn",
       "body": "Với quy mô 22 ha, hệ thống nhà máy hiện đại, công nghệ tiên tiến sẵn sàng đáp ứng mọi nhu cầu về dinh dưỡng cây trồng trên cả nước và khu vực ASEAN",
       "image": {
-        "focus": "50% 50%",
-        "zoom": "100",
         "src": "/uploads/ms-7-mvhvpy7n.jpg",
-        "alt": ""
+        "focus": "50% 50%",
+        "zoom": "100"
       }
     },
     {
@@ -322,10 +319,9 @@
       "title": "Thành lập Nhà máy DDCT Tiến Nông Gia Lai",
       "body": "Mở rộng hiện diện thương hiệu Tiến Nông tại khu vực Tây Nguyên",
       "image": {
-        "focus": "50% 0%",
-        "zoom": "100",
         "src": "/uploads/ms-8-mvhwdgon.jpg",
-        "alt": ""
+        "focus": "50% 0%",
+        "zoom": "100"
       }
     },
     {
