@@ -349,9 +349,10 @@
       "title": "3 nhà máy, 650.000 tấn/năm, 10+ quốc gia",
       "body": "Tiến Nông phục vụ hơn 200.000 hộ nông dân, hướng tới mục tiêu 1 triệu hộ nông dân Việt Nam.",
       "image": {
-        "focus": "center",
+        "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh flycam nhà máy hiện nay"
+        "alt": "Ảnh flycam nhà máy hiện nay",
+        "src": "/uploads/ms-11-mvhx1uck.jpg"
       }
     },
     {
