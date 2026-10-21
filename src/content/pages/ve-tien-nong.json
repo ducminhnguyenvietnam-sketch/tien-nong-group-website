@@ -287,8 +287,10 @@
       "title": "Thành lập Trung tâm Nghiên cứu Phát triển KH&CN Tiến Nông",
       "body": "Là hạt nhân đổi mới sáng tạo, nơi hội tụ đội ngũ chuyên gia, kĩ sư và hệ thống thiết bị nghiên cứu hiện đại",
       "image": {
-        "focus": "center",
-        "zoom": "100"
+        "focus": "50% 50%",
+        "zoom": "100",
+        "src": "/uploads/ms-5-mvhwg8yo.jpg",
+        "alt": ""
       }
     },
     {
