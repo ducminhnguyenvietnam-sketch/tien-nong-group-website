@@ -66,8 +66,8 @@
     "t1": "02 · GIẢI PHÁP",
     "t2": "Giải pháp phù hợp cho từng đối tác",
     "img_aud_farmer_1": {
-      "focus": "center",
-      "zoom": "100",
+      "focus": "0% 0%",
+      "zoom": "108",
       "alt": "Nông dân trên ruộng",
       "src": "/uploads/1787621607381_4445349068653320489_4445349068653320489_75b857d348895d6d77ae03cf39df872a.jpg"
     },
