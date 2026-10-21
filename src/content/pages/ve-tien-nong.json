@@ -340,8 +340,10 @@
       "title": "Chứng chỉ công nhận VILAS 1519",
       "body": "Phòng Kiểm nghiệm đạt chuẩn quốc tế VILAS 1519 (ISO/IEC 17025:2017), khẳng định năng lực phân tích và kiểm soát chất lượng phân bón hàng đầu Việt Nam",
       "image": {
-        "focus": "center",
-        "zoom": "100"
+        "focus": "50% 50%",
+        "zoom": "100",
+        "src": "/uploads/ms-10-mvhxtsqz.jpg",
+        "alt": ""
       }
     },
     {
