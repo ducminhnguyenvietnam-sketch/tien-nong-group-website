@@ -304,6 +304,15 @@
         "zoom": "100",
         "alt": "Ảnh flycam nhà máy hiện nay"
       }
+    },
+    {
+      "year": "2007",
+      "title": "Thành lập nhà máy DDCT Tiến Nông 3",
+      "body": "Nhà máy với dây chuyền sản xuất hiện đại. Năng lực sản xuất trên 100.000 tấn/ 1 năm",
+      "image": {
+        "focus": "center",
+        "zoom": "100"
+      }
     }
   ]
 }
