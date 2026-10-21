@@ -7,7 +7,7 @@
     "t2": "/ Về Tiến Nông",
     "t3": "VỀ TIẾN NÔNG",
     "t4": "Hơn 30 năm đồng hành cùng nông nghiệp Việt Nam",
-    "t5": "Thành lập ngày 04/01/1995 tại Thanh Hóa, CTCP Công Nông nghiệp Tiến Nông nghiên cứu, sản xuất và phân phối các giải pháp dinh dưỡng cây trồng cho nhà nông trên khắp cả nước và hơn 10 thị trường quốc tế.",
+    "t5": "Thành lập ngày 04/01/1995, Công ty Cổ phần Công Nông nghiệp Tiến Nông nghiên cứu, sản xuất và phân phối các giải pháp dinh dưỡng cây trồng cho nhà nông trên khắp cả nước và hơn 10 thị trường quốc tế.",
     "img_about_hero_1": {
       "src": "/uploads/Copy of THW09151.jpg",
       "focus": "59.9% 74.4%",
@@ -247,10 +247,10 @@
       "title": "Giải thưởng Chất lượng Việt Nam",
       "body": "Hệ thống quản lý chất lượng và sản phẩm của Tiến Nông được ghi nhận ở cấp quốc gia.",
       "image": {
+        "src": "/uploads/ms-1-mvexfj7x.jpg",
         "focus": "50% 6.1%",
         "zoom": "100",
-        "alt": "Ảnh lễ nhận giải 2002",
-        "src": "/uploads/ms-1-mvexfj7x.jpg"
+        "alt": "Ảnh lễ nhận giải 2002"
       }
     },
     {
@@ -258,10 +258,10 @@
       "title": "Thương hiệu nổi tiếng ASEAN",
       "body": "Thương hiệu Tiến Nông được ghi nhận trong khu vực, mở đường cho các thị trường xuất khẩu.",
       "image": {
+        "src": "/uploads/ms-2-mvexgut7.jpg",
         "focus": "50% 95.4%",
         "zoom": "100",
-        "alt": "Ảnh lễ nhận giải 2011",
-        "src": "/uploads/ms-2-mvexgut7.jpg"
+        "alt": "Ảnh lễ nhận giải 2011"
       }
     },
     {
@@ -269,10 +269,10 @@
       "title": "Doanh nghiệp Khoa học & Công nghệ đầu tiên của ngành",
       "body": "[Bổ sung: năm được công nhận, số giấy chứng nhận và ý nghĩa của danh hiệu.]",
       "image": {
+        "src": "/uploads/ms-3-mvexi8li.jpg",
         "focus": "50% 41.2%",
         "zoom": "100",
-        "alt": "Ảnh giấy chứng nhận DN KH&CN",
-        "src": "/uploads/ms-3-mvexi8li.jpg"
+        "alt": "Ảnh giấy chứng nhận DN KH&CN"
       }
     },
     {
