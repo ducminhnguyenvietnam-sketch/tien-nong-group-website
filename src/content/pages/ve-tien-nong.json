@@ -218,9 +218,10 @@
       "alt": "Ảnh Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam"
     },
     "img_award_cl1_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Ảnh 6 lần đạt Giải thưởng Sao Vàng Đất Việt"
+      "alt": "Ảnh 6 lần đạt Giải thưởng Sao Vàng Đất Việt",
+      "src": "/uploads/award-cl1-mvjdc59n.png"
     },
     "img_award_cl2_1": {
       "src": "/uploads/award-cl2-mvj87k4q.png",
