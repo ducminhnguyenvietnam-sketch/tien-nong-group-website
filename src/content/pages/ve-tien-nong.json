@@ -106,14 +106,14 @@
       "alt": "Chân dung (nền đồng nhất)"
     },
     "t9": "Nguyễn Đức Minh",
-    "t10": "Thành viên Hội đồng Quản trị · Trợ lý Tổng Giám đốc",
+    "t10": "Thành viên HĐQT",
     "img_lead_5_1": {
       "focus": "center",
       "zoom": "100",
       "alt": "Chân dung (nền đồng nhất)"
     },
     "t11": "Nguyễn Hồng Lâm",
-    "t12": "Thành viên Hội đồng Quản trị · Giám đốc Truyền thông",
+    "t12": "Thành viên HĐQT · Giám đốc Truyền thông",
     "t13": "BAN LÃNH ĐẠO",
     "t14": "Ban Lãnh đạo",
     "executives": [
@@ -122,16 +122,12 @@
         "title": "Phó Tổng Giám đốc"
       },
       {
-        "name": "Nguyễn Công Tuấn",
-        "title": "Chủ tịch Công đoàn"
-      },
-      {
         "name": "Lê Thanh Hà",
         "title": "Giám đốc Tài chính"
       },
       {
-        "name": "Nguyễn Hồng Lâm",
-        "title": "Giám đốc Truyền thông"
+        "name": "Phan Thị Kim Anh",
+        "title": "Kế toán trưởng"
       },
       {
         "name": "Nguyễn Trung Trụ",
@@ -147,7 +143,11 @@
       },
       {
         "name": "Nguyễn Viết Giang",
-        "title": "Giám đốc Trung tâm Nghiên cứu Phát triển Khoa học và Công nghệ Tiến Nông"
+        "title": "Giám đốc Trung tâm R&D Tiến Nông"
+      },
+      {
+        "name": "Nguyễn Công Tuấn",
+        "title": "Chủ tịch Công đoàn"
       },
       {
         "name": "Nguyễn Văn Kính",
@@ -160,10 +160,6 @@
       {
         "name": "Đỗ Văn Vượng",
         "title": "Giám đốc Nhà máy Dinh dưỡng cây trồng Tiến Nông Gia Lai"
-      },
-      {
-        "name": "Phan Thị Kim Anh",
-        "title": "Kế toán trưởng"
       }
     ]
   },
