@@ -16,7 +16,7 @@
   },
   "s02_dinh_vi": {
     "t1": "Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam",
-    "t2": "Giấy chứng nhận số [số GCN] · cấp năm [năm]",
+    "t2": "Giấy chứng nhận số 228/DNKHCN · cấp năm 2014",
     "t3": "[số]",
     "t4": "nhà khoa học & kỹ sư",
     "t5": "[số]",
@@ -179,10 +179,10 @@
         "Phân bón tan chậm, phân bón lỏng"
       ],
       "image": {
+        "src": "/uploads/dom-0-mvc71cte.jpg",
         "focus": "0% 100%",
         "zoom": "104",
-        "alt": "Dây chuyền thử nghiệm công thức phân bón",
-        "src": "/uploads/dom-0-mvc71cte.jpg"
+        "alt": "Dây chuyền thử nghiệm công thức phân bón"
       }
     },
     {
@@ -194,10 +194,10 @@
         "Phân bón hữu cơ vi sinh"
       ],
       "image": {
+        "src": "/uploads/dom-1-mvc6n073.jpg",
         "focus": "50% 48.2%",
         "zoom": "100",
-        "alt": "Nuôi cấy vi sinh trong phòng thí nghiệm",
-        "src": "/uploads/dom-1-mvc6n073.jpg"
+        "alt": "Nuôi cấy vi sinh trong phòng thí nghiệm"
       }
     },
     {
@@ -209,10 +209,10 @@
         "Cải tạo đất bạc màu, chua phèn"
       ],
       "image": {
+        "src": "/uploads/dom-2-mvc73x8y.jpg",
         "focus": "48.8% 50%",
         "zoom": "100",
-        "alt": "Kỹ sư lấy mẫu đất tại ruộng",
-        "src": "/uploads/dom-2-mvc73x8y.jpg"
+        "alt": "Kỹ sư lấy mẫu đất tại ruộng"
       }
     },
     {
@@ -224,10 +224,10 @@
         "Truy xuất theo lô sản xuất"
       ],
       "image": {
+        "src": "/uploads/dom-3-mvhy3er7.jpg",
         "focus": "51.9% 50%",
         "zoom": "100",
-        "alt": "Thiết bị phân tích phòng VILAS",
-        "src": "/uploads/dom-3-mvhy3er7.jpg"
+        "alt": "Thiết bị phân tích phòng VILAS"
       }
     },
     {
@@ -239,10 +239,10 @@
         "[Hạng mục 3]"
       ],
       "image": {
+        "src": "/uploads/dom-4-mvc6sieu.jpg",
         "focus": "0% 70.6%",
         "zoom": "106",
-        "alt": "Kỹ sư sử dụng thiết bị đo tại đồng ruộng",
-        "src": "/uploads/dom-4-mvc6sieu.jpg"
+        "alt": "Kỹ sư sử dụng thiết bị đo tại đồng ruộng"
       }
     }
   ]
