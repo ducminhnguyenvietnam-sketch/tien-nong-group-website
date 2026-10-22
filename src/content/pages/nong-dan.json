@@ -1,7 +1,6 @@
 {
   "seo": {
-    "title": "Nông dân Tiến Nông",
-    "description": ""
+    "title": "Nông dân Tiến Nông"
   },
   "s01_hero": {
     "img_farmer_hero_1": {
@@ -15,7 +14,6 @@
     "t3": "Đồng hành cùng nhà nông trên mọi miền đất nước",
     "t4": "Kết nối hơn 200.000 hộ nông dân để chia sẻ kiến thức, kinh nghiệm canh tác và những mô hình hiệu quả.",
     "t5": "Tham gia cộng đồng →",
-    "link1": "",
     "t6": "Hotline kỹ sư: [số]"
   },
   "s02_dang_ky": {
@@ -52,7 +50,7 @@
       "alt": "Chân dung nông dân trên ruộng"
     },
     "t4": "LÚA · [XÃ, TỈNH]",
-    "t5": "“[Trích lời nông dân về sự thay đổi sau khi áp dụng giải pháp Tiến Nông.]”",
+    "t5": "“Từ khi dùng phân bón Tiến Nông, vừa tiết kiệm được chi phí chăm bón, vừa nâng được năng suất, nên bà con chúng tôi yên tâm làm lâu dài”",
     "t6": "+[x]%",
     "t7": "năng suất",
     "t8": "−[x]%",
