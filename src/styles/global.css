@@ -63,3 +63,39 @@ a:hover { color: var(--text-link-hover); }
 @media (max-width: 1000px) { .board-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .board-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; } }
 @media (max-width: 600px) { .board-grid { overflow-wrap: normal; } .board-grid strong { font-size: 16px !important; } }
+
+/* Về Tiến Nông · Thành tựu.
+   Giải lớn: 2 ô to, ảnh nằm trên chiếm hết bề ngang (bằng khen khổ ngang vẫn hiện to), chữ bên dưới.
+   Giải khác: 2 giải mỗi hàng, ảnh 4 phần – chữ 6 phần. Ảnh đặt trên nền trắng như khung trưng bày. */
+.awards-featured { display: grid; gap: 24px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.awards-grid { display: grid; gap: 20px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.award { display: grid; grid-template-columns: 4fr 6fr; gap: 24px; align-items: center; padding: 20px;
+  border: 1px solid var(--border-default); border-radius: var(--radius-lg); background: var(--surface-card); }
+.award__img { position: relative; height: 180px; border-radius: 10px; background: var(--surface-card); }
+.award__img .img-slot__frame:has(img) { background: transparent !important; }
+.award__text { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.award__label { font: 600 12px var(--font-mono); letter-spacing: .06em; color: var(--green-600); }
+.award__title { font-size: 18px; line-height: 1.35; text-wrap: balance; }
+.award__detail { font-size: 14px; color: var(--text-tertiary); }
+.award--big { grid-template-columns: minmax(0, 1fr); align-items: start; gap: 24px; padding: 24px;
+  background: var(--green-50); border-color: transparent; }
+.award--big .award__img { height: 340px; padding: 20px; box-sizing: border-box; border-radius: 12px;
+  background: var(--surface-card); box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.award--big .award__img .img-slot { position: absolute !important; inset: 20px !important; width: auto !important; height: auto !important; }
+.award--big .award__text { padding: 0 8px 8px; }
+.award--big .award__label { color: var(--green-700); }
+.award--big .award__title { font: 800 clamp(24px, 2.4vw, 30px)/1.25 var(--font-display); }
+.award--big .award__detail { font-size: 15px; color: var(--text-secondary); }
+@media (max-width: 1000px) {
+  .awards-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .awards-featured { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+  .award { gap: 16px; padding: 16px; }
+  .award__img { height: 130px; }
+  .award__title { font-size: 16px; }
+  .award--big .award__img { height: 260px; padding: 12px; }
+  .award--big .award__img .img-slot { inset: 12px !important; }
+}

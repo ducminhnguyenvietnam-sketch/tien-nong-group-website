@@ -15,11 +15,6 @@ album: []
 album_link: ""
 tags: []
 source: "Vietnam Agriculture"
-source_logo:
-  src: ""
-  focus: "center"
-  zoom: "100"
-  alt: "Logo Vietnam Agriculture"
 external_url: "https://van.nongnghiepmoitruong.vn/tien-nong-has-been-voted-as-a-strong-asean-brand-in-2024-d384023.html"
 press_highlight: true
 ---

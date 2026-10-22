@@ -12,11 +12,12 @@ import { formatDate, getNews, newsLinkAttrs, newsUrl } from '../lib/news';
 
 const c = withDefaults(raw, 'src/content/pages/nong-dan.json');
 
-// Hội thảo đầu bờ: newest articles in "Nông dân & Mô hình hiệu quả" tagged "hội thảo";
-// if none are tagged yet, the newest articles of that category.
+// Hội thảo đầu bờ: 2 newest articles in "Nông dân & Mô hình hiệu quả" tagged "hội thảo";
+// if fewer are tagged, the rest are filled with the newest articles of that category.
+const WORKSHOPS_SHOWN = 2;
 const farmerNews = (await getNews()).filter((n) => n.data.category === 'nd');
 const isWorkshop = (n: (typeof farmerNews)[number]) => n.data.tags.some((t) => t.trim().toLowerCase().normalize('NFC') === 'hội thảo'.normalize('NFC'));
-const workshops = (farmerNews.some(isWorkshop) ? farmerNews.filter(isWorkshop) : farmerNews).slice(0, 3);
+const workshops = [...farmerNews.filter(isWorkshop), ...farmerNews.filter((n) => !isWorkshop(n))].slice(0, WORKSHOPS_SHOWN);
 
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Nông dân Tiến Nông">

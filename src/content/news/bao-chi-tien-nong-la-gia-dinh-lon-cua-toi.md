@@ -15,11 +15,6 @@ album: []
 album_link: ""
 tags: []
 source: "Nông nghiệp và Môi trường"
-source_logo:
-  src: ""
-  focus: "center"
-  zoom: "100"
-  alt: "Logo Nông nghiệp và Môi trường"
 external_url: "https://nongnghiepmoitruong.vn/tien-nong-la-gia-dinh-lon-cua-toi-d372972.html"
 press_highlight: true
 ---
