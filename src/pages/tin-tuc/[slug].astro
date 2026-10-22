@@ -6,13 +6,14 @@ import Layout from '../../layouts/Layout.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
 import { render } from 'astro:content';
 import { url, link } from '../../lib/routes';
-import { CATEGORIES, formatDate, getNews, newsUrl, readingTime, type NewsEntry } from '../../lib/news';
+import { CATEGORIES, formatDate, getNews, isArticle, isPress, newsUrl, readingTime, type NewsEntry } from '../../lib/news';
 const site = withDefaults(siteRaw, 'src/content/site.json');
 
 const c = withDefaults(raw, 'src/content/pages/tin-tuc.json');
 
 export async function getStaticPaths() {
-  const all = await getNews();
+  // Press items that link to the newspaper's own page need no article page here.
+  const all = (await getNews()).filter(isArticle);
   return all.map((entry) => ({ params: { slug: entry.id }, props: { entry, all } }));
 }
 interface Props { entry: NewsEntry; all: NewsEntry[] }
@@ -21,7 +22,7 @@ const { Content } = await render(entry);
 const d = entry.data;
 const t = c.article;
 const cat = CATEGORIES[d.category];
-const others = all.filter((e) => e.id !== entry.id);
+const others = all.filter((e) => e.id !== entry.id && !isPress(e));
 const related = [...others.filter((e) => e.data.category === d.category), ...others.filter((e) => e.data.category !== d.category)].slice(0, 3);
 const pageUrl = new URL(newsUrl(entry), Astro.site ?? 'https://example.com').href;
 ---

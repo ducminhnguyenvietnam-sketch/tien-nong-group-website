@@ -70,24 +70,11 @@
     "t18": "Xem thêm câu chuyện →"
   },
   "s04_hoi_thao_dau_bo": {
-    "t1": "LỊCH HỘI THẢO ĐẦU BỜ",
+    "t1": "HỘI THẢO ĐẦU BỜ",
     "t2": "Kỹ sư Tiến Nông đồng hành tại địa phương",
-    "t3": "Lịch được cập nhật hằng tháng. Liên hệ đại lý gần nhất để đăng ký tham dự.",
-    "t4": "[dd]",
-    "t5": "Th. [mm]",
-    "t6": "[Chủ đề hội thảo]",
-    "t7": "[Xã, huyện, tỉnh] · [Cây trồng]",
-    "t8": "Đăng ký",
-    "t9": "[dd]",
-    "t10": "Th. [mm]",
-    "t11": "[Chủ đề hội thảo]",
-    "t12": "[Xã, huyện, tỉnh] · [Cây trồng]",
-    "t13": "Đăng ký",
-    "t14": "[dd]",
-    "t15": "Th. [mm]",
-    "t16": "[Chủ đề hội thảo]",
-    "t17": "[Xã, huyện, tỉnh] · [Cây trồng]",
-    "t18": "Đăng ký"
+    "t3": "Hình ảnh và chia sẻ từ các buổi hội thảo đầu bờ do kỹ sư Tiến Nông tổ chức cùng bà con tại địa phương.",
+    "t4": "Xem tất cả bài hội thảo →",
+    "t5": "Bài hội thảo đầu bờ sẽ được cập nhật tại đây."
   },
   "s05_hoi_dap": {
     "t1": "NHÀ NÔNG HỎI · TIẾN NÔNG TRẢ LỜI",

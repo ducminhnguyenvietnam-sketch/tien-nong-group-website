@@ -67,9 +67,11 @@ content:
       - value: kt
         label: Kiến thức nông nghiệp
       - value: nd
-        label: Nông dân & mô hình
+        label: Nông dân & Mô hình hiệu quả
       - value: cd
-        label: Vì cộng đồng
+        label: Tiến Nông vì cộng đồng & ESG
+      - value: bc
+        label: Báo chí nói về Tiến Nông
   - name: date
     label: Ngày đăng
     type: date
@@ -110,6 +112,23 @@ content:
     label: Chủ đề (thẻ)
     type: string
     list: true
+    description: Bài hội thảo đầu bờ gắn thẻ "hội thảo" để hiện ở trang Nông dân Tiến Nông.
+  - name: source
+    label: 'Báo chí: Tên báo'
+    type: string
+    description: Chỉ điền khi chuyên mục là "Báo chí nói về Tiến Nông", ví dụ Diễn đàn Doanh nghiệp.
+  - name: source_logo
+    label: 'Báo chí: Logo báo'
+    component: photo
+    description: Khung ảnh khoảng 140×36 px. Để trống thì hiện tên báo.
+  - name: external_url
+    label: 'Báo chí: Đường dẫn bài gốc'
+    type: string
+    description: Dán đường dẫn đầy đủ (https://…). Bấm vào bài sẽ mở bài gốc trên trang báo, không cần viết nội dung.
+  - name: press_highlight
+    label: 'Báo chí: Hiện ở khối "Báo chí nói về Tiến Nông"'
+    type: boolean
+    description: Khối này ở cuối trang Tin tức, hiện tối đa 3 bài. Bài được bật hiện trước, sau đó đến bài mới nhất.
 - name: pages
   label: Các trang
   type: group
@@ -782,6 +801,15 @@ content:
       - name: t19
         label: 'Chữ: Lợi ích của nhà nông luôn được đặt lên trên hế…'
         type: string
+      - name: t20
+        label: 'Chữ: 05'
+        type: string
+      - name: t21
+        label: 'Chữ đậm: Trách nhiệm cộng đồng'
+        type: string
+      - name: t22
+        label: 'Chữ: Trách nhiệm với xã hội, bảo vệ môi trường…'
+        type: string
     - name: s04_lich_su
       label: 04 · Lịch sử
       type: object
@@ -797,61 +825,81 @@ content:
       type: object
       fields:
       - name: t1
-        label: 'Nhãn in hoa: BAN LÃNH ĐẠO'
+        label: 'Nhãn in hoa: HỘI ĐỒNG QUẢN TRỊ'
         type: string
       - name: t2
-        label: 'Tiêu đề: Đội ngũ lãnh đạo'
+        label: 'Tiêu đề: Hội đồng Quản trị'
         type: string
       - name: img_lead_1_1
-        label: 'Ảnh: Chân dung (nền đồng nhất)'
+        label: 'Thành viên HĐQT 1 – Ảnh chân dung (nền đồng nhất)'
         component: photo
         description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t3
-        label: 'Chữ đậm: Nguyễn Hồng Phong'
+        label: 'Thành viên HĐQT 1 – Họ tên'
         type: string
       - name: t4
-        label: 'Chữ: Tổng Giám đốc'
+        label: 'Thành viên HĐQT 1 – Chức danh'
         type: string
       - name: img_lead_2_1
-        label: 'Ảnh: Chân dung (nền đồng nhất)'
+        label: 'Thành viên HĐQT 2 – Ảnh chân dung (nền đồng nhất)'
         component: photo
         description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t5
-        label: 'Chữ đậm: [Họ và tên]'
+        label: 'Thành viên HĐQT 2 – Họ tên'
         type: string
       - name: t6
-        label: 'Chữ: [Chức danh]'
+        label: 'Thành viên HĐQT 2 – Chức danh'
         type: string
       - name: img_lead_3_1
-        label: 'Ảnh: Chân dung (nền đồng nhất)'
+        label: 'Thành viên HĐQT 3 – Ảnh chân dung (nền đồng nhất)'
         component: photo
         description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t7
-        label: 'Chữ đậm: [Họ và tên]'
+        label: 'Thành viên HĐQT 3 – Họ tên'
         type: string
       - name: t8
-        label: 'Chữ: [Chức danh]'
+        label: 'Thành viên HĐQT 3 – Chức danh'
         type: string
       - name: img_lead_4_1
-        label: 'Ảnh: Chân dung (nền đồng nhất)'
+        label: 'Thành viên HĐQT 4 – Ảnh chân dung (nền đồng nhất)'
         component: photo
         description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t9
-        label: 'Chữ đậm: [Họ và tên]'
+        label: 'Thành viên HĐQT 4 – Họ tên'
         type: string
       - name: t10
-        label: 'Chữ: [Chức danh]'
+        label: 'Thành viên HĐQT 4 – Chức danh'
         type: string
       - name: img_lead_5_1
-        label: 'Ảnh: Chân dung (nền đồng nhất)'
+        label: 'Thành viên HĐQT 5 – Ảnh chân dung (nền đồng nhất)'
         component: photo
         description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t11
-        label: 'Chữ đậm: [Họ và tên]'
+        label: 'Thành viên HĐQT 5 – Họ tên'
         type: string
       - name: t12
-        label: 'Chữ: [Chức danh]'
+        label: 'Thành viên HĐQT 5 – Chức danh'
         type: string
+      - name: t13
+        label: 'Nhãn in hoa: BAN LÃNH ĐẠO'
+        type: string
+      - name: t14
+        label: 'Tiêu đề: Ban Lãnh đạo'
+        type: string
+      - name: executives
+        label: Ban Lãnh đạo – danh sách (kéo để sắp xếp)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.name} · {fields.title}'
+        fields:
+        - name: name
+          label: Họ tên
+          type: string
+        - name: title
+          label: Chức danh
+          type: string
     - name: s06_thanh_tuu
       label: 06 · Thành tựu
       type: object
@@ -894,12 +942,20 @@ content:
       - name: t10
         label: 'Nhãn in hoa: KHOA HỌC & CÔNG NGHỆ'
         type: string
+      - name: img_award_kh1_1
+        label: 'Ảnh giải: Doanh nghiệp Khoa học & Công nghệ đầu tiên tro…'
+        component: photo
+        description: Ảnh bằng, cúp hoặc huy chương thật, nền trơn. Khung khoảng 72×72 px — nên dùng ảnh rộng ít nhất 300 px.
       - name: t11
         label: 'Chữ đậm: Doanh nghiệp Khoa học & Công nghệ đầu tiên tro…'
         type: text
       - name: t12
         label: 'Chữ: [Số GCN · năm cấp]'
         type: string
+      - name: img_award_kh2_1
+        label: 'Ảnh giải: Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam'
+        component: photo
+        description: Ảnh bằng, cúp hoặc huy chương thật, nền trơn. Khung khoảng 72×72 px — nên dùng ảnh rộng ít nhất 300 px.
       - name: t13
         label: 'Chữ đậm: Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam'
         type: string
@@ -909,18 +965,30 @@ content:
       - name: t15
         label: 'Nhãn in hoa: CHẤT LƯỢNG & THƯƠNG HIỆU'
         type: string
+      - name: img_award_cl1_1
+        label: 'Ảnh giải: 6 lần đạt Giải thưởng Sao Vàng Đất Việt'
+        component: photo
+        description: Ảnh bằng, cúp hoặc huy chương thật, nền trơn. Khung khoảng 72×72 px — nên dùng ảnh rộng ít nhất 300 px.
       - name: t16
         label: 'Chữ đậm: 6 lần đạt Giải thưởng Sao Vàng Đất Việt'
         type: string
       - name: t17
         label: 'Chữ: [Các năm]'
         type: string
+      - name: img_award_cl2_1
+        label: 'Ảnh giải: Giải thưởng Chất lượng Việt Nam'
+        component: photo
+        description: Ảnh bằng, cúp hoặc huy chương thật, nền trơn. Khung khoảng 72×72 px — nên dùng ảnh rộng ít nhất 300 px.
       - name: t18
         label: 'Chữ đậm: Giải thưởng Chất lượng Việt Nam'
         type: string
       - name: t19
         label: 'Chữ: 2002'
         type: string
+      - name: img_award_cl3_1
+        label: 'Ảnh giải: Thương hiệu Vàng Nông nghiệp Việt Nam, 3 năm l…'
+        component: photo
+        description: Ảnh bằng, cúp hoặc huy chương thật, nền trơn. Khung khoảng 72×72 px — nên dùng ảnh rộng ít nhất 300 px.
       - name: t20
         label: 'Chữ đậm: Thương hiệu Vàng Nông nghiệp Việt Nam, 3 năm l…'
         type: string
@@ -930,12 +998,20 @@ content:
       - name: t22
         label: 'Nhãn in hoa: KHU VỰC ASEAN'
         type: string
+      - name: img_award_as1_1
+        label: 'Ảnh giải: Thương hiệu nổi tiếng ASEAN'
+        component: photo
+        description: Ảnh bằng, cúp hoặc huy chương thật, nền trơn. Khung khoảng 72×72 px — nên dùng ảnh rộng ít nhất 300 px.
       - name: t23
         label: 'Chữ đậm: Thương hiệu nổi tiếng ASEAN'
         type: string
       - name: t24
         label: 'Chữ: 2011'
         type: string
+      - name: img_award_as2_1
+        label: 'Ảnh giải: Top 10 Thương hiệu mạnh ASEAN'
+        component: photo
+        description: Ảnh bằng, cúp hoặc huy chương thật, nền trơn. Khung khoảng 72×72 px — nên dùng ảnh rộng ít nhất 300 px.
       - name: t25
         label: 'Chữ đậm: Top 10 Thương hiệu mạnh ASEAN'
         type: string
@@ -1957,7 +2033,7 @@ content:
       type: object
       fields:
       - name: t1
-        label: 'Tiêu đề: Chương trình dinh dưỡng cho lúa'
+        label: 'Tiêu đề: Các sản phẩm khác'
         type: string
       - name: t2
         label: 'Liên kết: Tất cả sản phẩm →'
@@ -3101,60 +3177,22 @@ content:
     - name: s04_hoi_thao_dau_bo
       label: 04 · Hội thảo đầu bờ
       type: object
+      description: Hiện 3 bài mới nhất chuyên mục "Nông dân & Mô hình hiệu quả" có thẻ "hội thảo". Chưa có bài gắn thẻ thì hiện 3 bài mới nhất của chuyên mục.
       fields:
       - name: t1
-        label: 'Nhãn in hoa: LỊCH HỘI THẢO ĐẦU BỜ'
+        label: 'Nhãn in hoa: HỘI THẢO ĐẦU BỜ'
         type: string
       - name: t2
         label: 'Tiêu đề: Kỹ sư Tiến Nông đồng hành tại địa phương'
         type: string
       - name: t3
-        label: 'Chữ: Lịch được cập nhật hằng tháng. Liên hệ đại lý …'
-        type: string
+        label: 'Chữ: Hình ảnh và chia sẻ từ các buổi hội thảo…'
+        type: text
       - name: t4
-        label: 'Chữ: [dd]'
+        label: 'Liên kết: Xem tất cả bài hội thảo →'
         type: string
       - name: t5
-        label: 'Chữ: Th. [mm]'
-        type: string
-      - name: t6
-        label: 'Chữ đậm: [Chủ đề hội thảo]'
-        type: string
-      - name: t7
-        label: 'Chữ: [Xã, huyện, tỉnh] · [Cây trồng]'
-        type: string
-      - name: t8
-        label: 'Liên kết: Đăng ký'
-        type: string
-      - name: t9
-        label: 'Chữ: [dd]'
-        type: string
-      - name: t10
-        label: 'Chữ: Th. [mm]'
-        type: string
-      - name: t11
-        label: 'Chữ đậm: [Chủ đề hội thảo]'
-        type: string
-      - name: t12
-        label: 'Chữ: [Xã, huyện, tỉnh] · [Cây trồng]'
-        type: string
-      - name: t13
-        label: 'Liên kết: Đăng ký'
-        type: string
-      - name: t14
-        label: 'Chữ: [dd]'
-        type: string
-      - name: t15
-        label: 'Chữ: Th. [mm]'
-        type: string
-      - name: t16
-        label: 'Chữ đậm: [Chủ đề hội thảo]'
-        type: string
-      - name: t17
-        label: 'Chữ: [Xã, huyện, tỉnh] · [Cây trồng]'
-        type: string
-      - name: t18
-        label: 'Liên kết: Đăng ký'
+        label: 'Chữ khi chưa có bài'
         type: string
     - name: s05_hoi_dap
       label: 05 · Hỏi đáp
@@ -3469,54 +3507,16 @@ content:
     - name: s03_bao_chi
       label: 03 · Báo chí
       type: object
+      description: Các bài báo hiện ở đây lấy tự động từ mục "Tin tức – bài viết", chuyên mục "Báo chí nói về Tiến Nông".
       fields:
       - name: t1
         label: 'Tiêu đề: Báo chí nói về Tiến Nông'
         type: string
       - name: t2
-        label: 'Liên kết: Liên hệ truyền thông →'
+        label: 'Liên kết: Xem thêm →'
         type: string
-      - name: link1
-        label: Đường dẫn cho “[Tiêu đề bài báo]”
-        type: string
-        description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
-      - name: img_press_1_1
-        label: 'Ảnh: Logo báo'
-        component: photo
-        description: Khung ảnh khoảng 140×36 px trên máy tính — nên dùng ảnh rộng ít nhất 280 px.
       - name: t3
-        label: 'Chữ đậm: [Tiêu đề bài báo]'
-        type: string
-      - name: t4
-        label: 'Chữ: [Tên báo] · [ngày] · Đọc bài gốc ↗'
-        type: string
-      - name: link2
-        label: Đường dẫn cho “[Tiêu đề bài báo]”
-        type: string
-        description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
-      - name: img_press_2_1
-        label: 'Ảnh: Logo báo'
-        component: photo
-        description: Khung ảnh khoảng 140×36 px trên máy tính — nên dùng ảnh rộng ít nhất 280 px.
-      - name: t5
-        label: 'Chữ đậm: [Tiêu đề bài báo]'
-        type: string
-      - name: t6
-        label: 'Chữ: [Tên báo] · [ngày] · Đọc bài gốc ↗'
-        type: string
-      - name: link3
-        label: Đường dẫn cho “[Tiêu đề bài báo]”
-        type: string
-        description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
-      - name: img_press_3_1
-        label: 'Ảnh: Logo báo'
-        component: photo
-        description: Khung ảnh khoảng 140×36 px trên máy tính — nên dùng ảnh rộng ít nhất 280 px.
-      - name: t7
-        label: 'Chữ đậm: [Tiêu đề bài báo]'
-        type: string
-      - name: t8
-        label: 'Chữ: [Tên báo] · [ngày] · Đọc bài gốc ↗'
+        label: 'Chữ trên mỗi thẻ: Đọc bài gốc ↗'
         type: string
     - name: all_categories
       label: Tab "tất cả chuyên mục"

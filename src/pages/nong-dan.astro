@@ -8,8 +8,15 @@ import ImageSlot from '../components/ImageSlot.astro';
 import Input from '../components/Input.astro';
 import Select from '../components/Select.astro';
 import { url, link } from '../lib/routes';
+import { formatDate, getNews, newsLinkAttrs, newsUrl } from '../lib/news';
 
 const c = withDefaults(raw, 'src/content/pages/nong-dan.json');
+
+// Hội thảo đầu bờ: newest articles in "Nông dân & Mô hình hiệu quả" tagged "hội thảo";
+// if none are tagged yet, the newest articles of that category.
+const farmerNews = (await getNews()).filter((n) => n.data.category === 'nd');
+const isWorkshop = (n: (typeof farmerNews)[number]) => n.data.tags.some((t) => t.trim().toLowerCase().normalize('NFC') === 'hội thảo'.normalize('NFC'));
+const workshops = (farmerNews.some(isWorkshop) ? farmerNews.filter(isWorkshop) : farmerNews).slice(0, 3);
 
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Nông dân Tiến Nông">
@@ -65,14 +72,16 @@ const c = withDefaults(raw, 'src/content/pages/nong-dan.json');
 <a href={url('tin-tuc')} style="align-self:flex-start;font-weight:600">{c.s03_cau_chuyen_nha_nong.t18}</a>
 </div></section>
 
-<section style="background:var(--surface-card)">
+<section id="hoi-thao" style="background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:32px 64px;align-items:start">
 <div style="display:flex;flex-direction:column;gap:14px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s04_hoi_thao_dau_bo.t1}</span><h2 style="margin:0;font:800 clamp(28px,3vw,40px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s04_hoi_thao_dau_bo.t2}</h2><span style="color:var(--text-secondary);text-align:justify">{c.s04_hoi_thao_dau_bo.t3}</span></div>
+<div style="display:flex;flex-direction:column;gap:16px">
 <div style="display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
-<div style="display:grid;grid-template-columns:80px minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border-default)"><div style="text-align:center"><div style="font:800 26px/1 var(--font-display);color:var(--green-700)">{c.s04_hoi_thao_dau_bo.t4}</div><span style="font-size:13px;color:var(--text-tertiary)">{c.s04_hoi_thao_dau_bo.t5}</span></div><div><strong style="display:block">{c.s04_hoi_thao_dau_bo.t6}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s04_hoi_thao_dau_bo.t7}</span></div><a href="#dang-ky" style="font-weight:600;font-size:15px">{c.s04_hoi_thao_dau_bo.t8}</a></div>
-<div style="display:grid;grid-template-columns:80px minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border-default)"><div style="text-align:center"><div style="font:800 26px/1 var(--font-display);color:var(--green-700)">{c.s04_hoi_thao_dau_bo.t9}</div><span style="font-size:13px;color:var(--text-tertiary)">{c.s04_hoi_thao_dau_bo.t10}</span></div><div><strong style="display:block">{c.s04_hoi_thao_dau_bo.t11}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s04_hoi_thao_dau_bo.t12}</span></div><a href="#dang-ky" style="font-weight:600;font-size:15px">{c.s04_hoi_thao_dau_bo.t13}</a></div>
-<div style="display:grid;grid-template-columns:80px minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border-default)"><div style="text-align:center"><div style="font:800 26px/1 var(--font-display);color:var(--green-700)">{c.s04_hoi_thao_dau_bo.t14}</div><span style="font-size:13px;color:var(--text-tertiary)">{c.s04_hoi_thao_dau_bo.t15}</span></div><div><strong style="display:block">{c.s04_hoi_thao_dau_bo.t16}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s04_hoi_thao_dau_bo.t17}</span></div><a href="#dang-ky" style="font-weight:600;font-size:15px">{c.s04_hoi_thao_dau_bo.t18}</a></div>
-</div></div></section>
+{workshops.map((n) => <a href={newsUrl(n)} {...newsLinkAttrs(n)} style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border-default);color:var(--text-primary)"><div style="position:relative;height:84px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${n.id}`} shape="rounded" radius="10" placeholder="Ảnh hội thảo" image={n.data.cover} cms={`${n.filePath}#cover`} /></div><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:var(--text-tertiary)">{formatDate(n.data.date)}</span><strong style="line-height:1.4">{n.data.title}</strong></div></a>)}
+{workshops.length === 0 && <span style="padding:16px 0;color:var(--text-secondary)">{c.s04_hoi_thao_dau_bo.t5}</span>}
+</div>
+<a href={url('tin-tuc', 'nd')} style="font-weight:600;font-size:15px">{c.s04_hoi_thao_dau_bo.t4}</a>
+</div></div></div></section>
 
 <section style="background:var(--green-800);color:#fff">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px 72px;align-items:start">

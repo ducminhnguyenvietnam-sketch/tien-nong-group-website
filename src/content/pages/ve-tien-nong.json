@@ -66,51 +66,106 @@
     "t16": "Đổi mới để giữ vị thế dẫn đầu về dinh dưỡng cây trồng tại Việt Nam và vươn ra thế giới.",
     "t17": "04",
     "t18": "Sẻ chia lợi ích",
-    "t19": "Lợi ích của nhà nông luôn được đặt lên trên hết trong mọi quyết định."
+    "t19": "Lợi ích của nhà nông luôn được đặt lên trên hết trong mọi quyết định.",
+    "t20": "05",
+    "t21": "Trách nhiệm cộng đồng",
+    "t22": "Trách nhiệm với xã hội, bảo vệ môi trường, đồng hành cùng nông dân."
   },
   "s04_lich_su": {
     "t1": "LỊCH SỬ PHÁT TRIỂN",
     "t2": "Những dấu mốc trên hành trình hơn ba thập kỷ"
   },
   "s05_lanh_dao": {
-    "t1": "LÃNH ĐẠO TIẾN NÔNG",
-    "t2": "Hội đồng quản trị",
+    "t1": "HỘI ĐỒNG QUẢN TRỊ",
+    "t2": "Hội đồng Quản trị",
     "img_lead_1_1": {
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chân dung ông Nguyễn Xuân Cộng"
+    },
+    "t3": "Nguyễn Xuân Cộng",
+    "t4": "Chủ tịch Hội đồng Quản trị · Người sáng lập",
+    "img_lead_2_1": {
       "src": "/uploads/Anh chan dung a Phong T8.2018 - Copy-1.jpg",
       "focus": "center",
       "zoom": "100",
-      "alt": "Chân dung (nền đồng nhất)"
+      "alt": "Chân dung ông Nguyễn Hồng Phong"
     },
-    "t3": "Nguyễn Hồng Phong",
-    "t4": "Tổng Giám đốc",
-    "img_lead_2_1": {
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Chân dung (nền đồng nhất)"
-    },
-    "t5": "[Họ và tên]",
-    "t6": "[Chức danh]",
+    "t5": "Nguyễn Hồng Phong",
+    "t6": "Phó Chủ tịch Hội đồng Quản trị · Tổng Giám đốc",
     "img_lead_3_1": {
       "focus": "center",
       "zoom": "100",
       "alt": "Chân dung (nền đồng nhất)"
     },
-    "t7": "[Họ và tên]",
-    "t8": "[Chức danh]",
+    "t7": "Đặng Ngọc Yến",
+    "t8": "Thành viên Hội đồng Quản trị · Phó Tổng Giám đốc",
     "img_lead_4_1": {
       "focus": "center",
       "zoom": "100",
       "alt": "Chân dung (nền đồng nhất)"
     },
-    "t9": "[Họ và tên]",
-    "t10": "[Chức danh]",
+    "t9": "Nguyễn Đức Minh",
+    "t10": "Thành viên Hội đồng Quản trị · Trợ lý Tổng Giám đốc",
     "img_lead_5_1": {
       "focus": "center",
       "zoom": "100",
       "alt": "Chân dung (nền đồng nhất)"
     },
-    "t11": "[Họ và tên]",
-    "t12": "[Chức danh]"
+    "t11": "Nguyễn Hồng Lâm",
+    "t12": "Thành viên Hội đồng Quản trị · Giám đốc Truyền thông",
+    "t13": "BAN LÃNH ĐẠO",
+    "t14": "Ban Lãnh đạo",
+    "executives": [
+      {
+        "name": "Cao Trọng Tú",
+        "title": "Phó Tổng Giám đốc"
+      },
+      {
+        "name": "Nguyễn Công Tuấn",
+        "title": "Chủ tịch Công đoàn"
+      },
+      {
+        "name": "Lê Thanh Hà",
+        "title": "Giám đốc Tài chính"
+      },
+      {
+        "name": "Nguyễn Hồng Lâm",
+        "title": "Giám đốc Truyền thông"
+      },
+      {
+        "name": "Nguyễn Trung Trụ",
+        "title": "Giám đốc Kinh doanh 1"
+      },
+      {
+        "name": "Trần Mạnh Tiến",
+        "title": "Giám đốc Kinh doanh 2"
+      },
+      {
+        "name": "Lê Viết Thiện",
+        "title": "Giám đốc Kinh doanh 3"
+      },
+      {
+        "name": "Nguyễn Viết Giang",
+        "title": "Giám đốc Trung tâm Nghiên cứu Phát triển Khoa học và Công nghệ Tiến Nông"
+      },
+      {
+        "name": "Nguyễn Văn Kính",
+        "title": "Giám đốc Nhà máy Dinh dưỡng cây trồng Tiến Nông 3"
+      },
+      {
+        "name": "[Họ và tên]",
+        "title": "Giám đốc Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn"
+      },
+      {
+        "name": "Đỗ Văn Vượng",
+        "title": "Giám đốc Nhà máy Dinh dưỡng cây trồng Tiến Nông Gia Lai"
+      },
+      {
+        "name": "Phan Thị Kim Anh",
+        "title": "Kế toán trưởng"
+      }
+    ]
   },
   "s06_thanh_tuu": {
     "t1": "THÀNH TỰU & GHI NHẬN",
@@ -153,7 +208,49 @@
     "t26": "2024",
     "t27": "Hệ thống quản lý:",
     "t28": "ISO 9001:2015 · ISO 14001:2015 · Phòng thí nghiệm VILAS 1519",
-    "t29": "Tải hồ sơ năng lực (PDF)"
+    "t29": "Tải hồ sơ năng lực (PDF)",
+    "img_award_kh1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Ảnh Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam"
+    },
+    "img_award_kh2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Ảnh Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam"
+    },
+    "img_award_cl1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Ảnh 6 lần đạt Giải thưởng Sao Vàng Đất Việt"
+    },
+    "img_award_cl2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Ảnh Giải thưởng Chất lượng Việt Nam"
+    },
+    "img_award_cl3_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Ảnh Thương hiệu Vàng Nông nghiệp Việt Nam, 3 năm liên tiếp"
+    },
+    "img_award_as1_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Ảnh Thương hiệu nổi tiếng ASEAN"
+    },
+    "img_award_as2_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Ảnh Top 10 Thương hiệu mạnh ASEAN"
+    }
   },
   "s07_nang_luc": {
     "t1": "NĂNG LỰC",

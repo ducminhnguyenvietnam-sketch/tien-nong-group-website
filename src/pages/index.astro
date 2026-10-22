@@ -6,11 +6,11 @@ import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Tabs from '../components/Tabs.astro';
 import { url } from '../lib/routes';
-import { CATEGORIES, getNews, newsUrl } from '../lib/news';
+import { CATEGORIES, getNews, isPress, newsUrl } from '../lib/news';
 
 const c = withDefaults(raw, 'src/content/pages/trang-chu.json');
 
-const latest = (await getNews()).slice(0, 3);
+const latest = (await getNews()).filter((n) => !isPress(n)).slice(0, 3);
 
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
