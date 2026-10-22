@@ -43,7 +43,7 @@
     },
     "t1": "THƯ NGỎ CỦA TỔNG GIÁM ĐỐC",
     "t2": "“Mùa vụ không chỉ là những gì chúng tôi trồng trọt, mà là những cuộc đời chúng tôi cùng vun đắp và tương lai chúng tôi cùng kiến tạo.”",
-    "t3": "Hơn ba thập kỷ qua, Tiến Nông kiên định với một lựa chọn: lấy khoa học làm nền tảng và lấy lợi ích của nhà nông làm thước đo cho mọi quyết định. Chúng tôi tin rằng khi người nông dân được canh tác hiệu quả hơn, mỗi vụ mùa sẽ góp phần vào sự thịnh vượng chung của đất nước.",
+    "t3": "Hơn ba thập kỷ qua, Tiến Nông kiên định với một lựa chọn: lấy khoa học làm nền tảng và lấy lợi ích của nhà nông làm thước đo cho mọi quyết định. Chúng tôi tin khoa học nông nghiệp phải bắt đầu từ chính đất Việt: hiểu thổ nhưỡng, hiểu hệ vi sinh bản địa, thay vì sao chép công thức có sẵn. Tiến Nông không chỉ bán phân bón, mà mang đến giải pháp khoa học cho từng chân ruộng, dựa trên ba điểm tựa: nông dân là trung tâm, đất đai là nền tảng, khoa học công nghệ là động lực. Khi người nông dân canh tác hiệu quả hơn, mỗi vụ mùa sẽ góp phần vào sự thịnh vượng chung của đất nước.",
     "t4": "Nguyễn Hồng Phong",
     "t5": "Tổng Giám đốc"
   },
@@ -84,7 +84,7 @@
       "alt": "Chân dung ông Nguyễn Xuân Cộng"
     },
     "t3": "Nguyễn Xuân Cộng",
-    "t4": "Chủ tịch Hội đồng Quản trị · Người sáng lập",
+    "t4": "Chủ tịch HĐQT · Người sáng lập",
     "img_lead_2_1": {
       "src": "/uploads/Anh chan dung a Phong T8.2018 - Copy-1.jpg",
       "focus": "center",
@@ -92,7 +92,7 @@
       "alt": "Chân dung ông Nguyễn Hồng Phong"
     },
     "t5": "Nguyễn Hồng Phong",
-    "t6": "Phó Chủ tịch Hội đồng Quản trị · Tổng Giám đốc",
+    "t6": "Phó Chủ tịch HĐQT · Tổng Giám đốc",
     "img_lead_3_1": {
       "focus": "center",
       "zoom": "100",
@@ -222,7 +222,6 @@
       "alt": "Ảnh Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam"
     },
     "img_award_cl1_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Ảnh 6 lần đạt Giải thưởng Sao Vàng Đất Việt"
@@ -437,10 +436,9 @@
       "title": "Chứng chỉ công nhận VILAS 1519",
       "body": "Phòng Kiểm nghiệm đạt chuẩn quốc tế VILAS 1519 (ISO/IEC 17025:2017), khẳng định năng lực phân tích và kiểm soát chất lượng phân bón hàng đầu Việt Nam",
       "image": {
-        "focus": "50% 50%",
-        "zoom": "100",
         "src": "/uploads/ms-10-mvhxtsqz.jpg",
-        "alt": ""
+        "focus": "50% 50%",
+        "zoom": "100"
       }
     },
     {
@@ -448,10 +446,10 @@
       "title": "3 nhà máy, 650.000 tấn/năm, 10+ quốc gia",
       "body": "Tiến Nông phục vụ hơn 200.000 hộ nông dân, hướng tới mục tiêu 1 triệu hộ nông dân Việt Nam.",
       "image": {
+        "src": "/uploads/ms-11-mvhx1uck.jpg",
         "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh flycam nhà máy hiện nay",
-        "src": "/uploads/ms-11-mvhx1uck.jpg"
+        "alt": "Ảnh flycam nhà máy hiện nay"
       }
     },
     {
@@ -459,10 +457,9 @@
       "title": "Chứng chỉ công nhận VALAS 262",
       "body": "Thể hiện năng lực nghiên cứu vi sinh chuyên sâu. Nhằm mang đến những giải pháp DDCT đột phá và hiệu quả cho nền nông nghiệp xanh, bền vững",
       "image": {
-        "focus": "50% 50%",
-        "zoom": "100",
         "src": "/uploads/ms-12-mvhxj3h5.jpg",
-        "alt": ""
+        "focus": "50% 50%",
+        "zoom": "100"
       }
     }
   ]
