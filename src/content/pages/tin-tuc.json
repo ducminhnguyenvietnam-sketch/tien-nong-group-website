@@ -16,27 +16,7 @@
   "s03_bao_chi": {
     "t1": "Báo chí nói về Tiến Nông",
     "t2": "Xem thêm →",
-    "img_press_1_1": {
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Logo báo"
-    },
-    "t3": "[Tiêu đề bài báo]",
-    "t4": "[Tên báo] · [ngày] · Đọc bài gốc ↗",
-    "img_press_2_1": {
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Logo báo"
-    },
-    "t5": "[Tiêu đề bài báo]",
-    "t6": "[Tên báo] · [ngày] · Đọc bài gốc ↗",
-    "img_press_3_1": {
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Logo báo"
-    },
-    "t7": "[Tiêu đề bài báo]",
-    "t8": "[Tên báo] · [ngày] · Đọc bài gốc ↗"
+    "t3": "Đọc bài gốc ↗"
   },
   "article": {
     "breadcrumb_home": "Trang chủ",

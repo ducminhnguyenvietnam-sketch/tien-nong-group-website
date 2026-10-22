@@ -13,7 +13,8 @@ cover:
 cover_caption: ""
 album: []
 album_link: ""
-tags: []
+tags:
+  - "hội thảo"
 ---
 
 [Nội dung bài viết]

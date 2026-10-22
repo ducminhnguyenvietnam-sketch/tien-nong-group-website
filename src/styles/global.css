@@ -47,3 +47,19 @@ a:hover { color: var(--text-link-hover); }
 
 /* Pill chips used by filters and pickers (active = filled brand green). */
 .chip[aria-pressed='true'] { border-color: var(--green-500) !important; background: var(--green-500) !important; color: #fff !important; }
+
+/* Về Tiến Nông · giá trị cốt lõi: 5 thẻ một hàng trên máy tính, 2 cột trên máy tính bảng
+   (thẻ lẻ cuối kéo hết hàng), 1 cột trên điện thoại. */
+.values-grid { display: grid; gap: 16px; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+@media (max-width: 1100px) {
+  .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .values-grid > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) { .values-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Về Tiến Nông · Hội đồng Quản trị: 5 chân dung một hàng trên máy tính, 3 cột trên máy tính bảng,
+   2 cột trên điện thoại để họ tên và chức danh không bị ngắt giữa chữ. */
+.board-grid { display: grid; gap: 24px; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+@media (max-width: 1000px) { .board-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .board-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; } }
+@media (max-width: 600px) { .board-grid { overflow-wrap: normal; } .board-grid strong { font-size: 16px !important; } }
