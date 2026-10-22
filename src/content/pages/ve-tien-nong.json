@@ -167,86 +167,112 @@
     "t1": "THÀNH TỰU & GHI NHẬN",
     "t2": "Những ghi nhận xứng đáng cho hơn ba thập kỷ cống hiến",
     "t3": "Những danh hiệu dưới đây là sự ghi nhận cho hơn ba thập kỷ kiên trì với chất lượng, khoa học và trách nhiệm với nhà nông.",
-    "img_award_hc_1": {
-      "focus": "50% 50%",
-      "zoom": "100",
-      "alt": "Ảnh Huân chương",
-      "src": "/uploads/award-hc-mverpbix.png"
-    },
-    "t4": "NHÀ NƯỚC · [NĂM]",
-    "t5": "Huân chương Lao động hạng Ba",
-    "t6": "Chủ tịch nước trao tặng",
-    "img_award_bk_1": {
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Ảnh Bằng khen",
-      "src": "/uploads/award-bk-mvbxvhuk.jpg"
-    },
-    "t7": "NHÀ NƯỚC · 2022",
-    "t8": "Bằng khen của Thủ tướng Chính phủ",
-    "t9": "Thủ tướng Chính phủ trao tặng",
-    "t10": "KHOA HỌC & CÔNG NGHỆ",
-    "t11": "Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam",
-    "t12": "228/DNKHCN · 2014",
-    "t13": "Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam",
-    "t14": "2014",
-    "t15": "CHẤT LƯỢNG & THƯƠNG HIỆU",
-    "t16": "6 lần đạt Giải thưởng Sao Vàng Đất Việt",
-    "t17": "2003, 2005, 2007, 2009, 2013, 2024",
-    "t18": "Giải thưởng Chất lượng Việt Nam",
-    "t19": "2002",
-    "t20": "Thương hiệu Vàng Nông nghiệp Việt Nam, 3 năm liên tiếp",
-    "t21": "2023 - 2025",
-    "t22": "KHU VỰC ASEAN",
-    "t23": "Thương hiệu nổi tiếng ASEAN",
-    "t24": "2011",
-    "t25": "Top 10 Thương hiệu mạnh ASEAN",
-    "t26": "2024",
+    "featured_awards": [
+      {
+        "image": {
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Ảnh Huân chương",
+          "src": "/uploads/award-hc-mverpbix.png"
+        },
+        "label": "NHÀ NƯỚC · [NĂM]",
+        "title": "Huân chương Lao động hạng Ba",
+        "detail": "Chủ tịch nước trao tặng"
+      },
+      {
+        "image": {
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Ảnh Bằng khen",
+          "src": "/uploads/award-bk-mvbxvhuk.jpg"
+        },
+        "label": "NHÀ NƯỚC · 2022",
+        "title": "Bằng khen của Thủ tướng Chính phủ",
+        "detail": "Thủ tướng Chính phủ trao tặng"
+      }
+    ],
+    "awards": [
+      {
+        "image": {
+          "src": "/uploads/award-kh1-mvj7n8ly.jpg",
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Ảnh Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam"
+        },
+        "label": "KHOA HỌC & CÔNG NGHỆ",
+        "title": "Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam",
+        "detail": "228/DNKHCN · 2014"
+      },
+      {
+        "image": {
+          "src": "/uploads/award-kh2-mvj7oi4n.png",
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Ảnh Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam"
+        },
+        "label": "KHOA HỌC & CÔNG NGHỆ",
+        "title": "Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam",
+        "detail": "2014"
+      },
+      {
+        "image": {
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Ảnh 6 lần đạt Giải thưởng Sao Vàng Đất Việt",
+          "src": "/uploads/award-cl1-mvjdc59n.png"
+        },
+        "label": "CHẤT LƯỢNG & THƯƠNG HIỆU",
+        "title": "6 lần đạt Giải thưởng Sao Vàng Đất Việt",
+        "detail": "2003, 2005, 2007, 2009, 2013, 2024"
+      },
+      {
+        "image": {
+          "src": "/uploads/award-cl2-mvj87k4q.png",
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Ảnh Giải thưởng Chất lượng Việt Nam"
+        },
+        "label": "CHẤT LƯỢNG & THƯƠNG HIỆU",
+        "title": "Giải thưởng Chất lượng Việt Nam",
+        "detail": "2002"
+      },
+      {
+        "image": {
+          "src": "/uploads/award-cl3-mvj8181t.png",
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Ảnh Thương hiệu Vàng Nông nghiệp Việt Nam, 3 năm liên tiếp"
+        },
+        "label": "CHẤT LƯỢNG & THƯƠNG HIỆU",
+        "title": "Thương hiệu Vàng Nông nghiệp Việt Nam, 3 năm liên tiếp",
+        "detail": "2023 - 2025"
+      },
+      {
+        "image": {
+          "src": "/uploads/award-as1-mvj7yl57.png",
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Ảnh Thương hiệu nổi tiếng ASEAN"
+        },
+        "label": "KHU VỰC ASEAN",
+        "title": "Thương hiệu nổi tiếng ASEAN",
+        "detail": "2011"
+      },
+      {
+        "image": {
+          "src": "/uploads/award-as2-mvj7xerw.png",
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Ảnh Top 10 Thương hiệu mạnh ASEAN"
+        },
+        "label": "KHU VỰC ASEAN",
+        "title": "Top 10 Thương hiệu mạnh ASEAN",
+        "detail": "2024"
+      }
+    ],
     "t27": "Hệ thống quản lý:",
     "t28": "ISO 9001:2015 · ISO 14001:2015 · Phòng thí nghiệm VILAS 1519",
-    "t29": "Tải hồ sơ năng lực (PDF)",
-    "img_award_kh1_1": {
-      "src": "/uploads/award-kh1-mvj7n8ly.jpg",
-      "focus": "50% 50%",
-      "zoom": "100",
-      "alt": "Ảnh Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam"
-    },
-    "img_award_kh2_1": {
-      "src": "/uploads/award-kh2-mvj7oi4n.png",
-      "focus": "50% 50%",
-      "zoom": "100",
-      "alt": "Ảnh Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam"
-    },
-    "img_award_cl1_1": {
-      "focus": "50% 50%",
-      "zoom": "100",
-      "alt": "Ảnh 6 lần đạt Giải thưởng Sao Vàng Đất Việt",
-      "src": "/uploads/award-cl1-mvjdc59n.png"
-    },
-    "img_award_cl2_1": {
-      "src": "/uploads/award-cl2-mvj87k4q.png",
-      "focus": "50% 50%",
-      "zoom": "100",
-      "alt": "Ảnh Giải thưởng Chất lượng Việt Nam"
-    },
-    "img_award_cl3_1": {
-      "src": "/uploads/award-cl3-mvj8181t.png",
-      "focus": "50% 50%",
-      "zoom": "100",
-      "alt": "Ảnh Thương hiệu Vàng Nông nghiệp Việt Nam, 3 năm liên tiếp"
-    },
-    "img_award_as1_1": {
-      "src": "/uploads/award-as1-mvj7yl57.png",
-      "focus": "50% 50%",
-      "zoom": "100",
-      "alt": "Ảnh Thương hiệu nổi tiếng ASEAN"
-    },
-    "img_award_as2_1": {
-      "src": "/uploads/award-as2-mvj7xerw.png",
-      "focus": "50% 50%",
-      "zoom": "100",
-      "alt": "Ảnh Top 10 Thương hiệu mạnh ASEAN"
-    }
+    "t29": "Tải hồ sơ năng lực (PDF)"
   },
   "s07_nang_luc": {
     "t1": "NĂNG LỰC",

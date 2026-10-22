@@ -24,10 +24,9 @@ const news = defineCollection({
     album: z.array(image).default([]),
     album_link: z.string().default(''),
     tags: z.array(z.string()).default([]),
-    // Press coverage ("bc") only: newspaper name, its logo, link to the original article,
+    // Press coverage ("bc") only: newspaper name, link to the original article,
     // and whether to show it in the "Báo chí nói về Tiến Nông" block on the news page.
     source: z.string().default(''),
-    source_logo: image,
     external_url: z.string().default(''),
     press_highlight: z.boolean().default(false),
   }),

@@ -11,10 +11,13 @@ const c = withDefaults(raw, 'src/content/pages/tin-tuc.json');
 
 const news = await getNews();
 // Press items have their own block at the bottom, so the featured area shows our own articles only.
-const [feat, ...rest] = news.filter((n) => !isPress(n));
-const press = await getPress(3);
+// Press coverage has its own block at the bottom; the tabs, featured area and grid show our own articles.
+const own = news.filter((n) => !isPress(n));
+const [feat, ...rest] = own;
+const press = await getPress(Infinity);
+const PRESS_SHOWN = 3;
 const side = rest.slice(0, 3);
-const catItems = [{ value: 'all', label: c.all_categories }, ...Object.entries(CATEGORIES).map(([value, label]) => ({ value, label }))];
+const catItems = [{ value: 'all', label: c.all_categories }, ...Object.entries(CATEGORIES).filter(([value]) => value !== 'bc').map(([value, label]) => ({ value, label }))];
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Tin tức">
 <section style="background:var(--surface-card)">
@@ -34,8 +37,8 @@ const catItems = [{ value: 'all', label: c.all_categories }, ...Object.entries(C
 <label style="display:flex;flex:0 1 280px;min-width:200px"><input id="news-q" type="search" aria-label={c.s02_danh_sach.f1} placeholder={c.s02_danh_sach.f2} style="width:100%;padding:10px 14px;border-radius:var(--radius-md);border:1px solid var(--border-default);font:16px var(--font-body);background:var(--surface-card);color:var(--text-primary);outline-color:var(--green-500)" /></label>
 </div>
 <div id="news-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:32px 24px">
-{news.map((n) => (
-<a href={newsUrl(n)} {...newsLinkAttrs(n)} data-cat={n.data.category} data-title={n.data.title.toLowerCase()} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:210px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${n.id}`} shape="rounded" radius="12" placeholder="Ảnh bài viết" image={n.data.cover} cms={`${n.filePath}#cover`} /></div><span style="font-size:13px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{isPress(n) && n.data.source ? n.data.source : CATEGORIES[n.data.category]}</strong> · {formatDate(n.data.date)}</span><strong style="font-size:18px;line-height:1.4">{n.data.title}{isPress(n) && ' ↗'}</strong></a>
+{own.map((n) => (
+<a href={newsUrl(n)} data-cat={n.data.category} data-title={n.data.title.toLowerCase()} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:210px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${n.id}`} shape="rounded" radius="12" placeholder="Ảnh bài viết" image={n.data.cover} cms={`${n.filePath}#cover`} /></div><span style="font-size:13px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{CATEGORIES[n.data.category]}</strong> · {formatDate(n.data.date)}</span><strong style="font-size:18px;line-height:1.4">{n.data.title}</strong></a>
 ))}
 </div>
 <div id="news-empty" hidden style="padding:40px;text-align:center;border:1px dashed var(--border-strong);border-radius:var(--radius-lg);color:var(--text-secondary)">{c.s02_danh_sach.t1}</div>
@@ -44,9 +47,9 @@ const catItems = [{ value: 'all', label: c.all_categories }, ...Object.entries(C
 
 {press.length > 0 && <section id="bao-chi" style="background:var(--surface-card);border-top:1px solid var(--border-default)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap"><h2 style="margin:0;font:800 clamp(26px,2.8vw,36px)/1.2 var(--font-display)">{c.s03_bao_chi.t1}</h2><a href={url('tin-tuc', 'bc')} data-open-tab="bc" style="font-weight:600">{c.s03_bao_chi.t2}</a></div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 32px)/3),calc((872px - 100%)*999),100%),1fr));gap:16px">
-{press.map((p) => <a href={newsUrl(p)} {...newsLinkAttrs(p)} style="display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid var(--border-default);border-radius:var(--radius-lg);color:var(--text-primary)">{p.data.source_logo.src ? <div style="position:relative;height:36px;width:140px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`press-${p.id}`} shape="rounded" radius="6" fit="contain" placeholder="Logo báo" image={p.data.source_logo} cms={`${p.filePath}#source_logo`} /></div> : <span style="font:700 13px var(--font-mono);letter-spacing:.06em;color:var(--green-700);text-transform:uppercase">{p.data.source}</span>}<strong style="line-height:1.4">{p.data.title}</strong><span style="font-size:13px;color:var(--text-tertiary)">{[p.data.source_logo.src ? p.data.source : '', formatDate(p.data.date), c.s03_bao_chi.t3].filter(Boolean).join(' · ')}</span></a>)}
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap"><h2 style="margin:0;font:800 clamp(26px,2.8vw,36px)/1.2 var(--font-display)">{c.s03_bao_chi.t1}</h2>{press.length > PRESS_SHOWN && <button type="button" id="press-more" style="background:none;border:0;padding:0;cursor:pointer;font:600 16px var(--font-body);color:var(--text-link)">{c.s03_bao_chi.t2}</button>}</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:32px 24px">
+{press.map((p, k) => <a href={newsUrl(p)} {...newsLinkAttrs(p)} data-press-extra={k >= PRESS_SHOWN ? '' : undefined} hidden={k >= PRESS_SHOWN} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:210px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`press-${p.id}`} shape="rounded" radius="12" placeholder="Ảnh bài báo" image={p.data.cover} cms={`${p.filePath}#cover`} /></div><span style="font-size:13px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{p.data.source || CATEGORIES[p.data.category]}</strong> · {formatDate(p.data.date)}</span><strong style="font-size:18px;line-height:1.4">{p.data.title}</strong><span style="font-size:14px;font-weight:600;color:var(--text-link)">{c.s03_bao_chi.t3}</span></a>)}
 </div></div></section>}
 </Layout>
 
@@ -94,6 +97,10 @@ const catItems = [{ value: 'all', label: c.all_categories }, ...Object.entries(C
   }
   const fromHash = () => { const h = decodeURIComponent(location.hash.slice(1)); if (h && openTab(h)) tabs.scrollIntoView({ block: 'center' }); };
   window.addEventListener('hashchange', fromHash);
+  document.getElementById('press-more')?.addEventListener('click', (e) => {
+    document.querySelectorAll<HTMLElement>('[data-press-extra]').forEach((el) => { el.hidden = false; });
+    (e.currentTarget as HTMLElement).hidden = true;
+  });
   if (location.hash) fromHash();
   q.addEventListener('input', () => { page = 1; render(); });
   render();

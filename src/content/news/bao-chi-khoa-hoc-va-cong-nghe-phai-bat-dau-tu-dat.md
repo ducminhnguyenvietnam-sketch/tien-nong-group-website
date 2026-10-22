@@ -15,11 +15,6 @@ album: []
 album_link: ""
 tags: []
 source: "Diễn đàn Doanh nghiệp"
-source_logo:
-  src: ""
-  focus: "center"
-  zoom: "100"
-  alt: "Logo Diễn đàn Doanh nghiệp"
 external_url: "https://diendandoanhnghiep.vn/khoa-hoc-va-cong-nghe-phai-bat-dau-tu-dat-de-nong-dan-viet-nam-lam-giau-tren-manh-dat-que-huong-minh-10168013.html"
 press_highlight: true
 ---

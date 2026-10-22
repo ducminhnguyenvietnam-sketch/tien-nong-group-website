@@ -91,7 +91,7 @@ content:
   - name: cover
     label: Ảnh đại diện
     component: photo
-    description: Khung ảnh khoảng 1040×560 px trên máy tính — nên dùng ảnh rộng ít nhất 2080 px.
+    description: Bài báo cũng dùng ô này làm ảnh ở khối "Báo chí nói về Tiến Nông". Khung ảnh khoảng 1040×560 px trên máy tính — nên dùng ảnh rộng ít nhất 2080 px.
   - name: cover_caption
     label: Chú thích ảnh đại diện
     type: string
@@ -117,18 +117,14 @@ content:
     label: 'Báo chí: Tên báo'
     type: string
     description: Chỉ điền khi chuyên mục là "Báo chí nói về Tiến Nông", ví dụ Diễn đàn Doanh nghiệp.
-  - name: source_logo
-    label: 'Báo chí: Logo báo'
-    component: photo
-    description: Khung ảnh khoảng 140×36 px. Để trống thì hiện tên báo.
   - name: external_url
     label: 'Báo chí: Đường dẫn bài gốc'
     type: string
     description: Dán đường dẫn đầy đủ (https://…). Bấm vào bài sẽ mở bài gốc trên trang báo, không cần viết nội dung.
   - name: press_highlight
-    label: 'Báo chí: Hiện ở khối "Báo chí nói về Tiến Nông"'
+    label: 'Báo chí: Ưu tiên hiện trước'
     type: boolean
-    description: Khối này ở cuối trang Tin tức, hiện tối đa 3 bài. Bài được bật hiện trước, sau đó đến bài mới nhất.
+    description: Khối "Báo chí nói về Tiến Nông" ở cuối trang Tin tức hiện 3 bài, bấm "Xem thêm" để hiện hết. Bài được bật hiện trước, sau đó đến bài mới nhất.
 - name: pages
   label: Các trang
   type: group
@@ -913,111 +909,52 @@ content:
       - name: t3
         label: 'Đoạn văn: Những danh hiệu dưới đây là sự ghi nhận cho hơ…'
         type: text
-      - name: img_award_hc_1
-        label: 'Ảnh: Ảnh Huân chương'
-        component: photo
-        description: Khung ảnh khoảng 96×120 px trên máy tính — nên dùng ảnh rộng ít nhất 192 px.
-      - name: t4
-        label: 'Nhãn in hoa: NHÀ NƯỚC · [NĂM]'
-        type: string
-      - name: t5
-        label: 'Chữ đậm: Huân chương Lao động hạng Ba'
-        type: string
-      - name: t6
-        label: 'Chữ: Chủ tịch nước trao tặng'
-        type: string
-      - name: img_award_bk_1
-        label: 'Ảnh: Ảnh Bằng khen'
-        component: photo
-        description: Khung ảnh khoảng 96×120 px trên máy tính — nên dùng ảnh rộng ít nhất 192 px.
-      - name: t7
-        label: 'Nhãn in hoa: NHÀ NƯỚC · 2022'
-        type: string
-      - name: t8
-        label: 'Chữ đậm: Bằng khen của Thủ tướng Chính phủ'
-        type: string
-      - name: t9
-        label: 'Chữ: Thủ tướng Chính phủ trao tặng'
-        type: string
-      - name: t10
-        label: 'Nhãn in hoa: KHOA HỌC & CÔNG NGHỆ'
-        type: string
-      - name: img_award_kh1_1
-        label: 'Ảnh giải: Doanh nghiệp Khoa học & Công nghệ đầu tiên tro…'
-        component: photo
-        description: Ảnh bằng, cúp hoặc huy chương thật, nền trơn. Khung khoảng 72×72 px — nên dùng ảnh rộng ít nhất 300 px.
-      - name: t11
-        label: 'Chữ đậm: Doanh nghiệp Khoa học & Công nghệ đầu tiên tro…'
-        type: text
-      - name: t12
-        label: 'Chữ: [Số GCN · năm cấp]'
-        type: string
-      - name: img_award_kh2_1
-        label: 'Ảnh giải: Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam'
-        component: photo
-        description: Ảnh bằng, cúp hoặc huy chương thật, nền trơn. Khung khoảng 72×72 px — nên dùng ảnh rộng ít nhất 300 px.
-      - name: t13
-        label: 'Chữ đậm: Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam'
-        type: string
-      - name: t14
-        label: 'Chữ: [Năm]'
-        type: string
-      - name: t15
-        label: 'Nhãn in hoa: CHẤT LƯỢNG & THƯƠNG HIỆU'
-        type: string
-      - name: img_award_cl1_1
-        label: 'Ảnh giải: 6 lần đạt Giải thưởng Sao Vàng Đất Việt'
-        component: photo
-        description: Ảnh bằng, cúp hoặc huy chương thật, nền trơn. Khung khoảng 72×72 px — nên dùng ảnh rộng ít nhất 300 px.
-      - name: t16
-        label: 'Chữ đậm: 6 lần đạt Giải thưởng Sao Vàng Đất Việt'
-        type: string
-      - name: t17
-        label: 'Chữ: [Các năm]'
-        type: string
-      - name: img_award_cl2_1
-        label: 'Ảnh giải: Giải thưởng Chất lượng Việt Nam'
-        component: photo
-        description: Ảnh bằng, cúp hoặc huy chương thật, nền trơn. Khung khoảng 72×72 px — nên dùng ảnh rộng ít nhất 300 px.
-      - name: t18
-        label: 'Chữ đậm: Giải thưởng Chất lượng Việt Nam'
-        type: string
-      - name: t19
-        label: 'Chữ: 2002'
-        type: string
-      - name: img_award_cl3_1
-        label: 'Ảnh giải: Thương hiệu Vàng Nông nghiệp Việt Nam, 3 năm l…'
-        component: photo
-        description: Ảnh bằng, cúp hoặc huy chương thật, nền trơn. Khung khoảng 72×72 px — nên dùng ảnh rộng ít nhất 300 px.
-      - name: t20
-        label: 'Chữ đậm: Thương hiệu Vàng Nông nghiệp Việt Nam, 3 năm l…'
-        type: string
-      - name: t21
-        label: 'Chữ: [Các năm]'
-        type: string
-      - name: t22
-        label: 'Nhãn in hoa: KHU VỰC ASEAN'
-        type: string
-      - name: img_award_as1_1
-        label: 'Ảnh giải: Thương hiệu nổi tiếng ASEAN'
-        component: photo
-        description: Ảnh bằng, cúp hoặc huy chương thật, nền trơn. Khung khoảng 72×72 px — nên dùng ảnh rộng ít nhất 300 px.
-      - name: t23
-        label: 'Chữ đậm: Thương hiệu nổi tiếng ASEAN'
-        type: string
-      - name: t24
-        label: 'Chữ: 2011'
-        type: string
-      - name: img_award_as2_1
-        label: 'Ảnh giải: Top 10 Thương hiệu mạnh ASEAN'
-        component: photo
-        description: Ảnh bằng, cúp hoặc huy chương thật, nền trơn. Khung khoảng 72×72 px — nên dùng ảnh rộng ít nhất 300 px.
-      - name: t25
-        label: 'Chữ đậm: Top 10 Thương hiệu mạnh ASEAN'
-        type: string
-      - name: t26
-        label: 'Chữ: [Năm]'
-        type: string
+      - name: featured_awards
+        label: Giải thưởng lớn (ô to đầu mục, kéo để sắp xếp)
+        description: Nên giữ 2 giải cấp Nhà nước. Bấm Add để thêm.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.label} · {fields.title}'
+        fields:
+        - name: image
+          label: Ảnh giải thưởng
+          component: photo
+          description: Ảnh bằng, cúp hoặc huân chương thật, nền trơn. Ảnh hiện to, nên rộng ít nhất 800 px.
+        - name: label
+          label: Nhãn in hoa (nhóm · năm)
+          type: string
+          description: Ví dụ NHÀ NƯỚC · 2009, hoặc KHU VỰC ASEAN.
+        - name: title
+          label: Tên giải thưởng
+          type: string
+        - name: detail
+          label: Dòng phụ (năm, số quyết định, đơn vị trao)
+          type: string
+      - name: awards
+        label: Các giải thưởng khác (kéo để sắp xếp)
+        description: Bấm Add để thêm giải mới; hiện 2 giải mỗi hàng trên máy tính.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.label} · {fields.title}'
+        fields:
+        - name: image
+          label: Ảnh giải thưởng
+          component: photo
+          description: Ảnh bằng, cúp hoặc huân chương thật, nền trơn. Nên rộng ít nhất 500 px.
+        - name: label
+          label: Nhãn in hoa (nhóm · năm)
+          type: string
+          description: Ví dụ NHÀ NƯỚC · 2009, hoặc KHU VỰC ASEAN.
+        - name: title
+          label: Tên giải thưởng
+          type: string
+        - name: detail
+          label: Dòng phụ (năm, số quyết định, đơn vị trao)
+          type: string
       - name: t27
         label: 'Chữ đậm: Hệ thống quản lý:'
         type: string
@@ -2007,26 +1944,6 @@ content:
         type: string
       - name: t13
         label: 'Chữ đậm: [Nhà máy]'
-        type: string
-    - name: s07_mo_hinh_thuc_te
-      label: 07 · Mô hình thực tế
-      type: object
-      fields:
-      - name: img_pd_model_1
-        label: 'Ảnh: Ruộng lúa mô hình sử dụng NPK Lúa 2'
-        component: photo
-        description: Khung ảnh khoảng 552×320 px trên máy tính — nên dùng ảnh rộng ít nhất 1104 px.
-      - name: t1
-        label: 'Nhãn in hoa: MÔ HÌNH THỰC TẾ'
-        type: string
-      - name: t2
-        label: 'Tiêu đề: [Tên mô hình, địa phương, vụ]'
-        type: string
-      - name: t3
-        label: 'Đoạn văn: [Kết quả: năng suất đạt … tạ/ha, tăng …% so vớ…'
-        type: text
-      - name: t4
-        label: 'Liên kết: Xem mô hình →'
         type: string
     - name: s08_san_pham_lien_quan
       label: 08 · Sản phẩm liên quan
@@ -3177,7 +3094,7 @@ content:
     - name: s04_hoi_thao_dau_bo
       label: 04 · Hội thảo đầu bờ
       type: object
-      description: Hiện 3 bài mới nhất chuyên mục "Nông dân & Mô hình hiệu quả" có thẻ "hội thảo". Chưa có bài gắn thẻ thì hiện 3 bài mới nhất của chuyên mục.
+      description: Hiện 2 bài mới nhất chuyên mục "Nông dân & Mô hình hiệu quả" có thẻ "hội thảo". Nếu chưa đủ 2 bài gắn thẻ, phần còn lại lấy bài mới nhất của chuyên mục.
       fields:
       - name: t1
         label: 'Nhãn in hoa: HỘI THẢO ĐẦU BỜ'
@@ -3513,7 +3430,7 @@ content:
         label: 'Tiêu đề: Báo chí nói về Tiến Nông'
         type: string
       - name: t2
-        label: 'Liên kết: Xem thêm →'
+        label: 'Nút: Xem thêm → (hiện các bài báo còn lại)'
         type: string
       - name: t3
         label: 'Chữ trên mỗi thẻ: Đọc bài gốc ↗'

@@ -106,18 +106,6 @@
     "t12": "Nơi sản xuất",
     "t13": "[Nhà máy]"
   },
-  "s07_mo_hinh_thuc_te": {
-    "img_pd_model_1": {
-      "src": "",
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Ruộng lúa mô hình sử dụng NPK Lúa 2"
-    },
-    "t1": "MÔ HÌNH THỰC TẾ",
-    "t2": "[Tên mô hình, địa phương, vụ]",
-    "t3": "[Kết quả: năng suất đạt … tạ/ha, tăng …% so với ruộng đối chứng. Lời chia sẻ của hộ nông dân.]",
-    "t4": "Xem mô hình →"
-  },
   "s08_san_pham_lien_quan": {
     "t1": "Các sản phẩm khác",
     "t2": "Tất cả sản phẩm →",
