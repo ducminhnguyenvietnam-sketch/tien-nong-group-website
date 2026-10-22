@@ -108,58 +108,58 @@
       "title": "Ủng hộ 1,55 tỷ đồng cho công tác khuyến học tỉnh Thanh Hóa",
       "body": "Đồng hành cùng Hội Khuyến học tỉnh chăm lo cho học sinh có hoàn cảnh khó khăn và học sinh giỏi.",
       "image": {
+        "src": "/uploads/prog-0-mvgcwitw.jpg",
         "focus": "58.6% 57.3%",
         "zoom": "150",
-        "alt": "Lễ trao biển ủng hộ khuyến học",
-        "src": "/uploads/prog-0-mvgcwitw.jpg"
+        "alt": "Lễ trao biển ủng hộ khuyến học"
       }
     },
     {
       "tag": "BIỂN ĐẢO",
-      "year": "[năm]",
+      "year": "2026",
       "title": "Đồng hành cùng chương trình “Triệu mầm xanh” vì Trường Sa xanh",
       "body": "Góp phần phủ xanh các đảo tiền tiêu bằng giải pháp dinh dưỡng cho cây trồng trên đất cát, đất nhiễm mặn.",
       "image": {
+        "src": "/uploads/prog-1-mvgcxoru.jpg",
         "focus": "60.8% 69%",
         "zoom": "110",
-        "alt": "Cây xanh trên đảo Trường Sa",
-        "src": "/uploads/prog-1-mvgcxoru.jpg"
+        "alt": "Cây xanh trên đảo Trường Sa"
       }
     },
     {
       "tag": "BIỂN ĐẢO",
-      "year": "[năm]",
+      "year": "2026",
       "title": "Cuộc thi “Em viết thư gửi Chiến sĩ Trường Sa”",
       "body": "Khơi dậy tình yêu biển đảo trong thế hệ trẻ thông qua những lá thư gửi các chiến sĩ.",
       "image": {
+        "src": "/uploads/prog-2-mvgd1iiq.jpg",
         "focus": "77% 55.6%",
         "zoom": "108",
-        "alt": "Học sinh viết thư",
-        "src": "/uploads/prog-2-mvgd1iiq.jpg"
+        "alt": "Học sinh viết thư"
       }
     },
     {
       "tag": "GIÁO DỤC",
-      "year": "[năm]",
+      "year": "2026",
       "title": "Đón học sinh, sinh viên tham quan trải nghiệm thực tế",
       "body": "Mở cửa nhà máy và phòng thí nghiệm để thế hệ trẻ hiểu hơn về nông nghiệp khoa học.",
       "image": {
+        "src": "/uploads/prog-3-mvgd470k.jpg",
         "focus": "50% 51.3%",
         "zoom": "103",
-        "alt": "Sinh viên tham quan nhà máy",
-        "src": "/uploads/prog-3-mvgd470k.jpg"
+        "alt": "Sinh viên tham quan nhà máy"
       }
     },
     {
       "tag": "NGƯỜI YẾU THẾ",
-      "year": "[năm]",
-      "title": "[Tên chương trình hỗ trợ người yếu thế]",
-      "body": "[Mô tả ngắn: đối tượng, địa bàn, giá trị hỗ trợ.]",
+      "year": "2025",
+      "title": "Hỗ trợ kinh phí, xây dựng nhà ở cho hộ nghèo",
+      "body": "Xây nhà cho hộ nghèo, hộ chính sách, hộ khó khăn về nhà ở huyện Quan Sơn. Giá trị 160 triệu đồng",
       "image": {
+        "src": "/uploads/prog-4-mvgdclz2.jpg",
         "focus": "43% 90.5%",
         "zoom": "138",
-        "alt": "Hoạt động hỗ trợ người yếu thế",
-        "src": "/uploads/prog-4-mvgdclz2.jpg"
+        "alt": "Hoạt động hỗ trợ người yếu thế"
       }
     },
     {
@@ -168,10 +168,10 @@
       "title": "[Tên chương trình cứu trợ thiên tai]",
       "body": "[Mô tả ngắn: đối tượng, địa bàn, giá trị hỗ trợ.]",
       "image": {
+        "src": "/uploads/prog-5-mvgd5dzo.jpg",
         "focus": "44.9% 78.8%",
         "zoom": "116",
-        "alt": "Cứu trợ đồng bào vùng lũ",
-        "src": "/uploads/prog-5-mvgd5dzo.jpg"
+        "alt": "Cứu trợ đồng bào vùng lũ"
       }
     }
   ]
