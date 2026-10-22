@@ -40,12 +40,12 @@
     "t3": "Các nhà máy của Tiến Nông vận hành theo hệ thống quản lý môi trường ISO 14001, với khuôn viên xanh và quy trình kiểm soát phát thải trong toàn bộ dây chuyền.",
     "t4": "[x]%",
     "t5": "diện tích cây xanh",
-    "t6": "[Hệ thống]",
-    "t7": "xử lý bụi, khí thải",
-    "t8": "[Hệ thống]",
-    "t9": "xử lý nước thải",
-    "t10": "[Nếu có]",
-    "t11": "năng lượng mặt trời"
+    "t6": "Kiểm soát tại nguồn",
+    "t7": "xử lý bụi, khí thải",
+    "t8": "QCVN 14:2008 cột A",
+    "t9": "nước thải sinh hoạt sau xử lý",
+    "t10": "Tuần hoàn",
+    "t11": "nước thải sản xuất, không xả ra môi trường"
   },
   "s03_dong_hanh_cung_nha_nong": {
     "t1": "02 · ĐỒNG HÀNH CÙNG NHÀ NÔNG",
