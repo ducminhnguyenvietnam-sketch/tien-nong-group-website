@@ -102,9 +102,10 @@
     "t7": "Đặng Ngọc Yến",
     "t8": "Thành viên Hội đồng Quản trị · Phó Tổng Giám đốc",
     "img_lead_4_1": {
-      "focus": "center",
+      "focus": "50% 0%",
       "zoom": "100",
-      "alt": "Chân dung (nền đồng nhất)"
+      "alt": "Chân dung (nền đồng nhất)",
+      "src": "/uploads/lead-4-mvka66xc.jpg"
     },
     "t9": "Nguyễn Đức Minh",
     "t10": "Thành viên HĐQT",
