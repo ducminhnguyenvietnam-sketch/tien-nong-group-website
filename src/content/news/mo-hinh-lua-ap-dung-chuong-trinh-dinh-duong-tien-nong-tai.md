@@ -6,9 +6,9 @@ author: Phòng Truyền thông
 featured: false
 summary: "[Tóm tắt ngắn 1–2 câu, hiển thị ở danh sách tin và đầu bài viết.]"
 cover:
-  src: /uploads/news-mo-hinh-lua-ap-dung-chuong-trinh-di-mvkg76z9.jpg
-  focus: 50% 50%
-  zoom: "101"
+  src: /uploads/news-mo-hinh-lua-ap-dung-chuong-trinh-di-mvkg8iuw.jpg
+  focus: 50% 54.7%
+  zoom: "110"
   alt: Ảnh đại diện bài viết
 cover_caption: ""
 album: []
