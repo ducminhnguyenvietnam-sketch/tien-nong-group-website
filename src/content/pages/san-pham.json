@@ -6,7 +6,7 @@
     "t1": "Trang chủ",
     "t2": "/ Sản phẩm",
     "t3": "SẢN PHẨM",
-    "t4": "Dinh dưỡng chuẩn xác cho từng loại cây trồng",
+    "t4": "Dinh dưỡng lý tưởng cho từng loại cây trồng",
     "t5": "Mọi sản phẩm đều có mã số phân bón, được sản xuất theo ISO 9001 và kiểm định chất lượng tại phòng thí nghiệm VILAS 1519.",
     "t6": "Tải catalogue sản phẩm (PDF) →",
     "t7": "Tìm đại lý gần nhất →"
@@ -212,10 +212,10 @@
         "Ngô"
       ],
       "image": {
+        "src": "/uploads/prod-4-mvc1ibv3.png",
         "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh bao bì (nền trung tính)",
-        "src": "/uploads/prod-4-mvc1ibv3.png"
+        "alt": "Ảnh bao bì (nền trung tính)"
       }
     },
     {
@@ -243,10 +243,10 @@
         "Chè"
       ],
       "image": {
+        "src": "/uploads/prod-5-mvc1jwz0.png",
         "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh bao bì (nền trung tính)",
-        "src": "/uploads/prod-5-mvc1jwz0.png"
+        "alt": "Ảnh bao bì (nền trung tính)"
       }
     },
     {
@@ -276,10 +276,10 @@
         "Mía"
       ],
       "image": {
+        "src": "/uploads/prod-6-mvc1lbde.png",
         "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh bao bì (nền trung tính)",
-        "src": "/uploads/prod-6-mvc1lbde.png"
+        "alt": "Ảnh bao bì (nền trung tính)"
       }
     },
     {
@@ -306,10 +306,10 @@
         "Mía"
       ],
       "image": {
+        "src": "/uploads/prod-7-mvc2fdf6.png",
         "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh bao bì (nền trung tính)",
-        "src": "/uploads/prod-7-mvc2fdf6.png"
+        "alt": "Ảnh bao bì (nền trung tính)"
       }
     },
     {
@@ -329,10 +329,10 @@
         "Chè"
       ],
       "image": {
+        "src": "/uploads/prod-8-mvc2grtd.png",
         "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh bao bì (nền trung tính)",
-        "src": "/uploads/prod-8-mvc2grtd.png"
+        "alt": "Ảnh bao bì (nền trung tính)"
       }
     },
     {
@@ -355,10 +355,10 @@
         "Cây công nghiệp"
       ],
       "image": {
+        "src": "/uploads/prod-9-mvc2hx4o.png",
         "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh bao bì (nền trung tính)",
-        "src": "/uploads/prod-9-mvc2hx4o.png"
+        "alt": "Ảnh bao bì (nền trung tính)"
       }
     },
     {
@@ -384,10 +384,10 @@
         "Cà phê"
       ],
       "image": {
+        "src": "/uploads/prod-10-mvc2l84h.png",
         "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh bao bì (nền trung tính)",
-        "src": "/uploads/prod-10-mvc2l84h.png"
+        "alt": "Ảnh bao bì (nền trung tính)"
       }
     },
     {
@@ -410,10 +410,10 @@
         "Cây công nghiệp"
       ],
       "image": {
+        "src": "/uploads/prod-11-mvc2mm2y.png",
         "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh bao bì (nền trung tính)",
-        "src": "/uploads/prod-11-mvc2mm2y.png"
+        "alt": "Ảnh bao bì (nền trung tính)"
       }
     },
     {
@@ -436,10 +436,10 @@
         "Cà phê"
       ],
       "image": {
+        "src": "/uploads/prod-12-mvc2op8x.png",
         "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Ảnh bao bì (nền trung tính)",
-        "src": "/uploads/prod-12-mvc2op8x.png"
+        "alt": "Ảnh bao bì (nền trung tính)"
       }
     }
   ]
