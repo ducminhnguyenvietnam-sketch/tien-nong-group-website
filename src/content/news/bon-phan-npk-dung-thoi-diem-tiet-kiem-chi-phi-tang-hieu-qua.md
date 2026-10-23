@@ -1,19 +1,19 @@
 ---
-title: "Bón phân NPK đúng thời điểm: tiết kiệm chi phí, tăng hiệu quả cho vụ lúa"
-category: "kt"
-date:
-author: "Phòng Truyền thông"
+title: Quy trình sử dụng bộ sản phẩm NPK Tiến Nông cho cây lúa đạt năng suất 7 –
+  9 tấn/ha
+category: kt
+date: 2026-10-17
+author: Phòng Truyền thông
 featured: false
-summary: "[Tóm tắt ngắn 1–2 câu, hiển thị ở danh sách tin và đầu bài viết.]"
+summary: Với mục tiêu năng suất 7 – 9 tấn/ha, cây lúa cần được cung cấp đầy đủ
+  và cân đối dinh dưỡng trong từng giai đoạn sinh trưởng. Bộ sản phẩm NPK Tiến
+  Nông “Vì nông dân Việt” được sử dụng theo quy trình 3 lần bón, từ bón lót đến
+  thúc đẻ nhánh và thúc làm đòng, giúp người sản xuất chủ động hơn trong việc
+  cung cấp dinh dưỡng cho cây lúa
 cover:
-  src: ""
-  focus: "center"
+  focus: center
   zoom: "100"
-  alt: "Ảnh đại diện bài viết"
-cover_caption: ""
-album: []
-album_link: ""
-tags: []
+  alt: Ảnh đại diện bài viết
+press_highlight: false
 ---
-
 [Nội dung bài viết]
