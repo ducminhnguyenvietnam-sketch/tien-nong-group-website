@@ -52,10 +52,6 @@
     {
       "key": "cnc",
       "label": "Phân bón công nghệ cao"
-    },
-    {
-      "key": "tvl",
-      "label": "Phân bón trung vi lượng"
     }
   ],
   "crops_all_label": "Tất cả cây trồng",
