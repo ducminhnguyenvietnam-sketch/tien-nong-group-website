@@ -104,18 +104,6 @@
           "type": "Giám đốc Kinh doanh 3",
           "phone": "0948723636",
           "map": "Liên hệ"
-        },
-        {
-          "name": "Cửa hàng VTNN [Tên]",
-          "type": "Điểm bán",
-          "address": "[Địa chỉ], Gia Lai",
-          "phone": "[SĐT]"
-        },
-        {
-          "name": "Cửa hàng VTNN [Tên]",
-          "type": "Điểm bán",
-          "address": "[Địa chỉ], Gia Lai",
-          "phone": "[SĐT]"
         }
       ]
     },
