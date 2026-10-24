@@ -10,10 +10,10 @@
       "button2_link": "/lien-he/#dai-ly",
       "show_text": true,
       "image": {
+        "src": "/uploads/hero-a-mvm1tdgp.jpg",
         "focus": "50% 42.5%",
         "zoom": "100",
-        "alt": "Video / ảnh flycam: nhà máy Tiến Nông giữa cánh đồng lúa",
-        "src": "/uploads/hero-a-mvm1tdgp.jpg"
+        "alt": "Video / ảnh flycam: nhà máy Tiến Nông giữa cánh đồng lúa"
       }
     },
     {
@@ -26,7 +26,6 @@
       "button2_link": "/nong-dan/",
       "show_text": true,
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Người nông dân trên cánh đồng lúa chín"
@@ -42,7 +41,6 @@
       "button2_link": "/lien-he/#dai-ly",
       "show_text": true,
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Ảnh thiết kế giới thiệu sản phẩm NPK hữu cơ vi sinh (chiến dịch marketing)"
@@ -137,13 +135,12 @@
     "t12": "Hợp tác quốc tế",
     "t13": "Sản phẩm có mặt tại hơn 10 quốc gia, năng lực cung ứng ổn định 650.000 tấn mỗi năm.",
     "t14": "Hợp tác xuất khẩu →",
-    "org_eyebrow": "HỘI NÔNG DÂN · HỘI LIÊN HIỆP PHỤ NỮ",
+    "org_eyebrow": "HỘI NÔNG DÂN · LIÊN MINH HỢP TÁC XÃ",
     "org_title": "Hợp tác tổ chức chính trị – xã hội",
     "org_text": "Tiến Nông đồng hành cùng Hội Nông dân, Hội Liên hiệp Phụ nữ các cấp đưa thông tin, kỹ thuật canh tác và vật tư nông nghiệp chất lượng đến từng hộ nông dân. Từ năm 2015, công ty phối hợp với Trung ương Hội Nông dân Việt Nam triển khai chương trình cung ứng phân bón trả chậm và tổ chức các lớp tập huấn kỹ thuật cho hội viên tại nhiều địa phương.",
     "org_cta": "Tìm hiểu chương trình hợp tác →",
     "org_link": "/phat-trien-ben-vung/#nha-nong",
     "org_image": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Tiến Nông cùng Hội Nông dân tập huấn kỹ thuật cho bà con"
@@ -158,8 +155,8 @@
         "label": "Lớp tập huấn kỹ thuật cho hội viên"
       },
       {
-        "value": "7.723 tấn",
-        "label": "Phân bón trả chậm cung ứng tại Bắc Ninh năm 2025"
+        "value": "150 tỷ",
+        "label": "Đầu tư chậm trả  đồng hành cùng bà con Phân bón trả chậm mỗi năm"
       }
     ]
   },
