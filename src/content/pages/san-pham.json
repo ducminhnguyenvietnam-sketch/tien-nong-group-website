@@ -4,19 +4,17 @@
   },
   "poster": {
     "image": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Poster giới thiệu sản phẩm Tiến Nông (ảnh thiết kế, tỉ lệ khoảng 3:1)"
-    },
-    "link": ""
+    }
   },
   "s01_tieu_de": {
     "t1": "Trang chủ",
     "t2": "/ Sản phẩm",
     "t3": "SẢN PHẨM",
     "t4": "Dinh dưỡng lý tưởng cho từng loại cây trồng",
-    "t5": "Mọi sản phẩm đều có mã số phân bón, được sản xuất theo ISO 9001 và kiểm định chất lượng tại phòng thí nghiệm VILAS 1519.",
+    "t5": "Các sản phẩm đều có mã số phân bón, được sản xuất theo ISO 9001, ISO 14001 và kiểm định chất lượng tại phòng thí nghiệm đạt chuẩn VILAS 1519 & VALAS 262.",
     "t6": "Tải catalogue sản phẩm (PDF) →",
     "t7": "Tìm đại lý gần nhất →"
   },
