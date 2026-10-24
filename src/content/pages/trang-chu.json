@@ -1,17 +1,54 @@
 {
-  "s01_hero_a": {
-    "img_hero_a_1": {
-      "focus": "50% 42.5%",
-      "zoom": "100",
-      "alt": "Video / ảnh flycam: nhà máy Tiến Nông giữa cánh đồng lúa",
-      "src": "/uploads/hero-a-mvm1tdgp.jpg"
+  "hero_slides": [
+    {
+      "eyebrow": "TIẾN NÔNG GROUP · TỪ 1995",
+      "title": "Hơn 30 năm khoa học công nghệ phụng sự nhà nông",
+      "text": "Nghiên cứu giải pháp dinh dưỡng cây trồng từ phòng thí nghiệm đến cánh đồng. Nông nghiệp bền vững, nông thôn văn minh, nông dân thịnh vượng.",
+      "button1_label": "Khám phá giải pháp →",
+      "button1_link": "/giai-phap/",
+      "button2_label": "Tìm đại lý gần nhất",
+      "button2_link": "/lien-he/#dai-ly",
+      "show_text": true,
+      "image": {
+        "focus": "50% 42.5%",
+        "zoom": "100",
+        "alt": "Video / ảnh flycam: nhà máy Tiến Nông giữa cánh đồng lúa",
+        "src": "/uploads/hero-a-mvm1tdgp.jpg"
+      }
     },
-    "t1": "TIẾN NÔNG GROUP · TỪ 1995",
-    "t2": "Hơn 30 năm khoa học công nghệ phụng sự nhà nông",
-    "t3": "Nghiên cứu giải pháp dinh dưỡng cây trồng từ phòng thí nghiệm đến cánh đồng. Nông nghiệp bền vững, nông thôn văn mình, nông dân thịnh vượng.",
-    "t4": "Khám phá giải pháp →",
-    "t5": "Tìm đại lý gần nhất"
-  },
+    {
+      "eyebrow": "SỨ MỆNH TIẾN NÔNG",
+      "title": "Nhà nông giàu có, Việt Nam thịnh vượng",
+      "text": "Mỗi mùa vàng bội thu của bà con là thước đo thành công của Tiến Nông. Hơn 30 năm qua, chúng tôi phụng sự để nhà nông giàu có và đất nước thịnh vượng.",
+      "button1_label": "Về Tiến Nông →",
+      "button1_link": "/ve-tien-nong/",
+      "button2_label": "Nông dân Tiến Nông",
+      "button2_link": "/nong-dan/",
+      "show_text": true,
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Người nông dân trên cánh đồng lúa chín"
+      }
+    },
+    {
+      "eyebrow": "SẢN PHẨM MỚI · NPK HỮU CƠ VI SINH",
+      "title": "NPK hữu cơ vi sinh Tiến Nông",
+      "text": "Dinh dưỡng NPK và vi sinh vật có ích trong cùng một hạt phân, sản xuất bằng công nghệ hơi nước: vừa nuôi cây, vừa bồi dưỡng đất.",
+      "button1_label": "Xem sản phẩm →",
+      "button1_link": "/san-pham/",
+      "button2_label": "Tìm đại lý gần nhất",
+      "button2_link": "/lien-he/#dai-ly",
+      "show_text": true,
+      "image": {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh thiết kế giới thiệu sản phẩm NPK hữu cơ vi sinh (chiến dịch marketing)"
+      }
+    }
+  ],
   "s02_uy_tin": {
     "t1": "300.000+",
     "t2": "hộ nông dân tin dùng",
@@ -99,7 +136,32 @@
     },
     "t12": "Hợp tác quốc tế",
     "t13": "Sản phẩm có mặt tại hơn 10 quốc gia, năng lực cung ứng ổn định 650.000 tấn mỗi năm.",
-    "t14": "Hợp tác xuất khẩu →"
+    "t14": "Hợp tác xuất khẩu →",
+    "org_eyebrow": "HỘI NÔNG DÂN · HỘI LIÊN HIỆP PHỤ NỮ",
+    "org_title": "Hợp tác tổ chức chính trị – xã hội",
+    "org_text": "Tiến Nông đồng hành cùng Hội Nông dân, Hội Liên hiệp Phụ nữ các cấp đưa thông tin, kỹ thuật canh tác và vật tư nông nghiệp chất lượng đến từng hộ nông dân. Từ năm 2015, công ty phối hợp với Trung ương Hội Nông dân Việt Nam triển khai chương trình cung ứng phân bón trả chậm và tổ chức các lớp tập huấn kỹ thuật cho hội viên tại nhiều địa phương.",
+    "org_cta": "Tìm hiểu chương trình hợp tác →",
+    "org_link": "/phat-trien-ben-vung/#nha-nong",
+    "org_image": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Tiến Nông cùng Hội Nông dân tập huấn kỹ thuật cho bà con"
+    },
+    "org_facts": [
+      {
+        "value": "2015",
+        "label": "Bắt đầu hợp tác cùng Trung ương Hội Nông dân Việt Nam"
+      },
+      {
+        "value": "Hàng nghìn",
+        "label": "Lớp tập huấn kỹ thuật cho hội viên"
+      },
+      {
+        "value": "7.723 tấn",
+        "label": "Phân bón trả chậm cung ứng tại Bắc Ninh năm 2025"
+      }
+    ]
   },
   "s05_san_pham": {
     "t1": "03 · SẢN PHẨM",

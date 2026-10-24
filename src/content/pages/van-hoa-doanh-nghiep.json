@@ -1,0 +1,228 @@
+{
+  "seo": {
+    "title": "Văn hóa doanh nghiệp",
+    "description": "Văn hóa Tiến Nông: 5 điều tâm niệm, giá trị cốt lõi, những nét văn hóa riêng của gia đình Tiến Nông, bài hát truyền thống và những vần thơ nhà nông gửi tặng."
+  },
+  "hero": {
+    "breadcrumb_home": "Trang chủ",
+    "breadcrumb_parent": "Về Tiến Nông",
+    "breadcrumb_self": "Văn hóa doanh nghiệp",
+    "eyebrow": "VĂN HÓA DOANH NGHIỆP",
+    "title": "Gia đình Tiến Nông, một lòng phụng sự nhà nông",
+    "intro": "Hơn ba thập kỷ qua, văn hóa Tiến Nông được vun đắp từ những điều giản dị: tận tâm với đồng ruộng, gắn bó với nhau như người một nhà và luôn đặt lợi ích của nhà nông lên trên hết. Đó là nền tảng tinh thần để mỗi cán bộ, nhân viên cùng nhau phụng sự nhà nông và kiến tạo tương lai.",
+    "button_principles": "5 điều tâm niệm",
+    "button_media": "Bài hát & thơ",
+    "image_1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Tập thể cán bộ, nhân viên Tiến Nông"
+    },
+    "image_2": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Lễ kỷ niệm ngày truyền thống"
+    },
+    "image_3": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Hoạt động văn hóa, văn nghệ"
+    }
+  },
+  "mottos": [
+    {
+      "label": "KHẨU HIỆU",
+      "text": "Phụng sự nhà nông – Kiến tạo tương lai"
+    },
+    {
+      "label": "SỨ MỆNH",
+      "text": "Phụng sự để nông dân giàu có cùng Việt Nam thịnh vượng"
+    },
+    {
+      "label": "TỪ NGÀY ĐẦU",
+      "text": "Tiến Nông – Tiến cùng nông dân Việt"
+    }
+  ],
+  "principles": {
+    "eyebrow": "01 · 5 ĐIỀU TÂM NIỆM",
+    "title": "Năm điều tâm niệm của người Tiến Nông",
+    "intro": "Năm điều tâm niệm là kim chỉ nam cho cách mỗi người Tiến Nông làm việc, ứng xử với đồng nghiệp, khách hàng và nhà nông.",
+    "items": [
+      {
+        "title": "[Điều tâm niệm thứ nhất]",
+        "body": "[Nội dung điều tâm niệm — nhập trong trang quản trị.]"
+      },
+      {
+        "title": "[Điều tâm niệm thứ hai]",
+        "body": "[Nội dung điều tâm niệm — nhập trong trang quản trị.]"
+      },
+      {
+        "title": "[Điều tâm niệm thứ ba]",
+        "body": "[Nội dung điều tâm niệm — nhập trong trang quản trị.]"
+      },
+      {
+        "title": "[Điều tâm niệm thứ tư]",
+        "body": "[Nội dung điều tâm niệm — nhập trong trang quản trị.]"
+      },
+      {
+        "title": "[Điều tâm niệm thứ năm]",
+        "body": "[Nội dung điều tâm niệm — nhập trong trang quản trị.]"
+      }
+    ]
+  },
+  "values": {
+    "eyebrow": "02 · GIÁ TRỊ CỐT LÕI",
+    "title": "Những giá trị làm nên người Tiến Nông",
+    "items": [
+      {
+        "title": "Đam mê chân chính",
+        "body": "Tận tâm với nông nghiệp và khoa học, bền bỉ theo đuổi những giá trị thực cho nhà nông."
+      },
+      {
+        "title": "Khát vọng cháy bỏng",
+        "body": "Không ngừng vươn lên, cống hiến trọn vẹn trong lĩnh vực mình đã chọn."
+      },
+      {
+        "title": "Sáng tạo không ngừng",
+        "body": "Đổi mới để giữ vị thế dẫn đầu về dinh dưỡng cây trồng tại Việt Nam và vươn ra thế giới."
+      },
+      {
+        "title": "Sẻ chia lợi ích",
+        "body": "Lợi ích của nhà nông luôn được đặt lên trên hết trong mọi quyết định."
+      },
+      {
+        "title": "Trách nhiệm cộng đồng",
+        "body": "Trách nhiệm với xã hội, bảo vệ môi trường, đồng hành cùng cộng đồng."
+      }
+    ]
+  },
+  "traditions": {
+    "eyebrow": "03 · NÉT VĂN HÓA TIẾN NÔNG",
+    "title": "Những nét văn hóa riêng của gia đình Tiến Nông",
+    "intro": "Văn hóa Tiến Nông không nằm trên khẩu hiệu mà trong những việc làm được giữ gìn qua nhiều thế hệ cán bộ, nhân viên.",
+    "items": [
+      {
+        "title": "Ngày truyền thống 04/01",
+        "body": "Ngày thành lập công ty (04/01/1995) là dịp cả gia đình Tiến Nông cùng nhìn lại chặng đường đã qua. [Mô tả hoạt động kỷ niệm hằng năm.]",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Lễ kỷ niệm ngày thành lập 04/01"
+        }
+      },
+      {
+        "title": "Tri ân người gắn bó",
+        "body": "Tặng vàng và trao Bảo Bình tài lộc để ghi nhận những cán bộ, nhân viên đồng hành cùng Tiến Nông nhiều năm.",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Lễ trao Bảo Bình tài lộc"
+        }
+      },
+      {
+        "title": "Hành trình cùng nhau",
+        "body": "Những chuyến du lịch nước ngoài dành cho toàn thể cán bộ, nhân viên, gắn kết mọi người như người một nhà.",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Chuyến du lịch nước ngoài toàn công ty"
+        }
+      },
+      {
+        "title": "Sẻ chia với cộng đồng",
+        "body": "Cán bộ, nhân viên cùng tham gia các chương trình khuyến học, hướng về biển đảo và hỗ trợ người yếu thế.",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Cán bộ Tiến Nông tham gia hoạt động thiện nguyện"
+        }
+      }
+    ]
+  },
+  "media": {
+    "eyebrow": "04 · BÀI HÁT TIẾN NÔNG",
+    "title": "Những giai điệu của người Tiến Nông",
+    "intro": "Những bài hát được viết về Tiến Nông và nhà nông, gắn với các ngày lễ, hội nghị và chương trình văn nghệ của công ty.",
+    "empty_note": "Video sẽ hiển thị khi dán đường dẫn YouTube hoặc tải tệp video lên trong trang quản trị.",
+    "videos": [
+      {
+        "title": "[Tên bài hát truyền thống Tiến Nông]",
+        "note": "[Sáng tác: … · Trình bày: …]",
+        "youtube": "",
+        "file": ""
+      }
+    ]
+  },
+  "poems": {
+    "eyebrow": "05 · THƠ TẶNG TIẾN NÔNG",
+    "title": "Những vần thơ nhà nông gửi tặng",
+    "intro": "Những bài thơ khách hàng, bà con nông dân và đối tác gửi tặng Tiến Nông qua các mùa vụ.",
+    "items": [
+      {
+        "title": "[Tên bài thơ]",
+        "text": "[Dòng thơ thứ nhất]\n[Dòng thơ thứ hai]\n[Dòng thơ thứ ba]\n[Dòng thơ thứ tư]",
+        "author": "[Tên tác giả]",
+        "place": "[Xã, tỉnh · năm]"
+      },
+      {
+        "title": "[Tên bài thơ]",
+        "text": "[Dòng thơ thứ nhất]\n[Dòng thơ thứ hai]\n[Dòng thơ thứ ba]\n[Dòng thơ thứ tư]",
+        "author": "[Tên tác giả]",
+        "place": "[Xã, tỉnh · năm]"
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "KHOẢNH KHẮC",
+    "title": "Khoảnh khắc gia đình Tiến Nông",
+    "photos": [
+      {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh hoạt động văn hóa 1"
+      },
+      {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh hoạt động văn hóa 2"
+      },
+      {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh hoạt động văn hóa 3"
+      },
+      {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh hoạt động văn hóa 4"
+      },
+      {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh hoạt động văn hóa 5"
+      },
+      {
+        "src": "",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ảnh hoạt động văn hóa 6"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Trở thành một phần của gia đình Tiến Nông",
+    "button_jobs": "Cơ hội nghề nghiệp →",
+    "button_about": "Về Tiến Nông"
+  }
+}

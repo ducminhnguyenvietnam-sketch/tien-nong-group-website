@@ -61,7 +61,7 @@ content:
     options:
       values:
       - value: tn
-        label: Tin Tiến Nông
+        label: Câu chuyện Tiến Nông
       - value: khcn
         label: Khoa học & Công nghệ
       - value: kt
@@ -91,7 +91,8 @@ content:
   - name: cover
     label: Ảnh đại diện
     component: photo
-    description: Bài báo cũng dùng ô này làm ảnh ở khối "Báo chí nói về Tiến Nông". Khung ảnh khoảng 1040×560 px trên máy tính — nên dùng ảnh rộng ít nhất 2080 px.
+    description: Bài báo cũng dùng ô này làm ảnh ở khối "Báo chí nói về Tiến Nông". Khung ảnh khoảng 1040×560 px trên máy tính — nên dùng ảnh
+      rộng ít nhất 2080 px.
   - name: cover_caption
     label: Chú thích ảnh đại diện
     type: string
@@ -124,7 +125,8 @@ content:
   - name: press_highlight
     label: 'Báo chí: Ưu tiên hiện trước'
     type: boolean
-    description: Khối "Báo chí nói về Tiến Nông" ở cuối trang Tin tức hiện 3 bài, bấm "Xem thêm" để hiện hết. Bài được bật hiện trước, sau đó đến bài mới nhất.
+    description: Khối "Báo chí nói về Tiến Nông" ở cuối trang Tin tức hiện 3 bài, bấm "Xem thêm" để hiện hết. Bài được bật hiện trước, sau đó
+      đến bài mới nhất.
 - name: pages
   label: Các trang
   type: group
@@ -146,29 +148,47 @@ content:
       - name: description
         label: Mô tả ngắn cho Google
         type: text
-    - name: s01_hero_a
-      label: 01 · Hero A
+    - name: hero_slides
+      label: 01 · Slide đầu trang (kéo để đổi thứ tự)
       type: object
+      description: Mỗi slide là một ảnh lớn đầu trang chủ, tự chuyển sau 6 giây. Thêm slide bằng nút Add.
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.title}'
       fields:
-      - name: img_hero_a_1
-        label: 'Ảnh: Video / ảnh flycam: nhà máy Tiến Nông giữa cánh đồng lúa'
-        component: photo
-        description: Khung ảnh khoảng 1440×702 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
-      - name: t1
-        label: 'Nhãn in hoa: TIẾN NÔNG GROUP · TỪ 1995'
+      - name: eyebrow
+        label: Dòng chữ nhỏ phía trên
         type: string
-      - name: t2
-        label: 'Tiêu đề chính: Hơn 30 năm khoa học phụng sự nhà nông'
+      - name: title
+        label: Tiêu đề lớn
         type: string
-      - name: t3
-        label: 'Đoạn văn: Nghiên cứu, sản xuất và đồng hành cùng nhà nôn…'
+      - name: text
+        label: Mô tả
         type: text
-      - name: t4
-        label: 'Nút: Khám phá giải pháp →'
+      - name: button1_label
+        label: Nút 1 – chữ
         type: string
-      - name: t5
-        label: 'Nút: Tìm đại lý gần nhất'
+      - name: button1_link
+        label: Nút 1 – đường dẫn
         type: string
+        description: Đường dẫn trong website (ví dụ /san-pham/) hoặc địa chỉ đầy đủ https://… Để trống nếu không cần.
+      - name: button2_label
+        label: Nút 2 – chữ
+        type: string
+      - name: button2_link
+        label: Nút 2 – đường dẫn
+        type: string
+        description: Đường dẫn trong website (ví dụ /san-pham/) hoặc địa chỉ đầy đủ https://… Để trống nếu không cần.
+      - name: show_text
+        label: Hiện chữ trên ảnh
+        type: boolean
+        default: true
+        description: Tắt nếu ảnh là poster đã thiết kế sẵn chữ (ví dụ ảnh chiến dịch sản phẩm).
+      - name: image
+        label: Ảnh slide
+        component: photo
+        description: Ảnh ngang, rộng ít nhất 2400 px. Có thể thay và căn ảnh ngay trên website với ?sua-anh.
     - name: s02_uy_tin
       label: 02 · Uy tín
       type: object
@@ -363,6 +383,39 @@ content:
       - name: t14
         label: 'Chữ: Hợp tác xuất khẩu →'
         type: string
+      - name: org_eyebrow
+        label: Ô hợp tác – dòng chữ nhỏ
+        type: string
+      - name: org_title
+        label: Ô hợp tác – tiêu đề
+        type: string
+      - name: org_text
+        label: Ô hợp tác – mô tả
+        type: text
+      - name: org_facts
+        label: Ô hợp tác – các con số
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.value} · {fields.label}'
+        fields:
+        - name: value
+          label: Con số
+          type: string
+        - name: label
+          label: Diễn giải
+          type: string
+      - name: org_cta
+        label: Ô hợp tác – chữ liên kết
+        type: string
+      - name: org_link
+        label: Ô hợp tác – đường dẫn
+        type: string
+        description: Đường dẫn trong website (ví dụ /san-pham/) hoặc địa chỉ đầy đủ https://… Để trống nếu không cần.
+      - name: org_image
+        label: Ô hợp tác – ảnh
+        component: photo
     - name: s05_san_pham
       label: 05 · Sản phẩm
       type: object
@@ -827,54 +880,54 @@ content:
         label: 'Tiêu đề: Hội đồng Quản trị'
         type: string
       - name: img_lead_1_1
-        label: 'Thành viên HĐQT 1 – Ảnh chân dung (nền đồng nhất)'
+        label: Thành viên HĐQT 1 – Ảnh chân dung (nền đồng nhất)
         component: photo
         description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t3
-        label: 'Thành viên HĐQT 1 – Họ tên'
+        label: Thành viên HĐQT 1 – Họ tên
         type: string
       - name: t4
-        label: 'Thành viên HĐQT 1 – Chức danh'
+        label: Thành viên HĐQT 1 – Chức danh
         type: string
       - name: img_lead_2_1
-        label: 'Thành viên HĐQT 2 – Ảnh chân dung (nền đồng nhất)'
+        label: Thành viên HĐQT 2 – Ảnh chân dung (nền đồng nhất)
         component: photo
         description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t5
-        label: 'Thành viên HĐQT 2 – Họ tên'
+        label: Thành viên HĐQT 2 – Họ tên
         type: string
       - name: t6
-        label: 'Thành viên HĐQT 2 – Chức danh'
+        label: Thành viên HĐQT 2 – Chức danh
         type: string
       - name: img_lead_3_1
-        label: 'Thành viên HĐQT 3 – Ảnh chân dung (nền đồng nhất)'
+        label: Thành viên HĐQT 3 – Ảnh chân dung (nền đồng nhất)
         component: photo
         description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t7
-        label: 'Thành viên HĐQT 3 – Họ tên'
+        label: Thành viên HĐQT 3 – Họ tên
         type: string
       - name: t8
-        label: 'Thành viên HĐQT 3 – Chức danh'
+        label: Thành viên HĐQT 3 – Chức danh
         type: string
       - name: img_lead_4_1
-        label: 'Thành viên HĐQT 4 – Ảnh chân dung (nền đồng nhất)'
+        label: Thành viên HĐQT 4 – Ảnh chân dung (nền đồng nhất)
         component: photo
         description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t9
-        label: 'Thành viên HĐQT 4 – Họ tên'
+        label: Thành viên HĐQT 4 – Họ tên
         type: string
       - name: t10
-        label: 'Thành viên HĐQT 4 – Chức danh'
+        label: Thành viên HĐQT 4 – Chức danh
         type: string
       - name: img_lead_5_1
-        label: 'Thành viên HĐQT 5 – Ảnh chân dung (nền đồng nhất)'
+        label: Thành viên HĐQT 5 – Ảnh chân dung (nền đồng nhất)
         component: photo
         description: Khung ảnh khoảng 214×268 px trên máy tính — nên dùng ảnh rộng ít nhất 428 px.
       - name: t11
-        label: 'Thành viên HĐQT 5 – Họ tên'
+        label: Thành viên HĐQT 5 – Họ tên
         type: string
       - name: t12
-        label: 'Thành viên HĐQT 5 – Chức danh'
+        label: Thành viên HĐQT 5 – Chức danh
         type: string
       - name: t13
         label: 'Nhãn in hoa: BAN LÃNH ĐẠO'
@@ -1101,6 +1154,253 @@ content:
         label: Ảnh
         component: photo
         description: Khung ảnh khoảng 556×360 px trên máy tính — nên dùng ảnh rộng ít nhất 1112 px.
+  - name: van_hoa_doanh_nghiep
+    label: Văn hóa doanh nghiệp (trang con của Về Tiến Nông)
+    type: file
+    path: src/content/pages/van-hoa-doanh-nghiep.json
+    format: json
+    fields:
+    - name: seo
+      label: Tiêu đề tab trình duyệt & mô tả Google
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề trang
+        type: string
+      - name: description
+        label: Mô tả ngắn cho Google
+        type: text
+    - name: hero
+      label: 01 · Đầu trang
+      type: object
+      fields:
+      - name: breadcrumb_home
+        label: Đường dẫn – Trang chủ
+        type: string
+      - name: breadcrumb_parent
+        label: Đường dẫn – Về Tiến Nông
+        type: string
+      - name: breadcrumb_self
+        label: Đường dẫn – trang này
+        type: string
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề lớn
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: button_principles
+        label: Nút 1 (đến 5 điều tâm niệm)
+        type: string
+      - name: button_media
+        label: Nút 2 (đến bài hát & thơ)
+        type: string
+      - name: image_1
+        label: Ảnh lớn bên trái
+        component: photo
+      - name: image_2
+        label: Ảnh nhỏ trên
+        component: photo
+      - name: image_3
+        label: Ảnh nhỏ dưới
+        component: photo
+    - name: mottos
+      label: 02 · Dải khẩu hiệu (nền xanh)
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.label}'
+      fields:
+      - name: label
+        label: Nhãn (ví dụ KHẨU HIỆU)
+        type: string
+      - name: text
+        label: Nội dung
+        type: string
+    - name: principles
+      label: 03 · 5 điều tâm niệm
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: items
+        label: Các điều tâm niệm
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Điều tâm niệm
+          type: string
+        - name: body
+          label: Diễn giải
+          type: text
+    - name: values
+      label: 04 · Giá trị cốt lõi
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: items
+        label: Các giá trị
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Giá trị
+          type: string
+        - name: body
+          label: Diễn giải
+          type: text
+    - name: traditions
+      label: 05 · Nét văn hóa Tiến Nông
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: items
+        label: Các nét văn hóa
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tên
+          type: string
+        - name: body
+          label: Mô tả
+          type: text
+        - name: image
+          label: Ảnh
+          component: photo
+    - name: media
+      label: 06 · Bài hát & video
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: empty_note
+        label: Chữ hiện khi chưa có video
+        type: string
+      - name: videos
+        label: Video bài hát
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tên bài hát
+          type: string
+        - name: note
+          label: Sáng tác / trình bày
+          type: string
+        - name: youtube
+          label: Đường dẫn YouTube
+          type: string
+          description: Dán link video YouTube (ví dụ https://www.youtube.com/watch?v=…). Ưu tiên dùng YouTube.
+        - name: file
+          label: Hoặc tải tệp video (mp4)
+          type: file
+          description: Chỉ dùng khi không có YouTube; tệp nên nhỏ hơn 50 MB.
+    - name: poems
+      label: 07 · Thơ tặng Tiến Nông
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: items
+        label: Các bài thơ
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title} – {fields.author}'
+        fields:
+        - name: title
+          label: Tên bài thơ
+          type: string
+        - name: text
+          label: Nội dung bài thơ
+          type: text
+          description: Mỗi câu thơ một dòng (xuống dòng bằng Enter).
+        - name: author
+          label: Tác giả
+          type: string
+        - name: place
+          label: Địa phương · năm
+          type: string
+    - name: gallery
+      label: 08 · Khoảnh khắc (album ảnh)
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: photos
+        label: Ảnh (ảnh đầu tiên hiển thị lớn)
+        component: photo
+        list: true
+    - name: cta
+      label: 09 · Cuối trang
+      type: object
+      fields:
+      - name: title
+        label: Lời mời
+        type: string
+      - name: button_jobs
+        label: Nút cơ hội nghề nghiệp
+        type: string
+      - name: button_about
+        label: Nút về Tiến Nông
+        type: string
   - name: khoa_hoc_cong_nghe
     label: Khoa học & Công nghệ
     type: file
@@ -1472,6 +1772,18 @@ content:
       - name: description
         label: Mô tả ngắn cho Google
         type: text
+    - name: poster
+      label: Poster đầu trang
+      type: object
+      fields:
+      - name: image
+        label: Ảnh poster
+        component: photo
+        description: Ảnh thiết kế sẵn, tỉ lệ khoảng 3:1 (ví dụ 2400×800 px). Để trống sẽ hiện khung chờ ảnh.
+      - name: link
+        label: Bấm vào poster thì mở
+        type: string
+        description: Đường dẫn trong website (ví dụ /san-pham/) hoặc địa chỉ đầy đủ https://… Để trống nếu không cần.
     - name: s01_tieu_de
       label: 01 · Tiêu đề
       type: object
@@ -3094,7 +3406,8 @@ content:
     - name: s04_hoi_thao_dau_bo
       label: 04 · Hội thảo đầu bờ
       type: object
-      description: Hiện 2 bài mới nhất chuyên mục "Nông dân & Mô hình hiệu quả" có thẻ "hội thảo". Nếu chưa đủ 2 bài gắn thẻ, phần còn lại lấy bài mới nhất của chuyên mục.
+      description: Hiện 2 bài mới nhất chuyên mục "Nông dân & Mô hình hiệu quả" có thẻ "hội thảo". Nếu chưa đủ 2 bài gắn thẻ, phần còn lại lấy
+        bài mới nhất của chuyên mục.
       fields:
       - name: t1
         label: 'Nhãn in hoa: HỘI THẢO ĐẦU BỜ'
@@ -3109,7 +3422,7 @@ content:
         label: 'Liên kết: Xem tất cả bài hội thảo →'
         type: string
       - name: t5
-        label: 'Chữ khi chưa có bài'
+        label: Chữ khi chưa có bài
         type: string
     - name: s05_hoi_dap
       label: 05 · Hỏi đáp
@@ -3828,6 +4141,9 @@ content:
       - name: ve_tien_nong
         label: 'Mục menu: Về Tiến Nông'
         type: string
+      - name: tin_tuc
+        label: 'Mục menu: Tin tức'
+        type: string
       - name: khoa_hoc_cong_nghe
         label: 'Mục menu: Khoa học & Công nghệ'
         type: string
@@ -3843,8 +4159,15 @@ content:
       - name: nong_dan
         label: 'Mục menu: Nông dân Tiến Nông'
         type: string
-      - name: tin_tuc
-        label: 'Mục menu: Tin tức'
+    - name: subnav
+      label: Tên các mục menu con (dưới Về Tiến Nông)
+      type: object
+      fields:
+      - name: gioi_thieu
+        label: 'Menu con: Giới thiệu chung'
+        type: string
+      - name: van_hoa_doanh_nghiep
+        label: 'Menu con: Văn hóa doanh nghiệp'
         type: string
   - name: footer
     label: Chân trang

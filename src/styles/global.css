@@ -99,3 +99,10 @@ a:hover { color: var(--text-link-hover); }
   .award--big .award__img { height: 260px; padding: 12px; }
   .award--big .award__img .img-slot { inset: 12px !important; }
 }
+
+/* Header dropdown (e.g. Về Tiến Nông → Văn hóa doanh nghiệp): opens on hover and keyboard focus. */
+.nav-dd { position: relative; display: flex; align-items: center; }
+.nav-dd__menu { position: absolute; top: 100%; left: -16px; z-index: 40; min-width: 230px; padding: 8px; display: none; flex-direction: column; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-md); box-shadow: var(--shadow-md); white-space: nowrap; }
+.nav-dd:hover .nav-dd__menu, .nav-dd:focus-within .nav-dd__menu { display: flex; }
+.nav-dd__menu a { padding: 10px 12px; border-radius: var(--radius-sm); color: var(--text-primary); font-weight: 600; text-decoration: none; }
+.nav-dd__menu a:hover, .nav-dd__menu a[aria-current='page'] { background: var(--green-50); color: var(--green-700); }

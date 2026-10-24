@@ -5,7 +5,7 @@ export type NewsEntry = CollectionEntry<'news'>;
 
 /** News categories (keys are stored in each article; labels shown on the site). */
 export const CATEGORIES: Record<string, string> = {
-  tn: 'Tin Tiến Nông',
+  tn: 'Câu chuyện Tiến Nông',
   khcn: 'Khoa học & Công nghệ',
   kt: 'Kiến thức nông nghiệp',
   nd: 'Nông dân & Mô hình hiệu quả',
