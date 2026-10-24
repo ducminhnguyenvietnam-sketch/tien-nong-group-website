@@ -55,6 +55,20 @@ thì tạo mã mới. Muốn gỡ mã khỏi máy: bấm **Đã kết nối GitH
 Vẫn có thể tải ảnh trong trang quản trị (ô **Ảnh** trong từng mục), nhưng khi đó không căn chỉnh
 trực quan được.
 
+## Slide đầu trang chủ, poster Sản phẩm, trang Văn hóa doanh nghiệp
+
+- **Slide đầu trang chủ**: *Các trang → Trang chủ → 01 · Slide đầu trang*. Mỗi slide có dòng chữ
+  nhỏ, tiêu đề, mô tả, 2 nút (chữ + đường dẫn) và ảnh. Bấm **Add** để thêm slide, kéo ⋮⋮ để đổi thứ tự.
+  Nếu ảnh là poster đã thiết kế sẵn chữ (ví dụ ảnh chiến dịch NPK hữu cơ vi sinh), **tắt "Hiện chữ
+  trên ảnh"** để website chỉ hiện ảnh. Slide tự chuyển sau 6 giây; ở chế độ sửa ảnh (`?sua-anh`)
+  slide đứng yên — bấm chấm tròn bên dưới để chuyển tới slide cần thay ảnh.
+- **Poster trang Sản phẩm**: *Các trang → Sản phẩm → Poster đầu trang* — tải ảnh thiết kế tỉ lệ khoảng
+  3:1 (ví dụ 2400×800 px); có thể điền đường dẫn để khi bấm vào poster thì mở trang chiến dịch.
+- **Văn hóa doanh nghiệp** (menu *Về Tiến Nông → Văn hóa doanh nghiệp*): sửa tại *Các trang → Văn hóa
+  doanh nghiệp*. Điền **5 điều tâm niệm**, các **bài thơ** (mỗi câu thơ một dòng) và **video bài hát**:
+  dán đường dẫn YouTube (khuyên dùng) hoặc tải tệp mp4. Các chỗ trong [ngoặc vuông] là chỗ cần điền.
+- **Tên các mục menu** và menu con: *Thông tin chung → Đầu trang (menu)*.
+
 ## 4. Sửa chữ
 
 Mỗi dòng chữ trên trang là một ô riêng, tên ô ghi loại chữ và vài chữ đầu, ví dụ

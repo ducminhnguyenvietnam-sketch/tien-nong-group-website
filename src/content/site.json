@@ -31,12 +31,16 @@
     "menu_close": "✕ Đóng",
     "nav": {
       "ve_tien_nong": "Về Tiến Nông",
+      "tin_tuc": "Tin tức",
       "khoa_hoc_cong_nghe": "Khoa học & Công nghệ",
       "san_pham": "Sản phẩm",
       "giai_phap": "Giải pháp",
       "phat_trien_ben_vung": "Phát triển bền vững",
-      "nong_dan": "Nông dân Tiến Nông",
-      "tin_tuc": "Tin tức"
+      "nong_dan": "Nông dân Tiến Nông"
+    },
+    "subnav": {
+      "gioi_thieu": "Giới thiệu chung",
+      "van_hoa_doanh_nghiep": "Văn hóa doanh nghiệp"
     }
   },
   "footer": {

@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Tabs from '../components/Tabs.astro';
-import { url } from '../lib/routes';
+import { link, url } from '../lib/routes';
 import { CATEGORIES, getNews, isPress, newsUrl } from '../lib/news';
 
 const c = withDefaults(raw, 'src/content/pages/trang-chu.json');
@@ -14,19 +14,34 @@ const latest = (await getNews()).filter((n) => !isPress(n)).slice(0, 3);
 
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
-<section style="position:relative;height:min(78vh,720px);min-height:520px;background:var(--gray-800)">
-<ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="hero-a" shape="rect" placeholder="Video / ảnh flycam: nhà máy Tiến Nông giữa cánh đồng lúa" image={c.s01_hero_a.img_hero_a_1} cms="src/content/pages/trang-chu.json#s01_hero_a.img_hero_a_1" />
+<section class="hero-slider" data-slider aria-roledescription="carousel" aria-label="Giới thiệu Tiến Nông" style="position:relative;height:min(78vh,720px);min-height:520px;background:var(--gray-800);overflow:hidden">
+{c.hero_slides.map((s, k) => (
+<div class:list={['hero-slide', { 'is-active': k === 0 }]} data-slide={k} role="group" aria-roledescription="slide" aria-label={`${k + 1} / ${c.hero_slides.length}`} aria-hidden={k === 0 ? 'false' : 'true'}>
+<ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`hero-${k}`} shape="rect" placeholder={s.image.alt || 'Ảnh slide'} image={s.image} cms={`src/content/pages/trang-chu.json#hero_slides.${k}.image`} />
+{s.show_text !== false && <>
 <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,53,26,.78) 0%,rgba(2,53,26,.45) 45%,rgba(2,53,26,0) 75%)"></div>
 <div style="position:absolute;inset:0;pointer-events:none;display:flex;align-items:center">
 <div style="max-width:1280px;width:100%;margin:0 auto;padding:0 clamp(20px,4vw,56px)">
 <div style="max-width:780px;display:flex;flex-direction:column;gap:22px;color:#fff">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-100)">{c.s01_hero_a.t1}</span>
-<h1 style="margin:0;font:800 clamp(34px,5vw,64px)/1.1 var(--font-display);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero_a.t2}</h1>
-<p style="margin:0;font-size:19px;line-height:1.55;color:var(--green-50);max-width:580px;text-align:justify;text-wrap:pretty">{c.s01_hero_a.t3}</p>
+{s.eyebrow && <span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-100)">{s.eyebrow}</span>}
+{k === 0
+  ? <h1 style="margin:0;font:800 clamp(34px,5vw,64px)/1.1 var(--font-display);letter-spacing:-.015em;text-wrap:balance">{s.title}</h1>
+  : <h2 style="margin:0;font:800 clamp(34px,5vw,64px)/1.1 var(--font-display);letter-spacing:-.015em;text-wrap:balance">{s.title}</h2>}
+{s.text && <p style="margin:0;font-size:19px;line-height:1.55;color:var(--green-50);max-width:580px;text-align:justify;text-wrap:pretty">{s.text}</p>}
 <div style="display:flex;gap:12px;flex-wrap:wrap;pointer-events:auto">
-<a href={url('giai-phap')} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg">{c.s01_hero_a.t4}</Button></a>
-<a href={url('lien-he', 'dai-ly')} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg" variant="secondary">{c.s01_hero_a.t5}</Button></a>
+{s.button1_label && <a href={link(s.button1_link)} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg">{s.button1_label}</Button></a>}
+{s.button2_label && <a href={link(s.button2_link)} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg" variant="secondary">{s.button2_label}</Button></a>}
 </div></div></div></div>
+</>}
+</div>
+))}
+{c.hero_slides.length > 1 && <>
+<button type="button" class="hero-arrow" data-slide-step="-1" aria-label="Slide trước" style="left:clamp(8px,2vw,24px)">‹</button>
+<button type="button" class="hero-arrow" data-slide-step="1" aria-label="Slide sau" style="right:clamp(8px,2vw,24px)">›</button>
+<div class="hero-dots" role="tablist" aria-label="Chọn slide">
+{c.hero_slides.map((_s, k) => <button type="button" role="tab" data-slide-to={k} aria-selected={k === 0 ? 'true' : 'false'} aria-label={`Slide ${k + 1}`}></button>)}
+</div>
+</>}
 </section>
 
 <section style="background:var(--surface-card);border-bottom:1px solid var(--border-default)">
@@ -83,7 +98,18 @@ const latest = (await getNews()).filter((n) => !isPress(n)).slice(0, 3);
 <a href={url('lien-he', 'dai-ly')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-dealer" shape="rect" placeholder="Cửa hàng đại lý vật tư nông nghiệp" image={c.s04_giai_phap_theo_doi_tuong.img_aud_dealer_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_dealer_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t6}</strong><span style="color:var(--text-secondary);flex:1;text-align:justify">{c.s04_giai_phap_theo_doi_tuong.t7} </span><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t8}</span></div></a>
 <a href={url('giai-phap-du-an')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-project" shape="rect" placeholder="Sân golf / cảnh quan đô thị / nhà kính" image={c.s04_giai_phap_theo_doi_tuong.img_aud_project_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_project_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t9}</strong><span style="color:var(--text-secondary);flex:1;text-align:justify">{c.s04_giai_phap_theo_doi_tuong.t10}</span><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t11}</span></div></a>
 <a href={url('lien-he')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-export" shape="rect" placeholder="Container hàng xuất khẩu / kho" image={c.s04_giai_phap_theo_doi_tuong.img_aud_export_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_export_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t12}</strong><span style="color:var(--text-secondary);flex:1;text-align:justify">{c.s04_giai_phap_theo_doi_tuong.t13}</span><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t14}</span></div></a>
-</div></div></section>
+</div>
+<article class="org-card" style="display:grid;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden">
+<div style="position:relative;min-height:260px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-org" shape="rect" placeholder={c.s04_giai_phap_theo_doi_tuong.org_image.alt} image={c.s04_giai_phap_theo_doi_tuong.org_image} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.org_image" /></div>
+<div style="padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:12px">
+<span style="font:600 12px var(--font-mono);letter-spacing:.08em;color:var(--green-600)">{c.s04_giai_phap_theo_doi_tuong.org_eyebrow}</span>
+<strong style="font:800 clamp(22px,2.2vw,28px)/1.25 var(--font-display)">{c.s04_giai_phap_theo_doi_tuong.org_title}</strong>
+<p style="margin:0;color:var(--text-secondary);text-align:justify;text-wrap:pretty">{c.s04_giai_phap_theo_doi_tuong.org_text}</p>
+{c.s04_giai_phap_theo_doi_tuong.org_facts.length > 0 && <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px 20px;padding-top:14px;border-top:1px solid var(--border-default)">{c.s04_giai_phap_theo_doi_tuong.org_facts.map((f) => <div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 22px/1.2 var(--font-display);color:var(--green-700)">{f.value}</span><span style="font-size:13px;line-height:1.45;color:var(--text-secondary)">{f.label}</span></div>)}</div>}
+<a href={link(c.s04_giai_phap_theo_doi_tuong.org_link)} style="align-self:flex-start;color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.org_cta}</a>
+</div>
+</article>
+</div></section>
 
 <section id="san-pham" style="background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
@@ -145,7 +171,7 @@ const latest = (await getNews()).filter((n) => !isPress(n)).slice(0, 3);
 </div>
 <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:8px">
 <a href={url('tuyen-dung', 'vi-tri')} style="text-decoration:none;display:inline-flex"><Button as="span" >{c.s07_con_nguoi.t12}</Button></a>
-<a href={url('tuyen-dung', 'van-hoa')} style="text-decoration:none;display:inline-flex"><Button as="span" variant="ghost">{c.s07_con_nguoi.t13}</Button></a>
+<a href={url('ve-tien-nong/van-hoa-doanh-nghiep')} style="text-decoration:none;display:inline-flex"><Button as="span" variant="ghost">{c.s07_con_nguoi.t13}</Button></a>
 </div></div></div></section>
 
 <section id="ben-vung" style="background:var(--surface-card)">
@@ -177,10 +203,52 @@ const latest = (await getNews()).filter((n) => !isPress(n)).slice(0, 3);
 </Layout>
 
 <style>
+  .org-card { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); }
+  @media (max-width: 760px) { .org-card { grid-template-columns: 1fr; } }
+  .hero-slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .7s ease, visibility .7s; }
+  .hero-slide.is-active { opacity: 1; visibility: visible; }
+  .hero-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(0,0,0,.28); color: #fff; font: 400 30px/1 var(--font-body); cursor: pointer; display: flex; align-items: center; justify-content: center; padding-bottom: 4px; }
+  .hero-arrow:hover { background: rgba(0,0,0,.5); }
+  .hero-dots { position: absolute; left: 0; right: 0; bottom: 20px; z-index: 3; display: flex; justify-content: center; gap: 10px; }
+  .hero-dots button { width: 10px; height: 10px; padding: 0; border-radius: 999px; border: 0; background: rgba(255,255,255,.55); cursor: pointer; transition: width .3s, background .3s; }
+  .hero-dots button[aria-selected='true'] { width: 28px; background: #fff; }
+  @media (max-width: 600px) { .hero-arrow { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .hero-slide { transition: none; } }
   /* Phone: the award labels are kept unbroken, so give each its own row. */
   @media (max-width: 480px) { .awards, .aud-grid { grid-template-columns: 1fr !important; } }
 </style>
 <script>
+  // Hero slider: autoplay every 6 s (paused on hover/focus, in the photo editor and for reduced motion),
+  // arrows, dots and swipe.
+  const slider = document.querySelector<HTMLElement>('[data-slider]');
+  if (slider) {
+    const slides = [...slider.querySelectorAll<HTMLElement>('.hero-slide')];
+    const dots = [...slider.querySelectorAll<HTMLElement>('[data-slide-to]')];
+    let cur = 0, paused = false;
+    const show = (k: number) => {
+      cur = (k + slides.length) % slides.length;
+      slides.forEach((s, i) => { s.classList.toggle('is-active', i === cur); s.setAttribute('aria-hidden', String(i !== cur)); });
+      dots.forEach((d, i) => d.setAttribute('aria-selected', String(i === cur)));
+    };
+    slider.querySelectorAll<HTMLElement>('[data-slide-step]').forEach((b) => b.addEventListener('click', () => show(cur + Number(b.dataset.slideStep))));
+    dots.forEach((d) => d.addEventListener('click', () => show(Number(d.dataset.slideTo))));
+    slider.addEventListener('mouseenter', () => { paused = true; });
+    slider.addEventListener('mouseleave', () => { paused = false; });
+    slider.addEventListener('focusin', () => { paused = true; });
+    slider.addEventListener('focusout', () => { paused = false; });
+    let x0: number | null = null;
+    slider.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') x0 = e.clientX; });
+    slider.addEventListener('pointerup', (e) => {
+      if (x0 === null || document.documentElement.classList.contains('pe-on')) { x0 = null; return; }
+      const dx = e.clientX - x0; x0 = null;
+      if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (slides.length > 1 && !still) setInterval(() => {
+      if (!paused && !document.hidden && !document.documentElement.classList.contains('pe-on')) show(cur + 1);
+    }, 6000);
+  }
+
   document.getElementById('product-tabs')?.addEventListener('tabs:change', (e) => {
     const v = (e as CustomEvent<string>).detail;
     document.querySelectorAll<HTMLElement>('#san-pham [data-panel]').forEach((p) => { p.hidden = p.dataset.panel !== v; });
