@@ -174,10 +174,10 @@
     "featured_awards": [
       {
         "image": {
+          "src": "/uploads/award-hc-mverpbix.png",
           "focus": "50% 50%",
           "zoom": "100",
-          "alt": "Ảnh Huân chương",
-          "src": "/uploads/award-hc-mverpbix.png"
+          "alt": "Ảnh Huân chương"
         },
         "label": "NHÀ NƯỚC · [NĂM]",
         "title": "Huân chương Lao động hạng Ba",
@@ -185,10 +185,10 @@
       },
       {
         "image": {
+          "src": "/uploads/award-bk-mvbxvhuk.jpg",
           "focus": "center",
           "zoom": "100",
-          "alt": "Ảnh Bằng khen",
-          "src": "/uploads/award-bk-mvbxvhuk.jpg"
+          "alt": "Ảnh Bằng khen"
         },
         "label": "NHÀ NƯỚC · 2022",
         "title": "Bằng khen của Thủ tướng Chính phủ",
@@ -220,10 +220,10 @@
       },
       {
         "image": {
+          "src": "/uploads/award-cl1-mvjdc59n.png",
           "focus": "50% 50%",
           "zoom": "100",
-          "alt": "Ảnh 6 lần đạt Giải thưởng Sao Vàng Đất Việt",
-          "src": "/uploads/award-cl1-mvjdc59n.png"
+          "alt": "Ảnh 6 lần đạt Giải thưởng Sao Vàng Đất Việt"
         },
         "label": "CHẤT LƯỢNG & THƯƠNG HIỆU",
         "title": "6 lần đạt Giải thưởng Sao Vàng Đất Việt",
@@ -280,7 +280,7 @@
   },
   "s07_nang_luc": {
     "t1": "NĂNG LỰC",
-    "t2": "Chuỗi giá trị khép kín, từ phòng thí nghiệm đến đồng ruộng",
+    "t2": "Chuỗi giá trị khép kín, từ phòng thí nghiệm đến cánh đồng",
     "img_cap_rd_1": {
       "src": "/uploads/cap-rd-mvhvo432.jpg",
       "focus": "0% 95.9%",
