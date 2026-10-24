@@ -80,36 +80,12 @@
         {
           "name": "Nguyễn Trung Trụ",
           "type": "Giám đốc Kinh doanh"
-        },
-        {
-          "name": "Cửa hàng VTNN [Tên]",
-          "type": "Điểm bán",
-          "address": "[Địa chỉ], Thanh Hóa",
-          "phone": "[SĐT]"
-        },
-        {
-          "name": "Cửa hàng VTNN [Tên]",
-          "type": "Điểm bán",
-          "address": "[Địa chỉ], Thanh Hóa",
-          "phone": "[SĐT]"
-        },
-        {
-          "name": "HTX dịch vụ nông nghiệp [Tên]",
-          "type": "Điểm bán",
-          "address": "[Địa chỉ], Thanh Hóa",
-          "phone": "[SĐT]"
         }
       ]
     },
     {
       "name": "Nghệ An",
       "dealers": [
-        {
-          "name": "Đại lý vật tư nông nghiệp [Tên]",
-          "type": "Nhà phân phối",
-          "address": "[Địa chỉ], Nghệ An",
-          "phone": "[SĐT]"
-        },
         {
           "name": "Cửa hàng VTNN [Tên]",
           "type": "Điểm bán",
