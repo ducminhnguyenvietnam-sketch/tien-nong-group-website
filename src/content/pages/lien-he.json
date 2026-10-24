@@ -78,10 +78,8 @@
       "name": "Thanh Hóa",
       "dealers": [
         {
-          "name": "Đại lý vật tư nông nghiệp [Tên]",
-          "type": "Nhà phân phối",
-          "address": "[Địa chỉ], Thanh Hóa",
-          "phone": "[SĐT]"
+          "name": "Nguyễn Trung Trụ",
+          "type": "Giám đốc Kinh doanh"
         },
         {
           "name": "Cửa hàng VTNN [Tên]",
