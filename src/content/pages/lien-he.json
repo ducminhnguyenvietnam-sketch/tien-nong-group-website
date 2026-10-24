@@ -106,28 +106,6 @@
           "map": "Liên hệ"
         }
       ]
-    },
-    {
-      "name": "Đắk Lắk",
-      "dealers": [
-        {
-          "name": "Đại lý vật tư nông nghiệp [Tên]",
-          "type": "Nhà phân phối",
-          "address": "[Địa chỉ], Đắk Lắk",
-          "phone": "[SĐT]"
-        }
-      ]
-    },
-    {
-      "name": "Hà Nội",
-      "dealers": [
-        {
-          "name": "Cửa hàng VTNN [Tên]",
-          "type": "Điểm bán",
-          "address": "[Địa chỉ], Hà Nội",
-          "phone": "[SĐT]"
-        }
-      ]
     }
   ],
   "needs": [
