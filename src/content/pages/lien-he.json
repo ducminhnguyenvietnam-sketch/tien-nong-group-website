@@ -97,13 +97,13 @@
       ]
     },
     {
-      "name": "Gia Lai",
+      "name": "Sơn La",
       "dealers": [
         {
-          "name": "Đại lý vật tư nông nghiệp [Tên]",
-          "type": "Nhà phân phối",
-          "address": "[Địa chỉ], Gia Lai",
-          "phone": "[SĐT]"
+          "name": "Lê Viết Thiện",
+          "type": "Giám đốc Kinh doanh 3",
+          "phone": "0948723636",
+          "map": "Liên hệ"
         },
         {
           "name": "Cửa hàng VTNN [Tên]",
