@@ -60,12 +60,15 @@
     "Ngô",
     "Cà phê",
     "Cây ăn quả",
+    "Cây công nghiệp",
     "Rau màu",
+    "Cây lâm nghiệp",
     "Chè",
     "Mía",
-    "Cây công nghiệp"
+    "Sắn",
+    "Lạc"
   ],
-  "sort_popular_label": "Phổ biến nhất",
+  "sort_popular_label": "Bán nhiều nhất",
   "sort_name_label": "Tên A–Z",
   "products": [
     {
