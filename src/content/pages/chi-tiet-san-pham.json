@@ -1,7 +1,6 @@
 {
   "seo": {
-    "title": "NPK 12-3-10+2SiO₂hh Tiến Nông (Lúa 2)",
-    "description": ""
+    "title": "NPK 12-3-10+2SiO₂hh Tiến Nông (Lúa 2)"
   },
   "s01_san_pham": {
     "t1": "Trang chủ",
@@ -28,9 +27,8 @@
     "t22": "ISO 9001:2015 · ISO 14001:2015",
     "t23": "Tìm đại lý gần nhất",
     "t24": "Gọi kỹ sư tư vấn",
-    "link1": "",
+    "link1": "/uploads/TCCS 07-2018.NPK 20-10-10+MNC_compressed.pdf",
     "t25": "Tải tài liệu kỹ thuật (PDF)",
-    "link2": "",
     "t26": "Tải phiếu an toàn (SDS)",
     "t27": "Thành phần",
     "t28": "Công dụng",
@@ -155,7 +153,6 @@
     {
       "label": "Mặt sau",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Bao bì mặt sau (thông tin kỹ thuật)"
@@ -164,7 +161,6 @@
     {
       "label": "Hạt phân",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Cận cảnh hạt phân"
@@ -173,7 +169,6 @@
     {
       "label": "Trên ruộng",
       "image": {
-        "src": "",
         "focus": "center",
         "zoom": "100",
         "alt": "Sản phẩm trên ruộng lúa"
