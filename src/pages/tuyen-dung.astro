@@ -1,12 +1,17 @@
 ---
 import raw from '../content/pages/tuyen-dung.json';
-import { withDefaults } from '../lib/content';
+import { isFilled, stripPlaceholders, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Select from '../components/Select.astro';
 import { url, link } from '../lib/routes';
+import siteRaw from '../content/site.json';
 
 const c = withDefaults(raw, 'src/content/pages/tuyen-dung.json');
+const site = withDefaults(siteRaw, 'src/content/site.json');
+const jobsEmail = isFilled(c.s05_vi_tri_tuyen_dung.t5) ? c.s05_vi_tri_tuyen_dung.t5 : site.company.email;
+const applyHref = (j: { title: string; link?: string | null }) =>
+  isFilled(j.link) ? link(j.link) : `mailto:${jobsEmail}?subject=${encodeURIComponent('Ứng tuyển: ' + j.title)}`;
 
 const opt = (arr: string[], all: string) => [{ value: 'all', label: all }, ...[...new Set(arr)].map((v) => ({ value: v, label: v }))];
 ---
@@ -16,9 +21,9 @@ const opt = (arr: string[], all: string) => [{ value: 'all', label: all }, ...[.
 <span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_hero.t1}</a> {c.s01_hero.t2}</span>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px 64px;align-items:center">
 <div style="display:flex;flex-direction:column;gap:20px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s01_hero.t3}</span>
-<h1 style="margin:0;font:800 clamp(38px,5vw,64px)/1.08 var(--font-display);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero.t4}</h1>
-<p style="margin:0;font-size:18px;color:var(--text-secondary);text-align:justify;text-wrap:pretty">{c.s01_hero.t5}</p>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s01_hero.t3}</span>
+<h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero.t4}</h1>
+<p style="margin:0;font-size:var(--fs-lead);color:var(--text-secondary);text-wrap:pretty">{c.s01_hero.t5}</p>
 <div style="display:flex;gap:12px;flex-wrap:wrap"><a href="#vi-tri" style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s01_hero.t6}</a><a href="#van-hoa" style="color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md);border:1px solid var(--border-strong)">{c.s01_hero.t7}</a></div>
 </div>
 <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:260px 200px;gap:14px">
@@ -29,26 +34,26 @@ const opt = (arr: string[], all: string) => [{ value: 'all', label: all }, ...[.
 
 <section style="background:var(--green-800);color:#fff">
 <div style="max-width:1280px;margin:0 auto;padding:48px clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 84px)/4),calc((900px - 100%)*999),calc((100% - 28px)/2)),1fr));gap:28px">
-<div style="display:flex;flex-direction:column"><span style="font:800 40px/1.1 var(--font-display);color:var(--amber-400)">{c.s02_con_so.t1}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s02_con_so.t2}</span></div>
-<div style="display:flex;flex-direction:column"><span style="font:800 40px/1.1 var(--font-display);color:var(--amber-400)">{c.s02_con_so.t3}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s02_con_so.t4}</span></div>
-<div style="display:flex;flex-direction:column"><span style="font:800 40px/1.1 var(--font-display);color:var(--amber-400)">{c.s02_con_so.t5}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s02_con_so.t6}</span></div>
-<div style="display:flex;flex-direction:column"><span style="font:800 40px/1.1 var(--font-display);color:var(--amber-400)">{c.s02_con_so.t7}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s02_con_so.t8}</span></div>
+<div style="display:flex;flex-direction:column"><span style="font:var(--type-stat);color:var(--amber-400);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_con_so.t1}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s02_con_so.t2}</span></div>
+<div style="display:flex;flex-direction:column"><span style="font:var(--type-stat);color:var(--amber-400);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_con_so.t3}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s02_con_so.t4}</span></div>
+<div style="display:flex;flex-direction:column"><span style="font:var(--type-stat);color:var(--amber-400);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_con_so.t5}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s02_con_so.t6}</span></div>
+<div style="display:flex;flex-direction:column"><span style="font:var(--type-stat);color:var(--amber-400);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_con_so.t7}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s02_con_so.t8}</span></div>
 </div></section>
 
 <section id="van-hoa" style="background:var(--surface-page);scroll-margin-top:120px">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:14px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s03_dai_ngo.t1}</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s03_dai_ngo.t2}</h2></div>
-<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.s03_dai_ngo.t3}</p>
+<div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s03_dai_ngo.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s03_dai_ngo.t2}</h2></div>
+<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s03_dai_ngo.t3}</p>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 40px)/3),calc((880px - 100%)*999),100%),1fr));gap:20px">
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ben-1" shape="rect" placeholder="Chuyến du lịch nước ngoài toàn công ty" image={c.s03_dai_ngo.img_ben_1_1} cms="src/content/pages/tuyen-dung.json#s03_dai_ngo.img_ben_1_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:19px">{c.s03_dai_ngo.t4}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t5}</span></div></div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ben-2" shape="rect" placeholder="Lễ trao vàng tri ân" image={c.s03_dai_ngo.img_ben_2_1} cms="src/content/pages/tuyen-dung.json#s03_dai_ngo.img_ben_2_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:19px">{c.s03_dai_ngo.t6}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t7}</span></div></div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ben-3" shape="rect" placeholder="Lễ trao Bảo Bình tài lộc" image={c.s03_dai_ngo.img_ben_3_1} cms="src/content/pages/tuyen-dung.json#s03_dai_ngo.img_ben_3_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:19px">{c.s03_dai_ngo.t8}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t9}</span></div></div>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 84px)/4),calc((964px - 100%)*999),calc((100% - 28px)/2)),1fr));gap:16px 28px">
+<div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 84px)/4),calc((964px - 100%)*999),calc((100% - 28px)/2)),1fr));gap:16px 28px">
 <div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">{c.s03_dai_ngo.t10}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t11}</span></div>
-<div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">{c.s03_dai_ngo.t12}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t13}</span></div>
+<div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">{c.s03_dai_ngo.t12}</strong><span style="color:var(--text-secondary);font-size:15px">{stripPlaceholders(c.s03_dai_ngo.t13)}</span></div>
 <div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">{c.s03_dai_ngo.t14}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t15}</span></div>
 <div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">{c.s03_dai_ngo.t16}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t17}</span></div>
 </div></div></section>
@@ -57,23 +62,23 @@ const opt = (arr: string[], all: string) => [{ value: 'all', label: all }, ...[.
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:40px 72px;align-items:center">
 <div style="position:relative;aspect-ratio:4/5;max-height:560px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="hr-story" shape="rounded" radius="20" placeholder="Chân dung người lao động gắn bó 20+ năm tại nơi làm việc" image={c.s04_cau_chuyen.img_hr_story_1} cms="src/content/pages/tuyen-dung.json#s04_cau_chuyen.img_hr_story_1" /></div>
 <div style="display:flex;flex-direction:column;gap:22px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s04_cau_chuyen.t1}</span>
-<p style="margin:0;font:600 clamp(22px,2.4vw,30px)/1.45 var(--font-display);text-wrap:pretty">{c.s04_cau_chuyen.t2}</p>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s04_cau_chuyen.t1}</span>
+<p style="margin:0;font:var(--type-quote);text-wrap:pretty">{c.s04_cau_chuyen.t2}</p>
 <div style="display:flex;flex-direction:column;padding-top:16px;border-top:1px solid var(--border-default)"><strong style="font-size:17px">{c.s04_cau_chuyen.t3}</strong><span style="color:var(--text-secondary)">{c.s04_cau_chuyen.t4}</span></div>
 </div></div></section>
 
 <section id="vi-tri" style="background:var(--surface-page);scroll-margin-top:120px">
 <div style="max-width:1080px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap"><div style="display:flex;flex-direction:column;gap:14px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s05_vi_tri_tuyen_dung.t1}</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em">{c.s05_vi_tri_tuyen_dung.t2}</h2></div><span style="color:var(--text-secondary)"><strong id="job-count" style="color:var(--text-primary)">{c.jobs.length}</strong> {c.s05_vi_tri_tuyen_dung.t3}</span></div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap"><div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s05_vi_tri_tuyen_dung.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em">{c.s05_vi_tri_tuyen_dung.t2}</h2></div><span style="color:var(--text-secondary)"><strong id="job-count" style="color:var(--text-primary)">{c.jobs.length}</strong> {c.s05_vi_tri_tuyen_dung.t3}</span></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
 <Select id="job-dept" label={c.s05_vi_tri_tuyen_dung.f1} options={opt(c.jobs.map((j) => j.dept), c.jobs_all_depts)} value="all" />
 <Select id="job-loc" label={c.s05_vi_tri_tuyen_dung.f2} options={opt(c.jobs.map((j) => j.loc), c.jobs_all_locations)} value="all" />
 </div>
 <div style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden">
 {c.jobs.map((j) => (
-<a href={link(j.link)} data-dept={j.dept} data-loc={j.loc} style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--border-default);color:var(--text-primary)" class="hover-tint"><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{j.title}</strong><span style="font-size:14px;color:var(--text-secondary)">{j.dept} · {j.loc} · Hạn nộp {j.due}</span></div><span style="color:var(--green-600);font-weight:600">{c.jobs_apply_label}</span></a>
+<a href={applyHref(j)} data-dept={j.dept} data-loc={j.loc} style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--border-default);color:var(--text-primary)" class="hover-tint"><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{j.title}</strong><span style="font-size:14px;color:var(--text-secondary)">{j.dept} · {j.loc}{isFilled(j.due) && ` · Hạn nộp ${j.due}`}</span></div><span style="color:var(--green-600);font-weight:600">{c.jobs_apply_label}</span></a>
 ))}
-<div id="job-empty" hidden style="padding:32px 24px;color:var(--text-secondary)">{c.s05_vi_tri_tuyen_dung.t4} <strong>{c.s05_vi_tri_tuyen_dung.t5}</strong> {c.s05_vi_tri_tuyen_dung.t6}</div>
+<div id="job-empty" hidden style="padding:32px 24px;color:var(--text-secondary)">{c.s05_vi_tri_tuyen_dung.t4} <strong>{jobsEmail}</strong> {c.s05_vi_tri_tuyen_dung.t6}</div>
 </div>
 <span style="font-size:14px;color:var(--text-tertiary)">{c.s05_vi_tri_tuyen_dung.t7}</span>
 </div></section>

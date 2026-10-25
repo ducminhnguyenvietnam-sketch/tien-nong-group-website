@@ -1,6 +1,6 @@
 ---
 import raw from '../content/pages/san-pham.json';
-import { withDefaults } from '../lib/content';
+import { isFilled, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Select from '../components/Select.astro';
@@ -9,27 +9,33 @@ import { url, link } from '../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/san-pham.json');
 
-const lineLabel = (key: string) => (c.lines.find((l) => l.key === key)?.label ?? '').replace('Phân bón ', '').toUpperCase();
+// Product lines used by a product but missing from the tab list still get a tab (e.g. "tvl" = trung vi lượng).
+const EXTRA_LINES: Record<string, string> = { tvl: 'Phân bón trung vi lượng' };
+const lines = [...c.lines, ...[...new Set(c.products.map((p) => p.line))]
+  .filter((k) => k && !c.lines.some((l) => l.key === k))
+  .map((k) => ({ key: k, label: EXTRA_LINES[k] ?? k }))];
+const lineLabel = (key: string) => (lines.find((l) => l.key === key)?.label ?? '').replace('Phân bón ', '').toUpperCase();
+const hasPoster = isFilled(c.poster.image?.src);
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Sản phẩm">
 {(() => {
   // Campaign poster (a designed image, usually with its own text), full width and as tall as the home-page hero; optional link.
-  const frame = <div style="position:relative;height:min(78vh,720px);min-height:520px;background:var(--gray-800)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="product-poster" shape="rect" placeholder={c.poster.image.alt} image={c.poster.image} cms="src/content/pages/san-pham.json#poster.image" /></div>;
-  return <section aria-label={c.poster.image.alt}>{c.poster.link ? <a href={link(c.poster.link)} style="display:block">{frame}</a> : frame}</section>;
+  const frame = <div style="position:relative;height:min(78vh,720px);min-height:520px;background:var(--gray-800)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="product-poster" sizes="100vw" shape="rect" placeholder={c.poster.image.alt} image={c.poster.image} cms="src/content/pages/san-pham.json#poster.image" /></div>;
+  return <section aria-label={c.poster.image.alt} data-needs-photos={hasPoster ? undefined : ''}>{c.poster.link ? <a href={link(c.poster.link)} style="display:block">{frame}</a> : frame}</section>;
 })()}
 <section style="background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) 40px;display:flex;flex-direction:column;gap:28px">
 <span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_tieu_de.t1}</a> {c.s01_tieu_de.t2}</span>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px 64px;align-items:end">
 <div style="display:flex;flex-direction:column;gap:14px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s01_tieu_de.t3}</span>
-<h1 style="margin:0;font:800 clamp(34px,4.4vw,56px)/1.1 var(--font-display);letter-spacing:-.015em;text-wrap:balance">{c.s01_tieu_de.t4}</h1>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s01_tieu_de.t3}</span>
+<h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_tieu_de.t4}</h1>
 </div>
 <div style="display:flex;flex-direction:column;gap:14px">
-<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.s01_tieu_de.t5}</p>
-<div style="display:flex;gap:16px;flex-wrap:wrap"><a href={link(c.s01_tieu_de.link1)} style="font-weight:600">{c.s01_tieu_de.t6}</a><a href={url('lien-he')} style="font-weight:600">{c.s01_tieu_de.t7}</a></div>
+<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s01_tieu_de.t5}</p>
+<div style="display:flex;gap:16px;flex-wrap:wrap">{isFilled(c.s01_tieu_de.link1) && <a href={link(c.s01_tieu_de.link1)} target="_blank" rel="noopener" style="font-weight:600">{c.s01_tieu_de.t6}</a>}<a href={url('lien-he')} style="font-weight:600">{c.s01_tieu_de.t7}</a></div>
 </div></div>
-<div style="overflow-x:auto"><Tabs id="line-tabs" label="Dòng sản phẩm" items={[{ value: 'all', label: c.lines_all_label }, ...c.lines.map((l) => ({ value: l.key, label: l.label }))]} value="all" /></div>
+<div style="overflow-x:auto"><Tabs id="line-tabs" label="Dòng sản phẩm" items={[{ value: 'all', label: c.lines_all_label }, ...lines.map((l) => ({ value: l.key, label: l.label }))]} value="all" /></div>
 </div></section>
 
 <section style="background:var(--surface-page)">
@@ -40,14 +46,14 @@ const lineLabel = (key: string) => (c.lines.find((l) => l.key === key)?.label ??
 <div style="flex:1 1 200px;min-width:0"><Select id="prod-sort" label={c.s02_danh_sach.f3} options={[{ value: 'pop', label: c.sort_popular_label }, { value: 'name', label: c.sort_name_label }]} value="pop" /></div>
 </div>
 <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:15px;color:var(--text-secondary)"><span><strong id="prod-count" style="color:var(--text-primary)">{c.products.length}</strong> {c.s02_danh_sach.t2}</span><button type="button" id="prod-reset" hidden style="background:none;border:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.s02_danh_sach.t3}</button></div>
-<div id="prod-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px">
+<div id="prod-grid" class="prod-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px">
 {c.products.map((p, i) => (
 <a data-line={p.line} data-crops={p.crops.join('|')} data-name={p.name.toLowerCase()} data-pop={i} href={url('chi-tiet-san-pham')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary);transition:box-shadow .15s" class="hover-lift">
 <div style="position:relative;height:250px;background:var(--surface-sunken);padding:16px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`prod-${i}`} shape="rounded" radius="10" fit="contain" placeholder={p.image.alt} image={p.image} cms={`src/content/pages/san-pham.json#products.${i}.image`} /></div>
 <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1">
-<span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{lineLabel(p.line)}</span>
-<strong style="font-size:17px;line-height:1.35;flex:1">{p.name}</strong>
-<div style="display:flex;gap:6px;flex-wrap:wrap">{p.npk.map(({ value: v, unit: k }) => <span style="display:flex;flex-direction:column;align-items:center;min-width:52px;padding:4px 8px;border-radius:var(--radius-sm);background:var(--green-50)"><span style="font:700 15px var(--font-display);color:var(--green-800)">{v}</span><span style="font-size:11px;color:var(--text-secondary)">{k}</span></span>)}</div>
+<span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{lineLabel(p.line)}</span>
+<strong style="font-size:17px;line-height:1.35;flex:1">{p.name.replace(/\+/g, '+\u200B')}</strong>
+<div style="display:flex;gap:6px;flex-wrap:wrap">{p.npk.filter(({ value: v }) => isFilled(v)).map(({ value: v, unit: k }) => <span data-npk style="display:flex;flex-direction:column;align-items:center;min-width:52px;padding:4px 8px;border-radius:var(--radius-sm);background:var(--green-50)"><span style="font:700 15px var(--font-display);color:var(--green-800)">{v}</span><span style="font-size:11px;color:var(--text-secondary)">{k}</span></span>)}</div>
 <span style="font-size:13px;color:var(--text-tertiary)">{'Phù hợp: ' + p.crops.join(', ')}</span>
 </div></a>
 ))}
@@ -57,7 +63,7 @@ const lineLabel = (key: string) => (c.lines.find((l) => l.key === key)?.label ??
 
 <section style="background:var(--green-800);color:#fff">
 <div style="max-width:1280px;margin:0 auto;padding:56px clamp(20px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
-<div style="display:flex;flex-direction:column;gap:8px;max-width:640px"><h2 style="margin:0;font:800 clamp(24px,2.8vw,34px)/1.2 var(--font-display);text-wrap:balance">{c.s03_tu_van.t1}</h2><span style="color:var(--green-100);text-align:justify">{c.s03_tu_van.t2}</span></div>
+<div style="display:flex;flex-direction:column;gap:8px;max-width:640px"><h2 style="margin:0;font:var(--type-h3);text-wrap:balance">{c.s03_tu_van.t1}</h2><span style="color:var(--green-100)">{c.s03_tu_van.t2}</span></div>
 <div style="display:flex;gap:12px;flex-wrap:wrap"><a href={url('giai-phap')} style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s03_tu_van.t3}</a><a href={url('lien-he')} style="color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md);border:1px solid rgba(255,255,255,.7)">{c.s03_tu_van.t4}</a></div>
 </div></section>
 </Layout>
@@ -102,3 +108,13 @@ const lineLabel = (key: string) => (c.lines.find((l) => l.key === key)?.label ??
   reset.addEventListener('click', () => { setLine('all'); crop.value = 'all'; q.value = ''; render(); });
   render();
 </script>
+<style>
+  /* Phones: two compact product cards per row. */
+  @media (max-width: 599.98px) {
+    .prod-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; }
+    .prod-grid > a > div:first-child { height: 160px !important; padding: 8px !important; }
+    .prod-grid > a > div:last-child { padding: 12px !important; gap: 8px !important; }
+    .prod-grid strong { font-size: 15px !important; }
+    .prod-grid [data-npk] { min-width: 40px !important; padding: 3px 5px !important; }
+  }
+</style>

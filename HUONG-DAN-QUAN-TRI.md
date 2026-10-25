@@ -109,3 +109,18 @@ Website cập nhật sau khoảng 2 phút. Nếu sau 5 phút chưa thấy thay �
 GitHub: dấu ✗ đỏ nghĩa là lần cập nhật bị lỗi — liên hệ người phụ trách kỹ thuật.
 
 Mọi lần lưu đều được ghi lại trong lịch sử GitHub, nên có thể khôi phục bản cũ nếu sửa nhầm.
+
+## Thay đổi từ bản giao diện mới (10/2026)
+
+- **Nội dung chưa nhập không còn lộ ra ngoài.** Ô nào còn chữ trong ngoặc vuông (ví dụ `[Họ và tên]`, `[x]`)
+  hoặc để trống thì tự ẩn trên trang. Nhập nội dung thật là mục đó tự hiện lại, không cần làm gì thêm.
+- **Ô ảnh trống** hiện một ô màu xanh nhạt có logo thay cho khung nét đứt. Khung nét đứt và nút "＋ Thêm ảnh"
+  vẫn hiện như cũ khi mở trang với `?sua-anh`.
+- **Ảnh tải lên được tự thu nhỏ** khi đăng trang (bản WebP nhiều cỡ), nên cứ tải ảnh gốc chất lượng tốt;
+  trang vẫn nhẹ trên điện thoại.
+- **Trường mới:** *Cài đặt chung → Công ty → Hotline kỹ sư* (dùng cho nút "Gọi kỹ sư" trên điện thoại) và
+  *Về Tiến Nông → 06 · Thành tựu → Tệp hồ sơ năng lực (PDF)* (nút tải chỉ hiện khi đã có tệp).
+- **Biểu mẫu** (Đăng ký nông dân, Liên hệ, Dự án) chỉ hoạt động khi đã khai báo địa chỉ nhận dữ liệu
+  (biến `FORM_ENDPOINT` của repo). Khi chưa có, trang hiện nút Gọi / Zalo / Email thay cho biểu mẫu.
+- **Kiểm tra nội dung còn thiếu:** mỗi lần đăng, mục *Actions* của GitHub liệt kê các ô còn nội dung mẫu,
+  ảnh còn trống và bài viết chưa có ngày (bước "check:content").

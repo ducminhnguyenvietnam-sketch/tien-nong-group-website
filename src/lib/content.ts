@@ -69,3 +69,19 @@ export function withDefaults<T>(raw: T, path: string): Loose<T> {
   if (!entry?.fields) throw new Error(`.pages.yml has no file entry for ${path}`);
   return fillObject(raw, entry.fields) as Loose<T>;
 }
+
+/** Placeholder text left from the design ("[Họ và tên]", "[x]", "[dd/mm]"…). */
+const PLACEHOLDER = /\[[^\]\n]{1,80}\]/;
+
+/** True when a CMS value has real content: not empty and not a "[…]" placeholder. */
+export function isFilled(v: unknown): boolean {
+  if (typeof v === 'string') return v.trim() !== '' && !PLACEHOLDER.test(v);
+  if (Array.isArray(v)) return v.some(isFilled);
+  if (v && typeof v === 'object') return Object.values(v).some(isFilled);
+  return v != null && v !== false;
+}
+
+/** Removes "[…]" placeholders (with a separator in front of them) from a CMS string. */
+export function stripPlaceholders(v: string | null | undefined): string {
+  return (v ?? '').replace(/\s*[·•\-–—:]?\s*\[[^\]\n]{1,80}\]/g, '').trim();
+}

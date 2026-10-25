@@ -1,10 +1,10 @@
 ---
 import raw from '../content/pages/ve-tien-nong.json';
-import { withDefaults } from '../lib/content';
+import { isFilled, stripPlaceholders, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
-import { url } from '../lib/routes';
+import { link, url } from '../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 
@@ -15,25 +15,25 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 <span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_hero.t1}</a> {c.s01_hero.t2}</span>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px 64px;align-items:end">
 <div style="display:flex;flex-direction:column;gap:16px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s01_hero.t3}</span>
-<h1 style="margin: 0; font: 800 clamp(38px,5vw,64px)/1.08 var(--font-display); letter-spacing: -.015em; max-width:794px;text-wrap:balance">{c.s01_hero.t4}</h1><p style="margin: 0; font-size: 18px; color: var(--text-secondary); text-align: justify; text-wrap: pretty; width: min(739px, 100%); min-height: 90px">{c.s01_hero.t5}</p>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s01_hero.t3}</span>
+<h1 style="margin: 0; font:var(--type-h1); letter-spacing: -.015em; max-width:794px;text-wrap:balance">{c.s01_hero.t4}</h1><p style="margin: 0; font-size:var(--fs-lead); color: var(--text-secondary);  text-wrap: pretty; width: min(739px, 100%); min-height: 90px">{c.s01_hero.t5}</p>
 </div>
 
 </div>
 <div style="position:relative;height:clamp(280px,40vw,560px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="about-hero" shape="rounded" radius="24" placeholder="Ảnh tập thể cán bộ, nhân viên trước trụ sở Tiến Nông" image={c.s01_hero.img_about_hero_1} cms="src/content/pages/ve-tien-nong.json#s01_hero.img_about_hero_1" /></div>
 </div>
 <div style="max-width:1280px;margin:0 auto;padding:40px clamp(20px,4vw,56px) 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px">
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--green-700)">{c.s01_hero.t6}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t7}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--green-700)">{c.s01_hero.t8}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t9}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--green-700)">{c.s01_hero.t10}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t11}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--green-700)">{c.s01_hero.t12}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t13}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--green-700)">{c.s01_hero.t14}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t15}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--green-700)">{c.s01_hero.t16}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t17}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t6}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t7}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t8}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t9}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t10}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t11}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t12}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t13}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t14}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t15}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t16}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t17}</span></div>
 </div>
 </section>
 
-<nav style="position:sticky;top:108px;z-index:20;background:var(--surface-page);border-top:1px solid var(--border-default);border-bottom:1px solid var(--border-default)">
-<div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px);display:flex;gap:28px;overflow-x:auto;white-space:nowrap;font-size:14px;font-weight:600">
+<nav class="subnav" aria-label="Mục lục trang" style="position:sticky;top:var(--hdr-h,108px);z-index:20;background:var(--surface-page);border-top:1px solid var(--border-default);border-bottom:1px solid var(--border-default)">
+<div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px);display:flex;gap:28px;overflow-x:auto;white-space:nowrap;font-size:14px;font-weight:600;scrollbar-width:none">
 <a href="#thu-ngo" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t18}</a><a href="#su-menh" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t19}</a><a href="#lich-su" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t20}</a><a href="#lanh-dao" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t21}</a><a href="#thanh-tuu" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t22}</a><a href="#nang-luc" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t23}</a><a href="#he-sinh-thai" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t24}</a>
 </div></nav>
 
@@ -43,21 +43,21 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 <div style="position:relative;aspect-ratio:4/5"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ceo-portrait" shape="rounded" radius="20" placeholder="Chân dung Tổng Giám đốc Nguyễn Hồng Phong" image={c.s02_thu_ngo.img_ceo_portrait_1} cms="src/content/pages/ve-tien-nong.json#s02_thu_ngo.img_ceo_portrait_1" /></div>
 </div>
 <div style="display:flex;flex-direction:column;gap:24px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s02_thu_ngo.t1}</span>
-<p style="margin: 0; font: 600 clamp(24px,2.6vw,34px)/1.4 var(--font-display); text-wrap: pretty; text-align: justify">{c.s02_thu_ngo.t2}</p>
-<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.s02_thu_ngo.t3}</p>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s02_thu_ngo.t1}</span>
+<p style="margin: 0; font:var(--type-quote); text-wrap: pretty; ">{c.s02_thu_ngo.t2}</p>
+<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s02_thu_ngo.t3}</p>
 <div style="display:flex;flex-direction:column;padding-top:16px;border-top:1px solid var(--border-default)"><strong style="font-size:17px">{c.s02_thu_ngo.t4}</strong><span style="color:var(--text-secondary)">{c.s02_thu_ngo.t5}</span></div>
 </div></div></section>
 
 <section id="su-menh" style="scroll-margin-top:160px;background:var(--green-800);color:#fff">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:56px">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 64px)/3),calc((964px - 100%)*999),100%),1fr));gap:32px">
-<div style="display:flex;flex-direction:column;gap:12px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-200)">{c.s03_su_menh_gia_tri.t1}</span><span style="font:700 clamp(24px,2.4vw,30px)/1.3 var(--font-display);text-wrap:balance">{c.s03_su_menh_gia_tri.t2}</span></div>
-<div style="display:flex;flex-direction:column;gap:12px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-200)">{c.s03_su_menh_gia_tri.t3}</span><span style="font:700 clamp(24px,2.4vw,30px)/1.3 var(--font-display);text-wrap:balance">{c.s03_su_menh_gia_tri.t4}</span></div>
-<div style="display:flex;flex-direction:column;gap:12px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-200)">{c.s03_su_menh_gia_tri.t5}</span><span style="font:700 clamp(24px,2.4vw,30px)/1.3 var(--font-display);text-wrap:balance">{c.s03_su_menh_gia_tri.t6}</span></div>
+<div style="display:flex;flex-direction:column;gap:12px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s03_su_menh_gia_tri.t1}</span><span style="font:var(--type-h3);text-wrap:balance">{c.s03_su_menh_gia_tri.t2}</span></div>
+<div style="display:flex;flex-direction:column;gap:12px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s03_su_menh_gia_tri.t3}</span><span style="font:var(--type-h3);text-wrap:balance">{c.s03_su_menh_gia_tri.t4}</span></div>
+<div style="display:flex;flex-direction:column;gap:12px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s03_su_menh_gia_tri.t5}</span><span style="font:var(--type-h3);text-wrap:balance">{c.s03_su_menh_gia_tri.t6}</span></div>
 </div>
 <div style="display:flex;flex-direction:column;gap:24px;padding-top:40px;border-top:1px solid var(--green-700)">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-200)">{c.s03_su_menh_gia_tri.t7}</span>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s03_su_menh_gia_tri.t7}</span>
 <div class="values-grid">
 <div style="background:var(--green-700);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t8}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t9}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t10}</span></div>
 <div style="background:var(--green-700);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t11}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t12}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t13}</span></div>
@@ -70,21 +70,21 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 <div data-picker style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
 <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
 <div style="display:flex;flex-direction:column;gap:14px;max-width:640px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s04_lich_su.t1}</span>
-<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s04_lich_su.t2}</h2>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s04_lich_su.t1}</span>
+<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s04_lich_su.t2}</h2>
 </div>
 <div style="display:flex;gap:8px"><button type="button" data-pick-step="-1" aria-label="Mốc trước" style="width:44px;height:44px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);font-size:18px;cursor:pointer">←</button><button type="button" data-pick-step="1" aria-label="Mốc sau" style="width:44px;height:44px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);font-size:18px;cursor:pointer">→</button></div>
 </div>
 <div role="tablist" aria-label="Các mốc lịch sử" style="display:flex;gap:0;overflow-x:auto;border-bottom:1px solid var(--border-default)">
-{c.milestones.map((m, k) => <button type="button" role="tab" class="ms-year" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'} style="flex:1 0 110px;padding:14px 8px;background:none;border:0;border-bottom:3px solid transparent;font:700 22px var(--font-display);color:var(--text-tertiary);cursor:pointer">{m.year}</button>)}
+{c.milestones.map((m, k) => <button type="button" role="tab" class="ms-year" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'} style="flex:1 0 110px;padding:14px 8px;background:none;border:0;border-bottom:3px solid transparent;font:var(--type-num);color:var(--text-tertiary);cursor:pointer">{m.year}</button>)}
 </div>
 {c.milestones.map((m, k) => (
 <div role="tabpanel" data-pick-panel={k} hidden={k !== 0} style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:32px 56px;align-items:center">
 <div style="position:relative;height:360px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`ms-${k}`} shape="rounded" radius="16" placeholder={m.image.alt} image={m.image} cms={`src/content/pages/ve-tien-nong.json#milestones.${k}.image`} /></div>
 <div style="display:flex;flex-direction:column;gap:14px">
-<span style="font:800 64px/1 var(--font-display);color:var(--green-200)">{m.year}</span>
-<h3 style="margin: 0; font: 700 26px/1.3 var(--font-display); text-wrap: balance; max-width:382px">{m.title}</h3>
-<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{m.body}</p>
+<span style="font:var(--type-stat-xl);color:var(--green-200);overflow-wrap:normal;font-variant-numeric:tabular-nums">{m.year}</span>
+<h3 style="margin: 0; font:var(--type-num); text-wrap: balance; max-width:382px">{m.title}</h3>
+<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{m.body}</p>
 </div></div>
 ))}
 </div></section>
@@ -92,8 +92,8 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 <section id="lanh-dao" style="scroll-margin-top:160px">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
 <div style="display:flex;flex-direction:column;gap:14px;max-width:640px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s05_lanh_dao.t1}</span>
-<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em">{c.s05_lanh_dao.t2}</h2>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s05_lanh_dao.t1}</span>
+<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em">{c.s05_lanh_dao.t2}</h2>
 </div>
 <div class="board-grid">
 <div style="display:flex;flex-direction:column;gap:12px"><div style="position:relative;aspect-ratio:4/5"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lead-1" shape="rounded" radius="16" placeholder="Chân dung (nền đồng nhất)" image={c.s05_lanh_dao.img_lead_1_1} cms="src/content/pages/ve-tien-nong.json#s05_lanh_dao.img_lead_1_1" /></div><div><strong style="display:block;font-size:17px">{c.s05_lanh_dao.t3}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s05_lanh_dao.t4}</span></div></div>
@@ -102,10 +102,10 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 <div style="display:flex;flex-direction:column;gap:12px"><div style="position:relative;aspect-ratio:4/5"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lead-4" shape="rounded" radius="16" placeholder="Chân dung (nền đồng nhất)" image={c.s05_lanh_dao.img_lead_4_1} cms="src/content/pages/ve-tien-nong.json#s05_lanh_dao.img_lead_4_1" /></div><div><strong style="display:block;font-size:17px">{c.s05_lanh_dao.t9}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s05_lanh_dao.t10}</span></div></div>
 <div style="display:flex;flex-direction:column;gap:12px"><div style="position:relative;aspect-ratio:4/5"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lead-5" shape="rounded" radius="16" placeholder="Chân dung (nền đồng nhất)" image={c.s05_lanh_dao.img_lead_5_1} cms="src/content/pages/ve-tien-nong.json#s05_lanh_dao.img_lead_5_1" /></div><div><strong style="display:block;font-size:17px">{c.s05_lanh_dao.t11}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s05_lanh_dao.t12}</span></div></div>
 </div>
-{c.s05_lanh_dao.executives.length > 0 && <div style="display:flex;flex-direction:column;gap:20px;padding-top:40px;border-top:1px solid var(--border-default)">
-<div style="display:flex;flex-direction:column;gap:10px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s05_lanh_dao.t13}</span><h3 style="margin:0;font:800 clamp(24px,2.6vw,32px)/1.2 var(--font-display)">{c.s05_lanh_dao.t14}</h3></div>
+{c.s05_lanh_dao.executives.some((p) => isFilled(p.name)) && <div style="display:flex;flex-direction:column;gap:20px;padding-top:40px;border-top:1px solid var(--border-default)">
+<div style="display:flex;flex-direction:column;gap:10px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s05_lanh_dao.t13}</span><h3 style="margin:0;font:var(--type-h3)">{c.s05_lanh_dao.t14}</h3></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:12px">
-{c.s05_lanh_dao.executives.map((p) => <div style="display:flex;flex-direction:column;gap:4px;padding:16px 18px;border:1px solid var(--border-default);border-radius:var(--radius-md);background:var(--surface-card)"><strong style="font-size:16px">{p.name}</strong><span style="color:var(--text-secondary);font-size:14px;line-height:1.45">{p.title}</span></div>)}
+{c.s05_lanh_dao.executives.filter((p) => isFilled(p.name)).map((p) => <div style="display:flex;flex-direction:column;gap:4px;padding:16px 18px;border:1px solid var(--border-default);border-radius:var(--radius-md);background:var(--surface-card)"><strong style="font-size:16px">{p.name}</strong><span style="color:var(--text-secondary);font-size:14px;line-height:1.45">{p.title}</span></div>)}
 </div></div>}
 </div></section>
 
@@ -113,46 +113,46 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
 <div style="display:flex;flex-direction:column;gap:14px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s06_thanh_tuu.t1}</span>
-<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s06_thanh_tuu.t2}</h2>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s06_thanh_tuu.t1}</span>
+<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s06_thanh_tuu.t2}</h2>
 </div>
-<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.s06_thanh_tuu.t3}</p>
+<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s06_thanh_tuu.t3}</p>
 </div>
 {c.s06_thanh_tuu.featured_awards.length > 0 && <div class="awards-featured">
 {c.s06_thanh_tuu.featured_awards.map((w, k) => <div class="award award--big">
 <div class="award__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`award-big-${k}`} shape="rounded" radius="12" fit="contain" placeholder="Ảnh giải thưởng" image={w.image} cms={`src/content/pages/ve-tien-nong.json#s06_thanh_tuu.featured_awards.${k}.image`} /></div>
-<div class="award__text"><span class="award__label">{w.label}</span><strong class="award__title">{w.title}</strong>{w.detail && <span class="award__detail">{w.detail}</span>}</div>
+<div class="award__text"><span class="award__label">{stripPlaceholders(w.label)}</span><strong class="award__title">{w.title}</strong>{w.detail && <span class="award__detail">{w.detail}</span>}</div>
 </div>)}
 </div>}
 {c.s06_thanh_tuu.awards.length > 0 && <div class="awards-grid">
 {c.s06_thanh_tuu.awards.map((w, k) => <div class="award">
 <div class="award__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`award-${k}`} shape="rounded" radius="10" fit="contain" placeholder="Ảnh giải thưởng" image={w.image} cms={`src/content/pages/ve-tien-nong.json#s06_thanh_tuu.awards.${k}.image`} /></div>
-<div class="award__text"><span class="award__label">{w.label}</span><strong class="award__title">{w.title}</strong>{w.detail && <span class="award__detail">{w.detail}</span>}</div>
+<div class="award__text"><span class="award__label">{stripPlaceholders(w.label)}</span><strong class="award__title">{w.title}</strong>{w.detail && <span class="award__detail">{w.detail}</span>}</div>
 </div>)}
 </div>}
 <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:20px 24px;background:var(--surface-sunken);border-radius:var(--radius-lg)">
 <span><strong>{c.s06_thanh_tuu.t27}</strong> {c.s06_thanh_tuu.t28}</span>
-<Button variant="secondary">{c.s06_thanh_tuu.t29}</Button>
+{isFilled(c.s06_thanh_tuu.profile_pdf) && <a href={link(c.s06_thanh_tuu.profile_pdf)} target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex"><Button as="span" variant="secondary">{c.s06_thanh_tuu.t29}</Button></a>}
 </div>
 </div></section>
 
 <section id="nang-luc" style="scroll-margin-top:160px">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
 <div style="display:flex;flex-direction:column;gap:14px;max-width:680px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s07_nang_luc.t1}</span>
-<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s07_nang_luc.t2}</h2>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s07_nang_luc.t1}</span>
+<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s07_nang_luc.t2}</h2>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/3),calc((1008px - 100%)*999),100%),1fr));gap:24px">
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cap-rd" shape="rect" placeholder="Phòng thí nghiệm" image={c.s07_nang_luc.img_cap_rd_1} cms="src/content/pages/ve-tien-nong.json#s07_nang_luc.img_cap_rd_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{c.s07_nang_luc.t3}</span><strong style="font-size:20px;line-height:1.3">{c.s07_nang_luc.t4}</strong><span style="color:var(--text-secondary);flex:1">{c.s07_nang_luc.t5}</span><a href={url('khoa-hoc-cong-nghe')} style="font-weight:600">{c.s07_nang_luc.t6}</a></div></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cap-mfg" shape="rect" placeholder="Dây chuyền sản xuất" image={c.s07_nang_luc.img_cap_mfg_1} cms="src/content/pages/ve-tien-nong.json#s07_nang_luc.img_cap_mfg_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{c.s07_nang_luc.t7}</span><strong style="font-size:20px;line-height:1.3">{c.s07_nang_luc.t8}</strong><span style="color:var(--text-secondary);flex:1;text-align:justify">{c.s07_nang_luc.t9}</span><a href="#nang-luc" style="font-weight:600">{c.s07_nang_luc.t10}</a></div></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cap-dist" shape="rect" placeholder="Bản đồ mạng lưới phân phối &amp; xuất khẩu" image={c.s07_nang_luc.img_cap_dist_1} cms="src/content/pages/ve-tien-nong.json#s07_nang_luc.img_cap_dist_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{c.s07_nang_luc.t11}</span><strong style="font-size:20px;line-height:1.3">{c.s07_nang_luc.t12}</strong><span style="color:var(--text-secondary);flex:1">{c.s07_nang_luc.t13}</span><a href={url('lien-he', 'dai-ly')} style="font-weight:600">{c.s07_nang_luc.t14}</a></div></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cap-rd" shape="rect" placeholder="Phòng thí nghiệm" image={c.s07_nang_luc.img_cap_rd_1} cms="src/content/pages/ve-tien-nong.json#s07_nang_luc.img_cap_rd_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s07_nang_luc.t3}</span><strong style="font-size:20px;line-height:1.3">{c.s07_nang_luc.t4}</strong><span style="color:var(--text-secondary);flex:1">{c.s07_nang_luc.t5}</span><a href={url('khoa-hoc-cong-nghe')} style="font-weight:600">{c.s07_nang_luc.t6}</a></div></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cap-mfg" shape="rect" placeholder="Dây chuyền sản xuất" image={c.s07_nang_luc.img_cap_mfg_1} cms="src/content/pages/ve-tien-nong.json#s07_nang_luc.img_cap_mfg_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s07_nang_luc.t7}</span><strong style="font-size:20px;line-height:1.3">{c.s07_nang_luc.t8}</strong><span style="color:var(--text-secondary);flex:1">{c.s07_nang_luc.t9}</span><a href="#nang-luc" style="font-weight:600">{c.s07_nang_luc.t10}</a></div></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cap-dist" shape="rect" placeholder="Bản đồ mạng lưới phân phối &amp; xuất khẩu" image={c.s07_nang_luc.img_cap_dist_1} cms="src/content/pages/ve-tien-nong.json#s07_nang_luc.img_cap_dist_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s07_nang_luc.t11}</span><strong style="font-size:20px;line-height:1.3">{c.s07_nang_luc.t12}</strong><span style="color:var(--text-secondary);flex:1">{c.s07_nang_luc.t13}</span><a href={url('lien-he', 'dai-ly')} style="font-weight:600">{c.s07_nang_luc.t14}</a></div></div>
 </div></div></section>
 
 <section id="he-sinh-thai" style="scroll-margin-top:160px;background:var(--surface-card);border-top:1px solid var(--border-default)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
 <div style="display:flex;flex-direction:column;gap:14px;max-width:640px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s08_he_sinh_thai.t1}</span>
-<h2 style="margin:0;font:800 clamp(28px,3vw,40px)/1.15 var(--font-display);letter-spacing:-.01em">{c.s08_he_sinh_thai.t2}</h2>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s08_he_sinh_thai.t1}</span>
+<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em">{c.s08_he_sinh_thai.t2}</h2>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 64px)/5),calc((1000px - 100%)*999),calc((100% - 32px)/3)),1fr));gap:16px">
 <div style="border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:12px"><div style="position:relative;height:80px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="eco-1" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_he_sinh_thai.img_eco_1_1} cms="src/content/pages/ve-tien-nong.json#s08_he_sinh_thai.img_eco_1_1" /></div><strong>{c.s08_he_sinh_thai.t3}</strong></div>
@@ -164,7 +164,7 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 
 <section style="background:var(--green-500);color:#fff">
 <div style="max-width:1280px;margin:0 auto;padding:56px clamp(20px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
-<h2 style="margin:0;font:800 clamp(26px,3vw,36px)/1.2 var(--font-display);max-width:640px;text-wrap:balance">{c.s09_phan_9.t1}</h2>
+<h2 style="margin:0;font:var(--type-h2);max-width:640px;text-wrap:balance">{c.s09_phan_9.t1}</h2>
 <div style="display:flex;gap:12px;flex-wrap:wrap"><a href={url('lien-he', 'lien-he-form')} style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s09_phan_9.t2}</a><a href={url('tuyen-dung', 'vi-tri')} style="color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md);border:1px solid rgba(255,255,255,.7)">{c.s09_phan_9.t3}</a></div>
 </div></section>
 </Layout>
@@ -172,3 +172,29 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 <style>
   .ms-year[aria-selected='true'] { border-bottom-color: var(--green-500) !important; font-weight: 800 !important; color: var(--green-700) !important; }
 </style>
+<style>
+  .subnav { transition: top var(--motion-base) var(--ease-out); }
+  .subnav a { border-bottom: 2px solid transparent; transition: color var(--motion-fast), border-color var(--motion-fast); }
+  .subnav a:hover { color: var(--green-700) !important; text-decoration: none; }
+  .subnav a.is-current { color: var(--green-700) !important; border-bottom-color: var(--green-500); }
+</style>
+<script>
+  // Highlight the section being read in the page's table of contents.
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('.subnav a[href^="#"]')];
+  const targets = links.map((a) => document.querySelector<HTMLElement>(a.getAttribute('href')!)).filter(Boolean) as HTMLElement[];
+  if (targets.length && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        links.forEach((a) => {
+          const on = a.getAttribute('href') === `#${e.target.id}`;
+          a.classList.toggle('is-current', on);
+          // Keep the current item visible in the horizontally scrolling bar, without moving the page.
+          const bar = a.parentElement;
+          if (on && bar && bar.scrollWidth > bar.clientWidth) bar.scrollTo({ left: Math.max(0, a.offsetLeft - 20), behavior: 'smooth' });
+        });
+      }
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    targets.forEach((t) => io.observe(t));
+  }
+</script>

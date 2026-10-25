@@ -1017,6 +1017,10 @@ content:
       - name: t29
         label: 'Nút: Tải hồ sơ năng lực (PDF)'
         type: string
+      - name: profile_pdf
+        label: Tệp hồ sơ năng lực (PDF)
+        type: file
+        description: Tải tệp PDF lên. Để trống thì nút tải không hiện.
     - name: s07_nang_luc
       label: 07 · Năng lực
       type: object
@@ -4398,6 +4402,10 @@ content:
     - name: phone
       label: Điện thoại
       type: string
+    - name: hotline
+      label: Hotline kỹ sư (nút "Gọi kỹ sư" trên điện thoại)
+      type: string
+      description: Số bà con gọi để được kỹ sư tư vấn. Để trống thì nút gọi dùng số Điện thoại ở trên.
     - name: email
       label: Email
       type: string

@@ -29,13 +29,30 @@ interface Props {
   alt?: string;
   /** Where this photo is stored, "<file>#<dot.path>", so the on-site photo editor can save it. */
   cms?: string;
+  /** Above-the-fold photo: load it first (eager + high priority). Defaults to true for hero slots. */
+  priority?: boolean;
+  /** CSS `sizes` hint for the responsive variants (defaults: 100vw for priority slots, else half the page). */
+  sizes?: string;
 }
 const { id, image, placeholder = '', shape = 'rounded', radius = 12, fit = 'cover', style = '', alt, cms } = Astro.props;
+const priority = Astro.props.priority ?? /hero/.test(id);
+// Most slots are cards (half the page or less on desktop); full-bleed slots pass sizes="100vw".
+const sizes = Astro.props.sizes ?? (priority ? '100vw' : '(max-width: 767px) 92vw, 50vw');
 
 const EXTS = ['webp', 'avif', 'jpg', 'jpeg', 'png'];
 const imagesDir = path.join(process.cwd(), 'public', 'images');
 const file = EXTS.map((ext) => `${id}.${ext}`).find((f) => fs.existsSync(path.join(imagesDir, f)));
-const src = image?.src ? asset(image.src) : file ? asset(`images/${file}`) : null;
+const raw = image?.src || (file ? `/images/${file}` : '');
+const src = raw ? asset(raw) : null;
+
+// Responsive WebP variants made by scripts/optimize-images.mjs (prebuild). Missing manifest = plain <img>.
+type Variant = { w: number; path: string };
+type Entry = { w: number; h: number; variants: Variant[] };
+let manifest: Record<string, Entry> = {};
+try { manifest = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src', 'generated', 'images.json'), 'utf8')); } catch { /* not generated yet */ }
+const entry = raw ? manifest[raw] : undefined;
+const srcset = entry?.variants.length ? entry.variants.map((v) => `${asset(v.path)} ${v.w}w`).join(', ') : undefined;
+const fallback = entry?.variants.length ? asset(entry.variants.at(-1)!.path) : src;
 const focus = image?.focus || 'center';
 const zoom = Math.max(100, Number(image?.zoom) || 100) / 100;
 const imgStyle = `position:absolute;inset:0;width:100%;height:100%;object-fit:${fit};object-position:${focus}`
@@ -44,10 +61,11 @@ const imgStyle = `position:absolute;inset:0;width:100%;height:100%;object-fit:${
 const r = shape === 'rect' ? '0' : shape === 'circle' ? '50%' : shape === 'pill' ? '999px' : `${radius}px`;
 const host = `display:block;position:relative;font:13px/1.3 system-ui,-apple-system,sans-serif;width:100%;height:100%;aspect-ratio:3/2;${style}`;
 ---
-<div class="img-slot" data-slot={id} data-fit={fit} data-radius={r} data-ph={placeholder} data-cms={cms} data-focus={focus} data-zoom={String(zoom * 100)} data-alt={image?.alt || ''} style={host}>
+<div class="img-slot" data-empty={src ? undefined : ''} data-slot={id} data-fit={fit} data-radius={r} data-ph={placeholder} data-cms={cms} data-focus={focus} data-zoom={String(zoom * 100)} data-alt={image?.alt || ''} style={host}>
   <div class="img-slot__frame" style={`position:absolute;inset:0;overflow:hidden;border-radius:${r};background:rgba(127,127,127,.08)`}>
     {src
-      ? <img class="img-slot__img" src={src} alt={image?.alt || alt || placeholder} loading="lazy" decoding="async" style={imgStyle} />
+      ? <img class="img-slot__img" src={fallback} srcset={srcset} sizes={srcset ? sizes : undefined} width={entry?.w} height={entry?.h}
+          alt={image?.alt || alt || ''} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} decoding="async" style={imgStyle} />
       : <>
           <div class="img-slot__empty" role="img" aria-label={placeholder} style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:12px;box-sizing:border-box">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="opacity:.45" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="m21 15-5-5L5 21" /></svg>

@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 // SITE_URL / BASE_PATH are set by the deploy workflow (e.g. GitHub Pages serves
 // the site under /<repo>/). Locally the site lives at the root.
@@ -21,10 +22,40 @@ function rehypeBasePath() {
   return walk;
 }
 
+/**
+ * Drops placeholder text the design left in articles ("[Nội dung bài viết]", "[Trích dẫn …]") so it never
+ * reaches the public page: a paragraph that is only a placeholder is removed, a "[Nội dung mẫu]" lead-in is cut,
+ * and a blockquote left empty is removed.
+ */
+function rehypeDropPlaceholders() {
+  const PH = /\[[^\]\n]{1,80}\]/;
+  /** @param {any} n */
+  const text = (n) => (n.type === 'text' ? n.value : (n.children || []).map(text).join(''));
+  /** @param {any} n */
+  const onlyPlaceholder = (n) => {
+    const t = text(n).replace(/[“”"'—–\-\s]/g, ' ').trim();
+    return t !== '' && t.replace(new RegExp(PH.source, 'g'), '').trim() === '';
+  };
+  /** @param {any} node */
+  const walk = (node) => {
+    if (!node.children) return;
+    node.children = node.children.filter((/** @type {any} */ ch) => {
+      if (ch.type === 'element' && ['p', 'li', 'figcaption'].includes(ch.tagName) && onlyPlaceholder(ch)) return false;
+      if (ch.type === 'text') ch.value = ch.value.replace(/^\s*\[Nội dung mẫu\]\s*/, '');
+      walk(ch);
+      if (ch.type === 'element' && ch.tagName === 'blockquote' && !text(ch).trim()) return false;
+      return true;
+    });
+  };
+  return walk;
+}
+
 export default defineConfig({
   site: process.env.SITE_URL,
+  // Sitemap only when the public URL is known (CI); internal tools stay out of it.
+  integrations: process.env.SITE_URL ? [sitemap({ filter: (page) => !/\/(quan-tri|admin)\//.test(page) })] : [],
   base,
-  markdown: { rehypePlugins: [rehypeBasePath] },
+  markdown: { rehypePlugins: [rehypeBasePath, rehypeDropPlaceholders] },
   // Pages are emitted as /slug/index.html so links stay clean (/ve-tien-nong/).
   trailingSlash: 'always',
   build: { format: 'directory' },

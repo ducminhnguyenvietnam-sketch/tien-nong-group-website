@@ -1,7 +1,21 @@
 ---
+import '@fontsource/be-vietnam-pro/vietnamese-400.css';
+import '@fontsource/be-vietnam-pro/latin-400.css';
+import '@fontsource/be-vietnam-pro/vietnamese-500.css';
+import '@fontsource/be-vietnam-pro/latin-500.css';
+import '@fontsource/be-vietnam-pro/vietnamese-600.css';
+import '@fontsource/be-vietnam-pro/latin-600.css';
+import '@fontsource/be-vietnam-pro/vietnamese-700.css';
+import '@fontsource/be-vietnam-pro/latin-700.css';
+import '@fontsource/ibm-plex-mono/vietnamese-600.css';
+import '@fontsource/ibm-plex-mono/latin-600.css';
+import '@fontsource/ibm-plex-mono/vietnamese-700.css';
+import '@fontsource/ibm-plex-mono/latin-700.css';
 import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import siteRaw from '../content/site.json';
+import homeRaw from '../content/pages/trang-chu.json';
 import { asset } from "../lib/routes";
 
 interface Props {
@@ -13,34 +27,77 @@ interface Props {
   background?: string;
   /** Keep this page out of search engines (internal tools). */
   noindex?: boolean;
+  /** Share image (a /uploads/… path); defaults to the home page hero photo. */
+  image?: string;
+  /** Open Graph type: "website" (default) or "article". */
+  type?: 'website' | 'article';
+  /** Extra JSON-LD objects for this page (an article, a product…). */
+  schema?: Record<string, unknown>[];
 }
+const DEFAULT_DESCRIPTION = 'Tiến Nông Group — hơn 30 năm khoa học phụng sự nhà nông. Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam.';
 const {
   title,
-  description = 'Tiến Nông Group — hơn 30 năm khoa học phụng sự nhà nông. Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam.',
+  description,
   active = '',
   background = 'var(--surface-page)',
   noindex = false,
+  type = 'website',
+  schema = [],
 } = Astro.props;
+const desc = (description || DEFAULT_DESCRIPTION).replace(/\s+/g, ' ').trim().slice(0, 300);
 const fullTitle = title ? `${title} · Tiến Nông Group` : 'Tiến Nông Group';
+const site = siteRaw as any;
+const homeHero = (homeRaw as any).hero_slides?.find((s: any) => s?.image?.src)?.image?.src as string | undefined;
+const shareImage = Astro.props.image || homeHero;
+const origin = Astro.site ? Astro.site.origin : '';
+const abs = (p?: string) => (p ? (/^https?:/.test(p) ? p : `${origin}${asset(p)}`) : undefined);
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.company?.name || 'Công ty Cổ phần Công Nông nghiệp Tiến Nông',
+  alternateName: 'Tiến Nông Group',
+  url: origin ? `${origin}${asset('/')}` : undefined,
+  logo: abs('/assets/logo-mark.png'),
+  foundingDate: '1995-01-04',
+  email: site.company?.email || undefined,
+  telephone: site.company?.phone || undefined,
+  address: site.company?.address ? { '@type': 'PostalAddress', streetAddress: site.company.address, addressCountry: 'VN' } : undefined,
+  sameAs: Object.values(site.social || {}).filter((v) => typeof v === 'string' && /^https?:/.test(v)),
+};
 ---
 <!doctype html>
-<html lang="vi">
+<html lang="vi" data-hotline={(site.company?.hotline || site.company?.phone || undefined)}>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{fullTitle}</title>
-<meta name="description" content={description} />
+<meta name="description" content={desc} />
 <meta name="theme-color" content="#00954f" />
 {noindex && <meta name="robots" content="noindex, nofollow" />}
+{canonical && <link rel="canonical" href={canonical} />}
+<meta property="og:site_name" content="Tiến Nông Group" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:type" content={type} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={desc} />
+{canonical && <meta property="og:url" content={canonical} />}
+{shareImage && <meta property="og:image" content={abs(shareImage)} />}
+<meta name="twitter:card" content={shareImage ? 'summary_large_image' : 'summary'} />
 <link rel="icon" type="image/svg+xml" href={asset("favicon.svg")} />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" />
+<script is:inline>
+  // "js" lets CSS hide elements that are about to animate in; without JS nothing is hidden.
+  document.documentElement.classList.add('js');
+</script>
+<script type="application/ld+json" set:html={JSON.stringify([org, ...schema])} />
 </head>
 <body>
+<a class="skip-link" href="#noi-dung">Bỏ qua đến nội dung</a>
 <div style={`font-family:var(--font-body);color:var(--text-primary);background:${background};font-size:16px;line-height:1.6`}>
 <SiteHeader active={active} />
+<main id="noi-dung" tabindex="-1" style="outline:none">
 <slot />
+</main>
 <SiteFooter />
 </div>
 <script src="../scripts/nowrap.js"></script>
@@ -48,6 +105,7 @@ const fullTitle = title ? `${title} · Tiến Nông Group` : 'Tiến Nông Group
 <script src="../scripts/chipfilter.ts"></script>
 <script src="../scripts/accordion.ts"></script>
 <script src="../scripts/forms.ts"></script>
+<script src="../scripts/motion.ts"></script>
 <script>
   // On-site photo editor: ?sua-anh turns it on; it stays on (per browser) until "Thoát".
   let on = new URLSearchParams(location.search).has('sua-anh');

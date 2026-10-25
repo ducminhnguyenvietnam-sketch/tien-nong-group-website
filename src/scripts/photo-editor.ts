@@ -141,6 +141,8 @@ function edit(slot: Slot) {
     frame.append(img);
   }
   img.loading = 'eager';
+  // The page may serve a responsive srcset; drop it while editing so the picked file shows.
+  if (img.hasAttribute('srcset')) { img.dataset.srcset = img.getAttribute('srcset')!; img.removeAttribute('srcset'); }
   const [x, y] = parseFocus(slot.dataset.focus || 'center');
   const z = (Number(slot.dataset.zoom) || 100) / 100;
   active = { slot, img, file: null, url: null, x, y, z, start: { src: empty ? null : img.getAttribute('src'), x, y, z, empty } };
@@ -197,6 +199,7 @@ function cancel() {
     s.slot.querySelectorAll<HTMLElement>('.img-slot__empty').forEach((e) => { e.style.display = ''; });
   } else {
     if (s.start.src) s.img.src = s.start.src;
+    if (s.img.dataset.srcset) s.img.setAttribute('srcset', s.img.dataset.srcset);
     Object.assign(s, { x: s.start.x, y: s.start.y, z: s.start.z }); apply(s);
   }
   s.slot.classList.remove('pe-active');

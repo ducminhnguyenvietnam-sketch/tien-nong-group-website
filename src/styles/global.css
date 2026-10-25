@@ -1,5 +1,6 @@
 @import './tokens.css';
 @import './base.css';
+@import './v2.css';
 
 /* Page-level rules every design page declared in its <helmet>. */
 html, body { margin: 0; padding: 0; }
@@ -84,7 +85,7 @@ a:hover { color: var(--text-link-hover); }
 .award--big .award__img .img-slot { position: absolute !important; inset: 20px !important; width: auto !important; height: auto !important; }
 .award--big .award__text { padding: 0 8px 8px; }
 .award--big .award__label { color: var(--green-700); }
-.award--big .award__title { font: 800 clamp(24px, 2.4vw, 30px)/1.25 var(--font-display); }
+.award--big .award__title { font: 700 clamp(24px, 2.4vw, 30px)/1.25 var(--font-display); }
 .award--big .award__detail { font-size: 15px; color: var(--text-secondary); }
 @media (max-width: 1000px) {
   .awards-grid { grid-template-columns: minmax(0, 1fr); }

@@ -17,25 +17,27 @@ const items = NAV.map(([key, slug, children = []]) => ({
   label: navLabels[slug.replace(/-/g, '_')] || key, href: url(slug), active: key === active,
   children: children.map(([ckey, cslug, labelKey]) => ({ label: subLabels[labelKey] || ckey, href: url(cslug), current: here === url(cslug) })),
 }));
+const englishUrl = (h.english_url ?? '').trim();
+const co = site.company as Record<string, string>;
+const callNumber = (co.hotline || co.phone || '').replace(/[^\d+]/g, '');
+const menuLabel = (h.menu_open || 'Menu').replace(/^[☰\s]+/, '');
+const closeLabel = (h.menu_close || 'Đóng').replace(/^[✕×\s]+/, '');
 ---
-<header style="position:sticky;top:0;z-index:30;display:block">
-<div style="font-family:var(--font-body);background:var(--surface-card);border-bottom:1px solid var(--border-default)">
-<div style="background:var(--green-800);color:var(--green-100);font-size:13px">
-<div style="max-width:1280px;margin:0 auto;padding:6px clamp(20px,4vw,56px);display:flex;justify-content:flex-end;gap:24px;flex-wrap:wrap">
-<a href={url('tuyen-dung')} style="color:var(--green-100);text-decoration:none">{h.top_jobs}</a><a href={url('lien-he')} style="color:var(--green-100);text-decoration:none">{h.top_contact}</a><span style="display:flex;gap:6px"><strong style="color:#fff">VI</strong><span>/</span><a href={link(h.english_url)} style="color:var(--green-100);text-decoration:none">EN</a></span>
+<header class="site-header" data-site-header>
+<div class="hdr-top">
+<div class="hdr-container hdr-top__row">
+<a href={url('tuyen-dung')}>{h.top_jobs}</a><a href={url('lien-he')}>{h.top_contact}</a>
+{englishUrl && <span class="hdr-lang"><strong>VI</strong><span aria-hidden="true">/</span><a href={link(englishUrl)} hreflang="en">EN</a></span>}
 </div></div>
-<div style="max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:20px">
-<a href={url('trang-chu')} style="flex:none;display:block"><img src={asset("assets/logo-full.png")} alt="Tiến Nông" style="height:52px;width:auto;display:block" /></a>
+<div class="hdr-container hdr-main">
+<a href={url('trang-chu')} class="hdr-logo"><img src={asset("assets/logo-header.png")} alt="Tiến Nông — trang chủ" width="147" height="120" /></a>
 <div class="hdr-wide">
-<nav aria-label="Chính" style="flex:1 1 auto;min-width:0;display:flex;justify-content:center;gap:clamp(14px,1.7vw,28px);white-space:nowrap;font-size:15px;font-weight:600">
+<nav aria-label="Chính" class="hdr-nav">
 {items.map((item) => {
-  const style = item.active
-    ? 'color:var(--green-700);text-decoration:none;padding:8px 0;border-bottom:2px solid var(--green-500)'
-    : 'color:var(--text-primary);text-decoration:none;padding:8px 0;border-bottom:2px solid transparent';
-  if (!item.children.length) return <a href={item.href} aria-current={item.active ? 'page' : undefined} style={style}>{item.label}</a>;
+  if (!item.children.length) return <a href={item.href} aria-current={item.active ? 'page' : undefined} class:list={['hdr-link', { 'is-active': item.active }]}>{item.label}</a>;
   return (
     <div class="nav-dd">
-      <a href={item.href} aria-current={item.active ? 'page' : undefined} aria-haspopup="true" style={style}>{item.label} <span aria-hidden="true" style="font-size:11px">▾</span></a>
+      <a href={item.href} aria-current={item.active ? 'page' : undefined} aria-haspopup="true" class:list={['hdr-link', { 'is-active': item.active }]}>{item.label} <span aria-hidden="true" style="font-size:11px">▾</span></a>
       <div class="nav-dd__menu">
         {item.children.map((c) => <a href={c.href} aria-current={c.current ? 'page' : undefined}>{c.label}</a>)}
       </div>
@@ -43,33 +45,145 @@ const items = NAV.map(([key, slug, children = []]) => ({
   );
 })}
 </nav>
-<a href={url('tro-thanh-doi-tac')} style="flex:none;white-space:nowrap;text-decoration:none"><Button as="span">{h.cta}</Button></a>
+<a href={url('tro-thanh-doi-tac')} class="hdr-cta"><Button as="span">{h.cta}</Button></a>
 </div>
-<div class="hdr-narrow" style="align-items:center;gap:12px">
-<a href={url('tro-thanh-doi-tac')} style="flex:none;white-space:nowrap;text-decoration:none"><Button as="span">{h.cta}</Button></a>
-<button type="button" data-menu-toggle aria-expanded="false" aria-controls="hdr-panel" aria-label="Menu" data-open={h.menu_close} data-closed={h.menu_open} style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:var(--radius-md);border:1px solid var(--border-strong);background:var(--surface-card);font:600 15px var(--font-body);color:var(--text-primary);cursor:pointer;white-space:nowrap">{h.menu_open}</button>
+<div class="hdr-narrow">
+<a href={url('tro-thanh-doi-tac')} class="hdr-cta hdr-cta--tablet"><Button as="span">{h.cta}</Button></a>
+<button type="button" class="hdr-toggle" data-menu-toggle aria-expanded="false" aria-controls="hdr-panel" data-open={closeLabel} data-closed={menuLabel}>
+<span class="hdr-toggle__icon" aria-hidden="true"><i></i><i></i><i></i></span><span data-menu-label>{menuLabel}</span>
+</button>
 </div>
 </div>
-<nav id="hdr-panel" class="hdr-panel" aria-label="Chính" hidden style="border-top:1px solid var(--border-default);background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:8px clamp(20px,4vw,56px) 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0 24px">
+<nav id="hdr-panel" class="hdr-panel" aria-label="Chính" hidden>
+<div class="hdr-panel__inner">
 {items.map((item) => (
-  <div style="display:flex;flex-direction:column;border-bottom:1px solid var(--border-default)">
-    <a href={item.href} aria-current={item.active ? 'page' : undefined} style={`padding:12px 0;color:${item.active ? 'var(--green-700)' : 'var(--text-primary)'};font-weight:${item.active ? 700 : 600};text-decoration:none`}>{item.label}</a>
-    {item.children.map((c) => <a href={c.href} aria-current={c.current ? 'page' : undefined} style={`padding:8px 0 8px 16px;margin-bottom:4px;border-left:2px solid ${c.current ? 'var(--green-500)' : 'var(--border-default)'};color:${c.current ? 'var(--green-700)' : 'var(--text-secondary)'};font-weight:600;text-decoration:none`}>{c.label}</a>)}
+  <div class="hdr-panel__group">
+    <a href={item.href} aria-current={item.active ? 'page' : undefined} class:list={['hdr-panel__link', { 'is-active': item.active }]}>{item.label}</a>
+    {item.children.map((c) => <a href={c.href} aria-current={c.current ? 'page' : undefined} class:list={['hdr-panel__sub', { 'is-active': c.current }]}>{c.label}</a>)}
   </div>
 ))}
-</div></nav>
+<div class="hdr-panel__meta">
+<a href={url('tuyen-dung')}>{h.top_jobs}</a><a href={url('lien-he')}>{h.top_contact}</a>
+{englishUrl && <a href={link(englishUrl)} hreflang="en">English</a>}
 </div>
+<div class="hdr-panel__actions">
+{callNumber && <a href={`tel:${callNumber}`} class="hdr-panel__call">Gọi kỹ sư tư vấn</a>}
+<a href={url('tro-thanh-doi-tac')} class="hdr-panel__partner">{h.cta}</a>
+</div>
+</div></nav>
 </header>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 30; display: block; font-family: var(--font-body); background: var(--surface-card);
+    border-bottom: 1px solid var(--border-default); transition: box-shadow var(--motion-base) var(--ease-out); }
+  .site-header.is-scrolled { box-shadow: 0 6px 20px rgba(28, 32, 28, .08); }
+  .hdr-container { max-width: 1280px; margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
+
+  /* Top bar: shown on wide screens, folds away once the page is scrolled. */
+  .hdr-top { background: var(--green-800); color: var(--green-100); font-size: 13px; overflow: hidden; max-height: 40px;
+    transition: max-height var(--motion-base) var(--ease-out); }
+  .hdr-top__row { display: flex; justify-content: flex-end; align-items: center; gap: 24px; padding-block: 6px; }
+  .hdr-top a { color: var(--green-100); text-decoration: none; }
+  .hdr-top a:hover { color: #fff; text-decoration: none; }
+  .hdr-lang { display: flex; gap: 6px; } .hdr-lang strong { color: #fff; }
+  .site-header.is-scrolled .hdr-top { max-height: 0; }
+
+  .hdr-main { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 12px;
+    transition: padding var(--motion-base) var(--ease-out); }
+  .hdr-logo { flex: none; display: block; }
+  .hdr-logo img { height: 52px; width: auto; display: block; transition: height var(--motion-base) var(--ease-out); }
+  .site-header.is-scrolled .hdr-main { padding-block: 8px; }
+  .site-header.is-scrolled .hdr-logo img { height: 44px; }
+
+  .hdr-nav { flex: 1 1 auto; min-width: 0; display: flex; justify-content: center; gap: clamp(14px, 1.7vw, 28px); white-space: nowrap; font-size: 15px; font-weight: 600; }
+  .hdr-link { color: var(--text-primary); text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent; transition: color var(--motion-fast), border-color var(--motion-fast); }
+  .hdr-link:hover { color: var(--green-700); text-decoration: none; border-bottom-color: var(--green-200); }
+  .hdr-link.is-active { color: var(--green-700); border-bottom-color: var(--green-500); }
+  .hdr-cta { flex: none; white-space: nowrap; text-decoration: none; }
+  .hdr-cta:hover { text-decoration: none; }
+
+  .hdr-narrow { align-items: center; gap: 12px; }
+  .hdr-toggle { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 8px 14px; border-radius: var(--radius-md);
+    border: 1px solid var(--border-strong); background: var(--surface-card); font: 600 15px var(--font-body); color: var(--text-primary); cursor: pointer; white-space: nowrap; }
+  .hdr-toggle__icon { position: relative; width: 18px; height: 12px; display: inline-block; }
+  .hdr-toggle__icon i { position: absolute; left: 0; width: 18px; height: 2px; border-radius: 2px; background: currentColor;
+    transition: transform var(--motion-base) var(--ease-out), opacity var(--motion-fast); }
+  .hdr-toggle__icon i:nth-child(1) { top: 0; } .hdr-toggle__icon i:nth-child(2) { top: 5px; } .hdr-toggle__icon i:nth-child(3) { top: 10px; }
+  .hdr-toggle[aria-expanded='true'] .hdr-toggle__icon i:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+  .hdr-toggle[aria-expanded='true'] .hdr-toggle__icon i:nth-child(2) { opacity: 0; }
+  .hdr-toggle[aria-expanded='true'] .hdr-toggle__icon i:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+
+  /* Full-height menu panel under the header bar (tablet and phone). */
+  .hdr-panel { position: fixed; left: 0; right: 0; top: var(--hdr-h, 72px); height: calc(100dvh - var(--hdr-h, 72px)); overflow-y: auto;
+    overscroll-behavior: contain; background: var(--surface-card); border-top: 1px solid var(--border-default); }
+  .hdr-panel:not([hidden]) { animation: hdr-in var(--motion-base) var(--ease-out); }
+  @keyframes hdr-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+  .hdr-panel__inner { max-width: 760px; margin: 0 auto; padding: 8px clamp(20px, 4vw, 56px) 32px; display: flex; flex-direction: column; }
+  .hdr-panel__group { display: flex; flex-direction: column; border-bottom: 1px solid var(--border-default); padding-block: 4px; }
+  .hdr-panel__link { display: flex; align-items: center; min-height: 52px; color: var(--text-primary); font-weight: 600; font-size: 17px; text-decoration: none; }
+  .hdr-panel__link.is-active { color: var(--green-700); font-weight: 700; }
+  .hdr-panel__sub { display: flex; align-items: center; min-height: 44px; margin: 0 0 6px 4px; padding-left: 16px; border-left: 2px solid var(--border-default);
+    color: var(--text-secondary); font-weight: 600; text-decoration: none; }
+  .hdr-panel__sub.is-active { border-left-color: var(--green-500); color: var(--green-700); }
+  .hdr-panel__meta { display: flex; gap: 24px; flex-wrap: wrap; padding: 20px 0 8px; font-weight: 600; }
+  .hdr-panel__meta a { color: var(--text-secondary); min-height: 44px; display: inline-flex; align-items: center; }
+  .hdr-panel__actions { display: grid; gap: 12px; padding-top: 12px; }
+  .hdr-panel__actions a { display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: var(--radius-md); font-weight: 700; text-decoration: none; }
+  .hdr-panel__call { background: var(--green-500); color: #fff !important; }
+  .hdr-panel__partner { border: 1px solid var(--border-strong); color: var(--text-primary) !important; }
+  :global(html.menu-open) { overflow: hidden; }
+
+  @media (max-width: 1199.98px) {
+    .hdr-top { display: none; }
+    .hdr-main { padding-block: 10px; }
+    .hdr-logo img, .site-header.is-scrolled .hdr-logo img { height: 44px; }
+  }
+  @media (max-width: 767.98px) {
+    .hdr-cta--tablet { display: none; }
+    .hdr-logo img, .site-header.is-scrolled .hdr-logo img { height: 40px; }
+    .hdr-main, .site-header.is-scrolled .hdr-main { padding-block: 8px; }
+  }
+</style>
+
 <script>
+  const header = document.querySelector<HTMLElement>('[data-site-header]');
   const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
   const panel = document.getElementById('hdr-panel');
+  const label = toggle?.querySelector<HTMLElement>('[data-menu-label]');
+
+  // Compact header after the first 80px of scrolling.
+  if (header) {
+    const setH = () => document.documentElement.style.setProperty('--hdr-h', `${header.getBoundingClientRect().height}px`);
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(() => { header.classList.toggle('is-scrolled', scrollY > 80); setH(); ticking = false; });
+    };
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', setH);
+    onScroll(); setH();
+  }
+
   if (toggle && panel) {
-    toggle.addEventListener('click', () => {
-      const open = panel.hidden;
+    const setOpen = (open: boolean) => {
       panel.hidden = !open;
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.textContent = (open ? toggle.dataset.open : toggle.dataset.closed) ?? '';
+      if (label) label.textContent = (open ? toggle.dataset.open : toggle.dataset.closed) ?? '';
+      document.documentElement.classList.toggle('menu-open', open);
+      if (open) panel.querySelector<HTMLElement>('a')?.focus({ preventScroll: true });
+    };
+    toggle.addEventListener('click', () => setOpen(panel.hidden));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !panel.hidden) { setOpen(false); toggle.focus(); }
     });
+    // Keep keyboard focus inside the open menu.
+    panel.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      const links = [...panel.querySelectorAll<HTMLElement>('a')];
+      const first = links[0], last = links.at(-1);
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); toggle.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); toggle.focus(); }
+    });
+    matchMedia('(min-width: 1200px)').addEventListener('change', (m) => { if (m.matches) setOpen(false); });
   }
 </script>
