@@ -189,7 +189,9 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
         links.forEach((a) => {
           const on = a.getAttribute('href') === `#${e.target.id}`;
           a.classList.toggle('is-current', on);
-          if (on) a.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+          // Keep the current item visible in the horizontally scrolling bar, without moving the page.
+          const bar = a.parentElement;
+          if (on && bar && bar.scrollWidth > bar.clientWidth) bar.scrollTo({ left: Math.max(0, a.offsetLeft - 20), behavior: 'smooth' });
         });
       }
     }, { rootMargin: '-40% 0px -55% 0px' });

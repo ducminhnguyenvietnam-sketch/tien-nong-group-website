@@ -31,11 +31,13 @@ interface Props {
   cms?: string;
   /** Above-the-fold photo: load it first (eager + high priority). Defaults to true for hero slots. */
   priority?: boolean;
-  /** CSS `sizes` hint for the responsive variants (defaults to the full viewport width). */
+  /** CSS `sizes` hint for the responsive variants (defaults: 100vw for priority slots, else half the page). */
   sizes?: string;
 }
-const { id, image, placeholder = '', shape = 'rounded', radius = 12, fit = 'cover', style = '', alt, cms, sizes = '100vw' } = Astro.props;
+const { id, image, placeholder = '', shape = 'rounded', radius = 12, fit = 'cover', style = '', alt, cms } = Astro.props;
 const priority = Astro.props.priority ?? /hero/.test(id);
+// Most slots are cards (half the page or less on desktop); full-bleed slots pass sizes="100vw".
+const sizes = Astro.props.sizes ?? (priority ? '100vw' : '(max-width: 767px) 92vw, 50vw');
 
 const EXTS = ['webp', 'avif', 'jpg', 'jpeg', 'png'];
 const imagesDir = path.join(process.cwd(), 'public', 'images');

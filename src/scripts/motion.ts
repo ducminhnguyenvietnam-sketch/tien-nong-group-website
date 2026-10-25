@@ -51,7 +51,9 @@ if (!still && !editing && 'IntersectionObserver' in window) {
     for (const b of blocks as HTMLElement[]) {
       const cs = getComputedStyle(b);
       const kids = [...b.children] as HTMLElement[];
-      const isRow = (cs.display === 'grid' || (cs.display === 'flex' && cs.flexDirection === 'row')) && kids.length >= 2 && kids.length <= 12;
+      // Swipe rows and tab panels reveal as one block: their hidden/off-screen cards would otherwise never intersect.
+      const isRow = (cs.display === 'grid' || (cs.display === 'flex' && cs.flexDirection === 'row')) && kids.length >= 2 && kids.length <= 12
+        && cs.overflowX === 'visible' && !b.querySelector('[hidden], [role="tabpanel"]');
       if (isRow) kids.forEach((k, i) => { k.style.setProperty('--rv-d', `${Math.min(i, 3) * 70}ms`); targets.push(k); });
       else targets.push(b);
     }
@@ -64,7 +66,8 @@ if (!still && !editing && 'IntersectionObserver' in window) {
     }
   }, { rootMargin: '0px 0px -12% 0px', threshold: 0.01 });
   for (const t of targets) {
-    if (!below(t) || t.closest('[data-no-reveal]')) continue;
+    // Skip what can't be seen yet (hidden panels): it must never be left transparent.
+    if (!below(t) || t.closest('[data-no-reveal], [hidden]') || !t.getClientRects().length) continue;
     t.classList.add('rv');
     io.observe(t);
   }

@@ -26,12 +26,22 @@ jobs:
       - id: pages
         uses: actions/configure-pages@v5
       - run: npm ci
+      # Resized WebP copies of the photos (scripts/optimize-images.mjs) are kept between runs.
+      - uses: actions/cache@v4
+        with:
+          path: public/_img
+          key: img-${{ hashFiles('public/uploads/**', 'public/images/**', 'scripts/optimize-images.mjs') }}
+          restore-keys: img-
+      - run: npm run check:content
       - run: npm run build
         env:
           SITE_URL: ${{ steps.pages.outputs.origin }}
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
           # The on-site photo editor commits to this repository.
           PUBLIC_GITHUB_REPO: ${{ github.repository }}
+          # Where the lead forms send their data (Settings → Secrets and variables → Actions → Variables).
+          # Empty = the forms are replaced by call / Zalo / email buttons.
+          PUBLIC_FORM_ENDPOINT: ${{ vars.FORM_ENDPOINT }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

@@ -7,9 +7,10 @@ and inline styles, so the layout matches the design.
 
 ```sh
 npm install
-npm run dev      # http://localhost:4321
-npm run build    # static site in dist/
-npm run check    # type check
+npm run dev            # http://localhost:4321 (makes the resized photos first)
+npm run build          # static site in dist/ (makes the resized photos first)
+npm run check          # type check
+npm run check:content  # lists "[…]" placeholders, missing photos, undated articles (STRICT=1 to fail)
 ```
 
 Pushing to `main` deploys the site to GitHub Pages (`.github/workflows/deploy.yml`).
@@ -53,10 +54,35 @@ upload (≤ 2400 px, JPEG) and makes one commit via the GitHub API with the file
 `public/uploads/` and `{ src, focus: "X% Y%", zoom }` in the content file, using a fine-grained
 token (Contents: write, Actions: read) stored in the browser. It is only loaded in edit mode.
 
-## Not wired up yet
+## Design system (giao diện v2)
 
-- **Forms** (Nông dân, Liên hệ, Giải pháp cho dự án) validate and show the design's
-  "sent" panel but post nowhere: add the endpoint in `src/scripts/forms.ts`.
-- **Empty links** (they render as `#`): social accounts, PDFs, press articles, privacy policy /
-  terms, job detail pages, the EN switch — fill them in the CMS.
-- **Content in [ngoặc vuông]** and sample data (dealers, jobs, article bodies) still need real values.
+- **Type scale** — tokens in `src/styles/tokens.css` (`--type-display`, `--type-h1/h2/h3`, `--type-stat`,
+  `--type-num`, `--type-eyebrow`, `--type-quote`, `--fs-lead`, `--fs-body`), with a smaller set for phones.
+  Pages use them as `font:var(--type-h2)`; never hard-code a heading size or weight 800, and never
+  `text-align: justify`.
+- **Layout helpers** — `src/styles/v2.css`: `g-stack` (two-column grid → one column under 480px),
+  `m-scroll` (card row → swipe row on phones), `data-needs-photos` (block hidden until it has a photo,
+  still visible in `?sua-anh`).
+- **Missing content** — `isFilled()` / `stripPlaceholders()` in `src/lib/content.ts` keep "[…]" placeholders
+  and empty items off the public pages; article paragraphs that are only a placeholder are dropped at
+  build time (`astro.config.mjs`). Empty photo slots show a quiet brand tile.
+- **Motion** — `src/scripts/motion.ts` (fade-up on scroll, count-up numbers, photo fade-in) and the motion
+  block of `v2.css` (hero drift, hover, page cross-fade). Off with `prefers-reduced-motion` and in `?sua-anh`.
+- **Photos** — `scripts/optimize-images.mjs` runs before dev/build and writes resized WebP copies to
+  `public/_img/` plus `src/generated/images.json` (both generated, not committed); `ImageSlot` serves them
+  with `srcset`. The deploy workflow caches `public/_img`.
+- **Header / footer** — compact sticky header, full-screen menu on tablet/phone, a call/Zalo action bar on
+  phones. "Gọi kỹ sư" uses *Hotline kỹ sư* (site settings) or else the company phone.
+
+## Forms
+
+The three lead forms POST JSON to `PUBLIC_FORM_ENDPOINT` (a Google Apps Script web app, Formspree, or a
+CRM webhook). Set it as the repository variable **FORM_ENDPOINT** (Settings → Secrets and variables →
+Actions → Variables); the workflow passes it to the build. "Đã gửi" only shows after a 2xx reply. Until the
+variable is set, each form is replaced by call / Zalo / email buttons so nobody fills in a form that
+goes nowhere.
+
+## Still to fill in (content)
+
+Run `npm run check:content` for the current list: "[…]" placeholders, sample dealers and jobs, article
+bodies, missing photos and PDFs. They are hidden on the site until filled in.

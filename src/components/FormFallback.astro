@@ -1,0 +1,36 @@
+---
+/**
+ * Shown in place of a lead form while no form endpoint (PUBLIC_FORM_ENDPOINT) is configured, so
+ * visitors get a working way to reach Tiến Nông instead of a form that sends nothing.
+ * forms.ts unhides it; without JavaScript the form itself stays visible.
+ */
+import siteRaw from '../content/site.json';
+import { withDefaults } from '../lib/content';
+import { link } from '../lib/routes';
+
+const site = withDefaults(siteRaw, 'src/content/site.json');
+const co = site.company as Record<string, string>;
+const phone = co.hotline || co.phone || '';
+const tel = phone.replace(/[^\d+]/g, '');
+const zalo = (site.social as Record<string, string>).zalo?.trim();
+---
+<div data-form-fallback hidden class="form-fallback">
+<strong>Liên hệ trực tiếp với Tiến Nông</strong>
+<p>Gọi hoặc nhắn cho chúng tôi, kỹ sư và bộ phận phụ trách sẽ hỗ trợ ngay.</p>
+<div class="form-fallback__actions">
+{tel && <a href={`tel:${tel}`} class="form-fallback__primary">Gọi {phone}</a>}
+{zalo && <a href={link(zalo)} target="_blank" rel="noopener">Nhắn Zalo</a>}
+{co.email && <a href={`mailto:${co.email}`}>Gửi email</a>}
+</div>
+</div>
+<style>
+  .form-fallback { display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid var(--border-default);
+    border-radius: var(--radius-lg); background: var(--surface-card); color: var(--text-primary); }
+  .form-fallback[hidden] { display: none; }
+  .form-fallback strong { font: var(--type-num); }
+  .form-fallback p { margin: 0; color: var(--text-secondary); }
+  .form-fallback__actions { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 6px; }
+  .form-fallback__actions a { display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border-radius: var(--radius-md);
+    border: 1px solid var(--border-strong); font-weight: 700; color: var(--green-700); text-decoration: none; }
+  .form-fallback__actions a.form-fallback__primary { background: var(--green-500); border-color: var(--green-500); color: #fff; }
+</style>

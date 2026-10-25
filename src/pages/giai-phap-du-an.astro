@@ -2,6 +2,7 @@
 import raw from '../content/pages/giai-phap-du-an.json';
 import { isFilled, stripPlaceholders, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
+import FormFallback from '../components/FormFallback.astro';
 import Button from '../components/Button.astro';
 import Checkbox from '../components/Checkbox.astro';
 import ImageSlot from '../components/ImageSlot.astro';
@@ -71,7 +72,8 @@ const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
 </div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:16px">
 <div id="project-sent" hidden style="display:flex;flex-direction:column;gap:8px;padding:16px 0"><span style="font:700 13px var(--font-mono);color:var(--green-600)">{c.s05_yeu_cau_tu_van.t7}</span><strong style="font-size:22px">{c.s05_yeu_cau_tu_van.t8}</strong><span style="color:var(--text-secondary)">{c.s05_yeu_cau_tu_van.t9}</span><button type="button" data-form-again style="align-self:flex-start;background:none;border:0;padding:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.s05_yeu_cau_tu_van.t10}</button></div>
-<form data-lead-form data-sent="project-sent" style="display:flex;flex-direction:column;gap:16px">
+<FormFallback />
+<form data-lead-form="giai-phap-du-an" data-sent="project-sent" style="display:flex;flex-direction:column;gap:16px">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
 <Input label={c.s05_yeu_cau_tu_van.f1} name="name" autocomplete="name" required placeholder={c.s05_yeu_cau_tu_van.f2} />
 <Input label={c.s05_yeu_cau_tu_van.f3} name="company" autocomplete="organization" required placeholder={c.s05_yeu_cau_tu_van.f4} />

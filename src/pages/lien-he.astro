@@ -3,6 +3,7 @@ import raw from '../content/pages/lien-he.json';
 import { isFilled, withDefaults } from '../lib/content';
 import siteRaw from '../content/site.json';
 import Layout from '../layouts/Layout.astro';
+import FormFallback from '../components/FormFallback.astro';
 import Button from '../components/Button.astro';
 import Checkbox from '../components/Checkbox.astro';
 import ImageSlot from '../components/ImageSlot.astro';
@@ -31,7 +32,7 @@ const sites = [
 <div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:32px">
 <span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_lien_he.t1}</a> {c.s01_lien_he.t2}</span>
 <div style="display:flex;flex-direction:column;gap:14px;max-width:760px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s01_lien_he.t3}</span><h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_lien_he.t4}</h1></div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/4),calc((1008px - 100%)*999),calc((100% - 16px)/2)),1fr));gap:16px">
+<div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/4),calc((1008px - 100%)*999),calc((100% - 16px)/2)),1fr));gap:16px">
 <div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t5}</span><a href={contactHref(contactValue(c.s01_lien_he.t6, co.hotline || co.phone))} style="font-size:20px;font-weight:700;color:var(--text-primary)">{contactValue(c.s01_lien_he.t6, co.hotline || co.phone)}</a><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t7}</span></div>
 <div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t8}</span><a href={contactHref(contactValue(c.s01_lien_he.t9, ''))} style="font-size:20px;font-weight:700;color:var(--text-primary)">{contactValue(c.s01_lien_he.t9, '')}</a><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t10}</span></div>
 <div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t11}</span><a href={contactHref(contactValue(c.s01_lien_he.t12, ''))} style="font-size:20px;font-weight:700;color:var(--text-primary)">{contactValue(c.s01_lien_he.t12, '')}</a><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t13}</span></div>
@@ -60,7 +61,7 @@ const sites = [
 <section id="nha-may" style="background:var(--surface-card);scroll-margin-top:120px">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
 <h2 style="margin:0;font:var(--type-h2)">{c.s03_van_phong_nha_may.t1}</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/4),calc((1088px - 100%)*999),calc((100% - 16px)/2)),1fr));gap:16px">
+<div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/4),calc((1088px - 100%)*999),calc((100% - 16px)/2)),1fr));gap:16px">
 {sites.map((p, k) => (
 <div style={`border-top:3px solid ${k === 0 ? 'var(--green-500)' : 'var(--border-strong)'};padding-top:16px;display:flex;flex-direction:column;gap:4px`}><strong style="font-size:18px">{p.name}</strong><span style="color:var(--text-secondary)">{p.address}</span><span>{p.phone}</span><a href={p.map} target="_blank" rel="noopener" style="margin-top:6px;font-weight:600;font-size:15px">{c.s03_van_phong_nha_may.map_label}</a></div>
 ))}
@@ -71,7 +72,8 @@ const sites = [
 <div style="display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font:var(--type-h2)">{c.s04_gui_lien_he.t1}</h2><span style="color:var(--text-secondary)">{c.s04_gui_lien_he.t2}</span></div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:16px">
 <div id="contact-sent" hidden style="display:flex;flex-direction:column;gap:8px;padding:16px 0"><span style="font:700 13px var(--font-mono);color:var(--green-600)">{c.s04_gui_lien_he.t3}</span><strong style="font-size:22px">{c.s04_gui_lien_he.t4}</strong><span style="color:var(--text-secondary)">{c.s04_gui_lien_he.t5} <span id="need-label">{c.needs[0]?.toLowerCase()}</span> {c.s04_gui_lien_he.t6}</span><button type="button" data-form-again style="align-self:flex-start;background:none;border:0;padding:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.s04_gui_lien_he.t7}</button></div>
-<form id="contact-form" data-lead-form data-sent="contact-sent" style="display:flex;flex-direction:column;gap:16px">
+<FormFallback />
+<form id="contact-form" data-lead-form="lien-he" data-sent="contact-sent" style="display:flex;flex-direction:column;gap:16px">
 <Select id="contact-need" name="need" label={c.s04_gui_lien_he.f1} options={c.needs.map((v) => ({ value: v, label: v }))} />
 <div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 42px)/4),calc((922px - 100%)*999),calc((100% - 14px)/2)),1fr));gap:14px">
 <Input label={c.s04_gui_lien_he.f2} name="name" autocomplete="name" required placeholder={c.s04_gui_lien_he.f3} />

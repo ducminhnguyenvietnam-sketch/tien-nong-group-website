@@ -2,6 +2,7 @@
 import raw from '../content/pages/nong-dan.json';
 import { isFilled, stripPlaceholders, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
+import FormFallback from '../components/FormFallback.astro';
 import Button from '../components/Button.astro';
 import Checkbox from '../components/Checkbox.astro';
 import ImageSlot from '../components/ImageSlot.astro';
@@ -47,7 +48,8 @@ const workshops = [...farmerNews.filter(isWorkshop), ...farmerNews.filter((n) =>
 </div></div>
 <div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:16px">
 <div id="reg-sent" hidden style="padding:32px 8px;display:flex;flex-direction:column;gap:10px;align-items:flex-start"><span style="font:700 13px var(--font-mono);color:var(--green-600)">{c.s02_dang_ky.t8}</span><strong style="font-size:22px">{c.s02_dang_ky.t9}</strong><span style="color:var(--text-secondary)">{c.s02_dang_ky.t10}</span><button type="button" data-form-again style="background:none;border:0;padding:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.s02_dang_ky.t11}</button></div>
-<form data-lead-form data-sent="reg-sent" style="display:flex;flex-direction:column;gap:14px">
+<FormFallback />
+<form data-lead-form="nong-dan" data-sent="reg-sent" style="display:flex;flex-direction:column;gap:14px">
 <Input label={c.s02_dang_ky.f1} name="name" autocomplete="name" required placeholder={c.s02_dang_ky.f2} />
 <Input label={c.s02_dang_ky.f3} name="phone" type="tel" autocomplete="tel" required placeholder={c.s02_dang_ky.f4} />
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px">
