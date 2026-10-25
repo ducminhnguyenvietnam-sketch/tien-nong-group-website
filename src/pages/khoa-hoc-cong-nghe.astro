@@ -1,12 +1,13 @@
 ---
 import raw from '../content/pages/khoa-hoc-cong-nghe.json';
-import { withDefaults } from '../lib/content';
+import { isFilled, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import { url } from '../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/khoa-hoc-cong-nghe.json');
+const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && !d.topics.some((t) => !isFilled(t)));
 
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Khoa học & Công nghệ">
@@ -45,7 +46,7 @@ const c = withDefaults(raw, 'src/content/pages/khoa-hoc-cong-nghe.json');
 </div>
 <p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s03_trung_tam_r_d.t3}</p>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 60px)/4),calc((1100px - 100%)*999),calc((100% - 20px)/2)),1fr));gap:20px">
+<div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 60px)/4),calc((1100px - 100%)*999),calc((100% - 20px)/2)),1fr));gap:20px">
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-1" shape="rect" placeholder="Phòng Thí nghiệm chất lượng" image={c.s03_trung_tam_r_d.img_lab_1_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s03_trung_tam_r_d.img_lab_1_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">{c.s03_trung_tam_r_d.t4}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_trung_tam_r_d.t5}</span></div></div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-2" shape="rect" placeholder="Phòng Công nghệ sinh học" image={c.s03_trung_tam_r_d.img_lab_2_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s03_trung_tam_r_d.img_lab_2_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">{c.s03_trung_tam_r_d.t6}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_trung_tam_r_d.t7}</span></div></div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-3" shape="rect" placeholder="Phòng Sức khỏe đất & cây trồng" image={c.s03_trung_tam_r_d.img_lab_3_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s03_trung_tam_r_d.img_lab_3_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">{c.s03_trung_tam_r_d.t8}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_trung_tam_r_d.t9}</span></div></div>
@@ -60,9 +61,9 @@ const c = withDefaults(raw, 'src/content/pages/khoa-hoc-cong-nghe.json');
 </div>
 <div data-picker style="display:flex;flex-wrap:wrap;gap:32px 48px;align-items:flex-start">
 <div role="tablist" aria-orientation="vertical" aria-label="Lĩnh vực nghiên cứu" style="flex:1 1 260px;max-width:340px;display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
-{c.domains.map((d, k) => <button type="button" role="tab" class="dom-tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'} style="display:flex;gap:14px;align-items:baseline;text-align:left;padding:18px 0 18px 16px;border:0;border-bottom:1px solid var(--border-default);border-left:3px solid transparent;background:none;font:600 17px var(--font-body);color:var(--text-secondary);cursor:pointer"><span style="font:600 13px var(--font-mono);color:var(--text-tertiary)">{String(k + 1).padStart(2, '0')}</span>{d.name}</button>)}
+{domains.map((d, k) => <button type="button" role="tab" class="dom-tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'} style="display:flex;gap:14px;align-items:baseline;text-align:left;padding:18px 0 18px 16px;border:0;border-bottom:1px solid var(--border-default);border-left:3px solid transparent;background:none;font:600 17px var(--font-body);color:var(--text-secondary);cursor:pointer"><span style="font:600 13px var(--font-mono);color:var(--text-tertiary)">{String(k + 1).padStart(2, '0')}</span>{d.name}</button>)}
 </div>
-{c.domains.map((d, k) => (
+{domains.map((d, k) => (
 <div role="tabpanel" data-pick-panel={k} hidden={k !== 0} style="flex:999 1 520px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px 40px">
 <div style="position:relative;height:380px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`dom-${k}`} shape="rounded" radius="16" placeholder={d.image.alt} image={d.image} cms={`src/content/pages/khoa-hoc-cong-nghe.json#domains.${k}.image`} /></div>
 <div style="display:flex;flex-direction:column;gap:16px">
@@ -100,7 +101,7 @@ const c = withDefaults(raw, 'src/content/pages/khoa-hoc-cong-nghe.json');
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">{c.s06_vilas_1519.t4}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s06_vilas_1519.t5}</span></div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">{c.s06_vilas_1519.t6}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s06_vilas_1519.t7}</span></div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">{c.s06_vilas_1519.t8}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s06_vilas_1519.t9}</span></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">{c.s06_vilas_1519.t10}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s06_vilas_1519.t11}</span></div>
+{isFilled(c.s06_vilas_1519.t11) && <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">{c.s06_vilas_1519.t10}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s06_vilas_1519.t11}</span></div>}
 </div>
 <div style="display:flex;gap:12px;flex-wrap:wrap"><a href={url('lien-he', 'lien-he-form')} style="text-decoration:none;display:inline-flex"><Button as="span" >{c.s06_vilas_1519.t12}</Button></a></div>
 </div></div></section>
@@ -132,7 +133,7 @@ const c = withDefaults(raw, 'src/content/pages/khoa-hoc-cong-nghe.json');
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-1" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_doi_tac_nghien_cuu.img_part_1_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s08_doi_tac_nghien_cuu.img_part_1_1" /></div><span style="font-weight:600;font-size:15px">{c.s08_doi_tac_nghien_cuu.t5}</span></div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-2" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_doi_tac_nghien_cuu.img_part_2_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s08_doi_tac_nghien_cuu.img_part_2_1" /></div><span style="font-weight:600;font-size:15px">{c.s08_doi_tac_nghien_cuu.t6}</span></div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-3" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_doi_tac_nghien_cuu.img_part_3_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s08_doi_tac_nghien_cuu.img_part_3_1" /></div><span style="font-weight:600;font-size:15px">{c.s08_doi_tac_nghien_cuu.t7}</span></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-4" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_doi_tac_nghien_cuu.img_part_4_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s08_doi_tac_nghien_cuu.img_part_4_1" /></div><span style="font-weight:600;font-size:15px">{c.s08_doi_tac_nghien_cuu.t8}</span></div>
+{isFilled(c.s08_doi_tac_nghien_cuu.t8) && <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-4" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_doi_tac_nghien_cuu.img_part_4_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s08_doi_tac_nghien_cuu.img_part_4_1" /></div><span style="font-weight:600;font-size:15px">{c.s08_doi_tac_nghien_cuu.t8}</span></div>}
 </div></div></section>
 </Layout>
 

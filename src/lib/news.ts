@@ -39,7 +39,7 @@ export async function getPress(limit = 3): Promise<NewsEntry[]> {
 }
 
 export const formatDate = (d?: Date | null) =>
-  d ? d.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'Asia/Ho_Chi_Minh' }) : '[dd/mm/2026]';
+  d ? d.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'Asia/Ho_Chi_Minh' }) : '';
 
 /** Rough reading time in minutes (about 200 words a minute). */
 export const readingTime = (e: NewsEntry) => Math.max(1, Math.ceil((e.body ?? '').split(/\s+/).filter(Boolean).length / 200));

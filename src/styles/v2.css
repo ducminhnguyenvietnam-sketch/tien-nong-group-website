@@ -77,3 +77,6 @@ html:not(.pe-on) .img-slot[data-empty] .img-slot__frame::after {
   @view-transition { navigation: none; }
 }
 .pe-on .hero-slide .img-slot__img, .pe-on .hero-copy > * { animation: none !important; }
+
+/* Blocks that only hold photos and have none yet are hidden on public pages (kept in photo-edit mode). */
+html:not(.pe-on) [data-needs-photos] { display: none !important; }

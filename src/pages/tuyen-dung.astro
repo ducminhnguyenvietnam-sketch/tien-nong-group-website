@@ -1,12 +1,17 @@
 ---
 import raw from '../content/pages/tuyen-dung.json';
-import { withDefaults } from '../lib/content';
+import { isFilled, stripPlaceholders, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Select from '../components/Select.astro';
 import { url, link } from '../lib/routes';
+import siteRaw from '../content/site.json';
 
 const c = withDefaults(raw, 'src/content/pages/tuyen-dung.json');
+const site = withDefaults(siteRaw, 'src/content/site.json');
+const jobsEmail = isFilled(c.s05_vi_tri_tuyen_dung.t5) ? c.s05_vi_tri_tuyen_dung.t5 : site.company.email;
+const applyHref = (j: { title: string; link?: string | null }) =>
+  isFilled(j.link) ? link(j.link) : `mailto:${jobsEmail}?subject=${encodeURIComponent('Ứng tuyển: ' + j.title)}`;
 
 const opt = (arr: string[], all: string) => [{ value: 'all', label: all }, ...[...new Set(arr)].map((v) => ({ value: v, label: v }))];
 ---
@@ -46,9 +51,9 @@ const opt = (arr: string[], all: string) => [{ value: 'all', label: all }, ...[.
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ben-2" shape="rect" placeholder="Lễ trao vàng tri ân" image={c.s03_dai_ngo.img_ben_2_1} cms="src/content/pages/tuyen-dung.json#s03_dai_ngo.img_ben_2_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:19px">{c.s03_dai_ngo.t6}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t7}</span></div></div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ben-3" shape="rect" placeholder="Lễ trao Bảo Bình tài lộc" image={c.s03_dai_ngo.img_ben_3_1} cms="src/content/pages/tuyen-dung.json#s03_dai_ngo.img_ben_3_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:19px">{c.s03_dai_ngo.t8}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t9}</span></div></div>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 84px)/4),calc((964px - 100%)*999),calc((100% - 28px)/2)),1fr));gap:16px 28px">
+<div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 84px)/4),calc((964px - 100%)*999),calc((100% - 28px)/2)),1fr));gap:16px 28px">
 <div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">{c.s03_dai_ngo.t10}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t11}</span></div>
-<div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">{c.s03_dai_ngo.t12}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t13}</span></div>
+<div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">{c.s03_dai_ngo.t12}</strong><span style="color:var(--text-secondary);font-size:15px">{stripPlaceholders(c.s03_dai_ngo.t13)}</span></div>
 <div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">{c.s03_dai_ngo.t14}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t15}</span></div>
 <div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">{c.s03_dai_ngo.t16}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t17}</span></div>
 </div></div></section>
@@ -71,9 +76,9 @@ const opt = (arr: string[], all: string) => [{ value: 'all', label: all }, ...[.
 </div>
 <div style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden">
 {c.jobs.map((j) => (
-<a href={link(j.link)} data-dept={j.dept} data-loc={j.loc} style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--border-default);color:var(--text-primary)" class="hover-tint"><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{j.title}</strong><span style="font-size:14px;color:var(--text-secondary)">{j.dept} · {j.loc} · Hạn nộp {j.due}</span></div><span style="color:var(--green-600);font-weight:600">{c.jobs_apply_label}</span></a>
+<a href={applyHref(j)} data-dept={j.dept} data-loc={j.loc} style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--border-default);color:var(--text-primary)" class="hover-tint"><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{j.title}</strong><span style="font-size:14px;color:var(--text-secondary)">{j.dept} · {j.loc}{isFilled(j.due) && ` · Hạn nộp ${j.due}`}</span></div><span style="color:var(--green-600);font-weight:600">{c.jobs_apply_label}</span></a>
 ))}
-<div id="job-empty" hidden style="padding:32px 24px;color:var(--text-secondary)">{c.s05_vi_tri_tuyen_dung.t4} <strong>{c.s05_vi_tri_tuyen_dung.t5}</strong> {c.s05_vi_tri_tuyen_dung.t6}</div>
+<div id="job-empty" hidden style="padding:32px 24px;color:var(--text-secondary)">{c.s05_vi_tri_tuyen_dung.t4} <strong>{jobsEmail}</strong> {c.s05_vi_tri_tuyen_dung.t6}</div>
 </div>
 <span style="font-size:14px;color:var(--text-tertiary)">{c.s05_vi_tri_tuyen_dung.t7}</span>
 </div></section>

@@ -6,22 +6,87 @@ import { asset, link, url } from '../lib/routes';
 const site = withDefaults(siteRaw, 'src/content/site.json');
 
 const { company: co, social, legal, footer: f } = site;
+const has = (v?: string | null) => typeof v === 'string' && v.trim() !== '' && !/^\[.*\]$/.test(v.trim());
+const socials = [
+  ['Facebook', social.facebook], ['YouTube', social.youtube], ['TikTok', social.tiktok], ['Zalo', social.zalo],
+].filter(([, href]) => has(href)) as [string, string][];
+const legalLinks = [[legal.privacy_label, legal.privacy_url], [legal.terms_label, legal.terms_url]].filter(([, href]) => has(href)) as [string, string][];
+const callNumber = ((co as Record<string, string>).hotline || co.phone || '').replace(/[^\d+]/g, '');
+const zalo = has(social.zalo) ? social.zalo : '';
 ---
-<footer style="font-family:var(--font-body);background:var(--gray-900);color:var(--gray-300);font-size:14px;line-height:1.6">
-<div style="max-width:1280px;margin:0 auto;padding:64px clamp(20px,4vw,56px) 28px;display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-wrap:wrap;gap:32px 40px">
-<div style="flex:1.6 1 260px;min-width:0;display:flex;flex-direction:column;gap:14px;max-width:440px">
-<span style="display:inline-flex;align-self:flex-start;background:#fff;border-radius:10px;padding:6px 12px"><img src={asset("assets/logo-full.png")} alt="Tiến Nông" style="height:44px;width:auto;display:block" /></span>
-<strong style="color:#fff">{co.name}</strong>
-<span style="line-height:1.8">{co.address}<br />{co.phone} · {co.email}<br />{co.tax_code_label} {co.tax_code}</span>
+<footer class="site-footer">
+<div class="ftr-container">
+<div class="ftr-top">
+<div class="ftr-brand">
+<span class="ftr-logo"><img src={asset("assets/logo-header.png")} alt="Tiến Nông" width="147" height="120" /></span>
+<strong>{co.name}</strong>
+<span>{co.address}</span>
+<span>{has(co.phone) && <a href={`tel:${co.phone.replace(/[^\d+]/g, '')}`}>{co.phone}</a>}{has(co.phone) && has(co.email) && ' · '}{has(co.email) && <a href={`mailto:${co.email}`}>{co.email}</a>}</span>
+{has(co.tax_code) && <span>{co.tax_code_label} {co.tax_code}</span>}
 </div>
-<div style="flex:1 1 150px;display:flex;flex-direction:column;gap:10px"><strong style="color:#fff">{f.col1_title}</strong><a href={url('ve-tien-nong')} style="color:var(--gray-300);text-decoration:none">{f.col1_about}</a><a href={url('khoa-hoc-cong-nghe')} style="color:var(--gray-300);text-decoration:none">{f.col1_science}</a><a href={url('phat-trien-ben-vung')} style="color:var(--gray-300);text-decoration:none">{f.col1_sustainability}</a><a href={url('tuyen-dung')} style="color:var(--gray-300);text-decoration:none">{f.col1_jobs}</a></div>
-<div style="flex:1 1 150px;display:flex;flex-direction:column;gap:10px"><strong style="color:#fff">{f.col2_title}</strong><a href={url('san-pham')} style="color:var(--gray-300);text-decoration:none">{f.col2_products}</a><a href={url('giai-phap')} style="color:var(--gray-300);text-decoration:none">{f.col2_crop_solutions}</a><a href={url('giai-phap-du-an')} style="color:var(--gray-300);text-decoration:none">{f.col2_project_solutions}</a><a href={url('nong-dan')} style="color:var(--gray-300);text-decoration:none">{f.col2_farmers}</a></div>
-<div style="flex:1 1 150px;display:flex;flex-direction:column;gap:10px"><strong style="color:#fff">{f.col3_title}</strong><a href={url('lien-he', 'dai-ly')} style="color:var(--gray-300);text-decoration:none">{f.col3_dealers}</a><a href={url('lien-he')} style="color:var(--gray-300);text-decoration:none">{f.col3_contact}</a><a href={url('tin-tuc')} style="color:var(--gray-300);text-decoration:none">{f.col3_news}</a></div>
+<div class="ftr-col"><strong>{f.col1_title}</strong><a href={url('ve-tien-nong')}>{f.col1_about}</a><a href={url('khoa-hoc-cong-nghe')}>{f.col1_science}</a><a href={url('phat-trien-ben-vung')}>{f.col1_sustainability}</a><a href={url('tuyen-dung')}>{f.col1_jobs}</a></div>
+<div class="ftr-col"><strong>{f.col2_title}</strong><a href={url('san-pham')}>{f.col2_products}</a><a href={url('giai-phap')}>{f.col2_crop_solutions}</a><a href={url('giai-phap-du-an')}>{f.col2_project_solutions}</a><a href={url('nong-dan')}>{f.col2_farmers}</a></div>
+<div class="ftr-col"><strong>{f.col3_title}</strong><a href={url('lien-he', 'dai-ly')}>{f.col3_dealers}</a><a href={url('lien-he')}>{f.col3_contact}</a><a href={url('tin-tuc')}>{f.col3_news}</a></div>
 </div>
-<div style="display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--gray-700);font-size:13px;color:var(--gray-400)">
+<div class="ftr-bottom">
 <span>{co.copyright}</span>
-<div style="display:flex;gap:20px;flex-wrap:wrap"><a href={link(social.facebook)} style="color:var(--gray-400);text-decoration:none">Facebook</a><a href={link(social.youtube)} style="color:var(--gray-400);text-decoration:none">YouTube</a><a href={link(social.tiktok)} style="color:var(--gray-400);text-decoration:none">TikTok</a><span style="color:var(--gray-600)">|</span><a href={link(legal.privacy_url)} style="color:var(--gray-400);text-decoration:none">{legal.privacy_label}</a><a href={link(legal.terms_url)} style="color:var(--gray-400);text-decoration:none">{legal.terms_label}</a><span>{legal.ministry_badge}</span></div>
+{(socials.length > 0 || legalLinks.length > 0) && <div class="ftr-links">
+{socials.map(([name, href]) => <a href={link(href)} target="_blank" rel="noopener">{name}</a>)}
+{socials.length > 0 && legalLinks.length > 0 && <span class="ftr-sep" aria-hidden="true">|</span>}
+{legalLinks.map(([label, href]) => <a href={link(href)}>{label}</a>)}
+</div>}
 </div></div>
-<a href={url('lien-he')} style="position:fixed;right:24px;bottom:24px;z-index:40;background:var(--green-500);color:#fff;font-weight:600;padding:12px 20px;border-radius:var(--radius-full);box-shadow:var(--shadow-md);text-decoration:none">{f.floating_button}</a>
+
+<!-- Desktop: a quiet floating contact button. Phones: a fixed action bar (call / Zalo / contact). -->
+<a href={url('lien-he')} class="ftr-float">{f.floating_button}</a>
+<div class="ftr-actionbar" role="navigation" aria-label="Liên hệ nhanh">
+{callNumber && <a href={`tel:${callNumber}`} class="ftr-actionbar__primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Gọi kỹ sư</a>}
+{zalo
+  ? <a href={link(zalo)} target="_blank" rel="noopener">Zalo</a>
+  : <a href={url('lien-he')}>{f.floating_button}</a>}
+</div>
 </footer>
+
+<style>
+  .site-footer { font-family: var(--font-body); background: var(--gray-900); color: var(--gray-300); font-size: 14px; line-height: 1.6; }
+  .site-footer a { color: var(--gray-300); text-decoration: none; transition: color var(--motion-fast); }
+  .site-footer a:hover { color: #fff; }
+  .ftr-container { max-width: 1280px; margin: 0 auto; padding: 64px clamp(20px, 4vw, 56px) 28px; display: flex; flex-direction: column; gap: 40px; }
+  .ftr-top { display: grid; grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr)); gap: 32px 40px; }
+  .ftr-brand { display: flex; flex-direction: column; gap: 6px; max-width: 440px; }
+  .ftr-brand strong { color: #fff; margin-top: 8px; }
+  .ftr-logo { display: inline-flex; align-self: flex-start; background: #fff; border-radius: 10px; padding: 6px 12px; }
+  .ftr-logo img { height: 44px; width: auto; display: block; }
+  .ftr-col { display: flex; flex-direction: column; gap: 4px; }
+  .ftr-col strong { color: #fff; margin-bottom: 6px; }
+  .ftr-col a { min-height: 32px; display: inline-flex; align-items: center; }
+  .ftr-bottom { display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--gray-700); font-size: 13px; color: var(--gray-400); }
+  .ftr-links { display: flex; gap: 8px 20px; flex-wrap: wrap; }
+  .ftr-links a { color: var(--gray-400); }
+  .ftr-sep { color: var(--gray-600); }
+
+  .ftr-float { position: fixed; right: 24px; bottom: 24px; z-index: 40; background: var(--green-500); color: #fff !important; font-weight: 600;
+    padding: 12px 20px; border-radius: var(--radius-full); box-shadow: var(--shadow-md); transition: background var(--motion-fast), transform var(--motion-base) var(--ease-out); }
+  .ftr-float:hover { background: var(--green-600); transform: translateY(-2px); }
+  .ftr-actionbar { display: none; }
+
+  @media (max-width: 899.98px) {
+    .ftr-top { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .ftr-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 599.98px) {
+    .ftr-container { padding-top: 48px; padding-bottom: 96px; gap: 32px; }
+    .ftr-top { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+    .ftr-col:last-child { grid-column: 1 / -1; }
+  }
+  @media (max-width: 767.98px) {
+    .ftr-float { display: none; }
+    .ftr-actionbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 8px;
+      padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); background: rgba(255, 255, 255, .96); backdrop-filter: blur(8px);
+      border-top: 1px solid var(--border-default); box-shadow: 0 -4px 16px rgba(28, 32, 28, .06); }
+    .ftr-actionbar a { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border-radius: var(--radius-md);
+      font-weight: 700; font-size: 15px; color: var(--green-700); border: 1px solid var(--border-strong); background: var(--surface-card); }
+    .ftr-actionbar a.ftr-actionbar__primary { background: var(--green-500); border-color: var(--green-500); color: #fff; }
+    :global(html.menu-open) .ftr-actionbar { display: none; }
+  }
+</style>

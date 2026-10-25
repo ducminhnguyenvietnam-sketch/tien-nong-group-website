@@ -1,6 +1,7 @@
 ---
 import raw from '../content/pages/lien-he.json';
-import { withDefaults } from '../lib/content';
+import { isFilled, withDefaults } from '../lib/content';
+import siteRaw from '../content/site.json';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Checkbox from '../components/Checkbox.astro';
@@ -10,6 +11,11 @@ import Select from '../components/Select.astro';
 import { url, link } from '../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/lien-he.json');
+const site = withDefaults(siteRaw, 'src/content/site.json');
+const co = site.company as Record<string, string>;
+// Contact values become tap-to-call / tap-to-mail links; a placeholder hotline falls back to the company numbers.
+const contactValue = (v: string, fallback = '') => (isFilled(v) ? v : fallback);
+const contactHref = (v: string) => (v.includes('@') ? `mailto:${v.trim()}` : v.replace(/[^\d+]/g, '').length >= 8 ? `tel:${v.replace(/[^\d+]/g, '')}` : undefined);
 
 // Each office/plant card links to Google Maps: the CMS link if set, else a search for the address.
 const f = c.s03_van_phong_nha_may;
@@ -26,10 +32,10 @@ const sites = [
 <span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_lien_he.t1}</a> {c.s01_lien_he.t2}</span>
 <div style="display:flex;flex-direction:column;gap:14px;max-width:760px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s01_lien_he.t3}</span><h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_lien_he.t4}</h1></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/4),calc((1008px - 100%)*999),calc((100% - 16px)/2)),1fr));gap:16px">
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t5}</span><strong style="font-size:20px">{c.s01_lien_he.t6}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t7}</span></div>
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t8}</span><strong style="font-size:20px">{c.s01_lien_he.t9}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t10}</span></div>
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t11}</span><strong style="font-size:20px">{c.s01_lien_he.t12}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t13}</span></div>
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t14}</span><strong style="font-size:20px">{c.s01_lien_he.t15}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t16}</span></div>
+<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t5}</span><a href={contactHref(contactValue(c.s01_lien_he.t6, co.hotline || co.phone))} style="font-size:20px;font-weight:700;color:var(--text-primary)">{contactValue(c.s01_lien_he.t6, co.hotline || co.phone)}</a><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t7}</span></div>
+<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t8}</span><a href={contactHref(contactValue(c.s01_lien_he.t9, ''))} style="font-size:20px;font-weight:700;color:var(--text-primary)">{contactValue(c.s01_lien_he.t9, '')}</a><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t10}</span></div>
+<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t11}</span><a href={contactHref(contactValue(c.s01_lien_he.t12, ''))} style="font-size:20px;font-weight:700;color:var(--text-primary)">{contactValue(c.s01_lien_he.t12, '')}</a><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t13}</span></div>
+<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t14}</span><a href={contactHref(contactValue(c.s01_lien_he.t15, ''))} style="font-size:20px;font-weight:700;color:var(--text-primary)">{contactValue(c.s01_lien_he.t15, '')}</a><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t16}</span></div>
 </div></div></section>
 
 <section id="dai-ly" style="background:var(--surface-page);scroll-margin-top:120px">
@@ -67,7 +73,7 @@ const sites = [
 <div id="contact-sent" hidden style="display:flex;flex-direction:column;gap:8px;padding:16px 0"><span style="font:700 13px var(--font-mono);color:var(--green-600)">{c.s04_gui_lien_he.t3}</span><strong style="font-size:22px">{c.s04_gui_lien_he.t4}</strong><span style="color:var(--text-secondary)">{c.s04_gui_lien_he.t5} <span id="need-label">{c.needs[0]?.toLowerCase()}</span> {c.s04_gui_lien_he.t6}</span><button type="button" data-form-again style="align-self:flex-start;background:none;border:0;padding:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.s04_gui_lien_he.t7}</button></div>
 <form id="contact-form" data-lead-form data-sent="contact-sent" style="display:flex;flex-direction:column;gap:16px">
 <Select id="contact-need" name="need" label={c.s04_gui_lien_he.f1} options={c.needs.map((v) => ({ value: v, label: v }))} />
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 42px)/4),calc((922px - 100%)*999),calc((100% - 14px)/2)),1fr));gap:14px">
+<div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 42px)/4),calc((922px - 100%)*999),calc((100% - 14px)/2)),1fr));gap:14px">
 <Input label={c.s04_gui_lien_he.f2} name="name" autocomplete="name" required placeholder={c.s04_gui_lien_he.f3} />
 <Input label={c.s04_gui_lien_he.f4} name="phone" type="tel" autocomplete="tel" required placeholder={c.s04_gui_lien_he.f5} />
 <Input label={c.s04_gui_lien_he.f6} name="email" type="email" autocomplete="email" placeholder={c.s04_gui_lien_he.f7} />

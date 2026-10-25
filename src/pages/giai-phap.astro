@@ -1,13 +1,15 @@
 ---
 import raw from '../content/pages/giai-phap.json';
-import { withDefaults } from '../lib/content';
+import { isFilled, stripPlaceholders, withDefaults } from '../lib/content';
+import siteRaw from '../content/site.json';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
-import Input from '../components/Input.astro';
 import { url } from '../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/giai-phap.json');
+const site = withDefaults(siteRaw, 'src/content/site.json');
+const callNumber = (((site.company as Record<string, string>).hotline) || site.company.phone || '').replace(/[^\d+]/g, '');
 const v = c.s03_theo_van_de;
 
 // The finder opens on the last issue, as in the design.
@@ -53,7 +55,7 @@ const defaultIssue = c.finder_issues.length - 1;
 {c.issues.map((it, k) => (
 <div role="tabpanel" id={`issue-${k}`} aria-labelledby={`issue-tab-${k}`} data-issue={k} hidden={k !== 0} class="issue-flow">
 <article class="issue-step">
-<div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`issue-${k}-problem`} shape="rect" placeholder={it.image.alt} image={it.image} cms={`src/content/pages/giai-phap.json#issues.${k}.image`} /></div>
+<div data-needs-photos={isFilled(it.image?.src) ? undefined : ''} style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`issue-${k}-problem`} shape="rect" placeholder={it.image.alt} image={it.image} cms={`src/content/pages/giai-phap.json#issues.${k}.image`} /></div>
 <div style="padding:22px;display:flex;flex-direction:column;gap:10px"><span class="issue-step__label"><b>1</b>{v.label_problem}</span><h3 style="margin:0;font:var(--type-num)">{it.title}</h3><p style="margin:0;color:var(--text-secondary)">{it.symptoms}</p></div>
 </article>
 <span class="issue-arrow" aria-hidden="true">→</span>
@@ -64,9 +66,9 @@ const defaultIssue = c.finder_issues.length - 1;
 </article>
 <span class="issue-arrow" aria-hidden="true">→</span>
 <article class="issue-step" style="border:2px solid var(--green-500)">
-<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2px;background:var(--border-default)">
+<div data-needs-photos={isFilled(it.pack_image?.src) || isFilled(it.result_image?.src) ? undefined : ''} style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2px;background:var(--border-default)">
 <figure style="margin:0;position:relative;height:170px;background:var(--surface-sunken)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`issue-${k}-pack`} shape="rect" fit="contain" placeholder={it.pack_image.alt} image={it.pack_image} cms={`src/content/pages/giai-phap.json#issues.${k}.pack_image`} /><figcaption class="issue-cap">{v.label_pack}</figcaption></figure>
-<figure style="margin:0;position:relative;height:170px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`issue-${k}-result`} shape="rect" placeholder={it.result_image.alt} image={it.result_image} cms={`src/content/pages/giai-phap.json#issues.${k}.result_image`} /><figcaption class="issue-cap">{v.label_result}{it.result_caption ? ` · ${it.result_caption}` : ''}</figcaption></figure>
+<figure style="margin:0;position:relative;height:170px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`issue-${k}-result`} shape="rect" placeholder={it.result_image.alt} image={it.result_image} cms={`src/content/pages/giai-phap.json#issues.${k}.result_image`} /><figcaption class="issue-cap">{v.label_result}{isFilled(it.result_caption) ? ` · ${it.result_caption}` : ''}</figcaption></figure>
 </div>
 <div style="padding:22px;display:flex;flex-direction:column;gap:10px"><span class="issue-step__label" style="color:var(--green-700)"><b>3</b>{v.label_solution}</span><h3 style="margin:0;font:var(--type-num);color:var(--green-800)">{it.solution_name}</h3><p style="margin:0;color:var(--text-secondary)">{it.solution_text}</p>
 {it.products.length > 0 && <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span style="font-size:14px;font-weight:600">{v.label_products}</span>{it.products.map((name) => <a href={url('san-pham')} style="font-size:13px;font-weight:600;padding:4px 10px;border-radius:var(--radius-full);background:var(--green-50);color:var(--green-800);text-decoration:none">{name}</a>)}</div>}
@@ -116,11 +118,10 @@ const defaultIssue = c.finder_issues.length - 1;
 <h3 id="rec-title" style="margin:0;font:var(--type-num)">{c.finder_crops[0] + ' · ' + c.finder_issues[defaultIssue].label.toLowerCase()}</h3>
 {c.finder_issues.map(({ steps }, i) => <div data-rec={i} hidden={i !== defaultIssue} style="display:flex;flex-direction:column;gap:10px">{steps.map((t, k) => <div style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:baseline"><span style="font:700 14px var(--font-mono);color:var(--green-600)">{String(k + 1).padStart(2, '0')}</span><span>{t}</span></div>)}</div>)}
 <span style="font-size:14px;color:var(--text-tertiary)">{c.s05_tim_giai_phap.t6}</span>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;padding-top:16px;border-top:1px solid var(--border-default)">
-<Input label={c.s05_tim_giai_phap.f1} placeholder={c.s05_tim_giai_phap.f2} />
-<Input label={c.s05_tim_giai_phap.f3} placeholder={c.s05_tim_giai_phap.f4} />
+<div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--border-default)">
+{callNumber && <a href={`tel:${callNumber}`} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg">Gọi kỹ sư tư vấn</Button></a>}
+<a href={url('lien-he', 'lien-he-form')} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg" variant="secondary">{c.s05_tim_giai_phap.t7}</Button></a>
 </div>
-<a href={url('lien-he', 'lien-he-form')} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg">{c.s05_tim_giai_phap.t7}</Button></a>
 </div></div></section>
 
 <section style="background:var(--surface-page)">

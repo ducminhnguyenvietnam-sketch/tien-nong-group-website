@@ -1,6 +1,6 @@
 ---
 import raw from '../content/pages/nong-dan.json';
-import { withDefaults } from '../lib/content';
+import { isFilled, stripPlaceholders, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Checkbox from '../components/Checkbox.astro';
@@ -30,7 +30,7 @@ const workshops = [...farmerNews.filter(isWorkshop), ...farmerNews.filter((n) =>
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-100)">{c.s01_hero.t2}</span>
 <h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero.t3}</h1>
 <p style="margin:0;font-size:var(--fs-lead);line-height:1.55;color:var(--green-50);text-wrap:pretty">{c.s01_hero.t4}</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;pointer-events:auto"><a href="#dang-ky" style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s01_hero.t5}</a><a href={link(c.s01_hero.link1)} style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s01_hero.t6}</a></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;pointer-events:auto"><a href="#dang-ky" style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s01_hero.t5}</a>{isFilled(c.s01_hero.t6) && <a href={link(c.s01_hero.link1)} style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s01_hero.t6}</a>}</div>
 </div></div></section>
 
 <section id="dang-ky" style="background:var(--surface-card);scroll-margin-top:120px">

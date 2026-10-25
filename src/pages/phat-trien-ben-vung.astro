@@ -1,6 +1,6 @@
 ---
 import raw from '../content/pages/phat-trien-ben-vung.json';
-import { withDefaults } from '../lib/content';
+import { isFilled, stripPlaceholders, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import { url } from '../lib/routes';
@@ -21,9 +21,9 @@ const LABEL: Record<string, string> = { 'Tất cả': 'Tất cả', 'KHUYẾN H�
 <div style="position:relative;height:clamp(260px,36vw,500px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-hero" shape="rounded" radius="24" placeholder="Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh" image={c.s01_hero.img_esg_hero_1} cms="src/content/pages/phat-trien-ben-vung.json#s01_hero.img_esg_hero_1" /></div>
 </div>
 <div style="max-width:1280px;margin:0 auto;padding:40px clamp(20px,4vw,56px) 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 72px)/4),calc((900px - 100%)*999),calc((100% - 24px)/2)),1fr));gap:24px">
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--amber-600);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t6}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t7}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--amber-600);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t8}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t9}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--amber-600);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t10}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t11}</span></div>
+{isFilled(c.s01_hero.t6) && <div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--amber-600);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t6}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t7}</span></div>}
+{isFilled(c.s01_hero.t8) && <div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--amber-600);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t8}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t9}</span></div>}
+{isFilled(c.s01_hero.t10) && <div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--amber-600);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t10}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t11}</span></div>}
 <div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t12}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t13}</span></div>
 </div></section>
 
@@ -40,7 +40,7 @@ const LABEL: Record<string, string> = { 'Tất cả': 'Tất cả', 'KHUYẾN H�
 <h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s02_san_xuat_xanh.t2}</h2>
 <p style="margin:0;color:var(--text-secondary);text-wrap:pretty">{c.s02_san_xuat_xanh.t3}</p>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:12px;border-top:1px solid var(--border-default);font-size:15px">
-<div><strong style="display:block">{c.s02_san_xuat_xanh.t4}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t5}</span></div>
+{isFilled(c.s02_san_xuat_xanh.t4) && <div><strong style="display:block">{c.s02_san_xuat_xanh.t4}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t5}</span></div>}
 <div><strong style="display:block">{c.s02_san_xuat_xanh.t6}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t7}</span></div>
 <div><strong style="display:block">{c.s02_san_xuat_xanh.t8}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t9}</span></div>
 <div><strong style="display:block">{c.s02_san_xuat_xanh.t10}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t11}</span></div>

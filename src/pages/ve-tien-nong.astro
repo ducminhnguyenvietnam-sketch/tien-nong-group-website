@@ -1,10 +1,10 @@
 ---
 import raw from '../content/pages/ve-tien-nong.json';
-import { withDefaults } from '../lib/content';
+import { isFilled, stripPlaceholders, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
-import { url } from '../lib/routes';
+import { link, url } from '../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 
@@ -32,8 +32,8 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 </div>
 </section>
 
-<nav style="position:sticky;top:108px;z-index:20;background:var(--surface-page);border-top:1px solid var(--border-default);border-bottom:1px solid var(--border-default)">
-<div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px);display:flex;gap:28px;overflow-x:auto;white-space:nowrap;font-size:14px;font-weight:600">
+<nav class="subnav" aria-label="Mục lục trang" style="position:sticky;top:var(--hdr-h,108px);z-index:20;background:var(--surface-page);border-top:1px solid var(--border-default);border-bottom:1px solid var(--border-default)">
+<div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px);display:flex;gap:28px;overflow-x:auto;white-space:nowrap;font-size:14px;font-weight:600;scrollbar-width:none">
 <a href="#thu-ngo" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t18}</a><a href="#su-menh" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t19}</a><a href="#lich-su" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t20}</a><a href="#lanh-dao" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t21}</a><a href="#thanh-tuu" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t22}</a><a href="#nang-luc" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t23}</a><a href="#he-sinh-thai" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t24}</a>
 </div></nav>
 
@@ -102,10 +102,10 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 <div style="display:flex;flex-direction:column;gap:12px"><div style="position:relative;aspect-ratio:4/5"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lead-4" shape="rounded" radius="16" placeholder="Chân dung (nền đồng nhất)" image={c.s05_lanh_dao.img_lead_4_1} cms="src/content/pages/ve-tien-nong.json#s05_lanh_dao.img_lead_4_1" /></div><div><strong style="display:block;font-size:17px">{c.s05_lanh_dao.t9}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s05_lanh_dao.t10}</span></div></div>
 <div style="display:flex;flex-direction:column;gap:12px"><div style="position:relative;aspect-ratio:4/5"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lead-5" shape="rounded" radius="16" placeholder="Chân dung (nền đồng nhất)" image={c.s05_lanh_dao.img_lead_5_1} cms="src/content/pages/ve-tien-nong.json#s05_lanh_dao.img_lead_5_1" /></div><div><strong style="display:block;font-size:17px">{c.s05_lanh_dao.t11}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s05_lanh_dao.t12}</span></div></div>
 </div>
-{c.s05_lanh_dao.executives.length > 0 && <div style="display:flex;flex-direction:column;gap:20px;padding-top:40px;border-top:1px solid var(--border-default)">
+{c.s05_lanh_dao.executives.some((p) => isFilled(p.name)) && <div style="display:flex;flex-direction:column;gap:20px;padding-top:40px;border-top:1px solid var(--border-default)">
 <div style="display:flex;flex-direction:column;gap:10px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s05_lanh_dao.t13}</span><h3 style="margin:0;font:var(--type-h3)">{c.s05_lanh_dao.t14}</h3></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:12px">
-{c.s05_lanh_dao.executives.map((p) => <div style="display:flex;flex-direction:column;gap:4px;padding:16px 18px;border:1px solid var(--border-default);border-radius:var(--radius-md);background:var(--surface-card)"><strong style="font-size:16px">{p.name}</strong><span style="color:var(--text-secondary);font-size:14px;line-height:1.45">{p.title}</span></div>)}
+{c.s05_lanh_dao.executives.filter((p) => isFilled(p.name)).map((p) => <div style="display:flex;flex-direction:column;gap:4px;padding:16px 18px;border:1px solid var(--border-default);border-radius:var(--radius-md);background:var(--surface-card)"><strong style="font-size:16px">{p.name}</strong><span style="color:var(--text-secondary);font-size:14px;line-height:1.45">{p.title}</span></div>)}
 </div></div>}
 </div></section>
 
@@ -121,18 +121,18 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 {c.s06_thanh_tuu.featured_awards.length > 0 && <div class="awards-featured">
 {c.s06_thanh_tuu.featured_awards.map((w, k) => <div class="award award--big">
 <div class="award__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`award-big-${k}`} shape="rounded" radius="12" fit="contain" placeholder="Ảnh giải thưởng" image={w.image} cms={`src/content/pages/ve-tien-nong.json#s06_thanh_tuu.featured_awards.${k}.image`} /></div>
-<div class="award__text"><span class="award__label">{w.label}</span><strong class="award__title">{w.title}</strong>{w.detail && <span class="award__detail">{w.detail}</span>}</div>
+<div class="award__text"><span class="award__label">{stripPlaceholders(w.label)}</span><strong class="award__title">{w.title}</strong>{w.detail && <span class="award__detail">{w.detail}</span>}</div>
 </div>)}
 </div>}
 {c.s06_thanh_tuu.awards.length > 0 && <div class="awards-grid">
 {c.s06_thanh_tuu.awards.map((w, k) => <div class="award">
 <div class="award__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`award-${k}`} shape="rounded" radius="10" fit="contain" placeholder="Ảnh giải thưởng" image={w.image} cms={`src/content/pages/ve-tien-nong.json#s06_thanh_tuu.awards.${k}.image`} /></div>
-<div class="award__text"><span class="award__label">{w.label}</span><strong class="award__title">{w.title}</strong>{w.detail && <span class="award__detail">{w.detail}</span>}</div>
+<div class="award__text"><span class="award__label">{stripPlaceholders(w.label)}</span><strong class="award__title">{w.title}</strong>{w.detail && <span class="award__detail">{w.detail}</span>}</div>
 </div>)}
 </div>}
 <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:20px 24px;background:var(--surface-sunken);border-radius:var(--radius-lg)">
 <span><strong>{c.s06_thanh_tuu.t27}</strong> {c.s06_thanh_tuu.t28}</span>
-<Button variant="secondary">{c.s06_thanh_tuu.t29}</Button>
+{isFilled(c.s06_thanh_tuu.profile_pdf) && <a href={link(c.s06_thanh_tuu.profile_pdf)} target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex"><Button as="span" variant="secondary">{c.s06_thanh_tuu.t29}</Button></a>}
 </div>
 </div></section>
 
@@ -172,3 +172,27 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 <style>
   .ms-year[aria-selected='true'] { border-bottom-color: var(--green-500) !important; font-weight: 800 !important; color: var(--green-700) !important; }
 </style>
+<style>
+  .subnav { transition: top var(--motion-base) var(--ease-out); }
+  .subnav a { border-bottom: 2px solid transparent; transition: color var(--motion-fast), border-color var(--motion-fast); }
+  .subnav a:hover { color: var(--green-700) !important; text-decoration: none; }
+  .subnav a.is-current { color: var(--green-700) !important; border-bottom-color: var(--green-500); }
+</style>
+<script>
+  // Highlight the section being read in the page's table of contents.
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('.subnav a[href^="#"]')];
+  const targets = links.map((a) => document.querySelector<HTMLElement>(a.getAttribute('href')!)).filter(Boolean) as HTMLElement[];
+  if (targets.length && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        links.forEach((a) => {
+          const on = a.getAttribute('href') === `#${e.target.id}`;
+          a.classList.toggle('is-current', on);
+          if (on) a.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+        });
+      }
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    targets.forEach((t) => io.observe(t));
+  }
+</script>
