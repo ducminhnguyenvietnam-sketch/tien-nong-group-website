@@ -62,12 +62,23 @@ trực quan được.
   Nếu ảnh là poster đã thiết kế sẵn chữ (ví dụ ảnh chiến dịch NPK hữu cơ vi sinh), **tắt "Hiện chữ
   trên ảnh"** để website chỉ hiện ảnh. Slide tự chuyển sau 6 giây; ở chế độ sửa ảnh (`?sua-anh`)
   slide đứng yên — bấm chấm tròn bên dưới để chuyển tới slide cần thay ảnh.
-- **Poster trang Sản phẩm**: *Các trang → Sản phẩm → Poster đầu trang* — tải ảnh thiết kế tỉ lệ khoảng
-  3:1 (ví dụ 2400×800 px); có thể điền đường dẫn để khi bấm vào poster thì mở trang chiến dịch.
+- **Poster trang Sản phẩm**: *Các trang → Sản phẩm → Poster đầu trang* — tải ảnh thiết kế khổ lớn tràn ngang
+  như ảnh đầu trang chủ (khoảng 2400×1200 px, đặt chữ và sản phẩm ở giữa ảnh vì trên điện thoại hai bên bị cắt bớt); có thể điền đường dẫn để khi bấm vào poster thì mở trang chiến dịch.
 - **Văn hóa doanh nghiệp** (menu *Về Tiến Nông → Văn hóa doanh nghiệp*): sửa tại *Các trang → Văn hóa
   doanh nghiệp*. Điền **5 điều tâm niệm**, các **bài thơ** (mỗi câu thơ một dòng) và **video bài hát**:
   dán đường dẫn YouTube (khuyên dùng) hoặc tải tệp mp4. Các chỗ trong [ngoặc vuông] là chỗ cần điền.
 - **Tên các mục menu** và menu con: *Thông tin chung → Đầu trang (menu)*.
+- **Trở thành đối tác** (nút xanh trên menu): sửa tại *Các trang → Trở thành đối tác*. Điền quyền lợi,
+  điều kiện, **đại lý và nhà phân phối tiêu biểu** (tên, địa chỉ, số liệu, lời chia sẻ, ảnh).
+  Ở mục **07 · Giám đốc kinh doanh**, mỗi người có họ tên, số điện thoại và ô **Tỉnh/thành phụ trách**
+  (chọn nhiều tỉnh trong danh sách 34 tỉnh, thành). Khách chọn tỉnh nào thì thấy người phụ trách tỉnh đó
+  và nút **Liên hệ** để gọi ngay. Bản đồ Việt Nam có sẵn; nếu muốn dùng ảnh bản đồ tự thiết kế thì tải
+  vào ô *Ảnh bản đồ thiết kế riêng*.
+- **Trang Giải pháp → Theo vấn đề**: *Các trang → Giải pháp → 03 · Theo vấn đề – các vấn đề*. Mỗi vấn đề
+  có 3 bước: biểu hiện + ảnh vấn đề → lý giải khoa học (mỗi dòng một ý) → giải pháp + ảnh bao bì + ảnh
+  kết quả thực tế. Phần **Hỏi đáp** sửa ở *Hỏi đáp – câu hỏi thường gặp*.
+- **Google Maps cho trụ sở, nhà máy**: *Các trang → Liên hệ → 03 · Văn phòng & nhà máy*. Dán link chia sẻ
+  từ Google Maps vào từng ô; để trống thì website tự tìm theo địa chỉ.
 
 ## 4. Sửa chữ
 

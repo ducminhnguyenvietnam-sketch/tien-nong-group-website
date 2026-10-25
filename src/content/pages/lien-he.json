@@ -49,7 +49,12 @@
     "t10": "02373.729.729",
     "t11": "Nhà máy Dinh dưỡng cây trồng Tiến Nông 3",
     "t12": "Km 312, quốc lộ 1A, xã Hoằng Phú, tỉnh Thanh Hóa",
-    "t13": "02373.729.729"
+    "t13": "02373.729.729",
+    "map_label": "Xem trên Google Maps ↗",
+    "map1": "",
+    "map2": "",
+    "map3": "",
+    "map4": ""
   },
   "s04_gui_lien_he": {
     "t1": "Gửi yêu cầu",

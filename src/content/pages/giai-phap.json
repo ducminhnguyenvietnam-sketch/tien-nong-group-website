@@ -72,7 +72,16 @@
   "s03_theo_van_de": {
     "t1": "02 · THEO VẤN ĐỀ",
     "t2": "Nhận diện đúng vấn đề để chọn đúng giải pháp",
-    "t3": "Phần lớn tình trạng cây sinh trưởng kém bắt nguồn từ đất. Chọn vấn đề đang gặp phải để xem hướng xử lý phù hợp."
+    "t3": "Mỗi vấn đề trên đồng ruộng đều có nguyên nhân khoa học. Hiểu đúng vì sao, chúng ta mới chọn đúng giải pháp.",
+    "label_problem": "VẤN ĐỀ",
+    "label_why": "VÌ SAO?",
+    "label_solution": "GIẢI PHÁP TIẾN NÔNG",
+    "label_products": "Sản phẩm:",
+    "label_pack": "Bao bì sản phẩm",
+    "label_result": "Kết quả thực tế",
+    "faq_eyebrow": "HỎI ĐÁP",
+    "faq_title": "Câu hỏi thường gặp của bà con",
+    "faq_intro": "Những thắc mắc phổ biến khi chăm sóc cây trồng và cách xử lý. Cần tư vấn cụ thể cho ruộng vườn của mình, bà con hãy gọi kỹ sư Tiến Nông."
   },
   "s04_suc_khoe_dat": {
     "img_soil_1": {
@@ -158,24 +167,39 @@
   "problems_fix_label": "Hướng xử lý:",
   "problems": [
     {
-      "title": "Đất chua, bạc màu, suy giảm độ phì",
-      "cause": "Canh tác liên tục, bón nhiều phân hóa học thiếu cân đối và ít bổ sung hữu cơ khiến đất mất cấu trúc, pH giảm.",
-      "fix": "Điều hòa pH đất, bổ sung phân hữu cơ và vi sinh để phục hồi cấu trúc và hệ sinh vật đất."
+      "title": "Cây vàng lá, sinh trưởng kém, năng suất không ổn định?",
+      "cause": "• Thiếu trung – vi lượng: sắt (Fe), kẽm (Zn), magie (Mg), lưu huỳnh (S), bo (B)…\n• Rễ hoạt động kém do đất chua, đất bí, ngộ độc hữu cơ hoặc úng nước\n• Bón thiếu hoặc lệch đạm, kali",
+      "fix": "Bổ sung trung – vi lượng (như Vinafer Tiến Nông), cải thiện môi trường rễ (thoát nước, điều hòa pH đất) và bón cân đối theo từng giai đoạn."
     },
     {
-      "title": "Thiếu hụt hoặc mất cân đối dinh dưỡng",
-      "cause": "Bón theo thói quen, không theo nhu cầu của cây ở từng giai đoạn sinh trưởng.",
-      "fix": "Sử dụng phân bón chuyên dụng theo cây trồng và giai đoạn, kết hợp phân tích đất định kỳ."
+      "title": "Vì sao hiệu quả sử dụng phân bón chưa cao?",
+      "cause": "• Bón chưa đúng liều lượng: thừa gây lãng phí, xót rễ; thiếu thì cây không đủ sức cho năng suất\n• Bón không đúng chủng loại, không theo nhu cầu của cây ở từng giai đoạn\n• Bón sai thời điểm, sai cách: rải trên đất khô hoặc ngay trước mưa lớn làm đạm bay hơi, rửa trôi\n• Đất chua giữ chặt lân, cây không hấp thu được",
+      "fix": "Bón theo nguyên tắc 4 đúng: đúng loại, đúng liều, đúng lúc, đúng cách. Dùng phân chuyên dùng theo cây trồng và điều hòa pH đất trước khi bón."
     },
     {
-      "title": "Cây vàng lá, sinh trưởng kém, năng suất không ổn định",
-      "cause": "Thường do thiếu trung – vi lượng (Ca, Mg, S, Zn, B…) hoặc rễ hoạt động kém.",
-      "fix": "Bổ sung trung – vi lượng, cải thiện môi trường rễ và điều chỉnh chương trình bón."
+      "title": "Bón nhiều phân nhưng cây vẫn thiếu dinh dưỡng?",
+      "cause": "• Bón theo thói quen, không theo nhu cầu của cây ở từng giai đoạn sinh trưởng\n• Chỉ chú trọng đạm, lân, kali mà bỏ quên trung – vi lượng\n• Đất nghèo hữu cơ, không giữ được phân",
+      "fix": "Dùng phân bón chuyên dùng theo cây trồng và giai đoạn, kết hợp phân hữu cơ và phân tích đất định kỳ."
     },
     {
-      "title": "Hiệu quả sử dụng phân bón chưa cao",
-      "cause": "Phân bón bị rửa trôi, bay hơi hoặc bị đất giữ chặt, cây không hấp thu được.",
-      "fix": "Chọn sản phẩm có công nghệ nâng cao hiệu suất sử dụng và bón đúng thời điểm, đúng cách."
+      "title": "Vì sao lúa bón nhiều đạm lại dễ lốp, đổ và nhiều sâu bệnh?",
+      "cause": "• Thừa đạm làm thân lá mềm yếu, rậm rạp, dễ nhiễm rầy, đạo ôn, khô vằn\n• Thiếu kali và silic khiến thân cây yếu, dễ đổ ngã khi gặp mưa gió",
+      "fix": "Bón cân đối đạm – lân – kali; chọn NPK có bổ sung silic như dòng NPK lúa Tiến Nông giúp cứng cây, hạn chế đổ ngã và sâu bệnh."
+    },
+    {
+      "title": "Đã bón đủ NPK, có cần bón thêm phân hữu cơ không?",
+      "cause": "• NPK cung cấp dinh dưỡng cho cây nhưng không bù lại chất hữu cơ cho đất\n• Đất thiếu hữu cơ lâu ngày sẽ chai cứng, giữ nước và giữ phân kém, vi sinh vật có ích suy giảm",
+      "fix": "Nên kết hợp phân hữu cơ, hữu cơ vi sinh (như Hữu cơ – Humic, NPK hữu cơ vi sinh Tiến Nông) với phân khoáng để vừa nuôi cây vừa nuôi đất."
+    },
+    {
+      "title": "Có nên trộn vôi chung với phân đạm, phân lân để bón một lần?",
+      "cause": "• Vôi trộn với đạm (urê, phân amoni) làm đạm chuyển thành khí amoniac bay hơi, gây mất đạm\n• Vôi trộn với lân làm lân kết tủa, cây khó hấp thu",
+      "fix": "Không nên trộn. Bón vôi hoặc sản phẩm điều hòa pH đất trước, sau khoảng 7–10 ngày mới bón phân đạm, lân."
+    },
+    {
+      "title": "Khi nào nên phân tích đất?",
+      "cause": "• Năng suất giảm dần qua nhiều vụ dù vẫn bón phân như cũ\n• Chuyển đổi cây trồng hoặc bắt đầu canh tác trên đất mới",
+      "fix": "Nên phân tích đất định kỳ 2–3 năm một lần để biết pH, hữu cơ, đạm, lân, kali. Kỹ sư Tiến Nông sẽ dựa vào kết quả để tư vấn chương trình bón phù hợp."
     }
   ],
   "finder_crops": [
@@ -220,5 +244,116 @@
         "Theo dõi và điều chỉnh cùng kỹ sư trong suốt vụ"
       ]
     }
-  ]
+  ],
+  "issues": [
+    {
+      "title": "Ngộ độc hữu cơ trên lúa",
+      "symptoms": "Sau cấy, sạ 15–25 ngày lúa chậm phát triển, lá vàng, ít đẻ nhánh. Nhổ lên thấy rễ thâm đen, ít rễ trắng, có mùi hôi; mặt ruộng sủi bọt khí.",
+      "image": {
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ruộng lúa bị ngộ độc hữu cơ: lá vàng, rễ thâm đen"
+      },
+      "why": "Rơm rạ, gốc rạ và phân hữu cơ chưa hoai bị vùi xuống ruộng ngập nước, phân hủy trong điều kiện thiếu oxy (yếm khí).\nQuá trình này sinh ra khí độc H₂S, CH₄ và các axit hữu cơ, đồng thời làm sắt hòa tan (Fe²⁺) tích tụ quá mức.\nRễ lúa bị đầu độc, thâm đen và thối, không hút được dinh dưỡng nên cây vàng lá dù đã bón đủ phân. Trời nắng nóng làm quá trình này diễn ra nhanh và nặng hơn.",
+      "solution_name": "Vinafer Tiến Nông",
+      "solution_text": "Rút cạn nước, phơi ruộng nhẹ 2–3 ngày và sục bùn cho khí độc thoát ra. Sau đó bổ sung Vinafer – phân vi lượng dạng chelate dễ hấp thu, giúp lúa nhanh ra rễ trắng mới, lá xanh trở lại và đẻ nhánh khỏe.",
+      "products": [
+        "Vinafer Tiến Nông"
+      ],
+      "pack_image": {
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Bao bì sản phẩm Vinafer Tiến Nông"
+      },
+      "result_image": {
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ruộng lúa xanh tốt trở lại sau khi xử lý bằng Vinafer"
+      },
+      "result_caption": "[Địa điểm, thời gian mô hình]"
+    },
+    {
+      "title": "Đất chua, đất phèn",
+      "symptoms": "Cây còi cọc, rễ ngắn và ít, lá vàng hoặc đỏ tía; ruộng phèn có nước trong, váng vàng gạch, đất có mùi chua. Bón nhiều phân lân nhưng cây vẫn thiếu lân.",
+      "image": {
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ruộng đất phèn với váng vàng gạch trên mặt nước"
+      },
+      "why": "Đất chua (pH dưới 5,5) chứa nhiều ion H⁺ và nhôm (Al³⁺) hòa tan gây độc, làm rễ ngắn và chết đầu rễ.\nNhôm, sắt trong đất chua giữ chặt lân, khiến phần lớn lượng lân bón vào cây không hút được.\nỞ đất phèn, khoáng pyrit (FeS₂) gặp không khí bị oxy hóa tạo axit sunfuric, đẩy pH xuống rất thấp. Vi sinh vật có ích cũng kém hoạt động trong môi trường chua.",
+      "solution_name": "Điều hòa pH đất Tiến Nông",
+      "solution_text": "Bón Điều hòa pH đất trước khi gieo cấy, trồng mới để nâng pH, bổ sung canxi, magie, hạn chế độc nhôm và sắt, giải phóng lượng lân bị giữ chặt cho cây sử dụng. Bón trước, sau 7–10 ngày mới bón phân đạm, lân.",
+      "products": [
+        "Điều hòa pH đất 1 Tiến Nông"
+      ],
+      "pack_image": {
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Bao bì sản phẩm Điều hòa pH đất Tiến Nông"
+      },
+      "result_image": {
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ruộng đất phèn sau cải tạo, lúa sinh trưởng khỏe"
+      },
+      "result_caption": "[Địa điểm, thời gian mô hình]"
+    },
+    {
+      "title": "Đất bạc màu, suy giảm độ phì",
+      "symptoms": "Đất chai cứng, màu nhạt, khô nhanh và giữ phân kém. Năng suất giảm dần qua từng vụ dù lượng phân bón mỗi năm một tăng.",
+      "image": {
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Đất bạc màu, chai cứng, nứt nẻ"
+      },
+      "why": "Canh tác liên tục, chủ yếu bón phân hóa học và ít trả lại chất hữu cơ khiến mùn trong đất cạn dần.\nThiếu mùn, đất mất cấu trúc tơi xốp, khả năng giữ nước và giữ dinh dưỡng (CEC) giảm nên phân bón dễ bị rửa trôi.\nĐất cũng nghèo vi sinh vật có ích và cạn kiệt trung – vi lượng sau nhiều năm cây trồng lấy đi mà không được bù lại.",
+      "solution_name": "Bộ giải pháp phục hồi đất Tiến Nông",
+      "solution_text": "Kết hợp nhóm sản phẩm theo từng bước: bổ sung hữu cơ và humic để phục hồi mùn, cấu trúc đất; điều hòa pH; bón NPK cân đối theo cây trồng; bổ sung trung – vi lượng. Kỹ sư Tiến Nông sẽ tư vấn chương trình bón phù hợp cho từng chân đất.",
+      "products": [
+        "Hữu cơ – Humic Tiến Nông",
+        "NPK hữu cơ vi sinh Tiến Nông",
+        "Điều hòa pH đất 1 Tiến Nông",
+        "Vinafer Tiến Nông"
+      ],
+      "pack_image": {
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Bộ sản phẩm phục hồi đất Tiến Nông"
+      },
+      "result_image": {
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Vườn cây sau phục hồi đất, đất tơi xốp, cây xanh tốt"
+      },
+      "result_caption": "[Địa điểm, thời gian mô hình]"
+    },
+    {
+      "title": "Vàng lá trên cây dứa",
+      "symptoms": "Lá dứa chuyển vàng nhạt rồi vàng trắng, nhất là lá non; cây còi, chậm lớn, quả nhỏ, năng suất thấp.",
+      "image": {
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Nương dứa bị vàng lá"
+      },
+      "why": "Dứa là cây rất nhạy cảm với thiếu sắt. Trên nhiều vùng đất trồng dứa, sắt trong đất tồn tại ở dạng khó tan, đặc biệt khi đất có nhiều mangan hoặc pH không phù hợp, nên rễ không hút đủ.\nThiếu sắt làm cây không tạo đủ diệp lục, lá vàng và quang hợp kém. Thiếu kẽm, đạm đi kèm khiến tình trạng nặng hơn.",
+      "solution_name": "Vinafer đặc biệt Tiến Nông",
+      "solution_text": "Dùng Vinafer đặc biệt chuyên cho cây dứa, cung cấp sắt và vi lượng dạng chelate dễ hấp thu, giúp lá xanh trở lại. Kết hợp NPK chuyên dùng cho cây dứa của Tiến Nông để cây sinh trưởng cân đối, quả to, đều.",
+      "products": [
+        "Vinafer đặc biệt Tiến Nông",
+        "NPK cây dứa Tiến Nông"
+      ],
+      "pack_image": {
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Bao bì Vinafer đặc biệt Tiến Nông"
+      },
+      "result_image": {
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Nương dứa xanh tốt sau khi dùng Vinafer đặc biệt"
+      },
+      "result_caption": "[Địa điểm, thời gian mô hình]"
+    }
+  ],
+  "problems_cause_label": "Nguyên nhân:"
 }

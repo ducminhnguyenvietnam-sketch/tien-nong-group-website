@@ -1779,7 +1779,7 @@ content:
       - name: image
         label: Ảnh poster
         component: photo
-        description: Ảnh thiết kế sẵn, tỉ lệ khoảng 3:1 (ví dụ 2400×800 px). Để trống sẽ hiện khung chờ ảnh.
+        description: Ảnh thiết kế sẵn, khổ lớn tràn ngang như ảnh đầu trang chủ (nên dùng khoảng 2400×1200 px). Trên điện thoại hai bên ảnh bị cắt bớt, nên đặt chữ và sản phẩm ở giữa ảnh. Để trống sẽ hiện khung chờ ảnh.
       - name: link
         label: Bấm vào poster thì mở
         type: string
@@ -2041,13 +2041,6 @@ content:
       - name: t25
         label: 'Liên kết: Tải tài liệu kỹ thuật (PDF)'
         type: string
-      - name: link2
-        label: Tệp/đường dẫn cho “Tải phiếu an toàn (SDS)”
-        type: file
-        description: Tải tệp lên (ví dụ PDF) hoặc để trống nếu chưa có.
-      - name: t26
-        label: 'Liên kết: Tải phiếu an toàn (SDS)'
-        type: string
       - name: t27
         label: 'Liên kết: Thành phần'
         type: string
@@ -2164,15 +2157,6 @@ content:
       fields:
       - name: t1
         label: 'Tiêu đề: Hướng dẫn sử dụng'
-        type: string
-      - name: t2
-        label: 'Nhãn in hoa: BÓN LÓT'
-        type: string
-      - name: t3
-        label: 'Chữ đậm: Dùng NPK Lúa 1'
-        type: string
-      - name: t4
-        label: 'Chữ: Không dùng sản phẩm này'
         type: string
       - name: t5
         label: 'Nhãn in hoa: THÚC ĐẺ NHÁNH'
@@ -2450,8 +2434,76 @@ content:
         label: 'Tiêu đề: Nhận diện đúng vấn đề để chọn đúng giải pháp'
         type: string
       - name: t3
-        label: 'Đoạn văn: Phần lớn tình trạng cây sinh trưởng kém bắt ng…'
+        label: 'Đoạn giới thiệu'
         type: text
+      - name: label_problem
+        label: "Nhãn bước 1 (VẤN ĐỀ)"
+        type: string
+      - name: label_why
+        label: "Nhãn bước 2 (VÌ SAO?)"
+        type: string
+      - name: label_solution
+        label: "Nhãn bước 3 (GIẢI PHÁP TIẾN NÔNG)"
+        type: string
+      - name: label_products
+        label: "Nhãn danh sách sản phẩm"
+        type: string
+      - name: label_pack
+        label: "Chú thích ảnh bao bì"
+        type: string
+      - name: label_result
+        label: "Chú thích ảnh kết quả thực tế"
+        type: string
+      - name: faq_eyebrow
+        label: "Hỏi đáp – dòng chữ nhỏ"
+        type: string
+      - name: faq_title
+        label: "Hỏi đáp – tiêu đề"
+        type: string
+      - name: faq_intro
+        label: "Hỏi đáp – đoạn giới thiệu"
+        type: text
+    - name: issues
+      label: '03 · Theo vấn đề – các vấn đề (vấn đề → vì sao → giải pháp)'
+      description: 'Mỗi vấn đề là một nút trên trang; bấm vào sẽ hiện 3 bước. Kéo để đổi thứ tự.'
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.title}'
+      fields:
+      - name: title
+        label: "Tên vấn đề (hiện trên nút)"
+        type: string
+      - name: symptoms
+        label: "Bước 1 – Biểu hiện"
+        type: text
+      - name: image
+        label: "Bước 1 – Ảnh minh họa vấn đề"
+        component: photo
+      - name: why
+        label: "Bước 2 – Lý giải khoa học"
+        type: text
+        description: "Mỗi dòng là một ý (xuống dòng để tách ý)."
+      - name: solution_name
+        label: "Bước 3 – Tên giải pháp / sản phẩm"
+        type: string
+      - name: solution_text
+        label: "Bước 3 – Cách xử lý"
+        type: text
+      - name: products
+        label: Bước 3 – Sản phẩm dùng (mỗi dòng một sản phẩm)
+        type: string
+        list: true
+      - name: pack_image
+        label: "Bước 3 – Ảnh bao bì sản phẩm"
+        component: photo
+      - name: result_image
+        label: "Bước 3 – Ảnh kết quả thực tế"
+        component: photo
+      - name: result_caption
+        label: "Chú thích ảnh kết quả (địa điểm, thời gian)"
+        type: string
     - name: s04_suc_khoe_dat
       label: 04 · Sức khỏe đất
       type: object
@@ -2632,10 +2684,13 @@ content:
         label: 'Liên kết: Giải pháp cho dự án →'
         type: string
     - name: problems_fix_label
-      label: Vấn đề thường gặp – nhãn "Hướng xử lý"
+      label: Hỏi đáp – nhãn "Hướng xử lý"
+      type: string
+    - name: problems_cause_label
+      label: Hỏi đáp – nhãn "Nguyên nhân"
       type: string
     - name: problems
-      label: Vấn đề thường gặp
+      label: Hỏi đáp – câu hỏi thường gặp
       type: object
       list:
         collapsible:
@@ -2643,11 +2698,12 @@ content:
           summary: '{fields.title}'
       fields:
       - name: title
-        label: Vấn đề
+        label: Câu hỏi
         type: string
       - name: cause
         label: Nguyên nhân
         type: text
+        description: Mỗi dòng là một ý, có thể bắt đầu bằng dấu •
       - name: fix
         label: Hướng xử lý
         type: text
@@ -3932,6 +3988,25 @@ content:
       - name: t13
         label: 'Chữ: [Số điện thoại]'
         type: string
+      - name: map_label
+        label: 'Chữ nút bản đồ: Xem trên Google Maps ↗'
+        type: string
+      - name: map1
+        label: 'Link Google Maps: Trụ sở chính'
+        type: string
+        description: 'Dán link chia sẻ từ Google Maps (bấm Chia sẻ → Sao chép đường liên kết). Để trống thì website tự tìm theo địa chỉ ở trên.'
+      - name: map2
+        label: 'Link Google Maps: Nhà máy Bỉm Sơn'
+        type: string
+        description: 'Dán link chia sẻ từ Google Maps (bấm Chia sẻ → Sao chép đường liên kết). Để trống thì website tự tìm theo địa chỉ ở trên.'
+      - name: map3
+        label: 'Link Google Maps: Nhà máy Gia Lai'
+        type: string
+        description: 'Dán link chia sẻ từ Google Maps (bấm Chia sẻ → Sao chép đường liên kết). Để trống thì website tự tìm theo địa chỉ ở trên.'
+      - name: map4
+        label: 'Link Google Maps: Nhà máy Tiến Nông 3'
+        type: string
+        description: 'Dán link chia sẻ từ Google Maps (bấm Chia sẻ → Sao chép đường liên kết). Để trống thì website tự tìm theo địa chỉ ở trên.'
     - name: s04_gui_lien_he
       label: 04 · Gửi liên hệ
       type: object
@@ -4036,6 +4111,274 @@ content:
       type: string
       list: true
       description: Mục đầu tiên được chọn sẵn.
+  - name: tro_thanh_doi_tac
+    label: Trở thành đối tác (nút xanh trên menu)
+    type: file
+    path: src/content/pages/tro-thanh-doi-tac.json
+    format: json
+    fields:
+    - name: seo
+      label: "Tiêu đề tab trình duyệt & mô tả Google"
+      type: object
+      fields:
+      - name: title
+        label: "Tiêu đề trang"
+        type: string
+      - name: description
+        label: "Mô tả ngắn cho Google"
+        type: text
+    - name: hero
+      label: "01 · Đầu trang"
+      type: object
+      fields:
+      - name: t1
+        label: "Đường dẫn – Trang chủ"
+        type: string
+      - name: t2
+        label: "Đường dẫn – trang này"
+        type: string
+      - name: eyebrow
+        label: "Dòng chữ nhỏ"
+        type: string
+      - name: title
+        label: "Tiêu đề lớn"
+        type: string
+      - name: intro
+        label: "Đoạn giới thiệu"
+        type: text
+      - name: button1
+        label: "Nút 1 (đến phần chọn tỉnh/thành)"
+        type: string
+      - name: button2
+        label: "Nút 2 (đến phần quyền lợi)"
+        type: string
+      - name: image
+        label: "Ảnh bên phải"
+        component: photo
+    - name: stats
+      label: "02 · Dải số liệu (nền xanh)"
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.label}'
+      fields:
+      - name: value
+        label: "Con số"
+        type: string
+      - name: label
+        label: "Chú thích"
+        type: string
+    - name: benefits
+      label: "03 · Quyền lợi"
+      type: object
+      fields:
+      - name: eyebrow
+        label: "Dòng chữ nhỏ"
+        type: string
+      - name: title
+        label: "Tiêu đề"
+        type: string
+      - name: intro
+        label: "Đoạn giới thiệu"
+        type: text
+      - name: items
+        label: "Các quyền lợi"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: "Quyền lợi"
+          type: string
+        - name: text
+          label: "Mô tả"
+          type: text
+    - name: conditions
+      label: "04 · Điều kiện"
+      type: object
+      fields:
+      - name: eyebrow
+        label: "Dòng chữ nhỏ"
+        type: string
+      - name: title
+        label: "Tiêu đề"
+        type: string
+      - name: intro
+        label: "Đoạn giới thiệu"
+        type: text
+      - name: items
+        label: "Các điều kiện"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: "Điều kiện"
+          type: string
+        - name: text
+          label: "Mô tả"
+          type: text
+      - name: note
+        label: "Ô ghi chú màu xanh"
+        type: text
+    - name: spotlight
+      label: "05 · Đại lý & nhà phân phối tiêu biểu"
+      type: object
+      fields:
+      - name: eyebrow
+        label: "Dòng chữ nhỏ"
+        type: string
+      - name: title
+        label: "Tiêu đề"
+        type: string
+      - name: partners
+        label: "Đối tác tiêu biểu"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.name}'
+        fields:
+        - name: kind
+          label: "Nhãn (ví dụ ĐẠI LÝ TIÊU BIỂU)"
+          type: string
+        - name: name
+          label: "Tên đại lý / nhà phân phối"
+          type: string
+        - name: place
+          label: "Địa chỉ ngắn (xã, tỉnh)"
+          type: string
+        - name: facts
+          label: "Số liệu nổi bật"
+          type: object
+          list:
+            collapsible:
+              collapsed: true
+              summary: '{fields.label}'
+          fields:
+          - name: value
+            label: "Con số"
+            type: string
+          - name: label
+            label: "Chú thích"
+            type: string
+        - name: quote
+          label: "Lời chia sẻ (trích dẫn)"
+          type: text
+        - name: person
+          label: "Người chia sẻ (họ tên, chức vụ)"
+          type: string
+        - name: image
+          label: "Ảnh chân dung / cửa hàng"
+          component: photo
+    - name: region
+      label: "06 · Chọn tỉnh/thành → giám đốc kinh doanh"
+      type: object
+      fields:
+      - name: eyebrow
+        label: "Dòng chữ nhỏ"
+        type: string
+      - name: title
+        label: "Tiêu đề"
+        type: string
+      - name: intro
+        label: "Đoạn giới thiệu"
+        type: text
+      - name: select_label
+        label: "Nhãn ô chọn"
+        type: string
+      - name: select_placeholder
+        label: "Chữ khi chưa chọn tỉnh"
+        type: string
+      - name: empty_text
+        label: "Ô gợi ý khi chưa chọn tỉnh"
+        type: text
+      - name: result_label
+        label: "Nhãn trên thẻ người phụ trách"
+        type: string
+      - name: call_label
+        label: "Chữ nút gọi điện"
+        type: string
+      - name: form_text
+        label: "Dòng chữ dưới thẻ"
+        type: string
+      - name: form_link
+        label: "Liên kết đến form đăng ký"
+        type: string
+      - name: map_alt
+        label: "Mô tả bản đồ"
+        type: string
+      - name: map_image
+        label: "Ảnh bản đồ thiết kế riêng (không bắt buộc)"
+        component: photo
+        description: "Để trống thì website dùng bản đồ Việt Nam có sẵn với logo Tiến Nông ở 34 tỉnh, thành (bấm vào logo để chọn tỉnh). Tải ảnh lên thì ảnh này thay cho bản đồ có sẵn."
+    - name: managers
+      label: '07 · Giám đốc kinh doanh & tỉnh/thành phụ trách'
+      description: 'Mỗi tỉnh/thành chỉ nên chọn cho một người. Tỉnh/thành chưa ai phụ trách sẽ hiện người đầu tiên trong danh sách.'
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.name} – {fields.region}'
+      fields:
+      - name: name
+        label: "Họ và tên"
+        type: string
+      - name: title
+        label: "Chức danh"
+        type: string
+      - name: region
+        label: "Vùng phụ trách (ví dụ Vùng 1, Bắc Trung Bộ…)"
+        type: string
+      - name: phone
+        label: "Số điện thoại"
+        type: string
+        description: "Khách bấm nút Liên hệ sẽ gọi thẳng số này."
+      - name: provinces
+        label: Tỉnh/thành phụ trách
+        type: select
+        options:
+          multiple: true
+          values:
+          - "An Giang"
+          - "Bắc Ninh"
+          - "Cao Bằng"
+          - "Cà Mau"
+          - "Cần Thơ"
+          - "Gia Lai"
+          - "Huế"
+          - "Hà Nội"
+          - "Hà Tĩnh"
+          - "Hưng Yên"
+          - "Hải Phòng"
+          - "Khánh Hòa"
+          - "Lai Châu"
+          - "Lào Cai"
+          - "Lâm Đồng"
+          - "Lạng Sơn"
+          - "Nghệ An"
+          - "Ninh Bình"
+          - "Phú Thọ"
+          - "Quảng Ngãi"
+          - "Quảng Ninh"
+          - "Quảng Trị"
+          - "Sơn La"
+          - "TP. Hồ Chí Minh"
+          - "Thanh Hóa"
+          - "Thái Nguyên"
+          - "Tuyên Quang"
+          - "Tây Ninh"
+          - "Vĩnh Long"
+          - "Điện Biên"
+          - "Đà Nẵng"
+          - "Đắk Lắk"
+          - "Đồng Nai"
+          - "Đồng Tháp"
 - name: site
   label: Thông tin chung (công ty, menu, chân trang, mạng xã hội)
   type: file
@@ -4115,9 +4458,6 @@ content:
     - name: top_jobs
       label: Thanh trên – Tuyển dụng
       type: string
-    - name: top_dealers
-      label: Thanh trên – Tìm đại lý
-      type: string
     - name: top_contact
       label: Thanh trên – Liên hệ
       type: string
@@ -4126,7 +4466,7 @@ content:
       type: string
       description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
     - name: cta
-      label: Nút xanh bên phải
+      label: Nút xanh bên phải (dẫn tới trang Trở thành đối tác)
       type: string
     - name: menu_open
       label: Nút menu (điện thoại)

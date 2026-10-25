@@ -1,0 +1,182 @@
+---
+import raw from '../content/pages/tro-thanh-doi-tac.json';
+import { withDefaults } from '../lib/content';
+import Layout from '../layouts/Layout.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+import { url, asset } from '../lib/routes';
+import { MAP_W, MAP_H, VN_PATH, PROVINCES, HOANG_SA, TRUONG_SA, project } from '../lib/vn-map';
+
+const c = withDefaults(raw, 'src/content/pages/tro-thanh-doi-tac.json');
+const F = 'src/content/pages/tro-thanh-doi-tac.json';
+
+// Province → index of the sales director in charge. A province nobody was given falls back to the first director.
+const owner: Record<string, number> = {};
+c.managers.forEach((m, k) => (Array.isArray(m.provinces) ? m.provinces : []).forEach((p: string) => { if (!(p in owner)) owner[p] = k; }));
+const ownerOf = (p: string) => owner[p] ?? 0;
+const tel = (phone: string) => phone.replace(/[^\d+]/g, '');
+const prettyPhone = (phone: string) => {
+  const d = tel(phone);
+  return /^0\d{9}$/.test(d) ? `${d.slice(0, 4)} ${d.slice(4, 7)} ${d.slice(7)}` : phone;
+};
+const pins = PROVINCES.map(([name, lat, lon]) => ({ name, xy: project(lat, lon), m: ownerOf(name) }));
+const [hsx, hsy] = project(17.25, 111.3);
+const [tsx, tsy] = project(11.75, 112.2);
+---
+<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
+<section style="background:var(--surface-card)">
+<div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:32px">
+<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.hero.t1}</a> {c.hero.t2}</span>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px 64px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:20px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.hero.eyebrow}</span>
+<h1 style="margin:0;font:800 clamp(38px,5vw,64px)/1.08 var(--font-display);letter-spacing:-.015em;text-wrap:balance">{c.hero.title}</h1>
+<p style="margin:0;font-size:18px;color:var(--text-secondary);text-align:justify;text-wrap:pretty">{c.hero.intro}</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap"><a href="#lien-he-khu-vuc" style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.hero.button1}</a><a href="#quyen-loi" style="color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md);border:1px solid var(--border-strong)">{c.hero.button2}</a></div>
+</div>
+<div style="position:relative;height:clamp(300px,36vw,460px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="partner-hero" shape="rounded" radius="20" placeholder={c.hero.image.alt} image={c.hero.image} cms={`${F}#hero.image`} /></div>
+</div></div></section>
+
+<section style="background:var(--green-800);color:#fff">
+<div style="max-width:1280px;margin:0 auto;padding:48px clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 84px)/4),calc((900px - 100%)*999),calc((100% - 28px)/2)),1fr));gap:28px">
+{c.stats.map((s) => <div style="display:flex;flex-direction:column"><span style="font:800 40px/1.1 var(--font-display);color:var(--amber-400)">{s.value}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{s.label}</span></div>)}
+</div></section>
+
+<section id="quyen-loi" style="background:var(--surface-page);scroll-margin-top:120px">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
+<div style="display:flex;flex-direction:column;gap:14px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.benefits.eyebrow}</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.benefits.title}</h2></div>
+<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.benefits.intro}</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
+{c.benefits.items.map((b, k) => (
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:26px;display:flex;flex-direction:column;gap:10px">
+<span style="width:44px;height:44px;border-radius:var(--radius-full);background:var(--green-50);color:var(--green-700);display:flex;align-items:center;justify-content:center;font:800 16px var(--font-display)">{String(k + 1).padStart(2, '0')}</span>
+<strong style="font-size:19px;line-height:1.35">{b.title}</strong><span style="color:var(--text-secondary);font-size:15px;text-align:justify">{b.text}</span>
+</div>
+))}
+</div></div></section>
+
+<section style="background:var(--surface-card)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 72px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:16px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.conditions.eyebrow}</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.conditions.title}</h2>
+<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.conditions.intro}</p>
+{c.conditions.note && <div style="background:var(--green-50);border-radius:var(--radius-md);padding:14px 16px;color:var(--green-800)">{c.conditions.note}</div>}
+</div>
+<ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
+{c.conditions.items.map((it) => (
+<li style="display:grid;grid-template-columns:32px minmax(0,1fr);gap:14px;padding:20px 0;border-bottom:1px solid var(--border-default)">
+<span aria-hidden="true" style="width:28px;height:28px;border-radius:var(--radius-full);background:var(--green-500);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800">✓</span>
+<div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{it.title}</strong><span style="color:var(--text-secondary);text-align:justify">{it.text}</span></div>
+</li>
+))}
+</ol></div></section>
+
+<section style="background:var(--surface-page)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:14px;max-width:720px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.spotlight.eyebrow}</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.spotlight.title}</h2></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:24px">
+{c.spotlight.partners.map((p, k) => (
+<article class="partner-card">
+<div style="position:relative;min-height:260px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`partner-${k}`} shape="rect" placeholder={p.image.alt} image={p.image} cms={`${F}#spotlight.partners.${k}.image`} /></div>
+<div style="padding:26px;display:flex;flex-direction:column;gap:14px">
+<span style="font:600 12px var(--font-mono);letter-spacing:.08em;color:var(--green-600)">{p.kind}</span>
+<div><strong style="display:block;font:800 24px/1.25 var(--font-display)">{p.name}</strong><span style="color:var(--text-secondary)">{p.place}</span></div>
+{p.facts.length > 0 && <div style="display:flex;gap:28px;flex-wrap:wrap">{p.facts.map((f) => <div><div style="font:800 24px var(--font-display);color:var(--amber-600)">{f.value}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{f.label}</span></div>)}</div>}
+<blockquote style="margin:0;padding:16px 18px;border-left:3px solid var(--green-500);background:var(--green-50);border-radius:0 var(--radius-md) var(--radius-md) 0;font-size:16px;line-height:1.6;color:var(--text-primary);text-align:justify">“{p.quote}”<footer style="margin-top:8px;font-size:14px;font-weight:700;color:var(--green-800)">— {p.person}</footer></blockquote>
+</div>
+</article>
+))}
+</div></div></section>
+
+<section id="lien-he-khu-vuc" style="background:var(--green-900);color:#fff;scroll-margin-top:120px">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 72px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:22px">
+<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-200)">{c.region.eyebrow}</span>
+<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.region.title}</h2>
+<p style="margin:0;color:var(--green-100);font-size:17px;text-align:justify;text-wrap:pretty">{c.region.intro}</p>
+<label style="display:flex;flex-direction:column;gap:8px"><span style="font-weight:600">{c.region.select_label}</span>
+<select id="region-prov" style="padding:13px 14px;border-radius:var(--radius-md);border:0;font:600 16px var(--font-body);color:var(--text-primary);background:#fff;outline-color:var(--amber-400)">
+<option value="">{c.region.select_placeholder}</option>
+{[...PROVINCES].map(([n]) => n).sort((a, b) => a.localeCompare(b, 'vi')).map((n) => <option value={n} data-m={ownerOf(n)}>{n}</option>)}
+</select></label>
+<div id="region-empty" style="padding:18px 20px;border:1px dashed var(--green-600);border-radius:var(--radius-lg);color:var(--green-100)">{c.region.empty_text}</div>
+{c.managers.map((m, k) => (
+<div data-manager={k} hidden style="background:#fff;color:var(--text-primary);border-radius:var(--radius-lg);padding:22px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0">
+<span style="font:600 12px var(--font-mono);letter-spacing:.08em;color:var(--green-600)">{c.region.result_label} <span data-prov-name></span></span>
+<strong style="font:800 22px/1.25 var(--font-display)">{m.name}</strong>
+<span style="color:var(--text-secondary)">{[m.title, m.region].filter(Boolean).join(' · ')}</span>
+<a href={`tel:${tel(m.phone)}`} style="font:700 18px var(--font-mono);color:var(--green-700)">{prettyPhone(m.phone)}</a>
+</div>
+<a href={`tel:${tel(m.phone)}`} style="display:inline-flex;align-items:center;gap:8px;background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md);white-space:nowrap"><span aria-hidden="true">☎</span> {c.region.call_label}</a>
+</div>
+))}
+<span style="color:var(--green-100);font-size:15px">{c.region.form_text} <a href={url('lien-he', 'lien-he-form')} style="color:#fff;font-weight:700">{c.region.form_link}</a></span>
+</div>
+<figure style="margin:0;position:relative">
+{c.region.map_image.src ? (
+<div style="position:relative;height:min(80vh,640px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="partner-map" shape="rounded" radius="16" fit="contain" placeholder={c.region.map_alt} image={c.region.map_image} cms={`${F}#region.map_image`} /></div>
+) : (
+<svg id="vn-map" viewBox={`-10 -10 ${MAP_W + 20} ${MAP_H + 20}`} role="img" aria-label={c.region.map_alt} style="display:block;width:100%;max-height:min(80vh,680px);overflow:visible">
+<path d={VN_PATH} fill="#e9f5ec" stroke="#8fd3a6" stroke-width="1" stroke-linejoin="round" />
+{HOANG_SA.map(([la, lo]) => { const [x, y] = project(la, lo); return <circle cx={x} cy={y} r="2" fill="#e9f5ec" />; })}
+{TRUONG_SA.map(([la, lo]) => { const [x, y] = project(la, lo); return <circle cx={x} cy={y} r="2" fill="#e9f5ec" />; })}
+<text x={hsx} y={hsy} fill="#bfe6cc" font-size="13" font-weight="600" font-family="var(--font-body)">QĐ. Hoàng Sa</text>
+<text x={tsx} y={tsy} fill="#bfe6cc" font-size="13" font-weight="600" font-family="var(--font-body)">QĐ. Trường Sa</text>
+{pins.map((p) => (
+<g class="vn-pin" data-prov={p.name} data-m={p.m} transform={`translate(${p.xy[0].toFixed(1)} ${p.xy[1].toFixed(1)})`}>
+<title>{p.name}</title>
+<g class="vn-pin__body">
+<circle r="9.5" fill="#fff" stroke="#03a64a" stroke-width="1.5" />
+<image href={asset('assets/logo-mark.png')} x="-7.5" y="-7.5" width="15" height="15" />
+</g>
+<text class="vn-pin__label" x="14" y="5" font-size="14" font-weight="700" font-family="var(--font-body)" fill="#fff">{p.name}</text>
+</g>
+))}
+</svg>
+)}
+</figure>
+</div></section>
+</Layout>
+
+<style>
+  .partner-card { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
+  @media (max-width: 640px) { .partner-card { grid-template-columns: minmax(0, 1fr); } }
+  .vn-pin { cursor: pointer; }
+  .vn-pin__body { transition: transform .2s, opacity .2s; transform-box: fill-box; transform-origin: center; }
+  .vn-pin__label { display: none; paint-order: stroke; stroke: rgba(2, 53, 26, .85); stroke-width: 4px; }
+  #vn-map[data-m] .vn-pin:not(.is-region) .vn-pin__body { opacity: .4; }
+  .vn-pin.is-active .vn-pin__body { transform: scale(1.7); }
+  .vn-pin.is-active .vn-pin__label { display: block; }
+  .vn-pin:hover .vn-pin__body, .vn-pin:focus .vn-pin__body { transform: scale(1.35); }
+  @media (prefers-reduced-motion: reduce) { .vn-pin__body { transition: none; } }
+</style>
+
+<script>
+  // Picking a province (in the list or on the map) shows the sales director in charge and highlights their region.
+  const select = document.getElementById('region-prov') as HTMLSelectElement;
+  const map = document.getElementById('vn-map');
+  const pins = [...document.querySelectorAll<SVGGElement>('.vn-pin')];
+  function show(prov: string) {
+    const opt = [...select.options].find((o) => o.value === prov);
+    const m = opt?.dataset.m ?? '';
+    document.getElementById('region-empty')!.hidden = !!prov;
+    document.querySelectorAll<HTMLElement>('[data-manager]').forEach((card) => {
+      card.hidden = !prov || card.dataset.manager !== m;
+      card.querySelectorAll('[data-prov-name]').forEach((el) => { el.textContent = prov ? `· ${prov.toUpperCase()}` : ''; });
+    });
+    if (map) {
+      if (prov) map.dataset.m = m; else delete map.dataset.m;
+      pins.forEach((p) => {
+        p.classList.toggle('is-region', !!prov && p.dataset.m === m);
+        p.classList.toggle('is-active', p.dataset.prov === prov);
+        if (p.dataset.prov === prov) p.parentNode!.appendChild(p); // draw the chosen pin on top
+      });
+    }
+  }
+  select.addEventListener('change', () => show(select.value));
+  pins.forEach((p) => p.addEventListener('click', () => { select.value = p.dataset.prov ?? ''; show(select.value); }));
+  if (select.value) show(select.value);
+</script>

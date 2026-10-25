@@ -43,7 +43,7 @@ const c = withDefaults(raw, 'src/content/pages/chi-tiet-san-pham.json');
 <a href={url('lien-he', 'dai-ly')} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg">{c.s01_san_pham.t23}</Button></a>
 <a href={url('lien-he', 'lien-he-form')} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg" variant="secondary">{c.s01_san_pham.t24}</Button></a>
 </div>
-<div style="display:flex;gap:20px;flex-wrap:wrap;font-size:15px;font-weight:600"><a href={link(c.s01_san_pham.link1)}>{c.s01_san_pham.t25}</a><a href={link(c.s01_san_pham.link2)}>{c.s01_san_pham.t26}</a></div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;font-size:15px;font-weight:600"><a href={link(c.s01_san_pham.link1)}>{c.s01_san_pham.t25}</a></div>
 </div></div></div></section>
 
 <nav style="position:sticky;top:108px;z-index:20;background:var(--surface-page);border-top:1px solid var(--border-default);border-bottom:1px solid var(--border-default)">
@@ -78,8 +78,7 @@ const c = withDefaults(raw, 'src/content/pages/chi-tiet-san-pham.json');
 
 <section id="su-dung" style="scroll-margin-top:170px;display:flex;flex-direction:column;gap:20px">
 <h2 style="margin:0;font:800 clamp(24px,2.6vw,32px)/1.2 var(--font-display)">{c.s04_su_dung.t1}</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 32px)/3),calc((632px - 100%)*999),100%),1fr));gap:0;border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface-card)">
-<div style="padding:20px;display:flex;flex-direction:column;gap:6px;background:var(--surface-sunken)"><span style="font:600 12px var(--font-mono);color:var(--text-tertiary);letter-spacing:.06em">{c.s04_su_dung.t2}</span><strong>{c.s04_su_dung.t3}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s04_su_dung.t4}</span></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:0;border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface-card)">
 <div style="padding:20px;display:flex;flex-direction:column;gap:6px;border-left:3px solid var(--green-500)"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{c.s04_su_dung.t5}</span><strong style="font-size:20px">{c.s04_su_dung.t6}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s04_su_dung.t7}</span></div>
 <div style="padding:20px;display:flex;flex-direction:column;gap:6px;border-left:3px solid var(--green-500)"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{c.s04_su_dung.t8}</span><strong style="font-size:20px">{c.s04_su_dung.t9}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s04_su_dung.t10}</span></div>
 </div>
