@@ -15,16 +15,16 @@ const LABEL: Record<string, string> = { 'Tất cả': 'Tất cả', 'KHUYẾN H�
 <div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) 0;display:flex;flex-direction:column;gap:clamp(28px,4vw,48px)">
 <span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_hero.t1}</a> {c.s01_hero.t2}</span>
 <div style="display:flex;flex-direction:column;gap:24px;max-width:1000px">
-<div style="display:flex;flex-direction:column;gap:16px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s01_hero.t3}</span><h1 style="margin:0;font:800 clamp(36px,4.8vw,62px)/1.08 var(--font-display);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero.t4}</h1></div>
-<p style="margin:0;font-size:18px;color:var(--text-secondary);text-align:justify;text-wrap:pretty">{c.s01_hero.t5}</p>
+<div style="display:flex;flex-direction:column;gap:16px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s01_hero.t3}</span><h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero.t4}</h1></div>
+<p style="margin:0;font-size:var(--fs-lead);color:var(--text-secondary);text-wrap:pretty">{c.s01_hero.t5}</p>
 </div>
 <div style="position:relative;height:clamp(260px,36vw,500px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-hero" shape="rounded" radius="24" placeholder="Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh" image={c.s01_hero.img_esg_hero_1} cms="src/content/pages/phat-trien-ben-vung.json#s01_hero.img_esg_hero_1" /></div>
 </div>
 <div style="max-width:1280px;margin:0 auto;padding:40px clamp(20px,4vw,56px) 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 72px)/4),calc((900px - 100%)*999),calc((100% - 24px)/2)),1fr));gap:24px">
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--amber-600)">{c.s01_hero.t6}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t7}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--amber-600)">{c.s01_hero.t8}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t9}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--amber-600)">{c.s01_hero.t10}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t11}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:800 36px/1.1 var(--font-display);color:var(--green-700)">{c.s01_hero.t12}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t13}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--amber-600);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t6}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t7}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--amber-600);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t8}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t9}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--amber-600);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t10}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t11}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t12}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t13}</span></div>
 </div></section>
 
 <nav style="position:sticky;top:108px;z-index:20;background:var(--surface-page);border-top:1px solid var(--border-default);border-bottom:1px solid var(--border-default)">
@@ -36,9 +36,9 @@ const LABEL: Record<string, string> = { 'Tất cả': 'Tất cả', 'KHUYẾN H�
 <div style="position:absolute;inset:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-plant" shape="rect" placeholder="Flycam khuôn viên nhà máy với cây xanh" image={c.s02_san_xuat_xanh.img_esg_plant_1} cms="src/content/pages/phat-trien-ben-vung.json#s02_san_xuat_xanh.img_esg_plant_1" /></div>
 <div style="position:relative;max-width:1280px;width:100%;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,56px);display:flex;align-items:flex-end;justify-content:flex-end;pointer-events:none">
 <div style="background:var(--surface-card);border-radius:var(--radius-xl);padding:clamp(28px,3vw,40px);max-width:560px;display:flex;flex-direction:column;gap:16px;pointer-events:auto;box-shadow:var(--shadow-lg)">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s02_san_xuat_xanh.t1}</span>
-<h2 style="margin:0;font:800 clamp(26px,3vw,38px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s02_san_xuat_xanh.t2}</h2>
-<p style="margin:0;color:var(--text-secondary);text-align:justify;text-wrap:pretty">{c.s02_san_xuat_xanh.t3}</p>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s02_san_xuat_xanh.t1}</span>
+<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s02_san_xuat_xanh.t2}</h2>
+<p style="margin:0;color:var(--text-secondary);text-wrap:pretty">{c.s02_san_xuat_xanh.t3}</p>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:12px;border-top:1px solid var(--border-default);font-size:15px">
 <div><strong style="display:block">{c.s02_san_xuat_xanh.t4}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t5}</span></div>
 <div><strong style="display:block">{c.s02_san_xuat_xanh.t6}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t7}</span></div>
@@ -49,9 +49,9 @@ const LABEL: Record<string, string> = { 'Tất cả': 'Tất cả', 'KHUYẾN H�
 <section id="nha-nong" style="scroll-margin-top:160px;background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px 72px;align-items:center">
 <div style="display:flex;flex-direction:column;gap:20px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s03_dong_hanh_cung_nha_nong.t1}</span>
-<h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s03_dong_hanh_cung_nha_nong.t2}</h2>
-<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.s03_dong_hanh_cung_nha_nong.t3}</p>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s03_dong_hanh_cung_nha_nong.t1}</span>
+<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s03_dong_hanh_cung_nha_nong.t2}</h2>
+<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s03_dong_hanh_cung_nha_nong.t3}</p>
 <div style="display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
 <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--green-500)"></span><span><strong>{c.s03_dong_hanh_cung_nha_nong.t4}</strong> {c.s03_dong_hanh_cung_nha_nong.t5}</span></div>
 <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--green-500)"></span><span><strong>{c.s03_dong_hanh_cung_nha_nong.t6}</strong> {c.s03_dong_hanh_cung_nha_nong.t7}</span></div>
@@ -66,28 +66,28 @@ const LABEL: Record<string, string> = { 'Tất cả': 'Tất cả', 'KHUYẾN H�
 <section id="cong-dong" style="scroll-margin-top:160px;background:var(--surface-page)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:14px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s04_vi_cong_dong.t1}</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s04_vi_cong_dong.t2}</h2></div>
-<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.s04_vi_cong_dong.t3}</p>
+<div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s04_vi_cong_dong.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s04_vi_cong_dong.t2}</h2></div>
+<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s04_vi_cong_dong.t3}</p>
 </div>
 <div data-filter-group="prog" style="display:flex;gap:8px;flex-wrap:wrap">{TAGS.map((t, k) => <button type="button" class="chip" data-filter={k === 0 ? '*' : t} aria-pressed={k === 0 ? 'true' : 'false'} style="padding:8px 16px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);color:var(--text-primary);font:600 15px var(--font-body);cursor:pointer">{LABEL[t]}</button>)}</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:24px">
 {c.programs.map((p, k) => (
-<div data-filter-item="prog" data-tags={p.tag} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`prog-${k}`} shape="rect" placeholder={p.image.alt} image={p.image} cms={`src/content/pages/phat-trien-ben-vung.json#programs.${k}.image`} /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{p.tag} · {p.year}</span><strong style="font-size:18px;line-height:1.35">{p.title}</strong><span style="color:var(--text-secondary);font-size:15px">{p.body}</span></div></div>
+<div data-filter-item="prog" data-tags={p.tag} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`prog-${k}`} shape="rect" placeholder={p.image.alt} image={p.image} cms={`src/content/pages/phat-trien-ben-vung.json#programs.${k}.image`} /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{p.tag} · {p.year}</span><strong style="font-size:18px;line-height:1.35">{p.title}</strong><span style="color:var(--text-secondary);font-size:15px">{p.body}</span></div></div>
 ))}
 </div></div></section>
 
 <section id="nguoi-lao-dong" style="scroll-margin-top:160px;background:var(--green-800);color:#fff">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:640px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-200)">{c.s05_nguoi_lao_dong.t1}</span><h2 style="margin:0;font:800 clamp(28px,3vw,40px)/1.15 var(--font-display);text-wrap:balance">{c.s05_nguoi_lao_dong.t2}</h2><span style="color:var(--green-100);text-align:justify">{c.s05_nguoi_lao_dong.t3}</span></div>
+<div style="display:flex;flex-direction:column;gap:14px;max-width:640px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s05_nguoi_lao_dong.t1}</span><h2 style="margin:0;font:var(--type-h2);text-wrap:balance">{c.s05_nguoi_lao_dong.t2}</h2><span style="color:var(--green-100)">{c.s05_nguoi_lao_dong.t3}</span></div>
 <a href={url('tuyen-dung')} style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s05_nguoi_lao_dong.t4}</a>
 </div></section>
 
 <section id="lo-trinh" style="scroll-margin-top:160px;background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:680px"><span style="font:600 13px var(--font-mono);letter-spacing:.12em;color:var(--green-600)">{c.s06_lo_trinh.t1}</span><h2 style="margin:0;font:800 clamp(30px,3.4vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s06_lo_trinh.t2}</h2><p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.s06_lo_trinh.t3}</p></div>
+<div style="display:flex;flex-direction:column;gap:14px;max-width:680px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s06_lo_trinh.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s06_lo_trinh.t2}</h2><p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s06_lo_trinh.t3}</p></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 32px)/3),calc((692px - 100%)*999),100%),1fr));gap:0;border-top:2px solid var(--green-500)">
-<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:800 24px var(--font-display);color:var(--green-700)">{c.s06_lo_trinh.t4}</span><strong>{c.s06_lo_trinh.t5}</strong><span style="color:var(--text-secondary);font-size:15px;text-align:justify">{c.s06_lo_trinh.t6}</span></div>
-<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:800 24px var(--font-display);color:var(--green-700)">{c.s06_lo_trinh.t7}</span><strong>{c.s06_lo_trinh.t8}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s06_lo_trinh.t9}</span></div>
-<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:800 24px var(--font-display);color:var(--green-700)">{c.s06_lo_trinh.t10}</span><strong>{c.s06_lo_trinh.t11}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s06_lo_trinh.t12}</span></div>
+<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-num);color:var(--green-700)">{c.s06_lo_trinh.t4}</span><strong>{c.s06_lo_trinh.t5}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s06_lo_trinh.t6}</span></div>
+<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-num);color:var(--green-700)">{c.s06_lo_trinh.t7}</span><strong>{c.s06_lo_trinh.t8}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s06_lo_trinh.t9}</span></div>
+<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-num);color:var(--green-700)">{c.s06_lo_trinh.t10}</span><strong>{c.s06_lo_trinh.t11}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s06_lo_trinh.t12}</span></div>
 </div></div></section>
 </Layout>

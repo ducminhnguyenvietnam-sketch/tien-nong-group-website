@@ -1,0 +1,79 @@
+/* ───────────────────────── Giao diện v2: chữ, căn lề, ô ảnh, tiện ích bố cục ───────────────────────── */
+
+/* Headings balance their lines; paragraphs avoid a lone last word. Vietnamese is never hyphenated. */
+h1, h2, h3, h4 { text-wrap: balance; }
+p, li, blockquote { text-wrap: pretty; hyphens: manual; }
+
+/* Visible keyboard focus everywhere; mouse clicks don't show it. */
+:focus-visible { outline: 2px solid var(--green-500); outline-offset: 3px; border-radius: 4px; }
+:focus:not(:focus-visible) { outline: none; }
+
+/* "Bỏ qua đến nội dung" link, shown only when focused from the keyboard. */
+.skip-link { position: absolute; left: 12px; top: -48px; z-index: 100; padding: 10px 16px; border-radius: var(--radius-md);
+  background: var(--green-700); color: #fff !important; font-weight: 600; transition: top var(--motion-fast) var(--ease-out); }
+.skip-link:focus { top: 12px; }
+
+/* Empty photo slots. Public pages show a quiet brand tile instead of the dashed "missing photo" placeholder;
+   the labelled placeholder comes back only in photo-edit mode (?sua-anh adds .pe-on to <html>). */
+html:not(.pe-on) .img-slot__empty { display: none !important; }
+html:not(.pe-on) .img-slot[data-empty] .img-slot__frame {
+  background: linear-gradient(135deg, var(--green-50) 0%, var(--green-100) 100%) !important; }
+html:not(.pe-on) .img-slot[data-empty] .img-slot__frame::after {
+  content: ''; position: absolute; inset: 0; opacity: .22;
+  background: url('../assets/brand-mark.png') center / clamp(40px, 22%, 112px) no-repeat; }
+
+/* Fixed two-column grids collapse to one column on small phones (add class="g-stack"). */
+@media (max-width: 479.98px) { .g-stack { grid-template-columns: minmax(0, 1fr) !important; } }
+
+/* Horizontal scroll rows on phones (add class="m-scroll"): cards snap, the next one peeks in. */
+@media (max-width: 767.98px) {
+  .m-scroll { display: grid !important; grid-auto-flow: column; grid-auto-columns: 82%; grid-template-columns: none !important;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 20px; overscroll-behavior-x: contain;
+    margin-inline: -20px; padding-inline: 20px; padding-bottom: 8px; scrollbar-width: none; }
+  .m-scroll::-webkit-scrollbar { display: none; }
+  .m-scroll > * { scroll-snap-align: start; min-width: 0; }
+}
+
+/* ───────────────────────── Hiệu ứng nhẹ (scripts/motion.ts) ───────────────────────── */
+
+/* Fade-up on scroll. .rv is only ever added by motion.ts, so without JS nothing is hidden. */
+.rv { opacity: 0; transform: translateY(16px); }
+.rv.rv-in { opacity: 1; transform: none;
+  transition: opacity var(--motion-slow) var(--ease-out), transform var(--motion-slow) var(--ease-out);
+  transition-delay: var(--rv-d, 0ms); }
+
+/* Photos fade in when loaded. */
+.img-slot__img { transition: opacity 300ms var(--ease-out), scale 400ms var(--ease-out); }
+.img-slot__img.is-loading { opacity: 0; }
+
+/* Trailing arrow in links nudges on hover. */
+.arrow { display: inline-block; margin-left: .15em; transition: transform var(--motion-base) var(--ease-out); }
+
+@media (hover: hover) {
+  a:hover > .arrow, a:hover .arrow, button:hover > .arrow { transform: translateX(4px); }
+  /* Linked cards: the photo zooms a touch (scale composes with the slot's own focus zoom). */
+  a:hover .img-slot__img { scale: 1.04; }
+  .hover-lift { transition: box-shadow var(--motion-base) var(--ease-out), border-color var(--motion-base) var(--ease-out), transform var(--motion-base) var(--ease-out); }
+  .hover-lift:hover { transform: translateY(-2px); }
+}
+
+/* Home hero: the active photo drifts in very slowly once; the text arrives in order. */
+@keyframes tn-drift { from { scale: 1; } to { scale: 1.06; } }
+@keyframes tn-rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.hero-slide.is-active .img-slot__img { animation: tn-drift 14s var(--ease-out) both; }
+.hero-copy > * { animation: tn-rise 600ms var(--ease-out) both; }
+.hero-copy > :nth-child(2) { animation-delay: 100ms; }
+.hero-copy > :nth-child(3) { animation-delay: 200ms; }
+.hero-copy > :nth-child(4) { animation-delay: 300ms; }
+
+/* Page-to-page cross-fade (native, no JS); the header stays put. */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 180ms; }
+.site-header { view-transition-name: site-header; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: 1ms !important; scroll-behavior: auto !important; }
+  .rv { opacity: 1 !important; transform: none !important; }
+  @view-transition { navigation: none; }
+}
+.pe-on .hero-slide .img-slot__img, .pe-on .hero-copy > * { animation: none !important; }

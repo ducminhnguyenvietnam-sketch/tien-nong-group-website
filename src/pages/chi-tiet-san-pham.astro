@@ -23,15 +23,15 @@ const c = withDefaults(raw, 'src/content/pages/chi-tiet-san-pham.json');
 </div></div>
 <div style="display:flex;flex-direction:column;gap:22px">
 <div style="display:flex;flex-direction:column;gap:10px">
-<span style="font:600 13px var(--font-mono);letter-spacing:.1em;color:var(--green-600)">{c.s01_san_pham.t4}</span>
-<h1 style="margin:0;font:800 clamp(30px,3.6vw,44px)/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance">{c.s01_san_pham.t5}</h1>
-<p style="margin:0;color:var(--text-secondary);font-size:17px;text-align:justify;text-wrap:pretty">{c.s01_san_pham.t6}</p>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s01_san_pham.t4}</span>
+<h1 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s01_san_pham.t5}</h1>
+<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s01_san_pham.t6}</p>
 </div>
 <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px">
-<div style="background:var(--green-50);border-radius:var(--radius-md);padding:14px 10px;text-align:center"><div style="font:800 28px/1.1 var(--font-display);color:var(--green-800)">{c.s01_san_pham.t7}</div><div style="font-size:13px;color:var(--text-secondary)">{c.s01_san_pham.t8}</div></div>
-<div style="background:var(--green-50);border-radius:var(--radius-md);padding:14px 10px;text-align:center"><div style="font:800 28px/1.1 var(--font-display);color:var(--green-800)">{c.s01_san_pham.t9}</div><div style="font-size:13px;color:var(--text-secondary)">{c.s01_san_pham.t10}</div></div>
-<div style="background:var(--green-50);border-radius:var(--radius-md);padding:14px 10px;text-align:center"><div style="font:800 28px/1.1 var(--font-display);color:var(--green-800)">{c.s01_san_pham.t11}</div><div style="font-size:13px;color:var(--text-secondary)">{c.s01_san_pham.t12}</div></div>
-<div style="background:var(--green-50);border-radius:var(--radius-md);padding:14px 10px;text-align:center"><div style="font:800 28px/1.1 var(--font-display);color:var(--green-800)">{c.s01_san_pham.t13}</div><div style="font-size:13px;color:var(--text-secondary)">{c.s01_san_pham.t14}</div></div>
+<div style="background:var(--green-50);border-radius:var(--radius-md);padding:14px 10px;text-align:center"><div style="font:var(--type-stat);color:var(--green-800);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_san_pham.t7}</div><div style="font-size:13px;color:var(--text-secondary)">{c.s01_san_pham.t8}</div></div>
+<div style="background:var(--green-50);border-radius:var(--radius-md);padding:14px 10px;text-align:center"><div style="font:var(--type-stat);color:var(--green-800);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_san_pham.t9}</div><div style="font-size:13px;color:var(--text-secondary)">{c.s01_san_pham.t10}</div></div>
+<div style="background:var(--green-50);border-radius:var(--radius-md);padding:14px 10px;text-align:center"><div style="font:var(--type-stat);color:var(--green-800);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_san_pham.t11}</div><div style="font-size:13px;color:var(--text-secondary)">{c.s01_san_pham.t12}</div></div>
+<div style="background:var(--green-50);border-radius:var(--radius-md);padding:14px 10px;text-align:center"><div style="font:var(--type-stat);color:var(--green-800);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_san_pham.t13}</div><div style="font-size:13px;color:var(--text-secondary)">{c.s01_san_pham.t14}</div></div>
 </div>
 <div style="display:flex;flex-direction:column;gap:8px;padding:16px 0;border-top:1px solid var(--border-default);border-bottom:1px solid var(--border-default);font-size:15px">
 <div style="display:flex;justify-content:space-between;gap:16px"><span style="color:var(--text-secondary)">{c.s01_san_pham.t15}</span><strong>{c.s01_san_pham.t16}</strong></div>
@@ -54,10 +54,10 @@ const c = withDefaults(raw, 'src/content/pages/chi-tiet-san-pham.json');
 <div style="max-width:960px;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:64px">
 
 <section id="thanh-phan" style="scroll-margin-top:170px;display:flex;flex-direction:column;gap:20px">
-<h2 style="margin:0;font:800 clamp(24px,2.6vw,32px)/1.2 var(--font-display)">{c.s02_thanh_phan.t1}</h2>
+<h2 style="margin:0;font:var(--type-h3)">{c.s02_thanh_phan.t1}</h2>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;overflow-x:auto">
 <div style="min-width:560px">
-<div style="display:grid;grid-template-columns:minmax(0,2.2fr) 120px minmax(0,1.3fr);gap:16px;padding:12px 20px;background:var(--surface-sunken);font:600 12px var(--font-mono);letter-spacing:.06em;color:var(--text-secondary)"><span>{c.s02_thanh_phan.t2}</span><span>{c.s02_thanh_phan.t3}</span><span>{c.s02_thanh_phan.t4}</span></div>
+<div style="display:grid;grid-template-columns:minmax(0,2.2fr) 120px minmax(0,1.3fr);gap:16px;padding:12px 20px;background:var(--surface-sunken);font:var(--type-eyebrow);letter-spacing:.06em;color:var(--text-secondary)"><span>{c.s02_thanh_phan.t2}</span><span>{c.s02_thanh_phan.t3}</span><span>{c.s02_thanh_phan.t4}</span></div>
 <div style="display:grid;grid-template-columns:minmax(0,2.2fr) 120px minmax(0,1.3fr);gap:16px;padding:14px 20px;border-top:1px solid var(--border-default)"><span>{c.s02_thanh_phan.t5}</span><strong>{c.s02_thanh_phan.t6}</strong><span style="color:var(--text-secondary)">{c.s02_thanh_phan.t7}</span></div>
 <div style="display:grid;grid-template-columns:minmax(0,2.2fr) 120px minmax(0,1.3fr);gap:16px;padding:14px 20px;border-top:1px solid var(--border-default)"><span>{c.s02_thanh_phan.t8}</span><strong>{c.s02_thanh_phan.t9}</strong><span style="color:var(--text-secondary)">{c.s02_thanh_phan.t10}</span></div>
 <div style="display:grid;grid-template-columns:minmax(0,2.2fr) 120px minmax(0,1.3fr);gap:16px;padding:14px 20px;border-top:1px solid var(--border-default)"><span>{c.s02_thanh_phan.t11}</span><strong>{c.s02_thanh_phan.t12}</strong><span style="color:var(--text-secondary)">{c.s02_thanh_phan.t13}</span></div>
@@ -68,7 +68,7 @@ const c = withDefaults(raw, 'src/content/pages/chi-tiet-san-pham.json');
 </section>
 
 <section id="cong-dung" style="scroll-margin-top:170px;display:flex;flex-direction:column;gap:20px">
-<h2 style="margin:0;font:800 clamp(24px,2.6vw,32px)/1.2 var(--font-display)">{c.s03_cong_dung.t1}</h2>
+<h2 style="margin:0;font:var(--type-h3)">{c.s03_cong_dung.t1}</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/4),calc((900px - 100%)*999),calc((100% - 16px)/2)),1fr));gap:16px">
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-600)">{c.s03_cong_dung.t2}</span><span>{c.s03_cong_dung.t3}</span></div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-600)">{c.s03_cong_dung.t4}</span><span>{c.s03_cong_dung.t5}</span></div>
@@ -77,12 +77,12 @@ const c = withDefaults(raw, 'src/content/pages/chi-tiet-san-pham.json');
 </div></section>
 
 <section id="su-dung" style="scroll-margin-top:170px;display:flex;flex-direction:column;gap:20px">
-<h2 style="margin:0;font:800 clamp(24px,2.6vw,32px)/1.2 var(--font-display)">{c.s04_su_dung.t1}</h2>
+<h2 style="margin:0;font:var(--type-h3)">{c.s04_su_dung.t1}</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:0;border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface-card)">
-<div style="padding:20px;display:flex;flex-direction:column;gap:6px;border-left:3px solid var(--green-500)"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{c.s04_su_dung.t5}</span><strong style="font-size:20px">{c.s04_su_dung.t6}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s04_su_dung.t7}</span></div>
-<div style="padding:20px;display:flex;flex-direction:column;gap:6px;border-left:3px solid var(--green-500)"><span style="font:600 12px var(--font-mono);color:var(--green-600);letter-spacing:.06em">{c.s04_su_dung.t8}</span><strong style="font-size:20px">{c.s04_su_dung.t9}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s04_su_dung.t10}</span></div>
+<div style="padding:20px;display:flex;flex-direction:column;gap:6px;border-left:3px solid var(--green-500)"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s04_su_dung.t5}</span><strong style="font-size:20px">{c.s04_su_dung.t6}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s04_su_dung.t7}</span></div>
+<div style="padding:20px;display:flex;flex-direction:column;gap:6px;border-left:3px solid var(--green-500)"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s04_su_dung.t8}</span><strong style="font-size:20px">{c.s04_su_dung.t9}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s04_su_dung.t10}</span></div>
 </div>
-<p style="margin:0;color:var(--text-secondary);text-align:justify;text-wrap:pretty"><strong style="color:var(--text-primary)">{c.s04_su_dung.t11}</strong> {c.s04_su_dung.t12}</p>
+<p style="margin:0;color:var(--text-secondary);text-wrap:pretty"><strong style="color:var(--text-primary)">{c.s04_su_dung.t11}</strong> {c.s04_su_dung.t12}</p>
 </section>
 
 <section id="an-toan" style="scroll-margin-top:170px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
@@ -91,7 +91,7 @@ const c = withDefaults(raw, 'src/content/pages/chi-tiet-san-pham.json');
 </section>
 
 <section id="thong-tin" style="scroll-margin-top:170px;display:flex;flex-direction:column;gap:20px">
-<h2 style="margin:0;font:800 clamp(24px,2.6vw,32px)/1.2 var(--font-display)">{c.s06_thong_tin.t1}</h2>
+<h2 style="margin:0;font:var(--type-h3)">{c.s06_thong_tin.t1}</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 32px;font-size:15px">
 <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--border-default)"><span style="color:var(--text-secondary)">{c.s06_thong_tin.t2}</span><strong>{c.s06_thong_tin.t3}</strong></div>
 <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--border-default)"><span style="color:var(--text-secondary)">{c.s06_thong_tin.t4}</span><strong>{c.s06_thong_tin.t5}</strong></div>
@@ -104,7 +104,7 @@ const c = withDefaults(raw, 'src/content/pages/chi-tiet-san-pham.json');
 
 <section style="background:var(--surface-page)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap"><h2 style="margin:0;font:800 clamp(24px,2.6vw,32px)/1.2 var(--font-display)">{c.s08_san_pham_lien_quan.t1}</h2><a href={url('san-pham')} style="font-weight:600">{c.s08_san_pham_lien_quan.t2}</a></div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap"><h2 style="margin:0;font:var(--type-h3)">{c.s08_san_pham_lien_quan.t1}</h2><a href={url('san-pham')} style="font-weight:600">{c.s08_san_pham_lien_quan.t2}</a></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px">
 <a href={url('san-pham')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px;background:var(--surface-sunken);padding:14px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="rel-1" shape="rounded" radius="10" fit="contain" placeholder="Bao bì" image={c.s08_san_pham_lien_quan.img_rel_1_1} cms="src/content/pages/chi-tiet-san-pham.json#s08_san_pham_lien_quan.img_rel_1_1" /></div><div style="padding:16px 18px;display:flex;flex-direction:column;gap:4px"><span style="font:600 12px var(--font-mono);color:var(--green-600)">{c.s08_san_pham_lien_quan.t3}</span><strong style="line-height:1.35">{c.s08_san_pham_lien_quan.t4}</strong></div></a>
 <a href={url('san-pham')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px;background:var(--surface-sunken);padding:14px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="rel-2" shape="rounded" radius="10" fit="contain" placeholder="Bao bì" image={c.s08_san_pham_lien_quan.img_rel_2_1} cms="src/content/pages/chi-tiet-san-pham.json#s08_san_pham_lien_quan.img_rel_2_1" /></div><div style="padding:16px 18px;display:flex;flex-direction:column;gap:4px"><span style="font:600 12px var(--font-mono);color:var(--green-600)">{c.s08_san_pham_lien_quan.t5}</span><strong style="line-height:1.35">{c.s08_san_pham_lien_quan.t6}</strong></div></a>
