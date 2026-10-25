@@ -1,7 +1,7 @@
 /** Page slugs, mirroring the 13 pages of the design's publish file. */
 export const PAGES = [
   'trang-chu', 've-tien-nong', 've-tien-nong/van-hoa-doanh-nghiep', 'khoa-hoc-cong-nghe', 'san-pham', 'chi-tiet-san-pham', 'giai-phap',
-  'giai-phap-du-an', 'phat-trien-ben-vung', 'nong-dan', 'tuyen-dung', 'tin-tuc', 'lien-he',
+  'giai-phap-du-an', 'phat-trien-ben-vung', 'nong-dan', 'tuyen-dung', 'tin-tuc', 'lien-he', 'tro-thanh-doi-tac',
 ] as const;
 export type PageSlug = (typeof PAGES)[number];
 

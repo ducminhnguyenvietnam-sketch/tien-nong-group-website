@@ -1,0 +1,225 @@
+{
+  "seo": {
+    "title": "Trở thành đối tác",
+    "description": "Trở thành đại lý, nhà phân phối của Tiến Nông: quyền lợi, điều kiện hợp tác và liên hệ giám đốc kinh doanh phụ trách tỉnh/thành của bạn."
+  },
+  "hero": {
+    "t1": "Trang chủ",
+    "t2": "/ Trở thành đối tác",
+    "eyebrow": "TRỞ THÀNH ĐỐI TÁC",
+    "title": "Cùng Tiến Nông mang khoa học đến từng thửa ruộng",
+    "intro": "Hơn 200 nhà phân phối và 10.000 điểm bán đang đồng hành cùng Tiến Nông trên khắp cả nước. Trở thành đại lý, nhà phân phối của Tiến Nông là cùng chúng tôi phụng sự nhà nông, với sản phẩm chất lượng, chính sách minh bạch và sự hỗ trợ kỹ thuật tận ruộng.",
+    "button1": "Liên hệ giám đốc khu vực",
+    "button2": "Xem quyền lợi",
+    "image": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Chủ đại lý Tiến Nông tư vấn cho nông dân tại cửa hàng"
+    }
+  },
+  "stats": [
+    {
+      "value": "200+",
+      "label": "nhà phân phối"
+    },
+    {
+      "value": "10.000",
+      "label": "điểm bán trên toàn quốc"
+    },
+    {
+      "value": "3",
+      "label": "nhà máy sản xuất"
+    },
+    {
+      "value": "30+",
+      "label": "năm đồng hành cùng nhà nông"
+    }
+  ],
+  "benefits": {
+    "eyebrow": "01 · QUYỀN LỢI",
+    "title": "Đối tác của Tiến Nông được gì?",
+    "intro": "Chúng tôi coi đại lý, nhà phân phối là người cùng một nhà: cùng chia sẻ lợi ích và cùng phục vụ bà con.",
+    "items": [
+      {
+        "title": "Sản phẩm chất lượng, nguồn hàng ổn định",
+        "text": "Hàng trăm sản phẩm dinh dưỡng cây trồng từ ba nhà máy đạt ISO 9001 và ISO 14001, giao hàng đúng hẹn quanh năm."
+      },
+      {
+        "title": "Chính sách giá và chiết khấu minh bạch",
+        "text": "Giá thống nhất theo vùng, chiết khấu theo sản lượng và thưởng doanh số theo mùa vụ."
+      },
+      {
+        "title": "Kỹ sư hỗ trợ tận ruộng",
+        "text": "Đội ngũ kỹ sư cùng đại lý tư vấn cho bà con, tổ chức hội thảo đầu bờ và mô hình trình diễn tại địa phương."
+      },
+      {
+        "title": "Hỗ trợ bán hàng và quảng bá",
+        "text": "Biển hiệu, ấn phẩm, tài liệu kỹ thuật, quà tặng và các chương trình khuyến mại cho bà con mua hàng."
+      },
+      {
+        "title": "Đào tạo kiến thức và kỹ năng",
+        "text": "Tập huấn sản phẩm, kỹ thuật canh tác và kỹ năng tư vấn cho chủ đại lý và nhân viên bán hàng."
+      },
+      {
+        "title": "Tri ân đối tác gắn bó",
+        "text": "Hội nghị khách hàng, chuyến tham quan, du lịch và khen thưởng cho đại lý, nhà phân phối tiêu biểu hằng năm."
+      }
+    ]
+  },
+  "conditions": {
+    "eyebrow": "02 · ĐIỀU KIỆN",
+    "title": "Điều kiện trở thành đối tác",
+    "intro": "Tiến Nông chào đón mọi cửa hàng vật tư nông nghiệp và doanh nghiệp phân phối có cùng mong muốn phục vụ bà con lâu dài.",
+    "items": [
+      {
+        "title": "Đủ điều kiện kinh doanh phân bón",
+        "text": "Có đăng ký kinh doanh và Giấy chứng nhận đủ điều kiện buôn bán phân bón theo quy định hiện hành."
+      },
+      {
+        "title": "Có cửa hàng và kho bảo quản",
+        "text": "Địa điểm bán hàng thuận tiện cho bà con, kho khô ráo, thoáng mát, đảm bảo bảo quản phân bón đúng cách."
+      },
+      {
+        "title": "Năng lực tài chính phù hợp",
+        "text": "Đủ khả năng nhập hàng theo mùa vụ và thực hiện thanh toán theo chính sách đã thống nhất."
+      },
+      {
+        "title": "Cam kết kinh doanh đúng đắn",
+        "text": "Bán đúng giá, đúng hàng chính hãng, không kinh doanh hàng giả, hàng kém chất lượng và tận tâm tư vấn cho bà con."
+      }
+    ],
+    "note": "Mỗi khu vực có chính sách riêng. Giám đốc kinh doanh phụ trách sẽ tư vấn cụ thể cho Quý đối tác."
+  },
+  "spotlight": {
+    "eyebrow": "03 · ĐỐI TÁC TIÊU BIỂU",
+    "title": "Những người đồng hành cùng Tiến Nông",
+    "partners": [
+      {
+        "kind": "ĐẠI LÝ TIÊU BIỂU",
+        "name": "[Tên đại lý]",
+        "place": "[Xã, tỉnh]",
+        "facts": [
+          {
+            "value": "[Năm]",
+            "label": "bắt đầu hợp tác"
+          },
+          {
+            "value": "[Sản lượng]",
+            "label": "tấn/năm"
+          }
+        ],
+        "quote": "[Lời chia sẻ của chủ đại lý về quá trình đồng hành cùng Tiến Nông]",
+        "person": "[Họ tên chủ đại lý]",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Chân dung chủ đại lý tiêu biểu tại cửa hàng"
+        }
+      },
+      {
+        "kind": "NHÀ PHÂN PHỐI TIÊU BIỂU",
+        "name": "[Tên nhà phân phối]",
+        "place": "[Tỉnh/thành]",
+        "facts": [
+          {
+            "value": "[Năm]",
+            "label": "bắt đầu hợp tác"
+          },
+          {
+            "value": "[Số]",
+            "label": "đại lý cấp 2"
+          }
+        ],
+        "quote": "[Lời chia sẻ của nhà phân phối về quá trình đồng hành cùng Tiến Nông]",
+        "person": "[Họ tên, chức vụ]",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Nhà phân phối tiêu biểu tại kho hàng"
+        }
+      }
+    ]
+  },
+  "region": {
+    "eyebrow": "04 · LIÊN HỆ KHU VỰC",
+    "title": "Chọn tỉnh/thành, gặp ngay người phụ trách",
+    "intro": "Ba giám đốc kinh doanh phụ trách ba vùng trên cả nước. Chọn tỉnh/thành nơi Quý đối tác kinh doanh để liên hệ trực tiếp.",
+    "select_label": "Tỉnh / thành phố",
+    "select_placeholder": "Chọn tỉnh/thành của bạn",
+    "empty_text": "Chọn tỉnh/thành ở trên để xem giám đốc kinh doanh phụ trách khu vực.",
+    "result_label": "PHỤ TRÁCH",
+    "call_label": "Liên hệ",
+    "form_text": "Hoặc gửi thông tin đăng ký, chúng tôi sẽ gọi lại:",
+    "form_link": "Gửi đăng ký làm đại lý →",
+    "map_alt": "Bản đồ Việt Nam với hệ thống đối tác Tiến Nông trải khắp 34 tỉnh, thành",
+    "map_image": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Ảnh bản đồ thiết kế riêng (để trống sẽ dùng bản đồ có sẵn)"
+    }
+  },
+  "managers": [
+    {
+      "name": "Nguyễn Trung Trụ",
+      "title": "Giám đốc Kinh doanh",
+      "region": "Vùng 1",
+      "phone": "0982240955",
+      "provinces": [
+        "Thanh Hóa",
+        "Ninh Bình",
+        "Hà Nội",
+        "Hải Phòng",
+        "Quảng Ninh",
+        "Bắc Ninh",
+        "Hưng Yên"
+      ]
+    },
+    {
+      "name": "Trần Mạnh Tiến",
+      "title": "Giám đốc Kinh doanh",
+      "region": "Vùng 2",
+      "phone": "0974678229",
+      "provinces": [
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Quảng Trị",
+        "Huế",
+        "Đà Nẵng",
+        "Quảng Ngãi",
+        "Gia Lai",
+        "Đắk Lắk",
+        "Khánh Hòa",
+        "Lâm Đồng",
+        "Đồng Nai",
+        "TP. Hồ Chí Minh",
+        "Tây Ninh",
+        "Vĩnh Long",
+        "Đồng Tháp",
+        "An Giang",
+        "Cần Thơ",
+        "Cà Mau"
+      ]
+    },
+    {
+      "name": "Lê Viết Thiện",
+      "title": "Giám đốc Kinh doanh",
+      "region": "Vùng 3",
+      "phone": "0948723636",
+      "provinces": [
+        "Sơn La",
+        "Lai Châu",
+        "Điện Biên",
+        "Lào Cai",
+        "Tuyên Quang",
+        "Cao Bằng",
+        "Lạng Sơn",
+        "Thái Nguyên",
+        "Phú Thọ"
+      ]
+    }
+  ]
+}

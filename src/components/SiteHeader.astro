@@ -22,7 +22,7 @@ const items = NAV.map(([key, slug, children = []]) => ({
 <div style="font-family:var(--font-body);background:var(--surface-card);border-bottom:1px solid var(--border-default)">
 <div style="background:var(--green-800);color:var(--green-100);font-size:13px">
 <div style="max-width:1280px;margin:0 auto;padding:6px clamp(20px,4vw,56px);display:flex;justify-content:flex-end;gap:24px;flex-wrap:wrap">
-<a href={url('tuyen-dung')} style="color:var(--green-100);text-decoration:none">{h.top_jobs}</a><a href={url('lien-he', 'dai-ly')} style="color:var(--green-100);text-decoration:none">{h.top_dealers}</a><a href={url('lien-he')} style="color:var(--green-100);text-decoration:none">{h.top_contact}</a><span style="display:flex;gap:6px"><strong style="color:#fff">VI</strong><span>/</span><a href={link(h.english_url)} style="color:var(--green-100);text-decoration:none">EN</a></span>
+<a href={url('tuyen-dung')} style="color:var(--green-100);text-decoration:none">{h.top_jobs}</a><a href={url('lien-he')} style="color:var(--green-100);text-decoration:none">{h.top_contact}</a><span style="display:flex;gap:6px"><strong style="color:#fff">VI</strong><span>/</span><a href={link(h.english_url)} style="color:var(--green-100);text-decoration:none">EN</a></span>
 </div></div>
 <div style="max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:20px">
 <a href={url('trang-chu')} style="flex:none;display:block"><img src={asset("assets/logo-full.png")} alt="Tiến Nông" style="height:52px;width:auto;display:block" /></a>
@@ -43,10 +43,10 @@ const items = NAV.map(([key, slug, children = []]) => ({
   );
 })}
 </nav>
-<a href={url('lien-he', 'dai-ly')} style="flex:none;white-space:nowrap;text-decoration:none"><Button as="span">{h.cta}</Button></a>
+<a href={url('tro-thanh-doi-tac')} style="flex:none;white-space:nowrap;text-decoration:none"><Button as="span">{h.cta}</Button></a>
 </div>
 <div class="hdr-narrow" style="align-items:center;gap:12px">
-<a href={url('lien-he', 'dai-ly')} style="flex:none;white-space:nowrap;text-decoration:none"><Button as="span">{h.cta}</Button></a>
+<a href={url('tro-thanh-doi-tac')} style="flex:none;white-space:nowrap;text-decoration:none"><Button as="span">{h.cta}</Button></a>
 <button type="button" data-menu-toggle aria-expanded="false" aria-controls="hdr-panel" aria-label="Menu" data-open={h.menu_close} data-closed={h.menu_open} style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:var(--radius-md);border:1px solid var(--border-strong);background:var(--surface-card);font:600 15px var(--font-body);color:var(--text-primary);cursor:pointer;white-space:nowrap">{h.menu_open}</button>
 </div>
 </div>
