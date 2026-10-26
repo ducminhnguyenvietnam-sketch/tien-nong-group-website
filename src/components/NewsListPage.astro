@@ -1,0 +1,25 @@
+---
+/** Shell of a news list page after the first (/tin-tuc/trang/n/) or of a category (/tin-tuc/chuyen-muc/…). */
+import raw from '../content/pages/tin-tuc.json';
+import { withDefaults } from '../lib/content';
+import Layout from '../layouts/Layout.astro';
+import NewsArchive from './NewsArchive.astro';
+import { CATEGORIES, PER_PAGE, listUrl, type NewsEntry } from '../lib/news';
+import { url } from '../lib/routes';
+
+interface Props { all: NewsEntry[]; cat: string; page: number }
+const { all, cat, page } = Astro.props;
+const c = withDefaults(raw, 'src/content/pages/tin-tuc.json');
+const pages = Math.max(1, Math.ceil(all.length / PER_PAGE));
+const years = [...new Set(all.map((n) => n.data.date?.getFullYear()).filter((y): y is number => !!y))].sort((a, b) => b - a);
+const heading = cat === 'all' ? (c.s01_tin_noi_bat.t3 || 'Tin tức') : CATEGORIES[cat];
+const title = `${heading}${page > 1 ? ` – Trang ${page}` : ''}`;
+---
+<Layout title={title} description={cat === 'all' ? undefined : `${CATEGORIES[cat]}: tin tức và bài viết của Tiến Nông.`} active="Tin tức">
+<section style="background:var(--surface-page)">
+<div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(56px,7vw,88px);display:flex;flex-direction:column;gap:28px">
+<nav aria-label="Đường dẫn" style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">Trang chủ</a> / <a href={url('tin-tuc')} style="color:var(--text-tertiary)">Tin tức</a>{cat !== 'all' && <> / {CATEGORIES[cat]}</>}{page > 1 && <> / Trang {page}</>}</nav>
+<h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{heading}</h1>
+<NewsArchive items={all.slice((page - 1) * PER_PAGE, page * PER_PAGE)} page={page} pages={pages} cat={cat} years={years} total={all.length} />
+</div></section>
+</Layout>

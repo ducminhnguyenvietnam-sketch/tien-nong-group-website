@@ -3,9 +3,9 @@ import raw from '../../content/pages/tin-tuc.json';
 import { isFilled, withDefaults } from '../../lib/content';
 import Layout from '../../layouts/Layout.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
-import Tabs from '../../components/Tabs.astro';
+import NewsArchive from '../../components/NewsArchive.astro';
 import { link, url } from '../../lib/routes';
-import { CATEGORIES, formatDate, getNews, getPress, isPress, newsLinkAttrs, newsUrl } from '../../lib/news';
+import { CATEGORIES, CATEGORY_SLUGS, PER_PAGE, formatDate, getNews, getPress, isPress, listUrl, newsLinkAttrs, newsUrl } from '../../lib/news';
 
 const c = withDefaults(raw, 'src/content/pages/tin-tuc.json');
 
@@ -17,7 +17,10 @@ const [feat, ...rest] = own;
 const press = await getPress(Infinity);
 const PRESS_SHOWN = 3;
 const side = rest.slice(0, 3);
-const catItems = [{ value: 'all', label: c.all_categories }, ...Object.entries(CATEGORIES).filter(([value]) => value !== 'bc').map(([value, label]) => ({ value, label }))];
+const years = [...new Set(own.map((n) => n.data.date?.getFullYear()).filter((y): y is number => !!y))].sort((a, b) => b - a);
+const pages = Math.max(1, Math.ceil(own.length / PER_PAGE));
+// Old links to a category tab (/tin-tuc/#kt) now go to that category's own list page.
+const catPages = Object.fromEntries(Object.keys(CATEGORY_SLUGS).map((k) => [k, listUrl(k)]));
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Tin tức">
 <section style="background:var(--surface-card)">
@@ -32,17 +35,7 @@ const catItems = [{ value: 'all', label: c.all_categories }, ...Object.entries(C
 
 <section style="background:var(--surface-page)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(48px,6vw,72px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap">
-<div style="overflow-x:auto;max-width:100%"><Tabs id="news-tabs" label="Chuyên mục" items={catItems} value="all" /></div>
-<label style="display:flex;flex:0 1 280px;min-width:200px"><input id="news-q" type="search" aria-label={c.s02_danh_sach.f1} placeholder={c.s02_danh_sach.f2} style="width:100%;padding:10px 14px;border-radius:var(--radius-md);border:1px solid var(--border-default);font:16px var(--font-body);background:var(--surface-card);color:var(--text-primary);outline-color:var(--green-500)" /></label>
-</div>
-<div id="news-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:32px 24px">
-{own.map((n) => (
-<a href={newsUrl(n)} data-cat={n.data.category} data-title={n.data.title.toLowerCase()} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:210px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${n.id}`} shape="rounded" radius="12" placeholder="Ảnh bài viết" image={n.data.cover} cms={`${n.filePath}#cover`} /></div><span style="font-size:13px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{CATEGORIES[n.data.category]}</strong>{n.data.date && ` · ${formatDate(n.data.date)}`}</span><strong style="font-size:18px;line-height:1.4">{n.data.title}</strong></a>
-))}
-</div>
-<div id="news-empty" hidden style="padding:40px;text-align:center;border:1px dashed var(--border-strong);border-radius:var(--radius-lg);color:var(--text-secondary)">{c.s02_danh_sach.t1}</div>
-<div id="news-pages" style="display:flex;justify-content:center;gap:8px" data-next={c.s02_danh_sach.t5}></div>
+<NewsArchive items={own.slice(0, PER_PAGE)} page={1} pages={pages} cat="all" years={years} total={own.length} />
 </div></section>
 
 {press.length > 0 && <section id="bao-chi" style="background:var(--surface-card);border-top:1px solid var(--border-default)">
@@ -53,55 +46,11 @@ const catItems = [{ value: 'all', label: c.all_categories }, ...Object.entries(C
 </div></div></section>}
 </Layout>
 
-<script>
-  const PER_PAGE = 9;
-  const q = document.getElementById('news-q') as HTMLInputElement;
-  const pager = document.getElementById('news-pages')!;
-  const cards = [...document.querySelectorAll<HTMLElement>('#news-grid [data-cat]')];
-  let cat = 'all';
-  let page = 1;
-  const btnStyle = 'width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-md);border:1px solid var(--border-default);color:var(--text-primary);background:var(--surface-card);font:inherit;cursor:pointer';
-  const curStyle = 'width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-md);background:var(--green-500);color:#fff;font-weight:700';
-  function render() {
-    const qq = q.value.trim().toLowerCase();
-    const match = cards.filter((el) => (cat === 'all' || el.dataset.cat === cat) && (!qq || el.dataset.title!.includes(qq)));
-    const pages = Math.max(1, Math.ceil(match.length / PER_PAGE));
-    page = Math.min(page, pages);
-    cards.forEach((el) => { el.hidden = true; });
-    match.slice((page - 1) * PER_PAGE, page * PER_PAGE).forEach((el) => { el.hidden = false; });
-    document.getElementById('news-empty')!.hidden = match.length > 0;
-    pager.replaceChildren();
-    if (pages < 2) return;
-    for (let i = 1; i <= pages; i++) {
-      const b = document.createElement(i === page ? 'span' : 'button');
-      b.textContent = String(i);
-      b.setAttribute('style', i === page ? curStyle : btnStyle);
-      if (i !== page) b.addEventListener('click', () => { page = i; render(); pager.scrollIntoView({ block: 'end' }); });
-      pager.append(b);
-    }
-    if (page < pages) {
-      const next = document.createElement('button');
-      next.textContent = pager.dataset.next ?? '→';
-      next.setAttribute('style', btnStyle.replace('width:40px;', 'padding:0 14px;'));
-      next.addEventListener('click', () => { page += 1; render(); });
-      pager.append(next);
-    }
-  }
-  document.getElementById('news-tabs')!.addEventListener('tabs:change', (e) => { cat = (e as CustomEvent<string>).detail; page = 1; render(); });
-  const tabs = document.getElementById('news-tabs')!;
-  function openTab(value: string) {
-    const tab = tabs.querySelector<HTMLElement>(`[role="tab"][data-value="${CSS.escape(value)}"]`);
-    if (!tab) return false;
-    tab.click();
-    return true;
-  }
-  const fromHash = () => { const h = decodeURIComponent(location.hash.slice(1)); if (h && openTab(h)) tabs.scrollIntoView({ block: 'center' }); };
-  window.addEventListener('hashchange', fromHash);
+<script define:vars={{ catPages }}>
+  const h = decodeURIComponent(location.hash.slice(1));
+  if (catPages[h]) location.replace(catPages[h]);
   document.getElementById('press-more')?.addEventListener('click', (e) => {
-    document.querySelectorAll<HTMLElement>('[data-press-extra]').forEach((el) => { el.hidden = false; });
-    (e.currentTarget as HTMLElement).hidden = true;
+    document.querySelectorAll('[data-press-extra]').forEach((el) => { el.hidden = false; });
+    e.currentTarget.hidden = true;
   });
-  if (location.hash) fromHash();
-  q.addEventListener('input', () => { page = 1; render(); });
-  render();
 </script>

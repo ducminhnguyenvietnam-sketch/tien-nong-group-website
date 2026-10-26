@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import oldLinks from './scripts/old-links.mjs';
 
 // SITE_URL / BASE_PATH are set by the deploy workflow (e.g. GitHub Pages serves
 // the site under /<repo>/). Locally the site lives at the root.
@@ -16,6 +17,8 @@ function rehypeBasePath() {
     if (node.properties) {
       if ('src' in node.properties) node.properties.src = fix(node.properties.src);
       if ('href' in node.properties) node.properties.href = fix(node.properties.href);
+      // Photos inside articles load as they scroll into view.
+      if (node.tagName === 'img') { node.properties.loading = 'lazy'; node.properties.decoding = 'async'; }
     }
     node.children?.forEach(walk);
   };
@@ -53,7 +56,7 @@ function rehypeDropPlaceholders() {
 export default defineConfig({
   site: process.env.SITE_URL,
   // Sitemap only when the public URL is known (CI); internal tools stay out of it.
-  integrations: process.env.SITE_URL ? [sitemap({ filter: (page) => !/\/(quan-tri|admin)\//.test(page) })] : [],
+  integrations: [...(process.env.SITE_URL ? [sitemap({ filter: (page) => !/\/(quan-tri|admin)\//.test(page) })] : []), oldLinks({ base })],
   base,
   markdown: { rehypePlugins: [rehypeBasePath, rehypeDropPlaceholders] },
   // Pages are emitted as /slug/index.html so links stay clean (/ve-tien-nong/).

@@ -1,1 +1,1 @@
-import --sample 20
+import --all

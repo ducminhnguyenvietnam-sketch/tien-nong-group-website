@@ -88,6 +88,22 @@ function category(names, title) {
 
 // ───────────── images ─────────────
 const imageCache = new Map();
+/** Candidate URLs for a WordPress photo, best first: the original upload (WordPress puts resized copies
+ *  such as photo-300x235.jpg in the post): a large srcset entry, else the original upload, then the address in the post. */
+function candidates(src, srcset = '') {
+  const out = [];
+  const best = srcset.split(',').map((x) => x.trim().split(/\s+/)).filter((x) => x[0]).sort((a, b) => parseInt(b[1]) - parseInt(a[1]))[0];
+  if (best && parseInt(best[1]) >= 900) out.push(best[0]);
+  if (isOldHost(src) && /-\d+x\d+(?=\.\w+(\?|$))/.test(src)) out.push(src.replace(/-\d+x\d+(?=\.\w+(\?|$))/, ''));
+  if (best) out.push(best[0]);
+  out.push(src);
+  return [...new Set(out)];
+}
+async function saveImageAny(list, dest, width, quality, thumb) {
+  let err;
+  for (const u of list) { try { return await saveImage(u, dest, width, quality, thumb); } catch (e) { err = e; } }
+  throw err;
+}
 async function saveImage(src, dest, width, quality, thumb) {
   const abs = new URL(src, BASE).href;
   const key = `${abs}|${dest}`;
@@ -132,7 +148,7 @@ function makeTurndown(ctx) {
     replacement: (content, node) => {
       const cap = node.querySelector('figcaption');
       const capText = cap ? plain(cap.innerHTML) : '';
-      const imgs = [...node.querySelectorAll('img')].map((i) => ctx.image(i)).filter(Boolean);
+      const imgs = [...node.querySelectorAll('img')].map((i) => ctx.image(i, capText)).filter(Boolean);
       return `\n\n${imgs.join('\n\n')}${capText ? `\n\n*${capText.replace(/\*/g, '')}*` : ''}\n\n`;
     },
   });
@@ -187,7 +203,13 @@ async function existingNews() {
 }
 
 // ───────────── main ─────────────
-const cats = await all('categories', 'id,name');
+const cats = await all('categories', 'id,name,slug,link,count');
+// Old static pages and category archives, for the redirect list (src/content/redirects.json).
+await mkdir('migration', { recursive: true });
+await writeFile('migration/old-pages.json', JSON.stringify({
+  pages: (await all('pages', 'id,slug,link,title')).map((p) => ({ path: oldPath(p.link), title: plain(p.title?.rendered) })),
+  categories: cats.map((c) => ({ path: oldPath(c.link), name: decode(c.name), count: c.count })),
+}, null, 1));
 const catName = Object.fromEntries(cats.map((c) => [c.id, decode(c.name)]));
 let posts = await all('posts', 'id,date,slug,link,title,categories,featured_media,content,excerpt');
 posts.sort((a, b) => a.date.localeCompare(b.date));
@@ -249,10 +271,15 @@ async function importOne(x) {
   // Cover: the featured image, else the first photo in the post.
   const html = preclean(p.content?.rendered || '');
   const firstImg = (html.match(/<img[^>]+src=["']([^"']+)["']/i) || [])[1];
+  const srcsetOf = {};
+  for (const m of html.matchAll(/<img[^>]*>/gi)) {
+    const src = m[0].match(/\ssrc=["']([^"']+)["']/i)?.[1];
+    if (src) srcsetOf[src] = decode(m[0].match(/\ssrcset=["']([^"']+)["']/i)?.[1] || '');
+  }
   const coverSrc = media[p.featured_media]?.url || firstImg;
   let cover = '';
   if (coverSrc) {
-    try { cover = await saveImage(coverSrc, `${imgBase}.webp`, 1200, 72, `${imgBase}-480.webp`); }
+    try { cover = await saveImageAny(candidates(coverSrc, srcsetOf[coverSrc]), `${imgBase}.webp`, 1200, 72, `${imgBase}-480.webp`); }
     catch (e) { rec.warn.push(`ảnh đại diện lỗi: ${e.message}`); }
   }
   const coverStem = coverSrc ? stem(coverSrc) : '';
@@ -263,16 +290,16 @@ async function importOne(x) {
   let n = 0;
   for (const s of srcs) {
     if (coverStem && stem(s) === coverStem && cover && !local.size) { local.set(s, null); continue; } // same photo as the cover, shown above
-    try { local.set(s, await saveImage(s, `${imgBase}-${++n}.webp`, 1080, 70)); rec.images++; }
+    try { local.set(s, await saveImageAny(candidates(s, srcsetOf[s]), `${imgBase}-${++n}.webp`, 1080, 70)); rec.images++; }
     catch (e) { local.set(s, undefined); rec.imgFailed++; rec.warn.push(`ảnh lỗi (${e.message}): ${s.slice(0, 90)}`); }
   }
   const ctx = {
     videos: 0, warn: rec.warn,
-    image(node) {
+    image(node, caption = '') {
       const s = node.getAttribute('src');
       const l = local.get(s);
       if (!l) return '';
-      const alt = plain(node.getAttribute('alt') || '').replace(/[[\]]/g, '') || title;
+      const alt = (plain(node.getAttribute('alt') || '') || caption || title).replace(/[[\]]/g, '');
       return `![${alt}](${l})`;
     },
     link(href) {
@@ -294,7 +321,15 @@ async function importOne(x) {
   if (body.replace(/!\[[^\]]*\]\([^)]*\)/g, '').trim().length < 40) rec.warn.push('nội dung chữ rất ngắn');
 
   let summary = plain(p.excerpt?.rendered).replace(/\s*\[…\]\s*$|\s*\[\.\.\.\]\s*$|\s*Đọc tiếp.*$/i, '').trim();
-  if (summary.length > 260) summary = summary.slice(0, 260).replace(/\s+\S*$/, '') + '…';
+  // Most old posts open with a bold lead paragraph, which is also the start of the excerpt. Use the whole
+  // lead as the summary (shown in bold above the article) and drop it from the body, so it is not repeated.
+  const lead = body.match(/^\*\*([^*\n][\s\S]*?)\*\*\s*(?:\n\n|$)/);
+  const norm = (t) => fold(t).replace(/[^a-z0-9]+/g, '');
+  if (lead && summary && norm(lead[1]).startsWith(norm(summary).slice(0, 60))) {
+    summary = lead[1].replace(/\s+/g, ' ').trim();
+    body = body.slice(lead[0].length).trimStart();
+  } else if (summary && !/[.!?…”"]$/.test(summary)) summary += '…';
+  if (summary.length > 420) summary = summary.slice(0, 400).replace(/\s+\S*$/, '') + '…';
 
   const fm = {
     title, category: cat, date: p.date.slice(0, 10), author: 'Tiến Nông', featured: false, summary,
