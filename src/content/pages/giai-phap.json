@@ -81,7 +81,13 @@
     "label_result": "Kết quả thực tế",
     "faq_eyebrow": "HỎI ĐÁP",
     "faq_title": "Câu hỏi thường gặp của bà con",
-    "faq_intro": "Những thắc mắc phổ biến khi chăm sóc cây trồng và cách xử lý. Cần tư vấn cụ thể cho ruộng vườn của mình, bà con hãy gọi kỹ sư Tiến Nông."
+    "faq_intro": "Những thắc mắc phổ biến khi chăm sóc cây trồng và cách xử lý. Cần tư vấn cụ thể cho ruộng vườn của mình, bà con hãy gọi kỹ sư Tiến Nông.",
+    "faq_image": {
+      "src": "/uploads/esg-farm-3-mvc45k3i.jpg",
+      "focus": "37.9% 50%",
+      "zoom": "100",
+      "alt": "Kỹ sư Tiến Nông giải đáp thắc mắc cho bà con ngay tại ruộng"
+    }
   },
   "s04_suc_khoe_dat": {
     "img_soil_1": {

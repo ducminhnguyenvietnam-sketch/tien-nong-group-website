@@ -29,6 +29,12 @@
       "focus": "center",
       "zoom": "100",
       "alt": "Hoạt động văn hóa, văn nghệ"
+    },
+    "background": {
+      "src": "/uploads/truong fpt.jpg",
+      "focus": "50% 40%",
+      "zoom": "100",
+      "alt": "Tập thể cán bộ, nhân viên Tiến Nông trước trụ sở công ty"
     }
   },
   "mottos": [

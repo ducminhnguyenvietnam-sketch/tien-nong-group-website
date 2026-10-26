@@ -3,6 +3,7 @@ import raw from '../../content/pages/van-hoa-doanh-nghiep.json';
 import { isFilled, stripPlaceholders, withDefaults } from '../../lib/content';
 import Layout from '../../layouts/Layout.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
+import PageHero from '../../components/PageHero.astro';
 import { link, url, youtubeId } from '../../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/van-hoa-doanh-nghiep.json');
@@ -13,28 +14,17 @@ const hasPrinciples = principles.length > 0;
 const hasPoems = poems.length > 0;
 const hasMedia = c.media.videos.some((v) => isFilled(v.youtube) || isFilled(v.file));
 const hasGallery = c.gallery.photos.some((ph) => isFilled(ph.src));
-const hasHeroPhotos = [c.hero.image_1, c.hero.image_2, c.hero.image_3].some((im) => isFilled(im?.src));
 const slot = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
 const eyebrow = 'font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-700)';
 const h2 = 'margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance';
 const lead = 'margin:0;color:var(--text-secondary);font-size:var(--fs-lead);text-wrap:pretty';
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Về Tiến Nông">
-<section style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:32px">
-<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.hero.breadcrumb_home}</a> / <a href={url('ve-tien-nong')} style="color:var(--text-tertiary)">{c.hero.breadcrumb_parent}</a> / {c.hero.breadcrumb_self}</span>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px 64px;align-items:center">
-<div style="display:flex;flex-direction:column;gap:20px">
-<span style={eyebrow}>{c.hero.eyebrow}</span>
-<h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.hero.title}</h1>
-<p style="margin:0;font-size:var(--fs-lead);color:var(--text-secondary);text-wrap:pretty">{c.hero.intro}</p>
-{(hasPrinciples || hasMedia) && <div style="display:flex;gap:12px;flex-wrap:wrap">{hasPrinciples && <a href="#tam-niem" style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.hero.button_principles}</a>}{hasMedia && <a href="#bai-hat" style="color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md);border:1px solid var(--border-strong)">{c.hero.button_media}</a>}</div>}
-</div>
-<div class="vh-hero-photos" data-needs-photos={hasHeroPhotos ? undefined : ''} style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:260px 200px;gap:14px">
-<div style="position:relative;grid-row:span 2;min-width:0"><ImageSlot style={slot} id="vh-hero-1" shape="rounded" radius="16" placeholder={c.hero.image_1.alt} image={c.hero.image_1} cms={`${F}#hero.image_1`} /></div>
-<div style="position:relative;min-width:0"><ImageSlot style={slot} id="vh-hero-2" shape="rounded" radius="16" placeholder={c.hero.image_2.alt} image={c.hero.image_2} cms={`${F}#hero.image_2`} /></div>
-<div style="position:relative;min-width:0"><ImageSlot style={slot} id="vh-hero-3" shape="rounded" radius="16" placeholder={c.hero.image_3.alt} image={c.hero.image_3} cms={`${F}#hero.image_3`} /></div>
-</div></div></div></section>
+<PageHero id="vh-hero" image={c.hero.background} cms={`${F}#hero.background`} placeholder={c.hero.background?.alt || 'Tập thể cán bộ, nhân viên Tiến Nông'}
+  crumbs={[{ label: c.hero.breadcrumb_home, href: url('trang-chu') }, { label: c.hero.breadcrumb_parent, href: url('ve-tien-nong') }, { label: c.hero.breadcrumb_self }]}
+  eyebrow={c.hero.eyebrow} title={c.hero.title} lead={c.hero.intro}>
+{(hasPrinciples || hasMedia) && <>{hasPrinciples && <a href="#tam-niem" class="page-hero__btn page-hero__btn--solid">{c.hero.button_principles}</a>}{hasMedia && <a href="#bai-hat" class="page-hero__btn">{c.hero.button_media}</a>}</>}
+</PageHero>
 
 <section style="background:var(--green-800);color:#fff">
 <div style="max-width:1280px;margin:0 auto;padding:48px clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px 40px">

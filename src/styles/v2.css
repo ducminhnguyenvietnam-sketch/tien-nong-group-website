@@ -1,8 +1,16 @@
 /* ───────────────────────── Giao diện v2: chữ, căn lề, ô ảnh, tiện ích bố cục ───────────────────────── */
 
-/* Headings balance their lines; paragraphs avoid a lone last word. Vietnamese is never hyphenated. */
-h1, h2, h3, h4 { text-wrap: balance; }
-p, li, blockquote { text-wrap: pretty; hyphens: manual; }
+/* Text alignment (v3): running text is justified on every screen size, the last line of a paragraph
+   stays left. Headings, labels, buttons and form controls stay left-aligned (a justified heading opens
+   wide gaps); so do short blocks (under ~120 characters) and copy over photos. nowrap.js keeps Vietnamese compounds such as "Tiến Nông" on one line, so a pair never
+   splits across lines. Vietnamese is never hyphenated. */
+main { text-align: justify; text-align-last: start; text-justify: inter-word; hyphens: manual; }
+main :is(h1, h2, h3, h4, h5, h6, strong, b, button, label, input, select, textarea, th, nav, summary, figcaption, [role="tab"], .ds-btn, .eyebrow) { text-align: start; text-align-last: auto; }
+main :is(h1, h2, h3, h4, strong) { text-wrap: balance; }
+main :is(p, li, blockquote, dd) { text-wrap: pretty; }
+.jx-left { text-align: start !important; }
+/* Copy laid over a photo (heroes, banners) reads as a headline block, so it stays left-aligned. */
+main :is(.hero-copy, .page-hero, .promo) :is(p, span, div) { text-align: start; }
 
 /* Visible keyboard focus everywhere; mouse clicks don't show it. */
 :focus-visible { outline: 2px solid var(--green-500); outline-offset: 3px; border-radius: 4px; }

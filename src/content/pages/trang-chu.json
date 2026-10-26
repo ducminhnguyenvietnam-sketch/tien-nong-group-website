@@ -64,12 +64,36 @@
     "t14": "ngành dinh dưỡng cây trồng",
     "t15": "6 lần đạt",
     "t16": "Sao Vàng Đất Việt",
-    "t18": "Xem tất cả thành tựu →"
+    "t18": "Xem tất cả thành tựu →",
+    "img_award_1": {
+      "src": "/uploads/award-hc-mverpbix.png",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Huân chương Lao động"
+    },
+    "img_award_2": {
+      "src": "/uploads/award-bk-mvbxvhuk.jpg",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Bằng khen của Thủ tướng Chính phủ"
+    },
+    "img_award_3": {
+      "src": "/uploads/award-kh1-mvj7n8ly.jpg",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Giấy chứng nhận Doanh nghiệp Khoa học & Công nghệ"
+    },
+    "img_award_4": {
+      "src": "/uploads/award-cl1-mvjdc59n.png",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Giải thưởng Sao Vàng Đất Việt"
+    }
   },
   "s03_khoa_hoc_cong_nghe": {
     "t1": "01 · KHOA HỌC & CÔNG NGHỆ",
     "t2": "Khoa học là nền tảng, cánh đồng là thước đo",
-    "t3": "Là doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam, Tiến Nông đầu tư bài bản cho Trung tâm Nghiên cứu Phát triển KH&CN Tiến Nông. Phòng thí nghiệm đạt chuẩn ISO/IEC 17025:2017 (số hiệu VILAS 1519 & VALAS 262).  Mỗi công thức đều được nghiên cứu trên đất, trên cây trồng và kiểm chứng tại đồng ruộng trước khi đến với nhà nông.",
+    "t3": "Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam. Mỗi công thức được nghiên cứu trên đất, trên cây và kiểm chứng ngoài đồng ruộng trước khi đến tay nhà nông.",
     "img_rd_main_1": {
       "focus": "44% 100%",
       "zoom": "104",
@@ -94,7 +118,33 @@
     "t19": "đề tài nghiên cứu",
     "t20": "+10.000",
     "t21": "mẫu đất phân tích/năm",
-    "t22": "Tìm hiểu Khoa học & Công nghệ →"
+    "t22": "Tìm hiểu Khoa học & Công nghệ →",
+    "slides": [
+      {
+        "src": "/uploads/rd-main-mvc6bady.jpg",
+        "focus": "44% 100%",
+        "zoom": "104",
+        "alt": "Phòng thí nghiệm VILAS 1519 đang vận hành"
+      },
+      {
+        "src": "/uploads/1787133389214_1938732335951729561_g8794559970032179314_b9d1a42b3cb8de8e98cb04a71d50f1c1.jpg",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Kỹ thuật viên phân tích mẫu bằng kính hiển vi"
+      },
+      {
+        "src": "/uploads/a7.jpg",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Phòng thí nghiệm Trung tâm Nghiên cứu Phát triển KH&CN Tiến Nông"
+      },
+      {
+        "src": "/uploads/vilas-mvhvkkg5.jpg",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Thiết bị phân tích hiện đại trong phòng thí nghiệm"
+      }
+    ]
   },
   "s04_giai_phap_theo_doi_tuong": {
     "t1": "02 · GIẢI PHÁP",
@@ -106,7 +156,7 @@
       "src": "/uploads/1787621607381_4445349068653320489_4445349068653320489_75b857d348895d6d77ae03cf39df872a.jpg"
     },
     "t3": "Nhà nông",
-    "t4": "Giải pháp dinh dưỡng theo cây trồng, quy trình bón phân khoa học và đội ngũ kỹ sư tư vấn tận nơi.",
+    "t4": "Giải pháp dinh dưỡng theo cây trồng\nQuy trình bón phân khoa học\nKỹ sư tư vấn tận nơi",
     "t5": "Giải pháp theo cây trồng →",
     "img_aud_dealer_1": {
       "focus": "center",
@@ -115,7 +165,7 @@
       "src": "/uploads/phục vụ nông dân.jpeg"
     },
     "t6": "Đại lý & Nhà phân phối",
-    "t7": "→ Chính sách hợp tác minh bạch\n→ Chương trình hỗ trợ bán hàng linh hoạt\n→ Bộ sản phẩm đa dạng",
+    "t7": "Chính sách hợp tác minh bạch\nChương trình hỗ trợ bán hàng linh hoạt\nBộ sản phẩm đa dạng",
     "t8": "Trở thành đại lý →",
     "img_aud_project_1": {
       "focus": "50% 0%",
@@ -124,7 +174,7 @@
       "src": "/uploads/aud-project-mvger7ed.jpg"
     },
     "t9": "Khách hàng dự án",
-    "t10": "Giải pháp dinh dưỡng phù hợp cho sân golf, cảnh quan đô thị, khu công nghiệp và nông nghiệp công nghệ cao.",
+    "t10": "Sân golf, cảnh quan đô thị\nKhu công nghiệp\nNông nghiệp công nghệ cao",
     "t11": "Yêu cầu tư vấn dự án →",
     "img_aud_export_1": {
       "focus": "23.5% 40.9%",
@@ -133,7 +183,7 @@
       "src": "/uploads/aud-export-mvhrkkbs.jpg"
     },
     "t12": "Hợp tác quốc tế",
-    "t13": "Là đối tác với bạn hàng từ hơn 10 quốc gia, năng lực cung ứng ổn định 650.000 tấn mỗi năm.",
+    "t13": "Bạn hàng tại hơn 10 quốc gia\nCung ứng ổn định 650.000 tấn/năm\nSản xuất theo ISO 9001 & ISO 14001",
     "t14": "Hợp tác xuất khẩu →",
     "org_eyebrow": "HỘI NÔNG DÂN · LIÊN MINH HỢP TÁC XÃ",
     "org_title": "Hợp tác tổ chức chính trị – xã hội",
@@ -256,7 +306,21 @@
     "t7": "Hoằng Phú, Thanh Hoá",
     "t8": "Nhà máy Tiến Nông Gia Lai",
     "t9": "Chư Sê, Gia Lai",
-    "t10": "Khám phá hệ thống nhà máy →"
+    "t10": "Khám phá hệ thống nhà máy →",
+    "highlights": [
+      {
+        "value": "650.000 tấn/năm",
+        "label": "Tổng công suất 3 nhà máy"
+      },
+      {
+        "value": "ISO 9001:2015",
+        "label": "Quản lý chất lượng"
+      },
+      {
+        "value": "ISO 14001:2015",
+        "label": "Quản lý môi trường"
+      }
+    ]
   },
   "s07_con_nguoi": {
     "img_people_1_1": {
@@ -280,7 +344,7 @@
     "t1": "05 · CON NGƯỜI",
     "t2": "Gắn bó bền lâu, cùng phát triển",
     "t3": "Nhiều cán bộ, nhân viên đã đồng hành cùng Tiến Nông hơn 20 năm. Chúng tôi xây dựng môi trường làm việc gần gũi, chế độ đãi ngộ xứng đáng và sự ghi nhận dành cho mỗi chặng đường cống hiến.",
-    "t4": "Lương thưởng không giới hạn",
+    "t4": "Thu nhập xứng đáng, minh bạch",
     "t5": "Gắn với hiệu quả công việc và thâm niên gắn bó",
     "t6": "Thăm quan, học tập kinh nghiệm",
     "t7": "Chương trình dành cho toàn thể cán bộ, nhân viên",
@@ -326,5 +390,18 @@
     "t2": "Tất cả tin tức →"
   },
   "product_tab_line": "Theo dòng sản phẩm",
-  "product_tab_crop": "Theo cây trồng"
+  "product_tab_crop": "Theo cây trồng",
+  "product_banner": {
+    "image": {
+      "src": "/uploads/SX4.jpg",
+      "focus": "50% 55%",
+      "zoom": "100",
+      "alt": "Sản phẩm Tiến Nông xuất xưởng từ nhà máy"
+    },
+    "eyebrow": "SẢN PHẨM TIẾN NÔNG",
+    "title": "Dinh dưỡng chuẩn khoa học cho mọi mùa vụ",
+    "text": "Phân bón chuyên dụng, đa dụng, hữu cơ và công nghệ cao, sản xuất theo ISO 9001 & ISO 14001.",
+    "button": "Xem sản phẩm →",
+    "link": "/san-pham/"
+  }
 }

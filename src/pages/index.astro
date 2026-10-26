@@ -1,10 +1,11 @@
 ---
 import raw from '../content/pages/trang-chu.json';
-import { withDefaults } from '../lib/content';
+import { isFilled, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Tabs from '../components/Tabs.astro';
+import Slideshow from '../components/Slideshow.astro';
 import { link, url } from '../lib/routes';
 import { CATEGORIES, getNews, getPress, isPress, newsLinkAttrs, newsUrl } from '../lib/news';
 import newsRaw from '../content/pages/tin-tuc.json';
@@ -14,6 +15,13 @@ const c = withDefaults(raw, 'src/content/pages/trang-chu.json');
 const latest = (await getNews()).filter((n) => !isPress(n)).slice(0, 3);
 const press = await getPress(3);
 const newsPage = withDefaults(newsRaw, 'src/content/pages/tin-tuc.json');
+const F = 'src/content/pages/trang-chu.json';
+const u = c.s02_uy_tin;
+const homeAwards = [[u.t9, u.t10, u.img_award_1, 1], [u.t11, u.t12, u.img_award_2, 2], [u.t13, u.t14, u.img_award_3, 3], [u.t15, u.t16, u.img_award_4, 4]] as const;
+/** Card text written one point per line ("→ " in front is optional). */
+const points = (v: string) => (v || '').split('\n').map((l) => l.replace(/^\s*(→|-|•)\s*/, '').trim()).filter(Boolean);
+const banner = c.product_banner;
+const hasBanner = isFilled(banner?.image?.src);
 
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
@@ -55,12 +63,12 @@ const newsPage = withDefaults(newsRaw, 'src/content/pages/tin-tuc.json');
 <div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_uy_tin.t5}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s02_uy_tin.t6}</span></div>
 <div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_uy_tin.t7}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s02_uy_tin.t8}</span></div>
 </div>
-<div class="awards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 84px)/4),calc((1084px - 100%)*999),calc((100% - 28px)/2)),1fr));gap:20px 28px;padding-top:24px;border-top:1px solid var(--border-default)">
-<div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;width:6px;align-self:stretch;min-height:44px;border-radius:3px;background:var(--amber-400)"></span><span style="display:flex;flex-direction:column;font:700 14px/1.45 var(--font-body);text-transform:uppercase;letter-spacing:.03em">{c.s02_uy_tin.t9}<span style="font-weight:600;color:var(--text-secondary)">{c.s02_uy_tin.t10}</span></span></div>
-<div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;width:6px;align-self:stretch;min-height:44px;border-radius:3px;background:var(--amber-400)"></span><span style="display:flex;flex-direction:column;font:700 14px/1.45 var(--font-body);text-transform:uppercase;letter-spacing:.03em">{c.s02_uy_tin.t11}<span style="font-weight:600;color:var(--text-secondary)">{c.s02_uy_tin.t12}</span></span></div>
-<div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;width:6px;align-self:stretch;min-height:44px;border-radius:3px;background:var(--amber-400)"></span><span style="display:flex;flex-direction:column;font:700 14px/1.45 var(--font-body);text-transform:uppercase;letter-spacing:.03em">{c.s02_uy_tin.t13}<span style="font-weight:600;color:var(--text-secondary)">{c.s02_uy_tin.t14}</span></span></div>
-<div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;width:6px;align-self:stretch;min-height:44px;border-radius:3px;background:var(--amber-400)"></span><span style="display:flex;flex-direction:column;font:700 14px/1.45 var(--font-body);text-transform:uppercase;letter-spacing:.03em">{c.s02_uy_tin.t15}<span style="font-weight:600;color:var(--text-secondary)">{c.s02_uy_tin.t16}</span></span></div>
-</div>
+<ul class="home-awards">
+{homeAwards.filter(([title]) => isFilled(title)).map(([title, sub, img, n]) => <li class="home-award">
+<div class="home-award__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`home-award-${n}`} shape="rect" fit="contain" placeholder={title} image={img} cms={`${F}#s02_uy_tin.img_award_${n}`} sizes="200px" /></div>
+<strong class="home-award__title">{title}</strong>{isFilled(sub) && <span class="home-award__sub">{sub}</span>}
+</li>)}
+</ul>
 <span style="font-size:13px;color:var(--text-tertiary)">{c.s02_uy_tin.t17} <a href={url('ve-tien-nong', 'thanh-tuu')}>{c.s02_uy_tin.t18}</a></span>
 </div></section>
 
@@ -74,12 +82,14 @@ const newsPage = withDefaults(newsRaw, 'src/content/pages/tin-tuc.json');
 <p style="margin:0;font-size:var(--fs-lead);color:var(--green-100);text-wrap:pretty">{c.s03_khoa_hoc_cong_nghe.t3}</p>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px">
-<div style="position:relative;height:420px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="rd-main" shape="rounded" radius="16" placeholder="Phòng thí nghiệm VILAS 1519 đang vận hành" image={c.s03_khoa_hoc_cong_nghe.img_rd_main_1} cms="src/content/pages/trang-chu.json#s03_khoa_hoc_cong_nghe.img_rd_main_1" /></div>
+<div class="rd-show" style="position:relative;height:420px">{c.s03_khoa_hoc_cong_nghe.slides.some((x) => x?.src)
+  ? <Slideshow id="rd-slide" slides={c.s03_khoa_hoc_cong_nghe.slides} cms={`${F}#s03_khoa_hoc_cong_nghe.slides`} label="Ảnh phòng thí nghiệm Tiến Nông" />
+  : <ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="rd-main" shape="rounded" radius="16" placeholder="Phòng thí nghiệm VILAS 1519 đang vận hành" image={c.s03_khoa_hoc_cong_nghe.img_rd_main_1} cms="src/content/pages/trang-chu.json#s03_khoa_hoc_cong_nghe.img_rd_main_1" />}</div>
 <div class="g-stack" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px">
-<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">{c.s03_khoa_hoc_cong_nghe.t4}</span><strong style="font-size:18px;line-height:1.3">{c.s03_khoa_hoc_cong_nghe.t5}</strong><span style="color:var(--green-100);font-size:14px">{c.s03_khoa_hoc_cong_nghe.t6}</span></div>
-<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">{c.s03_khoa_hoc_cong_nghe.t7}</span><strong style="font-size:18px;line-height:1.3">{c.s03_khoa_hoc_cong_nghe.t8}</strong><span style="color:var(--green-100);font-size:14px">{c.s03_khoa_hoc_cong_nghe.t9}</span></div>
-<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">{c.s03_khoa_hoc_cong_nghe.t10}</span><strong style="font-size:18px;line-height:1.3">{c.s03_khoa_hoc_cong_nghe.t11}</strong><span style="color:var(--green-100);font-size:14px">{c.s03_khoa_hoc_cong_nghe.t12}</span></div>
-<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">{c.s03_khoa_hoc_cong_nghe.t13}</span><strong style="font-size:18px;line-height:1.3">{c.s03_khoa_hoc_cong_nghe.t14}</strong><span style="color:var(--green-100);font-size:14px">{c.s03_khoa_hoc_cong_nghe.t15}</span></div>
+<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">{c.s03_khoa_hoc_cong_nghe.t4}</span><strong style="font-size:18px;line-height:1.3">{c.s03_khoa_hoc_cong_nghe.t5}</strong></div>
+<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">{c.s03_khoa_hoc_cong_nghe.t7}</span><strong style="font-size:18px;line-height:1.3">{c.s03_khoa_hoc_cong_nghe.t8}</strong></div>
+<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">{c.s03_khoa_hoc_cong_nghe.t10}</span><strong style="font-size:18px;line-height:1.3">{c.s03_khoa_hoc_cong_nghe.t11}</strong></div>
+<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">{c.s03_khoa_hoc_cong_nghe.t13}</span><strong style="font-size:18px;line-height:1.3">{c.s03_khoa_hoc_cong_nghe.t14}</strong></div>
 </div></div>
 <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:28px;border-top:1px solid var(--green-700)">
 <div style="display:flex;gap:40px;flex-wrap:wrap">
@@ -97,10 +107,10 @@ const newsPage = withDefaults(newsRaw, 'src/content/pages/tin-tuc.json');
 <h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s04_giai_phap_theo_doi_tuong.t2}</h2>
 </div>
 <div class="aud-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 60px)/4),calc((1100px - 100%)*999),calc((100% - 20px)/2)),1fr));gap:20px">
-<a href={url('giai-phap')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-farmer" shape="rect" placeholder="Nông dân trên ruộng" image={c.s04_giai_phap_theo_doi_tuong.img_aud_farmer_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_farmer_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t3}</strong><span style="color:var(--text-secondary);flex:1">{c.s04_giai_phap_theo_doi_tuong.t4}</span><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t5}</span></div></a>
-<a href={url('lien-he', 'dai-ly')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-dealer" shape="rect" placeholder="Cửa hàng đại lý vật tư nông nghiệp" image={c.s04_giai_phap_theo_doi_tuong.img_aud_dealer_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_dealer_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t6}</strong><span style="color:var(--text-secondary);flex:1">{c.s04_giai_phap_theo_doi_tuong.t7} </span><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t8}</span></div></a>
-<a href={url('giai-phap-du-an')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-project" shape="rect" placeholder="Sân golf / cảnh quan đô thị / nhà kính" image={c.s04_giai_phap_theo_doi_tuong.img_aud_project_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_project_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t9}</strong><span style="color:var(--text-secondary);flex:1">{c.s04_giai_phap_theo_doi_tuong.t10}</span><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t11}</span></div></a>
-<a href={url('lien-he')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-export" shape="rect" placeholder="Container hàng xuất khẩu / kho" image={c.s04_giai_phap_theo_doi_tuong.img_aud_export_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_export_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t12}</strong><span style="color:var(--text-secondary);flex:1">{c.s04_giai_phap_theo_doi_tuong.t13}</span><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t14}</span></div></a>
+<a href={url('giai-phap')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-farmer" shape="rect" placeholder="Nông dân trên ruộng" image={c.s04_giai_phap_theo_doi_tuong.img_aud_farmer_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_farmer_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t3}</strong><ul class="aud-points">{points(c.s04_giai_phap_theo_doi_tuong.t4).slice(0, 3).map((l) => <li>{l}</li>)}</ul><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t5}</span></div></a>
+<a href={url('lien-he', 'dai-ly')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-dealer" shape="rect" placeholder="Cửa hàng đại lý vật tư nông nghiệp" image={c.s04_giai_phap_theo_doi_tuong.img_aud_dealer_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_dealer_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t6}</strong><ul class="aud-points">{points(c.s04_giai_phap_theo_doi_tuong.t7).slice(0, 3).map((l) => <li>{l}</li>)}</ul><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t8}</span></div></a>
+<a href={url('giai-phap-du-an')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-project" shape="rect" placeholder="Sân golf / cảnh quan đô thị / nhà kính" image={c.s04_giai_phap_theo_doi_tuong.img_aud_project_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_project_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t9}</strong><ul class="aud-points">{points(c.s04_giai_phap_theo_doi_tuong.t10).slice(0, 3).map((l) => <li>{l}</li>)}</ul><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t11}</span></div></a>
+<a href={url('lien-he')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-export" shape="rect" placeholder="Container hàng xuất khẩu / kho" image={c.s04_giai_phap_theo_doi_tuong.img_aud_export_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_export_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t12}</strong><ul class="aud-points">{points(c.s04_giai_phap_theo_doi_tuong.t13).slice(0, 3).map((l) => <li>{l}</li>)}</ul><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t14}</span></div></a>
 </div>
 <article class="org-card" style="display:grid;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden">
 <div style="position:relative;min-height:260px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-org" shape="rect" placeholder={c.s04_giai_phap_theo_doi_tuong.org_image.alt} image={c.s04_giai_phap_theo_doi_tuong.org_image} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.org_image" /></div>
@@ -113,6 +123,20 @@ const newsPage = withDefaults(newsRaw, 'src/content/pages/tin-tuc.json');
 </div>
 </article>
 </div></section>
+
+{(hasBanner || isFilled(banner?.title)) && <section class="promo" aria-label={banner.title || banner.image?.alt || 'Sản phẩm Tiến Nông'}>
+<a href={link(banner.link || '/san-pham/')} class="promo__link">
+<div class="promo__photo" data-needs-photos={hasBanner ? undefined : ''}><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="promo-banner" shape="rect" placeholder="Banner giới thiệu sản phẩm" image={banner.image} cms={`${F}#product_banner.image`} sizes="100vw" /></div>
+{isFilled(banner.title) && <>
+<div class="promo__scrim" aria-hidden="true"></div>
+<div class="promo__copy">
+{isFilled(banner.eyebrow) && <span class="promo__eyebrow">{banner.eyebrow}</span>}
+<strong class="promo__title">{banner.title}</strong>
+{isFilled(banner.text) && <span class="promo__text">{banner.text}</span>}
+{isFilled(banner.button) && <span class="promo__btn">{banner.button}</span>}
+</div></>}
+</a>
+</section>}
 
 <section id="san-pham" style="background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
@@ -146,12 +170,14 @@ const newsPage = withDefaults(newsRaw, 'src/content/pages/tin-tuc.json');
 <div style="background:var(--surface-card);border-radius:var(--radius-xl);padding:clamp(28px,3vw,40px);max-width:560px;display:flex;flex-direction:column;gap:16px;pointer-events:auto;box-shadow:var(--shadow-lg)">
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s06_nha_may_xanh.t1}</span>
 <h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s06_nha_may_xanh.t2}</h2>
-<p style="margin:0;color:var(--text-secondary);text-wrap:pretty">{c.s06_nha_may_xanh.t3}</p>
-<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding-top:12px;border-top:1px solid var(--border-default)">
-<div><strong style="display:block">{c.s06_nha_may_xanh.t4}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s06_nha_may_xanh.t5}</span></div>
-<div><strong style="display:block">{c.s06_nha_may_xanh.t6}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s06_nha_may_xanh.t7}</span></div>
-<div><strong style="display:block">{c.s06_nha_may_xanh.t8}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s06_nha_may_xanh.t9}</span></div>
-</div>
+{c.s06_nha_may_xanh.highlights.length > 0
+  ? <ul class="green-highlights">{c.s06_nha_may_xanh.highlights.filter((h) => isFilled(h.value)).map((h) => <li><strong>{h.value}</strong>{isFilled(h.label) && <span>{h.label}</span>}</li>)}</ul>
+  : <p style="margin:0;color:var(--text-secondary)">{c.s06_nha_may_xanh.t3}</p>}
+<ul class="factories">
+<li><span class="factories__kind">Nhà máy</span><strong>{c.s06_nha_may_xanh.t4.replace(/^Nhà máy\s+/i, '')}</strong><span class="factories__place">{c.s06_nha_may_xanh.t5}</span></li>
+<li><span class="factories__kind">Nhà máy</span><strong>{c.s06_nha_may_xanh.t6.replace(/^Nhà máy\s+/i, '')}</strong><span class="factories__place">{c.s06_nha_may_xanh.t7}</span></li>
+<li><span class="factories__kind">Nhà máy</span><strong>{c.s06_nha_may_xanh.t8.replace(/^Nhà máy\s+/i, '')}</strong><span class="factories__place">{c.s06_nha_may_xanh.t9}</span></li>
+</ul>
 <a href={url('lien-he', 'nha-may')} style="font-weight:600">{c.s06_nha_may_xanh.t10}</a>
 </div></div></section>
 
@@ -241,6 +267,50 @@ const newsPage = withDefaults(newsRaw, 'src/content/pages/tin-tuc.json');
     .crop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
     .crop-grid > a { height: 150px !important; }
   }
+  /* Achievements: photo above the words, centred, no frames */
+  .home-awards { list-style: none; margin: 0; padding: 28px 0 0; border-top: 1px solid var(--border-default); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 24px; }
+  .home-award { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+  .home-award__img { position: relative; width: 100%; max-width: 180px; height: 120px; margin-bottom: 8px; }
+  .home-award__img :global(.img-slot__frame) { background: transparent !important; }
+  .home-award__img :global(.img-slot__img) { mix-blend-mode: multiply; }
+  .home-award__title { font: 700 15px/1.4 var(--font-display); text-transform: uppercase; letter-spacing: .02em; text-align: center; }
+  .home-award__sub { font-size: 14px; color: var(--text-secondary); text-align: center; text-align-last: center; }
+  @media (max-width: 899.98px) { .home-awards { grid-template-columns: repeat(2, minmax(0, 1fr)); } .home-award__img { height: 100px; } }
+
+  /* Audience cards: three short points */
+  .aud-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; flex: 1; color: var(--text-secondary); font-size: 15px; line-height: 1.45; }
+  .aud-points li { position: relative; padding-left: 18px; text-align: start; }
+  .aud-points li::before { content: ''; position: absolute; left: 2px; top: .55em; width: 7px; height: 7px; border-radius: 50%; background: var(--green-500); }
+
+  /* Full-width product banner */
+  .promo { position: relative; background: var(--green-900); }
+  .promo__link { position: relative; display: block; min-height: clamp(280px, 34vw, 480px); color: #fff; text-decoration: none; overflow: hidden; }
+  .promo__link:hover { text-decoration: none; color: #fff; }
+  .promo__photo { position: absolute; inset: 0; }
+  .promo__photo :global(.img-slot__img) { transition: scale 1.2s var(--ease-out); }
+  .promo__link:hover .promo__photo :global(.img-slot__img) { scale: 1.03; }
+  .promo__scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2, 53, 26, .88) 0%, rgba(2, 53, 26, .55) 45%, rgba(2, 53, 26, 0) 80%); }
+  .promo__copy { position: relative; max-width: 1280px; margin: 0 auto; min-height: inherit; padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; }
+  .promo__eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; color: var(--green-100); }
+  .promo__title { font: var(--type-h2); max-width: 15em; text-wrap: balance; }
+  .promo__text { max-width: 34em; color: var(--green-50); font-size: var(--fs-lead); line-height: 1.55; text-align: start; }
+  .promo__btn { margin-top: 6px; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: var(--radius-md); background: #fff; color: var(--green-700); font-weight: 700; }
+  @media (max-width: 767.98px) { .promo__scrim { background: linear-gradient(0deg, rgba(2, 53, 26, .9) 0%, rgba(2, 53, 26, .55) 60%, rgba(2, 53, 26, .2) 100%); } .promo__copy { justify-content: flex-end; } }
+
+  /* Green production: the two facts that matter, then the three factories on one grid */
+  .green-highlights { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .green-highlights li { display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; border-radius: 14px; background: var(--green-50); border: 1px solid var(--green-100); }
+  .green-highlights li:first-child { flex-basis: 100%; background: var(--green-500); border-color: var(--green-500); color: #fff; }
+  .green-highlights strong { font: 700 20px/1.2 var(--font-display); color: var(--green-800); white-space: nowrap; }
+  .green-highlights li:first-child strong { font: 800 clamp(28px, 2.8vw, 36px)/1.1 var(--font-display); color: #fff; }
+  .green-highlights span { font-size: 13px; color: var(--text-secondary); text-align: start; }
+  .green-highlights li:first-child span { color: var(--green-50); font-size: 14px; }
+  .factories { list-style: none; margin: 0; padding: 14px 0 0; border-top: 1px solid var(--border-default); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .factories li { display: flex; flex-direction: column; gap: 2px; text-align: start; }
+  .factories__kind { font: var(--type-eyebrow); letter-spacing: .06em; text-transform: uppercase; color: var(--green-700); font-size: 11px; }
+  .factories strong { font: 700 15px/1.3 var(--font-display); }
+  .factories__place { font-size: 13px; color: var(--text-secondary); }
+  @media (max-width: 479.98px) { .green-highlights li:not(:first-child) { flex: 1 1 0; min-width: 0; padding: 10px 12px; } .green-highlights strong { font-size: 16px; } .factories { grid-template-columns: minmax(0, 1fr); gap: 10px; } }
 </style>
 <script>
   // Hero slider: manual only (arrows, dots, swipe); slides without a photo are dropped on public pages.

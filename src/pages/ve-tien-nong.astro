@@ -1,92 +1,99 @@
 ---
 import raw from '../content/pages/ve-tien-nong.json';
+import siteRaw from '../content/site.json';
 import { isFilled, stripPlaceholders, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
-import { link, url } from '../lib/routes';
+import PageHero from '../components/PageHero.astro';
+import { asset, link, url } from '../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
+const site = withDefaults(siteRaw, 'src/content/site.json');
+const F = 'src/content/pages/ve-tien-nong.json';
+const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
 
+const stats = [[c.s01_hero.t6, c.s01_hero.t7], [c.s01_hero.t8, c.s01_hero.t9], [c.s01_hero.t10, c.s01_hero.t11],
+  [c.s01_hero.t12, c.s01_hero.t13], [c.s01_hero.t14, c.s01_hero.t15], [c.s01_hero.t16, c.s01_hero.t17]].filter(([v]) => isFilled(v));
+const t = c.s02_thu_ngo;
+const m = c.s03_su_menh_gia_tri;
+const awards = [...c.s06_thanh_tuu.featured_awards.map((w, k) => ({ ...w, big: true, path: `s06_thanh_tuu.featured_awards.${k}.image` })),
+  ...c.s06_thanh_tuu.awards.map((w, k) => ({ ...w, big: false, path: `s06_thanh_tuu.awards.${k}.image` }))].filter((w) => isFilled(w.title));
+const caps = c.s07_nang_luc.capabilities.filter((x) => isFilled(x.title));
+const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter((p) => isFilled(p.name))
+  .sort((a, b) => Number(!!b.featured) - Number(!!a.featured));
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Về Tiến Nông">
-<section style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) 0;display:flex;flex-direction:column;gap:clamp(28px,4vw,48px)">
-<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_hero.t1}</a> {c.s01_hero.t2}</span>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:16px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s01_hero.t3}</span>
-<h1 style="margin: 0; font:var(--type-h1); letter-spacing: -.015em; max-width:794px;text-wrap:balance">{c.s01_hero.t4}</h1><p style="margin: 0; font-size:var(--fs-lead); color: var(--text-secondary);  text-wrap: pretty; width: min(739px, 100%); min-height: 90px">{c.s01_hero.t5}</p>
-</div>
+<PageHero id="about-hero" image={c.s01_hero.img_about_hero_1} cms={`${F}#s01_hero.img_about_hero_1`} placeholder="Ảnh tập thể cán bộ, nhân viên trước trụ sở Tiến Nông"
+  crumbs={[{ label: c.s01_hero.t1, href: url('trang-chu') }, { label: c.s01_hero.t2.replace(/^\s*\/\s*/, '') }]}
+  eyebrow={c.s01_hero.t3} title={c.s01_hero.t4} lead={c.s01_hero.t5} />
 
+{stats.length > 0 && <section class="about-stats">
+<div class="about-stats__row">
+{stats.map(([v, l]) => <div class="about-stat"><span class="about-stat__value" style="font:var(--type-stat)">{v}</span><span class="about-stat__label">{l}</span></div>)}
+</div></section>}
+
+<section id="thu-ngo" class="ceo">
+<div class="ceo__bg" aria-hidden="true"></div>
+<div class="ceo__wrap">
+<div class="ceo__photo"><ImageSlot style={fill} id="ceo-portrait" shape="rounded" radius="24" placeholder="Chân dung Tổng Giám đốc Nguyễn Hồng Phong" image={t.img_ceo_portrait_1} cms={`${F}#s02_thu_ngo.img_ceo_portrait_1`} sizes="(max-width: 767px) 80vw, 420px" /></div>
+<div class="ceo__text">
+<h2 class="ceo__heading"><span>{t.heading_small || t.t1}</span>{t.heading}</h2>
+<div class="ceo__letter">
+<span class="ceo__quote ceo__quote--open" aria-hidden="true">“</span>
+{isFilled(t.t2) && <p class="ceo__lead">{t.t2.replace(/^[“"]\s*|\s*[”"]$/g, '')}</p>}
+<p class="ceo__body">{t.t3}</p>
 </div>
-<div style="position:relative;height:clamp(280px,40vw,560px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="about-hero" shape="rounded" radius="24" placeholder="Ảnh tập thể cán bộ, nhân viên trước trụ sở Tiến Nông" image={c.s01_hero.img_about_hero_1} cms="src/content/pages/ve-tien-nong.json#s01_hero.img_about_hero_1" /></div>
+<div class="ceo__sign"><span>{t.t5} {site.company.name}</span><strong>{t.t4}</strong></div>
+<span class="ceo__quote ceo__quote--close" aria-hidden="true">”</span>
 </div>
-<div style="max-width:1280px;margin:0 auto;padding:40px clamp(20px,4vw,56px) 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px">
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t6}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t7}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t8}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t9}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t10}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t11}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t12}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t13}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t14}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t15}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t16}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t17}</span></div>
+<div class="ceo__band">
+<div class="ceo__badge"><span class="ceo__logo"><img src={asset('assets/logo-header.png')} alt="Tiến Nông" width="147" height="120" /></span><span class="ceo__slogan">{t.slogan}</span></div>
+</div>
 </div>
 </section>
 
-<nav class="subnav" aria-label="Mục lục trang" style="position:sticky;top:var(--hdr-h,108px);z-index:20;background:var(--surface-page);border-top:1px solid var(--border-default);border-bottom:1px solid var(--border-default)">
-<div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px);display:flex;gap:28px;overflow-x:auto;white-space:nowrap;font-size:14px;font-weight:600;scrollbar-width:none">
-<a href="#thu-ngo" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t18}</a><a href="#su-menh" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t19}</a><a href="#lich-su" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t20}</a><a href="#lanh-dao" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t21}</a><a href="#thanh-tuu" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t22}</a><a href="#nang-luc" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t23}</a><a href="#he-sinh-thai" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t24}</a>
-</div></nav>
-
-<section id="thu-ngo" style="scroll-margin-top:160px">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:48px 80px;align-items:center">
-<div style="display:flex;flex-direction:column;gap:16px;max-width:420px">
-<div style="position:relative;aspect-ratio:4/5"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ceo-portrait" shape="rounded" radius="20" placeholder="Chân dung Tổng Giám đốc Nguyễn Hồng Phong" image={c.s02_thu_ngo.img_ceo_portrait_1} cms="src/content/pages/ve-tien-nong.json#s02_thu_ngo.img_ceo_portrait_1" /></div>
+<section id="su-menh" class="mission">
+<div class="mission__photo"><ImageSlot style={fill} id="mission-bg" shape="rect" placeholder="Ảnh nền sứ mệnh" image={m.background} cms={`${F}#s03_su_menh_gia_tri.background`} sizes="100vw" /></div>
+<div class="mission__scrim" aria-hidden="true"></div>
+<div class="mission__inner">
+<div class="mission__cols">
+<div><span class="mission__eyebrow">{m.t1}</span><span class="mission__statement">{m.t2}</span></div>
+<div><span class="mission__eyebrow">{m.t3}</span><span class="mission__statement">{m.t4}</span></div>
+<div><span class="mission__eyebrow">{m.t5}</span><span class="mission__statement">{m.t6}</span></div>
 </div>
-<div style="display:flex;flex-direction:column;gap:24px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s02_thu_ngo.t1}</span>
-<p style="margin: 0; font:var(--type-quote); text-wrap: pretty; ">{c.s02_thu_ngo.t2}</p>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s02_thu_ngo.t3}</p>
-<div style="display:flex;flex-direction:column;padding-top:16px;border-top:1px solid var(--border-default)"><strong style="font-size:17px">{c.s02_thu_ngo.t4}</strong><span style="color:var(--text-secondary)">{c.s02_thu_ngo.t5}</span></div>
+<div class="mission__values">
+<span class="mission__eyebrow">{m.t7}</span>
+<div class="values-grid">
+<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t8}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t9}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t10}</span></div>
+<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t11}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t12}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t13}</span></div>
+<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t14}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t15}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t16}</span></div>
+<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t17}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t18}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t19}</span></div>
+{c.s03_su_menh_gia_tri.t21 && <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t20}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t21}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t22}</span></div>}
+</div>
 </div></div></section>
 
-<section id="su-menh" style="scroll-margin-top:160px;background:var(--green-800);color:#fff">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:56px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 64px)/3),calc((964px - 100%)*999),100%),1fr));gap:32px">
-<div style="display:flex;flex-direction:column;gap:12px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s03_su_menh_gia_tri.t1}</span><span style="font:var(--type-h3);text-wrap:balance">{c.s03_su_menh_gia_tri.t2}</span></div>
-<div style="display:flex;flex-direction:column;gap:12px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s03_su_menh_gia_tri.t3}</span><span style="font:var(--type-h3);text-wrap:balance">{c.s03_su_menh_gia_tri.t4}</span></div>
-<div style="display:flex;flex-direction:column;gap:12px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s03_su_menh_gia_tri.t5}</span><span style="font:var(--type-h3);text-wrap:balance">{c.s03_su_menh_gia_tri.t6}</span></div>
+<section id="lich-su" class="hist">
+<div class="hist__inner" data-picker data-pick-autoplay>
+<div class="hist__head">
+<div class="hist__title"><span class="eyebrow-tag">{c.s04_lich_su.t1}</span><h2>{c.s04_lich_su.t2}</h2></div>
+<div class="hist__arrows"><button type="button" data-pick-step="-1" aria-label="Mốc trước">←</button><button type="button" data-pick-step="1" aria-label="Mốc sau">→</button></div>
 </div>
-<div style="display:flex;flex-direction:column;gap:24px;padding-top:40px;border-top:1px solid var(--green-700)">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s03_su_menh_gia_tri.t7}</span>
-<div class="values-grid">
-<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t8}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t9}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t10}</span></div>
-<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t11}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t12}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t13}</span></div>
-<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t14}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t15}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t16}</span></div>
-<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t17}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t18}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t19}</span></div>
-{c.s03_su_menh_gia_tri.t21 && <div style="background:var(--green-700);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t20}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t21}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t22}</span></div>}
-</div></div></div></section>
-
-<section id="lich-su" style="scroll-margin-top:160px;background:var(--surface-card)">
-<div data-picker style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:640px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s04_lich_su.t1}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s04_lich_su.t2}</h2>
+<div class="hist__stage">
+{c.milestones.map((ms, k) => (
+<div role="tabpanel" class="hist__panel" data-pick-panel={k} hidden={k !== 0} aria-label={ms.year}>
+<div class="hist__photo"><ImageSlot style={fill} id={`ms-${k}`} shape="rounded" radius="20" placeholder={ms.image.alt} image={ms.image} cms={`${F}#milestones.${k}.image`} sizes="(max-width: 767px) 92vw, 600px" /></div>
+<div class="hist__text">
+<span class="hist__year" aria-hidden="true">{ms.year}</span>
+<h3>{ms.title}</h3>
+<p>{ms.body}</p>
 </div>
-<div style="display:flex;gap:8px"><button type="button" data-pick-step="-1" aria-label="Mốc trước" style="width:44px;height:44px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);font-size:18px;cursor:pointer">←</button><button type="button" data-pick-step="1" aria-label="Mốc sau" style="width:44px;height:44px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);font-size:18px;cursor:pointer">→</button></div>
 </div>
-<div role="tablist" aria-label="Các mốc lịch sử" style="display:flex;gap:0;overflow-x:auto;border-bottom:1px solid var(--border-default)">
-{c.milestones.map((m, k) => <button type="button" role="tab" class="ms-year" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'} style="flex:1 0 110px;padding:14px 8px;background:none;border:0;border-bottom:3px solid transparent;font:var(--type-num);color:var(--text-tertiary);cursor:pointer">{m.year}</button>)}
-</div>
-{c.milestones.map((m, k) => (
-<div role="tabpanel" data-pick-panel={k} hidden={k !== 0} style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:32px 56px;align-items:center">
-<div style="position:relative;height:360px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`ms-${k}`} shape="rounded" radius="16" placeholder={m.image.alt} image={m.image} cms={`src/content/pages/ve-tien-nong.json#milestones.${k}.image`} /></div>
-<div style="display:flex;flex-direction:column;gap:14px">
-<span style="font:var(--type-stat-xl);color:var(--green-200);overflow-wrap:normal;font-variant-numeric:tabular-nums">{m.year}</span>
-<h3 style="margin: 0; font:var(--type-num); text-wrap: balance; max-width:382px">{m.title}</h3>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{m.body}</p>
-</div></div>
 ))}
+</div>
+<div class="hist__rail" role="tablist" aria-label="Các mốc lịch sử">
+{c.milestones.map((ms, k) => <button type="button" role="tab" class="hist__stop" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'}><span class="hist__dot" aria-hidden="true"></span><span class="hist__label">{ms.year}</span></button>)}
+</div>
 </div></section>
 
 <section id="lanh-dao" style="scroll-margin-top:160px">
@@ -109,58 +116,74 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 </div></div>}
 </div></section>
 
-<section id="thanh-tuu" style="scroll-margin-top:160px;background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:14px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s06_thanh_tuu.t1}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s06_thanh_tuu.t2}</h2>
+
+<section id="thanh-tuu" class="fame">
+<div class="fame__inner">
+<div class="fame__head">
+<span class="eyebrow-tag">{c.s06_thanh_tuu.t1}</span>
+<h2>{c.s06_thanh_tuu.t2}</h2>
+{isFilled(c.s06_thanh_tuu.t3) && <p>{c.s06_thanh_tuu.t3}</p>}
 </div>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s06_thanh_tuu.t3}</p>
-</div>
-{c.s06_thanh_tuu.featured_awards.length > 0 && <div class="awards-featured">
-{c.s06_thanh_tuu.featured_awards.map((w, k) => <div class="award award--big">
-<div class="award__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`award-big-${k}`} shape="rounded" radius="12" fit="contain" placeholder="Ảnh giải thưởng" image={w.image} cms={`src/content/pages/ve-tien-nong.json#s06_thanh_tuu.featured_awards.${k}.image`} /></div>
-<div class="award__text"><span class="award__label">{stripPlaceholders(w.label)}</span><strong class="award__title">{w.title}</strong>{w.detail && <span class="award__detail">{w.detail}</span>}</div>
-</div>)}
-</div>}
-{c.s06_thanh_tuu.awards.length > 0 && <div class="awards-grid">
-{c.s06_thanh_tuu.awards.map((w, k) => <div class="award">
-<div class="award__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`award-${k}`} shape="rounded" radius="10" fit="contain" placeholder="Ảnh giải thưởng" image={w.image} cms={`src/content/pages/ve-tien-nong.json#s06_thanh_tuu.awards.${k}.image`} /></div>
-<div class="award__text"><span class="award__label">{stripPlaceholders(w.label)}</span><strong class="award__title">{w.title}</strong>{w.detail && <span class="award__detail">{w.detail}</span>}</div>
-</div>)}
-</div>}
-<div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:20px 24px;background:var(--surface-sunken);border-radius:var(--radius-lg)">
-<span><strong>{c.s06_thanh_tuu.t27}</strong> {c.s06_thanh_tuu.t28}</span>
-{isFilled(c.s06_thanh_tuu.profile_pdf) && <a href={link(c.s06_thanh_tuu.profile_pdf)} target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex"><Button as="span" variant="secondary">{c.s06_thanh_tuu.t29}</Button></a>}
-</div>
+<ul class="fame__wall">
+{awards.map((w, k) => (
+<li class:list={['fame__item', { 'fame__item--big': w.big }]}>
+<div class="fame__img"><ImageSlot style={fill} id={`fame-${k}`} shape="rect" fit="contain" placeholder="Ảnh giải thưởng" image={w.image} cms={`${F}#${w.path}`} sizes={w.big ? '(max-width: 767px) 80vw, 420px' : '(max-width: 767px) 45vw, 240px'} /></div>
+{isFilled(stripPlaceholders(w.label)) && <span class="fame__label">{stripPlaceholders(w.label)}</span>}
+<strong class="fame__title">{w.title}</strong>
+{isFilled(w.detail) && <span class="fame__detail">{w.detail}</span>}
+</li>
+))}
+</ul>
+{isFilled(c.s06_thanh_tuu.profile_pdf) && <div class="fame__cta"><a href={link(c.s06_thanh_tuu.profile_pdf)} target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex"><Button as="span" variant="secondary">{c.s06_thanh_tuu.t29}</Button></a></div>}
 </div></section>
 
-<section id="nang-luc" style="scroll-margin-top:160px">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:680px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s07_nang_luc.t1}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s07_nang_luc.t2}</h2>
+{caps.length > 0 && <section id="nang-luc" class="cap">
+<div class="cap__inner" data-picker>
+<div class="cap__head">
+<div><span class="eyebrow-tag">{c.s07_nang_luc.t1}</span><h2>{c.s07_nang_luc.t2}</h2></div>
+{caps.length > 1 && <div class="cap__tabs" role="tablist" aria-label="Năng lực">
+{caps.map((x, k) => <button type="button" role="tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'}>{x.tab || x.title}</button>)}
+</div>}
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/3),calc((1008px - 100%)*999),100%),1fr));gap:24px">
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cap-rd" shape="rect" placeholder="Phòng thí nghiệm" image={c.s07_nang_luc.img_cap_rd_1} cms="src/content/pages/ve-tien-nong.json#s07_nang_luc.img_cap_rd_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s07_nang_luc.t3}</span><strong style="font-size:20px;line-height:1.3">{c.s07_nang_luc.t4}</strong><span style="color:var(--text-secondary);flex:1">{c.s07_nang_luc.t5}</span><a href={url('khoa-hoc-cong-nghe')} style="font-weight:600">{c.s07_nang_luc.t6}</a></div></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cap-mfg" shape="rect" placeholder="Dây chuyền sản xuất" image={c.s07_nang_luc.img_cap_mfg_1} cms="src/content/pages/ve-tien-nong.json#s07_nang_luc.img_cap_mfg_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s07_nang_luc.t7}</span><strong style="font-size:20px;line-height:1.3">{c.s07_nang_luc.t8}</strong><span style="color:var(--text-secondary);flex:1">{c.s07_nang_luc.t9}</span><a href="#nang-luc" style="font-weight:600">{c.s07_nang_luc.t10}</a></div></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cap-dist" shape="rect" placeholder="Bản đồ mạng lưới phân phối &amp; xuất khẩu" image={c.s07_nang_luc.img_cap_dist_1} cms="src/content/pages/ve-tien-nong.json#s07_nang_luc.img_cap_dist_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s07_nang_luc.t11}</span><strong style="font-size:20px;line-height:1.3">{c.s07_nang_luc.t12}</strong><span style="color:var(--text-secondary);flex:1">{c.s07_nang_luc.t13}</span><a href={url('lien-he', 'dai-ly')} style="font-weight:600">{c.s07_nang_luc.t14}</a></div></div>
-</div></div></section>
+{caps.map((x, k) => (
+<div role="tabpanel" class="cap__panel" data-pick-panel={k} hidden={k !== 0} aria-label={x.title}>
+<div class="cap__mosaic" data-count={Math.min(4, x.photos.length)}>
+{x.photos.slice(0, 4).map((ph, i) => <div class="cap__tile"><ImageSlot style={fill} id={`cap-${k}-${i}`} shape="rounded" radius="16" placeholder={ph.alt || 'Ảnh năng lực'} image={ph} cms={`${F}#s07_nang_luc.capabilities.${c.s07_nang_luc.capabilities.indexOf(x)}.photos.${i}`} sizes={i === 0 ? '(max-width: 767px) 92vw, 460px' : '(max-width: 767px) 45vw, 280px'} /></div>)}
+</div>
+<div class="cap__body">
+<h3 class="cap__title">{x.title}</h3>
+{isFilled(x.subtitle) && <p class="cap__subtitle">{x.subtitle}</p>}
+{isFilled(x.text) && <p class="cap__text">{x.text}</p>}
+{x.stats.length > 0 && <div class="cap__stats">
+{x.stats.filter((s) => isFilled(s.value)).map((s) => <div class="cap__stat"><span class="cap__stat-value">{s.value}</span><span class="cap__stat-label">{s.label}</span>{isFilled(s.sub) && <span class="cap__stat-sub">{s.sub}</span>}</div>)}
+</div>}
+{x.chips.length > 0 && <div class="cap__chips-wrap">
+{isFilled(x.chips_title) && <span class="cap__chips-title">{x.chips_title}</span>}
+<ul class="cap__chips">{x.chips.filter(isFilled).map((ch) => <li>{ch}</li>)}</ul>
+</div>}
+{isFilled(x.note) && <p class="cap__text">{x.note}</p>}
+{isFilled(x.link) && <a class="cap__more" href={link(x.link)}>{x.link_label || 'Xem thêm'} →</a>}
+</div>
+</div>
+))}
+</div></section>}
 
-<section id="he-sinh-thai" style="scroll-margin-top:160px;background:var(--surface-card);border-top:1px solid var(--border-default)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:640px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s08_he_sinh_thai.t1}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em">{c.s08_he_sinh_thai.t2}</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 64px)/5),calc((1000px - 100%)*999),calc((100% - 32px)/3)),1fr));gap:16px">
-<div style="border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:12px"><div style="position:relative;height:80px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="eco-1" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_he_sinh_thai.img_eco_1_1} cms="src/content/pages/ve-tien-nong.json#s08_he_sinh_thai.img_eco_1_1" /></div><strong>{c.s08_he_sinh_thai.t3}</strong></div>
-<div style="border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:12px"><div style="position:relative;height:80px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="eco-2" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_he_sinh_thai.img_eco_2_1} cms="src/content/pages/ve-tien-nong.json#s08_he_sinh_thai.img_eco_2_1" /></div><strong>{c.s08_he_sinh_thai.t4}</strong></div>
-<div style="border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:12px"><div style="position:relative;height:80px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="eco-3" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_he_sinh_thai.img_eco_3_1} cms="src/content/pages/ve-tien-nong.json#s08_he_sinh_thai.img_eco_3_1" /></div><strong>{c.s08_he_sinh_thai.t5}</strong></div>
-<div style="border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:12px"><div style="position:relative;height:80px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="eco-4" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_he_sinh_thai.img_eco_4_1} cms="src/content/pages/ve-tien-nong.json#s08_he_sinh_thai.img_eco_4_1" /></div><strong>{c.s08_he_sinh_thai.t6}</strong></div>
-<div style="border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:12px"><div style="position:relative;height:80px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="eco-5" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_he_sinh_thai.img_eco_5_1} cms="src/content/pages/ve-tien-nong.json#s08_he_sinh_thai.img_eco_5_1" /></div><strong>{c.s08_he_sinh_thai.t7}</strong></div>
-</div></div></section>
+{partners.length > 0 && <section id="doi-tac" class="partners">
+<div class="partners__inner">
+<div class="partners__head"><span class="eyebrow-tag">{c.s08_he_sinh_thai.t1}</span><h2>{c.s08_he_sinh_thai.t2}</h2></div>
+<ul class="partners__cloud">
+{partners.map((p) => {
+  const hasLogo = isFilled(p.logo?.src);
+  const inner = <>
+    <span class="partner__logo" data-needs-photos={hasLogo ? undefined : ''}><ImageSlot style={fill} id={`partner-${p.k}`} shape="rect" fit="contain" placeholder={`Logo ${p.name}`} image={p.logo} cms={`${F}#s08_he_sinh_thai.partners.${p.k}.logo`} sizes="240px" /></span>
+    {!hasLogo && <span class="partner__name">{p.name}</span>}
+  </>;
+  return <li class:list={['partner', { 'partner--big': p.featured }]} title={p.name}>
+    {isFilled(p.link) ? <a href={link(p.link)} target="_blank" rel="noopener" aria-label={p.name}>{inner}</a> : <div>{inner}</div>}
+  </li>;
+})}
+</ul>
+</div></section>}
 
 <section style="background:var(--green-500);color:#fff">
 <div style="max-width:1280px;margin:0 auto;padding:56px clamp(20px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
@@ -170,31 +193,198 @@ const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
 </Layout>
 
 <style>
-  .ms-year[aria-selected='true'] { border-bottom-color: var(--green-500) !important; font-weight: 800 !important; color: var(--green-700) !important; }
-</style>
-<style>
-  .subnav { transition: top var(--motion-base) var(--ease-out); }
-  .subnav a { border-bottom: 2px solid transparent; transition: color var(--motion-fast), border-color var(--motion-fast); }
-  .subnav a:hover { color: var(--green-700) !important; text-decoration: none; }
-  .subnav a.is-current { color: var(--green-700) !important; border-bottom-color: var(--green-500); }
-</style>
-<script>
-  // Highlight the section being read in the page's table of contents.
-  const links = [...document.querySelectorAll<HTMLAnchorElement>('.subnav a[href^="#"]')];
-  const targets = links.map((a) => document.querySelector<HTMLElement>(a.getAttribute('href')!)).filter(Boolean) as HTMLElement[];
-  if (targets.length && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      for (const e of entries) {
-        if (!e.isIntersecting) continue;
-        links.forEach((a) => {
-          const on = a.getAttribute('href') === `#${e.target.id}`;
-          a.classList.toggle('is-current', on);
-          // Keep the current item visible in the horizontally scrolling bar, without moving the page.
-          const bar = a.parentElement;
-          if (on && bar && bar.scrollWidth > bar.clientWidth) bar.scrollTo({ left: Math.max(0, a.offsetLeft - 20), behavior: 'smooth' });
-        });
-      }
-    }, { rootMargin: '-40% 0px -55% 0px' });
-    targets.forEach((t) => io.observe(t));
+  /* Shared section frame on this page */
+  .ceo__wrap, .mission__inner, .hist__inner, .fame__inner, .cap__inner, .partners__inner, .about-stats__row {
+    max-width: 1280px; margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
+  .eyebrow-tag { display: block; font: var(--type-eyebrow); letter-spacing: .08em; text-transform: uppercase; color: var(--green-700); }
+  section h2 { margin: 10px 0 0; font: var(--type-h2); letter-spacing: -.01em; text-wrap: balance; }
+
+  /* Stats under the hero */
+  .about-stats { background: var(--surface-card); border-bottom: 1px solid var(--border-default); }
+  .about-stats__row { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; padding-block: 40px 44px; }
+  .about-stat { display: flex; flex-direction: column; gap: 6px; }
+  .about-stat__value { font-size: clamp(28px, 2.3vw, 34px) !important; color: var(--green-700); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .about-stat__label { font: 600 13px/1.45 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--text-secondary); }
+  @media (max-width: 1099.98px) { .about-stats__row { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 599.98px) { .about-stats__row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; padding-block: 32px; } }
+
+  /* CEO letter — brand panel with a curved foot, portrait overlapping a dark band (reference: "Lời chào từ Tổng Giám đốc") */
+  .ceo { position: relative; padding: clamp(56px, 7vw, 96px) 0 clamp(56px, 7vw, 96px); background: var(--surface-page); overflow: hidden; scroll-margin-top: 120px; }
+  .ceo__bg { position: absolute; left: -10%; right: -10%; top: 0; height: 78%; background: var(--green-600);
+    border-radius: 0 0 50% 50% / 0 0 22% 22%; }
+  .ceo__wrap { position: relative; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto auto; column-gap: clamp(32px, 4vw, 64px); }
+  .ceo__photo { grid-row: 1 / span 2; grid-column: 1; position: relative; z-index: 2; align-self: end; aspect-ratio: 4 / 5; width: 100%; max-width: 440px; justify-self: center;
+    margin-bottom: 0; filter: drop-shadow(0 18px 30px rgba(2, 53, 26, .28)); }
+  .ceo__text { position: relative; grid-column: 2; color: #fff; display: flex; flex-direction: column; gap: 20px; padding-bottom: clamp(32px, 4vw, 48px); }
+  .ceo__heading { margin: 0; font: var(--type-h1); color: #fff; letter-spacing: -.015em; }
+  .ceo__heading span { display: block; font: 500 clamp(20px, 2vw, 26px)/1.3 var(--font-display); letter-spacing: 0; color: var(--green-50); margin-bottom: 4px; }
+  .ceo__letter { position: relative; display: flex; flex-direction: column; gap: 14px; }
+  .ceo__quote { position: absolute; font: 700 clamp(120px, 12vw, 180px)/1 var(--font-display); color: rgba(255, 255, 255, .16); pointer-events: none; user-select: none; }
+  .ceo__quote--open { left: clamp(-88px, -6vw, -40px); top: -36px; }
+  .ceo__quote--close { right: 0; bottom: -40px; }
+  .ceo__lead { margin: 0; font: 600 clamp(18px, 1.6vw, 21px)/1.6 var(--font-display); color: #fff; position: relative; }
+  .ceo__body { margin: 0; font-size: var(--fs-body); line-height: 1.8; color: var(--green-50); position: relative; }
+  .ceo__sign { display: flex; flex-direction: column; gap: 4px; }
+  .ceo__sign span { font-weight: 600; color: var(--green-50); }
+  .ceo__sign strong { font: var(--type-h3); color: #fff; }
+  .ceo__band { grid-column: 1 / -1; grid-row: 2; position: relative; z-index: 1; align-self: end; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    column-gap: clamp(32px, 4vw, 64px); min-height: 200px; padding: 28px; border-radius: 24px; background: var(--green-900); margin-top: -1px; }
+  .ceo__text { grid-row: 1; }
+  .ceo__badge { grid-column: 2; display: flex; align-items: center; gap: 24px; padding: 24px 28px; border: 1px solid rgba(255, 255, 255, .45); border-radius: 18px; }
+  .ceo__logo { flex: none; display: inline-flex; padding: 10px 14px; background: #fff; border-radius: 14px; }
+  .ceo__logo img { height: 64px; width: auto; display: block; }
+  .ceo__slogan { font: 700 clamp(22px, 2.4vw, 34px)/1.2 var(--font-display); color: #fff; text-wrap: balance; }
+  @media (max-width: 899.98px) {
+    .ceo { padding-top: 48px; }
+    .ceo__bg { height: 70%; border-radius: 0 0 50% 50% / 0 0 8% 8%; }
+    .ceo__wrap { grid-template-columns: minmax(0, 1fr); }
+    .ceo__text { grid-column: 1; grid-row: 1; }
+    .ceo__photo { grid-column: 1; grid-row: 2; max-width: 300px; margin-top: 8px; margin-bottom: -96px; }
+    .ceo__band { grid-row: 3; grid-template-columns: minmax(0, 1fr); padding: 112px 20px 20px; }
+    .ceo__badge { grid-column: 1; flex-direction: column; align-items: flex-start; gap: 14px; padding: 18px; }
+    .ceo__quote--open { left: -8px; top: -48px; font-size: 96px; }
+    .ceo__quote--close { display: none; }
   }
-</script>
+
+  /* Mission on a full-bleed photo */
+  .mission { position: relative; color: #fff; background: var(--green-900); overflow: hidden; scroll-margin-top: 120px; }
+  .mission__photo { position: absolute; inset: 0; }
+  .mission__scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(2, 53, 26, .78) 0%, rgba(2, 53, 26, .86) 55%, rgba(2, 53, 26, .94) 100%); }
+  .mission__inner { position: relative; padding-block: clamp(72px, 9vw, 128px); display: flex; flex-direction: column; gap: 56px; }
+  .mission__cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+  .mission__cols > div { display: flex; flex-direction: column; gap: 12px; padding-top: 18px; border-top: 2px solid var(--amber-400); }
+  .mission__eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; text-transform: uppercase; color: var(--green-100); }
+  .mission__statement { font: var(--type-h3); text-wrap: balance; }
+  .mission__values { display: flex; flex-direction: column; gap: 24px; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, .16); }
+  @media (max-width: 899.98px) { .mission__cols { grid-template-columns: minmax(0, 1fr); } }
+
+  /* History — content on top, a timeline rail below that advances every 6 s (reference: dotted milestone rail) */
+  .hist { background: var(--surface-card); scroll-margin-top: 120px; }
+  .hist__inner { padding-block: clamp(64px, 8vw, 112px); display: flex; flex-direction: column; gap: 40px; --hist-ms: 6000ms; }
+  .hist__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+  .hist__arrows { display: flex; gap: 8px; }
+  .hist__arrows button { width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--surface-card); font-size: 18px; cursor: pointer;
+    transition: background var(--motion-fast), border-color var(--motion-fast); }
+  .hist__arrows button:hover { background: var(--green-50); border-color: var(--green-300); }
+  .hist__stage { position: relative; min-height: 380px; }
+  .hist__panel { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 32px 64px; align-items: center; }
+  .hist__panel:not([hidden]) { animation: hist-in 500ms var(--ease-out) both; }
+  @keyframes hist-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  .hist__photo { position: relative; aspect-ratio: 16 / 10; }
+  .hist__text { position: relative; display: flex; flex-direction: column; gap: 14px; }
+  .hist__year { font: 700 clamp(64px, 8vw, 112px)/1 var(--font-display); color: transparent; -webkit-text-stroke: 1.5px var(--green-300); letter-spacing: -.02em; }
+  .hist__text h3 { margin: 0; font: var(--type-h3); text-wrap: balance; }
+  .hist__text p { margin: 0; color: var(--text-secondary); font-size: var(--fs-body); line-height: 1.75; }
+  .hist__rail { position: relative; display: flex; overflow-x: auto; scrollbar-width: none; padding: 8px 0 4px; scroll-snap-type: x proximity; }
+  .hist__rail::-webkit-scrollbar { display: none; }
+  .hist__rail.is-scrollable { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 32px, #000 calc(100% - 48px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 32px, #000 calc(100% - 48px), transparent 100%); }
+  .hist__stop { position: relative; flex: 1 0 104px; display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 0 4px; background: none; border: 0; cursor: pointer; scroll-snap-align: center; }
+  /* dotted line to the next stop, and the solid progress drawn over it */
+  .hist__stop::before, .hist__stop::after { content: ''; position: absolute; top: 11px; left: 50%; width: 100%; height: 0; }
+  .hist__stop::before { border-top: 2px dotted var(--gray-400); }
+  .hist__stop::after { border-top: 2px solid var(--green-500); transform: scaleX(0); transform-origin: left center; }
+  .hist__stop:last-child::before, .hist__stop:last-child::after { width: 0; }
+  .hist__stop.is-past::after { transform: scaleX(1); }
+  .hist__stop[aria-selected='true']::after { animation: hist-progress var(--hist-ms) linear forwards; }
+  .hist__inner.is-paused .hist__stop[aria-selected='true']::after { animation-play-state: paused; }
+  @keyframes hist-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  .hist__dot { position: relative; z-index: 1; width: 10px; height: 10px; margin: 7px 0; border-radius: 50%; background: var(--gray-700); transition: all var(--motion-base) var(--ease-out); }
+  .hist__stop.is-past .hist__dot { background: var(--green-500); }
+  .hist__stop[aria-selected='true'] .hist__dot { width: 24px; height: 24px; margin: 0; background: var(--green-500); box-shadow: 0 0 0 6px var(--green-100); }
+  .hist__label { font: 700 clamp(18px, 1.6vw, 22px)/1.2 var(--font-display); color: var(--text-primary); transition: color var(--motion-fast); }
+  .hist__stop[aria-selected='true'] .hist__label { color: var(--green-600); }
+  .hist__stop:hover .hist__label { color: var(--green-700); }
+  @media (max-width: 899.98px) {
+    .hist__panel { grid-template-columns: minmax(0, 1fr); }
+    .hist__stage { min-height: 0; }
+    .hist__stop { flex-basis: 88px; }
+  }
+
+  /* Wall of fame — no boxes, the honours stand on the page itself */
+  .fame { background: var(--surface-card); border-top: 1px solid var(--border-default); scroll-margin-top: 120px; }
+  .fame__inner { padding-block: clamp(64px, 8vw, 112px); display: flex; flex-direction: column; gap: clamp(40px, 5vw, 64px); }
+  .fame__head { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0; max-width: 760px; margin: 0 auto; }
+  .fame__head h2 { text-align: center; }
+  .fame__head p { margin: 16px 0 0; color: var(--text-secondary); font-size: var(--fs-body); text-align: center; text-align-last: center; }
+  .fame__wall { --fg: clamp(16px, 2vw, 32px); list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(40px, 4.5vw, 64px) var(--fg); }
+  .fame__item { flex: 0 0 calc((100% - 3 * var(--fg)) / 4); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+  .fame__item--big { flex-basis: calc((100% - var(--fg)) / 2); }
+  .fame__img { position: relative; width: 100%; height: 190px; margin-bottom: 14px; }
+  .fame__item--big .fame__img { height: clamp(240px, 26vw, 320px); }
+  .fame__img::after { content: ''; position: absolute; left: 18%; right: 18%; bottom: -14px; height: 14px; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(28, 32, 28, .18), rgba(28, 32, 28, 0)); }
+  .fame__img :global(.img-slot__frame) { background: transparent !important; }
+  .fame__img :global(.img-slot__img) { mix-blend-mode: multiply; }
+  .fame__label { font: var(--type-eyebrow); letter-spacing: .08em; text-transform: uppercase; color: var(--amber-600); }
+  .fame__title { font: 700 17px/1.35 var(--font-display); max-width: 30ch; text-align: center; }
+  .fame__item--big .fame__title { font: var(--type-h3); }
+  .fame__detail { font-size: 14px; color: var(--text-tertiary); }
+  .fame__cta { display: flex; justify-content: center; }
+  @media (max-width: 899.98px) {
+    .fame__item { flex-basis: calc((100% - var(--fg)) / 2); }
+    .fame__item--big { flex-basis: 100%; }
+    .fame__img { height: 150px; }
+  }
+
+  /* Capabilities — tabs, photo mosaic + key facts (reference: "Năng lực sản xuất") */
+  .cap { background: var(--green-50); scroll-margin-top: 120px; }
+  .cap__inner { padding-block: clamp(64px, 8vw, 112px); display: flex; flex-direction: column; gap: 32px; }
+  .cap__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px 32px; flex-wrap: wrap; }
+  .cap__head h2 { max-width: 640px; }
+  .cap__tabs { display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; background: #fff; box-shadow: var(--shadow-sm); overflow-x: auto; max-width: 100%; }
+  .cap__tabs button { flex: none; min-height: 44px; padding: 0 20px; border: 0; border-radius: 999px; background: transparent; font: 600 15px var(--font-body); color: var(--text-secondary); cursor: pointer;
+    transition: background var(--motion-base) var(--ease-out), color var(--motion-base); }
+  .cap__tabs button[aria-selected='true'] { background: var(--green-500); color: #fff; }
+  .cap__panel { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 32px clamp(32px, 4vw, 56px); align-items: stretch; }
+  .cap__panel:not([hidden]) { animation: hist-in 450ms var(--ease-out) both; }
+  .cap__mosaic { display: grid; grid-template-columns: 1.55fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; min-height: 420px; }
+  .cap__mosaic[data-count='1'] .cap__tile { grid-column: 1 / -1; grid-row: 1 / -1; }
+  .cap__mosaic[data-count='2'] .cap__tile { grid-row: 1 / -1; }
+  .cap__mosaic[data-count='3'] .cap__tile:first-child { grid-row: 1 / -1; }
+  .cap__mosaic[data-count='4'] .cap__tile:nth-child(3) { grid-column: 1; }
+  .cap__tile { position: relative; min-height: 0; }
+  .cap__body { display: flex; flex-direction: column; gap: 16px; }
+  .cap__title { margin: 0; font: 700 clamp(30px, 3.4vw, 46px)/1.1 var(--font-display); text-transform: uppercase; color: var(--green-600); letter-spacing: -.01em; }
+  .cap__subtitle { margin: 0; font: 700 17px/1.45 var(--font-display); color: var(--green-700); }
+  .cap__text { margin: 0; color: var(--text-secondary); font-size: var(--fs-body); line-height: 1.7; }
+  .cap__stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .cap__stat { display: flex; flex-direction: column; padding: 18px 20px; border-radius: 18px; background: var(--green-500); color: #fff; }
+  .cap__stat-value { font: 800 clamp(32px, 3.2vw, 46px)/1.05 var(--font-display); letter-spacing: -.02em; white-space: nowrap; }
+  .cap__stat-label { font: 700 18px/1.3 var(--font-display); margin-top: 6px; }
+  .cap__stat-sub { font-size: 14px; opacity: .85; }
+  .cap__chips-wrap { display: flex; flex-direction: column; gap: 10px; }
+  .cap__chips-title { font: 700 15px/1.3 var(--font-display); letter-spacing: .04em; text-transform: uppercase; color: var(--green-700); }
+  .cap__chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .cap__chips li { padding: 7px 16px; border-radius: 999px; background: var(--green-500); color: #fff; font-weight: 600; font-size: 15px; white-space: nowrap; }
+  .cap__more { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 22px; border: 1.5px solid var(--green-500); border-radius: 999px;
+    color: var(--green-700); font-weight: 700; transition: background var(--motion-base), color var(--motion-base); }
+  .cap__more:hover { background: var(--green-500); color: #fff; text-decoration: none; }
+  @media (max-width: 899.98px) {
+    .cap__panel { grid-template-columns: minmax(0, 1fr); }
+    .cap__mosaic { min-height: 0; height: clamp(260px, 70vw, 420px); }
+    .cap__tabs { width: 100%; }
+    .cap__tabs button { flex: 1 0 auto; }
+  }
+
+  /* Partners — a logo wall without boxes; featured partners first and larger */
+  .partners { background: var(--surface-card); border-top: 1px solid var(--border-default); scroll-margin-top: 120px; }
+  .partners__inner { padding-block: clamp(56px, 7vw, 96px); display: flex; flex-direction: column; gap: 40px; }
+  .partners__head { text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .partners__head h2 { text-align: center; }
+  .partners__cloud { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 28px clamp(32px, 5vw, 72px); }
+  .partner { flex: none; }
+  .partner > a, .partner > div { display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--text-secondary); text-decoration: none; }
+  .partner__logo { position: relative; display: block; width: 168px; height: 64px; filter: grayscale(1); opacity: .7; transition: filter var(--motion-base), opacity var(--motion-base), transform var(--motion-base) var(--ease-out); }
+  .partner--big .partner__logo { width: 240px; height: 96px; }
+  .partner__logo :global(.img-slot__frame) { background: transparent !important; }
+  .partner__name { display: flex; align-items: center; justify-content: center; min-height: 64px; max-width: 220px; text-align: center; font: 700 18px/1.3 var(--font-display);
+    color: var(--gray-500); letter-spacing: -.005em; transition: color var(--motion-base); }
+  .partner--big .partner__name { min-height: 96px; max-width: 300px; font-size: 24px; color: var(--gray-600); }
+  .partner:hover .partner__logo { filter: none; opacity: 1; transform: translateY(-2px); }
+  .partner:hover .partner__name { color: var(--green-700); }
+  @media (max-width: 599.98px) {
+    .partners__cloud { gap: 20px 28px; }
+    .partner__logo { width: 128px; height: 52px; } .partner--big .partner__logo { width: 180px; height: 72px; }
+    .partner__name { min-height: 52px; max-width: 150px; font-size: 16px; } .partner--big .partner__name { min-height: 72px; font-size: 20px; }
+  }
+</style>

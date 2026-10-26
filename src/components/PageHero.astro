@@ -1,0 +1,71 @@
+---
+/**
+ * Full-bleed photo hero shared by the inner pages (Giới thiệu chung, Phát triển bền vững,
+ * Văn hóa doanh nghiệp), matching the home and Giải pháp heroes: the photo fills the width, a
+ * dark-green scrim keeps the text readable, breadcrumb on top, title block at the bottom left.
+ * Buttons are optional (default slot). With no photo the hero falls back to the brand green.
+ */
+import ImageSlot from './ImageSlot.astro';
+
+interface SlotImage { src?: string; focus?: string; zoom?: string | number; alt?: string }
+
+interface Crumb { label: string; href?: string }
+interface Props {
+  id: string;
+  image?: SlotImage;
+  /** "<file>#<path>" for the on-site photo editor. */
+  cms?: string;
+  placeholder?: string;
+  crumbs?: Crumb[];
+  eyebrow?: string;
+  title: string;
+  lead?: string;
+}
+const { id, image, cms, placeholder = '', crumbs = [], eyebrow, title, lead } = Astro.props;
+const hasSlot = Astro.slots.has('default');
+---
+<section class="page-hero">
+<div class="page-hero__photo"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={id} shape="rect" placeholder={placeholder} image={image} cms={cms} priority sizes="100vw" /></div>
+<div class="page-hero__scrim" aria-hidden="true"></div>
+<div class="page-hero__inner">
+{crumbs.length > 0 && <nav class="page-hero__crumbs" aria-label="Đường dẫn">
+{crumbs.map((c, i) => <>{i > 0 && <span aria-hidden="true">/</span>}{c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</>)}
+</nav>}
+<div class="page-hero__copy hero-copy">
+{eyebrow && <span class="page-hero__eyebrow">{eyebrow}</span>}
+<h1>{title}</h1>
+{lead && <p>{lead}</p>}
+{hasSlot && <div class="page-hero__actions"><slot /></div>}
+</div>
+</div>
+</section>
+
+<style>
+  .page-hero { position: relative; display: flex; min-height: min(72vh, 620px); background: var(--green-900); color: #fff; overflow: hidden; }
+  .page-hero__photo { position: absolute; inset: 0; }
+  .page-hero__photo :global(.img-slot[data-empty] .img-slot__frame) { background: linear-gradient(135deg, var(--green-800), var(--green-600)) !important; }
+  .page-hero__photo :global(.img-slot[data-empty] .img-slot__frame::after) { opacity: .12 !important; }
+  .page-hero__scrim { position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(90deg, rgba(2, 53, 26, .82) 0%, rgba(2, 53, 26, .5) 48%, rgba(2, 53, 26, .05) 82%),
+                linear-gradient(0deg, rgba(2, 53, 26, .45) 0%, rgba(2, 53, 26, 0) 40%); }
+  .page-hero__inner { position: relative; width: 100%; max-width: 1280px; margin: 0 auto; padding: 28px clamp(20px, 4vw, 56px) clamp(56px, 7vw, 96px);
+    display: flex; flex-direction: column; justify-content: space-between; gap: 48px; pointer-events: none; }
+  .page-hero__crumbs { display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; color: var(--green-100); pointer-events: auto; }
+  .page-hero__crumbs a { color: var(--green-100); }
+  .page-hero__crumbs a:hover { color: #fff; }
+  .page-hero__copy { max-width: 760px; display: flex; flex-direction: column; gap: 20px; }
+  .page-hero__eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; text-transform: uppercase; color: var(--green-100); }
+  .page-hero h1 { margin: 0; font: var(--type-h1); letter-spacing: -.015em; text-wrap: balance; }
+  .page-hero p { margin: 0; font-size: var(--fs-lead); line-height: 1.6; color: var(--green-50); max-width: 640px; }
+  .page-hero__actions { display: flex; gap: 12px; flex-wrap: wrap; pointer-events: auto; }
+  .page-hero__actions :global(.page-hero__btn) { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, .7); color: #fff; font-weight: 700; text-decoration: none; transition: background var(--motion-fast); }
+  .page-hero__actions :global(.page-hero__btn:hover) { background: rgba(255, 255, 255, .12); text-decoration: none; }
+  .page-hero__actions :global(.page-hero__btn--solid) { background: #fff; border-color: #fff; color: var(--green-700); }
+  .page-hero__actions :global(.page-hero__btn--solid:hover) { background: var(--green-50); }
+  @media (max-width: 767.98px) {
+    .page-hero { min-height: min(78svh, 620px); }
+    .page-hero__scrim { background: linear-gradient(0deg, rgba(2, 53, 26, .92) 0%, rgba(2, 53, 26, .7) 50%, rgba(2, 53, 26, .25) 100%); }
+    .page-hero__inner { justify-content: space-between; padding-bottom: 48px; }
+  }
+</style>

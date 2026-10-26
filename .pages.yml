@@ -247,6 +247,22 @@ content:
       - name: t18
         label: 'Liên kết: Xem tất cả thành tựu →'
         type: string
+      - name: img_award_1
+        label: 'Ảnh thành tựu 1 (hiện phía trên chữ)'
+        component: photo
+        description: Ảnh nền trong suốt hoặc nền trắng, đặt vừa khung vuông.
+      - name: img_award_2
+        label: 'Ảnh thành tựu 2 (hiện phía trên chữ)'
+        component: photo
+        description: Ảnh nền trong suốt hoặc nền trắng, đặt vừa khung vuông.
+      - name: img_award_3
+        label: 'Ảnh thành tựu 3 (hiện phía trên chữ)'
+        component: photo
+        description: Ảnh nền trong suốt hoặc nền trắng, đặt vừa khung vuông.
+      - name: img_award_4
+        label: 'Ảnh thành tựu 4 (hiện phía trên chữ)'
+        component: photo
+        description: Ảnh nền trong suốt hoặc nền trắng, đặt vừa khung vuông.
     - name: s03_khoa_hoc_cong_nghe
       label: 03 · Khoa học & Công nghệ
       type: object
@@ -321,6 +337,11 @@ content:
       - name: t22
         label: 'Liên kết: Tìm hiểu Khoa học & Công nghệ →'
         type: string
+      - name: slides
+        label: Ảnh trình chiếu (tự chuyển, thêm/bớt tùy ý)
+        description: Ảnh đầu tiên hiện trước. Nên 3–5 ảnh ngang. Ảnh “Phòng thí nghiệm” ở trên chỉ dùng khi danh sách này trống.
+        component: photo
+        list: true
     - name: s04_giai_phap_theo_doi_tuong
       label: 04 · Giải pháp theo đối tượng
       type: object
@@ -379,7 +400,7 @@ content:
         type: string
       - name: t13
         label: 'Chữ: Sản phẩm có mặt tại hơn 10 quốc gia, năng lực …'
-        type: string
+        type: text
       - name: t14
         label: 'Chữ: Hợp tác xuất khẩu →'
         type: string
@@ -549,6 +570,17 @@ content:
       - name: t10
         label: 'Liên kết: Khám phá hệ thống nhà máy →'
         type: string
+      - name: highlights
+        label: Điểm nổi bật (thay cho đoạn mô tả dài)
+        type: object
+        list: true
+        fields:
+        - name: value
+          label: Nội dung chính (ví dụ 650.000 tấn/năm)
+          type: string
+        - name: label
+          label: Chú thích ngắn
+          type: string
     - name: s07_con_nguoi
       label: 07 · Con người
       type: object
@@ -669,6 +701,29 @@ content:
     - name: product_tab_crop
       label: Mục Sản phẩm – tên tab 2
       type: string
+    - name: product_banner
+      label: Banner giới thiệu sản phẩm (tràn trang, giữa Giải pháp và Sản phẩm)
+      type: object
+      fields:
+      - name: image
+        label: Ảnh banner
+        component: photo
+        description: Ảnh ngang khổ lớn (ít nhất 2400×900 px). Nếu ảnh đã có chữ thiết kế sẵn, hãy xóa Tiêu đề và Mô tả bên dưới.
+      - name: eyebrow
+        label: Nhãn in hoa
+        type: string
+      - name: title
+        label: Tiêu đề (để trống nếu ảnh đã có chữ)
+        type: string
+      - name: text
+        label: Mô tả ngắn
+        type: string
+      - name: button
+        label: Chữ trên nút
+        type: string
+      - name: link
+        label: Đường dẫn khi bấm (ví dụ /san-pham/)
+        type: string
   - name: ve_tien_nong
     label: Về Tiến Nông
     type: file
@@ -789,6 +844,15 @@ content:
       - name: t5
         label: 'Chữ: Tổng Giám đốc'
         type: string
+      - name: heading_small
+        label: Dòng chữ nhỏ trên tiêu đề (ví dụ Lời chào từ)
+        type: string
+      - name: heading
+        label: Tiêu đề lớn (ví dụ Tổng Giám đốc)
+        type: string
+      - name: slogan
+        label: Khẩu hiệu trong dải màu phía dưới
+        type: string
     - name: s03_su_menh_gia_tri
       label: 03 · Sứ mệnh & giá trị
       type: object
@@ -859,6 +923,10 @@ content:
       - name: t22
         label: 'Chữ: Trách nhiệm với xã hội, bảo vệ môi trường…'
         type: string
+      - name: background
+        label: Ảnh nền tràn viền (Sứ mệnh, tầm nhìn, giá trị cốt lõi)
+        component: photo
+        description: Ảnh ngang khổ lớn; trang tự phủ lớp xanh đậm để chữ dễ đọc.
     - name: s04_lich_su
       label: 04 · Lịch sử
       type: object
@@ -1079,6 +1147,57 @@ content:
       - name: t14
         label: 'Liên kết: Tìm đại lý →'
         type: string
+      - name: capabilities
+        label: Ba năng lực (mỗi mục là một thẻ chuyển qua lại)
+        type: object
+        list: true
+        fields:
+        - name: tab
+          label: Tên trên nút chuyển
+          type: string
+        - name: title
+          label: Tiêu đề lớn
+          type: string
+        - name: subtitle
+          label: Dòng nhấn mạnh
+          type: string
+        - name: text
+          label: Đoạn giới thiệu
+          type: text
+        - name: stats
+          label: Con số (2 ô xanh)
+          type: object
+          list: true
+          fields:
+          - name: value
+            label: Con số
+            type: string
+          - name: label
+            label: Nhãn
+            type: string
+          - name: sub
+            label: Chú thích nhỏ
+            type: string
+        - name: chips_title
+          label: Tiêu đề dòng nhãn
+          type: string
+        - name: chips
+          label: Các nhãn
+          type: string
+          list: true
+        - name: note
+          label: Đoạn kết
+          type: text
+        - name: link_label
+          label: Chữ trên nút
+          type: string
+        - name: link
+          label: Đường dẫn của nút
+          type: string
+        - name: photos
+          label: Ảnh (4 ảnh, ảnh đầu tiên hiện lớn nhất)
+          component: photo
+          list: true
     - name: s08_he_sinh_thai
       label: 08 · Hệ sinh thái
       type: object
@@ -1087,7 +1206,7 @@ content:
         label: 'Nhãn in hoa: HỆ SINH THÁI TIẾN NÔNG'
         type: string
       - name: t2
-        label: 'Tiêu đề: Công ty thành viên & liên kết'
+        label: 'Tiêu đề: Đối tác'
         type: string
       - name: img_eco_1_1
         label: 'Ảnh: Logo'
@@ -1124,6 +1243,25 @@ content:
       - name: t7
         label: 'Chữ đậm: Phú Hưng'
         type: string
+      - name: partners
+        label: Danh sách đối tác (logo)
+        description: Thêm bao nhiêu đối tác cũng được. Bật “Nổi bật” cho tập đoàn lớn/đối tác quốc tế — logo sẽ to hơn và đứng đầu danh sách.
+        type: object
+        list: true
+        fields:
+        - name: name
+          label: Tên đối tác
+          type: string
+        - name: logo
+          label: Logo
+          component: photo
+          description: Logo nền trong suốt (PNG/SVG) hiển thị đẹp nhất.
+        - name: featured
+          label: Nổi bật (logo to hơn, đứng đầu)
+          type: boolean
+        - name: link
+          label: Trang web của đối tác (không bắt buộc)
+          type: string
     - name: s09_phan_9
       label: 09 · Phần 9
       type: object
@@ -1211,6 +1349,10 @@ content:
       - name: image_3
         label: Ảnh nhỏ dưới
         component: photo
+      - name: background
+        label: 'Ảnh nền đầu trang (tràn viền)'
+        component: photo
+        description: Ảnh ngang khổ lớn, ít nhất 2400 px.
     - name: mottos
       label: 02 · Dải khẩu hiệu (nền xanh)
       type: object
@@ -2467,6 +2609,10 @@ content:
       - name: faq_intro
         label: "Hỏi đáp – đoạn giới thiệu"
         type: text
+      - name: faq_image
+        label: 'Ảnh minh họa phần Câu hỏi thường gặp'
+        component: photo
+        description: Hiện dưới đoạn giới thiệu của phần hỏi đáp.
     - name: issues
       label: '03 · Theo vấn đề – các vấn đề (vấn đề → vì sao → giải pháp)'
       description: 'Mỗi vấn đề là một nút trên trang; bấm vào sẽ hiện 3 bước. Kéo để đổi thứ tự.'
