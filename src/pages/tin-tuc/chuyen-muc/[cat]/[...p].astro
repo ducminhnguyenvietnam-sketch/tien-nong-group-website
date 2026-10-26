@@ -1,0 +1,16 @@
+---
+import NewsListPage from '../../../../components/NewsListPage.astro';
+import { CATEGORY_SLUGS, PER_PAGE, getNews, type NewsEntry } from '../../../../lib/news';
+
+export async function getStaticPaths() {
+  const news = await getNews();
+  return Object.entries(CATEGORY_SLUGS).flatMap(([cat, slug]) => {
+    const all = news.filter((n) => n.data.category === cat);
+    const pages = Math.max(1, Math.ceil(all.length / PER_PAGE));
+    return Array.from({ length: pages }, (_, i) => ({ params: { cat: slug, p: i ? `trang/${i + 1}` : undefined }, props: { all, cat, page: i + 1 } }));
+  });
+}
+interface Props { all: NewsEntry[]; cat: string; page: number }
+const { all, cat, page } = Astro.props;
+---
+<NewsListPage all={all} cat={cat} page={page} />

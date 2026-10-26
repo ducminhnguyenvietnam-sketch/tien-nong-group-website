@@ -43,3 +43,29 @@ export const formatDate = (d?: Date | null) =>
 
 /** Rough reading time in minutes (about 200 words a minute). */
 export const readingTime = (e: NewsEntry) => Math.max(1, Math.ceil((e.body ?? '').split(/\s+/).filter(Boolean).length / 200));
+
+/** Articles per page in the news list. */
+export const PER_PAGE = 12;
+
+/** Address segment of each category's list page: /tin-tuc/chuyen-muc/<segment>/. */
+export const CATEGORY_SLUGS: Record<string, string> = {
+  tn: 'cau-chuyen-tien-nong',
+  khcn: 'khoa-hoc-cong-nghe',
+  kt: 'kien-thuc-nong-nghiep',
+  nd: 'nong-dan-mo-hinh-hieu-qua',
+  cd: 'vi-cong-dong-esg',
+};
+
+/** List page address: all articles ('all') or one category, page n (page 1 has no /trang/1/). */
+export function listUrl(cat: string, page = 1): string {
+  const root = cat === 'all' ? url('tin-tuc') : `${url('tin-tuc')}chuyen-muc/${CATEGORY_SLUGS[cat]}/`;
+  return page > 1 ? `${root}trang/${page}/` : root;
+}
+
+/** Page numbers to show in a pager: first, last and the pages around the current one, with gaps (0). */
+export function pageList(page: number, pages: number): number[] {
+  const keep = new Set([1, pages, page - 1, page, page + 1].filter((n) => n >= 1 && n <= pages));
+  const out: number[] = [];
+  [...keep].sort((a, b) => a - b).forEach((n, i, arr) => { if (i && n - arr[i - 1] > 1) out.push(0); out.push(n); });
+  return out;
+}

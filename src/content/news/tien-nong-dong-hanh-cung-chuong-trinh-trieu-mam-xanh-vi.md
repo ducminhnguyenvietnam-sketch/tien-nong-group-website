@@ -1,4 +1,5 @@
 ---
+old_url: "/vcci-ton-vinh-tong-giam-doc-tien-nong-nguyen-hong-phong-lan-toa-khat-vong-doanh-nhan-kien-tao-gia-tri-cho-nong-nghiep-viet-nam/"
 title: " VCCI tôn vinh Tổng Giám đốc Tiến Nông Nguyễn Hồng Phong: Lan tỏa khát vọng doanh nhân, kiến tạo giá trị cho nông nghiệp Việt Nam"
 category: tn
 date: 2026-10-16

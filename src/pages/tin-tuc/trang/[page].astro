@@ -1,0 +1,13 @@
+---
+import NewsListPage from '../../../components/NewsListPage.astro';
+import { PER_PAGE, getNews, isPress, type NewsEntry } from '../../../lib/news';
+
+export async function getStaticPaths() {
+  const all = (await getNews()).filter((n) => !isPress(n));
+  const pages = Math.ceil(all.length / PER_PAGE);
+  return Array.from({ length: Math.max(0, pages - 1) }, (_, i) => ({ params: { page: String(i + 2) }, props: { all, page: i + 2 } }));
+}
+interface Props { all: NewsEntry[]; page: number }
+const { all, page } = Astro.props;
+---
+<NewsListPage all={all} cat="all" page={page} />

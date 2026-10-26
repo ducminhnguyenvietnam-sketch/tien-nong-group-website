@@ -69,6 +69,30 @@ await Promise.all(Array.from({ length: 4 }, async () => {
   }
 }));
 
+// Articles imported from the old site (public/uploads/tin-cu/<year>/) arrive already compressed: the
+// cover at ≤1200px plus a 480px copy next to it (<name>-480.webp). They are listed as-is instead of being
+// copied again, which keeps ~5,000 archive photos from multiplying the size of the site.
+async function archiveCovers() {
+  const root = path.join(ROOT, 'public', 'uploads', 'tin-cu');
+  let years = [];
+  try { years = await fs.readdir(root); } catch { return; }
+  for (const y of years) {
+    let names = [];
+    try { names = await fs.readdir(path.join(root, y)); } catch { continue; }
+    const set = new Set(names);
+    for (const f of names) {
+      const thumb = f.replace(/\.webp$/, '-480.webp');
+      if (!f.endsWith('.webp') || f === thumb || !set.has(thumb)) continue;
+      try {
+        const meta = await sharp(path.join(root, y, f)).metadata();
+        const key = `/uploads/tin-cu/${y}/${f}`;
+        manifest[key] = { w: meta.width, h: meta.height, variants: [...(meta.width > 480 ? [{ w: 480, path: `/uploads/tin-cu/${y}/${thumb}` }] : []), { w: meta.width, path: key }] };
+      } catch { /* unreadable: served as a plain image */ }
+    }
+  }
+}
+await archiveCovers();
+
 // Drop copies of photos that were replaced or deleted.
 for (const f of await fs.readdir(OUT_DIR)) if (!keep.has(f)) await fs.rm(path.join(OUT_DIR, f));
 await fs.writeFile(MANIFEST, JSON.stringify(manifest));

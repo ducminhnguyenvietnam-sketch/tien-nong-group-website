@@ -10,7 +10,9 @@ const image = z.object({
 }).default({});
 
 const news = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/news' }),
+  // Articles imported from the old site live in year folders (news/2015/…); the address is the file
+  // name alone, so /tin-tuc/<file-name>/ whichever folder the file is in.
+  loader: glob({ pattern: '**/*.md', base: './src/content/news', generateId: ({ entry }) => entry.replace(/\.md$/, '').split('/').pop()! }),
   schema: z.object({
     title: z.string(),
     category: z.enum(['tn', 'khcn', 'kt', 'nd', 'cd', 'bc']),
@@ -29,6 +31,8 @@ const news = defineCollection({
     source: z.string().default(''),
     external_url: z.string().default(''),
     press_highlight: z.boolean().default(false),
+    // Address of the article on the old WordPress site (tiennong.vn/…), redirected to the new page.
+    old_url: z.string().default(''),
   }),
 });
 

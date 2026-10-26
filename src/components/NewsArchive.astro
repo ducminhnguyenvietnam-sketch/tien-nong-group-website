@@ -1,0 +1,135 @@
+---
+/**
+ * The browsable news list (Tin tức): category links, search + year filter, a grid of PER_PAGE cards and
+ * a pager. With ~1,000 articles each page is a static page of its own (/tin-tuc/trang/2/,
+ * /tin-tuc/chuyen-muc/<category>/…), so phones only load 12 cards. Search and the year filter read a small
+ * index of every article (/tin-tuc/tim-kiem.json, fetched on first use) and list the matches as text,
+ * matching with or without Vietnamese accents.
+ */
+import raw from '../content/pages/tin-tuc.json';
+import { withDefaults } from '../lib/content';
+import ImageSlot from './ImageSlot.astro';
+import { CATEGORIES, CATEGORY_SLUGS, formatDate, listUrl, newsUrl, pageList, type NewsEntry } from '../lib/news';
+import { url } from '../lib/routes';
+
+interface Props { items: NewsEntry[]; page: number; pages: number; cat: string; years: number[]; total: number }
+const { items, page, pages, cat, years, total } = Astro.props;
+const c = withDefaults(raw, 'src/content/pages/tin-tuc.json');
+const tabs = [['all', c.all_categories || 'Tất cả'], ...Object.entries(CATEGORIES).filter(([k]) => k in CATEGORY_SLUGS)];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<div class="na" data-news-archive data-cat={cat} data-index={`${url('tin-tuc')}tim-kiem.json`} data-base={base}>
+<div class="na__bar">
+<nav class="na__tabs" aria-label="Chuyên mục">
+{tabs.map(([k, label]) => <a href={listUrl(k)} aria-current={k === cat ? 'page' : undefined}>{label}</a>)}
+</nav>
+<div class="na__filters">
+<input id="news-q" type="search" aria-label={c.s02_danh_sach.f1} placeholder={c.s02_danh_sach.f2} autocomplete="off" />
+<select id="news-year" aria-label="Lọc theo năm"><option value="">Mọi năm</option>{years.map((y) => <option value={y}>{y}</option>)}</select>
+</div>
+</div>
+
+<div class="na__results" id="news-results" hidden aria-live="polite"></div>
+
+<div class="na__list" id="news-list">
+<p class="na__count">{total} bài viết{pages > 1 && ` · trang ${page}/${pages}`}</p>
+<div class="na__grid">
+{items.map((n) => (
+<a class="na__card" href={newsUrl(n)}>
+<div class="na__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${n.id}`} shape="rounded" radius="12" placeholder="Ảnh bài viết" image={n.data.cover} cms={`${n.filePath}#cover`} sizes="(max-width: 767px) 92vw, 400px" /></div>
+<span class="na__meta"><strong>{CATEGORIES[n.data.category]}</strong>{n.data.date && ` · ${formatDate(n.data.date)}`}</span>
+<strong class="na__title">{n.data.title}</strong>
+</a>
+))}
+</div>
+{items.length === 0 && <div class="na__empty">{c.s02_danh_sach.t1}</div>}
+{pages > 1 && <nav class="na__pager" aria-label="Phân trang">
+{page > 1 ? <a href={listUrl(cat, page - 1)} rel="prev">← Trước</a> : <span class="is-off">← Trước</span>}
+{pageList(page, pages).map((n) => n === 0 ? <span class="na__gap">…</span> : n === page ? <span aria-current="page">{n}</span> : <a href={listUrl(cat, n)}>{n}</a>)}
+{page < pages ? <a href={listUrl(cat, page + 1)} rel="next">{c.s02_danh_sach.t5 || 'Sau →'}</a> : <span class="is-off">{c.s02_danh_sach.t5 || 'Sau →'}</span>}
+</nav>}
+</div>
+</div>
+
+<style>
+  .na { display: flex; flex-direction: column; gap: 24px; }
+  .na__bar { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px 24px; flex-wrap: wrap; border-bottom: 1px solid var(--border-default); }
+  .na__tabs { display: flex; gap: 24px; overflow-x: auto; max-width: 100%; scrollbar-width: none; }
+  .na__tabs::-webkit-scrollbar { display: none; }
+  .na__tabs a { flex: none; padding: 10px 2px; margin-bottom: -1px; border-bottom: 2px solid transparent; color: var(--text-secondary); font-weight: 600; white-space: nowrap; text-decoration: none; }
+  .na__tabs a:hover { color: var(--text-primary); text-decoration: none; }
+  .na__tabs a[aria-current='page'] { color: var(--green-700); border-bottom-color: var(--green-500); }
+  .na__filters { display: flex; gap: 8px; flex: 0 1 380px; min-width: min(100%, 280px); padding-bottom: 10px; }
+  .na__filters input, .na__filters select { min-height: 44px; padding: 0 12px; border-radius: var(--radius-md); border: 1px solid var(--border-default); font: 16px var(--font-body); background: var(--surface-card); color: var(--text-primary); outline-color: var(--green-500); }
+  .na__filters input { flex: 1; min-width: 0; }
+  .na__filters select { flex: none; }
+  .na__count { margin: 0; font-size: 14px; color: var(--text-tertiary); }
+  .na__list { display: flex; flex-direction: column; gap: 20px; }
+  .na__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 32px 24px; }
+  .na__card { display: flex; flex-direction: column; gap: 12px; color: var(--text-primary); text-decoration: none; }
+  .na__card:hover { text-decoration: none; }
+  .na__card:hover .na__title { color: var(--green-700); }
+  .na__img { position: relative; height: 210px; }
+  .na__meta { font-size: 13px; color: var(--text-tertiary); }
+  .na__meta strong { color: var(--green-600); }
+  .na__title { font-size: 18px; line-height: 1.4; text-wrap: balance; transition: color var(--motion-fast); }
+  .na__empty { padding: 40px; text-align: center; border: 1px dashed var(--border-strong); border-radius: var(--radius-lg); color: var(--text-secondary); }
+  .na__pager { display: flex; justify-content: center; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 12px; }
+  .na__pager > * { min-width: 44px; height: 44px; padding: 0 12px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-md); font-weight: 600; }
+  .na__pager a { border: 1px solid var(--border-default); background: var(--surface-card); color: var(--text-primary); text-decoration: none; }
+  .na__pager a:hover { border-color: var(--green-500); text-decoration: none; }
+  .na__pager [aria-current='page'] { background: var(--green-500); color: #fff; }
+  .na__pager .is-off { color: var(--text-tertiary); opacity: .5; }
+  .na__pager .na__gap { min-width: 20px; padding: 0; color: var(--text-tertiary); }
+  .na__results { display: flex; flex-direction: column; }
+  .na__results :global(.nr__head) { margin: 0 0 8px; font-size: 14px; color: var(--text-tertiary); }
+  .na__results :global(a) { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 4px 20px; padding: 14px 0; border-bottom: 1px solid var(--border-default); color: var(--text-primary); text-decoration: none; }
+  .na__results :global(a:hover strong) { color: var(--green-700); }
+  .na__results :global(time) { font-size: 14px; color: var(--text-tertiary); font-variant-numeric: tabular-nums; }
+  .na__results :global(span) { display: flex; flex-direction: column; gap: 2px; }
+  .na__results :global(em) { font-style: normal; font-size: 13px; color: var(--green-600); font-weight: 600; }
+  .na__results :global(strong) { line-height: 1.4; }
+  @media (max-width: 599.98px) {
+    .na__filters { flex-basis: 100%; }
+    .na__results :global(a) { grid-template-columns: minmax(0, 1fr); }
+    .na__pager > * { min-width: 40px; height: 40px; padding: 0 10px; }
+  }
+</style>
+
+<script>
+  type Row = { t: string; d: string; c: string; u: string; y: number };
+  const CAT_LABEL: Record<string, string> = {
+    tn: 'Câu chuyện Tiến Nông', khcn: 'Khoa học & Công nghệ', kt: 'Kiến thức nông nghiệp',
+    nd: 'Nông dân & Mô hình hiệu quả', cd: 'Tiến Nông vì cộng đồng & ESG', bc: 'Báo chí nói về Tiến Nông',
+  };
+  const fold = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/gi, 'd').toLowerCase();
+  const esc = (s: string) => s.replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[ch]!);
+  document.querySelectorAll<HTMLElement>('[data-news-archive]').forEach((root) => {
+    const q = root.querySelector<HTMLInputElement>('#news-q')!;
+    const year = root.querySelector<HTMLSelectElement>('#news-year')!;
+    const out = root.querySelector<HTMLElement>('#news-results')!;
+    const list = root.querySelector<HTMLElement>('#news-list')!;
+    const cat = root.dataset.cat!;
+    let rows: Row[] | null = null;
+    let loading: Promise<void> | null = null;
+    const load = () => (loading ??= fetch(root.dataset.index!).then((r) => r.json()).then((d: Row[]) => {
+      rows = d.map((r) => ({ ...r, f: fold(r.t) } as Row & { f: string }));
+    }).catch(() => { rows = []; }));
+    const MAX = 60;
+    async function run() {
+      const words = fold(q.value.trim()).split(/\s+/).filter(Boolean);
+      const y = Number(year.value) || 0;
+      if (!words.length && !y) { out.hidden = true; list.hidden = false; return; }
+      await load();
+      const hit = (rows as (Row & { f: string })[]).filter((r) => (cat === 'all' || r.c === cat) && (!y || r.y === y) && words.every((w) => r.f.includes(w)));
+      out.innerHTML = `<p class="nr__head">${hit.length ? `${hit.length} bài phù hợp${hit.length > MAX ? ` · hiện ${MAX} bài mới nhất, gõ thêm để thu hẹp` : ''}` : 'Chưa có bài viết phù hợp.'}</p>`
+        + hit.slice(0, MAX).map((r) => `<a href="${esc(root.dataset.base + r.u)}"><time>${esc(r.d)}</time><span><em>${esc(CAT_LABEL[r.c] || '')}</em><strong>${esc(r.t)}</strong></span></a>`).join('');
+      out.hidden = false; list.hidden = true;
+    }
+    let t = 0;
+    q.addEventListener('input', () => { clearTimeout(t); t = window.setTimeout(run, 150); });
+    q.addEventListener('focus', () => { load(); }, { once: true });
+    year.addEventListener('change', run);
+    if (q.value || year.value) run();
+  });
+</script>

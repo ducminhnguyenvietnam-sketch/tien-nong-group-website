@@ -48,8 +48,12 @@ const src = raw ? asset(raw) : null;
 // Responsive WebP variants made by scripts/optimize-images.mjs (prebuild). Missing manifest = plain <img>.
 type Variant = { w: number; path: string };
 type Entry = { w: number; h: number; variants: Variant[] };
-let manifest: Record<string, Entry> = {};
-try { manifest = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src', 'generated', 'images.json'), 'utf8')); } catch { /* not generated yet */ }
+// Read once per build (cached on globalThis), not once per photo: the site has ~1,000 article pages.
+const g = globalThis as { __imgManifest?: Record<string, Entry> };
+if (!g.__imgManifest) {
+  try { g.__imgManifest = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src', 'generated', 'images.json'), 'utf8')); } catch { /* not generated yet */ }
+}
+const manifest: Record<string, Entry> = g.__imgManifest ?? {};
 const entry = raw ? manifest[raw] : undefined;
 const srcset = entry?.variants.length ? entry.variants.map((v) => `${asset(v.path)} ${v.w}w`).join(', ') : undefined;
 const fallback = entry?.variants.length ? asset(entry.variants.at(-1)!.path) : src;

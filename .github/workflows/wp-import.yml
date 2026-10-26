@@ -1,0 +1,40 @@
+name: Nhập tin tức từ web cũ
+
+# Runs the WordPress import scripts on the "nhap-tin-cu" branch and commits what they produce
+# back to that branch. scripts/wp-import/run.txt says which step to run and its options,
+# e.g. "inventory", "import --sample 20" or "import --all".
+on:
+  push:
+    branches: [nhap-tin-cu]
+    paths: ['scripts/wp-import/**', '.github/workflows/wp-import.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wp-import
+  cancel-in-progress: true
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Chạy bước nhập
+        run: |
+          read -r step rest < scripts/wp-import/run.txt
+          node scripts/wp-import/$step.mjs $rest
+      - name: Lưu kết quả vào nhánh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          for p in migration src/content/news public/uploads/tin-cu; do [ -e "$p" ] && git add -A "$p"; done
+          git diff --cached --quiet || git commit -m "Nhập tin cũ: kết quả bước $(head -1 scripts/wp-import/run.txt)"
+          git push

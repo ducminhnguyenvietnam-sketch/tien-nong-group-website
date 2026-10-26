@@ -1,4 +1,5 @@
 ---
+old_url: "/tien-nong-tiep-don-truong-cao-dang-fpt-polytechnic-thanh-hoa-tham-quan-trai-nghiem-thuc-te/"
 title: Tiến Nông tiếp đón Trường Cao đẳng FPT Polytechnic Thanh Hóa tham quan trải nghiệm thực tế
 category: tn
 date: 2026-10-16

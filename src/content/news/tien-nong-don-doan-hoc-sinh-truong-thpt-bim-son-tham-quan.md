@@ -1,4 +1,5 @@
 ---
+old_url: "/tien-nong-trao-tang-200-trieu-dong-dong-hanh-cung-the-thao-thanh-tich-cao-thanh-hoa/"
 title: Tiến Nông trao tặng 200 triệu đồng – đồng hành cùng thể thao thành tích cao Thanh Hoá
 category: cd
 date: 2026-10-07
