@@ -1,0 +1,247 @@
+---
+/**
+ * Xanh hoá Trường Sa — sub-page of Phát triển bền vững. Replaces the old campaign page tiennong.vn/mamxanh/
+ * ("Triệu lời chúc – Triệu mầm xanh"), which redirects here (src/content/redirects.json). Wishes sent with
+ * the form go to the lead-form endpoint (forms.ts); the wall shows the wishes chosen in the CMS
+ * (24 picked from the ~1,600 sent on the old page).
+ */
+import raw from '../../content/pages/xanh-hoa-truong-sa.json';
+import siteRaw from '../../content/site.json';
+import { isFilled, withDefaults } from '../../lib/content';
+import Layout from '../../layouts/Layout.astro';
+import ImageSlot from '../../components/ImageSlot.astro';
+import PageHero from '../../components/PageHero.astro';
+import { formatDate, getNews, isArticle, listUrl, newsUrl } from '../../lib/news';
+import { link, url } from '../../lib/routes';
+
+const c = withDefaults(raw, 'src/content/pages/xanh-hoa-truong-sa.json');
+const site = withDefaults(siteRaw, 'src/content/site.json');
+const F = 'src/content/pages/xanh-hoa-truong-sa.json';
+const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
+const co = site.company as Record<string, string>;
+const zalo = (site.social as Record<string, string>).zalo?.trim();
+const stats = c.stats.filter((s) => isFilled(s.value));
+const steps = c.campaign.steps.filter((s) => isFilled(s.title));
+const journey = c.journey.items.filter((j) => isFilled(j.title));
+const wishes = c.wishes.items.filter((w) => isFilled(w.text));
+const photos = c.gallery.photos.map((ph, k) => ({ ph, k })).filter(({ ph }) => isFilled(ph.src));
+// Articles about the programme: anything mentioning Trường Sa in the title, newest first.
+const news = (await getNews()).filter((n) => isArticle(n) && /trường sa/i.test(n.data.title) && isFilled(n.data.cover.src))
+  .sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0)).slice(0, 6);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h : link(h));
+---
+<Layout title={c.seo.title || 'Xanh hoá Trường Sa'} description={c.seo.description || undefined} active="Phát triển bền vững">
+<PageHero id="ts-hero" image={c.hero.background} cms={`${F}#hero.background`} placeholder="Ảnh chương trình Xanh hoá Trường Sa"
+  crumbs={[{ label: c.hero.breadcrumb_home, href: url('trang-chu') }, { label: c.hero.breadcrumb_parent, href: url('phat-trien-ben-vung') }, { label: c.hero.breadcrumb_self }]}
+  eyebrow={c.hero.eyebrow} title={c.hero.title} lead={c.hero.intro}>
+{c.form.open && <a href="#gui-loi-chuc" class="page-hero__btn page-hero__btn--solid">{c.hero.button_wish}</a>}<a href="#hanh-trinh" class="page-hero__btn">{c.hero.button_journey}</a>
+</PageHero>
+
+{stats.length > 0 && <section class="ts-stats"><div class="ts-wrap ts-stats__row">
+{stats.map((s) => <div class="ts-stat"><span class="ts-stat__value">{s.value}</span><span class="ts-stat__label">{s.label}</span>{isFilled(s.sub) && <span class="ts-stat__sub">{s.sub}</span>}</div>)}
+</div></section>}
+
+<section class="ts-campaign" id="chien-dich"><div class="ts-wrap ts-campaign__grid">
+<div class="ts-campaign__copy">
+<span class="ts-eyebrow">{c.campaign.eyebrow}</span>
+<h2>{c.campaign.title}</h2>
+<p class="ts-lead">{c.campaign.text}</p>
+{isFilled(c.campaign.commitment) && <div class="ts-commit"><span aria-hidden="true">🌱</span><strong>{c.campaign.commitment}</strong></div>}
+{steps.length > 0 && <ol class="ts-steps">{steps.map((s, i) => <li><span class="ts-steps__n">{i + 1}</span><div><strong>{s.title}</strong><p>{s.text}</p></div></li>)}</ol>}
+</div>
+<div class="ts-campaign__visual"><ImageSlot style={fill} id="ts-kv" shape="rounded" radius="20" fit="cover" placeholder="Key visual chiến dịch" image={c.campaign.image} cms={`${F}#campaign.image`} sizes="(max-width: 899px) 92vw, 640px" /></div>
+</div></section>
+
+{journey.length > 0 && <section class="ts-journey" id="hanh-trinh"><div class="ts-wrap">
+<div class="ts-head"><span class="ts-eyebrow">{c.journey.eyebrow}</span><h2>{c.journey.title}</h2></div>
+<ol class="ts-timeline">
+{journey.map((j, k) => {
+  const body = <>
+    <div class="ts-timeline__img"><ImageSlot style={fill} id={`ts-j-${k}`} shape="rounded" radius="14" placeholder={j.title} image={j.image} cms={`${F}#journey.items.${k}.image`} sizes="(max-width: 767px) 92vw, 300px" /></div>
+    <span class="ts-timeline__date">{j.date}</span>
+    <strong class="ts-timeline__title">{j.title}</strong>
+    <span class="ts-timeline__text">{j.text}</span>
+    {isFilled(j.link) && <span class="ts-timeline__more">Đọc tin →</span>}
+  </>;
+  return <li>{isFilled(j.link) ? <a href={href(j.link)}>{body}</a> : <div>{body}</div>}</li>;
+})}
+</ol>
+</div></section>}
+
+<section class="ts-form" id="gui-loi-chuc"><div class="ts-wrap ts-form__grid">
+<div class="ts-form__copy">
+<span class="ts-eyebrow ts-eyebrow--light">{c.form.eyebrow}</span>
+<h2>{c.form.title}</h2>
+<p>{c.form.open ? c.form.text : c.form.closed_text}</p>
+</div>
+{c.form.open && <div class="ts-form__card">
+<form data-lead-form="xanh-hoa-truong-sa" data-sent="wish-sent">
+<label><span>{c.form.name_label} *</span><input name="ho_ten" required maxlength="80" autocomplete="name" /></label>
+<label><span>{c.form.unit_label}</span><input name="don_vi" maxlength="120" autocomplete="organization" /></label>
+<label><span>{c.form.message_label} *</span><textarea name="loi_chuc" required minlength="10" maxlength="1200" rows="5"></textarea></label>
+<label class="ts-form__consent"><input type="checkbox" data-consent /><span>{c.form.consent}</span></label>
+<button type="submit">{c.form.submit}</button>
+</form>
+<div id="wish-sent" hidden tabindex="-1" class="ts-form__sent"><span aria-hidden="true">🌱</span><strong>{c.form.sent_title}</strong><p>{c.form.sent_text}</p><button type="button" data-form-again>Gửi thêm lời chúc</button></div>
+<div data-form-fallback hidden class="ts-form__fallback">
+<strong>Gửi lời chúc qua Zalo hoặc email</strong>
+<p>Ghi họ tên, đơn vị và lời chúc của bạn, Tiến Nông sẽ chuyển tới Trường Sa.</p>
+<div>{zalo && <a href={link(zalo)} target="_blank" rel="noopener">Nhắn Zalo</a>}{co.email && <a href={`mailto:${co.email}?subject=${encodeURIComponent('Lời chúc gửi Trường Sa')}`}>Gửi email</a>}</div>
+</div>
+</div>}
+</div></section>
+
+{wishes.length > 0 && <section class="ts-wishes" id="loi-chuc"><div class="ts-wrap">
+<div class="ts-head ts-head--split"><div><span class="ts-eyebrow">{c.wishes.eyebrow}</span><h2>{c.wishes.title}</h2></div>{isFilled(c.wishes.text) && <p>{c.wishes.text}</p>}</div>
+<ul class="ts-wall" id="wish-wall" data-count={wishes.length}>
+{wishes.map((w) => <li><blockquote>{w.text}</blockquote><span class="ts-wall__who"><strong>{w.name}</strong>{isFilled(w.unit) && <span>{w.unit}</span>}</span></li>)}
+</ul>
+{wishes.length > 4 && <button type="button" class="ts-more" id="wish-more" data-count={wishes.length}>{c.wishes.more}</button>}
+</div></section>}
+
+{photos.length > 0 && <section class="ts-gallery"><div class="ts-wrap">
+<div class="ts-head"><span class="ts-eyebrow">{c.gallery.eyebrow}</span><h2>{c.gallery.title}</h2></div>
+<div class="ts-gallery__grid" data-count={Math.min(photos.length, 6)}>
+{photos.slice(0, 6).map(({ ph, k }) => <figure><div class="ts-gallery__img"><ImageSlot style={fill} id={`ts-g-${k}`} shape="rounded" radius="14" placeholder={ph.alt || 'Ảnh'} image={ph} cms={`${F}#gallery.photos.${k}`} sizes="(max-width: 767px) 92vw, 33vw" /></div>{isFilled(ph.alt) && <figcaption>{ph.alt}</figcaption>}</figure>)}
+</div>
+</div></section>}
+
+{news.length > 0 && <section class="ts-news"><div class="ts-wrap">
+<div class="ts-head ts-head--split"><div><span class="ts-eyebrow">{c.news.eyebrow}</span><h2>{c.news.title}</h2></div><a href={listUrl('cd')} class="ts-link">{c.news.all} →</a></div>
+<div class="ts-news__grid">
+{news.map((n) => <a href={newsUrl(n)} class="ts-news__card"><div class="ts-news__img"><ImageSlot style={fill} id={`news-${n.id}`} shape="rounded" radius="12" placeholder="Ảnh bài viết" image={n.data.cover} cms={`${n.filePath}#cover`} sizes="(max-width: 767px) 92vw, 400px" /></div><span class="ts-news__date">{formatDate(n.data.date)}</span><strong>{n.data.title}</strong></a>)}
+</div>
+</div></section>}
+
+<section class="ts-cta"><div class="ts-wrap ts-cta__row">
+<h2>{c.cta.title}</h2>
+<div class="ts-cta__actions">{c.form.open && <a href="#gui-loi-chuc" class="ts-btn ts-btn--solid">{c.cta.button_wish}</a>}<a href={url('phat-trien-ben-vung')} class="ts-btn">{c.cta.button_back}</a></div>
+</div></section>
+</Layout>
+
+<style>
+  .ts-wrap { max-width: 1280px; margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
+  .ts-eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; color: var(--green-600); }
+  .ts-eyebrow--light { color: var(--green-100); }
+  .ts-head { display: flex; flex-direction: column; gap: 12px; margin-bottom: clamp(28px, 4vw, 44px); }
+  .ts-head h2, .ts-campaign h2, .ts-form h2, .ts-cta h2 { margin: 0; font: var(--type-h2); letter-spacing: -.01em; text-wrap: balance; }
+  .ts-head--split { flex-direction: row; justify-content: space-between; align-items: flex-end; gap: 16px 48px; flex-wrap: wrap; }
+  .ts-head--split > div { display: flex; flex-direction: column; gap: 12px; }
+  .ts-head--split p { margin: 0; max-width: 34em; color: var(--text-secondary); }
+  .ts-link { font-weight: 600; white-space: nowrap; }
+
+  .ts-stats { background: var(--green-800); color: #fff; }
+  .ts-stats__row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px 32px; padding-block: clamp(36px, 5vw, 56px); }
+  .ts-stat { display: flex; flex-direction: column; gap: 4px; padding-top: 14px; border-top: 2px solid var(--amber-400); }
+  .ts-stat__value { font: 800 clamp(28px, 3vw, 40px)/1.1 var(--font-display); white-space: nowrap; }
+  .ts-stat__label { font: 600 13px/1.4 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--green-100); }
+  .ts-stat__sub { font-size: 14px; color: var(--green-100); opacity: .85; text-align: start; }
+  @media (max-width: 899.98px) { .ts-stats__row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 399.98px) { .ts-stat__value { font-size: 24px; } }
+
+  .ts-campaign { background: var(--surface-card); padding-block: clamp(64px, 8vw, 112px); }
+  .ts-campaign__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px 64px; align-items: center; }
+  .ts-campaign__copy { display: flex; flex-direction: column; gap: 18px; }
+  .ts-lead { margin: 0; color: var(--text-secondary); font-size: var(--fs-body); }
+  .ts-commit { display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 999px; background: var(--green-50); border: 1px solid var(--green-100); }
+  .ts-commit strong { font: 700 18px/1.3 var(--font-display); color: var(--green-800); }
+  .ts-steps { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid var(--border-default); }
+  .ts-steps li { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border-default); }
+  .ts-steps__n { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--green-500); color: #fff; font-weight: 700; }
+  .ts-steps p { margin: 2px 0 0; color: var(--text-secondary); font-size: 15px; text-align: start; }
+  .ts-campaign__visual { position: relative; aspect-ratio: 1920 / 900; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); }
+  @media (max-width: 899.98px) { .ts-campaign__grid { grid-template-columns: minmax(0, 1fr); } .ts-campaign__visual { order: -1; } }
+
+  .ts-journey { background: var(--surface-page); padding-block: clamp(64px, 8vw, 112px); }
+  .ts-timeline { list-style: none; margin: 0; padding: 24px 0 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; border-top: 2px solid var(--green-500); position: relative; }
+  .ts-timeline li { position: relative; }
+  .ts-timeline li::before { content: ''; position: absolute; top: -31px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--green-500); box-shadow: 0 0 0 4px var(--surface-page); }
+  .ts-timeline a, .ts-timeline li > div { display: flex; flex-direction: column; gap: 8px; color: var(--text-primary); text-decoration: none; }
+  .ts-timeline a:hover .ts-timeline__title { color: var(--green-700); }
+  .ts-timeline__img { position: relative; aspect-ratio: 4 / 3; margin-bottom: 6px; }
+  .ts-timeline__date { font: 700 13px/1.3 var(--font-mono); color: var(--green-700); }
+  .ts-timeline__title { font: 700 17px/1.35 var(--font-display); text-wrap: balance; }
+  .ts-timeline__text { font-size: 14px; line-height: 1.5; color: var(--text-secondary); text-align: start; }
+  .ts-timeline__more { font-size: 14px; font-weight: 600; color: var(--text-link); }
+  @media (max-width: 1099.98px) {
+    .ts-timeline { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(240px, 72%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin-inline: calc(-1 * clamp(20px, 4vw, 56px)); padding-inline: clamp(20px, 4vw, 56px); scroll-padding-inline: clamp(20px, 4vw, 56px); border-top: 0; }
+    .ts-timeline li { scroll-snap-align: start; padding-top: 22px; border-top: 2px solid var(--green-500); }
+    .ts-timeline li::before { top: -7px; }
+  }
+  @media (min-width: 700px) and (max-width: 1099.98px) { .ts-timeline { grid-auto-columns: minmax(260px, 40%); } }
+
+  .ts-form { background: var(--green-800); color: #fff; padding-block: clamp(64px, 8vw, 104px); scroll-margin-top: 80px; }
+  .ts-form__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 32px 72px; align-items: start; }
+  .ts-form__copy { display: flex; flex-direction: column; gap: 16px; }
+  .ts-form__copy p { margin: 0; color: var(--green-100); font-size: var(--fs-body); }
+  .ts-form__card { background: var(--surface-card); color: var(--text-primary); border-radius: var(--radius-xl); padding: clamp(22px, 3vw, 36px); box-shadow: var(--shadow-lg); }
+  .ts-form__card form { display: flex; flex-direction: column; gap: 16px; }
+  .ts-form__card label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 15px; }
+  .ts-form__card input:not([type='checkbox']), .ts-form__card textarea { width: 100%; padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-strong); font: 16px/1.5 var(--font-body); color: var(--text-primary); background: var(--surface-card); outline-color: var(--green-500); }
+  .ts-form__card textarea { resize: vertical; min-height: 130px; }
+  .ts-form__consent { flex-direction: row !important; align-items: flex-start; gap: 10px !important; font-weight: 400 !important; font-size: 14px !important; color: var(--text-secondary); }
+  .ts-form__consent input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--green-500); flex: none; }
+  .ts-form__card button[type='submit'], .ts-form__sent button { min-height: 50px; border: 0; border-radius: var(--radius-md); background: var(--green-500); color: #fff; font: 700 16px var(--font-body); cursor: pointer; }
+  .ts-form__card button[type='submit']:disabled { opacity: .5; cursor: not-allowed; }
+  .ts-form__sent { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+  .ts-form__sent[hidden], .ts-form__fallback[hidden] { display: none; }
+  .ts-form__sent span { font-size: 36px; }
+  .ts-form__sent strong, .ts-form__fallback strong { font: 700 20px/1.3 var(--font-display); }
+  .ts-form__sent p, .ts-form__fallback p { margin: 0; color: var(--text-secondary); }
+  .ts-form__sent button { padding: 0 20px; background: var(--green-50); color: var(--green-700); }
+  .ts-form__fallback { display: flex; flex-direction: column; gap: 10px; }
+  .ts-form__fallback div { display: flex; gap: 10px; flex-wrap: wrap; padding-top: 4px; }
+  .ts-form__fallback a { display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border-radius: var(--radius-md); border: 1px solid var(--border-strong); font-weight: 700; color: var(--green-700); text-decoration: none; }
+  .ts-form__fallback a:first-child { background: var(--green-500); border-color: var(--green-500); color: #fff; }
+  @media (max-width: 899.98px) { .ts-form__grid { grid-template-columns: minmax(0, 1fr); } }
+
+  .ts-wishes { background: var(--surface-card); padding-block: clamp(64px, 8vw, 112px); }
+  .ts-wall { list-style: none; margin: 0; padding: 0; columns: 3 300px; column-gap: 20px; }
+  .ts-wall li { break-inside: avoid; margin-bottom: 20px; padding: 22px 22px 18px; border-radius: 16px; background: var(--green-50); border: 1px solid var(--green-100); display: flex; flex-direction: column; gap: 14px; }
+  /* 9 wishes at first (4 on phones); "Xem thêm" shows the rest. */
+  .ts-wall:not(.is-open) li:nth-child(n+10) { display: none; }
+  .ts-more[data-count='5'], .ts-more[data-count='6'], .ts-more[data-count='7'], .ts-more[data-count='8'], .ts-more[data-count='9'] { display: none; }
+  @media (max-width: 599.98px) {
+    .ts-wall:not(.is-open) li:nth-child(n+5) { display: none; }
+    .ts-more[data-count] { display: block; }
+  }
+  .ts-wall blockquote { margin: 0; font-size: 16px; line-height: 1.6; color: var(--text-primary); text-align: start; }
+  .ts-wall blockquote::before { content: '“'; display: block; font: 700 40px/0.6 var(--font-display); color: var(--green-500); margin-bottom: 8px; }
+  .ts-wall__who { display: flex; flex-direction: column; gap: 2px; padding-top: 12px; border-top: 1px solid var(--green-100); }
+  .ts-wall__who strong { font-size: 15px; }
+  .ts-wall__who span { font-size: 13px; color: var(--text-secondary); text-align: start; }
+  .ts-more[hidden] { display: none !important; }
+  .ts-more { display: block; margin: 8px auto 0; min-height: 48px; padding: 0 24px; border-radius: var(--radius-md); border: 1px solid var(--border-strong); background: var(--surface-card); font: 700 15px var(--font-body); color: var(--green-700); cursor: pointer; }
+
+  .ts-gallery { background: var(--surface-page); padding-block: clamp(64px, 8vw, 112px); }
+  .ts-gallery__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .ts-gallery__grid figure { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .ts-gallery__img { position: relative; aspect-ratio: 3 / 2; }
+  .ts-gallery__grid figcaption { font-size: 14px; color: var(--text-secondary); text-align: start; }
+  @media (max-width: 899.98px) { .ts-gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 559.98px) { .ts-gallery__grid { grid-template-columns: minmax(0, 1fr); } }
+
+  .ts-news { background: var(--surface-card); padding-block: clamp(64px, 8vw, 112px); }
+  .ts-news__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 32px 24px; }
+  .ts-news__card { display: flex; flex-direction: column; gap: 10px; color: var(--text-primary); text-decoration: none; }
+  .ts-news__card:hover strong { color: var(--green-700); }
+  .ts-news__img { position: relative; height: 210px; }
+  .ts-news__date { font-size: 13px; color: var(--text-tertiary); }
+  .ts-news__card strong { font-size: 18px; line-height: 1.4; text-wrap: balance; }
+
+  .ts-cta { background: var(--green-50); border-top: 1px solid var(--green-100); padding-block: clamp(40px, 5vw, 64px); }
+  .ts-cta__row { display: flex; justify-content: space-between; align-items: center; gap: 20px 40px; flex-wrap: wrap; }
+  .ts-cta h2 { font: var(--type-h3); max-width: 22em; }
+  .ts-cta__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .ts-btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: var(--radius-md); border: 1px solid var(--border-strong); font-weight: 700; color: var(--green-700); text-decoration: none; background: var(--surface-card); }
+  .ts-btn--solid { background: var(--green-500); border-color: var(--green-500); color: #fff; }
+  .ts-btn:hover { text-decoration: none; }
+</style>
+
+<script>
+  document.getElementById('wish-more')?.addEventListener('click', (e) => {
+    document.getElementById('wish-wall')?.classList.add('is-open');
+    (e.currentTarget as HTMLElement).hidden = true;
+  });
+</script>

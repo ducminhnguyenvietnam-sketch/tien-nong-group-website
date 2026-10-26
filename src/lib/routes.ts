@@ -1,7 +1,7 @@
 /** Page slugs, mirroring the 13 pages of the design's publish file. */
 export const PAGES = [
   'trang-chu', 've-tien-nong', 've-tien-nong/van-hoa-doanh-nghiep', 'khoa-hoc-cong-nghe', 'san-pham', 'chi-tiet-san-pham', 'giai-phap',
-  'giai-phap-du-an', 'phat-trien-ben-vung', 'nong-dan', 'tuyen-dung', 'tin-tuc', 'lien-he', 'tro-thanh-doi-tac',
+  'giai-phap-du-an', 'phat-trien-ben-vung', 'phat-trien-ben-vung/xanh-hoa-truong-sa', 'nong-dan', 'tuyen-dung', 'tin-tuc', 'lien-he', 'tro-thanh-doi-tac',
 ] as const;
 export type PageSlug = (typeof PAGES)[number];
 
@@ -21,7 +21,10 @@ export const NAV: [string, PageSlug, SubNav[]?][] = [
   ['Khoa học & Công nghệ', 'khoa-hoc-cong-nghe'],
   ['Sản phẩm', 'san-pham'],
   ['Giải pháp', 'giai-phap'],
-  ['Phát triển bền vững', 'phat-trien-ben-vung'],
+  ['Phát triển bền vững', 'phat-trien-ben-vung', [
+    ['Tổng quan', 'phat-trien-ben-vung', 'ptbv_tong_quan'],
+    ['Xanh hoá Trường Sa', 'phat-trien-ben-vung/xanh-hoa-truong-sa', 'xanh_hoa_truong_sa'],
+  ]],
   ['Nông dân Tiến Nông', 'nong-dan'],
 ];
 

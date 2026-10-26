@@ -3433,6 +3433,243 @@ content:
         label: Ảnh
         component: photo
         description: Khung ảnh khoảng 371×220 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
+  - name: xanh_hoa_truong_sa
+    label: "Xanh hoá Trường Sa (trang con của Phát triển bền vững)"
+    type: file
+    path: src/content/pages/xanh-hoa-truong-sa.json
+    format: json
+    fields:
+    - name: seo
+      label: "Tiêu đề tab trình duyệt & mô tả Google"
+      type: object
+      fields:
+      - name: title
+        label: "Tiêu đề trang"
+        type: string
+      - name: description
+        label: "Mô tả ngắn cho Google"
+        type: text
+    - name: hero
+      label: "01 · Đầu trang"
+      type: object
+      fields:
+      - name: breadcrumb_home
+        label: "Đường dẫn – Trang chủ"
+        type: string
+      - name: breadcrumb_parent
+        label: "Đường dẫn – Phát triển bền vững"
+        type: string
+      - name: breadcrumb_self
+        label: "Đường dẫn – trang này"
+        type: string
+      - name: eyebrow
+        label: "Dòng chữ nhỏ"
+        type: string
+      - name: title
+        label: "Tiêu đề lớn"
+        type: string
+      - name: intro
+        label: "Đoạn giới thiệu"
+        type: text
+      - name: button_wish
+        label: "Nút: Gửi lời chúc"
+        type: string
+      - name: button_journey
+        label: "Nút: Hành trình"
+        type: string
+      - name: background
+        label: "Ảnh nền tràn viền"
+        component: photo
+        description: "Ảnh ngang, rộng ít nhất 1920 px."
+    - name: stats
+      label: "02 · Con số nổi bật"
+      type: object
+      list: true
+      fields:
+      - name: value
+        label: "Con số"
+        type: string
+      - name: label
+        label: "Nhãn"
+        type: string
+      - name: sub
+        label: "Dòng giải thích nhỏ"
+        type: string
+    - name: campaign
+      label: "03 · Chiến dịch Triệu lời chúc – Triệu mầm xanh"
+      type: object
+      fields:
+      - name: eyebrow
+        label: "Dòng chữ nhỏ"
+        type: string
+      - name: title
+        label: "Tiêu đề"
+        type: string
+      - name: text
+        label: "Nội dung"
+        type: text
+      - name: commitment
+        label: "Cam kết (ô nổi bật)"
+        type: string
+      - name: steps
+        label: "Các bước tham gia"
+        type: object
+        list: true
+        fields:
+        - name: title
+          label: "Tiêu đề bước"
+          type: string
+        - name: text
+          label: "Mô tả"
+          type: text
+      - name: image
+        label: "Ảnh chiến dịch (key visual)"
+        component: photo
+        description: "Ảnh ngang tỉ lệ khoảng 2:1."
+    - name: journey
+      label: "04 · Hành trình"
+      type: object
+      fields:
+      - name: eyebrow
+        label: "Dòng chữ nhỏ"
+        type: string
+      - name: title
+        label: "Tiêu đề"
+        type: string
+      - name: items
+        label: "Các mốc"
+        type: object
+        list: true
+        fields:
+        - name: date
+          label: "Thời gian"
+          type: string
+        - name: title
+          label: "Tiêu đề"
+          type: string
+        - name: text
+          label: "Mô tả"
+          type: text
+        - name: link
+          label: "Đường dẫn bài viết"
+          type: string
+          description: "Ví dụ /tin-tuc/ten-bai/ — để trống nếu không có."
+        - name: image
+          label: "Ảnh"
+          component: photo
+    - name: form
+      label: "05 · Gửi lời chúc"
+      type: object
+      fields:
+      - name: open
+        label: "Đang nhận lời chúc"
+        type: boolean
+        description: "Tắt khi chiến dịch kết thúc: biểu mẫu và nút “Gửi lời chúc” sẽ ẩn, hiện dòng cảm ơn bên dưới."
+      - name: eyebrow
+        label: "Dòng chữ nhỏ"
+        type: string
+      - name: title
+        label: "Tiêu đề"
+        type: string
+      - name: text
+        label: "Lời mời"
+        type: text
+      - name: name_label
+        label: "Nhãn: Họ tên"
+        type: string
+      - name: unit_label
+        label: "Nhãn: Đơn vị"
+        type: string
+      - name: message_label
+        label: "Nhãn: Lời chúc"
+        type: string
+      - name: consent
+        label: "Ô đồng ý"
+        type: text
+      - name: submit
+        label: "Nút gửi"
+        type: string
+      - name: sent_title
+        label: "Sau khi gửi – tiêu đề"
+        type: string
+      - name: sent_text
+        label: "Sau khi gửi – nội dung"
+        type: text
+      - name: closed_text
+        label: "Khi đã đóng – dòng cảm ơn"
+        type: text
+    - name: wishes
+      label: "06 · Tường lời chúc"
+      type: object
+      fields:
+      - name: eyebrow
+        label: "Dòng chữ nhỏ"
+        type: string
+      - name: title
+        label: "Tiêu đề"
+        type: string
+      - name: text
+        label: "Mô tả"
+        type: text
+      - name: more
+        label: "Nút xem thêm"
+        type: string
+      - name: items
+        label: "Lời chúc hiển thị"
+        type: object
+        list: true
+        description: "Lời chúc gửi qua biểu mẫu về nơi nhận của biểu mẫu (bảng tính/hộp thư); chọn lời chúc hay và thêm vào đây để hiển thị. 9 lời chúc đầu hiện sẵn, còn lại hiện khi bấm “Xem thêm”."
+        fields:
+        - name: name
+          label: "Họ tên"
+          type: string
+        - name: unit
+          label: "Đơn vị / địa phương"
+          type: string
+        - name: text
+          label: "Lời chúc"
+          type: text
+    - name: gallery
+      label: "07 · Hình ảnh"
+      type: object
+      fields:
+      - name: eyebrow
+        label: "Dòng chữ nhỏ"
+        type: string
+      - name: title
+        label: "Tiêu đề"
+        type: string
+      - name: photos
+        label: "Ảnh (tối đa 6, mô tả ảnh hiện làm chú thích)"
+        component: photo
+        list: true
+    - name: news
+      label: "08 · Tin tức"
+      type: object
+      fields:
+      - name: eyebrow
+        label: "Dòng chữ nhỏ"
+        type: string
+      - name: title
+        label: "Tiêu đề"
+        type: string
+        description: "Tự hiện các bài có chữ “Trường Sa” trong tiêu đề, mới nhất trước."
+      - name: all
+        label: "Liên kết: tất cả tin"
+        type: string
+    - name: cta
+      label: "09 · Lời kêu gọi cuối trang"
+      type: object
+      fields:
+      - name: title
+        label: "Tiêu đề"
+        type: string
+      - name: button_wish
+        label: "Nút: Gửi lời chúc"
+        type: string
+      - name: button_back
+        label: "Nút: Phát triển bền vững"
+        type: string
   - name: nong_dan
     label: Nông dân Tiến Nông
     type: file
@@ -4658,7 +4895,7 @@ content:
         label: 'Mục menu: Nông dân Tiến Nông'
         type: string
     - name: subnav
-      label: Tên các mục menu con (dưới Về Tiến Nông)
+      label: Tên các mục menu con (dưới Về Tiến Nông và Phát triển bền vững)
       type: object
       fields:
       - name: gioi_thieu
@@ -4666,6 +4903,12 @@ content:
         type: string
       - name: van_hoa_doanh_nghiep
         label: 'Menu con: Văn hóa doanh nghiệp'
+        type: string
+      - name: ptbv_tong_quan
+        label: 'Menu con: Phát triển bền vững – Tổng quan'
+        type: string
+      - name: xanh_hoa_truong_sa
+        label: 'Menu con: Xanh hoá Trường Sa'
         type: string
   - name: footer
     label: Chân trang

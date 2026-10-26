@@ -4,9 +4,12 @@ import { isFilled, stripPlaceholders, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import PageHero from '../components/PageHero.astro';
+import tsRaw from '../content/pages/xanh-hoa-truong-sa.json';
 import { url } from '../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/phat-trien-ben-vung.json');
+// Teaser for the sub-page Xanh hoá Trường Sa (its title, intro and photo come from that page's content).
+const ts = withDefaults(tsRaw, 'src/content/pages/xanh-hoa-truong-sa.json');
 
 const TAGS = ['Tất cả', 'KHUYẾN HỌC', 'BIỂN ĐẢO', 'GIÁO DỤC', 'NGƯỜI YẾU THẾ'];
 const LABEL: Record<string, string> = { 'Tất cả': 'Tất cả', 'KHUYẾN HỌC': 'Khuyến học', 'BIỂN ĐẢO': 'Biển đảo', 'GIÁO DỤC': 'Giáo dục', 'NGƯỜI YẾU THẾ': 'Người yếu thế' };
@@ -73,6 +76,14 @@ const LABEL: Record<string, string> = { 'Tất cả': 'Tất cả', 'KHUYẾN H�
 ))}
 </div></div></section>
 
+<section class="ts-teaser" aria-label={ts.hero.title}>
+<a href={url('phat-trien-ben-vung/xanh-hoa-truong-sa')} class="ts-teaser__link">
+<div class="ts-teaser__photo"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ts-teaser" shape="rect" placeholder="Ảnh Xanh hoá Trường Sa" image={ts.hero.background} cms="src/content/pages/xanh-hoa-truong-sa.json#hero.background" sizes="100vw" /></div>
+<div class="ts-teaser__scrim" aria-hidden="true"></div>
+<div class="ts-teaser__copy"><span class="ts-teaser__eyebrow">{ts.hero.eyebrow}</span><strong class="ts-teaser__title">{ts.hero.title}</strong><span class="ts-teaser__text">{ts.hero.intro}</span><span class="ts-teaser__btn">Xem chương trình →</span></div>
+</a>
+</section>
+
 <section id="nguoi-lao-dong" style="scroll-margin-top:160px;background:var(--green-800);color:#fff">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap">
 <div style="display:flex;flex-direction:column;gap:14px;max-width:640px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s05_nguoi_lao_dong.t1}</span><h2 style="margin:0;font:var(--type-h2);text-wrap:balance">{c.s05_nguoi_lao_dong.t2}</h2><span style="color:var(--green-100)">{c.s05_nguoi_lao_dong.t3}</span></div>
@@ -88,3 +99,19 @@ const LABEL: Record<string, string> = { 'Tất cả': 'Tất cả', 'KHUYẾN H�
 <div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-num);color:var(--green-700)">{c.s06_lo_trinh.t10}</span><strong>{c.s06_lo_trinh.t11}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s06_lo_trinh.t12}</span></div>
 </div></div></section>
 </Layout>
+
+<style>
+  .ts-teaser { background: var(--green-900); }
+  .ts-teaser__link { position: relative; display: block; min-height: clamp(300px, 34vw, 460px); color: #fff; text-decoration: none; overflow: hidden; }
+  .ts-teaser__link:hover { text-decoration: none; color: #fff; }
+  .ts-teaser__photo { position: absolute; inset: 0; }
+  .ts-teaser__photo :global(.img-slot__img) { transition: scale 1.2s var(--ease-out); }
+  .ts-teaser__link:hover .ts-teaser__photo :global(.img-slot__img) { scale: 1.03; }
+  .ts-teaser__scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2, 53, 26, .9) 0%, rgba(2, 53, 26, .6) 45%, rgba(2, 53, 26, .05) 85%); }
+  .ts-teaser__copy { position: relative; max-width: 1280px; margin: 0 auto; min-height: inherit; padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; }
+  .ts-teaser__eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; color: var(--green-100); }
+  .ts-teaser__title { font: var(--type-h2); }
+  .ts-teaser__text { max-width: 34em; color: var(--green-50); font-size: var(--fs-lead); line-height: 1.55; text-align: start; }
+  .ts-teaser__btn { margin-top: 6px; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: var(--radius-md); background: #fff; color: var(--green-700); font-weight: 700; }
+  @media (max-width: 767.98px) { .ts-teaser__scrim { background: linear-gradient(0deg, rgba(2, 53, 26, .92) 0%, rgba(2, 53, 26, .6) 65%, rgba(2, 53, 26, .25) 100%); } .ts-teaser__copy { justify-content: flex-end; } }
+</style>
