@@ -4,7 +4,7 @@ category: tn
 date: 2014-05-13
 author: Tiến Nông
 featured: false
-summary: Sáng 12/05/2014, Công ty CP Công Nông Nghiệp Tiến Nông đã long trọng đón tiếp Ban lãnh đạo huyện Ngọc Lặc tới thăm quan và làm việc tại nhà máy Tiến Nông 3. Đ/c Lại Thế Nguyên – Bí thư huyện ủy Ngọc Lặc và đ/c Ngô Tiến Ngọc – Chủ tịch UBND huyện Ngọc
+summary: Sáng 12/05/2014, Công ty CP Công Nông Nghiệp Tiến Nông đã long trọng đón tiếp Ban lãnh đạo huyện Ngọc Lặc tới thăm quan và làm việc tại nhà máy Tiến Nông 3. Đ/c Lại Thế Nguyên – Bí thư huyện ủy Ngọc Lặc và đ/c Ngô Tiến Ngọc – Chủ tịch UBND huyện Ngọc…
 cover:
   src: /uploads/tin-cu/2014/ban-lanh-dao-huyen-ngoc-lac-den-tham-lam-viec-tai-tien-nong.webp
   focus: center

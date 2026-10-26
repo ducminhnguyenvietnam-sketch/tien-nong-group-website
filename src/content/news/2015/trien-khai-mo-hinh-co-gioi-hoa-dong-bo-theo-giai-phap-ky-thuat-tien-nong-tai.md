@@ -4,7 +4,7 @@ category: nd
 date: 2015-02-26
 author: Tiến Nông
 featured: false
-summary: Tiếp nối thành công của “Mô hình cơ giới hóa đồng bộ theo giải pháp kỹ thuật Tiến Nông” trong năm 2014 tại xã Nghĩa Sơn – Nam Định, ngày 26/02 vừa qua Công ty cổ phần công nông nghiệp Tiến Nông đã phối hợp cùng UBND huyện Trực Ninh và Xuân Trường tổ chức
+summary: Tiếp nối thành công của “Mô hình cơ giới hóa đồng bộ theo giải pháp kỹ thuật Tiến Nông” trong năm 2014 tại xã Nghĩa Sơn – Nam Định, ngày 26/02 vừa qua Công ty cổ phần công nông nghiệp Tiến Nông đã phối hợp cùng UBND huyện Trực Ninh và Xuân Trường tổ chức lễ xuống đồng, triển khai mô hình tại hai xã Trực Thanh, Huyện Trực Ninh và xã Xuân Kiên Huyện, Xuân Trường.
 cover:
   src: /uploads/tin-cu/2015/trien-khai-mo-hinh-co-gioi-hoa-dong-bo-theo-giai-phap-ky-thuat-tien-nong-tai.webp
   focus: center
@@ -19,8 +19,6 @@ external_url: ""
 press_highlight: false
 old_url: /trien-khai-mo-hinh-co-gioi-hoa-dong-bo-theo-giai-phap-ky-thuat-tien-nong-tai-nam-dinh/
 ---
-
-**Tiếp nối thành công của “Mô hình cơ giới hóa đồng bộ theo giải pháp kỹ thuật Tiến Nông” trong năm 2014 tại xã Nghĩa Sơn – Nam Định, ngày 26/02 vừa qua Công ty cổ phần công nông nghiệp Tiến Nông đã phối hợp cùng UBND huyện Trực Ninh và Xuân Trường tổ chức lễ xuống đồng, triển khai mô hình tại hai xã Trực Thanh, Huyện Trực Ninh và xã Xuân Kiên Huyện, Xuân Trường.**
 
 Tham dự buổi lễ có Ông Phạm Minh Giang – Phó chủ tịch thường trực UBND huyện Trực Ninh, Ông Vũ Văn Thưởng – Giám đốc Kinh doanh Công ty Tiến Nông, Ông Vũ Quang Định – Trưởng phòng Nông nghiệp Huyện Trực Ninh, các cán bộ khuyến nông, cùng đông đảo bà con nông dân tham gia mô hình.
 

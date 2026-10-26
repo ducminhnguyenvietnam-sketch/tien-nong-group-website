@@ -4,7 +4,7 @@ category: khcn
 date: 2013-06-27
 author: Tiến Nông
 featured: false
-summary: Đó là cánh đồng 30ha tại xã Hoằng Anh, TP.Thanh Hóa do Công ty CP Công Nông nghiệp Tiến Nông làm chủ đầu tư, theo phương thức doanh nghiệp thuê lại đất của nông dân để chủ động áp dụng các giải pháp công nghệ cao toàn diện và đồng bộ, trả hoa lợi cho
+summary: Đó là cánh đồng 30ha tại xã Hoằng Anh, TP.Thanh Hóa do Công ty CP Công Nông nghiệp Tiến Nông làm chủ đầu tư, theo phương thức doanh nghiệp thuê lại đất của nông dân để chủ động áp dụng các giải pháp công nghệ cao toàn diện và đồng bộ, trả hoa lợi cho…
 cover:
   src: /uploads/tin-cu/2013/canh-dong-lua-cong-nghe-cao-dau-tien-tai-thanh-hoa.webp
   focus: center

@@ -4,7 +4,7 @@ category: cd
 date: 2013-02-02
 author: Tiến Nông
 featured: false
-summary: Sáng ngày 30 tháng 1 năm 2013, tại Hội trường Nhà khách Thanh Bình – TP. Thanh Hóa, Công ty CP Công Nông nghiệp Tiến Nông đã phối hợp cùng Hội bảo trợ người tàn tật – trẻ mồ côi TP Thanh Hóa tổ chức trao quà Tết Qúy Tỵ cho những người có hoàn
+summary: Sáng ngày 30 tháng 1 năm 2013, tại Hội trường Nhà khách Thanh Bình – TP. Thanh Hóa, Công ty CP Công Nông nghiệp Tiến Nông đã phối hợp cùng Hội bảo trợ người tàn tật – trẻ mồ côi TP Thanh Hóa tổ chức trao quà Tết Qúy Tỵ cho những người có hoàn…
 cover:
   src: /uploads/tin-cu/2013/tien-nong-trao-qua-tet-cho-nguoi-ngheo.webp
   focus: center

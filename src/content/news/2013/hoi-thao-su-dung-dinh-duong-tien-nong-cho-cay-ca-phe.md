@@ -4,7 +4,7 @@ category: nd
 date: 2013-11-05
 author: Tiến Nông
 featured: false
-summary: "Sáng 4/11, tại huyện Chư Sê (tỉnh Gia Lai), Cty CP Công Nông nghiệp Tiến Nông, phối hợp với Hội Nông dân tỉnh Gia Lai, tổ chức Hội thảo đầu bờ với chủ đề: “Sử dụng dinh dưỡng Tiến Nông cho cây cà phê năng suất đạt 5 – 7 tấn nhân/ha”. Đến dự hội"
+summary: "Sáng 4/11, tại huyện Chư Sê (tỉnh Gia Lai), Cty CP Công Nông nghiệp Tiến Nông, phối hợp với Hội Nông dân tỉnh Gia Lai, tổ chức Hội thảo đầu bờ với chủ đề: “Sử dụng dinh dưỡng Tiến Nông cho cây cà phê năng suất đạt 5 – 7 tấn nhân/ha”. Đến dự hội…"
 cover:
   src: /uploads/tin-cu/2013/hoi-thao-su-dung-dinh-duong-tien-nong-cho-cay-ca-phe.webp
   focus: center

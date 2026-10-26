@@ -1,4 +1,5 @@
 ---
+old_url: "/mot-mau-dat-di-qua-phong-lab-trung-tam-nghien-cuu-phat-trien-khoa-hoc-va-cong-nghe-tien-nong-nhu-the-nao/"
 title: Một mẫu đất đi qua phòng Lab Trung tâm Nghiên cứu phát triển Khoa học và Công nghệ Tiến Nông như thế nào?
 category: khcn
 date: 2026-05-11

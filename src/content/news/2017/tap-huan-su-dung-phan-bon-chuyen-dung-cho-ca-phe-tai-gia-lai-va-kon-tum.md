@@ -4,7 +4,7 @@ category: nd
 date: 2017-04-30
 author: Tiến Nông
 featured: false
-summary: Từ ngày 01–30/4/2017 Công ty CP Công Nông Nghiệp Tiến Nông kết hợp với Viện Khoa Học Kỹ Thuật Nông Nghiệp Miền Nam đã tổ chức được 15 lớp tập huấn chuyển giao tiến bộ khoa học kỹ thuật cho hơn 3000 nông dân trên 2 tỉnh Gia Lai và Kon Tum về gói giải
+summary: "Từ ngày 01–30/4/2017 Công ty CP Công Nông Nghiệp Tiến Nông kết hợp với Viện Khoa Học Kỹ Thuật Nông Nghiệp Miền Nam đã tổ chức được 15 lớp tập huấn chuyển giao tiến bộ khoa học kỹ thuật cho hơn 3000 nông dân trên 2 tỉnh Gia Lai và Kon Tum về gói giải pháp dinh dưỡng chuyên dùng cho cây cà phê và giới thiệu một số sản phẩm mới: NPK Ogranic, Divital, Kali Vi lượng…"
 cover:
   src: /uploads/tin-cu/2017/tap-huan-su-dung-phan-bon-chuyen-dung-cho-ca-phe-tai-gia-lai-va-kon-tum.webp
   focus: center
@@ -19,8 +19,6 @@ external_url: ""
 press_highlight: false
 old_url: /tap-huan-su-dung-phan-bon-chuyen-dung-cho-ca-phe-tai-gia-lai-va-kon-tum/
 ---
-
-**Từ ngày 01–30/4/2017 Công ty CP Công Nông Nghiệp Tiến Nông kết hợp với Viện Khoa Học Kỹ Thuật Nông Nghiệp Miền Nam đã tổ chức được 15 lớp tập huấn chuyển giao tiến bộ khoa học kỹ thuật cho hơn 3000 nông dân trên 2 tỉnh Gia Lai và Kon Tum về gói giải pháp dinh dưỡng chuyên dùng cho cây cà phê và giới thiệu một số sản phẩm mới: NPK Ogranic, Divital, Kali Vi lượng…**
 
 Tham dự các buổi tập huấn có ông Cao Văn Quang – giám đốc vùng 1 Tây Nguyên, TS. Nguyễn Quang Chơn – Viện KHKT Nông nghiệp miền Nam cùng các cán bộ kỹ thuật công ty Tiến Nông và bà con nông dân 2 tỉnh Gia Lai và Kon Tum.
 

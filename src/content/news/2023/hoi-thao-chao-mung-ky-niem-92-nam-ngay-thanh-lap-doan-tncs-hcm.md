@@ -4,7 +4,7 @@ category: tn
 date: 2023-03-25
 author: Tiến Nông
 featured: false
-summary: Thiết thực kỷ niệm 92 năm Ngày thành lập Đoàn Thanh niên Cộng sản Hồ Chí Minh (TNCS HCM) (26/3/1931 – 26/3/2023) và hưởng ứng Tháng Thanh niên năm 2023. Được sự đồng ý, tạo điều kiện của Ban Lãnh đạo Công ty, sáng ngày 25/3/2023, Ban Chấp hành (BCH) Đoàn…
+summary: Thiết thực kỷ niệm 92 năm Ngày thành lập Đoàn Thanh niên Cộng sản Hồ Chí Minh (TNCS HCM) (26/3/1931 – 26/3/2023) và hưởng ứng Tháng Thanh niên năm 2023. Được sự đồng ý, tạo điều kiện của Ban Lãnh đạo Công ty, sáng ngày 25/3/2023, Ban Chấp hành (BCH) Đoàn Thanh niên Công ty Cổ phần Công Nông nghiệp Tiến Nông đã tổ chức chương trình “Hội thao và Văn nghệ chào mừng kỷ niệm 92 năm ngày thành lập Đoàn TNCS HCM”.
 cover:
   src: /uploads/tin-cu/2023/hoi-thao-chao-mung-ky-niem-92-nam-ngay-thanh-lap-doan-tncs-hcm.webp
   focus: center
@@ -19,8 +19,6 @@ external_url: ""
 press_highlight: false
 old_url: /hoi-thao-chao-mung-ky-niem-92-nam-ngay-thanh-lap-doan-tncs-hcm/
 ---
-
-**Thiết thực kỷ niệm 92 năm Ngày thành lập Đoàn Thanh niên Cộng sản Hồ Chí Minh (TNCS HCM) (26/3/1931 – 26/3/2023) và hưởng ứng Tháng Thanh niên năm 2023. Được sự đồng ý, tạo điều kiện của Ban Lãnh đạo Công ty, sáng ngày 25/3/2023, Ban Chấp hành (BCH) Đoàn Thanh niên Công ty Cổ phần Công Nông nghiệp Tiến Nông đã tổ chức chương trình “Hội thao và Văn nghệ chào mừng kỷ niệm 92 năm ngày thành lập Đoàn TNCS HCM”.**
 
 Dự chương trình có đồng chí Nguyễn Thị Trang – Ủy viên Ban Chấp hành (UV BCH) Thành đoàn Thành phố Thanh Hóa. Ông Nguyễn Hồng Lâm – Thành viên Hội đồng Quản trị, cùng Lãnh đạo các phòng ban, Trung tâm, Nhà máy thuộc Công ty CP CNN Tiến Nông. Đặc biệt là sự tham gia của gần 150 ĐVTN Tiến Nông là vận động viên và cổ động viên trong chương trình.
 

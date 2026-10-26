@@ -4,7 +4,7 @@ category: tn
 date: 2012-09-25
 author: Tiến Nông
 featured: false
-summary: Vừa qua, tại Nhà Thi đấu tỉnh Bến Tre, đội bóng chuyền nữ Tiến Nông Thanh Hóa đã đoạt chức vô địch Giải bóng chuyền các đội mạnh khu vực phía Nam cúp Sanatech – Bến Tre mở rộng 2012. Giải năm nay có 11 đội bóng tham dự (6 đội nam và 5 đội
+summary: Vừa qua, tại Nhà Thi đấu tỉnh Bến Tre, đội bóng chuyền nữ Tiến Nông Thanh Hóa đã đoạt chức vô địch Giải bóng chuyền các đội mạnh khu vực phía Nam cúp Sanatech – Bến Tre mở rộng 2012.
 cover:
   src: /uploads/tin-cu/2012/bong-chuyen-nu-tien-nong-thanh-hoa-xuat-sac-gianh-chuc-vo-dich-cup-sanatech-ben.webp
   focus: center
@@ -19,8 +19,6 @@ external_url: ""
 press_highlight: false
 old_url: /bong-chuyen-nu-tien-nong-thanh-hoa-xuat-sac-gianh-chuc-vo-dich-cup-sanatech-ben-tre/
 ---
-
-**Vừa qua, tại Nhà Thi đấu tỉnh Bến Tre, đội bóng chuyền nữ Tiến Nông Thanh Hóa đã đoạt chức vô địch Giải bóng chuyền các đội mạnh khu vực phía Nam cúp Sanatech – Bến Tre mở rộng 2012.**
 
 Giải năm nay có 11 đội bóng tham dự (6 đội nam và 5 đội nữ).
 

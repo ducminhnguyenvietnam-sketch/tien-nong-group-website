@@ -4,7 +4,7 @@ category: tn
 date: 2020-01-30
 author: Tiến Nông
 featured: false
-summary: Chiều ngày 30/1/2020, đồng chí Lê Mai Khanh – Phó Chủ tịch UBND TP Thanh Hóa đã tới thăm, chúc Tết công ty CP Công nông nghiệp Tiến Nông nhân dịp đầu Xuân Canh Tý 2020. Đến thăm và làm việc tại Tiến Nông, Phó Chủ tịch UBND TP Thanh Hóa đã lắng nghe lãnh
+summary: Chiều ngày 30/1/2020, đồng chí Lê Mai Khanh – Phó Chủ tịch UBND TP Thanh Hóa đã tới thăm, chúc Tết công ty CP Công nông nghiệp Tiến Nông nhân dịp đầu Xuân Canh Tý 2020.
 cover:
   src: /uploads/tin-cu/2020/pho-chu-tich-ubnd-tp-thanh-hoa-toi-tham-chuc-tet-nhan-dip-dau-xuan-canh-ty-2020.webp
   focus: center
@@ -19,8 +19,6 @@ external_url: ""
 press_highlight: false
 old_url: /pho-chu-tich-ubnd-tp-thanh-hoa-toi-tham-chuc-tet-nhan-dip-dau-xuan-canh-ty-2020/
 ---
-
-**Chiều ngày 30/1/2020, đồng chí Lê Mai Khanh – Phó Chủ tịch UBND TP Thanh Hóa đã tới thăm, chúc Tết công ty CP Công nông nghiệp Tiến Nông nhân dịp đầu Xuân Canh Tý 2020.**
 
 Đến thăm và làm việc tại Tiến Nông, Phó Chủ tịch UBND TP Thanh Hóa đã lắng nghe lãnh đạo công ty thông tin về tình hình kinh doanh trong năm 2019. Một năm để lại nhiều dấu ấn quan trọng đối với công ty. Mặc dù sản xuất nông nghiệp gặp nhiều khó khăn, nhưng các hoạt động sản xuất kinh doanh vẫn đạt chỉ tiêu. Tiến Nông vẫn là doanh nghiệp dẫn đầu trong lĩnh vực sản xuất dinh dưỡng cây trồng trên địa bàn tỉnh.
 

@@ -4,7 +4,7 @@ category: cd
 date: 2019-04-10
 author: Tiến Nông
 featured: false
-summary: Bộ môn bóng đá nói riêng và thể thao nói chung luôn giành được sự quan tâm rất lớn từ hàng triệu người Việt. Sức hút từ tinh thần và ý chí thi đấu trong môn thể thao này cũng là những gì mà Công ty Cổ phần CNN Tiến Nông muốn gửi gắm và
+summary: Bộ môn bóng đá nói riêng và thể thao nói chung luôn giành được sự quan tâm rất lớn từ hàng triệu người Việt. Sức hút từ tinh thần và ý chí thi đấu trong môn thể thao này cũng là những gì mà Công ty Cổ phần CNN Tiến Nông muốn gửi gắm và…
 cover:
   src: /uploads/tin-cu/2019/tien-nong-tu-hao-dong-hanh-cung-clb-bong-da-thanh-hoa.webp
   focus: center

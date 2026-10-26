@@ -4,7 +4,7 @@ category: cd
 date: 2018-02-12
 author: Tiến Nông
 featured: false
-summary: Tiếp tục các hoạt động trong chương trình “Tết vì người nghèo”, ngày 12/02/2018 công ty cổ phần CNN Tiến Nông kết hợp cùng Hội nông dân huyện Hoằng Hóa tổ chức chương trình trao tặng 40 suất quà Tết cho hộ nông dân nghèo tại các xã Hoằng Xuân, Hoằng Xuyên,…
+summary: Tiếp tục các hoạt động trong chương trình “Tết vì người nghèo”, ngày 12/02/2018 công ty cổ phần CNN Tiến Nông kết hợp cùng Hội nông dân huyện Hoằng Hóa tổ chức chương trình trao tặng 40 suất quà Tết cho hộ nông dân nghèo tại các xã Hoằng Xuân, Hoằng Xuyên, Hoằng Đông huyện Hoằng Hóa. Với mong muốn mang đến cho bà con nông dân nghèo một cái tết đầm ấm vui vẻ và giúp bà con phấn đấu trong năm mới…
 cover:
   src: /uploads/tin-cu/2018/tien-nong-tang-qua-tet-cho-cac-ho-nong-dan-ngheo-tai-huyen-hoang-hoa.webp
   focus: center
@@ -19,8 +19,6 @@ external_url: ""
 press_highlight: false
 old_url: /tien-nong-tang-qua-tet-cho-cac-ho-nong-dan-ngheo-tai-huyen-hoang-hoa/
 ---
-
-**Tiếp tục các hoạt động trong chương trình “Tết vì người nghèo”, ngày 12/02/2018 công ty cổ phần CNN Tiến Nông kết hợp cùng Hội nông dân huyện Hoằng Hóa tổ chức chương trình trao tặng 40 suất quà Tết cho hộ nông dân nghèo tại các xã Hoằng Xuân, Hoằng Xuyên, Hoằng Đông huyện Hoằng Hóa. Với mong muốn mang đến cho bà con nông dân nghèo một cái tết đầm ấm vui vẻ và giúp bà con phấn đấu trong năm mới vượt qua khó khăn để vươn lên lao động sản xuất thoát cảnh đói nghèo.**
 
 ![Tiến Nông tặng quà Tết cho các hộ nông dân nghèo tại huyện Hoằng Hóa](/uploads/tin-cu/2018/tien-nong-tang-qua-tet-cho-cac-ho-nong-dan-ngheo-tai-huyen-hoang-hoa-1.webp)
 

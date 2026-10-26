@@ -1,4 +1,5 @@
 ---
+old_url: "/quy-trinh-su-dung-bo-san-pham-npk-tien-nong-cho-cay-lua-dat-nang-suat-7-9-tan-ha/"
 title: Quy trình sử dụng bộ sản phẩm NPK Tiến Nông cho cây lúa đạt năng suất 7 – 9 tấn/ha
 category: kt
 date: 2026-10-17

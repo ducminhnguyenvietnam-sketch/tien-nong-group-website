@@ -4,7 +4,7 @@ category: tn
 date: 2025-03-18
 author: Tiến Nông
 featured: false
-summary: Chiều ngày 17/03/2025, tại Văn phòng Công ty cổ phần công nông nghiệp Tiến Nông, Công ty cổ phần công nông nghiệp Tiến Nông (Công ty Tiến Nông) và Ngân hàng TMCP công thương Việt Nam – CN Sầm Sơn (VietinBank) đã chính thức ký kết hợp đồng hợp tác kết nối hệ…
+summary: Chiều ngày 17/03/2025, tại Văn phòng Công ty cổ phần công nông nghiệp Tiến Nông, Công ty cổ phần công nông nghiệp Tiến Nông (Công ty Tiến Nông) và Ngân hàng TMCP công thương Việt Nam – CN Sầm Sơn (VietinBank) đã chính thức ký kết hợp đồng hợp tác kết nối hệ thống ERP với nền tảng ngân hàng số, đánh dấu bước tiến quan trọng trong chiến lược chuyển đổi số và tối ưu hóa quản trị tài chính doanh nghiệp.
 cover:
   src: /uploads/tin-cu/2025/cong-ty-co-phan-cong-nong-nghiep-tien-nong-ky-ket-hop-dong-hop-tac-ket-noi-he.webp
   focus: center
@@ -19,8 +19,6 @@ external_url: ""
 press_highlight: false
 old_url: /cong-ty-co-phan-cong-nong-nghiep-tien-nong-ky-ket-hop-dong-hop-tac-ket-noi-he-thong-erp-voi-ngan-hang-thuong-mai-co-phan-cong-thuong-viet-nam-buoc-tien-quan-trong-trong-chuyen-doi-so/
 ---
-
-**Chiều ngày 17/03/2025, tại Văn phòng Công ty cổ phần công nông nghiệp Tiến Nông, Công ty cổ phần công nông nghiệp Tiến Nông (Công ty Tiến Nông) và Ngân hàng TMCP công thương Việt Nam – CN Sầm Sơn (VietinBank) đã chính thức ký kết hợp đồng hợp tác kết nối hệ thống ERP với nền tảng ngân hàng số, đánh dấu bước tiến quan trọng trong chiến lược chuyển đổi số và tối ưu hóa quản trị tài chính doanh nghiệp.**
 
 *Lễ ký kết hợp đồng kết nối ngân hàng số – ERP giữa VietinBank và Công ty Tiến Nông*
 

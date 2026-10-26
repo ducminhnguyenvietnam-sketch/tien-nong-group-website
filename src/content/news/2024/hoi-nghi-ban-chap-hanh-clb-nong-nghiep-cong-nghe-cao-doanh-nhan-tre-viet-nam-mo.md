@@ -4,7 +4,7 @@ category: khcn
 date: 2024-03-02
 author: Tiến Nông
 featured: false
-summary: "Hội nghị diễn ra ngày 02/3 tại TP. Cần Thơ. Các Phó Chủ tịch Hội Doanh nhân trẻ (DNT) Việt Nam: Anh Nguyễn Hồng Phong, chị Lưu Thị Thanh Mẫu, anh Dương Long Thành tham dự chương trình. Toàn cảnh hội nghị. Tại hội nghị, CLB đã tổng kết lại các hoạt động trong…"
+summary: "Hội nghị diễn ra ngày 02/3 tại TP. Cần Thơ. Các Phó Chủ tịch Hội Doanh nhân trẻ (DNT) Việt Nam: Anh Nguyễn Hồng Phong, chị Lưu Thị Thanh Mẫu, anh Dương Long Thành tham dự chương trình."
 cover:
   src: /uploads/tin-cu/2024/hoi-nghi-ban-chap-hanh-clb-nong-nghiep-cong-nghe-cao-doanh-nhan-tre-viet-nam-mo.webp
   focus: center
@@ -19,8 +19,6 @@ external_url: ""
 press_highlight: false
 old_url: /hoi-nghi-ban-chap-hanh-clb-nong-nghiep-cong-nghe-cao-doanh-nhan-tre-viet-nam-mo-rong-nam-2024/
 ---
-
-**Hội nghị diễn ra ngày 02/3 tại TP. Cần Thơ. Các Phó Chủ tịch Hội Doanh nhân trẻ (DNT) Việt Nam: Anh Nguyễn Hồng Phong, chị Lưu Thị Thanh Mẫu, anh Dương Long Thành tham dự chương trình.**
 
 ![Hội nghị Ban chấp hành CLB Nông nghiệp công nghệ cao Doanh nhân trẻ Việt Nam mở rộng năm 2024](/uploads/tin-cu/2024/hoi-nghi-ban-chap-hanh-clb-nong-nghiep-cong-nghe-cao-doanh-nhan-tre-viet-nam-mo-1.webp)
 

@@ -4,7 +4,7 @@ category: tn
 date: 2012-10-21
 author: Tiến Nông
 featured: false
-summary: Cây mía là một trong những cây trồng chủ lực của huyện Thạch Thành, đem lại lợi nhuận khá cao cho người nông dân. Những năm gần đây năng suất mía đã tăng lên một cách rõ rệt do người trồng mía huyện Thạch Thành đã áp dụng những biện pháp chăm sóc hợp lý
+summary: Cây mía là một trong những cây trồng chủ lực của huyện Thạch Thành, đem lại lợi nhuận khá cao cho người nông dân. Những năm gần đây năng suất mía đã tăng lên một cách rõ rệt do người trồng mía huyện Thạch Thành đã áp dụng những biện pháp chăm sóc hợp lý…
 cover:
   src: /uploads/tin-cu/2012/phan-bon-tien-nong-chuyen-dung-cho-cay-mia-tren-vung-dat-thach-thanh.webp
   focus: center

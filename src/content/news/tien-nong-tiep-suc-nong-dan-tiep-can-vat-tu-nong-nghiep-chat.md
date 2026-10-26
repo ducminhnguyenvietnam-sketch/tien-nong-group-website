@@ -1,4 +1,5 @@
 ---
+old_url: "/tien-nong-tiep-suc-nong-dan-tiep-can-vat-tu-nong-nghiep-chat-luong-nang-cao-hieu-qua-san-xuat/"
 title: "Tiến Nông tiếp sức nông dân tiếp cận vật tư nông nghiệp chất lượng, nâng cao hiệu quả sản xuất"
 category: "nd"
 date:

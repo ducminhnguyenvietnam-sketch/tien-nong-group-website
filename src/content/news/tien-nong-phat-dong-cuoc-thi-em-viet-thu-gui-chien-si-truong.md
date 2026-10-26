@@ -1,4 +1,5 @@
 ---
+old_url: "/tien-nong-phat-dong-cuoc-thi-em-viet-thu-gui-chien-si-truong-sa/"
 title: "Tiến Nông phát động cuộc thi “Em viết thư gửi Chiến sĩ Trường Sa”"
 category: "tn"
 date:

@@ -4,7 +4,7 @@ category: nd
 date: 2016-03-10
 author: Tiến Nông
 featured: false
-summary: Sau hơn 2 tháng triển khai, đến nay, các cấp Hội Nông dân tỉnh Bắc Giang đã cung ứng được gần 800 tấn phân bón N-P-K-Si cho nông dân sản xuất vụ Chiêm Xuân 2016, đạt 61% chỉ tiêu kế hoạch năm. Các huyện triển khai hiệu quả như Hội Nông dân huyện Hiệp Hòa
+summary: Sau hơn 2 tháng triển khai, đến nay, các cấp Hội Nông dân tỉnh Bắc Giang đã cung ứng được gần 800 tấn phân bón N-P-K-Si cho nông dân sản xuất vụ Chiêm Xuân 2016, đạt 61% chỉ tiêu kế hoạch năm.
 cover:
   src: /uploads/tin-cu/2016/bac-giang-cung-ung-gan-800-tan-phan-bon-cho-nong-dan-san-xuat-vu-chiem-xuan-2016.webp
   focus: center
@@ -19,8 +19,6 @@ external_url: ""
 press_highlight: false
 old_url: /bac-giang-cung-ung-gan-800-tan-phan-bon-cho-nong-dan-san-xuat-vu-chiem-xuan-2016/
 ---
-
-**Sau hơn 2 tháng triển khai, đến nay, các cấp Hội Nông dân tỉnh Bắc Giang đã cung ứng được gần 800 tấn phân bón N-P-K-Si cho nông dân sản xuất vụ Chiêm Xuân 2016, đạt 61% chỉ tiêu kế hoạch năm.**
 
 Các huyện triển khai hiệu quả như Hội Nông dân huyện Hiệp Hòa 248 tấn đạt 165,3% kế hoạch; Yên Thế 150,4 tấn đạt 100,2% kế hoạch; Lục Ngạn 140 tấn đạt 93,3% kế hoạch, Lục Nam 60 tấn đạt 40% kế hoạch, Sơn Động 30 tấn đạt 60% kế hoạch…
 

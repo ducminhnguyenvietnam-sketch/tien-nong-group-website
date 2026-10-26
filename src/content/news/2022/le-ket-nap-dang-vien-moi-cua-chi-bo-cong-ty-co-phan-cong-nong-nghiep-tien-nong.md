@@ -4,7 +4,7 @@ category: tn
 date: 2022-04-07
 author: Tiến Nông
 featured: false
-summary: "Thực hiện Quyết định số 405-QĐ/TU ngày 28 tháng 3 năm 2022 của Ban Thường vụ Thành ủy TP. Thanh Hóa, vào lúc 15h00’ ngày 06/4/2022, Chi bộ Công ty CP Công Nông nghiệp Tiến Nông đã tổ chức Lễ kết nạp đảng viên cho 02 quần chúng ưu tú: Lê Thị Thanh – Phó"
+summary: "Thực hiện Quyết định số 405-QĐ/TU ngày 28 tháng 3 năm 2022 của Ban Thường vụ Thành ủy TP. Thanh Hóa, vào lúc 15h00’ ngày 06/4/2022, Chi bộ Công ty CP Công Nông nghiệp Tiến Nông đã tổ chức Lễ kết nạp đảng viên cho 02 quần chúng ưu tú: Lê Thị Thanh – Phó Chủ tịch Công đoàn, nhân viên Phòng Hành chính nhân sự và Nguyễn Văn Triều – Tổ phó Tổ SX 3, PX2, Nhà máy DDCT Tiến Nông 3."
 cover:
   src: /uploads/tin-cu/2022/le-ket-nap-dang-vien-moi-cua-chi-bo-cong-ty-co-phan-cong-nong-nghiep-tien-nong.webp
   focus: center
@@ -19,8 +19,6 @@ external_url: ""
 press_highlight: false
 old_url: /le-ket-nap-dang-vien-moi-cua-chi-bo-cong-ty-co-phan-cong-nong-nghiep-tien-nong/
 ---
-
-**Thực hiện Quyết định số 405-QĐ/TU ngày 28 tháng 3 năm 2022 của Ban Thường vụ Thành ủy TP. Thanh Hóa, vào lúc 15h00’ ngày 06/4/2022, Chi bộ Công ty CP Công Nông nghiệp Tiến Nông đã tổ chức Lễ kết nạp đảng viên cho 02 quần chúng ưu tú: Lê Thị Thanh – Phó Chủ tịch Công đoàn, nhân viên Phòng Hành chính nhân sự và Nguyễn Văn Triều – Tổ phó Tổ SX 3, PX2, Nhà máy DDCT Tiến Nông 3.**
 
 ![LỄ KẾT NẠP ĐẢNG VIÊN MỚI CỦA CHI BỘ CÔNG TY CỔ PHẦN CÔNG NÔNG NGHIỆP TIẾN NÔNG](/uploads/tin-cu/2022/le-ket-nap-dang-vien-moi-cua-chi-bo-cong-ty-co-phan-cong-nong-nghiep-tien-nong-1.webp)
 

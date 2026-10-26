@@ -4,7 +4,7 @@ category: tn
 date: 2026-05-19
 author: Tiến Nông
 featured: false
-summary: Hưởng ứng Tháng Công nhân, tháng An toàn vệ sinh lao động năm 2026, Công đoàn Công ty Cổ phần Công Nông nghiệp Tiến Nông đã tổ chức chương trình thăm hỏi, động viên và trao quà hỗ trợ tới các đoàn viên, người lao động có hoàn cảnh đặc biệt khó khăn đang làm
+summary: Hưởng ứng Tháng Công nhân, tháng An toàn vệ sinh lao động năm 2026, Công đoàn Công ty Cổ phần Công Nông nghiệp Tiến Nông đã tổ chức chương trình thăm hỏi, động viên và trao quà hỗ trợ tới các đoàn viên, người lao động có hoàn cảnh đặc biệt khó khăn đang làm…
 cover:
   src: /uploads/tin-cu/2026/gia-dinh-tien-nong-trao-yeu-thuong-gui-niem-tin-toi-nguoi-lao-dong.webp
   focus: center
