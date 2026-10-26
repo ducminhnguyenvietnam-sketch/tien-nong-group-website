@@ -127,6 +127,10 @@ content:
     type: boolean
     description: Khối "Báo chí nói về Tiến Nông" ở cuối trang Tin tức hiện 3 bài, bấm "Xem thêm" để hiện hết. Bài được bật hiện trước, sau đó
       đến bài mới nhất.
+  - name: old_url
+    label: Đường dẫn trên web cũ
+    type: string
+    description: Tự điền khi chuyển bài từ web cũ tiennong.vn. Người mở link cũ sẽ được chuyển sang bài này. Không cần sửa.
 - name: pages
   label: Các trang
   type: group
