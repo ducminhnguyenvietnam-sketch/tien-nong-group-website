@@ -1,0 +1,87 @@
+---
+/**
+ * Photo slideshow: cross-fades every few seconds, with dots, arrows and swipe. Pauses while the
+ * pointer/focus is inside or it is off screen; no autoplay with reduced motion. Each slide is an
+ * ImageSlot, so the on-site photo editor (?sua-anh) can replace every photo.
+ */
+import ImageSlot from './ImageSlot.astro';
+
+interface Photo { src?: string; focus?: string; zoom?: string | number; alt?: string }
+interface Props {
+  id: string;
+  slides: Photo[];
+  /** "<file>#<path to the list>" — slide k is saved at "<path>.k". */
+  cms: string;
+  label?: string;
+  interval?: number;
+  radius?: number;
+  sizes?: string;
+}
+const { id, slides, cms, label = 'Ảnh', interval = 5000, radius = 16, sizes = '(max-width: 767px) 92vw, 600px' } = Astro.props;
+const shown = slides.filter((s) => s?.src);
+const list = shown.length ? slides.map((s, k) => ({ s, k })).filter(({ s }) => s?.src) : slides.slice(0, 1).map((s, k) => ({ s, k }));
+---
+<div class="slideshow" data-slideshow data-interval={interval} role="region" aria-roledescription="carousel" aria-label={label} style={`--ss-r:${radius}px`}>
+{list.map(({ s, k }, i) => (
+  <div class:list={['slideshow__slide', { 'is-active': i === 0 }]} aria-hidden={i === 0 ? 'false' : 'true'}>
+    <ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`${id}-${k}`} shape="rounded" radius={radius} placeholder={s.alt || label} image={s} cms={`${cms}.${k}`} sizes={sizes} />
+  </div>
+))}
+{list.length > 1 && <>
+  <button type="button" class="slideshow__arrow slideshow__arrow--prev" data-ss-step="-1" aria-label="Ảnh trước">‹</button>
+  <button type="button" class="slideshow__arrow slideshow__arrow--next" data-ss-step="1" aria-label="Ảnh sau">›</button>
+  <div class="slideshow__dots">{list.map((_x, i) => <button type="button" data-ss-to={i} aria-label={`Ảnh ${i + 1}`} aria-current={i === 0 ? 'true' : undefined}></button>)}</div>
+</>}
+</div>
+
+<style>
+  .slideshow { position: relative; width: 100%; height: 100%; border-radius: var(--ss-r); overflow: hidden; background: rgba(0, 0, 0, .08); }
+  .slideshow__slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity 800ms var(--ease-out), visibility 800ms; }
+  .slideshow__slide.is-active { opacity: 1; visibility: visible; }
+  .slideshow__arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 40px; height: 40px; border-radius: 50%; border: 0;
+    background: rgba(0, 0, 0, .32); color: #fff; font: 400 26px/1 var(--font-body); padding-bottom: 3px; cursor: pointer; opacity: 0; transition: opacity var(--motion-base), background var(--motion-fast); }
+  .slideshow:hover .slideshow__arrow, .slideshow:focus-within .slideshow__arrow { opacity: 1; }
+  .slideshow__arrow:hover { background: rgba(0, 0, 0, .55); }
+  .slideshow__arrow--prev { left: 12px; } .slideshow__arrow--next { right: 12px; }
+  .slideshow__dots { position: absolute; left: 0; right: 0; bottom: 14px; z-index: 2; display: flex; justify-content: center; gap: 8px; }
+  .slideshow__dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: rgba(255, 255, 255, .6); cursor: pointer; transition: width var(--motion-base), background var(--motion-base); }
+  .slideshow__dots button[aria-current='true'] { width: 24px; background: #fff; }
+  @media (hover: none) { .slideshow__arrow { display: none; } }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-slideshow]').forEach((root) => {
+    const slides = [...root.querySelectorAll<HTMLElement>('.slideshow__slide')];
+    const dots = [...root.querySelectorAll<HTMLElement>('[data-ss-to]')];
+    if (slides.length < 2) return;
+    let cur = 0, timer = 0, paused = false, visible = false;
+    const editing = document.documentElement.classList.contains('pe-on');
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const show = (k: number) => {
+      cur = (k + slides.length) % slides.length;
+      slides.forEach((s, i) => { s.classList.toggle('is-active', i === cur); s.setAttribute('aria-hidden', String(i !== cur)); });
+      dots.forEach((d, i) => (i === cur ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current')));
+    };
+    const tick = () => {
+      clearTimeout(timer);
+      if (still || editing || document.documentElement.classList.contains('pe-on')) return;
+      timer = window.setTimeout(() => { if (!paused && visible && !document.hidden) show(cur + 1); tick(); }, Number(root.dataset.interval) || 5000);
+    };
+    root.querySelectorAll<HTMLElement>('[data-ss-step]').forEach((b) => b.addEventListener('click', () => { show(cur + Number(b.dataset.ssStep)); tick(); }));
+    dots.forEach((d, i) => d.addEventListener('click', () => { show(i); tick(); }));
+    root.addEventListener('pointerenter', () => { paused = true; });
+    root.addEventListener('pointerleave', () => { paused = false; });
+    root.addEventListener('focusin', () => { paused = true; });
+    root.addEventListener('focusout', () => { paused = false; });
+    let x0: number | null = null;
+    root.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') x0 = e.clientX; });
+    root.addEventListener('pointerup', (e) => {
+      if (x0 === null) return;
+      const dx = e.clientX - x0; x0 = null;
+      if (Math.abs(dx) > 40) { show(cur + (dx < 0 ? 1 : -1)); tick(); }
+    });
+    if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { visible = e.isIntersecting; }, { threshold: 0.3 }).observe(root);
+    else visible = true;
+    tick();
+  });
+</script>

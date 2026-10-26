@@ -45,7 +45,10 @@
     "t2": "“Mùa vụ không chỉ là những gì chúng tôi trồng trọt, mà là những cuộc đời chúng tôi cùng vun đắp và tương lai chúng tôi cùng kiến tạo.”",
     "t3": "Hơn ba thập kỷ qua, Tiến Nông kiên định với một lựa chọn: lấy khoa học làm nền tảng và lấy lợi ích của nhà nông làm thước đo cho mọi quyết định. Chúng tôi tin khoa học nông nghiệp phải bắt đầu từ chính đất Việt: hiểu thổ nhưỡng, hiểu hệ vi sinh bản địa, thay vì sao chép công thức có sẵn. Tiến Nông không chỉ bán phân bón, mà mang đến giải pháp khoa học cho từng chân ruộng, dựa trên ba điểm tựa: nông dân là trung tâm, đất đai là nền tảng, khoa học công nghệ là động lực. Khi người nông dân canh tác hiệu quả hơn, mỗi vụ mùa sẽ góp phần vào sự thịnh vượng chung của đất nước.",
     "t4": "Nguyễn Hồng Phong",
-    "t5": "Tổng Giám đốc"
+    "t5": "Tổng Giám đốc",
+    "heading_small": "Lời chào từ",
+    "heading": "Tổng Giám đốc",
+    "slogan": "Phụng sự nhà nông – Kiến tạo tương lai"
   },
   "s03_su_menh_gia_tri": {
     "t1": "SỨ MỆNH",
@@ -69,7 +72,13 @@
     "t19": "Lợi ích của nhà nông luôn được đặt lên trên hết trong mọi quyết định.",
     "t20": "05",
     "t21": "Trách nhiệm cộng đồng",
-    "t22": "Trách nhiệm với xã hội, bảo vệ môi trường, đồng hành cùng nông dân."
+    "t22": "Trách nhiệm với xã hội, bảo vệ môi trường, đồng hành cùng nông dân.",
+    "background": {
+      "src": "/uploads/Nhà máy DDCT TN Bỉm Sơn.jpg",
+      "focus": "50% 60%",
+      "zoom": "100",
+      "alt": "Nhà máy Tiến Nông Bỉm Sơn lúc bình minh"
+    }
   },
   "s04_lich_su": {
     "t1": "LỊCH SỬ PHÁT TRIỂN",
@@ -309,11 +318,176 @@
     "t11": "PHÂN PHỐI",
     "t12": "200+ nhà phân phối, 10.000 điểm bán, 10+ quốc gia",
     "t13": "Mạng lưới phủ khắp cả nước và các thị trường xuất khẩu trong khu vực.",
-    "t14": "Tìm đại lý →"
+    "t14": "Tìm đại lý →",
+    "capabilities": [
+      {
+        "tab": "Nghiên cứu",
+        "title": "Năng lực nghiên cứu",
+        "subtitle": "Khoa học là nền tảng – Cánh đồng là thước đo",
+        "text": "Trung tâm Nghiên cứu Phát triển KH&CN Tiến Nông với phòng thí nghiệm đạt chuẩn VILAS 1519 & VALAS 262: nghiên cứu công thức, phân tích đất và kiểm định chất lượng sản phẩm.",
+        "stats": [
+          {
+            "value": "50+",
+            "label": "Nhà khoa học",
+            "sub": "& kỹ sư"
+          },
+          {
+            "value": "10.000+",
+            "label": "Mẫu phân tích",
+            "sub": "mỗi năm"
+          }
+        ],
+        "chips_title": "Hướng nghiên cứu trọng tâm",
+        "chips": [
+          "Công nghệ phân bón",
+          "Công nghệ sinh học",
+          "Sức khỏe đất & cây trồng",
+          "Kiểm định chất lượng"
+        ],
+        "note": "Mỗi công thức được nghiên cứu trên đất, trên cây và kiểm chứng ngoài đồng ruộng trước khi đến tay nhà nông.",
+        "link_label": "Khoa học & Công nghệ",
+        "link": "/khoa-hoc-cong-nghe/",
+        "photos": [
+          {
+            "src": "/uploads/cap-rd-mvhvo432.jpg",
+            "focus": "0% 95.9%",
+            "zoom": "100",
+            "alt": "Kỹ sư Tiến Nông phân tích mẫu trong phòng thí nghiệm"
+          },
+          {
+            "src": "/uploads/lab-2-mvc6k7pa.jpg",
+            "focus": "center",
+            "zoom": "100",
+            "alt": "Phòng Công nghệ sinh học"
+          },
+          {
+            "src": "/uploads/a7.jpg",
+            "focus": "center",
+            "zoom": "100",
+            "alt": "Phòng thí nghiệm Trung tâm R&D"
+          },
+          {
+            "src": "/uploads/vilas-mvhvkkg5.jpg",
+            "focus": "center",
+            "zoom": "100",
+            "alt": "Phòng thí nghiệm VILAS 1519"
+          }
+        ]
+      },
+      {
+        "tab": "Sản xuất",
+        "title": "Năng lực sản xuất",
+        "subtitle": "Nền tảng vững chắc – Công nghệ hiện đại – Sẵn sàng đáp ứng",
+        "text": "Tiến Nông sở hữu 3 nhà máy dinh dưỡng cây trồng quy mô lớn, với tổng công suất 650.000 tấn/năm, đáp ứng nhu cầu trên toàn quốc và thị trường ASEAN.",
+        "stats": [
+          {
+            "value": "3",
+            "label": "Nhà máy",
+            "sub": "quy mô lớn"
+          },
+          {
+            "value": "650.000+",
+            "label": "Tấn/năm",
+            "sub": "tổng công suất"
+          }
+        ],
+        "chips_title": "Đa dạng giải pháp dinh dưỡng",
+        "chips": [
+          "Đa dụng",
+          "Hữu cơ",
+          "Chuyên dụng",
+          "Trung vi lượng",
+          "Công nghệ cao"
+        ],
+        "note": "Mỗi sản phẩm của Tiến Nông đều trải qua quy trình kiểm soát chất lượng nghiêm ngặt, đáp ứng nhu cầu đa dạng của từng vùng đất, từng loại cây trồng.",
+        "link_label": "Xem thêm",
+        "link": "/san-pham/",
+        "photos": [
+          {
+            "src": "/uploads/cap-mfg-mvhuyhv5.jpg",
+            "focus": "center",
+            "zoom": "100",
+            "alt": "Dây chuyền tạo hạt tại nhà máy Tiến Nông"
+          },
+          {
+            "src": "/uploads/Nha-may-Tien-Nong-Bim-Son-2025-scaled.jpg",
+            "focus": "center",
+            "zoom": "100",
+            "alt": "Nhà máy Tiến Nông Bỉm Sơn"
+          },
+          {
+            "src": "/uploads/Day chuyen robot Tien Nong Bim Son 2024 - Copy.JPG",
+            "focus": "center",
+            "zoom": "100",
+            "alt": "Dây chuyền đóng bao và xe nâng tại nhà máy Bỉm Sơn"
+          },
+          {
+            "src": "/uploads/IMG_0992.jpg",
+            "focus": "50% 60%",
+            "zoom": "100",
+            "alt": "Robot xếp bao tự động"
+          }
+        ]
+      },
+      {
+        "tab": "Phân phối",
+        "title": "Mạng lưới phân phối",
+        "subtitle": "Phủ khắp cả nước – Vươn ra quốc tế",
+        "text": "Mạng lưới đại lý, nhà phân phối phủ khắp cả nước và các thị trường xuất khẩu trong khu vực, đưa sản phẩm Tiến Nông đến tận tay bà con.",
+        "stats": [
+          {
+            "value": "200+",
+            "label": "Nhà phân phối",
+            "sub": "trên toàn quốc"
+          },
+          {
+            "value": "10.000",
+            "label": "Điểm bán",
+            "sub": "10+ quốc gia xuất khẩu"
+          }
+        ],
+        "chips_title": "Đồng hành cùng",
+        "chips": [
+          "Đại lý & nhà phân phối",
+          "Hợp tác xã",
+          "Khách hàng dự án",
+          "Đối tác quốc tế"
+        ],
+        "note": "Đội ngũ kỹ sư cùng đại lý tư vấn cho bà con, tổ chức hội thảo đầu bờ và mô hình trình diễn tại địa phương.",
+        "link_label": "Tìm đại lý",
+        "link": "/lien-he/#dai-ly",
+        "photos": [
+          {
+            "src": "/uploads/cửa hàng.jpeg",
+            "focus": "center",
+            "zoom": "100",
+            "alt": "Cửa hàng đại lý Tiến Nông"
+          },
+          {
+            "src": "/uploads/phục vụ nông dân.jpeg",
+            "focus": "center",
+            "zoom": "100",
+            "alt": "Giao hàng tận nơi cho bà con"
+          },
+          {
+            "src": "/uploads/aud-export-mvhrkkbs.jpg",
+            "focus": "23.5% 40.9%",
+            "zoom": "100",
+            "alt": "Mạng lưới xuất khẩu"
+          },
+          {
+            "src": "/uploads/phục vụ nông dân 2.jpeg",
+            "focus": "center",
+            "zoom": "100",
+            "alt": "Kỹ sư cùng bà con trên đồng ruộng"
+          }
+        ]
+      }
+    ]
   },
   "s08_he_sinh_thai": {
     "t1": "HỆ SINH THÁI TIẾN NÔNG",
-    "t2": "Công ty thành viên & liên kết",
+    "t2": "Đối tác",
     "img_eco_1_1": {
       "focus": "center",
       "zoom": "100",
@@ -345,7 +519,64 @@
       "zoom": "100",
       "alt": "Logo"
     },
-    "t7": "Tiến Nông Gia Lai"
+    "t7": "Tiến Nông Gia Lai",
+    "partners": [
+      {
+        "name": "Tiến Nông Garden",
+        "logo": {
+          "src": "/uploads/eco-1-mvbxx1du.jpg",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Logo Tiến Nông Garden"
+        },
+        "featured": false,
+        "link": ""
+      },
+      {
+        "name": "Hacheco",
+        "logo": {
+          "src": "/uploads/eco-2-mvbxybod.jpg",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Logo Hacheco"
+        },
+        "featured": false,
+        "link": ""
+      },
+      {
+        "name": "Nông nghiệp Hiện đại Tiến Nông",
+        "logo": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Logo Nông nghiệp Hiện đại Tiến Nông"
+        },
+        "featured": false,
+        "link": ""
+      },
+      {
+        "name": "Đầu tư và Phát triển Nông nghiệp Tiến Nông",
+        "logo": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Logo Đầu tư và Phát triển Nông nghiệp Tiến Nông"
+        },
+        "featured": false,
+        "link": ""
+      },
+      {
+        "name": "Tiến Nông Gia Lai",
+        "logo": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Logo Tiến Nông Gia Lai"
+        },
+        "featured": false,
+        "link": ""
+      }
+    ]
   },
   "s09_phan_9": {
     "t1": "Cùng Tiến Nông kiến tạo những mùa vụ thịnh vượng",
