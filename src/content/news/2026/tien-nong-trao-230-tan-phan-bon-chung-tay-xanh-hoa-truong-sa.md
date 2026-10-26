@@ -28,7 +28,7 @@ old_url: /tien-nong-trao-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa/
 
 Việc trao phân bón là một phần trong chương trình “Xanh hóa Trường Sa” do Bộ Tư lệnh Vùng 4 Hải quân triển khai, với mục tiêu cải thiện môi trường sinh thái, nâng cao chất lượng sống cho quân và dân trên quần đảo Trường Sa, đồng thời góp phần xây dựng cảnh quan xanh, bền vững nơi biển đảo của Tổ quốc.
 
-Với mong muốn kết nối tình cảm từ đất liền với quân và dân trên đảo, Tiến Nông đồng thời triển khai chiến dịch cộng đồng **“Triệu lời chúc – Triệu mầm xanh” tại website** [**tiennong.vn/mamxanh**](http://tiennong.vn/mamxanh). Theo cam kết của chương trình, mỗi lời chúc hợp lệ được quy đổi thành 01 kg phân bón phục vụ công tác trồng và chăm sóc cây xanh trên quần đảo Trường Sa.
+Với mong muốn kết nối tình cảm từ đất liền với quân và dân trên đảo, Tiến Nông đồng thời triển khai chiến dịch cộng đồng **“Triệu lời chúc – Triệu mầm xanh” tại website** [**tiennong.vn/mamxanh**](/phat-trien-ben-vung/xanh-hoa-truong-sa/). Theo cam kết của chương trình, mỗi lời chúc hợp lệ được quy đổi thành 01 kg phân bón phục vụ công tác trồng và chăm sóc cây xanh trên quần đảo Trường Sa.
 
 Ngay sau khi phát động, chiến dịch đã nhận được sự hưởng ứng mạnh mẽ từ cán bộ công nhân viên Tiến Nông, hệ thống đại lý, đối tác, khách hàng và đông đảo người dân cả nước. Hàng nghìn lời chúc đã được gửi về chỉ trong thời gian ngắn, tạo nên một nguồn động viên tinh thần to lớn dành cho quân và dân nơi đảo xa, đồng thời góp phần bổ sung thêm nguồn lực cho hành trình xanh hóa Trường Sa.
 
@@ -60,7 +60,7 @@ Trong thời gian tới, Tiến Nông sẽ tiếp tục nghiên cứu, phát tri
 
 Tiến Nông trân trọng cảm ơn những tấm lòng đã đồng hành cùng chiến dịch “Triệu lời chúc – Triệu mầm xanh”. Mỗi lời chúc gửi đi là một sự động viên từ đất liền tới quân và dân Trường Sa; mỗi hành động chung tay là một đóng góp thiết thực để viết tiếp màu xanh nơi đầu sóng ngọn gió.
 
-Cộng đồng có thể tiếp tục gửi lời chúc tới quân và dân Trường Sa tại: [https://tiennong.vn/mamxanh/](https://tiennong.vn/mamxanh/). Hãy cùng Tiến Nông viết tiếp màu xanh cho Trường Sa!
+Cộng đồng có thể tiếp tục gửi lời chúc tới quân và dân Trường Sa tại: [https://tiennong.vn/mamxanh/](/phat-trien-ben-vung/xanh-hoa-truong-sa/). Hãy cùng Tiến Nông viết tiếp màu xanh cho Trường Sa!
 
 ![Tiến Nông trao tặng 230 tấn phân bón, chung tay xanh hóa Trường Sa](/uploads/tin-cu/2026/tien-nong-trao-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa-3.webp)
 

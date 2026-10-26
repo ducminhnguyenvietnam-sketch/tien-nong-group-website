@@ -20,7 +20,7 @@ press_highlight: false
 old_url: /tien-nong-dong-hanh-xanh-hoa-truong-sa/
 ---
 
-*Hưởng ứng chương trình **“Xanh hóa Trường Sa”** do Bộ Tư lệnh Vùng 4 Hải quân phát động, Công ty Cổ phần Công Nông nghiệp Tiến Nông triển khai chương trình **“Triệu mầm xanh Trường Sa”,** điểm nhấn là chiến dịch cộng đồng **“Triệu lời chúc – Triệu mầm xanh”** tại website* [**https://tiennong.vn/mamxanh/**](https://tiennong.vn/mamxanh/)*, kêu gọi cộng đồng cùng gửi những lời động viên tới quân và dân nơi đảo xa. Để mỗi tình cảm được sẻ chia đều trở thành một đóng góp thiết thực cho màu xanh Trường Sa, mỗi lời chúc hợp lệ, Tiến Nông quy đổi thành 1kg phân bón phục vụ cho công tác trồng và chăm sóc cây xanh trên đảo. Tổng số lượng phân bón được cộng đồng chung tay đóng góp thông qua chiến dịch sẽ được tổng kết và công bố vào ngày 13/6/2026.*
+*Hưởng ứng chương trình **“Xanh hóa Trường Sa”** do Bộ Tư lệnh Vùng 4 Hải quân phát động, Công ty Cổ phần Công Nông nghiệp Tiến Nông triển khai chương trình **“Triệu mầm xanh Trường Sa”,** điểm nhấn là chiến dịch cộng đồng **“Triệu lời chúc – Triệu mầm xanh”** tại website* [**https://tiennong.vn/mamxanh/**](/phat-trien-ben-vung/xanh-hoa-truong-sa/)*, kêu gọi cộng đồng cùng gửi những lời động viên tới quân và dân nơi đảo xa. Để mỗi tình cảm được sẻ chia đều trở thành một đóng góp thiết thực cho màu xanh Trường Sa, mỗi lời chúc hợp lệ, Tiến Nông quy đổi thành 1kg phân bón phục vụ cho công tác trồng và chăm sóc cây xanh trên đảo. Tổng số lượng phân bón được cộng đồng chung tay đóng góp thông qua chiến dịch sẽ được tổng kết và công bố vào ngày 13/6/2026.*
 
 **Mỗi mầm xanh trên đảo là một biểu tượng của ý chí Việt Nam**
 
@@ -58,7 +58,7 @@ Tổng số lượng phân bón được cộng đồng chung tay đóng góp th
 
 ## Chung tay vun trồng màu xanh nơi đầu sóng
 
-Tiến Nông trân trọng kêu gọi toàn thể quý đối tác, khách hàng, cán bộ công nhân viên, bà con nông dân và cộng đồng cùng tham gia chiến dịch bằng cách truy cập website [**https://tiennong.vn/mamxanh/**](https://tiennong.vn/mamxanh/) để gửi lời chúc tới quân và nhân dân Trường Sa.
+Tiến Nông trân trọng kêu gọi toàn thể quý đối tác, khách hàng, cán bộ công nhân viên, bà con nông dân và cộng đồng cùng tham gia chiến dịch bằng cách truy cập website [**https://tiennong.vn/mamxanh/**](/phat-trien-ben-vung/xanh-hoa-truong-sa/) để gửi lời chúc tới quân và nhân dân Trường Sa.
 
 *Một lời chúc được gửi đi.*
 

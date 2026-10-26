@@ -35,7 +35,9 @@
     },
     "subnav": {
       "gioi_thieu": "Giới thiệu chung",
-      "van_hoa_doanh_nghiep": "Văn hóa doanh nghiệp"
+      "van_hoa_doanh_nghiep": "Văn hóa doanh nghiệp",
+      "ptbv_tong_quan": "Tổng quan",
+      "xanh_hoa_truong_sa": "Xanh hoá Trường Sa"
     }
   },
   "footer": {
