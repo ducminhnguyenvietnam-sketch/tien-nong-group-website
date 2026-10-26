@@ -20,7 +20,7 @@ press_highlight: false
 old_url: /trieu-loi-chuc-trieu-mam-xanh-cung-tien-nong-xanh-hoa-truong-sa/
 ---
 
-*Hưởng ứng chương trình Xanh hóa Trường Sa, Tiến Nông phát động chiến dịch “Triệu lời chúc – Triệu mầm xanh”. Mỗi lời chúc hợp lệ, Tiến Nông sẽ tặng 01 kg phân bón đ phục vụ công tác trồng và chăm sóc cây xanh trên quần đảo Trường Sa. Chỉ bằng một lời nhắn gửi yêu thương, mỗi người dân đều có thể góp phần vun đắp những mầm xanh nơi biển đảo thiêng liêng của Tổ quốc tại* ***tiennong.vn/mamxanh.*  [*tiennong.vn/mamxanh/*](http://tiennong.vn/mamxanh/)*.*
+*Hưởng ứng chương trình Xanh hóa Trường Sa, Tiến Nông phát động chiến dịch “Triệu lời chúc – Triệu mầm xanh”. Mỗi lời chúc hợp lệ, Tiến Nông sẽ tặng 01 kg phân bón đ phục vụ công tác trồng và chăm sóc cây xanh trên quần đảo Trường Sa. Chỉ bằng một lời nhắn gửi yêu thương, mỗi người dân đều có thể góp phần vun đắp những mầm xanh nơi biển đảo thiêng liêng của Tổ quốc tại* ***tiennong.vn/mamxanh.*  [*tiennong.vn/mamxanh/*](/phat-trien-ben-vung/xanh-hoa-truong-sa/)*.*
 
 **Triệu lời chúc – Triệu mầm xanh** 
 
@@ -34,7 +34,7 @@ Toàn bộ lượng phân bón được quy đổi từ chiến dịch sẽ đư
 
 Mỗi người tham gia chiến dịch không chỉ gửi gắm tình cảm tới quân và dân nơi đảo xa mà còn trực tiếp góp phần tạo thêm những mầm xanh mới cho Trường Sa.
 
-**Cách tham gia chương trìnhBước 1:** Truy cập website: 👉 [**https://tiennong.vn/mamxanh/**](https://tiennong.vn/mamxanh/)
+**Cách tham gia chương trìnhBước 1:** Truy cập website: 👉 [**https://tiennong.vn/mamxanh/**](/phat-trien-ben-vung/xanh-hoa-truong-sa/)
 
 **Bước 2:** Viết lời chúc, lời động viên hoặc thông điệp yêu thương gửi tới cán bộ, chiến sĩ và nhân dân Trường Sa.
 
@@ -60,6 +60,6 @@ Toàn bộ  kết quả chiến dịch cùng số lượng phân bón được 
 
 🌱 Một Trường Sa xanh hơn cho hôm nay và mai sau.
 
-Gửi lời chúc ngay tại: [**https://tiennong.vn/mamxanh/**](https://tiennong.vn/mamxanh/)
+Gửi lời chúc ngay tại: [**https://tiennong.vn/mamxanh/**](/phat-trien-ben-vung/xanh-hoa-truong-sa/)
 
 Cùng Tiến Nông gửi những tình cảm chân thành nhất tới quân và dân Trường Sa, đồng thời góp phần xây dựng những mầm xanh trên vùng biển đảo thiêng liêng của Tổ quốc.

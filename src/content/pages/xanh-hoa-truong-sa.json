@@ -1,0 +1,330 @@
+{
+  "seo": {
+    "title": "Xanh hoá Trường Sa – Tiến Nông",
+    "description": "Tiến Nông đồng hành chương trình Xanh hoá Trường Sa: trao tặng 230 tấn phân bón, chiến dịch “Triệu lời chúc – Triệu mầm xanh” và cuộc thi “Em viết thư gửi chiến sĩ Trường Sa”."
+  },
+  "hero": {
+    "breadcrumb_home": "Trang chủ",
+    "breadcrumb_parent": "Phát triển bền vững",
+    "breadcrumb_self": "Xanh hoá Trường Sa",
+    "eyebrow": "CHƯƠNG TRÌNH CỘNG ĐỒNG · 2026",
+    "title": "Xanh hoá Trường Sa",
+    "intro": "Hưởng ứng chương trình “Xanh hoá Trường Sa” do Bộ Tư lệnh Vùng 4 Hải quân phát động, Tiến Nông mang phân bón, cây giống và những lời chúc từ đất liền tới quân và dân nơi đầu sóng.",
+    "button_wish": "Gửi lời chúc",
+    "button_journey": "Hành trình chương trình",
+    "background": {
+      "src": "/uploads/tin-cu/2026/tien-nong-trao-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa-6.webp",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Đoàn xe chở phân bón Tiến Nông lên đường tới Trường Sa"
+    }
+  },
+  "stats": [
+    {
+      "value": "230 tấn",
+      "label": "Phân bón trao tặng",
+      "sub": "200 tấn hữu cơ sinh học, 30 tấn NPK"
+    },
+    {
+      "value": "1,26 tỷ đồng",
+      "label": "Tổng giá trị hỗ trợ",
+      "sub": "Trao tại Cam Ranh, Khánh Hoà, 13/6/2026"
+    },
+    {
+      "value": "1.600+",
+      "label": "Lời chúc gửi Trường Sa",
+      "sub": "Mỗi lời chúc = 1 kg phân bón"
+    },
+    {
+      "value": "133",
+      "label": "Lá thư của các em",
+      "sub": "Cuộc thi “Em viết thư gửi chiến sĩ Trường Sa”"
+    }
+  ],
+  "campaign": {
+    "eyebrow": "01 · TRIỆU LỜI CHÚC – TRIỆU MẦM XANH",
+    "title": "Mỗi lời chúc, thêm một mầm xanh",
+    "text": "Giữa nắng gió và đất cát san hô, để một cây xanh bén rễ trên đảo cần rất nhiều công chăm sóc. Tiến Nông phát động chiến dịch “Triệu lời chúc – Triệu mầm xanh”: mỗi lời chúc hợp lệ gửi tới cán bộ, chiến sĩ và nhân dân Trường Sa được quy đổi thành 01 kg phân bón cho việc trồng và chăm sóc cây xanh trên các đảo.",
+    "commitment": "1 lời chúc = 1 kg phân bón",
+    "steps": [
+      {
+        "title": "Viết lời chúc",
+        "text": "Gửi lời động viên, thông điệp yêu thương tới quân và dân Trường Sa ngay trên trang này."
+      },
+      {
+        "title": "Tiến Nông quy đổi",
+        "text": "Mỗi lời chúc hợp lệ được quy đổi thành 01 kg phân bón cho chương trình."
+      },
+      {
+        "title": "Lan toả",
+        "text": "Chia sẻ chiến dịch tới người thân, bạn bè, đồng nghiệp để thêm nhiều mầm xanh."
+      }
+    ],
+    "image": {
+      "src": "/uploads/truong-sa-key-visual.png",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Triệu mầm xanh Trường Sa – Gửi triệu lời chúc, gieo triệu mầm xanh nơi đầu sóng"
+    }
+  },
+  "journey": {
+    "eyebrow": "02 · HÀNH TRÌNH",
+    "title": "Từ nhà máy đến đảo xa",
+    "items": [
+      {
+        "date": "10/6/2026",
+        "title": "Phát động chương trình",
+        "text": "Tiến Nông công bố đồng hành chương trình Xanh hoá Trường Sa và mở chiến dịch “Triệu lời chúc – Triệu mầm xanh”.",
+        "link": "/tin-tuc/tien-nong-dong-hanh-xanh-hoa-truong-sa/",
+        "image": {
+          "src": "/uploads/tin-cu/2026/tien-nong-dong-hanh-xanh-hoa-truong-sa.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Key visual chương trình Triệu mầm xanh Trường Sa"
+        }
+      },
+      {
+        "date": "6/2026",
+        "title": "Những chuyến xe màu xanh",
+        "text": "Đoàn xe chở phân bón khởi hành từ Nhà máy Tiến Nông Gia Lai và Nhà máy Tiến Nông Bỉm Sơn, hướng về Trường Sa.",
+        "link": "",
+        "image": {
+          "src": "/uploads/tin-cu/2026/tien-nong-trao-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa-5.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Xe tải Tiến Nông đồng hành xanh hoá Trường Sa"
+        }
+      },
+      {
+        "date": "13/6/2026",
+        "title": "Trao tặng 230 tấn phân bón",
+        "text": "Tại Cam Ranh, Khánh Hoà, Tiến Nông trao 230 tấn phân bón trị giá 1,26 tỷ đồng cho Vùng 4 Hải quân, đợt hỗ trợ lớn nhất của chương trình từ đầu năm.",
+        "link": "/tin-tuc/tien-nong-trao-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa/",
+        "image": {
+          "src": "/uploads/tin-cu/2026/tien-nong-trao-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Trao tặng 230 tấn phân bón tại Khánh Hoà"
+        }
+      },
+      {
+        "date": "10/7/2026",
+        "title": "Tổng kết cuộc thi viết thư",
+        "text": "Cuộc thi “Em viết thư gửi chiến sĩ Trường Sa” nhận 133 lá thư; những lá thư hay nhất được gửi ra đảo.",
+        "link": "/tin-tuc/133-la-thu-tiep-noi-hanh-trinh-cung-tien-nong-xanh-hoa-truong-sa/",
+        "image": {
+          "src": "/uploads/tin-cu/2026/133-la-thu-tiep-noi-hanh-trinh-cung-tien-nong-xanh-hoa-truong-sa-3.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Lễ tổng kết cuộc thi Em viết thư gửi chiến sĩ Trường Sa"
+        }
+      },
+      {
+        "date": "17/7/2026",
+        "title": "Trao giải tại Nhà máy Bỉm Sơn",
+        "text": "Lễ trao giải vinh danh 16 lá thư xuất sắc; các em đạt giải tham quan nhà máy và phòng thí nghiệm Tiến Nông.",
+        "link": "/tin-tuc/133-la-thu-tu-dat-lien-gui-truong-sa-tien-nong-gieo-nhung-mam-xanh-yeu-thuong/",
+        "image": {
+          "src": "/uploads/tin-cu/2026/133-la-thu-tu-dat-lien-gui-truong-sa-tien-nong-gieo-nhung-mam-xanh-yeu-thuong-3.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Trao giải Nhất cuộc thi viết thư"
+        }
+      }
+    ]
+  },
+  "form": {
+    "open": true,
+    "eyebrow": "03 · GỬI LỜI CHÚC",
+    "title": "Gửi lời chúc tới Trường Sa",
+    "text": "Lời chúc của bạn được Tiến Nông chuyển tới cán bộ, chiến sĩ và nhân dân Trường Sa, và quy đổi thành 01 kg phân bón cho cây xanh trên đảo.",
+    "name_label": "Họ và tên",
+    "unit_label": "Đơn vị / địa phương",
+    "message_label": "Lời chúc",
+    "consent": "Tôi đồng ý để Tiến Nông hiển thị lời chúc kèm họ tên và đơn vị trên website.",
+    "submit": "Gửi lời chúc",
+    "sent_title": "Cảm ơn bạn đã gửi lời chúc!",
+    "sent_text": "Thêm một mầm xanh cho Trường Sa. Lời chúc sẽ được hiển thị sau khi Tiến Nông duyệt.",
+    "closed_text": "Chiến dịch đã khép lại. Cảm ơn hơn một nghìn sáu trăm tấm lòng đã gửi lời chúc tới Trường Sa."
+  },
+  "wishes": {
+    "eyebrow": "04 · NHỮNG LỜI YÊU THƯƠNG",
+    "title": "Lời chúc từ đất liền",
+    "text": "Một vài trong số hơn 1.600 lời chúc cộng đồng đã gửi tới quân và dân Trường Sa.",
+    "more": "Xem thêm lời chúc",
+    "items": [
+      {
+        "name": "Nguyễn Thị Hương",
+        "unit": "Trường Tiểu học Nga Thạch, xã Nga Thắng, tỉnh Thanh Hóa",
+        "text": "Tôi xin chúc các chiến sĩ ngoài Trường Sa luôn mạnh khỏe, bình an và vững vàng nơi đầu sóng ngọn gió."
+      },
+      {
+        "name": "Trịnh Thị Khuyên",
+        "unit": "Hội Nông dân xã Hoằng Phú, tỉnh Thanh Hóa",
+        "text": "Chúc toàn thể cán bộ, chiến sĩ tại quần đảo Trường Sa luôn đoàn kết, một lòng nỗ lực hoàn thành xuất sắc mọi nhiệm vụ được giao."
+      },
+      {
+        "name": "Lê Thị Hoa Mai",
+        "unit": "Ban Quản lý dự án đường sắt",
+        "text": "Xin gửi tình cảm quý mến tới các chiến sĩ và bà con trên quần đảo Trường Sa. Chúc các anh nhiều sức khỏe để luôn chắc tay súng giữ yên trời biển của Tổ quốc! Chúc bà con mình có cuộc sống vui vẻ, yên ấm, góp phần xây dựng đất nước vững mạnh, hùng cường!"
+      },
+      {
+        "name": "Vũ Mạnh Hà",
+        "unit": "Báo bảo vệ pháp luật",
+        "text": "Xin gửi tới Trường Sa lời chúc bình an, xanh tươi và vững mạnh. Chúc các cán bộ, chiến sĩ và nhân dân nơi đảo xa luôn khỏe mạnh, đoàn kết, kiên cường giữ vững chủ quyền biển đảo thiêng liêng của Tổ quốc. Trường Sa luôn ở trong trái tim đất liền."
+      },
+      {
+        "name": "Công ty TNHH Thương Mại Long Lưu",
+        "unit": "Nhà phân phối sản phẩm Tiến Nông tại Nghệ An",
+        "text": "Kính chúc các anh bộ đội Hải quân tại quần đảo Trường Sa luôn dồi dào sức khỏe, tràn đầy nghị lực và niềm tin chiến thắng. Giữa trùng dương bao la, tinh thần và lòng quả cảm của các anh chính là ngọn hải đăng sáng nhất soi rọi biển trời Việt Nam."
+      },
+      {
+        "name": "Bùi Văn Kỷ",
+        "unit": "Xã Bá Thước, Thanh Hoá",
+        "text": "Từ đất liền, xin gửi đến quân và dân Trường Sa lời chúc sức khỏe, bình an và thật nhiều nghị lực giữa biển trời quê hương."
+      },
+      {
+        "name": "Nguyễn Văn Công",
+        "unit": "Nhà máy Dinh dưỡng cây trồng Tiến Nông - Bỉm Sơn",
+        "text": "Từng mầm xanh lớn lên trên đảo Trường Sa là niềm vui của Tiến Nông và của người dân Thanh Hóa chúng tôi. Xin chúc quân và dân trên đảo luôn vững vàng, lạc quan và mãi là niềm tự hào của đất nước."
+      },
+      {
+        "name": "Nguyễn Văn Mạnh",
+        "unit": "Công ty cổ phẩn CNN Tiến Nông",
+        "text": "Là người Tiến Nông, tôi tự hào góp một lời chúc nhỏ để cùng vun đắp những mầm xanh, mang màu xanh bền vững đến Trường Sa thân yêu."
+      },
+      {
+        "name": "Cao Trọng Hưng",
+        "unit": "Phường Hạc Thành - tỉnh Thanh Hoá",
+        "text": "Kính chúc các cán bộ, chiến sĩ Trường Sa luôn mạnh khỏe, vững vàng nơi đầu sóng ngọn gió, hoàn thành xuất sắc nhiệm vụ bảo vệ chủ quyền biển đảo thiêng liêng của Tổ quốc. Trân trọng và biết ơn các anh!"
+      },
+      {
+        "name": "Chu Huy Túc",
+        "unit": "Công ty cổ phần VTNN Thái Nguyên",
+        "text": "Quê Hương, Đất nước và mọi người dân luôn luôn đồng hành cùng các chiến sĩ Trường Sa. Kính chúc các Đồng chí thật nhiều sức khoẻ, hoàn thành thắng lợi mọi nhiệm vụ được giao!"
+      },
+      {
+        "name": "Le Kien Sang",
+        "unit": "Quangg Ninh",
+        "text": "Từ vùng đất mỏ Quảng Ninh kiên cường, tôi xin gửi lời chúc chân thành tới Tiến Nông – Thanh Hóa và quân dân Trường Sa. Chúc những mầm xanh ngày càng phủ rộng trên đảo xa, chúc các chiến sĩ luôn tràn đầy nghị lực, vững niềm tin và bền chí trước mọi thử thách."
+      },
+      {
+        "name": "Trịnh Thanh Bình",
+        "unit": "Từ Sơn - Bắc Ninh",
+        "text": "Là người dân quê hương quan họ Bắc Ninh, tôi xin gửi những lời chúc đong đầy nghĩa tình tới Tiến Nông – Thanh Hóa và quân dân trên đảo Trường Sa. Chúc mọi người luôn mạnh khỏe, đoàn kết, để màu xanh hy vọng ngày càng lan tỏa giữa biển trời bao la."
+      },
+      {
+        "name": "Phạm Bình Minh",
+        "unit": "Hoa Lư - Ninh Bình",
+        "text": "Từ vùng đất non nước Ninh Bình, tôi xin gửi lời chúc tốt đẹp tới Tiến Nông – Thanh Hóa cùng quân dân Trường Sa. Chúc những hạt mầm từ đất liền mang theo yêu thương sẽ tiếp tục vun trồng màu xanh hy vọng nơi đảo xa."
+      },
+      {
+        "name": "Lê Tiến Hùng",
+        "unit": "Vĩnh Lộc - Thanh Hóa",
+        "text": "Tiến Nông đã mang tình cảm của người Thanh Hóa gửi đến Trường Sa qua từng sản phẩm chất lượng. Xin kính chúc quân và dân trên đảo luôn khỏe mạnh, đoàn kết và tiếp tục là điểm tựa vững chắc cho biển đảo Việt Nam."
+      },
+      {
+        "name": "La Văn Báu",
+        "unit": "Thạch Thành - Thanh Hóa",
+        "text": "Là người con xứ Thanh, tôi rất xúc động khi thấy Tiến Nông góp sức mang màu xanh ra đảo Trường Sa. Kính chúc quân và dân trên đảo luôn bình an, vững vàng trước sóng gió, để lá cờ Tổ quốc mãi tung bay kiêu hãnh."
+      },
+      {
+        "name": "Vũ Thị Hường",
+        "unit": "Trung tâm Nghiên cứu phát triển Khoa học và Công nghệ",
+        "text": "Chúc các cán bộ, chiến sĩ ở Trường Sa luôn vững bước trên sự nghiệp xây dựng và bảo vệ Tổ quốc. Chúc nhân dân Trường Sa mạnh khỏe, luôn đồng lòng bám biển xây dựng cuộc sống ấm no và là điểm tựa tinh thần cho các chiến sĩ chắc tay súng."
+      },
+      {
+        "name": "Trịnh Công Tú",
+        "unit": "Công ty TNHH MTV Petrolimex Thanh Hóa",
+        "text": "Chúc các chiến sĩ Trường Sa luôn mạnh khỏe, bình an, vững vàng nơi đầu sóng ngọn gió. Tổ quốc luôn tự hào về các anh!"
+      },
+      {
+        "name": "Nguyễn Tuấn Linh",
+        "unit": "Xi măng Rời - Công Ty Xi Măng Long Sơn",
+        "text": "Chúc cho những mầm xanh mới gieo xuống sẽ lớn nhanh như thổi, phủ xanh mọi miền đảo đá, mang lại không gian tươi mát và tràn đầy sức sống cho Trường Sa."
+      },
+      {
+        "name": "Trịnh Thị Hằng",
+        "unit": "Tập đoàn Đại Hùng Group",
+        "text": "Kính chúc các chiến sĩ đang làm nhiệm vụ tại Trường Sa luôn mạnh khỏe, vững vàng tay súng, chắc tay lái, hoàn thành xuất sắc nhiệm vụ bảo vệ chủ quyền biển đảo thiêng liêng của Tổ quốc."
+      },
+      {
+        "name": "Hà Văn Đế",
+        "unit": "Chiềng Khoa, Vân Hồ",
+        "text": "Xin gửi lời tri ân sâu sắc nhất đến quân và dân Trường Sa. Chúc toàn thể cán bộ, chiến sĩ và bà con luôn đoàn kết, gắn bó, vượt qua mọi khó khăn để xây dựng quần đảo trở thành pháo đài vững chắc nơi tuyến đầu."
+      },
+      {
+        "name": "Nguyễn Thị Quyến",
+        "unit": "Tô Múa , Sơn La",
+        "text": "Chúc bà con ngư dân và nhân dân huyện đảo Trường Sa luôn dồi dào sức khỏe, có cuộc sống bình yên, ấm no và luôn là điểm tựa vững chắc để các anh chiến sĩ yên tâm công tác."
+      },
+      {
+        "name": "Lê Thị Thảo",
+        "unit": "Công ty CP Xi măng Vicem Hoàng Mai",
+        "text": "Các chiến sĩ Trường Sa không chỉ là những người gìn giữ chủ quyền của đất nước, mà còn là những người tạo nên vẻ đẹp của quê hương giữa biển khơi. Hãy luôn giữ vững ý chí, giữ vững niềm tin vào tương lai của Tổ quốc."
+      },
+      {
+        "name": "La Thị Vận",
+        "unit": "Hậu Lộc -Thanh Hóa",
+        "text": "Tôi tin rằng những điều nhỏ bé nhưng xuất phát từ trái tim sẽ tạo nên giá trị lớn. Chúc Trường Sa luôn vững vàng và xanh tươi."
+      },
+      {
+        "name": "Bùi Văn Đại",
+        "unit": "Xã Ngọc Trạo - tỉnh Thanh Hóa",
+        "text": "Màu xanh của Trường Sa là màu xanh của hy vọng và chủ quyền. Chúc các anh luôn giữ vững màu xanh ấy."
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "05 · HÌNH ẢNH",
+    "title": "Khoảnh khắc chương trình",
+    "photos": [
+      {
+        "src": "/uploads/tin-cu/2026/tien-nong-trao-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa-4.webp",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Chương trình tiếp nhận cây giống, phân bón tại Khánh Hoà"
+      },
+      {
+        "src": "/uploads/tin-cu/2026/tien-nong-trao-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa-6.webp",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Đoàn xe chở phân bón Tiến Nông"
+      },
+      {
+        "src": "/uploads/tin-cu/2026/tien-nong-trao-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa-1.webp",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Đại tá Đỗ Minh – Phó Tư lệnh Vùng 4 Hải quân phát biểu"
+      },
+      {
+        "src": "/uploads/tin-cu/2026/133-la-thu-tu-dat-lien-gui-truong-sa-tien-nong-gieo-nhung-mam-xanh-yeu-thuong-12.webp",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Các em đạt giải tham quan khuôn viên nhà máy"
+      },
+      {
+        "src": "/uploads/tin-cu/2026/133-la-thu-tu-dat-lien-gui-truong-sa-tien-nong-gieo-nhung-mam-xanh-yeu-thuong-9.webp",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Các em trải nghiệm phòng thí nghiệm Tiến Nông"
+      },
+      {
+        "src": "/uploads/tin-cu/2026/133-la-thu-tiep-noi-hanh-trinh-cung-tien-nong-xanh-hoa-truong-sa-2.webp",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Ban Giám khảo chấm các lá thư dự thi"
+      }
+    ]
+  },
+  "news": {
+    "eyebrow": "06 · TIN TỨC",
+    "title": "Tin tức về chương trình",
+    "all": "Tất cả tin Vì cộng đồng"
+  },
+  "cta": {
+    "title": "Cùng Tiến Nông viết tiếp màu xanh nơi đầu sóng",
+    "button_wish": "Gửi lời chúc",
+    "button_back": "Phát triển bền vững"
+  }
+}
