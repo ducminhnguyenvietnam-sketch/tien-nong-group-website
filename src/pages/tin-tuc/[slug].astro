@@ -25,6 +25,11 @@ const cat = CATEGORIES[d.category];
 const others = all.filter((e) => e.id !== entry.id && !isPress(e));
 const related = [...others.filter((e) => e.data.category === d.category), ...others.filter((e) => e.data.category !== d.category)].slice(0, 3);
 const pageUrl = new URL(newsUrl(entry), Astro.site ?? 'https://example.com').href;
+// Many articles imported from the old site have a summary that is just the opening of the text (WordPress
+// made it automatically), so it is shown above the article only when it says something the text does not.
+const fold = (t: string) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/gi, 'd').toLowerCase().replace(/[^a-z0-9]+/g, '');
+const bodyStart = fold((entry.body ?? '').replace(/!\[[^\]]*\]\([^)]*\)|<[^>]+>|\]\([^)]*\)/g, ' ').slice(0, 1500));
+const showSummary = isFilled(d.summary) && !bodyStart.includes(fold(d.summary).slice(0, 60));
 ---
 <Layout title={d.title} description={isFilled(d.summary) ? d.summary : undefined} active="Tin tức" background="var(--surface-card)">
 <article>
@@ -39,7 +44,7 @@ const pageUrl = new URL(newsUrl(entry), Astro.site ?? 'https://example.com').hre
 </header>
 <div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,4vw,40px)"><figure style="margin:0;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:clamp(260px,44vw,560px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${entry.id}`} shape="rounded" radius="16" placeholder={d.cover.alt || 'Ảnh đại diện bài viết'} image={d.cover} cms={`${entry.filePath}#cover`} /></div>{d.cover_caption && <figcaption style="font-size:14px;color:var(--text-tertiary);text-align:center">{d.cover_caption}</figcaption>}</figure></div>
 <div class="article-body" style="max-width:720px;margin:0 auto;padding:40px clamp(20px,4vw,40px) 64px;display:flex;flex-direction:column;gap:22px;font-size:var(--fs-lead);line-height:1.75">
-{isFilled(d.summary) && <p style="margin:0;font-weight:600;font-size:20px;line-height:1.6">{d.summary}</p>}
+{showSummary && <p style="margin:0;font-weight:600;font-size:20px;line-height:1.6">{d.summary}</p>}
 <Content />
 {d.album.length > 0 && <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">{d.album.map((img, i) => <div style="position:relative;height:150px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${entry.id}-album-${i}`} shape="rounded" radius="10" placeholder={img.alt || 'Album'} image={img} cms={`${entry.filePath}#album.${i}`} /></div>)}</div>}
 {d.album_link && <a href={link(d.album_link)} style="font-size:15px;font-weight:600">{t.album_more}</a>}
@@ -65,8 +70,8 @@ const pageUrl = new URL(newsUrl(entry), Astro.site ?? 'https://example.com').hre
   .article-body :global(p:has(> img) + p:has(> em:only-child)) { margin-top: -12px; font-size: 14px; line-height: 1.5; color: var(--text-tertiary); text-align: center; text-align-last: center; }
   .article-body :global(.video-embed) { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: #000; }
   .article-body :global(.video-embed iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .article-body :global(table) { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; display: block; overflow-x: auto; }
-  .article-body :global(th), .article-body :global(td) { padding: 8px 10px; border: 1px solid var(--border-default); text-align: left; vertical-align: top; }
+  .article-body :global(table) { width: 100% !important; height: auto !important; border-collapse: collapse; font-size: 15px; line-height: 1.5; display: block; overflow-x: auto; }
+  .article-body :global(th), .article-body :global(td) { width: auto !important; height: auto !important; padding: 8px 10px; border: 1px solid var(--border-default); text-align: left; vertical-align: top; }
   .article-body :global(th) { background: var(--surface-sunken); }
   .article-body :global(blockquote) { margin: 8px 0; padding: 8px 0 8px 24px; border-left: 4px solid var(--green-500); font: 600 22px/1.5 var(--font-display); color: var(--green-800); }
   .article-body :global(blockquote p) { text-align: left; }
