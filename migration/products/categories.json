@@ -1,0 +1,1952 @@
+[
+ {
+  "id": 46,
+  "count": 0,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/fruits/",
+  "name": "Fruits",
+  "slug": "fruits",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Fruits Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/fruits/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Fruits Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/fruits/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/fruits/\",\"url\":\"https://tiennong.vn/product-category/fruits/\",\"name\":\"Fruits Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/fruits/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/fruits/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Fruits\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Fruits Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/fruits/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Fruits Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/fruits/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/fruits/",
+      "url": "https://tiennong.vn/product-category/fruits/",
+      "name": "Fruits Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/fruits/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/fruits/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Fruits"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/46",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=46"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 50,
+  "count": 0,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/hair-care/",
+  "name": "Hair Care",
+  "slug": "hair-care",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Hair Care Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/hair-care/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Hair Care Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/hair-care/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/hair-care/\",\"url\":\"https://tiennong.vn/product-category/hair-care/\",\"name\":\"Hair Care Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/hair-care/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/hair-care/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Hair Care\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Hair Care Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/hair-care/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Hair Care Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/hair-care/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/hair-care/",
+      "url": "https://tiennong.vn/product-category/hair-care/",
+      "name": "Hair Care Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/hair-care/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/hair-care/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Hair Care"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/50",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=50"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 53,
+  "count": 0,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/hoodies/",
+  "name": "Hoodies",
+  "slug": "hoodies",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Hoodies Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/hoodies/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Hoodies Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/hoodies/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/hoodies/\",\"url\":\"https://tiennong.vn/product-category/hoodies/\",\"name\":\"Hoodies Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/hoodies/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/hoodies/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Hoodies\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Hoodies Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/hoodies/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Hoodies Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/hoodies/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/hoodies/",
+      "url": "https://tiennong.vn/product-category/hoodies/",
+      "name": "Hoodies Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/hoodies/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/hoodies/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Hoodies"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/53",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=53"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 57,
+  "count": 0,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/masks/",
+  "name": "Masks",
+  "slug": "masks",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Masks Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/masks/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Masks Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/masks/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/masks/\",\"url\":\"https://tiennong.vn/product-category/masks/\",\"name\":\"Masks Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/masks/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/masks/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Masks\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Masks Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/masks/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Masks Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/masks/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/masks/",
+      "url": "https://tiennong.vn/product-category/masks/",
+      "name": "Masks Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/masks/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/masks/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Masks"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/57",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=57"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 59,
+  "count": 0,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/music/",
+  "name": "Music",
+  "slug": "music",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Music Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/music/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Music Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/music/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/music/\",\"url\":\"https://tiennong.vn/product-category/music/\",\"name\":\"Music Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/music/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/music/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Music\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Music Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/music/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Music Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/music/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/music/",
+      "url": "https://tiennong.vn/product-category/music/",
+      "name": "Music Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/music/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/music/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Music"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/59",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=59"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 63,
+  "count": 0,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/organic-foods/",
+  "name": "Organic Foods",
+  "slug": "organic-foods",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Organic Foods Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/organic-foods/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Organic Foods Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/organic-foods/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/organic-foods/\",\"url\":\"https://tiennong.vn/product-category/organic-foods/\",\"name\":\"Organic Foods Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/organic-foods/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/organic-foods/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Organic Foods\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Organic Foods Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/organic-foods/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Organic Foods Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/organic-foods/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/organic-foods/",
+      "url": "https://tiennong.vn/product-category/organic-foods/",
+      "name": "Organic Foods Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/organic-foods/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/organic-foods/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Organic Foods"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/63",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=63"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 93,
+  "count": 9,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/phan-bon-ham-luong-cao/",
+  "name": "Phân bón hàm lượng cao",
+  "slug": "phan-bon-ham-luong-cao",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Phân bón hàm lượng cao Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/phan-bon-ham-luong-cao/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Phân bón hàm lượng cao Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/phan-bon-ham-luong-cao/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/phan-bon-ham-luong-cao/\",\"url\":\"https://tiennong.vn/product-category/phan-bon-ham-luong-cao/\",\"name\":\"Phân bón hàm lượng cao Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/phan-bon-ham-luong-cao/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/phan-bon-ham-luong-cao/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Phân bón hàm lượng cao\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Phân bón hàm lượng cao Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/phan-bon-ham-luong-cao/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Phân bón hàm lượng cao Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/phan-bon-ham-luong-cao/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/phan-bon-ham-luong-cao/",
+      "url": "https://tiennong.vn/product-category/phan-bon-ham-luong-cao/",
+      "name": "Phân bón hàm lượng cao Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/phan-bon-ham-luong-cao/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/phan-bon-ham-luong-cao/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Phân bón hàm lượng cao"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/93",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=93"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 92,
+  "count": 4,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/phan-bon-huu-co/",
+  "name": "Phân bón Hữu cơ",
+  "slug": "phan-bon-huu-co",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Phân bón Hữu cơ Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/phan-bon-huu-co/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Phân bón Hữu cơ Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/phan-bon-huu-co/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/phan-bon-huu-co/\",\"url\":\"https://tiennong.vn/product-category/phan-bon-huu-co/\",\"name\":\"Phân bón Hữu cơ Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/phan-bon-huu-co/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/phan-bon-huu-co/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Phân bón Hữu cơ\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Phân bón Hữu cơ Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/phan-bon-huu-co/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Phân bón Hữu cơ Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/phan-bon-huu-co/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/phan-bon-huu-co/",
+      "url": "https://tiennong.vn/product-category/phan-bon-huu-co/",
+      "name": "Phân bón Hữu cơ Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/phan-bon-huu-co/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/phan-bon-huu-co/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Phân bón Hữu cơ"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/92",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=92"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 88,
+  "count": 14,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/san-pham-chuyen-dung/",
+  "name": "Sản phẩm Chuyên dụng",
+  "slug": "san-pham-chuyen-dung",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Sản phẩm Chuyên dụng Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/san-pham-chuyen-dung/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Sản phẩm Chuyên dụng Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/san-pham-chuyen-dung/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/san-pham-chuyen-dung/\",\"url\":\"https://tiennong.vn/product-category/san-pham-chuyen-dung/\",\"name\":\"Sản phẩm Chuyên dụng Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/san-pham-chuyen-dung/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/san-pham-chuyen-dung/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Sản phẩm Chuyên dụng\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Sản phẩm Chuyên dụng Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/san-pham-chuyen-dung/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Sản phẩm Chuyên dụng Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/san-pham-chuyen-dung/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/san-pham-chuyen-dung/",
+      "url": "https://tiennong.vn/product-category/san-pham-chuyen-dung/",
+      "name": "Sản phẩm Chuyên dụng Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/san-pham-chuyen-dung/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/san-pham-chuyen-dung/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sản phẩm Chuyên dụng"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/88",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=88"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 91,
+  "count": 27,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/san-pham-da-dung/",
+  "name": "Sản phẩm Đa dụng",
+  "slug": "san-pham-da-dung",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Sản phẩm Đa dụng Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/san-pham-da-dung/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Sản phẩm Đa dụng Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/san-pham-da-dung/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/san-pham-da-dung/\",\"url\":\"https://tiennong.vn/product-category/san-pham-da-dung/\",\"name\":\"Sản phẩm Đa dụng Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/san-pham-da-dung/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/san-pham-da-dung/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Sản phẩm Đa dụng\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Sản phẩm Đa dụng Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/san-pham-da-dung/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Sản phẩm Đa dụng Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/san-pham-da-dung/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/san-pham-da-dung/",
+      "url": "https://tiennong.vn/product-category/san-pham-da-dung/",
+      "name": "Sản phẩm Đa dụng Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/san-pham-da-dung/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/san-pham-da-dung/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sản phẩm Đa dụng"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/91",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=91"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 69,
+  "count": 0,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/skincare-products/",
+  "name": "Skincare Products",
+  "slug": "skincare-products",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Skincare Products Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/skincare-products/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Skincare Products Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/skincare-products/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/skincare-products/\",\"url\":\"https://tiennong.vn/product-category/skincare-products/\",\"name\":\"Skincare Products Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/skincare-products/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/skincare-products/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Skincare Products\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Skincare Products Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/skincare-products/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Skincare Products Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/skincare-products/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/skincare-products/",
+      "url": "https://tiennong.vn/product-category/skincare-products/",
+      "name": "Skincare Products Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/skincare-products/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/skincare-products/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Skincare Products"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/69",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=69"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 102,
+  "count": 0,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/uncategorized-vi/",
+  "name": "Uncategorized @vi",
+  "slug": "uncategorized-vi",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Uncategorized @vi Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/uncategorized-vi/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Uncategorized @vi Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/uncategorized-vi/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/uncategorized-vi/\",\"url\":\"https://tiennong.vn/product-category/uncategorized-vi/\",\"name\":\"Uncategorized @vi Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/uncategorized-vi/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/uncategorized-vi/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Uncategorized @vi\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Uncategorized @vi Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/uncategorized-vi/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Uncategorized @vi Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/uncategorized-vi/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/uncategorized-vi/",
+      "url": "https://tiennong.vn/product-category/uncategorized-vi/",
+      "name": "Uncategorized @vi Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/uncategorized-vi/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/uncategorized-vi/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Uncategorized @vi"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/102",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=102"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 72,
+  "count": 0,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/vegetables/",
+  "name": "Vegetables",
+  "slug": "vegetables",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Vegetables Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/vegetables/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Vegetables Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/vegetables/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/vegetables/\",\"url\":\"https://tiennong.vn/product-category/vegetables/\",\"name\":\"Vegetables Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/vegetables/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/vegetables/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Vegetables\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Vegetables Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/vegetables/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Vegetables Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/vegetables/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/vegetables/",
+      "url": "https://tiennong.vn/product-category/vegetables/",
+      "name": "Vegetables Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/vegetables/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/vegetables/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Vegetables"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/72",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=72"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 73,
+  "count": 0,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/vitamin-c/",
+  "name": "Vitamin C",
+  "slug": "vitamin-c",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Vitamin C Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/vitamin-c/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Vitamin C Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/vitamin-c/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/vitamin-c/\",\"url\":\"https://tiennong.vn/product-category/vitamin-c/\",\"name\":\"Vitamin C Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/vitamin-c/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/vitamin-c/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Vitamin C\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Vitamin C Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/vitamin-c/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Vitamin C Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/vitamin-c/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/vitamin-c/",
+      "url": "https://tiennong.vn/product-category/vitamin-c/",
+      "name": "Vitamin C Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/vitamin-c/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/vitamin-c/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Vitamin C"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/73",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=73"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 74,
+  "count": 0,
+  "description": "",
+  "link": "https://tiennong.vn/product-category/vitamin-d/",
+  "name": "Vitamin D",
+  "slug": "vitamin-d",
+  "taxonomy": "product_cat",
+  "parent": 0,
+  "meta": [],
+  "menu_order": 0,
+  "acf": [],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Vitamin D Archives - Tiên Nông Group</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://tiennong.vn/product-category/vitamin-d/\" />\n<meta property=\"og:locale\" content=\"vi_VN\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Vitamin D Archives - Tiên Nông Group\" />\n<meta property=\"og:url\" content=\"https://tiennong.vn/product-category/vitamin-d/\" />\n<meta property=\"og:site_name\" content=\"Tiên Nông Group\" />\n<meta property=\"og:image\" content=\"https://tiennong.vn/wp-content/uploads/2025/01/thumb.png\" />\n\t<meta property=\"og:image:width\" content=\"1200\" />\n\t<meta property=\"og:image:height\" content=\"675\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://tiennong.vn/product-category/vitamin-d/\",\"url\":\"https://tiennong.vn/product-category/vitamin-d/\",\"name\":\"Vitamin D Archives - Tiên Nông Group\",\"isPartOf\":{\"@id\":\"https://tiennong.vn/#website\"},\"breadcrumb\":{\"@id\":\"https://tiennong.vn/product-category/vitamin-d/#breadcrumb\"},\"inLanguage\":\"vi-VN\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tiennong.vn/product-category/vitamin-d/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://tiennong.vn/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Vitamin D\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://tiennong.vn/#website\",\"url\":\"https://tiennong.vn/\",\"name\":\"Tiên Nông Group\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://tiennong.vn/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"vi-VN\"}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Vitamin D Archives - Tiên Nông Group",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://tiennong.vn/product-category/vitamin-d/",
+   "og_locale": "vi_VN",
+   "og_type": "article",
+   "og_title": "Vitamin D Archives - Tiên Nông Group",
+   "og_url": "https://tiennong.vn/product-category/vitamin-d/",
+   "og_site_name": "Tiên Nông Group",
+   "og_image": [
+    {
+     "width": 1200,
+     "height": 675,
+     "url": "https://tiennong.vn/wp-content/uploads/2025/01/thumb.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://tiennong.vn/product-category/vitamin-d/",
+      "url": "https://tiennong.vn/product-category/vitamin-d/",
+      "name": "Vitamin D Archives - Tiên Nông Group",
+      "isPartOf": {
+       "@id": "https://tiennong.vn/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://tiennong.vn/product-category/vitamin-d/#breadcrumb"
+      },
+      "inLanguage": "vi-VN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://tiennong.vn/product-category/vitamin-d/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tiennong.vn/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Vitamin D"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://tiennong.vn/#website",
+      "url": "https://tiennong.vn/",
+      "name": "Tiên Nông Group",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://tiennong.vn/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "vi-VN"
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat/74",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product_cat"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/taxonomies/product_cat"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://tiennong.vn/wp-json/wp/v2/product?product_cat=74"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ }
+]
