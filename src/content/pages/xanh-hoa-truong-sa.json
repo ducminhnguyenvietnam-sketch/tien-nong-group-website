@@ -1,17 +1,18 @@
 {
   "seo": {
     "title": "Xanh hoá Trường Sa – Tiến Nông",
-    "description": "Tiến Nông đồng hành chương trình Xanh hoá Trường Sa: trao tặng 230 tấn phân bón, chiến dịch “Triệu lời chúc – Triệu mầm xanh” và cuộc thi “Em viết thư gửi chiến sĩ Trường Sa”."
+    "description": "Tổng kết chiến dịch Xanh hoá Trường Sa 2026 của Tiến Nông: 230 tấn phân bón trao tặng Vùng 4 Hải quân, hơn 1.600 lời chúc “Triệu lời chúc – Triệu mầm xanh” và 133 lá thư “Em viết thư gửi chiến sĩ Trường Sa”."
   },
   "hero": {
     "breadcrumb_home": "Trang chủ",
     "breadcrumb_parent": "Phát triển bền vững",
     "breadcrumb_self": "Xanh hoá Trường Sa",
-    "eyebrow": "CHƯƠNG TRÌNH CỘNG ĐỒNG · 2026",
+    "eyebrow": "CHIẾN DỊCH CỘNG ĐỒNG 2026",
     "title": "Xanh hoá Trường Sa",
-    "intro": "Hưởng ứng chương trình “Xanh hoá Trường Sa” do Bộ Tư lệnh Vùng 4 Hải quân phát động, Tiến Nông mang phân bón, cây giống và những lời chúc từ đất liền tới quân và dân nơi đầu sóng.",
+    "intro": "Hưởng ứng chương trình “Xanh hoá Trường Sa” do Bộ Tư lệnh Vùng 4 Hải quân phát động, mùa hè 2026 Tiến Nông đã mang 230 tấn phân bón, hơn 1.600 lời chúc và 133 lá thư từ đất liền tới quân và dân nơi đầu sóng. Đây là tổng kết của chiến dịch.",
     "button_wish": "Gửi lời chúc",
-    "button_journey": "Hành trình chương trình",
+    "button_journey": "Hành trình chiến dịch",
+    "button_read": "Đọc lời chúc",
     "background": {
       "src": "/uploads/tin-cu/2026/tien-nong-trao-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa-6.webp",
       "focus": "center",
@@ -33,7 +34,7 @@
     {
       "value": "1.600+",
       "label": "Lời chúc gửi Trường Sa",
-      "sub": "Mỗi lời chúc = 1 kg phân bón"
+      "sub": "Mỗi lời chúc được quy đổi thành 1 kg phân bón"
     },
     {
       "value": "133",
@@ -41,15 +42,36 @@
       "sub": "Cuộc thi “Em viết thư gửi chiến sĩ Trường Sa”"
     }
   ],
+  "challenge": {
+    "eyebrow": "01 · VÌ SAO LÀ PHÂN BÓN",
+    "title": "Để một mầm xanh bén rễ trên đảo",
+    "intro": "Trồng được một luống rau, một hàng cây bóng mát ở Trường Sa khó hơn ở đất liền rất nhiều. Đó là lý do một doanh nghiệp dinh dưỡng cây trồng có thể góp sức theo đúng chuyên môn của mình.",
+    "items": [
+      {
+        "title": "Nền cát san hô",
+        "text": "Đất trên đảo chủ yếu là cát san hô, gần như không có mùn, giữ nước và giữ dinh dưỡng rất kém."
+      },
+      {
+        "title": "Nắng gió, hơi muối",
+        "text": "Nắng gắt và gió biển mang hơi muối quanh năm; nước ngọt quý nên mỗi lần tưới đều phải tính toán."
+      },
+      {
+        "title": "Mọi thứ đi bằng tàu",
+        "text": "Phân bón, đất màu đều được vận chuyển từ đất liền, nên mỗi ki-lô-gam phải được dùng hiệu quả nhất."
+      }
+    ],
+    "solution_title": "200 tấn hữu cơ sinh học, 30 tấn NPK",
+    "solution": "Phân hữu cơ sinh học bổ sung mùn và vi sinh vật có ích, giúp nền cát giữ ẩm, giữ dinh dưỡng lâu hơn; NPK cung cấp dinh dưỡng nhanh cho rau xanh và cây bóng mát trong giai đoạn sinh trưởng. Hai loại được phối hợp để cây trên đảo vừa lên nhanh, vừa sống bền."
+  },
   "campaign": {
-    "eyebrow": "01 · TRIỆU LỜI CHÚC – TRIỆU MẦM XANH",
+    "eyebrow": "02 · TRIỆU LỜI CHÚC – TRIỆU MẦM XANH",
     "title": "Mỗi lời chúc, thêm một mầm xanh",
-    "text": "Giữa nắng gió và đất cát san hô, để một cây xanh bén rễ trên đảo cần rất nhiều công chăm sóc. Tiến Nông phát động chiến dịch “Triệu lời chúc – Triệu mầm xanh”: mỗi lời chúc hợp lệ gửi tới cán bộ, chiến sĩ và nhân dân Trường Sa được quy đổi thành 01 kg phân bón cho việc trồng và chăm sóc cây xanh trên các đảo.",
+    "text": "Tiến Nông phát động chiến dịch “Triệu lời chúc – Triệu mầm xanh” để cả cộng đồng cùng góp sức: mỗi lời chúc hợp lệ gửi tới cán bộ, chiến sĩ và nhân dân Trường Sa được quy đổi thành 01 kg phân bón cho việc trồng và chăm sóc cây xanh trên các đảo. Hơn 1.600 lời chúc đã được gửi về từ học sinh, giáo viên, hội nông dân, đại lý và người lao động khắp nơi.",
     "commitment": "1 lời chúc = 1 kg phân bón",
     "steps": [
       {
         "title": "Viết lời chúc",
-        "text": "Gửi lời động viên, thông điệp yêu thương tới quân và dân Trường Sa ngay trên trang này."
+        "text": "Mọi người gửi lời động viên, thông điệp yêu thương tới quân và dân Trường Sa trên trang này."
       },
       {
         "title": "Tiến Nông quy đổi",
@@ -57,7 +79,7 @@
       },
       {
         "title": "Lan toả",
-        "text": "Chia sẻ chiến dịch tới người thân, bạn bè, đồng nghiệp để thêm nhiều mầm xanh."
+        "text": "Chiến dịch được chia sẻ tới người thân, bạn bè, đồng nghiệp để thêm nhiều mầm xanh."
       }
     ],
     "image": {
@@ -68,7 +90,7 @@
     }
   },
   "journey": {
-    "eyebrow": "02 · HÀNH TRÌNH",
+    "eyebrow": "03 · HÀNH TRÌNH",
     "title": "Từ nhà máy đến đảo xa",
     "items": [
       {
@@ -133,8 +155,26 @@
       }
     ]
   },
+  "letters": {
+    "eyebrow": "04 · EM VIẾT THƯ GỬI CHIẾN SĨ TRƯỜNG SA",
+    "title": "133 lá thư từ đất liền",
+    "text": "Phát động từ tháng 6/2026, cuộc thi dành cho con em cán bộ, nhân viên Tiến Nông, khách hàng, đại lý và thanh thiếu niên ở nhiều địa phương. Ban Giám khảo do nhà báo Thy Lan — Tổng Biên tập Tạp chí Văn nghệ Xứ Thanh — làm Trưởng ban, chọn ra 16 lá thư xuất sắc; những lá thư tiêu biểu tiếp tục theo tàu ra đảo.",
+    "quote": "Nhiều lá thư được viết bằng ngôn từ mộc mạc, giản dị nhưng chứa đựng tình yêu lớn dành cho biển đảo và những người lính Trường Sa.",
+    "quote_name": "Ban Giám khảo cuộc thi",
+    "quote_role": "Lễ tổng kết, 10/7/2026",
+    "quote2": "Cháu hứa sẽ luôn chăm ngoan, học giỏi, xứng đáng là cháu ngoan Bác Hồ và tiếp tục lan tỏa tình yêu biển đảo, tình yêu quê hương, đất nước đến các bạn của mình.",
+    "quote2_name": "Nguyễn Minh Anh",
+    "quote2_role": "Giải Nhất cuộc thi",
+    "image": {
+      "src": "/uploads/tin-cu/2026/133-la-thu-tu-dat-lien-gui-truong-sa-tien-nong-gieo-nhung-mam-xanh-yeu-thuong-1.webp",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Trao giải Nhất cuộc thi Em viết thư gửi chiến sĩ Trường Sa"
+    },
+    "link": "/tin-tuc/133-la-thu-tu-dat-lien-gui-truong-sa-tien-nong-gieo-nhung-mam-xanh-yeu-thuong/"
+  },
   "form": {
-    "open": true,
+    "open": false,
     "eyebrow": "03 · GỬI LỜI CHÚC",
     "title": "Gửi lời chúc tới Trường Sa",
     "text": "Lời chúc của bạn được Tiến Nông chuyển tới cán bộ, chiến sĩ và nhân dân Trường Sa, và quy đổi thành 01 kg phân bón cho cây xanh trên đảo.",
@@ -145,10 +185,10 @@
     "submit": "Gửi lời chúc",
     "sent_title": "Cảm ơn bạn đã gửi lời chúc!",
     "sent_text": "Thêm một mầm xanh cho Trường Sa. Lời chúc sẽ được hiển thị sau khi Tiến Nông duyệt.",
-    "closed_text": "Chiến dịch đã khép lại. Cảm ơn hơn một nghìn sáu trăm tấm lòng đã gửi lời chúc tới Trường Sa."
+    "closed_text": "Chiến dịch năm 2026 đã khép lại. Cảm ơn hơn một nghìn sáu trăm tấm lòng đã gửi lời chúc tới Trường Sa."
   },
   "wishes": {
-    "eyebrow": "04 · NHỮNG LỜI YÊU THƯƠNG",
+    "eyebrow": "05 · NHỮNG LỜI YÊU THƯƠNG",
     "title": "Lời chúc từ đất liền",
     "text": "Một vài trong số hơn 1.600 lời chúc cộng đồng đã gửi tới quân và dân Trường Sa.",
     "more": "Xem thêm lời chúc",
@@ -276,7 +316,7 @@
     ]
   },
   "gallery": {
-    "eyebrow": "05 · HÌNH ẢNH",
+    "eyebrow": "06 · HÌNH ẢNH",
     "title": "Khoảnh khắc chương trình",
     "photos": [
       {
@@ -318,12 +358,12 @@
     ]
   },
   "news": {
-    "eyebrow": "06 · TIN TỨC",
+    "eyebrow": "07 · TIN TỨC",
     "title": "Tin tức về chương trình",
     "all": "Tất cả tin Vì cộng đồng"
   },
   "cta": {
-    "title": "Cùng Tiến Nông viết tiếp màu xanh nơi đầu sóng",
+    "title": "Cảm ơn những tấm lòng đã cùng Tiến Nông gieo màu xanh nơi đầu sóng",
     "button_wish": "Gửi lời chúc",
     "button_back": "Phát triển bền vững"
   }

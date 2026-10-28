@@ -11,6 +11,7 @@ import { isFilled, withDefaults } from '../../lib/content';
 import Layout from '../../layouts/Layout.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
 import PageHero from '../../components/PageHero.astro';
+import Head from '../../components/story/Head.astro';
 import { formatDate, getNews, isArticle, listUrl, newsUrl } from '../../lib/news';
 import { link, url } from '../../lib/routes';
 
@@ -35,11 +36,19 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 <PageHero id="ts-hero" image={c.hero.background} cms={`${F}#hero.background`} placeholder="Ảnh chương trình Xanh hoá Trường Sa"
   crumbs={[{ label: c.hero.breadcrumb_home, href: url('trang-chu') }, { label: c.hero.breadcrumb_parent, href: url('phat-trien-ben-vung') }, { label: c.hero.breadcrumb_self }]}
   eyebrow={c.hero.eyebrow} title={c.hero.title} lead={c.hero.intro}>
-{c.form.open && <a href="#gui-loi-chuc" class="page-hero__btn page-hero__btn--solid">{c.hero.button_wish}</a>}<a href="#hanh-trinh" class="page-hero__btn">{c.hero.button_journey}</a>
+{c.form.open ? <a href="#gui-loi-chuc" class="page-hero__btn page-hero__btn--solid">{c.hero.button_wish}</a> : wishes.length > 0 && isFilled(c.hero.button_read) && <a href="#loi-chuc" class="page-hero__btn page-hero__btn--solid">{c.hero.button_read}</a>}<a href="#hanh-trinh" class="page-hero__btn">{c.hero.button_journey}</a>
 </PageHero>
 
 {stats.length > 0 && <section class="ts-stats"><div class="ts-wrap ts-stats__row">
 {stats.map((s) => <div class="ts-stat"><span class="ts-stat__value">{s.value}</span><span class="ts-stat__label">{s.label}</span>{isFilled(s.sub) && <span class="ts-stat__sub">{s.sub}</span>}</div>)}
+</div></section>}
+
+{isFilled(c.challenge.title) && <section class="st-sec" id="vi-sao"><div class="st-wrap">
+<Head eyebrow={c.challenge.eyebrow} title={c.challenge.title} intro={c.challenge.intro} split />
+<div class="st-grid" style="--min:240px">
+{c.challenge.items.map((it, k) => <div class="st-card st-card--top"><div class="st-card__body"><span class="st-card__num">{String(k + 1).padStart(2, '0')}</span><strong class="st-card__title">{it.title}</strong><span class="st-card__text">{it.text}</span></div></div>)}
+</div>
+{isFilled(c.challenge.solution) && <div class="ts-solution"><span aria-hidden="true">🌱</span><div><strong>{c.challenge.solution_title}</strong><p>{c.challenge.solution}</p></div></div>}
 </div></section>}
 
 <section class="ts-campaign" id="chien-dich"><div class="ts-wrap ts-campaign__grid">
@@ -69,7 +78,19 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 </ol>
 </div></section>}
 
-<section class="ts-form" id="gui-loi-chuc"><div class="ts-wrap ts-form__grid">
+{isFilled(c.letters.title) && <section class="st-sec st-sec--tint" id="la-thu"><div class="st-wrap">
+<div class="st-split">
+<div>
+<Head eyebrow={c.letters.eyebrow} title={c.letters.title} intro={c.letters.text} />
+{isFilled(c.letters.quote) && <blockquote class="st-quote"><p>“{c.letters.quote}”</p><footer><strong>{c.letters.quote_name}</strong>{c.letters.quote_role}</footer></blockquote>}
+{isFilled(c.letters.quote2) && <blockquote class="st-quote"><p>“{c.letters.quote2}”</p><footer><strong>{c.letters.quote2_name}</strong>{c.letters.quote2_role}</footer></blockquote>}
+{isFilled(c.letters.link) && <a href={href(c.letters.link)} class="st-btn" style="align-self:flex-start">Đọc tin lễ trao giải →</a>}
+</div>
+<div class="st-split__media st-hide-empty" style="--ratio:4/5"><ImageSlot style={fill} id="ts-letters" shape="rounded" radius="24" placeholder={c.letters.image.alt || 'Lễ trao giải cuộc thi viết thư'} image={c.letters.image} cms={`${F}#letters.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
+</div>
+</div></section>}
+
+{c.form.open && <section class="ts-form" id="gui-loi-chuc"><div class="ts-wrap ts-form__grid">
 <div class="ts-form__copy">
 <span class="ts-eyebrow ts-eyebrow--light">{c.form.eyebrow}</span>
 <h2>{c.form.title}</h2>
@@ -90,7 +111,7 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 <div>{zalo && <a href={link(zalo)} target="_blank" rel="noopener">Nhắn Zalo</a>}{co.email && <a href={`mailto:${co.email}?subject=${encodeURIComponent('Lời chúc gửi Trường Sa')}`}>Gửi email</a>}</div>
 </div>
 </div>}
-</div></section>
+</div></section>}
 
 {wishes.length > 0 && <section class="ts-wishes" id="loi-chuc"><div class="ts-wrap">
 <div class="ts-head ts-head--split"><div><span class="ts-eyebrow">{c.wishes.eyebrow}</span><h2>{c.wishes.title}</h2></div>{isFilled(c.wishes.text) && <p>{c.wishes.text}</p>}</div>
@@ -115,7 +136,7 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 </div></section>}
 
 <section class="ts-cta"><div class="ts-wrap ts-cta__row">
-<h2>{c.cta.title}</h2>
+<div class="ts-cta__copy"><h2>{c.cta.title}</h2>{!c.form.open && isFilled(c.form.closed_text) && <p>{c.form.closed_text}</p>}</div>
 <div class="ts-cta__actions">{c.form.open && <a href="#gui-loi-chuc" class="ts-btn ts-btn--solid">{c.cta.button_wish}</a>}<a href={url('phat-trien-ben-vung')} class="ts-btn">{c.cta.button_back}</a></div>
 </div></section>
 </Layout>
@@ -234,6 +255,12 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
   .ts-cta__row { display: flex; justify-content: space-between; align-items: center; gap: 20px 40px; flex-wrap: wrap; }
   .ts-cta h2 { font: var(--type-h3); max-width: 22em; }
   .ts-cta__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .ts-cta__copy { display: flex; flex-direction: column; gap: 10px; max-width: 760px; }
+  .ts-cta__copy p { margin: 0; color: var(--text-secondary); }
+  .ts-solution { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 16px; padding: 24px; border-radius: var(--radius-lg); background: var(--green-50); color: var(--green-900); }
+  .ts-solution > span { font-size: 30px; line-height: 1; }
+  .ts-solution strong { font: var(--type-num); }
+  .ts-solution p { margin: 6px 0 0; line-height: 1.65; }
   .ts-btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: var(--radius-md); border: 1px solid var(--border-strong); font-weight: 700; color: var(--green-700); text-decoration: none; background: var(--surface-card); }
   .ts-btn--solid { background: var(--green-500); border-color: var(--green-500); color: #fff; }
   .ts-btn:hover { text-decoration: none; }

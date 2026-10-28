@@ -1,0 +1,12 @@
+---
+/** Row of key figures. Figures still holding a "[…]" placeholder are left out. */
+import { isFilled } from '../../lib/content';
+
+interface Stat { value?: string; label?: string; sub?: string }
+interface Props { items: Stat[] }
+const items = (Astro.props.items ?? []).filter((s) => isFilled(s.value));
+const cols = Math.min(4, Math.max(2, items.length));
+---
+{items.length > 0 && <div class="st-stats" style={`--cols:${cols}`}>
+{items.map((s) => <div class="st-stat"><span class="st-stat__value">{s.value}</span><span class="st-stat__label">{s.label}</span>{isFilled(s.sub) && <span class="st-stat__sub">{s.sub}</span>}</div>)}
+</div>}

@@ -1,142 +1,410 @@
 {
   "seo": {
-    "title": "Con người & Tuyển dụng"
+    "title": "Con người & Tuyển dụng",
+    "description": "Tuyển dụng tại Tiến Nông: kỹ sư nông học R&D, kế hoạch truyền thông, kinh doanh thị trường, nhân sự, tài chính. Thâm niên làm việc bình quân 10 năm, đào tạo trong và ngoài nước."
   },
-  "s01_hero": {
+  "hero": {
     "t1": "Trang chủ",
     "t2": "/ Con người & Tuyển dụng",
-    "t3": "CON NGƯỜI TIẾN NÔNG",
-    "t4": "Gắn bó bền lâu, cùng nhau phát triển",
-    "t5": "Tại Tiến Nông, nhiều cán bộ, nhân viên đã đồng hành cùng doanh nghiệp hơn 20 năm. Chúng tôi trân trọng mỗi chặng đường cống hiến và luôn tìm kiếm những người cùng chung đam mê với nông nghiệp.",
-    "t6": "Xem vị trí đang tuyển →",
-    "t7": "Văn hóa Tiến Nông",
-    "img_hr_hero_1_1": {
+    "eyebrow": "CON NGƯỜI & TUYỂN DỤNG",
+    "title": "Nơi người ta ở lại — và lớn lên",
+    "intro": "Thâm niên làm việc bình quân của người Tiến Nông là mười năm; hơn ba mươi người đã gắn bó trên hai mươi năm. Chúng tôi tìm những người trẻ được đào tạo bài bản, đúng chuyên ngành, muốn dùng nghề của mình để phục vụ đồng ruộng — và sẵn sàng đi đường dài.",
+    "button1": "Xem vị trí đang tuyển →",
+    "button2": "Vì sao chọn Tiến Nông",
+    "img1": {
       "src": "/uploads/hr-hero-1-mvelbc4b.jpg",
       "focus": "50% 50%",
       "zoom": "100",
       "alt": "Chân dung người lao động thâm niên"
     },
-    "img_hr_hero_2_1": {
+    "img2": {
       "src": "/uploads/hr-hero-2-mvermdc3.jpg",
       "focus": "52.8% 67.7%",
       "zoom": "184",
       "alt": "Tập thể trong chuyến du lịch"
     },
-    "img_hr_hero_3_1": {
+    "img3": {
       "src": "/uploads/hr-hero-3-mverkdsr.jpg",
       "focus": "48.2% 86.8%",
       "zoom": "244",
       "alt": "Kỹ sư trẻ tại phòng lab"
     }
   },
-  "s02_con_so": {
-    "t1": "500",
-    "t2": "cán bộ, nhân viên",
-    "t3": "30+",
-    "t4": "người gắn bó trên 20 năm",
-    "t5": "10 năm",
-    "t6": "thâm niên trung bình",
-    "t7": "3",
-    "t8": "nhà máy · 1 trụ sở chính"
+  "stats": [
+    {
+      "value": "500",
+      "label": "cán bộ, nhân viên",
+      "sub": ""
+    },
+    {
+      "value": "30+",
+      "label": "người gắn bó trên 20 năm",
+      "sub": ""
+    },
+    {
+      "value": "10 năm",
+      "label": "thâm niên trung bình",
+      "sub": ""
+    },
+    {
+      "value": "3",
+      "label": "nhà máy · 1 trụ sở chính",
+      "sub": ""
+    }
+  ],
+  "reasons": {
+    "eyebrow": "01 · VÌ SAO CHỌN TIẾN NÔNG",
+    "title": "Ba điều chúng tôi hứa với người mới",
+    "items": [
+      {
+        "title": "Công việc có ý nghĩa",
+        "text": "Mỗi công thức phân bón, mỗi buổi hội thảo đều đến với một thửa ruộng thật, một gia đình nông dân thật. Bạn nhìn thấy kết quả công việc của mình ngay trên đồng."
+      },
+      {
+        "title": "Được học và lớn lên",
+        "text": "Đào tạo nội bộ hằng năm, cơ hội đào tạo trong và ngoài nước. Nhiều quản lý hôm nay đã đi lên từ vị trí nhân viên."
+      },
+      {
+        "title": "Được chăm lo như người nhà",
+        "text": "Du lịch nước ngoài, tặng vàng và Bảo Bình tri ân người gắn bó, quan tâm tới gia đình và con em cán bộ — trong một tập thể sống theo năm điều tâm niệm."
+      }
+    ],
+    "link_label": "Tìm hiểu văn hóa Tiến Nông →"
   },
-  "s03_dai_ngo": {
-    "t1": "ĐÃI NGỘ & GHI NHẬN",
-    "t2": "Sự ghi nhận xứng đáng cho mỗi chặng đường",
-    "t3": "Ngoài chế độ lương thưởng cạnh tranh, Tiến Nông có những hình thức tri ân riêng dành cho người lao động gắn bó lâu năm.",
-    "img_ben_1_1": {
-      "src": "/uploads/ben-1-mvek6xtk.jpg",
-      "focus": "51.9% 100%",
-      "zoom": "102",
-      "alt": "Chuyến du lịch nước ngoài toàn công ty"
-    },
-    "t4": "Du lịch nước ngoài",
-    "t5": "Hành trình khám phá dành cho toàn thể cán bộ, nhân viên.",
-    "img_ben_2_1": {
-      "src": "/uploads/ben-2-mvekzk8w.jpg",
-      "focus": "76.7% 100%",
-      "zoom": "102",
-      "alt": "Lễ trao vàng tri ân"
-    },
-    "t6": "Tặng vàng tri ân",
-    "t7": "Dành cho người lao động gắn bó lâu năm cùng doanh nghiệp.",
-    "img_ben_3_1": {
-      "src": "/uploads/ben-3-mvesebpt.jpg",
-      "focus": "50% 100%",
-      "zoom": "111",
-      "alt": "Lễ trao Bảo Bình tài lộc"
-    },
-    "t8": "Bảo Bình tài lộc",
-    "t9": "Vinh danh những thành viên có thâm niên cống hiến.",
-    "t10": "Lương thưởng cạnh tranh",
-    "t11": "Gắn với hiệu quả công việc và thâm niên",
-    "t12": "Bảo hiểm đầy đủ",
-    "t13": "Theo quy định và [chế độ bổ sung]",
-    "t14": "Đào tạo chuyên môn",
-    "t15": "Cùng chuyên gia R&D và đối tác",
-    "t16": "Môi trường gần gũi",
-    "t17": "Làm việc cùng nhau như một gia đình"
+  "paths": {
+    "eyebrow": "02 · CÁC KHỐI NGHỀ",
+    "title": "Bạn sẽ làm việc ở đâu",
+    "intro": "Tiến Nông có trụ sở tại TP Thanh Hóa, ba nhà máy ở Bỉm Sơn, Hoằng Phú (Thanh Hóa) và Chư Sê (Gia Lai), cùng đội ngũ thị trường trên khắp cả nước.",
+    "items": [
+      {
+        "title": "Nghiên cứu & phát triển",
+        "text": "Trung tâm Nghiên cứu Phát triển Khoa học & Công nghệ, Phòng Sức khỏe đất và cây trồng: nghiên cứu công thức, khảo nghiệm, phân tích đất.",
+        "where": "Bỉm Sơn, Thanh Hóa"
+      },
+      {
+        "title": "Kinh doanh & thị trường",
+        "text": "Phát triển nhà phân phối, đại lý; cùng kỹ sư tổ chức hội thảo đầu bờ cho bà con.",
+        "where": "Các tỉnh, thành"
+      },
+      {
+        "title": "Sản xuất & chất lượng",
+        "text": "Vận hành dây chuyền, cơ khí, kho vận và kiểm nghiệm chất lượng.",
+        "where": "Ba nhà máy"
+      },
+      {
+        "title": "Truyền thông & thương hiệu",
+        "text": "Kế hoạch truyền thông, nội dung, sự kiện và các chương trình cộng đồng.",
+        "where": "Trụ sở chính"
+      },
+      {
+        "title": "Văn phòng & quản trị",
+        "text": "Nhân sự, tài chính – kế toán, công nghệ, hành chính.",
+        "where": "Trụ sở chính"
+      }
+    ]
   },
-  "s04_cau_chuyen": {
-    "img_hr_story_1": {
+  "growth": {
+    "eyebrow": "03 · LỘ TRÌNH PHÁT TRIỂN",
+    "title": "Từ nhân viên thị trường đến giám đốc kinh doanh",
+    "quote": "“Tôi luôn tận tâm với công việc được giao, lan tỏa giá trị biết ơn và sẻ chia tới đồng nghiệp, cùng hướng tới Cộng đồng Tiến Nông”",
+    "person": "Nguyễn Trung Trụ",
+    "role": "Giám đốc Phòng Kinh doanh 1 · Gắn bó từ 2006",
+    "image": {
       "src": "/uploads/hr-story-mveksmyt.jpg",
       "focus": "49.2% 44.6%",
       "zoom": "123",
       "alt": "Chân dung người lao động gắn bó 20+ năm tại nơi làm việc"
     },
-    "t1": "CÂU CHUYỆN GẮN BÓ",
-    "t2": "“Tôi luôn tận tâm với công việc được giao, lan tỏa giá trị biết ơn và sẻ chia tới đồng nghiệp, cùng hướng tới Cộng đồng Tiến Nông”",
-    "t3": "Nguyễn Trung Trụ",
-    "t4": "GĐ Kinh doanh 1 · Gắn bó từ 2006"
+    "timeline": [
+      {
+        "when": "2006",
+        "title": "Gia nhập Tiến Nông",
+        "text": "Bắt đầu từ công việc thị trường."
+      },
+      {
+        "when": "2016",
+        "title": "Giám đốc Kinh doanh Vùng 2 Thanh Hóa",
+        "text": "Phụ trách địa bàn, cùng Hội Nông dân triển khai phân bón trả chậm."
+      },
+      {
+        "when": "2020–2022",
+        "title": "Trung tâm Chăm sóc Phục vụ Nông dân Việt Nam",
+        "text": "Phó Giám đốc, rồi Giám đốc Trung tâm."
+      },
+      {
+        "when": "Nay",
+        "title": "Giám đốc Phòng Kinh doanh 1",
+        "text": "Phụ trách Thanh Hóa và các tỉnh phía Bắc."
+      }
+    ]
   },
-  "s05_vi_tri_tuyen_dung": {
-    "t1": "CƠ HỘI NGHỀ NGHIỆP",
-    "t2": "Vị trí đang tuyển",
-    "t3": "vị trí",
-    "f1": "Khối",
-    "f2": "Địa điểm",
-    "t4": "Hiện chưa có vị trí phù hợp. Gửi hồ sơ tới",
-    "t5": "[email tuyển dụng]",
-    "t6": "để được liên hệ khi có cơ hội."
+  "training": {
+    "eyebrow": "04 · ĐÀO TẠO",
+    "title": "Học liên tục, từ đồng ruộng đến nhà máy thông minh",
+    "items": [
+      {
+        "title": "Nền tảng về đất, phân bón và công nghệ",
+        "text": "Khóa đào tạo toàn hệ thống cho đội ngũ kinh doanh, kỹ thuật và quản lý (04/2026).",
+        "link": "/tin-tuc/tien-nong-to-chuc-dao-tao-nen-tang-kien-thuc-ve-dat-phan-bon-va-cong-nghe-cho/"
+      },
+      {
+        "title": "Chứng chỉ lấy mẫu phân bón",
+        "text": "Đào tạo có cấp chứng chỉ, nâng chuẩn kiểm soát chất lượng (03/2026).",
+        "link": "/tin-tuc/tien-nong-chu-dong-phoi-hop-to-chuc-dao-tao-lay-mau-phan-bon-cap-chung-chi-gop/"
+      },
+      {
+        "title": "Tập huấn tại nhà máy",
+        "text": "Đào tạo cán bộ, công nhân về vận hành và an toàn tại Nhà máy Bỉm Sơn (05/2025).",
+        "link": "/tin-tuc/nha-may-dinh-duong-cay-trong-tien-nong-bim-son-to-chuc-lop-tap-huan-dao-tao-can/"
+      },
+      {
+        "title": "Học hỏi quốc tế",
+        "text": "Cập nhật xu hướng AI, robot và nhà máy thông minh tại Thâm Quyến, Trung Quốc (06/2026).",
+        "link": "/tin-tuc/tien-nong-cap-nhat-xu-huong-ai-robot-va-nha-may-thong-minh-tai-tham-quyen/"
+      }
+    ]
   },
-  "jobs_apply_label": "Ứng tuyển →",
-  "jobs": [
-    {
-      "title": "Kỹ sư nông học vùng",
-      "dept": "Kinh doanh – Kỹ thuật",
-      "loc": "Thanh Hóa",
-      "due": "[dd/mm]"
-    },
-    {
-      "title": "Kỹ sư nông học vùng",
-      "dept": "Kinh doanh – Kỹ thuật",
-      "loc": "Gia Lai",
-      "due": "[dd/mm]"
-    },
-    {
-      "title": "Chuyên viên nghiên cứu công thức phân bón",
-      "dept": "Nghiên cứu Phát triển",
-      "loc": "Thanh Hóa",
-      "due": "[dd/mm]"
-    },
-    {
-      "title": "Kỹ thuật viên phòng thí nghiệm",
-      "dept": "Nghiên cứu Phát triển",
-      "loc": "Thanh Hóa",
-      "due": "[dd/mm]"
-    },
-    {
-      "title": "Kỹ sư vận hành dây chuyền",
-      "dept": "Sản xuất",
-      "loc": "Bỉm Sơn",
-      "due": "[dd/mm]"
-    },
-    {
-      "title": "Chuyên viên xuất khẩu (tiếng Anh)",
-      "dept": "Văn phòng",
-      "loc": "Thanh Hóa",
-      "due": "[dd/mm]"
-    }
-  ],
-  "jobs_all_depts": "Tất cả khối",
-  "jobs_all_locations": "Tất cả địa điểm"
+  "benefits": {
+    "eyebrow": "05 · ĐÃI NGỘ & GHI NHẬN",
+    "title": "Sự ghi nhận xứng đáng cho mỗi chặng đường",
+    "intro": "Ngoài chế độ lương thưởng cạnh tranh, Tiến Nông có những hình thức tri ân riêng dành cho người lao động gắn bó lâu năm.",
+    "cards": [
+      {
+        "title": "Du lịch nước ngoài",
+        "text": "Hành trình khám phá dành cho toàn thể cán bộ, nhân viên.",
+        "image": {
+          "src": "/uploads/ben-1-mvek6xtk.jpg",
+          "focus": "51.9% 100%",
+          "zoom": "102",
+          "alt": "Chuyến du lịch nước ngoài toàn công ty"
+        }
+      },
+      {
+        "title": "Tặng vàng tri ân",
+        "text": "Dành cho người lao động gắn bó lâu năm cùng doanh nghiệp.",
+        "image": {
+          "src": "/uploads/ben-2-mvekzk8w.jpg",
+          "focus": "76.7% 100%",
+          "zoom": "102",
+          "alt": "Lễ trao vàng tri ân"
+        }
+      },
+      {
+        "title": "Bảo Bình tài lộc",
+        "text": "“Chiếc bình quý” mang số hiệu riêng, trao cho thành viên gắn bó lâu năm, quyền lợi tăng theo sự phát triển của công ty.",
+        "image": {
+          "src": "/uploads/ben-3-mvesebpt.jpg",
+          "focus": "50% 100%",
+          "zoom": "111",
+          "alt": "Lễ trao Bảo Bình tài lộc"
+        }
+      }
+    ],
+    "items": [
+      {
+        "title": "Lương thưởng cạnh tranh",
+        "text": "Gắn với hiệu quả công việc và thâm niên"
+      },
+      {
+        "title": "Bảo hiểm đầy đủ",
+        "text": "BHXH, BHYT, BHTN theo quy định."
+      },
+      {
+        "title": "Đào tạo trong và ngoài nước",
+        "text": "Cùng chuyên gia R&D và đối tác."
+      },
+      {
+        "title": "Môi trường gần gũi",
+        "text": "Làm việc cùng nhau như một gia đình"
+      }
+    ]
+  },
+  "jobs": {
+    "eyebrow": "06 · CƠ HỘI NGHỀ NGHIỆP",
+    "title": "Vị trí đang tuyển",
+    "intro": "Với các vị trí chuyên môn, Tiến Nông tuyển ứng viên tốt nghiệp đại học đúng chuyên ngành. Bấm vào từng vị trí để xem mô tả công việc.",
+    "count_label": "vị trí",
+    "dept_label": "Khối",
+    "loc_label": "Địa điểm",
+    "all_depts": "Tất cả khối",
+    "all_locations": "Tất cả địa điểm",
+    "apply_label": "Ứng tuyển qua email",
+    "duties_label": "Công việc chính",
+    "requirements_label": "Yêu cầu",
+    "benefits_label": "Quyền lợi",
+    "common_benefits": "Lương, thưởng theo năng lực và hiệu quả công việc; BHXH, BHYT, BHTN đầy đủ; cơ hội đào tạo trong và ngoài nước; du lịch, tri ân thâm niên theo chế độ của công ty.",
+    "empty_text": "Hiện chưa có vị trí phù hợp. Gửi hồ sơ tới",
+    "empty_after": "để được liên hệ khi có cơ hội.",
+    "items": [
+      {
+        "title": "Kỹ sư Nông học",
+        "dept": "Nghiên cứu Phát triển (R&D)",
+        "loc": "Bỉm Sơn, Thanh Hóa",
+        "count": "02",
+        "type": "Toàn thời gian",
+        "due": "",
+        "summary": "Nghiên cứu, khảo nghiệm và hoàn thiện công thức dinh dưỡng cây trồng tại Trung tâm Nghiên cứu Phát triển Khoa học & Công nghệ; triển khai mô hình trình diễn cùng Phòng Sức khỏe đất và cây trồng.",
+        "duties": [
+          "Thiết kế, triển khai và theo dõi thí nghiệm, khảo nghiệm phân bón trên đồng ruộng và trong nhà lưới.",
+          "Lấy mẫu, phân tích đất và cây; xây dựng quy trình bón phân theo từng cây trồng, vùng đất.",
+          "Viết báo cáo khoa học, tài liệu kỹ thuật; tập huấn cho đội ngũ kinh doanh và nông dân.",
+          "Tham gia đề tài nghiên cứu cùng các viện, trường và sở ngành."
+        ],
+        "requirements": [
+          "Tốt nghiệp đại học chính quy chuyên ngành Khoa học cây trồng, Nông học, Khoa học đất, Nông hóa thổ nhưỡng hoặc Bảo vệ thực vật; ưu tiên có bằng thạc sĩ.",
+          "Vững kiến thức dinh dưỡng cây trồng, thiết kế thí nghiệm và xử lý số liệu thống kê.",
+          "Đọc hiểu tài liệu chuyên ngành bằng tiếng Anh.",
+          "Chịu khó, sẵn sàng làm việc ngoài đồng ruộng và đi công tác."
+        ],
+        "link": ""
+      },
+      {
+        "title": "Chuyên viên Kế hoạch Truyền thông (Planner)",
+        "dept": "Truyền thông",
+        "loc": "Trụ sở chính, TP Thanh Hóa",
+        "count": "01",
+        "type": "Toàn thời gian",
+        "due": "",
+        "summary": "Lập và theo dõi kế hoạch truyền thông năm, quý, tháng cho thương hiệu Tiến Nông trên website, mạng xã hội, báo chí, sự kiện và ấn phẩm tại điểm bán.",
+        "duties": [
+          "Xây dựng kế hoạch truyền thông theo mùa vụ và dòng sản phẩm: thông điệp, lịch nội dung, ngân sách, chỉ số đo lường.",
+          "Phối hợp R&D và kinh doanh để biến kết quả mô hình trình diễn, hội thảo đầu bờ thành nội dung cho nhà nông.",
+          "Làm việc với báo chí, đơn vị sản xuất; điều phối các chiến dịch cộng đồng của công ty.",
+          "Theo dõi, báo cáo hiệu quả truyền thông và đề xuất điều chỉnh."
+        ],
+        "requirements": [
+          "Tốt nghiệp đại học chính quy chuyên ngành Marketing, Truyền thông, Báo chí hoặc Quan hệ công chúng.",
+          "Ưu tiên có từ 2 năm kinh nghiệm lập kế hoạch truyền thông, marketing; hiểu thị trường nông nghiệp, nông thôn là lợi thế.",
+          "Viết tốt, tư duy số liệu, sử dụng được các công cụ quảng cáo và đo lường số.",
+          "Sẵn sàng đi công tác địa phương, xuống đồng ruộng."
+        ],
+        "link": ""
+      },
+      {
+        "title": "Nhân viên Kinh doanh thị trường",
+        "dept": "Kinh doanh",
+        "loc": "Các tỉnh, thành",
+        "count": "Nhiều",
+        "type": "Tuyển thường xuyên",
+        "due": "",
+        "summary": "Phát triển và chăm sóc hệ thống nhà phân phối, đại lý trên địa bàn được giao; cùng kỹ sư tổ chức hội thảo, tư vấn cho bà con.",
+        "duties": [
+          "Quản lý, mở rộng hệ thống nhà phân phối, đại lý trên địa bàn; hoàn thành chỉ tiêu kinh doanh theo mùa vụ.",
+          "Nắm bắt thị trường, cây trồng, đối thủ cạnh tranh; đề xuất chính sách bán hàng phù hợp.",
+          "Tổ chức hội nghị khách hàng, hội thảo đầu bờ, mô hình trình diễn cùng kỹ sư.",
+          "Phối hợp Hội Nông dân triển khai chương trình phân bón trả chậm tại địa phương."
+        ],
+        "requirements": [
+          "Tốt nghiệp đại học chuyên ngành Nông học, Khoa học cây trồng, Kinh tế nông nghiệp, Quản trị kinh doanh hoặc Marketing.",
+          "Giao tiếp tốt, yêu thích công việc thị trường, gần gũi bà con nông dân.",
+          "Có phương tiện, sẵn sàng đi công tác thường xuyên trên địa bàn phụ trách.",
+          "Ưu tiên ứng viên sinh sống tại tỉnh tuyển dụng, có kinh nghiệm kinh doanh vật tư nông nghiệp."
+        ],
+        "link": ""
+      },
+      {
+        "title": "Chuyên viên Nhân sự",
+        "dept": "Hành chính Nhân sự",
+        "loc": "Trụ sở chính, TP Thanh Hóa",
+        "count": "01",
+        "type": "Toàn thời gian",
+        "due": "",
+        "summary": "Phụ trách tuyển dụng, đào tạo và chính sách lương, thưởng, phúc lợi cho trụ sở và các nhà máy.",
+        "duties": [
+          "Lập kế hoạch và tổ chức tuyển dụng; chuẩn hóa mô tả công việc cho các vị trí.",
+          "Quản lý chương trình đào tạo, hội nhập; theo dõi lộ trình phát triển của nhân viên.",
+          "Thực hiện chế độ tiền lương, bảo hiểm, phúc lợi; cập nhật quy định pháp luật lao động.",
+          "Tham gia xây dựng hệ thống đánh giá hiệu quả công việc và các hoạt động văn hóa doanh nghiệp."
+        ],
+        "requirements": [
+          "Tốt nghiệp đại học chính quy chuyên ngành Quản trị nhân lực, Quản trị kinh doanh, Luật hoặc Kinh tế lao động.",
+          "Ưu tiên có từ 3 năm kinh nghiệm ở vị trí tương đương, nhất là trong doanh nghiệp sản xuất.",
+          "Am hiểu Bộ luật Lao động, Luật Bảo hiểm xã hội; sử dụng tốt phần mềm quản trị nhân sự.",
+          "Cẩn trọng, bảo mật thông tin, giao tiếp tốt."
+        ],
+        "link": ""
+      },
+      {
+        "title": "Chuyên viên Tài chính",
+        "dept": "Tài chính – Kế toán",
+        "loc": "Trụ sở chính, TP Thanh Hóa",
+        "count": "01",
+        "type": "Toàn thời gian",
+        "due": "",
+        "summary": "Lập kế hoạch tài chính, quản lý dòng tiền và phân tích hiệu quả kinh doanh, hỗ trợ Ban lãnh đạo ra quyết định.",
+        "duties": [
+          "Lập kế hoạch tài chính, ngân sách năm, quý; theo dõi thực hiện và phân tích chênh lệch.",
+          "Quản lý dòng tiền, công nợ theo mùa vụ; làm việc với ngân hàng, tổ chức tín dụng.",
+          "Phân tích hiệu quả sản phẩm, kênh phân phối; lập báo cáo quản trị định kỳ.",
+          "Phối hợp với kế toán trong quyết toán và kiểm toán."
+        ],
+        "requirements": [
+          "Tốt nghiệp đại học chính quy chuyên ngành Tài chính – Ngân hàng, Kế toán hoặc Kiểm toán; ưu tiên có hoặc đang học ACCA, CFA.",
+          "Ưu tiên có từ 3 năm kinh nghiệm tài chính doanh nghiệp.",
+          "Thành thạo Excel và phần mềm kế toán; tư duy phân tích tốt.",
+          "Trung thực, cẩn trọng, có định hướng gắn bó lâu dài."
+        ],
+        "link": ""
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "07 · QUY TRÌNH ỨNG TUYỂN",
+    "title": "Bốn bước, minh bạch và không mất phí",
+    "steps": [
+      {
+        "title": "Gửi hồ sơ",
+        "text": "Gửi CV qua email, ghi rõ vị trí ứng tuyển ở tiêu đề thư."
+      },
+      {
+        "title": "Sàng lọc",
+        "text": "Phòng Hành chính Nhân sự xem xét và liên hệ ứng viên phù hợp."
+      },
+      {
+        "title": "Phỏng vấn",
+        "text": "Trao đổi chuyên môn với trưởng bộ phận; một số vị trí có bài kiểm tra."
+      },
+      {
+        "title": "Nhận việc & hội nhập",
+        "text": "Đào tạo hội nhập, làm quen văn hóa năm điều tâm niệm và người hướng dẫn trực tiếp."
+      }
+    ],
+    "documents_title": "Hồ sơ khi trúng tuyển",
+    "documents": [
+      "CV xin việc và sơ yếu lý lịch",
+      "Phiếu xác nhận nhân sự",
+      "Giấy khám sức khỏe (còn hiệu lực trong 6 tháng)",
+      "Bản sao công chứng văn bằng, chứng chỉ",
+      "Bản sao công chứng căn cước công dân và giấy khai sinh"
+    ],
+    "note": "Tiến Nông không thu bất kỳ khoản phí nào của ứng viên."
+  },
+  "faq": {
+    "eyebrow": "HỎI ĐÁP",
+    "title": "Ứng viên hay hỏi",
+    "items": [
+      {
+        "q": "Có bắt buộc tốt nghiệp đúng chuyên ngành không?",
+        "a": "Với các vị trí chuyên môn như kỹ sư nông học, truyền thông, nhân sự, tài chính, Tiến Nông tuyển ứng viên tốt nghiệp đại học đúng chuyên ngành để phát huy tốt nhất năng lực. Chuyên ngành phù hợp được ghi trong mô tả từng vị trí."
+      },
+      {
+        "q": "Chưa có vị trí phù hợp thì sao?",
+        "a": "Bạn vẫn có thể gửi hồ sơ, ghi rõ vị trí mong muốn. Phòng Hành chính Nhân sự sẽ lưu hồ sơ và liên hệ khi có cơ hội."
+      },
+      {
+        "q": "Tôi sẽ làm việc ở đâu?",
+        "a": "Tùy vị trí: trụ sở chính tại TP Thanh Hóa, các nhà máy ở Bỉm Sơn, Hoằng Phú (Thanh Hóa), Chư Sê (Gia Lai), hoặc tại tỉnh mình phụ trách với khối kinh doanh."
+      },
+      {
+        "q": "Công ty có thu phí tuyển dụng không?",
+        "a": "Không. Tiến Nông không thu bất kỳ khoản phí nào của ứng viên. Nếu có ai yêu cầu nộp phí, vui lòng báo cho Phòng Hành chính Nhân sự."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Liên hệ tuyển dụng",
+    "email": "info@tiennong.vn",
+    "person": "Bà Lê Thị Thanh – Phó Trưởng phòng Hành chính Nhân sự",
+    "phone": "0915 115 198"
+  }
 }

@@ -1,14 +1,25 @@
 ---
+/**
+ * Trở thành đối tác. Flow: hero → key figures → ways to partner (who you are) → why Tiến Nông →
+ * benefits → partner stories → distributor clubs → 5-step process → conditions → expansion areas →
+ * FAQ → pick a province to reach the sales director in charge (map).
+ */
 import raw from '../content/pages/tro-thanh-doi-tac.json';
 import { isFilled, withDefaults } from '../lib/content';
+import Head from '../components/story/Head.astro';
+import Stats from '../components/story/Stats.astro';
+import Faq from '../components/story/Faq.astro';
 import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import PageHero from '../components/PageHero.astro';
-import { url, asset } from '../lib/routes';
+import { url, asset, link } from '../lib/routes';
 import { MAP_W, MAP_H, VN_PATH, PROVINCES, HOANG_SA, TRUONG_SA, project } from '../lib/vn-map';
 
 const c = withDefaults(raw, 'src/content/pages/tro-thanh-doi-tac.json');
-const partners = c.spotlight.partners.filter((p) => isFilled(p.name) && isFilled(p.quote));
+const partners = c.spotlight.partners.filter((p) => isFilled(p.name) && (isFilled(p.story) || isFilled(p.quote)));
+const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
+// In-page anchors stay as they are; site paths get the deploy base.
+const href = (h: string) => (h.startsWith('#') ? h : link(h));
 const F = 'src/content/pages/tro-thanh-doi-tac.json';
 
 // Province → index of the sales director in charge. A province nobody was given falls back to the first director.
@@ -28,12 +39,30 @@ const [tsx, tsy] = project(11.75, 112.2);
 <PageHero id="partner-hero" image={c.hero.image} cms={`${F}#hero.image`} placeholder="Ảnh đại lý Tiến Nông"
   crumbs={[{ label: c.hero.t1, href: url('trang-chu') }, { label: c.hero.t2.replace(/^\s*\/\s*/, '') }]}
   eyebrow={c.hero.eyebrow} title={c.hero.title} lead={c.hero.intro}>
-<a href="#lien-he-khu-vuc" class="page-hero__btn page-hero__btn--solid">{c.hero.button1}</a><a href="#quyen-loi" class="page-hero__btn">{c.hero.button2}</a>
+<a href="#lien-he-khu-vuc" class="page-hero__btn page-hero__btn--solid">{c.hero.button1}</a><a href="#hinh-thuc" class="page-hero__btn">{c.hero.button2}</a>
 </PageHero>
 
-<section style="background:var(--green-800);color:#fff">
-<div style="max-width:1280px;margin:0 auto;padding:48px clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 84px)/4),calc((900px - 100%)*999),calc((100% - 28px)/2)),1fr));gap:28px">
-{c.stats.map((s) => <div style="display:flex;flex-direction:column"><span style="font:var(--type-stat);color:var(--amber-400);overflow-wrap:normal;font-variant-numeric:tabular-nums">{s.value}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{s.label}</span></div>)}
+<section class="st-sec st-sec--card"><div class="st-wrap st-wrap--s"><Stats items={c.stats} /></div></section>
+
+<section id="hinh-thuc" class="st-sec">
+<div class="st-wrap">
+<Head eyebrow={c.models.eyebrow} title={c.models.title} intro={c.models.intro} />
+<div class="st-grid" style="--min:250px">
+{c.models.items.map((m) => (
+<div class="st-card st-card--top"><div class="st-card__body">
+<strong class="st-card__title">{m.title}</strong>
+<span class="st-card__text"><strong style="color:var(--text-primary)">Phù hợp: </strong>{m.who}</span>
+<span class="st-card__text"><strong style="color:var(--text-primary)">Nhận được: </strong>{m.get}</span>
+{isFilled(m.link) && <a class="st-card__link" href={href(m.link)}>{m.link_label}</a>}
+</div></div>
+))}
+</div>
+</div></section>
+
+<section id="vi-sao" class="st-sec st-sec--dark">
+<div class="st-wrap">
+<Head eyebrow={c.why.eyebrow} title={c.why.title} />
+<div class="st-ruled" style="--min:240px">{c.why.items.map((w) => <div><strong>{w.title}</strong><span>{w.text}</span></div>)}</div>
 </div></section>
 
 <section id="quyen-loi" style="background:var(--surface-page);scroll-margin-top:120px">
@@ -50,6 +79,43 @@ const [tsx, tsy] = project(11.75, 112.2);
 </div>
 ))}
 </div></div></section>
+
+{partners.length > 0 && <section id="cau-chuyen" class="st-sec st-sec--card">
+<div class="st-wrap">
+<Head eyebrow={c.spotlight.eyebrow} title={c.spotlight.title} intro={c.spotlight.intro} split />
+<div class="st-grid" style="--min:520px">
+{partners.map((p, k) => (
+<article class="partner-card">
+<div style="position:relative;min-height:260px"><ImageSlot style={fill} id={`partner-${k}`} shape="rect" placeholder={p.image.alt} image={p.image} cms={`${F}#spotlight.partners.${k}.image`} /></div>
+<div style="padding:26px;display:flex;flex-direction:column;gap:14px">
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{p.kind}</span>
+<div><strong style="display:block;font:var(--type-num)">{p.name}</strong><span style="color:var(--text-secondary)">{p.place}</span></div>
+{p.facts.filter((f) => isFilled(f.value)).length > 0 && <div style="display:flex;gap:28px;flex-wrap:wrap">{p.facts.filter((f) => isFilled(f.value)).map((f) => <div><div style="font:var(--type-num);color:var(--amber-600)">{f.value}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{f.label}</span></div>)}</div>}
+{isFilled(p.story) && <p style="margin:0;color:var(--text-secondary);line-height:1.65">{p.story}</p>}
+{isFilled(p.quote) && <blockquote style="margin:0;padding:16px 18px;border-left:3px solid var(--green-500);background:var(--green-50);border-radius:0 var(--radius-md) var(--radius-md) 0;font-size:16px;line-height:1.6;color:var(--text-primary)">“{p.quote}”{isFilled(p.person) && <footer style="margin-top:8px;font-size:14px;font-weight:700;color:var(--green-800)">— {p.person}</footer>}</blockquote>}
+{!isFilled(p.quote) && isFilled(p.person) && <span style="font-size:14px;font-weight:700">{p.person}</span>}
+{isFilled(p.link) && <a href={link(p.link)} style="margin-top:auto;font-weight:600;font-size:15px">Đọc câu chuyện →</a>}
+</div>
+</article>
+))}
+</div></div></section>}
+
+<section id="clb" class="st-sec st-sec--tint">
+<div class="st-wrap st-wrap--s">
+<div class="st-split">
+<div>
+<Head eyebrow={c.club.eyebrow} title={c.club.title} intro={c.club.text} />
+{isFilled(c.club.link) && <a href={link(c.club.link)} style="font-weight:600">Đọc tin →</a>}
+</div>
+<div class="st-split__media st-hide-empty" style="--ratio:16/10"><ImageSlot style={fill} id="partner-club" shape="rounded" radius="24" placeholder={c.club.image.alt || 'CLB nhà phân phối'} image={c.club.image} cms={`${F}#club.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
+</div>
+</div></section>
+
+<section id="quy-trinh" class="st-sec">
+<div class="st-wrap">
+<Head eyebrow={c.process.eyebrow} title={c.process.title} />
+<ol class="st-steps" style="--min:200px">{c.process.steps.map((st) => <li><strong>{st.title}</strong><span>{st.text}</span></li>)}</ol>
+</div></section>
 
 <section style="background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 72px;align-items:start">
@@ -69,22 +135,20 @@ const [tsx, tsy] = project(11.75, 112.2);
 ))}
 </ol></div></section>
 
-{partners.length > 0 && <section style="background:var(--surface-page)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:720px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.spotlight.eyebrow}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.spotlight.title}</h2></div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:24px">
-{partners.map((p, k) => (
-<article class="partner-card">
-<div style="position:relative;min-height:260px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`partner-${k}`} shape="rect" placeholder={p.image.alt} image={p.image} cms={`${F}#spotlight.partners.${k}.image`} /></div>
-<div style="padding:26px;display:flex;flex-direction:column;gap:14px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{p.kind}</span>
-<div><strong style="display:block;font:var(--type-num)">{p.name}</strong><span style="color:var(--text-secondary)">{p.place}</span></div>
-{p.facts.length > 0 && <div style="display:flex;gap:28px;flex-wrap:wrap">{p.facts.map((f) => <div><div style="font:var(--type-num);color:var(--amber-600)">{f.value}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{f.label}</span></div>)}</div>}
-<blockquote style="margin:0;padding:16px 18px;border-left:3px solid var(--green-500);background:var(--green-50);border-radius:0 var(--radius-md) var(--radius-md) 0;font-size:16px;line-height:1.6;color:var(--text-primary)">“{p.quote}”<footer style="margin-top:8px;font-size:14px;font-weight:700;color:var(--green-800)">— {p.person}</footer></blockquote>
+<section id="mo-rong" class="st-sec">
+<div class="st-wrap">
+<div class="st-split st-split--top">
+<div>
+<Head eyebrow={c.expansion.eyebrow} title={c.expansion.title} intro={c.expansion.text} />
+<ul class="pt-areas">{(c.expansion.areas as string[]).filter(isFilled).map((a) => <li>{a}</li>)}</ul>
+{isFilled(c.expansion.link) && <a href={link(c.expansion.link)} style="font-weight:600">Đọc thông báo →</a>}
 </div>
-</article>
-))}
-</div></div></section>}
+<div style="display:flex;flex-direction:column;gap:20px">
+<Head eyebrow={c.faq.eyebrow} title={c.faq.title} level="h3" />
+<Faq id="pt-faq" items={c.faq.items} />
+</div>
+</div>
+</div></section>
 
 <section id="lien-he-khu-vuc" style="background:var(--green-900);color:#fff;scroll-margin-top:120px">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 72px;align-items:center">
@@ -143,6 +207,8 @@ const [tsx, tsy] = project(11.75, 112.2);
   .pt-photo--sm { margin-top: 8px; aspect-ratio: 3 / 2; }
   @media (max-width: 899.98px) { .pt-head { grid-template-columns: minmax(0, 1fr); } }
 
+  .pt-areas { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .pt-areas li { padding: 8px 14px; border-radius: var(--radius-full); background: var(--surface-card); border: 1px solid var(--border-strong); font-weight: 600; font-size: 15px; }
   .partner-card { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
   @media (max-width: 640px) { .partner-card { grid-template-columns: minmax(0, 1fr); } }
   .vn-pin { cursor: pointer; }

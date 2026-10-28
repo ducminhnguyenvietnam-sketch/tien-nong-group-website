@@ -1,0 +1,16 @@
+---
+/** Section heading: eyebrow, title and intro. `split` puts the intro beside the title on wide screens. */
+import { isFilled } from '../../lib/content';
+
+interface Props { eyebrow?: string; title?: string; intro?: string | string[]; split?: boolean; level?: 'h2' | 'h3' }
+const { eyebrow, title, intro, split = false, level = 'h2' } = Astro.props;
+const paras = (Array.isArray(intro) ? intro : String(intro ?? '').split(/\n\s*\n/)).map((p) => p.trim()).filter(isFilled);
+const H = level;
+---
+<div class:list={['st-head', { 'st-head--split': split && paras.length > 0 }]}>
+<div style={split && paras.length > 0 ? undefined : 'display:contents'}>
+{isFilled(eyebrow) && <span class="st-eyebrow">{eyebrow}</span>}
+{isFilled(title) && <H class={level === 'h2' ? 'st-h2' : 'st-h3'}>{title}</H>}
+</div>
+{split && paras.length > 0 ? <div>{paras.map((p) => <p class="st-lead">{p}</p>)}</div> : paras.map((p) => <p class="st-lead">{p}</p>)}
+</div>

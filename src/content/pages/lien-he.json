@@ -1,25 +1,15 @@
 {
   "seo": {
-    "title": "Liên hệ & Đại lý"
+    "title": "Liên hệ",
+    "description": "Liên hệ Tiến Nông: tư vấn kỹ thuật, mua hàng và tìm đại lý, hợp tác phân phối, dự án – xuất khẩu, báo chí, tuyển dụng. Trụ sở và ba nhà máy, kiểm tra hàng chính hãng bằng mã QR."
   },
-  "s01_lien_he": {
+  "hero": {
     "t1": "Trang chủ",
-    "t2": "/ Liên hệ & Đại lý",
-    "t3": "LIÊN HỆ",
-    "t4": "Kết nối với Tiến Nông",
-    "t5": "TƯ VẤN KỸ THUẬT",
-    "t6": "[Hotline kỹ sư]",
-    "t7": "Hỏi về cây trồng, cách bón phân",
-    "t8": "MUA HÀNG & ĐẠI LÝ",
-    "t9": "02373.789.789",
-    "t10": "Đặt hàng, chính sách đại lý",
-    "t11": "DỰ ÁN & XUẤT KHẨU",
-    "t12": "info@tiennong.vn",
-    "t13": "Khách hàng dự án, đối tác quốc tế",
-    "t14": "BÁO CHÍ & TUYỂN DỤNG",
-    "t15": "info@tiennong.vn",
-    "t16": "Truyền thông, hồ sơ ứng tuyển",
-    "lead": "Kỹ sư nông học, bộ phận kinh doanh và chăm sóc khách hàng của Tiến Nông luôn sẵn sàng đồng hành cùng bà con và quý đối tác.",
+    "t2": "/ Liên hệ",
+    "eyebrow": "LIÊN HỆ",
+    "title": "Bạn cần gì, Tiến Nông chỉ đúng người",
+    "lead": "Chọn đúng nhu cầu để gặp ngay bộ phận phụ trách — kỹ sư nông học, kinh doanh khu vực, dự án, truyền thông hay tuyển dụng.",
+    "hours": "",
     "background": {
       "src": "/uploads/tin-cu/2024/doan-khach-hang-hung-yen-ninh-binh-tham-nha-may-tien-nong-2.webp",
       "focus": "center",
@@ -27,128 +17,185 @@
       "alt": "Khách hàng tham quan khuôn viên nhà máy Tiến Nông"
     }
   },
-  "s02_tim_dai_ly": {
-    "t1": "TÌM ĐỐI TÁC",
-    "t2": "Tìm đại lý Tiến Nông gần bạn",
-    "f1": "Tỉnh / thành phố",
-    "t3": "đại diện bán hàng tại",
-    "t4": "Danh sách đại lý là dữ liệu mẫu. Bản chính thức sẽ kết nối với dữ liệu hệ thống phân phối.",
-    "img_dealer_map_1": {
-      "src": "/uploads/dealer-map-mvhx31y5.jpg",
-      "focus": "0% 50%",
-      "zoom": "100",
-      "alt": "Bản đồ đại lý (Google Maps nhúng)"
-    },
-    "t5": "Trở thành đại lý Tiến Nông",
-    "t6": "Cùng hệ thống hơn 200 nhà phân phối mang giải pháp khoa học đến nhà nông.",
-    "t7": "Đăng ký làm đại lý"
+  "routes": {
+    "eyebrow": "01 · BẠN CẦN GÌ?",
+    "title": "Sáu đầu mối, mỗi việc một người phụ trách",
+    "items": [
+      {
+        "label": "TƯ VẤN KỸ THUẬT",
+        "value": "[Hotline kỹ sư]",
+        "note": "Hỏi về cây trồng, cách bón phân; đăng ký kỹ sư xuống ruộng.",
+        "link_label": "Đăng ký tư vấn →",
+        "link": "/nong-dan/#dang-ky"
+      },
+      {
+        "label": "MUA HÀNG & TÌM ĐẠI LÝ",
+        "value": "02373.789.789",
+        "note": "Đặt hàng, hỏi điểm bán Tiến Nông gần nhất.",
+        "link_label": "Người phụ trách theo tỉnh →",
+        "link": "#dai-ly"
+      },
+      {
+        "label": "HỢP TÁC PHÂN PHỐI",
+        "value": "",
+        "note": "Trở thành đại lý, nhà phân phối: quyền lợi, điều kiện và quy trình.",
+        "link_label": "Trở thành đối tác →",
+        "link": "/tro-thanh-doi-tac/"
+      },
+      {
+        "label": "DỰ ÁN & XUẤT KHẨU",
+        "value": "info@tiennong.vn",
+        "note": "Vùng nguyên liệu, trang trại, hợp tác xã và đối tác quốc tế.",
+        "link_label": "Giải pháp cho dự án →",
+        "link": "/giai-phap-du-an/"
+      },
+      {
+        "label": "BÁO CHÍ & TRUYỀN THÔNG",
+        "value": "info@tiennong.vn",
+        "note": "Phỏng vấn, tư liệu, hợp tác truyền thông.",
+        "link_label": "Tin tức Tiến Nông →",
+        "link": "/tin-tuc/"
+      },
+      {
+        "label": "TUYỂN DỤNG",
+        "value": "0915 115 198",
+        "note": "Phòng Hành chính Nhân sự; hồ sơ gửi info@tiennong.vn.",
+        "link_label": "Vị trí đang tuyển →",
+        "link": "/tuyen-dung/#vi-tri"
+      }
+    ]
   },
-  "s03_van_phong_nha_may": {
-    "t1": "Trụ sở & nhà máy",
-    "t2": "Trụ sở chính",
-    "t3": "274B Bà Triệu, phường Hàm Rồng, tỉnh Thanh Hóa",
-    "t4": "02373.729.729",
-    "t5": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn",
-    "t6": "Lô B5, Khu B, Khu Công nghiệp Bỉm Sơn, phường Bỉm Sơn, tỉnh Thanh Hóa",
-    "t7": "02373.729.729",
-    "t8": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Gia Lai",
-    "t9": "Làng Del, xã Chư Sê, tỉnh Gia Lai",
-    "t10": "02373.729.729",
-    "t11": "Nhà máy Dinh dưỡng cây trồng Tiến Nông 3",
-    "t12": "Km 312, quốc lộ 1A, xã Hoằng Phú, tỉnh Thanh Hóa",
-    "t13": "02373.729.729",
+  "genuine": {
+    "eyebrow": "02 · HÀNG CHÍNH HÃNG",
+    "title": "Kiểm tra phân bón Tiến Nông chính hãng",
+    "intro": "Mỗi bao phân bón Tiến Nông có mã QR truy xuất nguồn gốc. Chỉ mất vài giây để bà con yên tâm về sản phẩm mình mua.",
+    "steps": [
+      {
+        "title": "Tìm mã QR trên bao",
+        "text": "Mã được in trên bao bì sản phẩm."
+      },
+      {
+        "title": "Quét bằng điện thoại",
+        "text": "Dùng camera hoặc Zalo để quét mã."
+      },
+      {
+        "title": "Đối chiếu thông tin",
+        "text": "Xem nguồn gốc, thành phần và hướng dẫn sử dụng của đúng sản phẩm."
+      }
+    ],
+    "report_title": "Nghi ngờ hàng giả, phản ánh chất lượng?",
+    "report_text": "Gọi tổng đài hoặc gửi yêu cầu ở cuối trang, chọn nhu cầu “Phản ánh chất lượng sản phẩm”. Tiến Nông sẽ liên hệ lại để xác minh và xử lý.",
+    "report_phone": "02373.729.729"
+  },
+  "regions": {
+    "eyebrow": "03 · TÌM ĐẠI LÝ GẦN BẠN",
+    "title": "Gọi người phụ trách tỉnh của bạn",
+    "intro": "Hơn 200 nhà phân phối và 10.000 điểm bán lẻ trên cả nước. Giám đốc kinh doanh phụ trách khu vực sẽ giới thiệu điểm bán gần nhất cho bà con và hướng dẫn đối tác muốn hợp tác.",
+    "call_label": "Gọi",
+    "provinces_label": "Phụ trách",
+    "map_label": "Xem bản đồ hệ thống phân phối →"
+  },
+  "sites": {
+    "title": "Trụ sở & nhà máy",
     "map_label": "Xem trên Google Maps ↗",
-    "map1": "",
-    "map2": "",
-    "map3": "",
-    "map4": "",
-    "img1": {
-      "src": "",
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Trụ sở chính Tiến Nông, 274B Bà Triệu, Thanh Hóa"
-    },
-    "img2": {
-      "src": "/uploads/Nha-may-Tien-Nong-Bim-Son-2025-scaled.jpg",
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn"
-    },
-    "img3": {
-      "src": "",
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Gia Lai"
-    },
-    "img4": {
-      "src": "",
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Nhà máy Dinh dưỡng cây trồng Tiến Nông 3"
-    }
+    "items": [
+      {
+        "tag": "Trụ sở",
+        "name": "Trụ sở chính",
+        "role": "Văn phòng điều hành của Tiến Nông.",
+        "address": "274B Bà Triệu, phường Hàm Rồng, tỉnh Thanh Hóa",
+        "phone": "02373.729.729",
+        "map": "",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Trụ sở chính Tiến Nông, 274B Bà Triệu, Thanh Hóa"
+        }
+      },
+      {
+        "tag": "Nhà máy",
+        "name": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn",
+        "role": "Nhà máy sản xuất và phòng thí nghiệm; nơi đón các đoàn tham quan.",
+        "address": "Lô B5, Khu B, Khu Công nghiệp Bỉm Sơn, phường Bỉm Sơn, tỉnh Thanh Hóa",
+        "phone": "02373.729.729",
+        "map": "",
+        "image": {
+          "src": "/uploads/Nha-may-Tien-Nong-Bim-Son-2025-scaled.jpg",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn"
+        }
+      },
+      {
+        "tag": "Nhà máy",
+        "name": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Gia Lai",
+        "role": "Nhà máy phục vụ khu vực Tây Nguyên.",
+        "address": "Làng Del, xã Chư Sê, tỉnh Gia Lai",
+        "phone": "02373.729.729",
+        "map": "",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Gia Lai"
+        }
+      },
+      {
+        "tag": "Nhà máy",
+        "name": "Nhà máy Dinh dưỡng cây trồng Tiến Nông 3",
+        "role": "Nhà máy sản xuất tại Hoằng Phú, Thanh Hóa.",
+        "address": "Km 312, quốc lộ 1A, xã Hoằng Phú, tỉnh Thanh Hóa",
+        "phone": "02373.729.729",
+        "map": "",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Nhà máy Dinh dưỡng cây trồng Tiến Nông 3"
+        }
+      }
+    ],
+    "visit_text": "Muốn đưa đoàn nông dân, học sinh, sinh viên tham quan nhà máy? Gửi yêu cầu và chọn “Đăng ký tham quan nhà máy”."
   },
-  "s04_gui_lien_he": {
-    "t1": "Gửi yêu cầu",
-    "t2": "Chọn nhu cầu để yêu cầu được chuyển đến đúng bộ phận.",
-    "t3": "ĐÃ GỬI",
-    "t4": "Cảm ơn Quý khách đã liên hệ Tiến Nông.",
-    "t5": "Bộ phận",
-    "t6": "sẽ phản hồi qua thông tin Quý khách cung cấp.",
-    "t7": "Gửi yêu cầu khác",
-    "f1": "Nhu cầu *",
-    "f2": "Họ và tên *",
-    "f3": "Nguyễn Văn A",
-    "f4": "Số điện thoại *",
-    "f5": "09xx xxx xxx",
-    "f6": "Email",
-    "f7": "ten@email.com",
-    "f8": "Tỉnh / thành phố",
-    "f9": "VD: Thanh Hóa",
-    "t8": "Nội dung",
-    "f10": "Mô tả ngắn gọn nhu cầu",
-    "f11": "Tôi đồng ý để Tiến Nông xử lý dữ liệu cá nhân theo Chính sách bảo mật.",
-    "t9": "Gửi yêu cầu"
+  "social": {
+    "title": "Theo dõi Tiến Nông",
+    "intro": "Tin mùa vụ, kỹ thuật canh tác và hoạt động của Tiến Nông."
   },
-  "provinces": [
-    {
-      "name": "Thanh Hóa",
-      "dealers": [
-        {
-          "name": "Nguyễn Trung Trụ",
-          "type": "Giám đốc Kinh doanh 1",
-          "phone": "0982240955",
-          "map": "Liên hệ"
-        }
-      ]
-    },
-    {
-      "name": "Nghệ An",
-      "dealers": [
-        {
-          "name": "Trần Mạnh Tiến",
-          "type": "Giám đốc kinh doanh 2",
-          "phone": "0974678229",
-          "map": "Liên hệ"
-        }
-      ]
-    },
-    {
-      "name": "Sơn La",
-      "dealers": [
-        {
-          "name": "Lê Viết Thiện",
-          "type": "Giám đốc Kinh doanh 3",
-          "phone": "0948723636",
-          "map": "Liên hệ"
-        }
-      ]
-    }
-  ],
-  "needs": [
-    "Tư vấn kỹ thuật",
-    "Đăng ký làm đại lý",
-    "Giải pháp cho dự án",
-    "Hợp tác xuất khẩu",
-    "Khác"
-  ]
+  "form": {
+    "title": "Gửi yêu cầu",
+    "intro": "Chọn nhu cầu để yêu cầu được chuyển đến đúng bộ phận.",
+    "sent_label": "ĐÃ GỬI",
+    "sent_title": "Cảm ơn Quý khách đã liên hệ Tiến Nông.",
+    "sent_before": "Bộ phận",
+    "sent_after": "sẽ phản hồi qua thông tin Quý khách cung cấp.",
+    "again": "Gửi yêu cầu khác",
+    "need_label": "Nhu cầu *",
+    "name_label": "Họ và tên *",
+    "name_ph": "Nguyễn Văn A",
+    "phone_label": "Số điện thoại *",
+    "phone_ph": "09xx xxx xxx",
+    "email_label": "Email",
+    "email_ph": "ten@email.com",
+    "province_label": "Tỉnh / thành phố",
+    "province_ph": "VD: Thanh Hóa",
+    "message_label": "Nội dung",
+    "message_ph": "Mô tả ngắn gọn nhu cầu",
+    "consent": "Tôi đồng ý để Tiến Nông xử lý dữ liệu cá nhân theo Chính sách bảo mật.",
+    "submit": "Gửi yêu cầu",
+    "needs": [
+      "Tư vấn kỹ thuật",
+      "Mua hàng / tìm đại lý",
+      "Đăng ký làm đại lý",
+      "Giải pháp cho dự án",
+      "Hợp tác xuất khẩu",
+      "Báo chí – truyền thông",
+      "Phản ánh chất lượng sản phẩm",
+      "Đăng ký tham quan nhà máy",
+      "Khác"
+    ]
+  },
+  "legal": {
+    "title": "Thông tin doanh nghiệp"
+  }
 }

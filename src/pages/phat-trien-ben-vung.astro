@@ -1,103 +1,161 @@
 ---
+/**
+ * Phát triển bền vững. Flow: hero → key figures → why sustainability is core for a fertiliser company
+ * (four pillars) → 1 Đất khỏe → 2 Nhà máy xanh → 3 Sinh kế nhà nông → 4 Cộng đồng: "Ông bố Tiến Nông"
+ * (the main social programme) and the other programmes → Xanh hoá Trường Sa teaser → people →
+ * governance & recognition → roadmap.
+ */
 import raw from '../content/pages/phat-trien-ben-vung.json';
-import { isFilled, stripPlaceholders, withDefaults } from '../lib/content';
+import { isFilled, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import PageHero from '../components/PageHero.astro';
+import Head from '../components/story/Head.astro';
+import Stats from '../components/story/Stats.astro';
 import tsRaw from '../content/pages/xanh-hoa-truong-sa.json';
-import { url } from '../lib/routes';
+import { link, url } from '../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/phat-trien-ben-vung.json');
+const F = 'src/content/pages/phat-trien-ben-vung.json';
 // Teaser for the sub-page Xanh hoá Trường Sa (its title, intro and photo come from that page's content).
 const ts = withDefaults(tsRaw, 'src/content/pages/xanh-hoa-truong-sa.json');
-
-const TAGS = ['Tất cả', 'KHUYẾN HỌC', 'BIỂN ĐẢO', 'GIÁO DỤC', 'NGƯỜI YẾU THẾ'];
-const LABEL: Record<string, string> = { 'Tất cả': 'Tất cả', 'KHUYẾN HỌC': 'Khuyến học', 'BIỂN ĐẢO': 'Biển đảo', 'GIÁO DỤC': 'Giáo dục', 'NGƯỜI YẾU THẾ': 'Người yếu thế' };
+const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
+const programs = c.programs.items.filter((p) => isFilled(p.title));
+const tags = [...new Set(programs.map((p) => p.tag).filter(isFilled))];
+const sentence = (t: string) => t.charAt(0) + t.slice(1).toLowerCase();
+const timeline = c.orphans.timeline.filter((t) => isFilled(t.title));
+const facts = c.plant.facts.filter((f) => isFilled(f.value));
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Phát triển bền vững">
-<PageHero id="esg-hero" image={c.s01_hero.img_esg_hero_1} cms="src/content/pages/phat-trien-ben-vung.json#s01_hero.img_esg_hero_1" placeholder="Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh"
-  crumbs={[{ label: c.s01_hero.t1, href: url('trang-chu') }, { label: c.s01_hero.t2.replace(/^\s*\/\s*/, '') }]}
-  eyebrow={c.s01_hero.t3} title={c.s01_hero.t4} lead={c.s01_hero.t5} />
+<PageHero id="esg-hero" image={c.hero.image} cms={`${F}#hero.image`} placeholder="Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh"
+  crumbs={[{ label: c.hero.breadcrumb_home, href: url('trang-chu') }, { label: c.hero.breadcrumb_self }]}
+  eyebrow={c.hero.eyebrow} title={c.hero.title} lead={c.hero.intro}>
+<a href="#vi-sao" class="page-hero__btn page-hero__btn--solid">{c.hero.button1}</a><a href="#ong-bo" class="page-hero__btn">{c.hero.button2}</a>
+</PageHero>
 
-<section style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:40px clamp(20px,4vw,56px) 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 72px)/4),calc((900px - 100%)*999),calc((100% - 24px)/2)),1fr));gap:24px">
-{isFilled(c.s01_hero.t6) && <div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--amber-600);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t6}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t7}</span></div>}
-{isFilled(c.s01_hero.t8) && <div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--amber-600);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t8}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t9}</span></div>}
-{isFilled(c.s01_hero.t10) && <div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--amber-600);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t10}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t11}</span></div>}
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s01_hero.t12}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s01_hero.t13}</span></div>
-</div></section>
+<section class="st-sec st-sec--card"><div class="st-wrap st-wrap--s"><Stats items={c.stats} /></div></section>
 
-<nav style="position:sticky;top:var(--hdr-h,108px);z-index:20;background:var(--surface-page);border-top:1px solid var(--border-default);border-bottom:1px solid var(--border-default)">
-<div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px);display:flex;gap:28px;overflow-x:auto;white-space:nowrap;font-size:14px;font-weight:600">
-<a href="#moi-truong" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t14}</a><a href="#nha-nong" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t15}</a><a href="#cong-dong" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t16}</a><a href="#nguoi-lao-dong" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t17}</a><a href="#lo-trinh" style="color:var(--text-secondary);padding:14px 0">{c.s01_hero.t18}</a>
+<nav class="st-subnav" aria-label="Các phần của trang"><div>
+<a href="#vi-sao">{c.nav.why}</a><a href="#dat-khoe">{c.nav.soil}</a><a href="#nha-may-xanh">{c.nav.plant}</a><a href="#nha-nong">{c.nav.farmers}</a><a href="#cong-dong">{c.nav.community}</a><a href="#minh-bach">{c.nav.governance}</a><a href="#lo-trinh">{c.nav.roadmap}</a>
 </div></nav>
 
-<section id="moi-truong" style="scroll-margin-top:160px;position:relative;min-height:560px;background:var(--gray-800);display:flex">
-<div style="position:absolute;inset:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-plant" shape="rect" placeholder="Flycam khuôn viên nhà máy với cây xanh" image={c.s02_san_xuat_xanh.img_esg_plant_1} cms="src/content/pages/phat-trien-ben-vung.json#s02_san_xuat_xanh.img_esg_plant_1" /></div>
-<div style="position:relative;max-width:1280px;width:100%;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,56px);display:flex;align-items:flex-end;justify-content:flex-end;pointer-events:none">
-<div style="background:var(--surface-card);border-radius:var(--radius-xl);padding:clamp(28px,3vw,40px);max-width:560px;display:flex;flex-direction:column;gap:16px;pointer-events:auto;box-shadow:var(--shadow-lg)">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s02_san_xuat_xanh.t1}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s02_san_xuat_xanh.t2}</h2>
-<p style="margin:0;color:var(--text-secondary);text-wrap:pretty">{c.s02_san_xuat_xanh.t3}</p>
-<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:12px;border-top:1px solid var(--border-default);font-size:15px">
-{isFilled(c.s02_san_xuat_xanh.t4) && <div><strong style="display:block">{c.s02_san_xuat_xanh.t4}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t5}</span></div>}
-<div><strong style="display:block">{c.s02_san_xuat_xanh.t6}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t7}</span></div>
-<div><strong style="display:block">{c.s02_san_xuat_xanh.t8}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t9}</span></div>
-<div><strong style="display:block">{c.s02_san_xuat_xanh.t10}</strong><span style="color:var(--text-secondary)">{c.s02_san_xuat_xanh.t11}</span></div>
-</div></div></div></section>
+<section id="vi-sao" class="st-sec">
+<div class="st-wrap">
+<div class="st-split st-split--top">
+<Head eyebrow={c.why.eyebrow} title={c.why.title} intro={c.why.text} />
+<div>{isFilled(c.why.quote) && <blockquote class="st-quote"><p>“{c.why.quote}”</p>{isFilled(c.why.quote_source) && <footer>{c.why.quote_source}</footer>}</blockquote>}</div>
+</div>
+<div class="st-grid" style="--min:230px">
+{c.why.pillars.map((p, k) => <a class="st-card st-card--top" href={`#${p.anchor}`}><div class="st-card__body"><span class="st-card__tag">Trụ cột {k + 1}</span><strong class="st-card__title">{p.title}</strong><span class="st-card__text">{p.text}</span></div></a>)}
+</div>
+</div></section>
 
-<section id="nha-nong" style="scroll-margin-top:160px;background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px 72px;align-items:center">
-<div style="display:flex;flex-direction:column;gap:20px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s03_dong_hanh_cung_nha_nong.t1}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s03_dong_hanh_cung_nha_nong.t2}</h2>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s03_dong_hanh_cung_nha_nong.t3}</p>
-<div style="display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
-<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--green-500)"></span><span><strong>{c.s03_dong_hanh_cung_nha_nong.t4}</strong> {c.s03_dong_hanh_cung_nha_nong.t5}</span></div>
-<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--green-500)"></span><span><strong>{c.s03_dong_hanh_cung_nha_nong.t6}</strong> {c.s03_dong_hanh_cung_nha_nong.t7}</span></div>
-<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--green-500)"></span><span><strong>{c.s03_dong_hanh_cung_nha_nong.t8}</strong> {c.s03_dong_hanh_cung_nha_nong.t9}</span></div>
-</div></div>
-<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:260px 200px;gap:14px">
-<div style="position:relative;grid-column:span 2;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-farm-1" shape="rounded" radius="16" placeholder="Lớp tập huấn kỹ thuật cho nông dân" image={c.s03_dong_hanh_cung_nha_nong.img_esg_farm_1_1} cms="src/content/pages/phat-trien-ben-vung.json#s03_dong_hanh_cung_nha_nong.img_esg_farm_1_1" /></div>
-<div style="position:relative;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-farm-2" shape="rounded" radius="16" placeholder="Hội thảo đầu bờ" image={c.s03_dong_hanh_cung_nha_nong.img_esg_farm_2_1} cms="src/content/pages/phat-trien-ben-vung.json#s03_dong_hanh_cung_nha_nong.img_esg_farm_2_1" /></div>
-<div style="position:relative;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="esg-farm-3" shape="rounded" radius="16" placeholder="Kỹ sư hướng dẫn tại ruộng" image={c.s03_dong_hanh_cung_nha_nong.img_esg_farm_3_1} cms="src/content/pages/phat-trien-ben-vung.json#s03_dong_hanh_cung_nha_nong.img_esg_farm_3_1" /></div>
+<section id="dat-khoe" class="st-sec st-sec--card">
+<div class="st-wrap">
+<Head eyebrow={c.soil.eyebrow} title={c.soil.title} intro={c.soil.intro} split />
+<Stats items={c.soil.results} />
+<div class="st-grid" style="--min:300px">
+{c.soil.items.map((it, k) => (
+<a class="st-card" href={link(it.link)}>
+<div class="st-card__img st-hide-empty"><ImageSlot style={fill} id={`esg-soil-${k}`} shape="rect" placeholder={it.image.alt || it.title} image={it.image} cms={`${F}#soil.items.${k}.image`} sizes="(max-width: 767px) 92vw, 400px" /></div>
+<div class="st-card__body"><strong class="st-card__title">{it.title}</strong><span class="st-card__text">{it.text}</span>{isFilled(it.link) && <span class="st-card__link">Đọc tin →</span>}</div>
+</a>
+))}
+</div>
+</div></section>
+
+<section id="nha-may-xanh" style="scroll-margin-top:160px;position:relative;min-height:560px;background:var(--gray-800);display:flex">
+<div style="position:absolute;inset:0"><ImageSlot style={fill} id="esg-plant" shape="rect" placeholder="Flycam khuôn viên nhà máy với cây xanh" image={c.plant.image} cms={`${F}#plant.image`} sizes="100vw" /></div>
+<div style="position:relative;max-width:1280px;width:100%;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,56px);display:flex;align-items:flex-end;justify-content:flex-end;pointer-events:none">
+<div style="background:var(--surface-card);border-radius:var(--radius-xl);padding:clamp(28px,3vw,40px);max-width:600px;display:flex;flex-direction:column;gap:16px;pointer-events:auto;box-shadow:var(--shadow-lg)">
+<span class="st-eyebrow">{c.plant.eyebrow}</span>
+<h2 class="st-h2">{c.plant.title}</h2>
+<p class="st-lead">{c.plant.text}</p>
+{facts.length > 0 && <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:12px;border-top:1px solid var(--border-default);font-size:15px">
+{facts.map((f) => <div><strong style="display:block">{f.value}</strong><span style="color:var(--text-secondary)">{f.label}</span></div>)}
+</div>}
+{c.plant.extras.map((x) => <div style="padding-top:12px;border-top:1px solid var(--border-default);display:flex;flex-direction:column;gap:2px"><strong>{x.title}</strong><span style="color:var(--text-secondary);font-size:15px">{x.text}</span></div>)}
 </div></div></section>
 
-<section id="cong-dong" style="scroll-margin-top:160px;background:var(--surface-page)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s04_vi_cong_dong.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s04_vi_cong_dong.t2}</h2></div>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s04_vi_cong_dong.t3}</p>
+<section id="nha-nong" class="st-sec">
+<div class="st-wrap">
+<div class="st-split">
+<div>
+<Head eyebrow={c.farmers.eyebrow} title={c.farmers.title} intro={c.farmers.text} />
+<ul class="st-checks">{c.farmers.items.map((it) => <li><div><strong>{it.title}</strong><span>{it.text}</span></div></li>)}</ul>
+<a href={url('nong-dan')} class="st-btn" style="align-self:flex-start">{c.farmers.button}</a>
 </div>
-<div data-filter-group="prog" style="display:flex;gap:8px;flex-wrap:wrap">{TAGS.map((t, k) => <button type="button" class="chip" data-filter={k === 0 ? '*' : t} aria-pressed={k === 0 ? 'true' : 'false'} style="padding:8px 16px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);color:var(--text-primary);font:600 15px var(--font-body);cursor:pointer">{LABEL[t]}</button>)}</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:24px">
-{c.programs.map((p, k) => (
-<div data-filter-item="prog" data-tags={p.tag} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:220px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`prog-${k}`} shape="rect" placeholder={p.image.alt} image={p.image} cms={`src/content/pages/phat-trien-ben-vung.json#programs.${k}.image`} /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{p.tag} · {p.year}</span><strong style="font-size:18px;line-height:1.35">{p.title}</strong><span style="color:var(--text-secondary);font-size:15px">{p.body}</span></div></div>
-))}
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:260px 200px;gap:14px">
+<div style="position:relative;grid-column:span 2;min-width:0"><ImageSlot style={fill} id="esg-farm-1" shape="rounded" radius="16" placeholder="Lớp tập huấn kỹ thuật cho nông dân" image={c.farmers.image_1} cms={`${F}#farmers.image_1`} /></div>
+<div style="position:relative;min-width:0"><ImageSlot style={fill} id="esg-farm-2" shape="rounded" radius="16" placeholder="Hội thảo đầu bờ" image={c.farmers.image_2} cms={`${F}#farmers.image_2`} /></div>
+<div style="position:relative;min-width:0"><ImageSlot style={fill} id="esg-farm-3" shape="rounded" radius="16" placeholder="Kỹ sư hướng dẫn tại ruộng" image={c.farmers.image_3} cms={`${F}#farmers.image_3`} /></div>
+</div>
+</div>
+</div></section>
+
+<section id="cong-dong" class="st-sec st-sec--dark">
+<div class="st-wrap" id="ong-bo">
+<div class="st-split st-split--top">
+<Head eyebrow={c.orphans.eyebrow} title={c.orphans.title} intro={c.orphans.intro} />
+<div class="st-split__media st-hide-empty" style="--ratio:4/3"><ImageSlot style={fill} id="esg-orphans" shape="rounded" radius="24" placeholder={c.orphans.image.alt || 'Ông bố Tiến Nông'} image={c.orphans.image} cms={`${F}#orphans.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
+</div>
+<Stats items={c.orphans.stats} />
+<div class="st-split st-split--top">
+<div>
+{isFilled(c.orphans.story) && <blockquote class="st-quote"><footer><strong>{c.orphans.story_title}</strong></footer><p style="font:400 var(--fs-body)/1.7 var(--font-body)">{c.orphans.story}</p></blockquote>}
+{isFilled(c.orphans.partners) && <p class="st-lead" style="font-size:15px">{c.orphans.partners}</p>}
+</div>
+{timeline.length > 0 && <ol class="st-timeline">
+{timeline.map((t) => <li><span class="st-timeline__when">{t.when}</span><div class="st-timeline__what"><strong>{t.title}</strong><span>{t.text}</span>{isFilled(t.link) && <a href={link(t.link)}>Đọc tin →</a>}</div></li>)}
+</ol>}
+</div>
+</div></section>
+
+<section class="st-sec">
+<div class="st-wrap">
+<Head eyebrow={c.programs.eyebrow} title={c.programs.title} intro={c.programs.intro} split />
+{tags.length > 1 && <div data-filter-group="prog" style="display:flex;gap:8px;flex-wrap:wrap">{['*', ...tags].map((t, k) => <button type="button" class="chip" data-filter={t} aria-pressed={k === 0 ? 'true' : 'false'} style="padding:8px 16px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);color:var(--text-primary);font:600 15px var(--font-body);cursor:pointer">{t === '*' ? c.programs.all_label : sentence(t)}</button>)}</div>}
+<div class="st-grid st-grid--fill" style="--min:300px">
+{programs.map((p, k) => {
+  const inner = <>
+    <div class="st-card__img"><ImageSlot style={fill} id={`prog-${k}`} shape="rect" placeholder={p.image.alt} image={p.image} cms={`${F}#programs.items.${k}.image`} sizes="(max-width: 767px) 92vw, 400px" /></div>
+    <div class="st-card__body"><span class="st-card__tag">{p.tag} · {p.year}</span><strong class="st-card__title">{p.title}</strong><span class="st-card__text">{p.body}</span>{isFilled(p.link) && <span class="st-card__link">Xem thêm →</span>}</div>
+  </>;
+  return isFilled(p.link)
+    ? <a class="st-card" data-filter-item="prog" data-tags={p.tag} href={link(p.link)}>{inner}</a>
+    : <div class="st-card" data-filter-item="prog" data-tags={p.tag}>{inner}</div>;
+})}
 </div></div></section>
 
 <section class="ts-teaser" aria-label={ts.hero.title}>
 <a href={url('phat-trien-ben-vung/xanh-hoa-truong-sa')} class="ts-teaser__link">
-<div class="ts-teaser__photo"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ts-teaser" shape="rect" placeholder="Ảnh Xanh hoá Trường Sa" image={ts.hero.background} cms="src/content/pages/xanh-hoa-truong-sa.json#hero.background" sizes="100vw" /></div>
+<div class="ts-teaser__photo"><ImageSlot style={fill} id="ts-teaser" shape="rect" placeholder="Ảnh Xanh hoá Trường Sa" image={ts.hero.background} cms="src/content/pages/xanh-hoa-truong-sa.json#hero.background" sizes="100vw" /></div>
 <div class="ts-teaser__scrim" aria-hidden="true"></div>
 <div class="ts-teaser__copy"><span class="ts-teaser__eyebrow">{ts.hero.eyebrow}</span><strong class="ts-teaser__title">{ts.hero.title}</strong><span class="ts-teaser__text">{ts.hero.intro}</span><span class="ts-teaser__btn">Xem chương trình →</span></div>
 </a>
 </section>
 
-<section id="nguoi-lao-dong" style="scroll-margin-top:160px;background:var(--green-800);color:#fff">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:640px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s05_nguoi_lao_dong.t1}</span><h2 style="margin:0;font:var(--type-h2);text-wrap:balance">{c.s05_nguoi_lao_dong.t2}</h2><span style="color:var(--green-100)">{c.s05_nguoi_lao_dong.t3}</span></div>
-<a href={url('tuyen-dung')} style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s05_nguoi_lao_dong.t4}</a>
+<section class="st-sec st-sec--card">
+<div class="st-wrap st-wrap--s" style="flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
+<Head eyebrow={c.workers.eyebrow} title={c.workers.title} intro={c.workers.text} />
+<a href={url('tuyen-dung')} class="st-btn st-btn--solid">{c.workers.button}</a>
 </div></section>
 
-<section id="lo-trinh" style="scroll-margin-top:160px;background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:680px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s06_lo_trinh.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s06_lo_trinh.t2}</h2><p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s06_lo_trinh.t3}</p></div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 32px)/3),calc((692px - 100%)*999),100%),1fr));gap:0;border-top:2px solid var(--green-500)">
-<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-num);color:var(--green-700)">{c.s06_lo_trinh.t4}</span><strong>{c.s06_lo_trinh.t5}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s06_lo_trinh.t6}</span></div>
-<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-num);color:var(--green-700)">{c.s06_lo_trinh.t7}</span><strong>{c.s06_lo_trinh.t8}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s06_lo_trinh.t9}</span></div>
-<div style="padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-num);color:var(--green-700)">{c.s06_lo_trinh.t10}</span><strong>{c.s06_lo_trinh.t11}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s06_lo_trinh.t12}</span></div>
-</div></div></section>
+<section id="minh-bach" class="st-sec">
+<div class="st-wrap">
+<Head eyebrow={c.governance.eyebrow} title={c.governance.title} />
+<div class="st-ruled" style="--min:240px">
+{c.governance.items.map((g) => <div><strong>{g.title}</strong><span>{g.text}</span>{isFilled(g.link) && <a href={link(g.link)} style="font-size:14px;font-weight:600">Đọc tin →</a>}</div>)}
+</div>
+</div></section>
+
+<section id="lo-trinh" class="st-sec st-sec--card">
+<div class="st-wrap">
+<Head eyebrow={c.roadmap.eyebrow} title={c.roadmap.title} intro={c.roadmap.intro} />
+<ol class="st-steps st-steps--plain" style="--min:240px">
+{c.roadmap.steps.map((s) => <li><span style="font:var(--type-num);color:var(--green-700)">{s.when}</span><strong>{s.title}</strong><span>{s.text}</span></li>)}
+</ol>
+</div></section>
 </Layout>
 
 <style>

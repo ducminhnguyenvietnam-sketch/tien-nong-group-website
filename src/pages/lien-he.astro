@@ -1,5 +1,11 @@
 ---
+/**
+ * Liên hệ. Flow: hero → six contact points, one per need → check a genuine product (QR) and report
+ * a problem → find a dealer: the sales director in charge of each province (data shared with
+ * Trở thành đối tác) → head office & plants → social channels → request form → company details.
+ */
 import raw from '../content/pages/lien-he.json';
+import partnerRaw from '../content/pages/tro-thanh-doi-tac.json';
 import { isFilled, withDefaults } from '../lib/content';
 import siteRaw from '../content/site.json';
 import Layout from '../layouts/Layout.astro';
@@ -10,87 +16,132 @@ import ImageSlot from '../components/ImageSlot.astro';
 import PageHero from '../components/PageHero.astro';
 import Input from '../components/Input.astro';
 import Select from '../components/Select.astro';
+import Head from '../components/story/Head.astro';
 import { url, link } from '../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/lien-he.json');
+const partner = withDefaults(partnerRaw, 'src/content/pages/tro-thanh-doi-tac.json');
 const site = withDefaults(siteRaw, 'src/content/site.json');
+const F = 'src/content/pages/lien-he.json';
 const co = site.company as Record<string, string>;
-// Contact values become tap-to-call / tap-to-mail links; a placeholder hotline falls back to the company numbers.
-const contactValue = (v: string, fallback = '') => (isFilled(v) ? v : fallback);
+const social = Object.entries(site.social as Record<string, string>).filter(([, v]) => isFilled(v));
+const SOCIAL: Record<string, string> = { facebook: 'Facebook', youtube: 'YouTube', tiktok: 'TikTok', zalo: 'Zalo OA' };
+const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
+// Contact values become tap-to-call / tap-to-mail links; a placeholder hotline falls back to the company number.
+const value = (v: string) => (isFilled(v) ? v : v.trim() ? co.phone : '');
 const contactHref = (v: string) => (v.includes('@') ? `mailto:${v.trim()}` : v.replace(/[^\d+]/g, '').length >= 8 ? `tel:${v.replace(/[^\d+]/g, '')}` : undefined);
-
+// In-page anchors stay as they are; site paths get the deploy base.
+const href = (h: string) => (h.startsWith('#') ? h : link(h));
+const tel = (phone: string) => phone.replace(/[^\d+]/g, '');
+const prettyPhone = (phone: string) => {
+  const d = tel(phone);
+  return /^0\d{9}$/.test(d) ? `${d.slice(0, 4)} ${d.slice(4, 7)} ${d.slice(7)}` : phone;
+};
 // Each office/plant card links to Google Maps: the CMS link if set, else a search for the address.
-const f = c.s03_van_phong_nha_may;
 const mapsFor = (address: string, custom?: string | null) =>
-  custom?.trim() || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address.replace(/\u00a0/g, " "))}`;
-const sites = [
-  [f.t2, f.t3, f.t4, f.map1, f.img1, 1], [f.t5, f.t6, f.t7, f.map2, f.img2, 2], [f.t8, f.t9, f.t10, f.map3, f.img3, 3], [f.t11, f.t12, f.t13, f.map4, f.img4, 4],
-].map(([name, address, phone, map, img, n]) => ({ name, address, phone, map: mapsFor(String(address ?? ''), map as string), img: img as { src?: string; alt?: string; focus?: string; zoom?: string }, n }));
-
+  custom?.trim() || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address.replace(/ /g, ' '))}`;
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
-<PageHero id="contact-hero" image={c.s01_lien_he.background} cms="src/content/pages/lien-he.json#s01_lien_he.background" placeholder="Ảnh thật của Tiến Nông"
-  crumbs={[{ label: c.s01_lien_he.t1, href: url('trang-chu') }, { label: c.s01_lien_he.t2.replace(/^\s*\/\s*/, '') }]}
-  eyebrow={c.s01_lien_he.t3} title={c.s01_lien_he.t4} lead={c.s01_lien_he.lead} />
-<section style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
-<div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/4),calc((1008px - 100%)*999),calc((100% - 16px)/2)),1fr));gap:16px">
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t5}</span><a href={contactHref(contactValue(c.s01_lien_he.t6, co.hotline || co.phone))} style="font-size:20px;font-weight:700;color:var(--text-primary)">{contactValue(c.s01_lien_he.t6, co.hotline || co.phone)}</a><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t7}</span></div>
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t8}</span><a href={contactHref(contactValue(c.s01_lien_he.t9, ''))} style="font-size:20px;font-weight:700;color:var(--text-primary)">{contactValue(c.s01_lien_he.t9, '')}</a><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t10}</span></div>
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t11}</span><a href={contactHref(contactValue(c.s01_lien_he.t12, ''))} style="font-size:20px;font-weight:700;color:var(--text-primary)">{contactValue(c.s01_lien_he.t12, '')}</a><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t13}</span></div>
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t14}</span><a href={contactHref(contactValue(c.s01_lien_he.t15, ''))} style="font-size:20px;font-weight:700;color:var(--text-primary)">{contactValue(c.s01_lien_he.t15, '')}</a><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t16}</span></div>
-</div></div></section>
+<PageHero id="contact-hero" image={c.hero.background} cms={`${F}#hero.background`} placeholder="Ảnh thật của Tiến Nông"
+  crumbs={[{ label: c.hero.t1, href: url('trang-chu') }, { label: c.hero.t2.replace(/^\s*\/\s*/, '') }]}
+  eyebrow={c.hero.eyebrow} title={c.hero.title} lead={[c.hero.lead, c.hero.hours].filter(isFilled).join(' ')} />
 
-<section id="dai-ly" style="background:var(--surface-page);scroll-margin-top:120px">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:680px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s02_tim_dai_ly.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s02_tim_dai_ly.t2}</h2></div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:24px;align-items:stretch">
-<div style="display:flex;flex-direction:column;gap:16px">
-<Select id="dealer-prov" label={c.s02_tim_dai_ly.f1} options={c.provinces.map((p, i) => ({ value: String(i), label: p.name }))} />
-<span style="font-size:14px;color:var(--text-secondary)"><strong id="dealer-count" style="color:var(--text-primary)">{c.provinces[0]?.dealers.length ?? 0}</strong> {c.s02_tim_dai_ly.t3} <span id="dealer-prov-name">{c.provinces[0]?.name}</span></span>
-<div style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;max-height:420px;overflow-y:auto">
-{c.provinces.flatMap((p, pi) => p.dealers.map((d) => (
-<div data-prov={pi} hidden={pi !== 0} style="display:flex;flex-direction:column;gap:4px;padding:16px 20px;border-bottom:1px solid var(--border-default)"><div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><strong>{d.name}</strong><span style="font:600 11px var(--font-mono);color:var(--green-700);background:var(--green-50);padding:2px 8px;border-radius:var(--radius-full)">{d.type}</span></div><span style="font-size:14px;color:var(--text-secondary)">{d.address}</span><a href={link(d.map)} style="font-size:14px;font-weight:600">{d.phone} · Chỉ đường</a></div>
-)))}
+<section class="st-sec st-sec--card" id="dau-moi">
+<div class="st-wrap">
+<Head eyebrow={c.routes.eyebrow} title={c.routes.title} />
+<div class="st-grid" style="--min:300px">
+{c.routes.items.map((r) => {
+  const v = value(r.value);
+  return (
+    <div class="st-card st-card--top"><div class="st-card__body">
+      <span class="st-card__tag">{r.label}</span>
+      {isFilled(v) && <a href={contactHref(v)} style="font-size:22px;font-weight:700;color:var(--text-primary)">{v}</a>}
+      <span class="st-card__text">{r.note}</span>
+      {isFilled(r.link) && <a class="st-card__link" href={href(r.link)}>{r.link_label}</a>}
+    </div></div>
+  );
+})}
 </div>
-<span style="font-size:13px;color:var(--text-tertiary)">{c.s02_tim_dai_ly.t4}</span>
-</div>
-<div style="position:relative;min-height:420px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="dealer-map" shape="rounded" radius="16" placeholder="Bản đồ đại lý (Google Maps nhúng)" image={c.s02_tim_dai_ly.img_dealer_map_1} cms="src/content/pages/lien-he.json#s02_tim_dai_ly.img_dealer_map_1" /></div>
-</div>
-<div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:22px 24px;background:var(--green-800);color:#fff;border-radius:var(--radius-lg)"><div><strong style="font-size:19px;display:block">{c.s02_tim_dai_ly.t5}</strong><span style="color:var(--green-100)">{c.s02_tim_dai_ly.t6}</span></div><a href="#lien-he-form" style="background:#fff;color:var(--green-700);font-weight:700;padding:12px 20px;border-radius:var(--radius-md)">{c.s02_tim_dai_ly.t7}</a></div>
 </div></section>
 
-<section id="nha-may" style="background:var(--surface-card);scroll-margin-top:120px">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
-<h2 style="margin:0;font:var(--type-h2)">{c.s03_van_phong_nha_may.t1}</h2>
+<section class="st-sec" id="chinh-hang">
+<div class="st-wrap">
+<div class="st-split st-split--top">
+<div>
+<Head eyebrow={c.genuine.eyebrow} title={c.genuine.title} intro={c.genuine.intro} />
+<ol class="st-steps" style="--min:140px">{c.genuine.steps.map((s) => <li><strong>{s.title}</strong><span>{s.text}</span></li>)}</ol>
+</div>
+<div style="background:var(--green-800);color:#fff;border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px">
+<strong style="font:var(--type-h3)">{c.genuine.report_title}</strong>
+<p style="margin:0;color:var(--green-100);line-height:1.65">{c.genuine.report_text}</p>
+<div class="st-actions">{isFilled(c.genuine.report_phone) && <a href={contactHref(c.genuine.report_phone)} class="st-btn" style="background:#fff;border-color:#fff;color:var(--green-700)">☎ {c.genuine.report_phone}</a>}<a href="#lien-he-form" class="st-btn" style="border-color:rgba(255,255,255,.5);color:#fff">Gửi phản ánh</a></div>
+</div>
+</div>
+</div></section>
+
+<section class="st-sec st-sec--card" id="dai-ly">
+<div class="st-wrap">
+<Head eyebrow={c.regions.eyebrow} title={c.regions.title} intro={c.regions.intro} split />
+<div class="st-grid" style="--min:300px">
+{partner.managers.map((m) => (
+<div class="st-card"><div class="st-card__body">
+<span class="st-card__tag">{m.region}</span>
+<strong class="st-card__title">{m.name}</strong>
+<span class="st-card__text">{m.title}</span>
+<a href={`tel:${tel(m.phone)}`} style="font:700 20px var(--font-mono);color:var(--green-700)">{prettyPhone(m.phone)}</a>
+{Array.isArray(m.provinces) && m.provinces.length > 0 && <span class="st-card__proof"><strong>{c.regions.provinces_label}: </strong>{(m.provinces as string[]).join(', ')}</span>}
+</div></div>
+))}
+</div>
+<a href={url('tro-thanh-doi-tac', 'lien-he-khu-vuc')} style="align-self:flex-start;font-weight:600">{c.regions.map_label}</a>
+</div></section>
+
+<section id="nha-may" class="st-sec">
+<div class="st-wrap">
+<Head title={c.sites.title} />
 <div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/4),calc((1088px - 100%)*999),calc((100% - 16px)/2)),1fr));gap:16px">
-{sites.map((p, k) => (
+{c.sites.items.map((p, k) => (
 <article class="site-card">
-<div class:list={['site-card__img', { 'is-empty': !isFilled(p.img?.src) }]}><svg class="site-card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 42V22l10 6v-6l10 6v-6l10 6V8h8v34z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M12 36h4M22 36h4M32 36h4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`site-${p.n}`} shape="rect" placeholder={p.img?.alt || String(p.name)} image={p.img} cms={`src/content/pages/lien-he.json#s03_van_phong_nha_may.img${p.n}`} sizes="(max-width: 767px) 92vw, 320px" /></div>
-<div class="site-card__body"><span class="site-card__tag">{k === 0 ? 'Trụ sở' : 'Nhà máy'}</span><strong>{String(p.name)}</strong><span class="site-card__addr">{p.address}</span><a href={`tel:${String(p.phone).replace(/[^\d+]/g, '')}`} class="site-card__phone">{p.phone}</a><a href={p.map} target="_blank" rel="noopener" class="site-card__map">{c.s03_van_phong_nha_may.map_label}</a></div>
+<div class:list={['site-card__img', { 'is-empty': !isFilled(p.image?.src) }]}><svg class="site-card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 42V22l10 6v-6l10 6v-6l10 6V8h8v34z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M12 36h4M22 36h4M32 36h4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><ImageSlot style={fill} id={`site-${k + 1}`} shape="rect" placeholder={p.image?.alt || p.name} image={p.image} cms={`${F}#sites.items.${k}.image`} sizes="(max-width: 767px) 92vw, 320px" /></div>
+<div class="site-card__body"><span class="site-card__tag">{p.tag}</span><strong>{p.name}</strong>{isFilled(p.role) && <span class="site-card__role">{p.role}</span>}<span class="site-card__addr">{p.address}</span><a href={`tel:${tel(p.phone)}`} class="site-card__phone">{p.phone}</a><a href={mapsFor(p.address, p.map)} target="_blank" rel="noopener" class="site-card__map">{c.sites.map_label}</a></div>
 </article>
 ))}
-</div></div></section>
+</div>
+{isFilled(c.sites.visit_text) && <p class="st-note" style="margin:0">{c.sites.visit_text}</p>}
+</div></section>
 
-<section id="lien-he-form" style="background:var(--surface-page);scroll-margin-top:120px">
-<div style="max-width:880px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:24px">
-<div style="display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font:var(--type-h2)">{c.s04_gui_lien_he.t1}</h2><span style="color:var(--text-secondary)">{c.s04_gui_lien_he.t2}</span></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:16px">
-<div id="contact-sent" hidden style="display:flex;flex-direction:column;gap:8px;padding:16px 0"><span style="font:700 13px var(--font-mono);color:var(--green-600)">{c.s04_gui_lien_he.t3}</span><strong style="font-size:22px">{c.s04_gui_lien_he.t4}</strong><span style="color:var(--text-secondary)">{c.s04_gui_lien_he.t5} <span id="need-label">{c.needs[0]?.toLowerCase()}</span> {c.s04_gui_lien_he.t6}</span><button type="button" data-form-again style="align-self:flex-start;background:none;border:0;padding:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.s04_gui_lien_he.t7}</button></div>
+{social.length > 0 && <section class="st-sec st-sec--dark">
+<div class="st-wrap st-wrap--s" style="flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px">
+<Head title={c.social.title} intro={c.social.intro} level="h3" />
+<div class="st-actions">{social.map(([k, v]) => <a href={link(v)} target="_blank" rel="noopener" class="st-btn">{SOCIAL[k] ?? k}</a>)}</div>
+</div></section>}
+
+<section id="lien-he-form" class="st-sec st-sec--card">
+<div class="st-wrap st-wrap--narrow" style="max-width:880px">
+<Head title={c.form.title} intro={c.form.intro} />
+<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:16px">
+<div id="contact-sent" hidden style="display:flex;flex-direction:column;gap:8px;padding:16px 0"><span style="font:700 13px var(--font-mono);color:var(--green-600)">{c.form.sent_label}</span><strong style="font-size:22px">{c.form.sent_title}</strong><span style="color:var(--text-secondary)">{c.form.sent_before} <span id="need-label">{(c.form.needs as string[])[0]?.toLowerCase()}</span> {c.form.sent_after}</span><button type="button" data-form-again style="align-self:flex-start;background:none;border:0;padding:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.form.again}</button></div>
 <FormFallback />
 <form id="contact-form" data-lead-form="lien-he" data-sent="contact-sent" style="display:flex;flex-direction:column;gap:16px">
-<Select id="contact-need" name="need" label={c.s04_gui_lien_he.f1} options={c.needs.map((v) => ({ value: v, label: v }))} />
+<Select id="contact-need" name="need" label={c.form.need_label} options={(c.form.needs as string[]).map((v) => ({ value: v, label: v }))} />
 <div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 42px)/4),calc((922px - 100%)*999),calc((100% - 14px)/2)),1fr));gap:14px">
-<Input label={c.s04_gui_lien_he.f2} name="name" autocomplete="name" required placeholder={c.s04_gui_lien_he.f3} />
-<Input label={c.s04_gui_lien_he.f4} name="phone" type="tel" autocomplete="tel" required placeholder={c.s04_gui_lien_he.f5} />
-<Input label={c.s04_gui_lien_he.f6} name="email" type="email" autocomplete="email" placeholder={c.s04_gui_lien_he.f7} />
-<Input label={c.s04_gui_lien_he.f8} name="province" placeholder={c.s04_gui_lien_he.f9} />
+<Input label={c.form.name_label} name="name" autocomplete="name" required placeholder={c.form.name_ph} />
+<Input label={c.form.phone_label} name="phone" type="tel" autocomplete="tel" required placeholder={c.form.phone_ph} />
+<Input label={c.form.email_label} name="email" type="email" autocomplete="email" placeholder={c.form.email_ph} />
+<Input label={c.form.province_label} name="province" placeholder={c.form.province_ph} />
 </div>
-<label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:14px;font-weight:500">{c.s04_gui_lien_he.t8}</span><textarea name="message" rows="4" placeholder={c.s04_gui_lien_he.f10} style="padding:10px 14px;border-radius:var(--radius-md);border:1px solid var(--border-default);font:16px var(--font-body);resize:vertical;outline-color:var(--green-500)"></textarea></label>
-<Checkbox label={c.s04_gui_lien_he.f11} name="consent" data-consent required />
-<Button size="lg" type="submit">{c.s04_gui_lien_he.t9}</Button>
+<label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:14px;font-weight:500">{c.form.message_label}</span><textarea name="message" rows="4" placeholder={c.form.message_ph} style="padding:10px 14px;border-radius:var(--radius-md);border:1px solid var(--border-default);font:16px var(--font-body);resize:vertical;outline-color:var(--green-500)"></textarea></label>
+<Checkbox label={c.form.consent} name="consent" data-consent required />
+<Button size="lg" type="submit">{c.form.submit}</Button>
 </form>
-</div></div></section>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;padding-top:8px;color:var(--text-secondary);font-size:15px">
+<strong style="color:var(--text-primary)">{c.legal.title}</strong>
+<span>{co.name}</span>
+<span>{co.tax_code_label} {co.tax_code}</span>
+<span>{co.address} · {co.phone} · {co.email}</span>
+</div>
+</div></section>
 </Layout>
 
 <style>
@@ -103,20 +154,13 @@ const sites = [
   .site-card__body { display: flex; flex-direction: column; gap: 6px; padding: 18px 20px 20px; flex: 1; }
   .site-card__tag { font: var(--type-eyebrow); letter-spacing: .06em; text-transform: uppercase; color: var(--green-600); }
   .site-card strong { font: 700 17px/1.35 var(--font-display); text-wrap: balance; }
+  .site-card__role { font-size: 14px; color: var(--text-primary); }
   .site-card__addr { color: var(--text-secondary); font-size: 15px; line-height: 1.5; }
   .site-card__phone { color: var(--text-primary); font-weight: 600; }
   .site-card__map { margin-top: auto; padding-top: 6px; font-weight: 600; font-size: 15px; }
 </style>
 
 <script>
-  const prov = document.getElementById('dealer-prov') as HTMLSelectElement;
-  prov.addEventListener('change', () => {
-    const rows = [...document.querySelectorAll<HTMLElement>('[data-prov]')];
-    rows.forEach((r) => { r.hidden = r.dataset.prov !== prov.value; });
-    document.getElementById('dealer-count')!.textContent = String(rows.filter((r) => !r.hidden).length);
-    document.getElementById('dealer-prov-name')!.textContent = prov.selectedOptions[0].text;
-  });
-
   // The "sent" panel names the department matching the chosen need.
   const need = document.getElementById('contact-need') as HTMLSelectElement;
   document.getElementById('contact-form')!.addEventListener('lead:sent', () => {

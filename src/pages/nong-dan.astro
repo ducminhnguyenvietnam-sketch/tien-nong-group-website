@@ -1,6 +1,13 @@
 ---
+/**
+ * Nông dân Tiến Nông. Flow: hero → key figures → four commitments → a season with Tiến Nông →
+ * phân bón trả chậm (how it works, milestones, how to join) → Trung tâm Chăm sóc Phục vụ Nông dân →
+ * results on the field (farmer stories, demonstration plots) → when a season goes wrong → CLB Gắn kết →
+ * workshops (latest news) → FAQ → registration form.
+ */
 import raw from '../content/pages/nong-dan.json';
-import { isFilled, stripPlaceholders, withDefaults } from '../lib/content';
+import siteRaw from '../content/site.json';
+import { isFilled, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import FormFallback from '../components/FormFallback.astro';
 import Button from '../components/Button.astro';
@@ -8,10 +15,19 @@ import Checkbox from '../components/Checkbox.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Input from '../components/Input.astro';
 import Select from '../components/Select.astro';
+import Head from '../components/story/Head.astro';
+import Stats from '../components/story/Stats.astro';
+import Faq from '../components/story/Faq.astro';
 import { url, link } from '../lib/routes';
 import { formatDate, getNews, newsLinkAttrs, newsUrl } from '../lib/news';
 
 const c = withDefaults(raw, 'src/content/pages/nong-dan.json');
+const site = withDefaults(siteRaw, 'src/content/site.json');
+const F = 'src/content/pages/nong-dan.json';
+const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
+// Hotline: the engineers' line once it is filled in, the company switchboard until then.
+const hotline = isFilled(c.hero.hotline) ? c.hero.hotline : (site.company as Record<string, string>).phone;
+const tel = (v: string) => `tel:${v.replace(/[^\d+]/g, '')}`;
 
 // Hội thảo đầu bờ: 2 newest articles in "Nông dân & Mô hình hiệu quả" tagged "hội thảo";
 // if fewer are tagged, the rest are filled with the newest articles of that category.
@@ -19,82 +35,176 @@ const WORKSHOPS_SHOWN = 2;
 const farmerNews = (await getNews()).filter((n) => n.data.category === 'nd');
 const isWorkshop = (n: (typeof farmerNews)[number]) => n.data.tags.some((t) => t.trim().toLowerCase().normalize('NFC') === 'hội thảo'.normalize('NFC'));
 const workshops = [...farmerNews.filter(isWorkshop), ...farmerNews.filter((n) => !isWorkshop(n))].slice(0, WORKSHOPS_SHOWN);
-
+const stories = c.results.stories.filter((s) => isFilled(s.quote));
+const models = c.results.models.filter((m) => isFilled(m.title));
+const timeline = c.deferred.timeline.filter((t) => isFilled(t.title));
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Nông dân Tiến Nông">
-<section style="position:relative;min-height:min(70vh,600px);background:var(--green-900);display:flex">
-<div style="position:absolute;inset:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="farmer-hero" shape="rect" placeholder="Nông dân và kỹ sư Tiến Nông trên cánh đồng" image={c.s01_hero.img_farmer_hero_1} cms="src/content/pages/nong-dan.json#s01_hero.img_farmer_hero_1" /></div>
-<div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,53,26,.8) 0%,rgba(2,53,26,.4) 50%,rgba(2,53,26,0) 80%)"></div>
+<section style="position:relative;min-height:min(72vh,620px);background:var(--green-900);display:flex">
+<div style="position:absolute;inset:0"><ImageSlot style={fill} id="farmer-hero" shape="rect" placeholder="Nông dân và kỹ sư Tiến Nông trên cánh đồng" image={c.hero.image} cms={`${F}#hero.image`} /></div>
+<div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,53,26,.82) 0%,rgba(2,53,26,.45) 50%,rgba(2,53,26,0) 82%)"></div>
 <div style="position:relative;max-width:1280px;width:100%;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(56px,7vw,96px);display:flex;flex-direction:column;justify-content:space-between;gap:48px;pointer-events:none;color:#fff">
-<span style="font-size:13px;color:var(--green-100)">{c.s01_hero.t1}</span>
+<span style="font-size:13px;color:var(--green-100)">{c.hero.breadcrumb}</span>
 <div class="hero-copy" style="max-width:760px;display:flex;flex-direction:column;gap:20px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-100)">{c.s01_hero.t2}</span>
-<h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero.t3}</h1>
-<p style="margin:0;font-size:var(--fs-lead);line-height:1.55;color:var(--green-50);text-wrap:pretty">{c.s01_hero.t4}</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;pointer-events:auto"><a href="#dang-ky" style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s01_hero.t5}</a>{isFilled(c.s01_hero.t6) && <a href={link(c.s01_hero.link1)} style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s01_hero.t6}</a>}</div>
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-100)">{c.hero.eyebrow}</span>
+<h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.hero.title}</h1>
+<p style="margin:0;font-size:var(--fs-lead);line-height:1.55;color:var(--green-50);text-wrap:pretty">{c.hero.intro}</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;pointer-events:auto">
+<a href="#dang-ky" style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.hero.button1}</a>
+<a href="#tra-cham" style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.hero.button2}</a>
+{isFilled(hotline) && <a href={tel(hotline)} style="color:#fff;font-weight:600;padding:13px 4px">☎ {c.hero.hotline_label}: {hotline}</a>}
+</div>
 </div></div></section>
 
-<section id="dang-ky" style="background:var(--surface-card);scroll-margin-top:120px">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 72px;align-items:start">
-<div style="display:flex;flex-direction:column;gap:20px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s02_dang_ky.t1}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s02_dang_ky.t2}</h2>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s02_dang_ky.t3}</p>
-<div style="display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
-<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="color:var(--green-600);font-weight:700">✓</span><span>{c.s02_dang_ky.t4}</span></div>
-<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="color:var(--green-600);font-weight:700">✓</span><span>{c.s02_dang_ky.t5}</span></div>
-<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="color:var(--green-600);font-weight:700">✓</span><span>{c.s02_dang_ky.t6}</span></div>
-<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-default)"><span style="color:var(--green-600);font-weight:700">✓</span><span>{c.s02_dang_ky.t7}</span></div>
-</div></div>
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:16px">
-<div id="reg-sent" hidden style="padding:32px 8px;display:flex;flex-direction:column;gap:10px;align-items:flex-start"><span style="font:700 13px var(--font-mono);color:var(--green-600)">{c.s02_dang_ky.t8}</span><strong style="font-size:22px">{c.s02_dang_ky.t9}</strong><span style="color:var(--text-secondary)">{c.s02_dang_ky.t10}</span><button type="button" data-form-again style="background:none;border:0;padding:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.s02_dang_ky.t11}</button></div>
-<FormFallback />
-<form data-lead-form="nong-dan" data-sent="reg-sent" style="display:flex;flex-direction:column;gap:14px">
-<Input label={c.s02_dang_ky.f1} name="name" autocomplete="name" required placeholder={c.s02_dang_ky.f2} />
-<Input label={c.s02_dang_ky.f3} name="phone" type="tel" autocomplete="tel" required placeholder={c.s02_dang_ky.f4} />
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px">
-<Input label={c.s02_dang_ky.f5} name="province" required placeholder={c.s02_dang_ky.f6} />
-<Select label={c.s02_dang_ky.f7} name="crop" options={c.form_crops.map((v) => ({ value: v, label: v }))} />
-</div>
-<Checkbox label={c.s02_dang_ky.f8} name="consent" data-consent required />
-<Button size="lg" type="submit">{c.s02_dang_ky.t12}</Button>
-<span style="font-size:14px;color:var(--text-tertiary)">{c.s02_dang_ky.t13}</span>
-</form>
-</div></div></section>
+<section class="st-sec st-sec--card"><div class="st-wrap st-wrap--s"><Stats items={c.stats} /></div></section>
 
-<section style="background:var(--surface-page)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s03_cau_chuyen_nha_nong.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s03_cau_chuyen_nha_nong.t2}</h2></div>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s03_cau_chuyen_nha_nong.t3}</p>
+<section id="cam-ket" class="st-sec">
+<div class="st-wrap">
+<Head eyebrow={c.promises.eyebrow} title={c.promises.title} intro={c.promises.intro} />
+<div class="st-grid" style="--min:240px">
+{c.promises.items.map((p, k) => <div class="st-card st-card--top"><div class="st-card__body"><span class="st-card__num">{String(k + 1).padStart(2, '0')}</span><strong class="st-card__title">{p.title}</strong><span class="st-card__text">{p.text}</span></div></div>)}
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:24px">
-<article style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;min-height:300px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="story-1" shape="rect" placeholder="Chân dung nông dân trên ruộng" image={c.s03_cau_chuyen_nha_nong.img_story_1_1} cms="src/content/pages/nong-dan.json#s03_cau_chuyen_nha_nong.img_story_1_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:12px"><span style="font:600 12px var(--font-mono);color:var(--green-600)">{c.s03_cau_chuyen_nha_nong.t4}</span><p style="margin:0;font:var(--type-quote)">{c.s03_cau_chuyen_nha_nong.t5}</p><div style="display:flex;gap:24px;padding-top:12px;border-top:1px solid var(--border-default);margin-top:auto"><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s03_cau_chuyen_nha_nong.t6}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s03_cau_chuyen_nha_nong.t7}</span></div><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s03_cau_chuyen_nha_nong.t8}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s03_cau_chuyen_nha_nong.t9}</span></div></div><strong style="font-size:15px">{c.s03_cau_chuyen_nha_nong.t10}</strong></div></article>
-<article style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;min-height:300px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="story-2" shape="rect" placeholder="Chân dung nông dân vườn cà phê" image={c.s03_cau_chuyen_nha_nong.img_story_2_1} cms="src/content/pages/nong-dan.json#s03_cau_chuyen_nha_nong.img_story_2_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:12px"><span style="font:600 12px var(--font-mono);color:var(--green-600)">{c.s03_cau_chuyen_nha_nong.t11}</span><p style="margin:0;font:var(--type-quote)">{c.s03_cau_chuyen_nha_nong.t12}</p><div style="display:flex;gap:24px;padding-top:12px;border-top:1px solid var(--border-default);margin-top:auto"><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s03_cau_chuyen_nha_nong.t13}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s03_cau_chuyen_nha_nong.t14}</span></div><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s03_cau_chuyen_nha_nong.t15}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s03_cau_chuyen_nha_nong.t16}</span></div></div><strong style="font-size:15px">{c.s03_cau_chuyen_nha_nong.t17}</strong></div></article>
-</div>
-<a href={url('tin-tuc')} style="align-self:flex-start;font-weight:600">{c.s03_cau_chuyen_nha_nong.t18}</a>
 </div></section>
 
-<section id="hoi-thao" style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:32px 64px;align-items:start">
-<div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s04_hoi_thao_dau_bo.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s04_hoi_thao_dau_bo.t2}</h2><span style="color:var(--text-secondary)">{c.s04_hoi_thao_dau_bo.t3}</span></div>
+<section id="mua-vu" class="st-sec st-sec--card">
+<div class="st-wrap">
+<Head eyebrow={c.season.eyebrow} title={c.season.title} intro={c.season.intro} split />
+<ol class="st-steps" style="--min:260px">{c.season.steps.map((s) => <li><strong>{s.title}</strong><span>{s.text}</span></li>)}</ol>
+</div></section>
+
+<section id="tra-cham" class="st-sec st-sec--dark">
+<div class="st-wrap">
+<div class="st-split st-split--top">
+<Head eyebrow={c.deferred.eyebrow} title={c.deferred.title} intro={c.deferred.intro} />
+<div class="st-split__media st-hide-empty" style="--ratio:3/2"><ImageSlot style={fill} id="farmer-deferred" shape="rounded" radius="24" placeholder={c.deferred.image.alt || 'Phân bón trả chậm'} image={c.deferred.image} cms={`${F}#deferred.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
+</div>
+<h3 class="st-h3">{c.deferred.how_title}</h3>
+<ol class="st-steps" style="--min:220px">{c.deferred.how.map((s) => <li><strong>{s.title}</strong><span>{s.text}</span></li>)}</ol>
+<div class="st-split st-split--top">
+{timeline.length > 0 && <ol class="st-timeline">
+{timeline.map((t) => <li><span class="st-timeline__when">{t.when}</span><div class="st-timeline__what"><strong>{t.title}</strong><span>{t.text}</span>{isFilled(t.link) && <a href={link(t.link)}>Đọc tin →</a>}</div></li>)}
+</ol>}
+<div style="background:#fff;color:var(--text-primary);border-radius:var(--radius-xl);padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;gap:14px">
+<strong style="font:var(--type-h3)">{c.deferred.join_title}</strong>
+<p style="margin:0;color:var(--text-secondary);line-height:1.65">{c.deferred.join_text}</p>
+<div class="st-actions"><a href="#dang-ky" class="st-btn st-btn--solid" style="background:var(--green-500);border-color:var(--green-500);color:#fff">{c.hero.button1}</a>{isFilled(hotline) && <a href={tel(hotline)} class="st-btn" style="border-color:var(--border-strong);color:var(--green-700)">☎ {hotline}</a>}</div>
+</div>
+</div>
+</div></section>
+
+<section id="trung-tam" class="st-sec">
+<div class="st-wrap">
+<div class="st-split">
+<div class="st-split__media st-hide-empty" style="--ratio:4/3"><ImageSlot style={fill} id="farmer-center" shape="rounded" radius="24" placeholder={c.center.image.alt || 'Trung tâm Chăm sóc Phục vụ Nông dân'} image={c.center.image} cms={`${F}#center.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
+<div>
+<Head eyebrow={c.center.eyebrow} title={c.center.title} intro={c.center.text} />
+<div class="st-ruled" style="--min:150px">{c.center.items.map((it) => <div><strong>{it.title}</strong><span>{it.text}</span></div>)}</div>
+{isFilled(c.center.link) && <a href={link(c.center.link)} style="font-weight:600">Đọc tin lễ ra mắt →</a>}
+</div>
+</div>
+</div></section>
+
+<section id="ket-qua" class="st-sec st-sec--card">
+<div class="st-wrap">
+<Head eyebrow={c.results.eyebrow} title={c.results.title} intro={c.results.intro} split />
+<div class="st-grid" style="--min:520px">
+{stories.map((s, k) => (
+<article class="nd-story">
+<div style="position:relative;min-height:300px"><ImageSlot style={fill} id={`story-${k + 1}`} shape="rect" placeholder={s.image.alt || 'Chân dung nông dân'} image={s.image} cms={`${F}#results.stories.${k}.image`} /></div>
+<div style="padding:24px;display:flex;flex-direction:column;gap:12px">
+<span style="font:600 12px var(--font-mono);color:var(--green-600)">{s.crop}</span>
+<p style="margin:0;font:var(--type-quote)">{s.quote}</p>
+<div style="display:flex;gap:24px;flex-wrap:wrap;padding-top:12px;border-top:1px solid var(--border-default);margin-top:auto">
+{s.facts.filter((f) => isFilled(f.value)).map((f) => <div><div style="font:var(--type-num);color:var(--amber-600)">{f.value}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{f.label}</span></div>)}
+</div>
+<strong style="font-size:15px">{s.person}</strong>
+</div>
+</article>
+))}
+</div>
+{models.length > 0 && <>
+<h3 class="st-h3">{c.results.models_title}</h3>
+<div class="st-grid" style="--min:250px">
+{models.map((m, k) => (
+<a class="st-card" href={link(m.link)}>
+<div class="st-card__img st-hide-empty" style="--img-h:170px"><ImageSlot style={fill} id={`model-${k}`} shape="rect" placeholder={m.image.alt || m.title} image={m.image} cms={`${F}#results.models.${k}.image`} sizes="(max-width: 767px) 92vw, 300px" /></div>
+<div class="st-card__body"><span class="st-card__tag">{m.place}</span><strong class="st-card__title">{m.title}</strong>
+<div class="st-card__facts"><div class="st-card__fact"><strong>{m.value}</strong><span>{m.label}</span></div></div>
+<span class="st-card__link">Đọc tin →</span></div>
+</a>
+))}
+</div></>}
+<a href={url('tin-tuc', 'nd')} style="align-self:flex-start;font-weight:600">{c.results.more}</a>
+</div></section>
+
+<section id="mua-kho" class="st-sec">
+<div class="st-wrap">
+<Head eyebrow={c.hardship.eyebrow} title={c.hardship.title} intro={c.hardship.intro} />
+<div class="st-grid" style="--min:250px">
+{c.hardship.items.map((h) => <div class="st-card"><div class="st-card__body"><span class="st-card__tag">{h.when}</span><strong class="st-card__title">{h.title}</strong><span class="st-card__text">{h.text}</span>{isFilled(h.link) && <a class="st-card__link" href={link(h.link)}>Đọc tin →</a>}</div></div>)}
+</div>
+</div></section>
+
+<section id="clb" class="st-sec st-sec--tint">
+<div class="st-wrap st-wrap--s">
+<div class="st-split">
+<div>
+<Head eyebrow={c.club.eyebrow} title={c.club.title} intro={c.club.text} />
+{isFilled(c.club.link) && <a href={link(c.club.link)} style="font-weight:600">Đọc tin →</a>}
+</div>
+<div class="st-split__media st-hide-empty" style="--ratio:16/10"><ImageSlot style={fill} id="farmer-club" shape="rounded" radius="24" placeholder={c.club.image.alt || 'CLB Gắn kết Tiến Nông'} image={c.club.image} cms={`${F}#club.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
+</div>
+</div></section>
+
+<section id="hoi-thao" class="st-sec st-sec--card">
+<div class="st-wrap">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:32px 64px;align-items:start">
+<Head eyebrow={c.workshops.eyebrow} title={c.workshops.title} intro={c.workshops.intro} />
 <div style="display:flex;flex-direction:column;gap:16px">
 <div style="display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
-{workshops.map((n) => <a href={newsUrl(n)} {...newsLinkAttrs(n)} style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border-default);color:var(--text-primary)"><div style="position:relative;height:84px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${n.id}`} shape="rounded" radius="10" placeholder="Ảnh hội thảo" image={n.data.cover} cms={`${n.filePath}#cover`} /></div><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:var(--text-tertiary)">{formatDate(n.data.date)}</span><strong style="line-height:1.4">{n.data.title}</strong></div></a>)}
-{workshops.length === 0 && <span style="padding:16px 0;color:var(--text-secondary)">{c.s04_hoi_thao_dau_bo.t5}</span>}
+{workshops.map((n) => <a href={newsUrl(n)} {...newsLinkAttrs(n)} style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border-default);color:var(--text-primary)"><div style="position:relative;height:84px"><ImageSlot style={fill} id={`news-${n.id}`} shape="rounded" radius="10" placeholder="Ảnh hội thảo" image={n.data.cover} cms={`${n.filePath}#cover`} /></div><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:var(--text-tertiary)">{formatDate(n.data.date)}</span><strong style="line-height:1.4">{n.data.title}</strong></div></a>)}
+{workshops.length === 0 && <span style="padding:16px 0;color:var(--text-secondary)">{c.workshops.empty}</span>}
 </div>
-<a href={url('tin-tuc', 'nd')} style="font-weight:600;font-size:15px">{c.s04_hoi_thao_dau_bo.t4}</a>
-</div></div></section>
+<a href={url('tin-tuc', 'nd')} style="font-weight:600;font-size:15px">{c.workshops.all}</a>
+</div></div>
+</div></section>
 
-<section style="background:var(--green-800);color:#fff">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px 72px;align-items:start">
-<div style="display:flex;flex-direction:column;gap:16px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s05_hoi_dap.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s05_hoi_dap.t2}</h2><span style="color:var(--green-100)">{c.s05_hoi_dap.t3}</span></div>
-<div data-accordion style="display:flex;flex-direction:column;border-top:1px solid var(--green-600)">
-{c.faq.map((f, k) => (
-<div style="border-bottom:1px solid var(--green-700)">
-<button type="button" data-acc aria-expanded={k === 0 ? 'true' : 'false'} aria-controls={`faq-${k}`} style="width:100%;display:flex;gap:16px;align-items:baseline;text-align:left;padding:20px 0;border:0;background:none;cursor:pointer;font:600 18px/1.4 var(--font-body);color:#fff"><span style="flex:1">{f.q}</span><span data-acc-sign style="font:400 22px var(--font-body);color:var(--amber-400)">{k === 0 ? '−' : '+'}</span></button>
-<p id={`faq-${k}`} hidden={k !== 0} style="margin:0;padding:0 0 22px;color:var(--green-100);text-wrap:pretty">{f.a}</p>
+<section id="hoi-dap" class="st-sec st-sec--dark">
+<div class="st-wrap">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px 72px;align-items:start">
+<Head eyebrow={c.faq.eyebrow} title={c.faq.title} intro={c.faq.intro} />
+<Faq id="faq" items={c.faq.items} />
 </div>
-))}
-</div></div></section>
+</div></section>
+
+<section id="dang-ky" class="st-sec st-sec--card">
+<div class="st-wrap">
+<div class="st-split st-split--top">
+<div>
+<Head eyebrow={c.register.eyebrow} title={c.register.title} intro={c.register.intro} />
+<ul class="st-checks">{(c.register.perks as string[]).filter(isFilled).map((p) => <li><span style="color:var(--text-primary);font-size:16px">{p}</span></li>)}</ul>
+{isFilled(hotline) && <a href={tel(hotline)} style="font-weight:700;font-size:18px">☎ {c.hero.hotline_label}: {hotline}</a>}
+</div>
+<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:16px">
+<div id="reg-sent" hidden style="padding:32px 8px;display:flex;flex-direction:column;gap:10px;align-items:flex-start"><span style="font:700 13px var(--font-mono);color:var(--green-600)">{c.register.sent_label}</span><strong style="font-size:22px">{c.register.sent_title}</strong><span style="color:var(--text-secondary)">{c.register.sent_text}</span><button type="button" data-form-again style="background:none;border:0;padding:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.register.again}</button></div>
+<FormFallback />
+<form data-lead-form="nong-dan" data-sent="reg-sent" style="display:flex;flex-direction:column;gap:14px">
+<Input label={c.register.name_label} name="name" autocomplete="name" required placeholder={c.register.name_ph} />
+<Input label={c.register.phone_label} name="phone" type="tel" autocomplete="tel" required placeholder={c.register.phone_ph} />
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px">
+<Input label={c.register.province_label} name="province" required placeholder={c.register.province_ph} />
+<Select label={c.register.crop_label} name="crop" options={(c.register.crops as string[]).map((v) => ({ value: v, label: v }))} />
+</div>
+<Checkbox label={c.register.consent} name="consent" data-consent required />
+<Button size="lg" type="submit">{c.register.submit}</Button>
+<span style="font-size:14px;color:var(--text-tertiary)">{c.register.alt_text}</span>
+</form>
+</div>
+</div>
+</div></section>
 </Layout>
+
+<style>
+  .nd-story { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); background: var(--surface-page); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
+  @media (max-width: 640px) { .nd-story { grid-template-columns: minmax(0, 1fr); } }
+</style>

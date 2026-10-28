@@ -1,71 +1,110 @@
 ---
+/**
+ * Văn hóa doanh nghiệp. Flow: hero → key figures → mottos → origin (where the culture comes from)
+ * → five tâm niệm → core values, each with a real example → yearly traditions → learning → the
+ * tâm niệm song → poems → gallery → invitation to join.
+ */
 import raw from '../../content/pages/van-hoa-doanh-nghiep.json';
 import { isFilled, stripPlaceholders, withDefaults } from '../../lib/content';
 import Layout from '../../layouts/Layout.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
 import PageHero from '../../components/PageHero.astro';
+import Head from '../../components/story/Head.astro';
+import Stats from '../../components/story/Stats.astro';
 import { link, url, youtubeId } from '../../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/van-hoa-doanh-nghiep.json');
 const F = 'src/content/pages/van-hoa-doanh-nghiep.json';
-const principles = c.principles.items.filter((p) => isFilled(p.title) && isFilled(p.body));
+const principles = c.principles.items.filter((p) => isFilled(p.title));
+const values = c.values.items.filter((v) => isFilled(v.title));
 const poems = c.poems.items.filter((p) => isFilled(p.text));
-const hasPrinciples = principles.length > 0;
-const hasPoems = poems.length > 0;
+const learning = c.learning.items.filter((l) => isFilled(l.title));
+const measures = (c.origin.measures as string[]).filter(isFilled);
 const hasMedia = c.media.videos.some((v) => isFilled(v.youtube) || isFilled(v.file));
 const hasGallery = c.gallery.photos.some((ph) => isFilled(ph.src));
-const slot = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
-const eyebrow = 'font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-700)';
-const h2 = 'margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance';
-const lead = 'margin:0;color:var(--text-secondary);font-size:var(--fs-lead);text-wrap:pretty';
+const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Về Tiến Nông">
 <PageHero id="vh-hero" image={c.hero.background} cms={`${F}#hero.background`} placeholder={c.hero.background?.alt || 'Tập thể cán bộ, nhân viên Tiến Nông'}
   crumbs={[{ label: c.hero.breadcrumb_home, href: url('trang-chu') }, { label: c.hero.breadcrumb_parent, href: url('ve-tien-nong') }, { label: c.hero.breadcrumb_self }]}
   eyebrow={c.hero.eyebrow} title={c.hero.title} lead={c.hero.intro}>
-{(hasPrinciples || hasMedia) && <>{hasPrinciples && <a href="#tam-niem" class="page-hero__btn page-hero__btn--solid">{c.hero.button_principles}</a>}{hasMedia && <a href="#bai-hat" class="page-hero__btn">{c.hero.button_media}</a>}</>}
+{principles.length > 0 && <a href="#tam-niem" class="page-hero__btn page-hero__btn--solid">{c.hero.button_principles}</a>}{hasMedia && <a href="#bai-hat" class="page-hero__btn">{c.hero.button_media}</a>}
 </PageHero>
 
-<section style="background:var(--green-800);color:#fff">
-<div style="max-width:1280px;margin:0 auto;padding:48px clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px 40px">
-{c.mottos.map((m) => <div style="display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:2px solid var(--amber-400)"><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100)">{m.label}</span><strong style="font:var(--type-h3);text-wrap:balance">{m.text}</strong></div>)}
+<section class="st-sec st-sec--card"><div class="st-wrap st-wrap--s"><Stats items={c.stats} /></div></section>
+
+<section class="st-sec st-sec--dark">
+<div class="st-wrap st-wrap--s"><div class="st-ruled" style="--min:260px">
+{c.mottos.map((m) => <div><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100)">{m.label}</span><strong style="font:var(--type-h3);color:#fff">{m.text}</strong></div>)}
+</div></div></section>
+
+<section id="khoi-nguon" class="st-sec">
+<div class="st-wrap">
+<div class="st-split st-split--top">
+<div>
+<Head eyebrow={c.origin.eyebrow} title={c.origin.title} intro={c.origin.text} />
+{measures.length > 0 && <div style="display:flex;flex-direction:column;gap:12px;padding:22px 24px;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg)">
+<strong style="font-size:18px">{c.origin.measure_title}</strong>
+<span style="color:var(--text-secondary);font-size:15px">{c.origin.measure_intro}</span>
+<ul class="vh-measures">{measures.map((m) => <li>{m}</li>)}</ul>
+</div>}
+</div>
+<div class="st-split__media st-hide-empty" style="--ratio:4/5"><ImageSlot style={fill} id="vh-origin" shape="rounded" radius="24" placeholder={c.origin.image.alt || 'Ảnh khởi nguồn'} image={c.origin.image} cms={`${F}#origin.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
+</div>
 </div></section>
 
-{hasPrinciples && <section id="tam-niem" style="background:var(--surface-page);scroll-margin-top:120px">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:14px"><span style={eyebrow}>{c.principles.eyebrow}</span><h2 style={h2}>{c.principles.title}</h2></div>
-<p style={lead}>{c.principles.intro}</p>
-</div>
-<ol class="vh-principles" style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:16px">
-{principles.map((p, i) => <li style="display:flex;flex-direction:column;gap:10px;padding:24px 22px;background:var(--surface-card);border:1px solid var(--border-default);border-top:4px solid var(--green-500);border-radius:var(--radius-lg)"><span style="font:var(--type-stat);color:var(--green-200);overflow-wrap:normal;font-variant-numeric:tabular-nums">{String(i + 1).padStart(2, '0')}</span><strong style="font-size:19px;line-height:1.35">{p.title}</strong><span style="color:var(--text-secondary);font-size:15px;text-wrap:pretty">{p.body}</span></li>)}
+{principles.length > 0 && <section id="tam-niem" class="st-sec st-sec--card">
+<div class="st-wrap">
+<Head eyebrow={c.principles.eyebrow} title={c.principles.title} intro={c.principles.intro} split />
+<ol class="vh-principles">
+{principles.map((p, i) => <li><span class="st-card__num">{String(i + 1).padStart(2, '0')}</span><strong>{p.title}</strong>{isFilled(p.body) && <span>{p.body}</span>}</li>)}
 </ol>
+{hasMedia && <a href="#bai-hat" class="st-btn" style="align-self:flex-start">♪ {c.hero.button_media}</a>}
 </div></section>}
 
-<section style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:760px"><span style={eyebrow}>{c.values.eyebrow}</span><h2 style={h2}>{c.values.title}</h2></div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:16px 28px">
-{c.values.items.map((v) => <div style="border-top:2px solid var(--green-500);padding-top:14px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{v.title}</strong><span style="color:var(--text-secondary);font-size:15px">{v.body}</span></div>)}
+<section id="gia-tri" class="st-sec">
+<div class="st-wrap">
+<Head eyebrow={c.values.eyebrow} title={c.values.title} intro={c.values.intro} split />
+<div class="st-grid" style="--min:220px">
+{values.map((v) => (
+<div class="st-card st-card--top"><div class="st-card__body">
+<strong class="st-card__title">{v.title}</strong>
+<span class="st-card__text">{v.body}</span>
+{isFilled(v.proof) && <span class="st-card__proof"><strong>Minh chứng · </strong>{v.proof}{isFilled(v.link) && <> <a href={link(v.link)}>Xem →</a></>}</span>}
+</div></div>
+))}
 </div></div></section>
 
-<section style="background:var(--surface-page)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:14px"><span style={eyebrow}>{c.traditions.eyebrow}</span><h2 style={h2}>{c.traditions.title}</h2></div>
-<p style={lead}>{c.traditions.intro}</p>
+<section id="nghi-thuc" class="st-sec st-sec--card">
+<div class="st-wrap">
+<Head eyebrow={c.traditions.eyebrow} title={c.traditions.title} intro={c.traditions.intro} split />
+<div class="st-grid" style="--min:300px">
+{c.traditions.items.map((t, k) => (
+<div class="st-card">
+<div class="st-card__img st-hide-empty"><ImageSlot style={fill} id={`vh-tradition-${k}`} shape="rect" placeholder={t.image.alt} image={t.image} cms={`${F}#traditions.items.${k}.image`} sizes="(max-width: 767px) 92vw, 400px" /></div>
+<div class="st-card__body"><strong class="st-card__title">{t.title}</strong><span class="st-card__text">{stripPlaceholders(t.body)}</span></div>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px">
-{c.traditions.items.map((t, k) => <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style={slot} id={`vh-tradition-${k}`} shape="rect" placeholder={t.image.alt} image={t.image} cms={`${F}#traditions.items.${k}.image`} /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:19px">{t.title}</strong><span style="color:var(--text-secondary)">{stripPlaceholders(t.body)}</span></div></div>)}
+))}
 </div></div></section>
 
-{hasMedia && <section id="bai-hat" style="background:var(--green-800);color:#fff;scroll-margin-top:120px">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.media.eyebrow}</span><h2 style={h2}>{c.media.title}</h2></div>
-<p style="margin:0;color:var(--green-100);font-size:var(--fs-body);text-wrap:pretty">{c.media.intro}</p>
+{learning.length > 0 && <section id="hoc-tap" class="st-sec">
+<div class="st-wrap">
+<div class="st-split">
+<div>
+<Head eyebrow={c.learning.eyebrow} title={c.learning.title} intro={c.learning.intro} />
+{isFilled(c.learning.motto) && <blockquote class="st-quote"><p>{c.learning.motto}</p></blockquote>}
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:28px">
+<div class="st-split__media st-hide-empty" style="--ratio:3/2"><ImageSlot style={fill} id="vh-learning" shape="rounded" radius="24" placeholder={c.learning.image.alt || 'Ảnh đào tạo'} image={c.learning.image} cms={`${F}#learning.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
+</div>
+<div class="st-grid" style="--min:280px">
+{learning.map((l) => <div class="st-card"><div class="st-card__body"><strong class="st-card__title">{l.title}</strong><span class="st-card__text">{l.text}</span>{isFilled(l.link) && <a class="st-card__link" href={link(l.link)}>Đọc tin →</a>}</div></div>)}
+</div>
+</div></section>}
+
+{hasMedia && <section id="bai-hat" class="st-sec st-sec--dark">
+<div class="st-wrap">
+<Head eyebrow={c.media.eyebrow} title={c.media.title} intro={c.media.intro} split />
+<div class="vh-videos">
 {c.media.videos.map((v) => {
   const yt = youtubeId(v.youtube);
   return (
@@ -77,37 +116,47 @@ const lead = 'margin:0;color:var(--text-secondary);font-size:var(--fs-lead);text
             ? <video src={link(v.file)} controls preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video>
             : <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center;color:var(--green-100);border:1.5px dashed rgba(255,255,255,.35);border-radius:inherit"><span style="font-size:40px;line-height:1" aria-hidden="true">▶</span><span style="font-size:14px;max-width:340px">{c.media.empty_note}</span></div>}
       </div>
-      <figcaption style="display:flex;flex-direction:column;gap:2px"><strong style="font-size:19px">{v.title}</strong>{v.note && <span style="color:var(--green-100);font-size:14px">{v.note}</span>}</figcaption>
+      <figcaption style="display:flex;flex-direction:column;gap:2px"><strong style="font-size:19px">{v.title}</strong>{isFilled(v.note) && <span style="color:var(--green-100);font-size:14px">{v.note}</span>}</figcaption>
     </figure>
   );
 })}
-</div></div></section>}
-
-{hasPoems && <section style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:14px"><span style={eyebrow}>{c.poems.eyebrow}</span><h2 style={h2}>{c.poems.title}</h2></div>
-<p style={lead}>{c.poems.intro}</p>
+{principles.length > 0 && <ol class="vh-lyrics">{principles.map((p) => <li>{p.title}</li>)}</ol>}
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:20px">
+</div></section>}
+
+{poems.length > 0 && <section class="st-sec st-sec--card">
+<div class="st-wrap">
+<Head eyebrow={c.poems.eyebrow} title={c.poems.title} intro={c.poems.intro} split />
+<div class="st-grid" style="--min:340px">
 {poems.map((p) => <figure style="margin:0;display:flex;flex-direction:column;gap:16px;padding:clamp(24px,3vw,36px);background:var(--surface-page);border-left:4px solid var(--amber-400);border-radius:var(--radius-lg)"><strong style="font:var(--type-num)">{p.title}</strong><blockquote style="margin:0;white-space:pre-line;font:500 17px/1.8 var(--font-display);color:var(--text-primary)">{p.text}</blockquote><figcaption style="display:flex;flex-direction:column;padding-top:12px;border-top:1px solid var(--border-default)"><strong>{p.author}</strong><span style="font-size:14px;color:var(--text-secondary)">{p.place}</span></figcaption></figure>)}
 </div></div></section>}
 
-<section style="background:var(--surface-page)" data-needs-photos={hasGallery ? undefined : ''}>
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
-<div style="display:flex;flex-direction:column;gap:14px"><span style={eyebrow}>{c.gallery.eyebrow}</span><h2 style={h2}>{c.gallery.title}</h2></div>
+<section class="st-sec" data-needs-photos={hasGallery ? undefined : ''}>
+<div class="st-wrap">
+<Head eyebrow={c.gallery.eyebrow} title={c.gallery.title} />
 <div class="vh-gallery">
-{c.gallery.photos.map((ph, k) => <div style="position:relative;min-height:200px"><ImageSlot style={slot} id={`vh-gallery-${k}`} shape="rounded" radius="12" placeholder={ph.alt} image={ph} cms={`${F}#gallery.photos.${k}`} /></div>)}
+{c.gallery.photos.map((ph, k) => <div style="position:relative;min-height:200px"><ImageSlot style={fill} id={`vh-gallery-${k}`} shape="rounded" radius="12" placeholder={ph.alt} image={ph} cms={`${F}#gallery.photos.${k}`} /></div>)}
 </div></div></section>
 
-<section style="background:var(--surface-card);border-top:1px solid var(--border-default)">
-<div style="max-width:1280px;margin:0 auto;padding:56px clamp(20px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
-<h2 style="margin:0;font:var(--type-h3);text-wrap:balance;max-width:640px">{c.cta.title}</h2>
-<div style="display:flex;gap:12px;flex-wrap:wrap"><a href={url('tuyen-dung', 'vi-tri')} style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.cta.button_jobs}</a><a href={url('ve-tien-nong')} style="color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md);border:1px solid var(--border-strong)">{c.cta.button_about}</a></div>
+<section class="st-sec st-sec--card st-sec--line">
+<div class="st-wrap st-wrap--s" style="flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
+<h2 class="st-h3" style="max-width:640px">{c.cta.title}</h2>
+<div class="st-actions"><a href={url('tuyen-dung', 'vi-tri')} class="st-btn st-btn--solid">{c.cta.button_jobs}</a><a href={url('ve-tien-nong')} class="st-btn">{c.cta.button_about}</a></div>
 </div></section>
 </Layout>
 
 <style>
+  .vh-measures { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .vh-measures li { padding: 8px 14px; border-radius: var(--radius-full); background: var(--green-50); color: var(--green-800); font-weight: 600; font-size: 15px; }
+  .vh-principles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+  .vh-principles li { display: flex; flex-direction: column; gap: 10px; padding: 24px 22px; background: var(--surface-page); border: 1px solid var(--border-default); border-top: 4px solid var(--green-500); border-radius: var(--radius-lg); }
+  .vh-principles strong { font: 700 20px/1.35 var(--font-display); text-wrap: balance; }
+  .vh-principles li > span:last-child { color: var(--text-secondary); font-size: 15px; line-height: 1.6; text-wrap: pretty; }
+  @media (max-width: 1099.98px) { .vh-principles { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); } }
+  .vh-videos { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 28px 48px; align-items: center; }
+  @media (max-width: 899.98px) { .vh-videos { grid-template-columns: minmax(0, 1fr); } }
+  .vh-lyrics { margin: 0; padding: 0 0 0 1.4em; display: flex; flex-direction: column; gap: 12px; font: 600 clamp(19px, 1.8vw, 23px)/1.4 var(--font-display); color: #fff; }
+  .vh-lyrics li::marker { color: var(--amber-400); }
   /* Mosaic: first photo large, the rest fill a 3-column grid (2 columns on tablets, 1 on phones). */
   .vh-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 220px; gap: 12px; }
   .vh-gallery > :first-child { grid-column: span 2; grid-row: span 2; }
