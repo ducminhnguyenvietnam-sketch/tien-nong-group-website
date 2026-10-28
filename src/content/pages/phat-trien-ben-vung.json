@@ -1,188 +1,455 @@
 {
   "seo": {
-    "title": "Phát triển bền vững"
+    "title": "Phát triển bền vững",
+    "description": "Phát triển bền vững tại Tiến Nông: sức khỏe của đất, nhà máy xanh, sinh kế nhà nông và cộng đồng — với chương trình “Ông bố Tiến Nông” đỡ đầu trẻ mồ côi từ năm 1998."
   },
-  "s01_hero": {
-    "t1": "Trang chủ",
-    "t2": "/ Phát triển bền vững",
-    "t3": "PHÁT TRIỂN BỀN VỮNG",
-    "t4": "Vì nền nông nghiệp bền vững và cộng đồng thịnh vượng",
-    "t5": "Nhà máy Bỉm Sơn áp dụng hệ thống quản lý môi trường ISO 14001:2015. Nước thải được xử lý và tuần hoàn để dùng lại trong sản xuất phân vi sinh, tưới cây và xử lý khí thải. Khuôn viên nhà máy có vườn cây ăn trái và vườn rau, bón bằng phân hữu cơ do chính nhà máy sản xuất.",
-    "img_esg_hero_1": {
+  "hero": {
+    "breadcrumb_home": "Trang chủ",
+    "breadcrumb_self": "Phát triển bền vững",
+    "eyebrow": "PHÁT TRIỂN BỀN VỮNG",
+    "title": "Thành công đo bằng mùa màng của nông dân và sức khỏe của đất",
+    "intro": "Với một doanh nghiệp phân bón, phát triển bền vững bắt đầu từ chính sản phẩm: bón đúng, bón đủ để đất khỏe lâu dài, rồi mới đến nhà máy sạch, sinh kế của nhà nông và những việc làm cho cộng đồng.",
+    "button1": "Bốn trụ cột",
+    "button2": "Ông bố Tiến Nông",
+    "image": {
       "src": "/uploads/esg-hero-mvm30reb.jpg",
       "focus": "50% 8.6%",
       "zoom": "100",
       "alt": "Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh"
-    },
-    "t6": "[x] tỷ đồng",
-    "t7": "đóng góp cho cộng đồng (lũy kế)",
-    "t8": "[x]",
-    "t9": "lượt nông dân được tập huấn",
-    "t10": "[x]",
-    "t11": "suất học bổng đã trao",
-    "t12": "ISO 14001",
-    "t13": "hệ thống quản lý môi trường",
-    "t14": "Sản xuất xanh",
-    "t15": "Đồng hành cùng nhà nông",
-    "t16": "Vì cộng đồng",
-    "t17": "Người lao động",
-    "t18": "Lộ trình"
+    }
   },
-  "s02_san_xuat_xanh": {
-    "img_esg_plant_1": {
+  "stats": [
+    {
+      "value": "Từ 1998",
+      "label": "đỡ đầu trẻ mồ côi",
+      "sub": "Chương trình “Ông bố Tiến Nông”"
+    },
+    {
+      "value": "208",
+      "label": "em đang được đỡ đầu",
+      "sub": "Thanh Hóa, Nghệ An, Hà Tĩnh (2025)"
+    },
+    {
+      "value": "Từ 2014",
+      "label": "phân bón trả chậm",
+      "sub": "Cùng Hội Nông dân các tỉnh"
+    },
+    {
+      "value": "ISO 14001",
+      "label": "quản lý môi trường",
+      "sub": "Áp dụng tại các nhà máy"
+    },
+    {
+      "value": "[x] tỷ đồng",
+      "label": "đóng góp cho cộng đồng (lũy kế)",
+      "sub": ""
+    }
+  ],
+  "nav": {
+    "why": "Vì sao",
+    "soil": "Đất khỏe",
+    "plant": "Nhà máy xanh",
+    "farmers": "Sinh kế nhà nông",
+    "community": "Cộng đồng",
+    "governance": "Minh bạch",
+    "roadmap": "Lộ trình"
+  },
+  "why": {
+    "eyebrow": "VÌ SAO",
+    "title": "Bền vững là việc cốt lõi của một công ty phân bón",
+    "text": "Đất canh tác ở nhiều vùng đang bạc màu, chua hóa sau nhiều năm bón phân hóa học thiếu cân đối; chi phí đầu vào tăng trong khi năng suất chững lại. Một bao phân bón đúng có thể giúp cây trồng khỏe hơn mà vẫn trả lại cho đất độ phì nhiêu; một bao phân sai làm điều ngược lại.\n\nVì thế Tiến Nông đặt phát triển bền vững vào chính sản phẩm và cách phục vụ: dinh dưỡng cân đối, tăng hữu cơ — vi sinh, phân tích đất trước khi bón, và đi cùng nhà nông đến hết mùa vụ.",
+    "quote": "Đất luôn là nơi bắt đầu, cây là tiếng nói và phân bón chính là nhịp tim của mùa vụ.",
+    "quote_source": "Tiến Nông, hội nghị đầu bờ mô hình NPK hữu cơ vi sinh (06/2025)",
+    "pillars": [
+      {
+        "title": "Đất khỏe",
+        "text": "Dinh dưỡng cân đối, hữu cơ — vi sinh, phân tích đất trước khi bón.",
+        "anchor": "dat-khoe"
+      },
+      {
+        "title": "Nhà máy xanh",
+        "text": "Sản xuất theo ISO 14001, nước thải tuần hoàn, truy xuất nguồn gốc.",
+        "anchor": "nha-may-xanh"
+      },
+      {
+        "title": "Sinh kế nhà nông",
+        "text": "Phân bón trả chậm, kỹ sư tận ruộng, đồng hành khi mùa vụ gặp khó.",
+        "anchor": "nha-nong"
+      },
+      {
+        "title": "Cộng đồng",
+        "text": "Đỡ đầu trẻ mồ côi, khuyến học, chung tay vượt thiên tai, hướng về biển đảo.",
+        "anchor": "cong-dong"
+      }
+    ]
+  },
+  "soil": {
+    "eyebrow": "TRỤ CỘT 1 · ĐẤT KHỎE",
+    "title": "Khoa học bắt đầu từ đất",
+    "intro": "Phòng Sức khỏe đất và cây trồng cùng Trung tâm Nghiên cứu Phát triển Khoa học & Công nghệ Tiến Nông đưa phân tích đất vào từng mô hình: lấy mẫu, đánh giá, rồi mới chọn công thức bón theo từng giai đoạn sinh trưởng — thay vì một công thức cố định cho cả vụ.",
+    "results": [
+      {
+        "value": "+16,2%",
+        "label": "năng suất lúa",
+        "sub": "Mô hình lúa thân thiện môi trường, Thiệu Tiến, vụ Mùa 2026"
+      },
+      {
+        "value": "7–8 tấn/ha",
+        "label": "lúa dùng NPK hữu cơ vi sinh",
+        "sub": "Mô hình tại Hậu Lộc, Thanh Hóa"
+      },
+      {
+        "value": "15,3 ha",
+        "label": "mía trình diễn tại 6 xã",
+        "sub": "Bón theo kết quả phân tích đất, 2026"
+      }
+    ],
+    "items": [
+      {
+        "title": "NPK hữu cơ vi sinh dạng hạt",
+        "text": "Đề tài nghiên cứu sản xuất NPK hữu cơ vi sinh bằng công nghệ dây chuyền hơi nước, phối hợp cùng Sở Khoa học và Công nghệ Thanh Hóa; mô hình tại Hoằng Xuân và Phú Lộc được đánh giá tại hội nghị đầu bờ.",
+        "link": "/tin-tuc/hoi-nghi-dau-bo-danh-gia-hieu-qua-mo-hinh-phan-bon-npk-huu-co-vi-sinh-gieo-mam/",
+        "image": {
+          "src": "/uploads/tin-cu/2025/hoi-nghi-dau-bo-danh-gia-hieu-qua-mo-hinh-phan-bon-npk-huu-co-vi-sinh-gieo-mam-2.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Hội nghị đầu bờ đánh giá mô hình NPK hữu cơ vi sinh"
+        }
+      },
+      {
+        "title": "Canh tác lúa giảm phát thải",
+        "text": "Cung ứng phân bón cho mô hình canh tác lúa thân thiện môi trường của Hội Nông dân tỉnh Thanh Hóa — hướng tới mục tiêu phát thải ròng bằng 0 vào năm 2050.",
+        "link": "/tin-tuc/tien-nong-dong-hanh-kien-tao-nhung-canh-dong-lua-xanh-va-ben-vung/",
+        "image": {
+          "src": "/uploads/tin-cu/2026/tien-nong-dong-hanh-kien-tao-nhung-canh-dong-lua-xanh-va-ben-vung-1.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Cánh đồng lúa mô hình thân thiện môi trường tại Thiệu Tiến"
+        }
+      },
+      {
+        "title": "Phục hồi đất sau thiên tai",
+        "text": "Sau ngập úng ở vùng dứa Yên Phú (09/2026), kỹ sư xuống đồng lấy mẫu đất, mẫu cây để xác định diện tích có thể phục hồi và cách chăm sóc.",
+        "link": "/tin-tuc/sau-ngap-ung-o-yen-phu-tien-nong-xuong-dong-tim-loi-giai-tu-dat-va-cay/",
+        "image": {
+          "src": "/uploads/tin-cu/2026/sau-ngap-ung-o-yen-phu-tien-nong-xuong-dong-tim-loi-giai-tu-dat-va-cay-2.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Kỹ sư Tiến Nông lấy mẫu đất ở vùng dứa Yên Phú sau ngập úng"
+        }
+      }
+    ]
+  },
+  "plant": {
+    "eyebrow": "TRỤ CỘT 2 · NHÀ MÁY XANH",
+    "title": "Sản xuất quy mô lớn, thân thiện với môi trường",
+    "text": "Các nhà máy của Tiến Nông vận hành theo hệ thống quản lý môi trường ISO 14001, với khuôn viên xanh và quy trình kiểm soát phát thải trong toàn bộ dây chuyền. Nước thải được xử lý và tuần hoàn để dùng lại trong sản xuất phân vi sinh, tưới cây và xử lý khí thải; khuôn viên nhà máy có vườn cây ăn trái và vườn rau bón bằng phân hữu cơ do chính nhà máy sản xuất.",
+    "image": {
       "focus": "100% 2.6%",
       "zoom": "110",
       "alt": "Flycam khuôn viên nhà máy với cây xanh",
       "src": "/uploads/esg-plant-mvby1c2t.jpg"
     },
-    "t1": "01 · SẢN XUẤT XANH",
-    "t2": "Sản xuất quy mô lớn, thân thiện với môi trường",
-    "t3": "Các nhà máy của Tiến Nông vận hành theo hệ thống quản lý môi trường ISO 14001, với khuôn viên xanh và quy trình kiểm soát phát thải trong toàn bộ dây chuyền.",
-    "t4": "[x]%",
-    "t5": "diện tích cây xanh",
-    "t6": "Kiểm soát tại nguồn",
-    "t7": "xử lý bụi, khí thải",
-    "t8": "QCVN 14:2008 cột A",
-    "t9": "nước thải sinh hoạt sau xử lý",
-    "t10": "Tuần hoàn",
-    "t11": "nước thải sản xuất, không xả ra môi trường"
+    "facts": [
+      {
+        "value": "[x]%",
+        "label": "diện tích cây xanh"
+      },
+      {
+        "value": "Kiểm soát tại nguồn",
+        "label": "xử lý bụi, khí thải"
+      },
+      {
+        "value": "QCVN 14:2008 cột A",
+        "label": "nước thải sinh hoạt sau xử lý"
+      },
+      {
+        "value": "Tuần hoàn",
+        "label": "nước thải sản xuất, không xả ra môi trường"
+      }
+    ],
+    "extras": [
+      {
+        "title": "Mã QR trên từng bao",
+        "text": "Người dùng quét mã để xem nguồn gốc, thành phần và hướng dẫn sử dụng — minh bạch với bà con và góp phần ngăn phân bón giả."
+      },
+      {
+        "title": "Quản trị trên nền tảng số",
+        "text": "Hệ thống ứng dụng nội bộ đồng bộ toàn doanh nghiệp giúp chuẩn hóa dữ liệu và tối ưu vận hành."
+      }
+    ]
   },
-  "s03_dong_hanh_cung_nha_nong": {
-    "t1": "02 · ĐỒNG HÀNH CÙNG NHÀ NÔNG",
-    "t2": "Nâng cao nhận thức về canh tác bền vững",
-    "t3": "Tiến Nông phối hợp với chính quyền, hội nông dân và các cơ quan khuyến nông tổ chức chương trình tập huấn, giúp nhà nông sử dụng phân bón hiệu quả và bảo vệ đất canh tác lâu dài.",
-    "t4": "Bón phân cân đối, đúng cách:",
-    "t5": "giảm lãng phí và hạn chế tác động đến môi trường",
-    "t6": "Bảo vệ sức khỏe đất:",
-    "t7": "tăng cường hữu cơ, phục hồi đất bạc màu",
-    "t8": "Hội thảo đầu bờ:",
-    "t9": "chia sẻ kinh nghiệm từ các mô hình hiệu quả",
-    "img_esg_farm_1_1": {
+  "farmers": {
+    "eyebrow": "TRỤ CỘT 3 · SINH KẾ NHÀ NÔNG",
+    "title": "Nhà nông vững thì đồng ruộng mới bền",
+    "text": "Bền vững cũng là để người trồng trọt có lãi và yên tâm theo nghề. Tiến Nông phối hợp với chính quyền, Hội Nông dân và khuyến nông tập huấn bón phân cân đối, đúng cách — và có những chương trình đi cùng bà con qua cả những mùa khó.",
+    "items": [
+      {
+        "title": "Phân bón trả chậm",
+        "text": "Từ năm 2014: bà con nhận phân bón trước, thanh toán sau thu hoạch qua Hội Nông dân."
+      },
+      {
+        "title": "Kỹ sư tận ruộng",
+        "text": "Trung tâm Chăm sóc Phục vụ Nông dân Việt Nam (2020) và hội thảo đầu bờ ở các địa phương."
+      },
+      {
+        "title": "Khi mùa vụ gặp khó",
+        "text": "Giải cứu dưa hấu mùa dịch (2020), trao hơn 100 tấn phân bón hữu cơ sinh học humic cho bà con sau bão lũ (2024)."
+      }
+    ],
+    "button": "Xem chương trình cho nông dân →",
+    "image_1": {
       "focus": "0% 14.4%",
       "zoom": "108",
       "alt": "Lớp tập huấn kỹ thuật cho nông dân",
       "src": "/uploads/esg-farm-1-mvc699rt.jpg"
     },
-    "img_esg_farm_2_1": {
+    "image_2": {
       "focus": "19.2% 100%",
       "zoom": "108",
       "alt": "Hội thảo đầu bờ",
       "src": "/uploads/esg-farm-2-mvc442i0.jpg"
     },
-    "img_esg_farm_3_1": {
+    "image_3": {
       "focus": "37.9% 50%",
       "zoom": "100",
       "alt": "Kỹ sư hướng dẫn tại ruộng",
       "src": "/uploads/esg-farm-3-mvc45k3i.jpg"
     }
   },
-  "s04_vi_cong_dong": {
-    "t1": "03 · VÌ CỘNG ĐỒNG",
-    "t2": "Sẻ chia lợi ích, vun đắp cộng đồng",
-    "t3": "Những chương trình được duy trì qua nhiều năm, tập trung vào giáo dục, biển đảo và hỗ trợ người yếu thế."
+  "orphans": {
+    "eyebrow": "TRỤ CỘT 4 · CỘNG ĐỒNG",
+    "title": "“Ông bố Tiến Nông” — gần 30 năm đỡ đầu trẻ mồ côi",
+    "intro": "Chương trình bắt đầu từ năm 1998, từ tâm niệm “Được hưởng thụ phải sẻ chia” của người sáng lập — người từng mồ côi cả cha lẫn mẹ. Mỗi em được nhận đỡ đầu trở thành một thành viên của “Gia đình Tiến Nông”: được hỗ trợ hằng tháng cho đến 18 tuổi, được công ty xem xét hỗ trợ tiếp nếu học đại học, và được cán bộ Tiến Nông ở địa phương thăm hỏi, động viên như con cháu trong nhà.",
+    "stats": [
+      {
+        "value": "1998",
+        "label": "năm bắt đầu",
+        "sub": ""
+      },
+      {
+        "value": "208",
+        "label": "em đang được đỡ đầu",
+        "sub": "Thanh Hóa, Nghệ An, Hà Tĩnh (06/2025)"
+      },
+      {
+        "value": "0,5–1 triệu",
+        "label": "đồng mỗi tháng, mỗi em",
+        "sub": "Đến 18 tuổi; tiếp tục nếu học đại học"
+      }
+    ],
+    "story_title": "Người con đầu tiên",
+    "story": "Một trong những em đầu tiên được Tiến Nông trợ cấp là Ngô Hùng Hà, mồ côi mẹ khi mới một tháng tuổi và mất cả cha năm lên mười. Hà được hỗ trợ hằng tháng suốt những năm đi học; năm 2009, khi đã qua tuổi nhận trợ cấp, em vẫn được gia đình Tiến Nông quyên góp 50 triệu đồng chi phí mổ tim. Nhiều em như Hà nay đã trưởng thành — có em đã quay lại đồng hành cùng Tiến Nông, tiếp tục hành trình trao yêu thương.",
+    "image": {
+      "src": "/uploads/tin-cu/2024/ong-bo-tien-nong-dem-tet-gan-ket-yeu-thuong-den-187-tre-mo-coi-1.webp",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Các em nhỏ mồ côi được Tiến Nông đỡ đầu trong chương trình “Tết gắn kết yêu thương”"
+    },
+    "timeline": [
+      {
+        "when": "1998",
+        "title": "Bắt đầu nhận đỡ đầu",
+        "text": "Những em nhỏ mồ côi đầu tiên ở Thanh Hóa được nhận trợ cấp hằng tháng.",
+        "link": ""
+      },
+      {
+        "when": "2018",
+        "title": "50 em ở Thanh Hóa",
+        "text": "Gặp mặt “Đại gia đình Tiến Nông với trẻ mồ côi” nhân Ngày Gia đình Việt Nam, cùng Hội Bảo trợ người khuyết tật và trẻ mồ côi tỉnh.",
+        "link": "/tin-tuc/nguoi-chap-canh-uoc-mo-cho-nhung-manh-doi-bat-hanh/"
+      },
+      {
+        "when": "2019",
+        "title": "Lan tỏa thành chương trình 1.000 trẻ",
+        "text": "Mô hình của Tiến Nông trở thành chương trình “Doanh nhân trẻ Việt Nam nhận đỡ đầu 1.000 trẻ mồ côi” của Hội Doanh nhân trẻ Việt Nam.",
+        "link": "/tin-tuc/hoi-bao-tro-nguoi-khuyet-tat-va-tre-mo-coi-viet-nam-to-chuc-hoi-nghi-so-ket/"
+      },
+      {
+        "when": "2021",
+        "title": "Thêm 25 em, học bổng cho 138 em",
+        "text": "Cán bộ đến từng gia đình ở 15 huyện, thị của Thanh Hóa để tìm hiểu hoàn cảnh trước khi nhận đỡ đầu.",
+        "link": "/tin-tuc/cong-ty-tien-nong-tiep-tuc-nhan-do-dau-25-tre-mo-coi-va-trao-hoc-bong-cho-138/"
+      },
+      {
+        "when": "2024",
+        "title": "Tết gắn kết yêu thương",
+        "text": "Quà Tết và học bổng cho 187 em, tổng kinh phí hơn 600 triệu đồng; nhận thêm 20 em ở Nghệ An.",
+        "link": "/tin-tuc/ong-bo-tien-nong-dem-tet-gan-ket-yeu-thuong-den-187-tre-mo-coi/"
+      },
+      {
+        "when": "2025",
+        "title": "208 em đang được đỡ đầu",
+        "text": "Ở ba tỉnh Thanh Hóa, Nghệ An, Hà Tĩnh — hỗ trợ tài chính, học tập và chăm sóc tinh thần định kỳ.",
+        "link": "/tin-tuc/thang-hanh-dong-vi-tre-em-2025-tien-nong-tiep-tuc-hanh-trinh-trao-yeu-thuong/"
+      }
+    ],
+    "partners": "Đồng hành: Hội Bảo trợ Người khuyết tật, Trẻ mồ côi & Bảo vệ quyền trẻ em; Hội Liên hiệp Phụ nữ; Hội Doanh nhân trẻ Việt Nam."
   },
-  "s05_nguoi_lao_dong": {
-    "t1": "04 · NGƯỜI LAO ĐỘNG",
-    "t2": "Gắn bó bền lâu, cùng nhau phát triển",
-    "t3": "Môi trường làm việc an toàn, đãi ngộ xứng đáng và sự ghi nhận dành cho mỗi chặng đường cống hiến.",
-    "t4": "Con người Tiến Nông →"
+  "programs": {
+    "eyebrow": "NHỮNG CHƯƠNG TRÌNH KHÁC",
+    "title": "Khuyến học, thiên tai, biển đảo và người yếu thế",
+    "intro": "Những chương trình được duy trì qua nhiều năm, tập trung vào giáo dục, biển đảo và hỗ trợ người yếu thế.",
+    "all_label": "Tất cả",
+    "items": [
+      {
+        "tag": "KHUYẾN HỌC",
+        "year": "2026",
+        "title": "Ủng hộ 1,55 tỷ đồng cho công tác khuyến học tỉnh Thanh Hóa",
+        "body": "Đồng hành cùng Hội Khuyến học tỉnh chăm lo cho học sinh có hoàn cảnh khó khăn và học sinh giỏi.",
+        "image": {
+          "src": "/uploads/prog-0-mvgcwitw.jpg",
+          "focus": "58.6% 57.3%",
+          "zoom": "150",
+          "alt": "Lễ trao biển ủng hộ khuyến học"
+        },
+        "link": "/tin-tuc/tien-nong-dang-ky-ung-ho-155-ty-dong-cho-cong-tac-khuyen-hoc-tinh-thanh-hoa/"
+      },
+      {
+        "tag": "KHUYẾN HỌC",
+        "year": "2025",
+        "title": "Ủng hộ 1,5 tỷ đồng cho Quỹ “Tết khuyến học xứ Thanh”",
+        "body": "Chung tay cùng tỉnh Thanh Hóa chăm lo cho học sinh nghèo vượt khó dịp Tết Ất Tỵ.",
+        "image": {
+          "src": "/uploads/tin-cu/2025/tien-nong-ung-ho-15-ty-dong-cho-quy-tet-khuyen-hoc-xu-thanh-xuan-at-ty-2025.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Trao ủng hộ Quỹ Tết khuyến học xứ Thanh"
+        },
+        "link": "/tin-tuc/tien-nong-ung-ho-15-ty-dong-cho-quy-tet-khuyen-hoc-xu-thanh-xuan-at-ty-2025/"
+      },
+      {
+        "tag": "BIỂN ĐẢO",
+        "year": "2026",
+        "title": "Đồng hành cùng chương trình “Xanh hoá Trường Sa\"",
+        "body": "Góp phần phủ xanh các đảo tiền tiêu bằng giải pháp dinh dưỡng cho cây trồng trên đất cát, đất nhiễm mặn.",
+        "image": {
+          "src": "/uploads/prog-1-mvgcxoru.jpg",
+          "focus": "60.8% 69%",
+          "zoom": "110",
+          "alt": "Cây xanh trên đảo Trường Sa"
+        },
+        "link": "/phat-trien-ben-vung/xanh-hoa-truong-sa/"
+      },
+      {
+        "tag": "BIỂN ĐẢO",
+        "year": "2026",
+        "title": "Cuộc thi “Em viết thư gửi Chiến sĩ Trường Sa”",
+        "body": "Khơi dậy tình yêu biển đảo trong thế hệ trẻ thông qua những lá thư gửi các chiến sĩ.",
+        "image": {
+          "src": "/uploads/prog-2-mvgd1iiq.jpg",
+          "focus": "77% 55.6%",
+          "zoom": "108",
+          "alt": "Học sinh viết thư"
+        },
+        "link": "/tin-tuc/133-la-thu-tu-dat-lien-gui-truong-sa-tien-nong-gieo-nhung-mam-xanh-yeu-thuong/"
+      },
+      {
+        "tag": "GIÁO DỤC",
+        "year": "2026",
+        "title": "Đón học sinh, sinh viên tham quan trải nghiệm thực tế",
+        "body": "Mở cửa nhà máy và phòng thí nghiệm để thế hệ trẻ hiểu hơn về nông nghiệp khoa học.",
+        "image": {
+          "src": "/uploads/prog-3-mvgd470k.jpg",
+          "focus": "50% 51.3%",
+          "zoom": "103",
+          "alt": "Sinh viên tham quan nhà máy"
+        },
+        "link": ""
+      },
+      {
+        "tag": "THIÊN TAI",
+        "year": "2024",
+        "title": "Ủng hộ đồng bào các tỉnh phía Bắc thiệt hại do bão lụt",
+        "body": "1,45 tỷ đồng gửi đến đồng bào các tỉnh phía Bắc chịu thiệt hại do bão lũ, qua Ủy ban Trung ương Mặt trận Tổ quốc Việt Nam.",
+        "image": {
+          "src": "/uploads/prog-5-mvgd5dzo.jpg",
+          "focus": "44.9% 78.8%",
+          "zoom": "116",
+          "alt": "Cứu trợ đồng bào vùng lũ"
+        },
+        "link": "/tin-tuc/cong-ty-tien-nong-ho-tro-dong-bao-lu-lut-gan-15-ty-dong/"
+      },
+      {
+        "tag": "THIÊN TAI",
+        "year": "2024",
+        "title": "Hơn 100 tấn phân bón hữu cơ sinh học humic cho bà con vùng lũ",
+        "body": "Hỗ trợ bà con khôi phục sản xuất sau bão lũ, kèm hướng dẫn kỹ thuật chăm sóc đất và cây sau ngập.",
+        "image": {
+          "src": "/uploads/tin-cu/2024/cong-ty-tien-nong-trao-tang-hon-100-tan-phan-bon-huu-co-sinh-hoc-humic-tien.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Trao tặng phân bón hữu cơ sinh học humic hỗ trợ bà con sau bão lũ"
+        },
+        "link": "/tin-tuc/cong-ty-tien-nong-trao-tang-hon-100-tan-phan-bon-huu-co-sinh-hoc-humic-tien/"
+      },
+      {
+        "tag": "NGƯỜI YẾU THẾ",
+        "year": "2025",
+        "title": "Hỗ trợ kinh phí, xây dựng nhà ở cho hộ nghèo",
+        "body": "Xây nhà cho hộ nghèo, hộ chính sách khó khăn về nhà ở tại huyện Quan Sơn, trị giá 160 triệu đồng.",
+        "image": {
+          "src": "/uploads/prog-4-mvgdclz2.jpg",
+          "focus": "43% 90.5%",
+          "zoom": "138",
+          "alt": "Hoạt động hỗ trợ người yếu thế"
+        },
+        "link": ""
+      }
+    ]
   },
-  "s06_lo_trinh": {
-    "t1": "05 · LỘ TRÌNH",
-    "t2": "Hướng tới báo cáo phát triển bền vững đầu tiên",
-    "t3": "Chúng tôi đang chuẩn hóa việc đo lường và công bố các chỉ số môi trường, xã hội và quản trị, hướng tới minh bạch theo thông lệ quốc tế.",
-    "t4": "2026",
-    "t5": "Thực hành",
-    "t6": "ISO 14001, chương trình cộng đồng và tập huấn nhà nông được duy trì thường xuyên.",
-    "t7": "07/2026",
-    "t8": "Đo lường",
-    "t9": "Uỷ ban ESG được thành lập. Xây dựng bộ chỉ số và hệ thống thu thập dữ liệu",
-    "t10": "2027",
-    "t11": "Công bố",
-    "t12": "Phát hành báo cáo phát triển bền vững đầu tiên"
+  "workers": {
+    "eyebrow": "NGƯỜI LAO ĐỘNG",
+    "title": "Gắn bó bền lâu, cùng nhau phát triển",
+    "text": "Môi trường làm việc an toàn, đãi ngộ xứng đáng và sự ghi nhận dành cho mỗi chặng đường cống hiến — thâm niên làm việc bình quân của người Tiến Nông là 10 năm.",
+    "button": "Con người Tiến Nông →"
   },
-  "programs": [
-    {
-      "tag": "KHUYẾN HỌC",
-      "year": "2026",
-      "title": "Ủng hộ 1,55 tỷ đồng cho công tác khuyến học tỉnh Thanh Hóa",
-      "body": "Đồng hành cùng Hội Khuyến học tỉnh chăm lo cho học sinh có hoàn cảnh khó khăn và học sinh giỏi.",
-      "image": {
-        "src": "/uploads/prog-0-mvgcwitw.jpg",
-        "focus": "58.6% 57.3%",
-        "zoom": "150",
-        "alt": "Lễ trao biển ủng hộ khuyến học"
+  "governance": {
+    "eyebrow": "MINH BẠCH & GHI NHẬN",
+    "title": "Làm ăn đàng hoàng là nền móng của bền vững",
+    "items": [
+      {
+        "title": "Nộp ngân sách cao nhất từ trước tới nay",
+        "text": "Năm 2025, mức đóng góp ngân sách nhà nước cao nhất trong lịch sử công ty; được Chủ tịch UBND tỉnh Thanh Hóa tặng Bằng khen vì chấp hành tốt chính sách thuế.",
+        "link": ""
+      },
+      {
+        "title": "Sáu lần Sao Vàng Đất Việt",
+        "text": "Giải thưởng dành cho thương hiệu Việt tiêu biểu — Tiến Nông nhận lần thứ sáu năm 2024.",
+        "link": "/tin-tuc/cong-ty-tien-nong-lan-thu-6-nhan-giai-thuong-sao-vang-dat-viet-2024/"
+      },
+      {
+        "title": "ISO 9001 và ISO 14001",
+        "text": "Hệ thống quản lý chất lượng và quản lý môi trường được áp dụng tại các nhà máy.",
+        "link": ""
+      },
+      {
+        "title": "Uỷ ban ESG",
+        "text": "Thành lập 07/2026 để xây dựng bộ chỉ số và công bố báo cáo phát triển bền vững đầu tiên.",
+        "link": ""
       }
-    },
-    {
-      "tag": "BIỂN ĐẢO",
-      "year": "2026",
-      "title": "Đồng hành cùng chương trình “Xanh hoá Trường Sa\"",
-      "body": "Góp phần phủ xanh các đảo tiền tiêu bằng giải pháp dinh dưỡng cho cây trồng trên đất cát, đất nhiễm mặn.",
-      "image": {
-        "src": "/uploads/prog-1-mvgcxoru.jpg",
-        "focus": "60.8% 69%",
-        "zoom": "110",
-        "alt": "Cây xanh trên đảo Trường Sa"
+    ]
+  },
+  "roadmap": {
+    "eyebrow": "LỘ TRÌNH",
+    "title": "Hướng tới báo cáo phát triển bền vững đầu tiên",
+    "intro": "Chúng tôi đang chuẩn hóa việc đo lường và công bố các chỉ số môi trường, xã hội và quản trị, hướng tới minh bạch theo thông lệ quốc tế.",
+    "steps": [
+      {
+        "when": "2026",
+        "title": "Thực hành",
+        "text": "ISO 14001, chương trình cộng đồng và tập huấn nhà nông được duy trì thường xuyên."
+      },
+      {
+        "when": "07/2026",
+        "title": "Đo lường",
+        "text": "Uỷ ban ESG được thành lập. Xây dựng bộ chỉ số và hệ thống thu thập dữ liệu."
+      },
+      {
+        "when": "2027",
+        "title": "Công bố",
+        "text": "Phát hành báo cáo phát triển bền vững đầu tiên."
       }
-    },
-    {
-      "tag": "BIỂN ĐẢO",
-      "year": "2026",
-      "title": "Cuộc thi “Em viết thư gửi Chiến sĩ Trường Sa”",
-      "body": "Khơi dậy tình yêu biển đảo trong thế hệ trẻ thông qua những lá thư gửi các chiến sĩ.",
-      "image": {
-        "src": "/uploads/prog-2-mvgd1iiq.jpg",
-        "focus": "77% 55.6%",
-        "zoom": "108",
-        "alt": "Học sinh viết thư"
-      }
-    },
-    {
-      "tag": "GIÁO DỤC",
-      "year": "2026",
-      "title": "Đón học sinh, sinh viên tham quan trải nghiệm thực tế",
-      "body": "Mở cửa nhà máy và phòng thí nghiệm để thế hệ trẻ hiểu hơn về nông nghiệp khoa học.",
-      "image": {
-        "src": "/uploads/prog-3-mvgd470k.jpg",
-        "focus": "50% 51.3%",
-        "zoom": "103",
-        "alt": "Sinh viên tham quan nhà máy"
-      }
-    },
-    {
-      "tag": "NGƯỜI YẾU THẾ",
-      "year": "2025",
-      "title": "Hỗ trợ kinh phí, xây dựng nhà ở cho hộ nghèo",
-      "body": "Xây nhà cho hộ nghèo, hộ chính sách, hộ khó khăn về nhà ở huyện Quan Sơn. Giá trị 160 triệu đồng",
-      "image": {
-        "src": "/uploads/prog-4-mvgdclz2.jpg",
-        "focus": "43% 90.5%",
-        "zoom": "138",
-        "alt": "Hoạt động hỗ trợ người yếu thế"
-      }
-    },
-    {
-      "tag": "NGƯỜI YẾU THẾ",
-      "year": "2024",
-      "title": "Ủng hộ đồng bào các tỉnh phía Bắc thiệt hại do bão lụt",
-      "body": "1,45 tỷ đồng gửi đến đồng bào các tỉnh phía Bắc chịu thiệt hại do bão lũ qua Ủy ban Trung ương Mặt trận Tổ quốc Việt Nam",
-      "image": {
-        "src": "/uploads/prog-5-mvgd5dzo.jpg",
-        "focus": "44.9% 78.8%",
-        "zoom": "116",
-        "alt": "Cứu trợ đồng bào vùng lũ"
-      }
-    },
-    {
-      "tag": "KHUYẾN HỌC",
-      "year": "Từ 2019",
-      "title": "Đỡ đầu trẻ mồ côi – “Ông bố Tiến Nông”",
-      "body": "Tham gia chương trình “Đỡ đầu 1.000 trẻ mồ côi Việt Nam” của Hội Doanh nhân trẻ Việt Nam. Đến năm 2024, Tiến Nông đỡ đầu hơn 200 trẻ mồ côi.",
-      "image": {
-        "focus": "center",
-        "zoom": "100"
-      }
-    }
-  ]
+    ]
+  }
 }

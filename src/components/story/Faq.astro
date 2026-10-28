@@ -1,0 +1,16 @@
+---
+/** Questions and answers as a single-open accordion (script: src/scripts/accordion.ts). */
+import { isFilled } from '../../lib/content';
+
+interface Props { id: string; items: { q?: string; a?: string }[] }
+const { id } = Astro.props;
+const items = (Astro.props.items ?? []).filter((f) => isFilled(f.q) && isFilled(f.a));
+---
+{items.length > 0 && <div class="st-faq" data-accordion>
+{items.map((f, k) => (
+<div>
+<button type="button" data-acc aria-expanded={k === 0 ? 'true' : 'false'} aria-controls={`${id}-${k}`}><span>{f.q}</span><span data-acc-sign aria-hidden="true">{k === 0 ? '−' : '+'}</span></button>
+<p id={`${id}-${k}`} hidden={k !== 0}>{f.a}</p>
+</div>
+))}
+</div>}

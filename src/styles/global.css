@@ -1,6 +1,7 @@
 @import './tokens.css';
 @import './base.css';
 @import './v2.css';
+@import './story.css';
 
 /* Page-level rules every design page declared in its <helmet>. */
 html, body { margin: 0; padding: 0; }

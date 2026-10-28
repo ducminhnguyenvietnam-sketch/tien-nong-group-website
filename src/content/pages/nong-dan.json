@@ -1,116 +1,399 @@
 {
   "seo": {
-    "title": "Nông dân Tiến Nông"
+    "title": "Nông dân Tiến Nông",
+    "description": "Hơn 300.000 hộ nông dân canh tác cùng Tiến Nông: phân bón trả chậm qua Hội Nông dân, kỹ sư đồng hành trọn mùa vụ, mô hình trình diễn và tư vấn kỹ thuật miễn phí."
   },
-  "s01_hero": {
-    "img_farmer_hero_1": {
+  "hero": {
+    "breadcrumb": "Trang chủ / Nông dân Tiến Nông",
+    "eyebrow": "NÔNG DÂN TIẾN NÔNG",
+    "title": "Bà con được mùa, Tiến Nông mới được mùa",
+    "intro": "Hơn 300.000 hộ nông dân trên khắp cả nước đang canh tác cùng Tiến Nông. Chúng tôi đi cùng bà con từ lúc chọn phân, bón phân đến khi thu hoạch — và cả những khi mùa vụ gặp khó.",
+    "button1": "Đăng ký tư vấn →",
+    "button2": "Phân bón trả chậm",
+    "hotline_label": "Hotline kỹ sư",
+    "hotline": "[số hotline kỹ sư]",
+    "image": {
       "src": "/uploads/farmer-hero-mvbxzn12.jpg",
       "focus": "0% 37.3%",
       "zoom": "101",
       "alt": "Nông dân và kỹ sư Tiến Nông trên cánh đồng"
-    },
-    "t1": "Trang chủ / Nông dân Tiến Nông",
-    "t2": "CỘNG ĐỒNG NÔNG DÂN TIẾN NÔNG",
-    "t3": "Đồng hành cùng nhà nông trên mọi miền đất nước",
-    "t4": "Kết nối hơn 300.000 hộ nông dân để chia sẻ kiến thức, kinh nghiệm canh tác và những mô hình hiệu quả.",
-    "t5": "Tham gia cộng đồng →",
-    "t6": "Hotline kỹ sư: [số]"
+    }
   },
-  "s02_dang_ky": {
-    "t1": "THAM GIA CỘNG ĐỒNG",
-    "t2": "Trở thành thành viên Nông dân Tiến Nông",
-    "t3": "Dành cho nông dân, chủ trang trại, hợp tác xã và tổ hợp tác muốn được hỗ trợ kỹ thuật và kết nối với cộng đồng canh tác hiệu quả.",
-    "t4": "Cập nhật kiến thức và mô hình canh tác hiệu quả",
-    "t5": "Được kỹ sư nông học tư vấn miễn phí",
-    "t6": "Ưu tiên tham gia hội thảo đầu bờ, chương trình thực tế",
-    "t7": "Kết nối với cộng đồng nhà nông trên toàn quốc",
-    "t8": "ĐÃ GỬI ĐĂNG KÝ",
-    "t9": "Cảm ơn bà con đã đăng ký!",
-    "t10": "Kỹ sư Tiến Nông phụ trách khu vực sẽ liên hệ qua số điện thoại đã đăng ký.",
-    "t11": "Đăng ký thêm thành viên",
-    "f1": "Họ và tên *",
-    "f2": "Nguyễn Văn A",
-    "f3": "Số điện thoại / Zalo *",
-    "f4": "09xx xxx xxx",
-    "f5": "Tỉnh / thành phố *",
-    "f6": "VD: Thanh Hóa",
-    "f7": "Cây trồng chính *",
-    "f8": "Tôi đồng ý để Tiến Nông xử lý dữ liệu cá nhân theo Chính sách bảo mật.",
-    "t12": "Gửi đăng ký",
-    "t13": "Hoặc nhắn Zalo OA Tiến Nông để đăng ký nhanh."
-  },
-  "s03_cau_chuyen_nha_nong": {
-    "t1": "CÂU CHUYỆN NHÀ NÔNG",
-    "t2": "Những câu chuyện thật, những mùa vàng thật",
-    "t3": "Hành trình thay đổi trên chính đồng ruộng của những người nông dân đồng hành cùng Tiến Nông.",
-    "img_story_1_1": {
-      "src": "/uploads/story-1-mvc7n6uw.jpg",
-      "focus": "52.1% 100%",
-      "zoom": "106",
-      "alt": "Chân dung nông dân trên ruộng"
-    },
-    "t4": "NHÃN · XÃ HUỔI MỘT, TỈNH SƠN LA",
-    "t5": "“Từ khi dùng phân bón Tiến Nông, vừa tiết kiệm được chi phí chăm bón, vừa nâng được năng suất, nên bà con chúng tôi yên tâm làm lâu dài”",
-    "t6": "+ 700 triệu",
-    "t7": "Lợi nhuận năm",
-    "t8": "5 năm",
-    "t9": "đồng hành",
-    "t10": "Ông Quàng Văn Pành · 3 ha nhãn",
-    "img_story_2_1": {
-      "src": "/uploads/story-2-mvkgg1hj.jpg",
-      "focus": "60.7% 50%",
-      "zoom": "100",
-      "alt": "Chân dung nông dân vườn cà phê"
-    },
-    "t11": "DỨA · XÃ NGỌC TRẠO, TỈNH THANH HÓA",
-    "t12": "\"Bón theo từng giai đoạn giúp mình biết lúc nào cây cần gì, bón bao nhiêu\"",
-    "t13": "- 200 nghìn/ tấn phân bón",
-    "t14": "Chi phí",
-    "t17": "Ông Quách Văn Tấn · 1.5 ha dứa",
-    "t18": "Xem thêm câu chuyện →"
-  },
-  "s04_hoi_thao_dau_bo": {
-    "t1": "CHƯƠNG TRÌNH TẬP HUẤN",
-    "t2": "Kỹ sư Tiến Nông đồng hành tại địa phương",
-    "t3": "Hình ảnh và chia sẻ từ các buổi tập huấn, hội nghị, hội thảo đầu bờ do kỹ sư Tiến Nông tổ chức cùng bà con tại địa phương.",
-    "t4": "Xem tất cả bài hội thảo →",
-    "t5": "Bài hội thảo đầu bờ sẽ được cập nhật tại đây."
-  },
-  "s05_hoi_dap": {
-    "t1": "NHÀ NÔNG HỎI · TIẾN NÔNG TRẢ LỜI",
-    "t2": "Giải đáp những thắc mắc thường gặp",
-    "t3": "Chưa tìm thấy câu trả lời? Gọi hotline kỹ sư hoặc gửi câu hỏi qua Zalo OA Tiến Nông."
-  },
-  "faq": [
+  "stats": [
     {
-      "q": "Nên bón phân Tiến Nông vào thời điểm nào là tốt nhất?",
-      "a": "Mỗi cây trồng có các giai đoạn bón khác nhau (lót, thúc, nuôi quả). Hướng dẫn chi tiết được in trên bao bì và trang thông tin từng sản phẩm. Kỹ sư Tiến Nông có thể tư vấn lịch bón theo giống và mùa vụ tại địa phương."
+      "value": "300.000+",
+      "label": "hộ nông dân",
+      "sub": "Canh tác cùng Tiến Nông"
     },
     {
-      "q": "Làm thế nào để cải tạo đất bạc màu, kém dinh dưỡng?",
-      "a": "Nên phân tích đất để xác định nguyên nhân, sau đó kết hợp điều hòa pH, bổ sung phân hữu cơ – vi sinh và bón NPK cân đối theo nhu cầu cây trồng."
+      "value": "Từ 2014",
+      "label": "phân bón trả chậm",
+      "sub": "Qua Hội Nông dân các tỉnh"
     },
     {
-      "q": "Có thể kết hợp phân Tiến Nông với phân hữu cơ không?",
-      "a": "Có. Kết hợp phân hữu cơ giúp cải thiện cấu trúc đất và tăng hiệu quả hấp thu dinh dưỡng của phân NPK."
+      "value": "10.000+",
+      "label": "điểm bán lẻ",
+      "sub": "Gần ruộng của bà con"
     },
     {
-      "q": "Tiến Nông có hỗ trợ tư vấn kỹ thuật tại địa phương không?",
-      "a": "Có. Đội ngũ kỹ sư nông học của Tiến Nông thường xuyên tổ chức hội thảo đầu bờ và tư vấn trực tiếp. Đăng ký thành viên hoặc gọi hotline để được hỗ trợ."
-    },
-    {
-      "q": "Làm sao để phân biệt sản phẩm Tiến Nông chính hãng?",
-      "a": "Mỗi bao sản phẩm Tiến Nông có mã QR truy xuất nguồn gốc. Quét mã bằng điện thoại để xem nguồn gốc, thành phần và hướng dẫn sử dụng. Nếu không quét được hoặc thông tin không khớp, vui lòng gọi 02373.729.729 để được hỗ trợ."
+      "value": "34",
+      "label": "tỉnh, thành",
+      "sub": "Có hệ thống phân phối Tiến Nông"
     }
   ],
-  "form_crops": [
-    "Lúa",
-    "Ngô",
-    "Rau màu",
-    "Cây ăn quả",
-    "Cà phê",
-    "Chè",
-    "Mía",
-    "Khác"
-  ]
+  "promises": {
+    "eyebrow": "CAM KẾT VỚI BÀ CON",
+    "title": "Bốn điều Tiến Nông giữ với nhà nông",
+    "intro": "",
+    "items": [
+      {
+        "title": "Hàng thật, quét là biết",
+        "text": "Mỗi bao phân bón Tiến Nông có mã QR truy xuất nguồn gốc: quét bằng điện thoại để xem thành phần và hướng dẫn sử dụng."
+      },
+      {
+        "title": "Kỹ sư xuống tận ruộng",
+        "text": "Kỹ sư nông học tư vấn miễn phí, tổ chức hội thảo đầu bờ và mô hình trình diễn ngay tại địa phương."
+      },
+      {
+        "title": "Mua trước, trả sau",
+        "text": "Phân bón trả chậm qua Hội Nông dân: bà con có phân đúng thời vụ, thanh toán sau khi thu hoạch."
+      },
+      {
+        "title": "Mùa khó, cùng gánh",
+        "text": "Khi dịch bệnh, bão lũ ảnh hưởng mùa vụ, Tiến Nông cùng bà con tìm đầu ra, hỗ trợ phân bón và kỹ thuật phục hồi."
+      }
+    ]
+  },
+  "season": {
+    "eyebrow": "ĐỒNG HÀNH TRỌN MÙA VỤ",
+    "title": "Từ trước khi gieo đến sau khi gặt",
+    "intro": "Kỹ sư Tiến Nông không chỉ bán phân bón mà theo cây trồng của bà con qua từng giai đoạn.",
+    "steps": [
+      {
+        "title": "Trước vụ",
+        "text": "Tìm hiểu đất và giống, lấy mẫu phân tích ở vùng sản xuất tập trung, gợi ý công thức bón lót phù hợp từng cây trồng."
+      },
+      {
+        "title": "Trong vụ",
+        "text": "Hướng dẫn bón thúc theo giai đoạn sinh trưởng, thăm đồng, tổ chức hội thảo đầu bờ để bà con cùng xem kết quả."
+      },
+      {
+        "title": "Sau vụ",
+        "text": "Cùng tổng kết năng suất, chi phí; hỗ trợ kỹ thuật phục hồi đất và kết nối đầu ra khi thị trường khó khăn."
+      }
+    ]
+  },
+  "deferred": {
+    "eyebrow": "PHÂN BÓN TRẢ CHẬM",
+    "title": "Có phân đúng vụ, trả tiền sau thu hoạch",
+    "intro": "Từ năm 2014, Tiến Nông phối hợp với Hội Nông dân các cấp cung ứng phân bón trả chậm cho hội viên: bà con nhận phân bón trước, thanh toán sau khi thu hoạch. Nhờ đó bà con được dùng vật tư bảo đảm chất lượng, giảm gánh nặng vốn đầu vụ để tập trung sản xuất — và Hội Nông dân gắn kết hội viên với tổ chức.",
+    "how_title": "Cách chương trình vận hành",
+    "how": [
+      {
+        "title": "Đăng ký với Hội Nông dân xã",
+        "text": "Hội viên đăng ký nhu cầu phân bón cho vụ sản xuất với chi hội, Hội Nông dân xã."
+      },
+      {
+        "title": "Hội tín chấp, nhận hàng",
+        "text": "Hội Nông dân xã đứng ra tín chấp, ký hợp đồng trách nhiệm với Tiến Nông, nhận phân bón và cung ứng cho hội viên."
+      },
+      {
+        "title": "Bón đúng thời vụ",
+        "text": "Bà con có phân bón đúng lúc cây cần, được kỹ sư Tiến Nông hướng dẫn cách bón."
+      },
+      {
+        "title": "Thanh toán sau thu hoạch",
+        "text": "Cuối vụ, Hội Nông dân xã thu tiền và thanh toán cho Tiến Nông."
+      }
+    ],
+    "timeline": [
+      {
+        "when": "11/2014",
+        "title": "Bắt đầu tại Hoằng Hóa",
+        "text": "Hội nghị triển khai đầu tiên cùng Hội Nông dân huyện Hoằng Hóa (Thanh Hóa), với lãnh đạo Hội của 43 xã.",
+        "link": "/tin-tuc/hoi-nghi-trien-khai-chuong-trinh-dich-vu-ho-tro-cung-ung-phan-bon-tra-cham-cho/"
+      },
+      {
+        "when": "2015–2016",
+        "title": "Mở rộng ra nhiều tỉnh",
+        "text": "Theo chỉ đạo của Trung ương Hội Nông dân Việt Nam, Hội Nông dân tỉnh Bắc Giang trực tiếp ký kết với Tiến Nông; chương trình đến với Hòa Bình và nhiều huyện của Thanh Hóa.",
+        "link": "/tin-tuc/bac-giang-cung-ung-phan-bon-tra-cham-cho-nong-dan-gan-ket-hoi-vien-voi-to-chuc/"
+      },
+      {
+        "when": "2016",
+        "title": "Sản phẩm mang logo Hội Nông dân",
+        "text": "Phân bón N.P.K.Si “Vì nông dân Việt” được Trung ương Hội Nông dân Việt Nam thẩm định và cho in logo của Hội lên bao bì.",
+        "link": "/tin-tuc/nha-nong-bac-giang-huong-loi-voi-phan-bon-tra-cham/"
+      },
+      {
+        "when": "2019",
+        "title": "Phủ khắp 183 xã ở Bắc Giang",
+        "text": "Các cấp Hội Nông dân tỉnh Bắc Giang cung ứng phân bón trả chậm cho hội viên ở 183 xã, thị trấn thuộc 10 huyện, thành phố.",
+        "link": ""
+      },
+      {
+        "when": "03/2024",
+        "title": "Tổng kết 5 năm cùng Hội Nông dân Thanh Hóa",
+        "text": "Tổng kết chương trình phối hợp giai đoạn 2019–2023 và ký kết giai đoạn mới.",
+        "link": "/tin-tuc/tien-nong-tiep-tuc-cung-ung-phan-bon-tra-cham-toi-nong-dan/"
+      },
+      {
+        "when": "07/2025",
+        "title": "Triển khai tại Bắc Ninh",
+        "text": "Tiếp tục chương trình tại tỉnh Bắc Ninh sau khi sáp nhập với Bắc Giang.",
+        "link": "/tin-tuc/hoi-nghi-trien-khai-chuong-trinh-cung-ung-phan-bon-tien-nong-tra-cham-cho-nong/"
+      }
+    ],
+    "join_title": "Bà con muốn tham gia?",
+    "join_text": "Liên hệ Hội Nông dân xã nơi mình sinh sống, hoặc để lại thông tin ở cuối trang — kỹ sư Tiến Nông phụ trách khu vực sẽ hướng dẫn chương trình đang triển khai tại địa phương.",
+    "image": {
+      "src": "/uploads/tin-cu/2014/hoi-nghi-trien-khai-chuong-trinh-dich-vu-ho-tro-cung-ung-phan-bon-tra-cham-cho-1.webp",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Hội nghị triển khai chương trình phân bón trả chậm cùng Hội Nông dân"
+    }
+  },
+  "center": {
+    "eyebrow": "TRUNG TÂM CHĂM SÓC PHỤC VỤ NÔNG DÂN VIỆT NAM",
+    "title": "Đồng ruộng là một phần của nhà máy",
+    "text": "Ra mắt ngày 05/08/2020 với sự chứng kiến của Trung ương Hội Nông dân Việt Nam và Hội Nông dân tỉnh Thanh Hóa, Trung tâm là lực lượng của Tiến Nông chuyên chăm sóc, phục vụ nhà nông — với hàng trăm cán bộ và mạng lưới hàng nghìn đại diện trên cả nước. Trung tâm ra đời từ một xác định xuyên suốt của Tiến Nông: đồng ruộng là một phần của nhà máy, nông dân là bạn đồng hành đáng tin cậy của doanh nghiệp.",
+    "items": [
+      {
+        "title": "Tư vấn kỹ thuật",
+        "text": "Qua hotline, Zalo và tại ruộng."
+      },
+      {
+        "title": "Hội thảo đầu bờ",
+        "text": "Xem mô hình, so sánh kết quả ngay trên đồng."
+      },
+      {
+        "title": "Theo dõi sau bán hàng",
+        "text": "Tiếp nhận phản ánh, cùng bà con xử lý."
+      }
+    ],
+    "image": {
+      "src": "/uploads/tin-cu/2020/le-ra-mat-trung-tam-cham-soc-phuc-vu-nong-dan-viet-nam-1.webp",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Lễ ra mắt Trung tâm Chăm sóc Phục vụ Nông dân Việt Nam"
+    },
+    "link": "/tin-tuc/le-ra-mat-trung-tam-cham-soc-phuc-vu-nong-dan-viet-nam/"
+  },
+  "results": {
+    "eyebrow": "CÂU CHUYỆN NHÀ NÔNG",
+    "title": "Những câu chuyện thật, những mùa vàng thật",
+    "intro": "Hành trình thay đổi trên chính đồng ruộng của những người nông dân đồng hành cùng Tiến Nông.",
+    "stories": [
+      {
+        "crop": "NHÃN · XÃ HUỔI MỘT, TỈNH SƠN LA",
+        "quote": "“Từ khi dùng phân bón Tiến Nông, vừa tiết kiệm được chi phí chăm bón, vừa nâng được năng suất, nên bà con chúng tôi yên tâm làm lâu dài”",
+        "facts": [
+          {
+            "value": "+ 700 triệu",
+            "label": "Lợi nhuận năm"
+          },
+          {
+            "value": "5 năm",
+            "label": "đồng hành"
+          }
+        ],
+        "person": "Ông Quàng Văn Pành · 3 ha nhãn",
+        "image": {
+          "src": "/uploads/story-1-mvc7n6uw.jpg",
+          "focus": "52.1% 100%",
+          "zoom": "106",
+          "alt": "Chân dung nông dân trên ruộng"
+        }
+      },
+      {
+        "crop": "DỨA · XÃ NGỌC TRẠO, TỈNH THANH HÓA",
+        "quote": "“Bón theo từng giai đoạn giúp mình biết lúc nào cây cần gì, bón bao nhiêu”",
+        "facts": [
+          {
+            "value": "- 200 nghìn/ tấn phân bón",
+            "label": "Chi phí"
+          }
+        ],
+        "person": "Ông Quách Văn Tấn · 1.5 ha dứa",
+        "image": {
+          "src": "/uploads/story-2-mvkgg1hj.jpg",
+          "focus": "60.7% 50%",
+          "zoom": "100",
+          "alt": "Ông Quách Văn Tấn trên ruộng dứa ở Ngọc Trạo"
+        }
+      }
+    ],
+    "models_title": "Mô hình trình diễn gần đây",
+    "models": [
+      {
+        "place": "LÚA · THIỆU TIẾN, THANH HÓA · 2026",
+        "title": "Canh tác lúa thân thiện môi trường",
+        "value": "+16,2%",
+        "label": "năng suất, đạt 277,5 kg/sào",
+        "link": "/tin-tuc/tien-nong-dong-hanh-kien-tao-nhung-canh-dong-lua-xanh-va-ben-vung/",
+        "image": {
+          "src": "/uploads/tin-cu/2026/tien-nong-dong-hanh-kien-tao-nhung-canh-dong-lua-xanh-va-ben-vung-2.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Mô hình lúa thân thiện môi trường tại Thiệu Tiến"
+        }
+      },
+      {
+        "place": "MÍA · 6 XÃ VÙNG NGUYÊN LIỆU THANH HÓA · 2026",
+        "title": "NPK hữu cơ vi sinh bón theo phân tích đất",
+        "value": "15,3 ha",
+        "label": "mía trình diễn cùng 6 hộ dân",
+        "link": "/tin-tuc/npk-huu-co-vi-sinh-tien-nong-tin-hieu-tich-cuc-tren-vung-mia-nguyen-lieu-thanh/",
+        "image": {
+          "src": "/uploads/tin-cu/2026/npk-huu-co-vi-sinh-tien-nong-tin-hieu-tich-cuc-tren-vung-mia-nguyen-lieu-thanh-1.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Mô hình trình diễn trên cây mía"
+        }
+      },
+      {
+        "place": "LÚA · HOẰNG XUÂN, PHÚ LỘC · 2025",
+        "title": "Mô hình NPK hữu cơ vi sinh dạng hạt",
+        "value": "7–8 tấn/ha",
+        "label": "năng suất lúa mô hình tại Hậu Lộc",
+        "link": "/tin-tuc/hoi-nghi-dau-bo-danh-gia-hieu-qua-mo-hinh-phan-bon-npk-huu-co-vi-sinh-gieo-mam/",
+        "image": {
+          "src": "/uploads/tin-cu/2025/hoi-nghi-dau-bo-danh-gia-hieu-qua-mo-hinh-phan-bon-npk-huu-co-vi-sinh-gieo-mam-4.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Hội nghị đầu bờ mô hình NPK hữu cơ vi sinh"
+        }
+      },
+      {
+        "place": "VẢI THIỀU · LỤC NGẠN, BẮC GIANG",
+        "title": "Vải thiều đạt chuẩn VietGAP",
+        "value": "VietGAP",
+        "label": "dùng đồng bộ dinh dưỡng Tiến Nông",
+        "link": "/tin-tuc/tien-nong-tiep-tuc-lan-toa-tinh-than-se-chia-dong-hanh-cung-nong-dan-bac-giang/",
+        "image": {
+          "src": "/uploads/tin-cu/2021/tien-nong-tiep-tuc-lan-toa-tinh-than-se-chia-dong-hanh-cung-nong-dan-bac-giang-1.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Vườn vải thiều Lục Ngạn"
+        }
+      }
+    ],
+    "more": "Xem thêm câu chuyện →"
+  },
+  "hardship": {
+    "eyebrow": "KHI MÙA VỤ GẶP KHÓ",
+    "title": "Không để bà con đứng một mình",
+    "intro": "",
+    "items": [
+      {
+        "when": "02/2020",
+        "title": "Giải cứu 30 tấn dưa hấu mùa dịch",
+        "text": "Khi dưa hấu Gia Lai không xuất khẩu được vì dịch Covid-19, Tiến Nông mua 30 tấn dưa của bà con Krông Pa, phát miễn phí cho người lao động và người dân.",
+        "link": "/tin-tuc/gia-dinh-tien-nong-giai-cuu-30-tan-dua-hau-ho-tro-nong-dan-trong-dua-trong-mua/"
+      },
+      {
+        "when": "06/2021",
+        "title": "Cùng Bắc Giang tiêu thụ vải thiều",
+        "text": "Đồng hành cùng nhà vườn Lục Ngạn tiêu thụ vải thiều trong mùa dịch.",
+        "link": "/tin-tuc/tien-nong-tiep-tuc-lan-toa-tinh-than-se-chia-dong-hanh-cung-nong-dan-bac-giang/"
+      },
+      {
+        "when": "11/2024",
+        "title": "Phân bón cho bà con sau bão lũ",
+        "text": "Trao tặng hơn 100 tấn phân bón hữu cơ sinh học humic, kèm hướng dẫn chăm sóc đất và cây sau ngập.",
+        "link": "/tin-tuc/cong-ty-tien-nong-trao-tang-hon-100-tan-phan-bon-huu-co-sinh-hoc-humic-tien/"
+      },
+      {
+        "when": "09/2026",
+        "title": "Xuống đồng sau ngập úng ở Yên Phú",
+        "text": "Kỹ sư lấy mẫu đất, mẫu cây trên vùng dứa bị ngập để tìm cách phục hồi.",
+        "link": "/tin-tuc/sau-ngap-ung-o-yen-phu-tien-nong-xuong-dong-tim-loi-giai-tu-dat-va-cay/"
+      }
+    ]
+  },
+  "club": {
+    "eyebrow": "CÂU LẠC BỘ GẮN KẾT TIẾN NÔNG",
+    "title": "Nơi những nông dân sản xuất lớn học hỏi lẫn nhau",
+    "text": "Câu lạc bộ “Gắn kết Tiến Nông” ra mắt ngày 09/06/2020 tại Nhà máy Tiến Nông Bỉm Sơn, quy tụ hàng trăm nông dân có diện tích canh tác lớn — để chia sẻ kinh nghiệm, cập nhật kỹ thuật và cùng Tiến Nông thử nghiệm những giải pháp dinh dưỡng mới.",
+    "image": {
+      "src": "/uploads/tin-cu/2020/ra-mat-cac-thanh-vien-clb-gan-ket-tien-nong-la-nong-dan-co-dien-tich-lon-tai-1.webp",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Lễ ra mắt CLB Gắn kết Tiến Nông"
+    },
+    "link": "/tin-tuc/ra-mat-cac-thanh-vien-clb-gan-ket-tien-nong-la-nong-dan-co-dien-tich-lon-tai/"
+  },
+  "workshops": {
+    "eyebrow": "CHƯƠNG TRÌNH TẬP HUẤN",
+    "title": "Kỹ sư Tiến Nông đồng hành tại địa phương",
+    "intro": "Hình ảnh và chia sẻ từ các buổi tập huấn, hội nghị, hội thảo đầu bờ do kỹ sư Tiến Nông tổ chức cùng bà con tại địa phương.",
+    "all": "Xem tất cả bài hội thảo →",
+    "empty": "Bài hội thảo đầu bờ sẽ được cập nhật tại đây."
+  },
+  "faq": {
+    "eyebrow": "NHÀ NÔNG HỎI · TIẾN NÔNG TRẢ LỜI",
+    "title": "Giải đáp những thắc mắc thường gặp",
+    "intro": "Chưa tìm thấy câu trả lời? Gọi hotline kỹ sư hoặc gửi câu hỏi qua Zalo OA Tiến Nông.",
+    "items": [
+      {
+        "q": "Phân bón trả chậm là gì, ai được tham gia?",
+        "a": "Là hình thức bà con nhận phân bón Tiến Nông trước, thanh toán sau khi thu hoạch. Chương trình triển khai qua Hội Nông dân: hội viên đăng ký với Hội Nông dân xã, Hội đứng ra tín chấp và nhận hàng. Hãy hỏi Hội Nông dân xã hoặc để lại thông tin để biết địa phương mình đã có chương trình chưa."
+      },
+      {
+        "q": "Nên bón phân Tiến Nông vào thời điểm nào là tốt nhất?",
+        "a": "Mỗi cây trồng có các giai đoạn bón khác nhau (lót, thúc, nuôi quả). Hướng dẫn chi tiết được in trên bao bì và trang thông tin từng sản phẩm. Kỹ sư Tiến Nông có thể tư vấn lịch bón theo giống và mùa vụ tại địa phương."
+      },
+      {
+        "q": "Làm thế nào để cải tạo đất bạc màu, kém dinh dưỡng?",
+        "a": "Nên phân tích đất để xác định nguyên nhân, sau đó kết hợp điều hòa pH, bổ sung phân hữu cơ – vi sinh và bón NPK cân đối theo nhu cầu cây trồng."
+      },
+      {
+        "q": "Có thể kết hợp phân Tiến Nông với phân hữu cơ không?",
+        "a": "Có. Kết hợp phân hữu cơ giúp cải thiện cấu trúc đất và tăng hiệu quả hấp thu dinh dưỡng của phân NPK."
+      },
+      {
+        "q": "Tiến Nông có hỗ trợ tư vấn kỹ thuật tại địa phương không?",
+        "a": "Có. Đội ngũ kỹ sư nông học của Tiến Nông thường xuyên tổ chức hội thảo đầu bờ và tư vấn trực tiếp. Đăng ký thành viên hoặc gọi hotline để được hỗ trợ."
+      },
+      {
+        "q": "Làm sao để phân biệt sản phẩm Tiến Nông chính hãng?",
+        "a": "Mỗi bao sản phẩm Tiến Nông có mã QR truy xuất nguồn gốc. Quét mã bằng điện thoại để xem nguồn gốc, thành phần và hướng dẫn sử dụng. Nếu không quét được hoặc thông tin không khớp, vui lòng gọi 02373.729.729 để được hỗ trợ."
+      }
+    ]
+  },
+  "register": {
+    "eyebrow": "ĐĂNG KÝ TƯ VẤN",
+    "title": "Để kỹ sư Tiến Nông liên hệ với bà con",
+    "intro": "Dành cho nông dân, chủ trang trại, hợp tác xã và tổ hợp tác muốn được hỗ trợ kỹ thuật và kết nối với cộng đồng canh tác hiệu quả.",
+    "perks": [
+      "Cập nhật kiến thức và mô hình canh tác hiệu quả",
+      "Được kỹ sư nông học tư vấn miễn phí",
+      "Ưu tiên tham gia hội thảo đầu bờ, chương trình thực tế",
+      "Được hướng dẫn tham gia chương trình phân bón trả chậm tại địa phương"
+    ],
+    "sent_label": "ĐÃ GỬI ĐĂNG KÝ",
+    "sent_title": "Cảm ơn bà con đã đăng ký!",
+    "sent_text": "Kỹ sư Tiến Nông phụ trách khu vực sẽ liên hệ qua số điện thoại đã đăng ký.",
+    "again": "Đăng ký thêm thành viên",
+    "name_label": "Họ và tên *",
+    "name_ph": "Nguyễn Văn A",
+    "phone_label": "Số điện thoại / Zalo *",
+    "phone_ph": "09xx xxx xxx",
+    "province_label": "Tỉnh / thành phố *",
+    "province_ph": "VD: Thanh Hóa",
+    "crop_label": "Cây trồng chính *",
+    "consent": "Tôi đồng ý để Tiến Nông xử lý dữ liệu cá nhân theo Chính sách bảo mật.",
+    "submit": "Gửi đăng ký",
+    "alt_text": "Hoặc nhắn Zalo OA Tiến Nông để đăng ký nhanh.",
+    "crops": [
+      "Lúa",
+      "Ngô",
+      "Rau màu",
+      "Cây ăn quả",
+      "Cà phê",
+      "Chè",
+      "Mía",
+      "Khác"
+    ]
+  }
 }

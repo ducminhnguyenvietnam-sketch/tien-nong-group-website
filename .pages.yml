@@ -1503,11 +1503,28 @@ content:
         label: Ảnh nhỏ dưới
         component: photo
       - name: background
-        label: 'Ảnh nền đầu trang (tràn viền)'
-        component: photo
+        label: Ảnh nền đầu trang (tràn viền)
         description: Ảnh ngang khổ lớn, ít nhất 2400 px.
+        component: photo
+    - name: stats
+      label: 02 · Con số nổi bật
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.label}'
+      fields:
+      - name: value
+        label: Con số / giá trị
+        type: string
+      - name: label
+        label: Nhãn
+        type: string
+      - name: sub
+        label: Chú thích nhỏ
+        type: string
     - name: mottos
-      label: 02 · Dải khẩu hiệu (nền xanh)
+      label: 03 · Dải khẩu hiệu (nền xanh)
       type: object
       list:
         collapsible:
@@ -1520,8 +1537,34 @@ content:
       - name: text
         label: Nội dung
         type: string
+    - name: origin
+      label: 04 · Khởi nguồn
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: text
+        label: Nội dung
+        type: text
+      - name: image
+        label: Ảnh
+        component: photo
+      - name: measure_title
+        label: Tiêu đề khung “thước đo”
+        type: string
+      - name: measure_intro
+        label: Lời dẫn khung “thước đo”
+        type: string
+      - name: measures
+        label: Các thước đo (mỗi dòng một ý)
+        type: string
+        list: true
     - name: principles
-      label: 03 · 5 điều tâm niệm
+      label: 05 · 5 điều tâm niệm
       type: object
       fields:
       - name: eyebrow
@@ -1548,7 +1591,7 @@ content:
           label: Diễn giải
           type: text
     - name: values
-      label: 04 · Giá trị cốt lõi
+      label: 06 · Giá trị cốt lõi
       type: object
       fields:
       - name: eyebrow
@@ -1557,6 +1600,9 @@ content:
       - name: title
         label: Tiêu đề
         type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
       - name: items
         label: Các giá trị
         type: object
@@ -1571,8 +1617,14 @@ content:
         - name: body
           label: Diễn giải
           type: text
+        - name: proof
+          label: Minh chứng (việc làm cụ thể)
+          type: text
+        - name: link
+          label: Đường dẫn tới minh chứng
+          type: string
     - name: traditions
-      label: 05 · Nét văn hóa Tiến Nông
+      label: 07 · Nghi thức của gia đình Tiến Nông
       type: object
       fields:
       - name: eyebrow
@@ -1601,8 +1653,44 @@ content:
         - name: image
           label: Ảnh
           component: photo
+    - name: learning
+      label: 08 · Học tập
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: motto
+        label: Câu phương châm
+        type: text
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: items
+        label: Các chương trình đào tạo
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+        - name: link
+          label: Đường dẫn (link)
+          type: string
+      - name: image
+        label: Ảnh
+        component: photo
     - name: media
-      label: 06 · Bài hát & video
+      label: 09 · Ca khúc & video
       type: object
       fields:
       - name: eyebrow
@@ -1633,14 +1721,14 @@ content:
           type: string
         - name: youtube
           label: Đường dẫn YouTube
-          type: string
           description: Dán link video YouTube (ví dụ https://www.youtube.com/watch?v=…). Ưu tiên dùng YouTube.
+          type: string
         - name: file
           label: Hoặc tải tệp video (mp4)
-          type: file
           description: Chỉ dùng khi không có YouTube; tệp nên nhỏ hơn 50 MB.
+          type: file
     - name: poems
-      label: 07 · Thơ tặng Tiến Nông
+      label: 10 · Thơ tặng Tiến Nông
       type: object
       fields:
       - name: eyebrow
@@ -1658,15 +1746,15 @@ content:
         list:
           collapsible:
             collapsed: true
-            summary: '{fields.title} – {fields.author}'
+            summary: '{fields.title}'
         fields:
         - name: title
           label: Tên bài thơ
           type: string
         - name: text
           label: Nội dung bài thơ
-          type: text
           description: Mỗi câu thơ một dòng (xuống dòng bằng Enter).
+          type: text
         - name: author
           label: Tác giả
           type: string
@@ -1674,7 +1762,7 @@ content:
           label: Địa phương · năm
           type: string
     - name: gallery
-      label: 08 · Khoảnh khắc (album ảnh)
+      label: 11 · Khoảnh khắc (album ảnh)
       type: object
       fields:
       - name: eyebrow
@@ -1688,7 +1776,7 @@ content:
         component: photo
         list: true
     - name: cta
-      label: 09 · Cuối trang
+      label: 12 · Cuối trang
       type: object
       fields:
       - name: title
@@ -3290,260 +3378,427 @@ content:
       fields:
       - name: title
         label: Tiêu đề trang
-        type: string
         description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+        type: string
       - name: description
         label: Mô tả ngắn cho Google
         type: text
-    - name: s01_hero
-      label: 01 · Hero
+    - name: hero
+      label: 01 · Đầu trang
       type: object
       fields:
-      - name: t1
-        label: 'Liên kết: Trang chủ'
+      - name: breadcrumb_home
+        label: Breadcrumb home
         type: string
-      - name: t2
-        label: 'Chữ: / Phát triển bền vững'
+      - name: breadcrumb_self
+        label: Breadcrumb self
         type: string
-      - name: t3
-        label: 'Nhãn in hoa: PHÁT TRIỂN BỀN VỮNG'
+      - name: eyebrow
+        label: Dòng chữ nhỏ
         type: string
-      - name: t4
-        label: 'Tiêu đề chính: Vì nền nông nghiệp bền vững và cộng đồng thịnh…'
+      - name: title
+        label: Tiêu đề
         type: string
-      - name: t5
-        label: 'Đoạn văn: Phát triển bền vững tại Tiến Nông bắt nguồn từ…'
+      - name: intro
+        label: Đoạn giới thiệu
         type: text
-      - name: img_esg_hero_1
-        label: 'Ảnh: Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh'
+      - name: button1
+        label: Nút 1
+        type: string
+      - name: button2
+        label: Nút 2
+        type: string
+      - name: image
+        label: Ảnh nền đầu trang (tràn viền)
         component: photo
-        description: Khung ảnh khoảng 1168×500 px trên máy tính — nên dùng ảnh rộng ít nhất 2336 px.
-      - name: t6
-        label: 'Chữ: [x] tỷ đồng'
-        type: string
-      - name: t7
-        label: 'Chữ: đóng góp cho cộng đồng (lũy kế)'
-        type: string
-      - name: t8
-        label: 'Chữ: [x]'
-        type: string
-      - name: t9
-        label: 'Chữ: lượt nông dân được tập huấn'
-        type: string
-      - name: t10
-        label: 'Chữ: [x]'
-        type: string
-      - name: t11
-        label: 'Chữ: suất học bổng đã trao'
-        type: string
-      - name: t12
-        label: 'Nhãn in hoa: ISO 14001'
-        type: string
-      - name: t13
-        label: 'Chữ: hệ thống quản lý môi trường'
-        type: string
-      - name: t14
-        label: 'Liên kết: Sản xuất xanh'
-        type: string
-      - name: t15
-        label: 'Liên kết: Đồng hành cùng nhà nông'
-        type: string
-      - name: t16
-        label: 'Liên kết: Vì cộng đồng'
-        type: string
-      - name: t17
-        label: 'Liên kết: Người lao động'
-        type: string
-      - name: t18
-        label: 'Liên kết: Lộ trình'
-        type: string
-    - name: s02_san_xuat_xanh
-      label: 02 · Sản xuất xanh
-      type: object
-      fields:
-      - name: img_esg_plant_1
-        label: 'Ảnh: Flycam khuôn viên nhà máy với cây xanh'
-        component: photo
-        description: Khung ảnh khoảng 1440×588 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
-      - name: t1
-        label: 'Nhãn in hoa: 01 · SẢN XUẤT XANH'
-        type: string
-      - name: t2
-        label: 'Tiêu đề: Sản xuất quy mô lớn, hài hòa cùng môi trường'
-        type: string
-      - name: t3
-        label: 'Đoạn văn: Các nhà máy của Tiến Nông vận hành theo hệ thố…'
-        type: text
-      - name: t4
-        label: 'Chữ đậm: [x]%'
-        type: string
-      - name: t5
-        label: 'Chữ: diện tích cây xanh'
-        type: string
-      - name: t6
-        label: 'Chữ đậm: [Hệ thống]'
-        type: string
-      - name: t7
-        label: 'Chữ: xử lý bụi, khí thải'
-        type: string
-      - name: t8
-        label: 'Chữ đậm: [Hệ thống]'
-        type: string
-      - name: t9
-        label: 'Chữ: xử lý nước thải'
-        type: string
-      - name: t10
-        label: 'Chữ đậm: [Nếu có]'
-        type: string
-      - name: t11
-        label: 'Chữ: năng lượng mặt trời'
-        type: string
-    - name: s03_dong_hanh_cung_nha_nong
-      label: 03 · Đồng hành cùng nhà nông
-      type: object
-      fields:
-      - name: t1
-        label: 'Nhãn in hoa: 02 · ĐỒNG HÀNH CÙNG NHÀ NÔNG'
-        type: string
-      - name: t2
-        label: 'Tiêu đề: Nâng cao nhận thức về canh tác bền vững'
-        type: string
-      - name: t3
-        label: 'Đoạn văn: Tiến Nông phối hợp với chính quyền, hội nông d…'
-        type: text
-      - name: t4
-        label: 'Chữ đậm: Bón phân cân đối, đúng cách:'
-        type: string
-      - name: t5
-        label: 'Chữ: giảm lãng phí và hạn chế tác động đến môi trường'
-        type: string
-      - name: t6
-        label: 'Chữ đậm: Bảo vệ sức khỏe đất:'
-        type: string
-      - name: t7
-        label: 'Chữ: tăng cường hữu cơ, phục hồi đất bạc màu'
-        type: string
-      - name: t8
-        label: 'Chữ đậm: Hội thảo đầu bờ:'
-        type: string
-      - name: t9
-        label: 'Chữ: chia sẻ kinh nghiệm từ các mô hình hiệu quả'
-        type: string
-      - name: img_esg_farm_1_1
-        label: 'Ảnh: Lớp tập huấn kỹ thuật cho nông dân'
-        component: photo
-        description: Khung ảnh khoảng 548×260 px trên máy tính — nên dùng ảnh rộng ít nhất 1096 px.
-      - name: img_esg_farm_2_1
-        label: 'Ảnh: Hội thảo đầu bờ'
-        component: photo
-        description: Khung ảnh khoảng 267×200 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px.
-      - name: img_esg_farm_3_1
-        label: 'Ảnh: Kỹ sư hướng dẫn tại ruộng'
-        component: photo
-        description: Khung ảnh khoảng 267×200 px trên máy tính — nên dùng ảnh rộng ít nhất 534 px.
-    - name: s04_vi_cong_dong
-      label: 04 · Vì cộng đồng
-      type: object
-      fields:
-      - name: t1
-        label: 'Nhãn in hoa: 03 · VÌ CỘNG ĐỒNG'
-        type: string
-      - name: t2
-        label: 'Tiêu đề: Sẻ chia lợi ích, vun đắp cộng đồng'
-        type: string
-      - name: t3
-        label: 'Đoạn văn: Những chương trình được duy trì qua nhiều năm,…'
-        type: text
-    - name: s05_nguoi_lao_dong
-      label: 05 · Người lao động
-      type: object
-      fields:
-      - name: t1
-        label: 'Nhãn in hoa: 04 · NGƯỜI LAO ĐỘNG'
-        type: string
-      - name: t2
-        label: 'Tiêu đề: Gắn bó bền lâu, cùng nhau phát triển'
-        type: string
-      - name: t3
-        label: 'Chữ: Môi trường làm việc an toàn, đãi ngộ xứng đáng…'
-        type: text
-      - name: t4
-        label: 'Liên kết: Con người Tiến Nông →'
-        type: string
-    - name: s06_lo_trinh
-      label: 06 · Lộ trình
-      type: object
-      fields:
-      - name: t1
-        label: 'Nhãn in hoa: 05 · LỘ TRÌNH'
-        type: string
-      - name: t2
-        label: 'Tiêu đề: Hướng tới báo cáo phát triển bền vững đầu tiên'
-        type: string
-      - name: t3
-        label: 'Đoạn văn: Chúng tôi đang chuẩn hóa việc đo lường và công…'
-        type: text
-      - name: t4
-        label: 'Chữ: Hiện tại'
-        type: string
-      - name: t5
-        label: 'Chữ đậm: Thực hành'
-        type: string
-      - name: t6
-        label: 'Chữ: ISO 14001, chương trình cộng đồng và tập huấn …'
-        type: string
-      - name: t7
-        label: 'Chữ: [Năm]'
-        type: string
-      - name: t8
-        label: 'Chữ đậm: Đo lường'
-        type: string
-      - name: t9
-        label: 'Chữ: Xây dựng bộ chỉ số và hệ thống thu thập dữ liệu'
-        type: string
-      - name: t10
-        label: 'Chữ: [Năm]'
-        type: string
-      - name: t11
-        label: 'Chữ đậm: Công bố'
-        type: string
-      - name: t12
-        label: 'Chữ: Phát hành báo cáo phát triển bền vững đầu tiên'
-        type: string
-    - name: programs
-      label: Chương trình cộng đồng
+    - name: stats
+      label: 02 · Con số nổi bật (con số còn [x] sẽ tự ẩn)
       type: object
       list:
         collapsible:
           collapsed: true
-          summary: '{fields.year} · {fields.title}'
+          summary: '{fields.label}'
       fields:
-      - name: tag
-        label: Chủ đề
-        type: select
-        options:
-          values:
-          - value: KHUYẾN HỌC
-            label: Khuyến học
-          - value: BIỂN ĐẢO
-            label: Biển đảo
-          - value: GIÁO DỤC
-            label: Giáo dục
-          - value: NGƯỜI YẾU THẾ
-            label: Người yếu thế
-      - name: year
-        label: Năm
+      - name: value
+        label: Con số / giá trị
+        type: string
+      - name: label
+        label: Nhãn
+        type: string
+      - name: sub
+        label: Chú thích nhỏ
+        type: string
+    - name: nav
+      label: 03 · Thanh mục lục trong trang
+      type: object
+      fields:
+      - name: why
+        label: Why
+        type: string
+      - name: soil
+        label: Soil
+        type: string
+      - name: plant
+        label: Plant
+        type: string
+      - name: farmers
+        label: Farmers
+        type: string
+      - name: community
+        label: Community
+        type: string
+      - name: governance
+        label: Governance
+        type: string
+      - name: roadmap
+        label: Roadmap
+        type: string
+    - name: why
+      label: 04 · Vì sao (4 trụ cột)
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
         type: string
       - name: title
-        label: Tên chương trình
+        label: Tiêu đề
         type: string
-      - name: body
-        label: Mô tả
+      - name: text
+        label: Nội dung
+        type: text
+      - name: quote
+        label: Câu trích dẫn
+        type: text
+      - name: quote_source
+        label: Nguồn trích dẫn
+        type: string
+      - name: pillars
+        label: Bốn trụ cột
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+        - name: anchor
+          label: Neo liên kết (giữ nguyên)
+          type: string
+    - name: soil
+      label: 05 · Trụ cột 1 – Đất khỏe
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: results
+        label: Kết quả mô hình (con số)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.label}'
+        fields:
+        - name: value
+          label: Con số / giá trị
+          type: string
+        - name: label
+          label: Nhãn
+          type: string
+        - name: sub
+          label: Chú thích nhỏ
+          type: string
+      - name: items
+        label: Các mô hình / nghiên cứu
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+        - name: link
+          label: Đường dẫn (link)
+          type: string
+        - name: image
+          label: Ảnh
+          component: photo
+    - name: plant
+      label: 06 · Trụ cột 2 – Nhà máy xanh
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: text
+        label: Nội dung
         type: text
       - name: image
         label: Ảnh
         component: photo
-        description: Khung ảnh khoảng 371×220 px trên máy tính — nên dùng ảnh rộng ít nhất 742 px.
+      - name: facts
+        label: Chỉ số nhà máy
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.label}'
+        fields:
+        - name: value
+          label: Con số / giá trị
+          type: string
+        - name: label
+          label: Nhãn
+          type: string
+      - name: extras
+        label: Điểm cộng khác
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+    - name: farmers
+      label: 07 · Trụ cột 3 – Sinh kế nhà nông
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: text
+        label: Nội dung
+        type: text
+      - name: items
+        label: Các mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+      - name: button
+        label: Chữ trên nút
+        type: string
+      - name: image_1
+        label: Ảnh lớn
+        component: photo
+      - name: image_2
+        label: Ảnh nhỏ trái
+        component: photo
+      - name: image_3
+        label: Ảnh nhỏ phải
+        component: photo
+    - name: orphans
+      label: 08 · Trụ cột 4 – Ông bố Tiến Nông
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: stats
+        label: Con số nổi bật
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.label}'
+        fields:
+        - name: value
+          label: Con số / giá trị
+          type: string
+        - name: label
+          label: Nhãn
+          type: string
+        - name: sub
+          label: Chú thích nhỏ
+          type: string
+      - name: story_title
+        label: Tiêu đề câu chuyện
+        type: string
+      - name: story
+        label: Câu chuyện
+        type: text
+      - name: image
+        label: Ảnh
+        component: photo
+      - name: timeline
+        label: Các mốc
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: when
+          label: Thời gian
+          type: string
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+        - name: link
+          label: Đường dẫn (link)
+          type: string
+      - name: partners
+        label: Đơn vị đồng hành
+        type: text
+    - name: programs
+      label: 09 · Các chương trình cộng đồng khác
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tên chương trình
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: all_label
+        label: Chữ nút lọc “Tất cả”
+        type: string
+      - name: items
+        label: Các chương trình
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: tag
+          label: Nhóm (dùng làm bộ lọc, viết HOA)
+          type: string
+        - name: year
+          label: Năm
+          type: string
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: body
+          label: Nội dung
+          type: text
+        - name: image
+          label: Ảnh
+          component: photo
+        - name: link
+          label: Đường dẫn (link)
+          type: string
+    - name: workers
+      label: 10 · Người lao động
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: text
+        label: Nội dung
+        type: text
+      - name: button
+        label: Nút
+        type: string
+    - name: governance
+      label: 11 · Minh bạch & ghi nhận
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: items
+        label: Các mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+        - name: link
+          label: Đường dẫn (link)
+          type: string
+    - name: roadmap
+      label: 12 · Lộ trình
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: steps
+        label: Các chặng
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: when
+          label: Thời gian
+          type: string
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
   - name: xanh_hoa_truong_sa
     label: "Xanh hoá Trường Sa (trang con của Phát triển bền vững)"
     type: file
@@ -3551,235 +3806,320 @@ content:
     format: json
     fields:
     - name: seo
-      label: "Tiêu đề tab trình duyệt & mô tả Google"
+      label: Tiêu đề tab trình duyệt & mô tả Google
       type: object
       fields:
       - name: title
-        label: "Tiêu đề trang"
+        label: Tiêu đề trang
         type: string
       - name: description
-        label: "Mô tả ngắn cho Google"
+        label: Mô tả ngắn cho Google
         type: text
     - name: hero
-      label: "01 · Đầu trang"
+      label: 01 · Đầu trang
       type: object
       fields:
       - name: breadcrumb_home
-        label: "Đường dẫn – Trang chủ"
+        label: Đường dẫn – Trang chủ
         type: string
       - name: breadcrumb_parent
-        label: "Đường dẫn – Phát triển bền vững"
+        label: Đường dẫn – Phát triển bền vững
         type: string
       - name: breadcrumb_self
-        label: "Đường dẫn – trang này"
+        label: Đường dẫn – trang này
         type: string
       - name: eyebrow
-        label: "Dòng chữ nhỏ"
+        label: Dòng chữ nhỏ
         type: string
       - name: title
-        label: "Tiêu đề lớn"
+        label: Tiêu đề lớn
         type: string
       - name: intro
-        label: "Đoạn giới thiệu"
+        label: Đoạn giới thiệu
         type: text
       - name: button_wish
-        label: "Nút: Gửi lời chúc"
+        label: 'Nút: Gửi lời chúc'
         type: string
       - name: button_journey
-        label: "Nút: Hành trình"
+        label: 'Nút: Hành trình'
+        type: string
+      - name: button_read
+        label: Nút “Đọc lời chúc” (khi chiến dịch đã đóng)
         type: string
       - name: background
-        label: "Ảnh nền tràn viền"
+        label: Ảnh nền tràn viền
+        description: Ảnh ngang, rộng ít nhất 1920 px.
         component: photo
-        description: "Ảnh ngang, rộng ít nhất 1920 px."
     - name: stats
-      label: "02 · Con số nổi bật"
+      label: 02 · Con số nổi bật
       type: object
-      list: true
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{fields.label}'
       fields:
       - name: value
-        label: "Con số"
+        label: Con số
         type: string
       - name: label
-        label: "Nhãn"
+        label: Nhãn
         type: string
       - name: sub
-        label: "Dòng giải thích nhỏ"
+        label: Dòng giải thích nhỏ
         type: string
-    - name: campaign
-      label: "03 · Chiến dịch Triệu lời chúc – Triệu mầm xanh"
+    - name: challenge
+      label: 03 · Vì sao là phân bón
       type: object
       fields:
       - name: eyebrow
-        label: "Dòng chữ nhỏ"
+        label: Dòng chữ nhỏ
         type: string
       - name: title
-        label: "Tiêu đề"
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: items
+        label: Các thử thách trên đảo
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+      - name: solution_title
+        label: Tiêu đề giải pháp
+        type: string
+      - name: solution
+        label: Giải pháp của Tiến Nông
+        type: text
+    - name: campaign
+      label: 04 · Chiến dịch Triệu lời chúc – Triệu mầm xanh
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
         type: string
       - name: text
-        label: "Nội dung"
+        label: Nội dung
         type: text
       - name: commitment
-        label: "Cam kết (ô nổi bật)"
+        label: Cam kết (ô nổi bật)
         type: string
       - name: steps
-        label: "Các bước tham gia"
+        label: Các bước tham gia
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
         fields:
         - name: title
-          label: "Tiêu đề bước"
+          label: Tiêu đề bước
           type: string
         - name: text
-          label: "Mô tả"
+          label: Mô tả
           type: text
       - name: image
-        label: "Ảnh chiến dịch (key visual)"
+        label: Ảnh chiến dịch (key visual)
+        description: Ảnh ngang tỉ lệ khoảng 2:1.
         component: photo
-        description: "Ảnh ngang tỉ lệ khoảng 2:1."
     - name: journey
-      label: "04 · Hành trình"
+      label: 05 · Hành trình
       type: object
       fields:
       - name: eyebrow
-        label: "Dòng chữ nhỏ"
+        label: Dòng chữ nhỏ
         type: string
       - name: title
-        label: "Tiêu đề"
+        label: Tiêu đề
         type: string
       - name: items
-        label: "Các mốc"
+        label: Các mốc
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
         fields:
         - name: date
-          label: "Thời gian"
+          label: Thời gian
           type: string
         - name: title
-          label: "Tiêu đề"
+          label: Tiêu đề
           type: string
         - name: text
-          label: "Mô tả"
+          label: Mô tả
           type: text
         - name: link
-          label: "Đường dẫn bài viết"
+          label: Đường dẫn bài viết
+          description: Ví dụ /tin-tuc/ten-bai/ — để trống nếu không có.
           type: string
-          description: "Ví dụ /tin-tuc/ten-bai/ — để trống nếu không có."
         - name: image
-          label: "Ảnh"
+          label: Ảnh
           component: photo
+    - name: letters
+      label: 06 · Cuộc thi viết thư
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: text
+        label: Nội dung
+        type: text
+      - name: quote
+        label: Trích dẫn 1
+        type: text
+      - name: quote_name
+        label: Trích dẫn 1 – người nói
+        type: string
+      - name: quote_role
+        label: Trích dẫn 1 – vai trò
+        type: string
+      - name: quote2
+        label: Trích dẫn 2
+        type: text
+      - name: quote2_name
+        label: Trích dẫn 2 – người nói
+        type: string
+      - name: quote2_role
+        label: Trích dẫn 2 – vai trò
+        type: string
+      - name: image
+        label: Ảnh
+        component: photo
+      - name: link
+        label: Đường dẫn bài viết
+        type: string
     - name: form
-      label: "05 · Gửi lời chúc"
+      label: 07 · Gửi lời chúc (bật/tắt chiến dịch)
       type: object
       fields:
       - name: open
-        label: "Đang nhận lời chúc"
+        label: Đang nhận lời chúc
+        description: 'Tắt khi chiến dịch kết thúc: biểu mẫu và nút “Gửi lời chúc” sẽ ẩn, hiện dòng cảm ơn bên dưới.'
         type: boolean
-        description: "Tắt khi chiến dịch kết thúc: biểu mẫu và nút “Gửi lời chúc” sẽ ẩn, hiện dòng cảm ơn bên dưới."
       - name: eyebrow
-        label: "Dòng chữ nhỏ"
+        label: Dòng chữ nhỏ
         type: string
       - name: title
-        label: "Tiêu đề"
+        label: Tiêu đề
         type: string
       - name: text
-        label: "Lời mời"
+        label: Lời mời
         type: text
       - name: name_label
-        label: "Nhãn: Họ tên"
+        label: 'Nhãn: Họ tên'
         type: string
       - name: unit_label
-        label: "Nhãn: Đơn vị"
+        label: 'Nhãn: Đơn vị'
         type: string
       - name: message_label
-        label: "Nhãn: Lời chúc"
+        label: 'Nhãn: Lời chúc'
         type: string
       - name: consent
-        label: "Ô đồng ý"
+        label: Ô đồng ý
         type: text
       - name: submit
-        label: "Nút gửi"
+        label: Nút gửi
         type: string
       - name: sent_title
-        label: "Sau khi gửi – tiêu đề"
+        label: Sau khi gửi – tiêu đề
         type: string
       - name: sent_text
-        label: "Sau khi gửi – nội dung"
+        label: Sau khi gửi – nội dung
         type: text
       - name: closed_text
-        label: "Khi đã đóng – dòng cảm ơn"
+        label: Khi đã đóng – dòng cảm ơn
         type: text
     - name: wishes
-      label: "06 · Tường lời chúc"
+      label: 08 · Tường lời chúc
       type: object
       fields:
       - name: eyebrow
-        label: "Dòng chữ nhỏ"
+        label: Dòng chữ nhỏ
         type: string
       - name: title
-        label: "Tiêu đề"
+        label: Tiêu đề
         type: string
       - name: text
-        label: "Mô tả"
+        label: Mô tả
         type: text
       - name: more
-        label: "Nút xem thêm"
+        label: Nút xem thêm
         type: string
       - name: items
-        label: "Lời chúc hiển thị"
+        label: Lời chúc hiển thị
+        description: Lời chúc gửi qua biểu mẫu về nơi nhận của biểu mẫu (bảng tính/hộp thư); chọn lời chúc hay và thêm vào đây để hiển thị. 9 lời chúc đầu hiện sẵn, còn lại hiện khi bấm “Xem thêm”.
         type: object
-        list: true
-        description: "Lời chúc gửi qua biểu mẫu về nơi nhận của biểu mẫu (bảng tính/hộp thư); chọn lời chúc hay và thêm vào đây để hiển thị. 9 lời chúc đầu hiện sẵn, còn lại hiện khi bấm “Xem thêm”."
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.name}'
         fields:
         - name: name
-          label: "Họ tên"
+          label: Họ tên
           type: string
         - name: unit
-          label: "Đơn vị / địa phương"
+          label: Đơn vị / địa phương
           type: string
         - name: text
-          label: "Lời chúc"
+          label: Lời chúc
           type: text
     - name: gallery
-      label: "07 · Hình ảnh"
+      label: 09 · Hình ảnh
       type: object
       fields:
       - name: eyebrow
-        label: "Dòng chữ nhỏ"
+        label: Dòng chữ nhỏ
         type: string
       - name: title
-        label: "Tiêu đề"
+        label: Tiêu đề
         type: string
       - name: photos
-        label: "Ảnh (tối đa 6, mô tả ảnh hiện làm chú thích)"
+        label: Ảnh (tối đa 6, mô tả ảnh hiện làm chú thích)
         component: photo
         list: true
     - name: news
-      label: "08 · Tin tức"
+      label: 10 · Tin tức
       type: object
       fields:
       - name: eyebrow
-        label: "Dòng chữ nhỏ"
+        label: Dòng chữ nhỏ
         type: string
       - name: title
-        label: "Tiêu đề"
+        label: Tiêu đề
+        description: Tự hiện các bài có chữ “Trường Sa” trong tiêu đề, mới nhất trước.
         type: string
-        description: "Tự hiện các bài có chữ “Trường Sa” trong tiêu đề, mới nhất trước."
       - name: all
-        label: "Liên kết: tất cả tin"
+        label: 'Liên kết: tất cả tin'
         type: string
     - name: cta
-      label: "09 · Lời kêu gọi cuối trang"
+      label: 11 · Lời kêu gọi cuối trang
       type: object
       fields:
       - name: title
-        label: "Tiêu đề"
+        label: Tiêu đề
         type: string
       - name: button_wish
-        label: "Nút: Gửi lời chúc"
+        label: 'Nút: Gửi lời chúc'
         type: string
       - name: button_back
-        label: "Nút: Phát triển bền vững"
+        label: 'Nút: Phát triển bền vững'
         type: string
   - name: nong_dan
     label: Nông dân Tiến Nông
@@ -3793,226 +4133,445 @@ content:
       fields:
       - name: title
         label: Tiêu đề trang
-        type: string
         description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+        type: string
       - name: description
         label: Mô tả ngắn cho Google
         type: text
-    - name: s01_hero
-      label: 01 · Hero
+    - name: hero
+      label: 01 · Đầu trang
       type: object
       fields:
-      - name: img_farmer_hero_1
-        label: 'Ảnh: Nông dân và kỹ sư Tiến Nông trên cánh đồng'
+      - name: breadcrumb
+        label: Đường dẫn
+        type: string
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: button1
+        label: Nút 1 (đăng ký tư vấn)
+        type: string
+      - name: button2
+        label: Nút 2 (phân bón trả chậm)
+        type: string
+      - name: hotline_label
+        label: Nhãn hotline
+        type: string
+      - name: hotline
+        label: Số hotline kỹ sư (để trống sẽ dùng số tổng đài)
+        type: string
+      - name: image
+        label: Ảnh nền đầu trang
         component: photo
-        description: Khung ảnh khoảng 1440×600 px trên máy tính — nên dùng ảnh rộng ít nhất 2880 px.
-      - name: t1
-        label: 'Chữ: Trang chủ / Nông dân Tiến Nông'
-        type: string
-      - name: t2
-        label: 'Nhãn in hoa: CỘNG ĐỒNG NÔNG DÂN TIẾN NÔNG'
-        type: string
-      - name: t3
-        label: 'Tiêu đề chính: Đồng hành cùng nhà nông trên mọi miền đất nước'
-        type: string
-      - name: t4
-        label: 'Đoạn văn: Kết nối hơn 200.000 hộ nông dân để chia sẻ kiế…'
-        type: text
-      - name: t5
-        label: 'Liên kết: Tham gia cộng đồng →'
-        type: string
-      - name: link1
-        label: 'Đường dẫn cho “Hotline kỹ sư: [số]”'
-        type: string
-        description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
-      - name: t6
-        label: 'Liên kết: Hotline kỹ sư: [số]'
-        type: string
-    - name: s02_dang_ky
-      label: 02 · Đăng ký
-      type: object
-      fields:
-      - name: t1
-        label: 'Nhãn in hoa: THAM GIA CỘNG ĐỒNG'
-        type: string
-      - name: t2
-        label: 'Tiêu đề: Trở thành thành viên Nông dân Tiến Nông'
-        type: string
-      - name: t3
-        label: 'Đoạn văn: Dành cho nông dân, chủ trang trại, hợp tác xã …'
-        type: text
-      - name: t4
-        label: 'Chữ: Cập nhật kiến thức và mô hình canh tác hiệu quả'
-        type: string
-      - name: t5
-        label: 'Chữ: Được kỹ sư nông học tư vấn miễn phí'
-        type: string
-      - name: t6
-        label: 'Chữ: Ưu tiên tham gia hội thảo đầu bờ, chương trình…'
-        type: string
-      - name: t7
-        label: 'Chữ: Kết nối với cộng đồng nhà nông trên toàn quốc'
-        type: string
-      - name: t8
-        label: 'Nhãn in hoa: ĐÃ GỬI ĐĂNG KÝ'
-        type: string
-      - name: t9
-        label: 'Chữ đậm: Cảm ơn bà con đã đăng ký!'
-        type: string
-      - name: t10
-        label: 'Chữ: Kỹ sư Tiến Nông phụ trách khu vực sẽ liên hệ q…'
-        type: string
-      - name: t11
-        label: 'Nút: Đăng ký thêm thành viên'
-        type: string
-      - name: f1
-        label: 'Nhãn ô nhập: Họ và tên *'
-        type: string
-      - name: f2
-        label: 'Gợi ý trong ô: Nguyễn Văn A'
-        type: string
-      - name: f3
-        label: 'Nhãn ô nhập: Số điện thoại / Zalo *'
-        type: string
-      - name: f4
-        label: 'Gợi ý trong ô: 09xx xxx xxx'
-        type: string
-      - name: f5
-        label: 'Nhãn ô nhập: Tỉnh / thành phố *'
-        type: string
-      - name: f6
-        label: 'Gợi ý trong ô: VD: Thanh Hóa'
-        type: string
-      - name: f7
-        label: 'Nhãn ô nhập: Cây trồng chính *'
-        type: string
-      - name: f8
-        label: 'Nhãn ô nhập: Tôi đồng ý để Tiến Nông xử lý dữ liệu cá'
-        type: string
-      - name: t12
-        label: 'Nút: Gửi đăng ký'
-        type: string
-      - name: t13
-        label: 'Chữ: Hoặc nhắn Zalo OA Tiến Nông để đăng ký nhanh.'
-        type: string
-    - name: s03_cau_chuyen_nha_nong
-      label: 03 · Câu chuyện nhà nông
-      type: object
-      fields:
-      - name: t1
-        label: 'Nhãn in hoa: CÂU CHUYỆN NHÀ NÔNG'
-        type: string
-      - name: t2
-        label: 'Tiêu đề: Những câu chuyện thật, những mùa vàng thật'
-        type: string
-      - name: t3
-        label: 'Đoạn văn: Hành trình thay đổi trên chính đồng ruộng của …'
-        type: text
-      - name: img_story_1_1
-        label: 'Ảnh: Chân dung nông dân trên ruộng'
-        component: photo
-        description: Khung ảnh khoảng 248×300 px trên máy tính — nên dùng ảnh rộng ít nhất 496 px.
-      - name: t4
-        label: 'Nhãn in hoa: LÚA · [XÃ, TỈNH]'
-        type: string
-      - name: t5
-        label: 'Đoạn văn: “[Trích lời nông dân về sự thay đổi sau khi áp…'
-        type: string
-      - name: t6
-        label: 'Chữ: +[x]%'
-        type: string
-      - name: t7
-        label: 'Chữ: năng suất'
-        type: string
-      - name: t8
-        label: 'Chữ: −[x]%'
-        type: string
-      - name: t9
-        label: 'Chữ: chi phí phân bón'
-        type: string
-      - name: t10
-        label: 'Chữ đậm: [Họ tên] · [x] ha lúa'
-        type: string
-      - name: img_story_2_1
-        label: 'Ảnh: Chân dung nông dân vườn cà phê'
-        component: photo
-        description: Khung ảnh khoảng 248×300 px trên máy tính — nên dùng ảnh rộng ít nhất 496 px.
-      - name: t11
-        label: 'Nhãn in hoa: CÀ PHÊ · [XÃ, TỈNH]'
-        type: string
-      - name: t12
-        label: 'Đoạn văn: “[Trích lời nông dân về sự thay đổi sau khi áp…'
-        type: string
-      - name: t13
-        label: 'Chữ: +[x]%'
-        type: string
-      - name: t14
-        label: 'Chữ: năng suất'
-        type: string
-      - name: t15
-        label: 'Chữ: [x] năm'
-        type: string
-      - name: t16
-        label: 'Chữ: đồng hành'
-        type: string
-      - name: t17
-        label: 'Chữ đậm: [Họ tên] · [x] ha cà phê'
-        type: string
-      - name: t18
-        label: 'Liên kết: Xem thêm câu chuyện →'
-        type: string
-    - name: s04_hoi_thao_dau_bo
-      label: 04 · Hội thảo đầu bờ
-      type: object
-      description: Hiện 2 bài mới nhất chuyên mục "Nông dân & Mô hình hiệu quả" có thẻ "hội thảo". Nếu chưa đủ 2 bài gắn thẻ, phần còn lại lấy
-        bài mới nhất của chuyên mục.
-      fields:
-      - name: t1
-        label: 'Nhãn in hoa: HỘI THẢO ĐẦU BỜ'
-        type: string
-      - name: t2
-        label: 'Tiêu đề: Kỹ sư Tiến Nông đồng hành tại địa phương'
-        type: string
-      - name: t3
-        label: 'Chữ: Hình ảnh và chia sẻ từ các buổi hội thảo…'
-        type: text
-      - name: t4
-        label: 'Liên kết: Xem tất cả bài hội thảo →'
-        type: string
-      - name: t5
-        label: Chữ khi chưa có bài
-        type: string
-    - name: s05_hoi_dap
-      label: 05 · Hỏi đáp
-      type: object
-      fields:
-      - name: t1
-        label: 'Nhãn in hoa: NHÀ NÔNG HỎI · TIẾN NÔNG TRẢ LỜI'
-        type: string
-      - name: t2
-        label: 'Tiêu đề: Giải đáp những thắc mắc thường gặp'
-        type: string
-      - name: t3
-        label: 'Chữ: Chưa tìm thấy câu trả lời? Gọi hotline kỹ sư h…'
-        type: string
-    - name: form_crops
-      label: Form đăng ký – danh sách cây trồng
-      type: string
-      list: true
-    - name: faq
-      label: Hỏi đáp
+    - name: stats
+      label: 02 · Con số nổi bật
       type: object
       list:
         collapsible:
           collapsed: true
-          summary: '{fields.q}'
+          summary: '{fields.label}'
       fields:
-      - name: q
-        label: Câu hỏi
+      - name: value
+        label: Con số / giá trị
         type: string
-      - name: a
-        label: Trả lời
+      - name: label
+        label: Nhãn
+        type: string
+      - name: sub
+        label: Chú thích nhỏ
+        type: string
+    - name: promises
+      label: 03 · Cam kết với bà con
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
         type: text
+      - name: items
+        label: Các mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+    - name: season
+      label: 04 · Đồng hành trọn mùa vụ
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: steps
+        label: Các bước
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+    - name: deferred
+      label: 05 · Phân bón trả chậm
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: how_title
+        label: Tiêu đề “cách vận hành”
+        type: string
+      - name: how
+        label: Các bước vận hành
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+      - name: timeline
+        label: Các mốc chương trình
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: when
+          label: Thời gian
+          type: string
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+        - name: link
+          label: Đường dẫn (link)
+          type: string
+      - name: join_title
+        label: Tiêu đề khung “tham gia”
+        type: string
+      - name: join_text
+        label: Nội dung khung “tham gia”
+        type: text
+      - name: image
+        label: Ảnh
+        component: photo
+    - name: center
+      label: 06 · Trung tâm Chăm sóc Phục vụ Nông dân
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: text
+        label: Nội dung
+        type: text
+      - name: items
+        label: Các dịch vụ
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+      - name: image
+        label: Ảnh
+        component: photo
+      - name: link
+        label: Đường dẫn (link)
+        type: string
+    - name: results
+      label: 07 · Kết quả trên đồng ruộng
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: stories
+        label: Câu chuyện nông dân
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.crop}'
+        fields:
+        - name: crop
+          label: Cây trồng · địa phương
+          type: string
+        - name: quote
+          label: Lời chia sẻ
+          type: text
+        - name: facts
+          label: Con số nổi bật
+          type: object
+          list:
+            collapsible:
+              collapsed: true
+              summary: '{fields.label}'
+          fields:
+          - name: value
+            label: Con số / giá trị
+            type: string
+          - name: label
+            label: Nhãn
+            type: string
+        - name: person
+          label: Tên · quy mô
+          type: string
+        - name: image
+          label: Ảnh
+          component: photo
+      - name: models_title
+        label: Tiêu đề phần mô hình
+        type: string
+      - name: models
+        label: Mô hình trình diễn
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: place
+          label: Cây trồng · địa phương · năm
+          type: string
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: value
+          label: Con số / giá trị
+          type: string
+        - name: label
+          label: Nhãn
+          type: string
+        - name: link
+          label: Đường dẫn (link)
+          type: string
+        - name: image
+          label: Ảnh
+          component: photo
+      - name: more
+        label: Chữ đường dẫn xem thêm
+        type: string
+    - name: hardship
+      label: 08 · Khi mùa vụ gặp khó
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: items
+        label: Các mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: when
+          label: Thời gian
+          type: string
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+        - name: link
+          label: Đường dẫn (link)
+          type: string
+    - name: club
+      label: 09 · CLB Gắn kết Tiến Nông
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: text
+        label: Nội dung
+        type: text
+      - name: image
+        label: Ảnh
+        component: photo
+      - name: link
+        label: Đường dẫn (link)
+        type: string
+    - name: workshops
+      label: 10 · Hội thảo đầu bờ (tin tự động)
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: all
+        label: Chữ đường dẫn xem tất cả
+        type: string
+      - name: empty
+        label: Chữ khi chưa có bài
+        type: string
+    - name: faq
+      label: 11 · Hỏi đáp
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: items
+        label: Các câu hỏi
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.q}'
+        fields:
+        - name: q
+          label: Câu hỏi
+          type: string
+        - name: a
+          label: Trả lời
+          type: text
+    - name: register
+      label: 12 · Đăng ký tư vấn (biểu mẫu)
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: perks
+        label: Quyền lợi (mỗi dòng một ý)
+        type: string
+        list: true
+      - name: sent_label
+        label: Nhãn đã gửi
+        type: string
+      - name: sent_title
+        label: Tiêu đề sau khi gửi
+        type: string
+      - name: sent_text
+        label: Nội dung sau khi gửi
+        type: text
+      - name: again
+        label: Chữ nút gửi thêm
+        type: string
+      - name: name_label
+        label: Ô họ tên – nhãn
+        type: string
+      - name: name_ph
+        label: Ô họ tên – chữ mờ
+        type: string
+      - name: phone_label
+        label: Ô điện thoại – nhãn
+        type: string
+      - name: phone_ph
+        label: Ô điện thoại – chữ mờ
+        type: string
+      - name: province_label
+        label: Ô tỉnh – nhãn
+        type: string
+      - name: province_ph
+        label: Ô tỉnh – chữ mờ
+        type: string
+      - name: crop_label
+        label: Ô cây trồng – nhãn
+        type: string
+      - name: consent
+        label: Ô đồng ý
+        type: string
+      - name: submit
+        label: Chữ nút gửi
+        type: string
+      - name: alt_text
+        label: Ghi chú dưới nút
+        type: string
+      - name: crops
+        label: Danh sách cây trồng
+        type: string
+        list: true
   - name: tuyen_dung
     label: Tuyển dụng
     type: file
@@ -4025,227 +4584,392 @@ content:
       fields:
       - name: title
         label: Tiêu đề trang
-        type: string
         description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+        type: string
       - name: description
         label: Mô tả ngắn cho Google
         type: text
-    - name: s01_hero
-      label: 01 · Hero
+    - name: hero
+      label: 01 · Đầu trang
       type: object
       fields:
       - name: t1
-        label: 'Liên kết: Trang chủ'
+        label: Đường dẫn – Trang chủ
         type: string
       - name: t2
-        label: 'Chữ: / Con người & Tuyển dụng'
+        label: Đường dẫn – trang này
         type: string
-      - name: t3
-        label: 'Nhãn in hoa: CON NGƯỜI TIẾN NÔNG'
+      - name: eyebrow
+        label: Dòng chữ nhỏ
         type: string
-      - name: t4
-        label: 'Tiêu đề chính: Gắn bó bền lâu, cùng nhau phát triển'
+      - name: title
+        label: Tiêu đề
         type: string
-      - name: t5
-        label: 'Đoạn văn: Tại Tiến Nông, nhiều cán bộ, nhân viên đã đồng…'
+      - name: intro
+        label: Đoạn giới thiệu
         type: text
-      - name: t6
-        label: 'Liên kết: Xem vị trí đang tuyển →'
+      - name: button1
+        label: Nút 1 (vị trí đang tuyển)
         type: string
-      - name: t7
-        label: 'Liên kết: Văn hóa Tiến Nông'
+      - name: button2
+        label: Nút 2 (vì sao chọn Tiến Nông)
         type: string
-      - name: img_hr_hero_1_1
-        label: 'Ảnh: Chân dung người lao động thâm niên'
+      - name: img1
+        label: Ảnh lớn
         component: photo
-        description: Khung ảnh khoảng 269×474 px trên máy tính — nên dùng ảnh rộng ít nhất 538 px.
-      - name: img_hr_hero_2_1
-        label: 'Ảnh: Tập thể trong chuyến du lịch'
+      - name: img2
+        label: Ảnh nhỏ trên
         component: photo
-        description: Khung ảnh khoảng 269×260 px trên máy tính — nên dùng ảnh rộng ít nhất 538 px.
-      - name: img_hr_hero_3_1
-        label: 'Ảnh: Kỹ sư trẻ tại phòng lab'
+      - name: img3
+        label: Ảnh nhỏ dưới
         component: photo
-        description: Khung ảnh khoảng 269×200 px trên máy tính — nên dùng ảnh rộng ít nhất 538 px.
-    - name: s02_con_so
-      label: 02 · Con số
-      type: object
-      fields:
-      - name: t1
-        label: 'Chữ: [x]'
-        type: string
-      - name: t2
-        label: 'Chữ: cán bộ, nhân viên'
-        type: string
-      - name: t3
-        label: 'Chữ: [x]'
-        type: string
-      - name: t4
-        label: 'Chữ: người gắn bó trên 20 năm'
-        type: string
-      - name: t5
-        label: 'Chữ: [x] năm'
-        type: string
-      - name: t6
-        label: 'Chữ: thâm niên trung bình'
-        type: string
-      - name: t7
-        label: 'Chữ: 3'
-        type: string
-      - name: t8
-        label: 'Chữ: nhà máy · [x] văn phòng vùng'
-        type: string
-    - name: s03_dai_ngo
-      label: 03 · Đãi ngộ
-      type: object
-      fields:
-      - name: t1
-        label: 'Nhãn in hoa: ĐÃI NGỘ & GHI NHẬN'
-        type: string
-      - name: t2
-        label: 'Tiêu đề: Sự ghi nhận xứng đáng cho mỗi chặng đường'
-        type: string
-      - name: t3
-        label: 'Đoạn văn: Ngoài chế độ lương thưởng cạnh tranh, Tiến Nôn…'
-        type: text
-      - name: img_ben_1_1
-        label: 'Ảnh: Chuyến du lịch nước ngoài toàn công ty'
-        component: photo
-        description: Khung ảnh khoảng 374×200 px trên máy tính — nên dùng ảnh rộng ít nhất 748 px.
-      - name: t4
-        label: 'Chữ đậm: Du lịch nước ngoài'
-        type: string
-      - name: t5
-        label: 'Chữ: Hành trình khám phá dành cho toàn thể cán bộ, …'
-        type: string
-      - name: img_ben_2_1
-        label: 'Ảnh: Lễ trao vàng tri ân'
-        component: photo
-        description: Khung ảnh khoảng 374×200 px trên máy tính — nên dùng ảnh rộng ít nhất 748 px.
-      - name: t6
-        label: 'Chữ đậm: Tặng vàng tri ân'
-        type: string
-      - name: t7
-        label: 'Chữ: Dành cho người lao động gắn bó lâu năm cùng do…'
-        type: string
-      - name: img_ben_3_1
-        label: 'Ảnh: Lễ trao Bảo Bình tài lộc'
-        component: photo
-        description: Khung ảnh khoảng 374×200 px trên máy tính — nên dùng ảnh rộng ít nhất 748 px.
-      - name: t8
-        label: 'Chữ đậm: Bảo Bình tài lộc'
-        type: string
-      - name: t9
-        label: 'Chữ: Vinh danh những thành viên có thâm niên cống h…'
-        type: string
-      - name: t10
-        label: 'Chữ đậm: Lương thưởng cạnh tranh'
-        type: string
-      - name: t11
-        label: 'Chữ: Gắn với hiệu quả công việc và thâm niên'
-        type: string
-      - name: t12
-        label: 'Chữ đậm: Bảo hiểm đầy đủ'
-        type: string
-      - name: t13
-        label: 'Chữ: Theo quy định và [chế độ bổ sung]'
-        type: string
-      - name: t14
-        label: 'Chữ đậm: Đào tạo chuyên môn'
-        type: string
-      - name: t15
-        label: 'Chữ: Cùng chuyên gia R&D và đối tác'
-        type: string
-      - name: t16
-        label: 'Chữ đậm: Môi trường gần gũi'
-        type: string
-      - name: t17
-        label: 'Chữ: Làm việc cùng nhau như một gia đình'
-        type: string
-    - name: s04_cau_chuyen
-      label: 04 · Câu chuyện
-      type: object
-      fields:
-      - name: img_hr_story_1
-        label: 'Ảnh: Chân dung người lao động gắn bó 20+ năm tại nơi làm việc'
-        component: photo
-        description: Khung ảnh khoảng 448×560 px trên máy tính — nên dùng ảnh rộng ít nhất 896 px.
-      - name: t1
-        label: 'Nhãn in hoa: CÂU CHUYỆN GẮN BÓ'
-        type: string
-      - name: t2
-        label: 'Đoạn văn: “[Trích lời chia sẻ của người lao động về hành…'
-        type: string
-      - name: t3
-        label: 'Chữ đậm: [Họ tên]'
-        type: string
-      - name: t4
-        label: 'Chữ: [Vị trí] · Gắn bó từ [năm]'
-        type: string
-    - name: s05_vi_tri_tuyen_dung
-      label: 05 · Vị trí tuyển dụng
-      type: object
-      fields:
-      - name: t1
-        label: 'Nhãn in hoa: CƠ HỘI NGHỀ NGHIỆP'
-        type: string
-      - name: t2
-        label: 'Tiêu đề: Vị trí đang tuyển'
-        type: string
-      - name: t3
-        label: 'Chữ: vị trí'
-        type: string
-      - name: f1
-        label: 'Nhãn ô nhập: Khối'
-        type: string
-      - name: f2
-        label: 'Nhãn ô nhập: Địa điểm'
-        type: string
-      - name: t4
-        label: 'Chữ: Hiện chưa có vị trí phù hợp. Gửi hồ sơ tới'
-        type: string
-      - name: t5
-        label: 'Chữ đậm: [email tuyển dụng]'
-        type: string
-      - name: t6
-        label: 'Chữ: để được liên hệ khi có cơ hội.'
-        type: string
-      - name: t7
-        label: 'Chữ: Danh sách vị trí ở trên là dữ liệu mẫu để minh…'
-        type: string
-    - name: jobs_apply_label
-      label: Vị trí tuyển dụng – chữ "Ứng tuyển"
-      type: string
-    - name: jobs_all_depts
-      label: Bộ lọc khối – "tất cả"
-      type: string
-    - name: jobs_all_locations
-      label: Bộ lọc địa điểm – "tất cả"
-      type: string
-    - name: jobs
-      label: Vị trí đang tuyển
+    - name: stats
+      label: 02 · Con số nổi bật
       type: object
       list:
         collapsible:
           collapsed: true
-          summary: '{fields.title} · {fields.loc}'
+          summary: '{fields.label}'
       fields:
+      - name: value
+        label: Con số / giá trị
+        type: string
+      - name: label
+        label: Nhãn
+        type: string
+      - name: sub
+        label: Chú thích nhỏ
+        type: string
+    - name: reasons
+      label: 03 · Vì sao chọn Tiến Nông
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: items
+        label: Các mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+      - name: link_label
+        label: Chữ đường dẫn tới Văn hóa
+        type: string
+    - name: paths
+      label: 04 · Các khối nghề
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: items
+        label: Các mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+        - name: where
+          label: Nơi làm việc
+          type: string
+    - name: growth
+      label: 05 · Lộ trình phát triển (câu chuyện)
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: quote
+        label: Lời chia sẻ
+        type: text
+      - name: person
+        label: Họ tên
+        type: string
+      - name: role
+        label: Chức danh / vai trò
+        type: string
+      - name: image
+        label: Ảnh
+        component: photo
+      - name: timeline
+        label: Các mốc
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: when
+          label: Thời gian
+          type: string
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+    - name: training
+      label: 06 · Đào tạo
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: items
+        label: Các mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+        - name: link
+          label: Đường dẫn (link)
+          type: string
+    - name: benefits
+      label: 07 · Đãi ngộ & ghi nhận
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: cards
+        label: Thẻ có ảnh
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+        - name: image
+          label: Ảnh
+          component: photo
+      - name: items
+        label: Các chế độ khác
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+    - name: jobs
+      label: 08 · Vị trí đang tuyển
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
       - name: title
         label: Vị trí
         type: string
-      - name: dept
-        label: Khối
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: count_label
+        label: Chữ sau số lượng (vị trí)
         type: string
-      - name: loc
-        label: Địa điểm
+      - name: dept_label
+        label: Nhãn bộ lọc khối
         type: string
-      - name: due
-        label: Hạn nộp
+      - name: loc_label
+        label: Nhãn bộ lọc địa điểm
         type: string
-      - name: link
-        label: Đường dẫn chi tiết / ứng tuyển
+      - name: all_depts
+        label: Lựa chọn “tất cả khối”
         type: string
-        description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+      - name: all_locations
+        label: Lựa chọn “tất cả địa điểm”
+        type: string
+      - name: apply_label
+        label: Chữ nút ứng tuyển
+        type: string
+      - name: duties_label
+        label: Nhãn “công việc chính”
+        type: string
+      - name: requirements_label
+        label: Nhãn “yêu cầu”
+        type: string
+      - name: benefits_label
+        label: Nhãn “quyền lợi”
+        type: string
+      - name: common_benefits
+        label: Quyền lợi chung (hiện ở mọi vị trí)
+        type: text
+      - name: empty_text
+        label: Chữ khi không có vị trí (trước email)
+        type: string
+      - name: empty_after
+        label: Chữ khi không có vị trí (sau email)
+        type: string
+      - name: items
+        label: Danh sách vị trí
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: dept
+          label: Khối / phòng
+          type: string
+        - name: loc
+          label: Địa điểm
+          type: string
+        - name: count
+          label: Số lượng
+          type: string
+        - name: type
+          label: Hình thức (toàn thời gian / tuyển thường xuyên…)
+          type: string
+        - name: due
+          label: Hạn nộp hồ sơ
+          type: string
+        - name: summary
+          label: Tóm tắt
+          type: text
+        - name: duties
+          label: Công việc chính (mỗi dòng một ý)
+          type: string
+          list: true
+        - name: requirements
+          label: Yêu cầu (mỗi dòng một ý)
+          type: string
+          list: true
+        - name: link
+          label: Link ứng tuyển riêng (để trống = gửi email)
+          type: string
+    - name: process
+      label: 09 · Quy trình ứng tuyển
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: steps
+        label: Các bước
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+      - name: documents_title
+        label: Tiêu đề hồ sơ
+        type: string
+      - name: documents
+        label: Giấy tờ hồ sơ
+        type: string
+        list: true
+      - name: note
+        label: Ghi chú
+        type: text
+    - name: faq
+      label: 11 · Hỏi đáp
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: items
+        label: Các mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.q}'
+        fields:
+        - name: q
+          label: Câu hỏi
+          type: string
+        - name: a
+          label: Trả lời
+          type: text
+    - name: contact
+      label: 10 · Liên hệ tuyển dụng
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: email
+        label: Email
+        type: string
+      - name: person
+        label: Người phụ trách
+        type: string
+      - name: phone
+        label: Điện thoại
+        type: string
   - name: tin_tuc
     label: Tin tức (khung trang)
     type: file
@@ -4375,279 +5099,254 @@ content:
       fields:
       - name: title
         label: Tiêu đề trang
-        type: string
         description: Hiện trên tab trình duyệt và kết quả Google. Để trống ở Trang chủ.
+        type: string
       - name: description
         label: Mô tả ngắn cho Google
         type: text
-    - name: s01_lien_he
-      label: 01 · Liên hệ
+    - name: hero
+      label: 01 · Đầu trang
       type: object
       fields:
+      - name: t1
+        label: Đường dẫn – Trang chủ
+        type: string
+      - name: t2
+        label: Đường dẫn – trang này
+        type: string
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
       - name: lead
-        label: "Đoạn giới thiệu dưới tiêu đề"
+        label: Đoạn giới thiệu
         type: text
+      - name: hours
+        label: Giờ làm việc (để trống nếu chưa có)
+        type: string
       - name: background
-        label: "Ảnh nền đầu trang (ảnh thật, tràn viền)"
+        label: Ảnh nền đầu trang (tràn viền)
         component: photo
-      - name: t1
-        label: 'Liên kết: Trang chủ'
-        type: string
-      - name: t2
-        label: 'Chữ: / Liên hệ & Đại lý'
-        type: string
-      - name: t3
-        label: 'Nhãn in hoa: LIÊN HỆ'
-        type: string
-      - name: t4
-        label: 'Tiêu đề chính: Kết nối với Tiến Nông'
-        type: string
-      - name: t5
-        label: 'Nhãn in hoa: TƯ VẤN KỸ THUẬT'
-        type: string
-      - name: t6
-        label: 'Chữ đậm: [Hotline kỹ sư]'
-        type: string
-      - name: t7
-        label: 'Chữ: Hỏi về cây trồng, cách bón phân'
-        type: string
-      - name: t8
-        label: 'Nhãn in hoa: MUA HÀNG & ĐẠI LÝ'
-        type: string
-      - name: t9
-        label: 'Chữ đậm: 02373.729.729'
-        type: string
-      - name: t10
-        label: 'Chữ: Đặt hàng, chính sách đại lý'
-        type: string
-      - name: t11
-        label: 'Nhãn in hoa: DỰ ÁN & XUẤT KHẨU'
-        type: string
-      - name: t12
-        label: 'Chữ đậm: [email dự án]'
-        type: string
-      - name: t13
-        label: 'Chữ: Khách hàng dự án, đối tác quốc tế'
-        type: string
-      - name: t14
-        label: 'Nhãn in hoa: BÁO CHÍ & TUYỂN DỤNG'
-        type: string
-      - name: t15
-        label: 'Chữ đậm: info@tiennong.vn'
-        type: string
-      - name: t16
-        label: 'Chữ: Truyền thông, hồ sơ ứng tuyển'
-        type: string
-    - name: s02_tim_dai_ly
-      label: 02 · Tìm đại lý
+    - name: routes
+      label: 02 · Đầu mối theo nhu cầu
       type: object
       fields:
-      - name: t1
-        label: 'Nhãn in hoa: TÌM ĐẠI LÝ'
+      - name: eyebrow
+        label: Dòng chữ nhỏ
         type: string
-      - name: t2
-        label: 'Tiêu đề: Hệ thống 10.000 điểm bán trên toàn quốc'
+      - name: title
+        label: Tiêu đề
         type: string
-      - name: f1
-        label: 'Nhãn ô nhập: Tỉnh / thành phố'
-        type: string
-      - name: t3
-        label: 'Chữ: đại lý tại'
-        type: string
-      - name: t4
-        label: 'Chữ: Danh sách đại lý là dữ liệu mẫu. Bản chính thứ…'
-        type: string
-      - name: img_dealer_map_1
-        label: 'Ảnh: Bản đồ đại lý (Google Maps nhúng)'
-        component: photo
-        description: Khung ảnh khoảng 572×584 px trên máy tính — nên dùng ảnh rộng ít nhất 1144 px.
-      - name: t5
-        label: 'Chữ đậm: Trở thành đại lý Tiến Nông'
-        type: string
-      - name: t6
-        label: 'Chữ: Cùng hệ thống hơn 200 nhà phân phối mang giải …'
-        type: string
-      - name: t7
-        label: 'Liên kết: Đăng ký làm đại lý'
-        type: string
-    - name: s03_van_phong_nha_may
-      label: 03 · Văn phòng & nhà máy
+      - name: items
+        label: Các đầu mối
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.label}'
+        fields:
+        - name: label
+          label: Nhãn
+          type: string
+        - name: value
+          label: Số điện thoại / email (ô [..] sẽ dùng số tổng đài)
+          type: string
+        - name: note
+          label: Ghi chú
+          type: text
+        - name: link_label
+          label: Chữ đường dẫn
+          type: string
+        - name: link
+          label: Đường dẫn (link)
+          type: string
+    - name: genuine
+      label: 03 · Kiểm tra hàng chính hãng
       type: object
       fields:
-      - name: img1
-        label: "Ảnh: Trụ sở chính"
-        component: photo
-      - name: img2
-        label: "Ảnh: Nhà máy Bỉm Sơn"
-        component: photo
-      - name: img3
-        label: "Ảnh: Nhà máy Gia Lai"
-        component: photo
-      - name: img4
-        label: "Ảnh: Nhà máy Tiến Nông 3"
-        component: photo
-      - name: t1
-        label: 'Tiêu đề: Trụ sở & nhà máy'
+      - name: eyebrow
+        label: Dòng chữ nhỏ
         type: string
-      - name: t2
-        label: 'Chữ đậm: Trụ sở chính'
+      - name: title
+        label: Tiêu đề
         type: string
-      - name: t3
-        label: 'Chữ: 274B Bà Triệu, phường Hàm Rồng, tỉnh Thanh Hóa'
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: steps
+        label: Các bước
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+      - name: report_title
+        label: Tiêu đề khung phản ánh
         type: string
-      - name: t4
-        label: 'Chữ: 02373.729.729'
+      - name: report_text
+        label: Nội dung khung phản ánh
+        type: text
+      - name: report_phone
+        label: Số điện thoại phản ánh
         type: string
-      - name: t5
-        label: 'Chữ đậm: Nhà máy Bỉm Sơn'
+    - name: regions
+      label: 04 · Tìm đại lý (giám đốc khu vực lấy từ trang Trở thành đối tác)
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
         type: string
-      - name: t6
-        label: 'Chữ: [Địa chỉ], tỉnh Thanh Hóa'
+      - name: title
+        label: Tiêu đề
         type: string
-      - name: t7
-        label: 'Chữ: [Số điện thoại]'
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: call_label
+        label: Chữ nút gọi
         type: string
-      - name: t8
-        label: 'Chữ đậm: Nhà máy Gia Lai'
-        type: string
-      - name: t9
-        label: 'Chữ: [Địa chỉ], tỉnh Gia Lai'
-        type: string
-      - name: t10
-        label: 'Chữ: [Số điện thoại]'
-        type: string
-      - name: t11
-        label: 'Chữ đậm: [Nhà máy 3]'
-        type: string
-      - name: t12
-        label: 'Chữ: [Địa chỉ]'
-        type: string
-      - name: t13
-        label: 'Chữ: [Số điện thoại]'
+      - name: provinces_label
+        label: Nhãn “phụ trách”
         type: string
       - name: map_label
-        label: 'Chữ nút bản đồ: Xem trên Google Maps ↗'
+        label: Chữ đường dẫn bản đồ
         type: string
-      - name: map1
-        label: 'Link Google Maps: Trụ sở chính'
-        type: string
-        description: 'Dán link chia sẻ từ Google Maps (bấm Chia sẻ → Sao chép đường liên kết). Để trống thì website tự tìm theo địa chỉ ở trên.'
-      - name: map2
-        label: 'Link Google Maps: Nhà máy Bỉm Sơn'
-        type: string
-        description: 'Dán link chia sẻ từ Google Maps (bấm Chia sẻ → Sao chép đường liên kết). Để trống thì website tự tìm theo địa chỉ ở trên.'
-      - name: map3
-        label: 'Link Google Maps: Nhà máy Gia Lai'
-        type: string
-        description: 'Dán link chia sẻ từ Google Maps (bấm Chia sẻ → Sao chép đường liên kết). Để trống thì website tự tìm theo địa chỉ ở trên.'
-      - name: map4
-        label: 'Link Google Maps: Nhà máy Tiến Nông 3'
-        type: string
-        description: 'Dán link chia sẻ từ Google Maps (bấm Chia sẻ → Sao chép đường liên kết). Để trống thì website tự tìm theo địa chỉ ở trên.'
-    - name: s04_gui_lien_he
-      label: 04 · Gửi liên hệ
+    - name: sites
+      label: 05 · Trụ sở & nhà máy
       type: object
       fields:
-      - name: t1
-        label: 'Tiêu đề: Gửi yêu cầu'
+      - name: title
+        label: Tiêu đề
         type: string
-      - name: t2
-        label: 'Chữ: Chọn nhu cầu để yêu cầu được chuyển đến đúng b…'
+      - name: map_label
+        label: Chữ đường dẫn Google Maps
         type: string
-      - name: t3
-        label: 'Nhãn in hoa: ĐÃ GỬI'
-        type: string
-      - name: t4
-        label: 'Chữ đậm: Cảm ơn Quý khách đã liên hệ Tiến Nông.'
-        type: string
-      - name: t5
-        label: 'Chữ: Bộ phận'
-        type: string
-      - name: t6
-        label: 'Chữ: sẽ phản hồi qua thông tin Quý khách cung cấp.'
-        type: string
-      - name: t7
-        label: 'Nút: Gửi yêu cầu khác'
-        type: string
-      - name: f1
-        label: 'Nhãn ô nhập: Nhu cầu *'
-        type: string
-      - name: f2
-        label: 'Nhãn ô nhập: Họ và tên *'
-        type: string
-      - name: f3
-        label: 'Gợi ý trong ô: Nguyễn Văn A'
-        type: string
-      - name: f4
-        label: 'Nhãn ô nhập: Số điện thoại *'
-        type: string
-      - name: f5
-        label: 'Gợi ý trong ô: 09xx xxx xxx'
-        type: string
-      - name: f6
-        label: 'Nhãn ô nhập: Email'
-        type: string
-      - name: f7
-        label: 'Gợi ý trong ô: ten@email.com'
-        type: string
-      - name: f8
-        label: 'Nhãn ô nhập: Tỉnh / thành phố'
-        type: string
-      - name: f9
-        label: 'Gợi ý trong ô: VD: Thanh Hóa'
-        type: string
-      - name: t8
-        label: 'Chữ: Nội dung'
-        type: string
-      - name: f10
-        label: 'Gợi ý trong ô: Mô tả ngắn gọn nhu cầu'
-        type: string
-      - name: f11
-        label: 'Nhãn ô nhập: Tôi đồng ý để Tiến Nông xử lý dữ liệu cá'
-        type: string
-      - name: t9
-        label: 'Nút: Gửi yêu cầu'
-        type: string
-    - name: provinces
-      label: Đại lý theo tỉnh
-      type: object
-      list:
-        collapsible:
-          collapsed: true
-          summary: '{fields.name}'
-      fields:
-      - name: name
-        label: Tỉnh / thành phố
-        type: string
-      - name: dealers
-        label: Đại lý
+      - name: items
+        label: Các địa điểm
         type: object
         list:
           collapsible:
             collapsed: true
             summary: '{fields.name}'
         fields:
-        - name: name
-          label: Tên đại lý
+        - name: tag
+          label: Nhãn phân loại
           type: string
-        - name: type
-          label: Loại (Nhà phân phối / Điểm bán)
+        - name: name
+          label: Tên
+          type: string
+        - name: role
+          label: Vai trò
           type: string
         - name: address
           label: Địa chỉ
           type: string
         - name: phone
-          label: Số điện thoại
+          label: Điện thoại
           type: string
         - name: map
-          label: Đường dẫn chỉ đường (Google Maps)
+          label: Link Google Maps riêng (để trống = tự tìm theo địa chỉ)
           type: string
-          description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
-    - name: needs
-      label: Form liên hệ – các nhu cầu
-      type: string
-      list: true
-      description: Mục đầu tiên được chọn sẵn.
+        - name: image
+          label: Ảnh
+          component: photo
+      - name: visit_text
+        label: Lời mời tham quan
+        type: text
+    - name: social
+      label: 06 · Mạng xã hội (link lấy từ Cài đặt chung)
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+    - name: form
+      label: 07 · Biểu mẫu gửi yêu cầu
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: sent_label
+        label: Sent label
+        type: string
+      - name: sent_title
+        label: Sent title
+        type: string
+      - name: sent_before
+        label: Sent before
+        type: string
+      - name: sent_after
+        label: Sent after
+        type: string
+      - name: again
+        label: Again
+        type: string
+      - name: need_label
+        label: Need label
+        type: string
+      - name: name_label
+        label: Name label
+        type: string
+      - name: name_ph
+        label: Name ph
+        type: string
+      - name: phone_label
+        label: Phone label
+        type: string
+      - name: phone_ph
+        label: Phone ph
+        type: string
+      - name: email_label
+        label: Email label
+        type: string
+      - name: email_ph
+        label: Email ph
+        type: string
+      - name: province_label
+        label: Province label
+        type: string
+      - name: province_ph
+        label: Province ph
+        type: string
+      - name: message_label
+        label: Message label
+        type: string
+      - name: message_ph
+        label: Message ph
+        type: string
+      - name: consent
+        label: Consent
+        type: string
+      - name: submit
+        label: Submit
+        type: string
+      - name: needs
+        label: Danh sách nhu cầu
+        type: string
+        list: true
+    - name: legal
+      label: 08 · Thông tin doanh nghiệp (lấy từ Cài đặt chung)
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề
+        type: string
   - name: tro_thanh_doi_tac
     label: Trở thành đối tác (nút xanh trên menu)
     type: file
@@ -4655,45 +5354,45 @@ content:
     format: json
     fields:
     - name: seo
-      label: "Tiêu đề tab trình duyệt & mô tả Google"
+      label: Tiêu đề tab trình duyệt & mô tả Google
       type: object
       fields:
       - name: title
-        label: "Tiêu đề trang"
+        label: Tiêu đề trang
         type: string
       - name: description
-        label: "Mô tả ngắn cho Google"
+        label: Mô tả ngắn cho Google
         type: text
     - name: hero
-      label: "01 · Đầu trang"
+      label: 01 · Đầu trang
       type: object
       fields:
       - name: t1
-        label: "Đường dẫn – Trang chủ"
+        label: Đường dẫn – Trang chủ
         type: string
       - name: t2
-        label: "Đường dẫn – trang này"
+        label: Đường dẫn – trang này
         type: string
       - name: eyebrow
-        label: "Dòng chữ nhỏ"
+        label: Dòng chữ nhỏ
         type: string
       - name: title
-        label: "Tiêu đề lớn"
+        label: Tiêu đề lớn
         type: string
       - name: intro
-        label: "Đoạn giới thiệu"
+        label: Đoạn giới thiệu
         type: text
       - name: button1
-        label: "Nút 1 (đến phần chọn tỉnh/thành)"
+        label: Nút 1 (đến phần chọn tỉnh/thành)
         type: string
       - name: button2
-        label: "Nút 2 (đến phần quyền lợi)"
+        label: Nút 2 (đến phần quyền lợi)
         type: string
       - name: image
-        label: "Ảnh bên phải"
+        label: Ảnh nền đầu trang
         component: photo
     - name: stats
-      label: "02 · Dải số liệu (nền xanh)"
+      label: 02 · Con số nổi bật
       type: object
       list:
         collapsible:
@@ -4701,29 +5400,89 @@ content:
           summary: '{fields.label}'
       fields:
       - name: value
-        label: "Con số"
+        label: Con số
         type: string
       - name: label
-        label: "Chú thích"
+        label: Chú thích
         type: string
+      - name: sub
+        label: Chú thích nhỏ
+        type: string
+    - name: models
+      label: 03 · Hình thức hợp tác
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: items
+        label: Các hình thức
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: who
+          label: Phù hợp với
+          type: string
+        - name: get
+          label: Nhận được gì
+          type: string
+        - name: link_label
+          label: Chữ đường dẫn
+          type: string
+        - name: link
+          label: Đường dẫn (link)
+          type: string
+    - name: why
+      label: 04 · Vì sao chọn Tiến Nông
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: items
+        label: Các mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
     - name: benefits
-      label: "03 · Quyền lợi"
+      label: 05 · Quyền lợi
       type: object
       fields:
-      - name: image
-        label: "Ảnh minh hoạ quyền lợi"
-        component: photo
       - name: eyebrow
-        label: "Dòng chữ nhỏ"
+        label: Dòng chữ nhỏ
         type: string
       - name: title
-        label: "Tiêu đề"
+        label: Tiêu đề
         type: string
       - name: intro
-        label: "Đoạn giới thiệu"
+        label: Đoạn giới thiệu
         type: text
       - name: items
-        label: "Các quyền lợi"
+        label: Các quyền lợi
         type: object
         list:
           collapsible:
@@ -4731,56 +5490,29 @@ content:
             summary: '{fields.title}'
         fields:
         - name: title
-          label: "Quyền lợi"
+          label: Quyền lợi
           type: string
         - name: text
-          label: "Mô tả"
+          label: Mô tả
           type: text
-    - name: conditions
-      label: "04 · Điều kiện"
-      type: object
-      fields:
       - name: image
-        label: "Ảnh minh hoạ điều kiện"
+        label: Ảnh minh hoạ quyền lợi
         component: photo
-      - name: eyebrow
-        label: "Dòng chữ nhỏ"
-        type: string
-      - name: title
-        label: "Tiêu đề"
-        type: string
-      - name: intro
-        label: "Đoạn giới thiệu"
-        type: text
-      - name: items
-        label: "Các điều kiện"
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{fields.title}'
-        fields:
-        - name: title
-          label: "Điều kiện"
-          type: string
-        - name: text
-          label: "Mô tả"
-          type: text
-      - name: note
-        label: "Ô ghi chú màu xanh"
-        type: text
     - name: spotlight
-      label: "05 · Đại lý & nhà phân phối tiêu biểu"
+      label: 06 · Câu chuyện đối tác
       type: object
       fields:
       - name: eyebrow
-        label: "Dòng chữ nhỏ"
+        label: Dòng chữ nhỏ
         type: string
       - name: title
-        label: "Tiêu đề"
+        label: Tiêu đề
         type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
       - name: partners
-        label: "Đối tác tiêu biểu"
+        label: Các đối tác
         type: object
         list:
           collapsible:
@@ -4788,16 +5520,16 @@ content:
             summary: '{fields.name}'
         fields:
         - name: kind
-          label: "Nhãn (ví dụ ĐẠI LÝ TIÊU BIỂU)"
+          label: Nhãn
           type: string
         - name: name
-          label: "Tên đại lý / nhà phân phối"
+          label: Tên đại lý / nhà phân phối
           type: string
         - name: place
-          label: "Địa chỉ ngắn (xã, tỉnh)"
+          label: Địa chỉ ngắn (xã, tỉnh)
           type: string
         - name: facts
-          label: "Số liệu nổi bật"
+          label: Số liệu nổi bật
           type: object
           list:
             collapsible:
@@ -4805,123 +5537,213 @@ content:
               summary: '{fields.label}'
           fields:
           - name: value
-            label: "Con số"
+            label: Con số
             type: string
           - name: label
-            label: "Chú thích"
+            label: Chú thích
             type: string
+        - name: story
+          label: Câu chuyện
+          type: text
         - name: quote
-          label: "Lời chia sẻ (trích dẫn)"
+          label: Lời chia sẻ (trích dẫn)
           type: text
         - name: person
-          label: "Người chia sẻ (họ tên, chức vụ)"
+          label: Người chia sẻ (họ tên, chức vụ)
           type: string
         - name: image
-          label: "Ảnh chân dung / cửa hàng"
+          label: Ảnh chân dung / cửa hàng
           component: photo
-    - name: region
-      label: "06 · Chọn tỉnh/thành → giám đốc kinh doanh"
+        - name: link
+          label: Đường dẫn (link)
+          type: string
+    - name: club
+      label: 07 · Câu lạc bộ nhà phân phối
       type: object
       fields:
       - name: eyebrow
-        label: "Dòng chữ nhỏ"
+        label: Dòng chữ nhỏ
         type: string
       - name: title
-        label: "Tiêu đề"
+        label: Tiêu đề
+        type: string
+      - name: text
+        label: Nội dung
+        type: text
+      - name: image
+        label: Ảnh
+        component: photo
+      - name: link
+        label: Đường dẫn (link)
+        type: string
+    - name: process
+      label: 08 · Quy trình 5 bước
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: steps
+        label: Các bước
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: text
+          label: Nội dung
+          type: text
+    - name: conditions
+      label: 09 · Điều kiện
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
         type: string
       - name: intro
-        label: "Đoạn giới thiệu"
+        label: Đoạn giới thiệu
+        type: text
+      - name: items
+        label: Các điều kiện
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Điều kiện
+          type: string
+        - name: text
+          label: Mô tả
+          type: text
+      - name: note
+        label: Ô ghi chú màu xanh
+        type: text
+      - name: image
+        label: Ảnh minh hoạ điều kiện
+        component: photo
+    - name: expansion
+      label: 10 · Khu vực ưu tiên mở rộng
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: text
+        label: Nội dung
+        type: text
+      - name: areas
+        label: Các tỉnh ưu tiên
+        type: string
+        list: true
+      - name: link
+        label: Đường dẫn (link)
+        type: string
+    - name: faq
+      label: 11 · Hỏi đáp
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: items
+        label: Các mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.q}'
+        fields:
+        - name: q
+          label: Câu hỏi
+          type: string
+        - name: a
+          label: Trả lời
+          type: text
+    - name: region
+      label: 12 · Liên hệ khu vực (bản đồ)
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
         type: text
       - name: select_label
-        label: "Nhãn ô chọn"
+        label: Nhãn ô chọn
         type: string
       - name: select_placeholder
-        label: "Chữ khi chưa chọn tỉnh"
+        label: Chữ khi chưa chọn tỉnh
         type: string
       - name: empty_text
-        label: "Ô gợi ý khi chưa chọn tỉnh"
+        label: Ô gợi ý khi chưa chọn tỉnh
         type: text
       - name: result_label
-        label: "Nhãn trên thẻ người phụ trách"
+        label: Nhãn trên thẻ người phụ trách
         type: string
       - name: call_label
-        label: "Chữ nút gọi điện"
+        label: Chữ nút gọi điện
         type: string
       - name: form_text
-        label: "Dòng chữ dưới thẻ"
+        label: Dòng chữ dưới thẻ
         type: string
       - name: form_link
-        label: "Liên kết đến form đăng ký"
+        label: Liên kết đến form đăng ký
         type: string
       - name: map_alt
-        label: "Mô tả bản đồ"
+        label: Mô tả bản đồ
         type: string
       - name: map_image
-        label: "Ảnh bản đồ thiết kế riêng (không bắt buộc)"
+        label: Ảnh bản đồ thiết kế riêng (không bắt buộc)
+        description: Để trống thì website dùng bản đồ Việt Nam có sẵn với logo Tiến Nông ở 34 tỉnh, thành (bấm vào logo để chọn tỉnh). Tải ảnh lên thì ảnh này thay cho bản đồ có sẵn.
         component: photo
-        description: "Để trống thì website dùng bản đồ Việt Nam có sẵn với logo Tiến Nông ở 34 tỉnh, thành (bấm vào logo để chọn tỉnh). Tải ảnh lên thì ảnh này thay cho bản đồ có sẵn."
     - name: managers
-      label: '07 · Giám đốc kinh doanh & tỉnh/thành phụ trách'
-      description: 'Mỗi tỉnh/thành chỉ nên chọn cho một người. Tỉnh/thành chưa ai phụ trách sẽ hiện người đầu tiên trong danh sách.'
+      label: 13 · Giám đốc kinh doanh theo vùng
+      description: Mỗi tỉnh/thành chỉ nên chọn cho một người. Tỉnh/thành chưa ai phụ trách sẽ hiện người đầu tiên trong danh sách.
       type: object
       list:
         collapsible:
           collapsed: true
-          summary: '{fields.name} – {fields.region}'
+          summary: '{fields.title}'
       fields:
       - name: name
-        label: "Họ và tên"
+        label: Họ và tên
         type: string
       - name: title
-        label: "Chức danh"
+        label: Chức danh
         type: string
       - name: region
-        label: "Vùng phụ trách (ví dụ Vùng 1, Bắc Trung Bộ…)"
+        label: Vùng phụ trách (ví dụ Vùng 1, Bắc Trung Bộ…)
         type: string
       - name: phone
-        label: "Số điện thoại"
+        label: Số điện thoại
+        description: Khách bấm nút Liên hệ sẽ gọi thẳng số này.
         type: string
-        description: "Khách bấm nút Liên hệ sẽ gọi thẳng số này."
       - name: provinces
         label: Tỉnh/thành phụ trách
-        type: select
-        options:
-          multiple: true
-          values:
-          - "An Giang"
-          - "Bắc Ninh"
-          - "Cao Bằng"
-          - "Cà Mau"
-          - "Cần Thơ"
-          - "Gia Lai"
-          - "Huế"
-          - "Hà Nội"
-          - "Hà Tĩnh"
-          - "Hưng Yên"
-          - "Hải Phòng"
-          - "Khánh Hòa"
-          - "Lai Châu"
-          - "Lào Cai"
-          - "Lâm Đồng"
-          - "Lạng Sơn"
-          - "Nghệ An"
-          - "Ninh Bình"
-          - "Phú Thọ"
-          - "Quảng Ngãi"
-          - "Quảng Ninh"
-          - "Quảng Trị"
-          - "Sơn La"
-          - "TP. Hồ Chí Minh"
-          - "Thanh Hóa"
-          - "Thái Nguyên"
-          - "Tuyên Quang"
-          - "Tây Ninh"
-          - "Vĩnh Long"
-          - "Điện Biên"
-          - "Đà Nẵng"
-          - "Đắk Lắk"
-          - "Đồng Nai"
-          - "Đồng Tháp"
+        type: string
+        list: true
 - name: site
   label: Thông tin chung (công ty, menu, chân trang, mạng xã hội)
   type: file

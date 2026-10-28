@@ -1,88 +1,170 @@
 ---
+/**
+ * Con người & Tuyển dụng. Flow: hero → key figures → why Tiến Nông (three promises) → where you would
+ * work → a real career path → training → pay & recognition → open positions with full job
+ * descriptions → how to apply → FAQ.
+ */
 import raw from '../content/pages/tuyen-dung.json';
-import { isFilled, stripPlaceholders, withDefaults } from '../lib/content';
+import { isFilled, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Select from '../components/Select.astro';
+import Head from '../components/story/Head.astro';
+import Stats from '../components/story/Stats.astro';
+import Faq from '../components/story/Faq.astro';
 import { url, link } from '../lib/routes';
 import siteRaw from '../content/site.json';
 
 const c = withDefaults(raw, 'src/content/pages/tuyen-dung.json');
 const site = withDefaults(siteRaw, 'src/content/site.json');
-const jobsEmail = isFilled(c.s05_vi_tri_tuyen_dung.t5) ? c.s05_vi_tri_tuyen_dung.t5 : site.company.email;
+const F = 'src/content/pages/tuyen-dung.json';
+const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
+const jobsEmail = isFilled(c.contact.email) ? c.contact.email : site.company.email;
+const jobs = c.jobs.items.filter((j) => isFilled(j.title));
 const applyHref = (j: { title: string; link?: string | null }) =>
   isFilled(j.link) ? link(j.link) : `mailto:${jobsEmail}?subject=${encodeURIComponent('Ứng tuyển: ' + j.title)}`;
-
 const opt = (arr: string[], all: string) => [{ value: 'all', label: all }, ...[...new Set(arr)].map((v) => ({ value: v, label: v }))];
+const list = (v: unknown) => (Array.isArray(v) ? (v as string[]).filter(isFilled) : []);
+const tel = (v: string) => `tel:${v.replace(/[^\d+]/g, '')}`;
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
 <section style="background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:32px">
-<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_hero.t1}</a> {c.s01_hero.t2}</span>
+<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.hero.t1}</a> {c.hero.t2}</span>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px 64px;align-items:center">
 <div style="display:flex;flex-direction:column;gap:20px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s01_hero.t3}</span>
-<h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero.t4}</h1>
-<p style="margin:0;font-size:var(--fs-lead);color:var(--text-secondary);text-wrap:pretty">{c.s01_hero.t5}</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap"><a href="#vi-tri" style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s01_hero.t6}</a><a href="#van-hoa" style="color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md);border:1px solid var(--border-strong)">{c.s01_hero.t7}</a></div>
+<span class="st-eyebrow">{c.hero.eyebrow}</span>
+<h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.hero.title}</h1>
+<p style="margin:0;font-size:var(--fs-lead);color:var(--text-secondary);text-wrap:pretty">{c.hero.intro}</p>
+<div class="st-actions"><a href="#vi-tri" class="st-btn st-btn--solid">{c.hero.button1}</a><a href="#vi-sao" class="st-btn">{c.hero.button2}</a></div>
 </div>
 <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:260px 200px;gap:14px">
-<div style="position:relative;grid-row:span 2;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="hr-hero-1" shape="rounded" radius="16" placeholder="Chân dung người lao động thâm niên" image={c.s01_hero.img_hr_hero_1_1} cms="src/content/pages/tuyen-dung.json#s01_hero.img_hr_hero_1_1" /></div>
-<div style="position:relative;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="hr-hero-2" shape="rounded" radius="16" placeholder="Tập thể trong chuyến du lịch" image={c.s01_hero.img_hr_hero_2_1} cms="src/content/pages/tuyen-dung.json#s01_hero.img_hr_hero_2_1" /></div>
-<div style="position:relative;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="hr-hero-3" shape="rounded" radius="16" placeholder="Kỹ sư trẻ tại phòng lab" image={c.s01_hero.img_hr_hero_3_1} cms="src/content/pages/tuyen-dung.json#s01_hero.img_hr_hero_3_1" /></div>
+<div style="position:relative;grid-row:span 2;min-width:0"><ImageSlot style={fill} id="hr-hero-1" shape="rounded" radius="16" placeholder="Chân dung người lao động thâm niên" image={c.hero.img1} cms={`${F}#hero.img1`} /></div>
+<div style="position:relative;min-width:0"><ImageSlot style={fill} id="hr-hero-2" shape="rounded" radius="16" placeholder="Tập thể trong chuyến du lịch" image={c.hero.img2} cms={`${F}#hero.img2`} /></div>
+<div style="position:relative;min-width:0"><ImageSlot style={fill} id="hr-hero-3" shape="rounded" radius="16" placeholder="Kỹ sư trẻ tại phòng lab" image={c.hero.img3} cms={`${F}#hero.img3`} /></div>
 </div></div></div></section>
 
-<section style="background:var(--green-800);color:#fff">
-<div style="max-width:1280px;margin:0 auto;padding:48px clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 84px)/4),calc((900px - 100%)*999),calc((100% - 28px)/2)),1fr));gap:28px">
-<div style="display:flex;flex-direction:column"><span style="font:var(--type-stat);color:var(--amber-400);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_con_so.t1}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s02_con_so.t2}</span></div>
-<div style="display:flex;flex-direction:column"><span style="font:var(--type-stat);color:var(--amber-400);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_con_so.t3}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s02_con_so.t4}</span></div>
-<div style="display:flex;flex-direction:column"><span style="font:var(--type-stat);color:var(--amber-400);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_con_so.t5}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s02_con_so.t6}</span></div>
-<div style="display:flex;flex-direction:column"><span style="font:var(--type-stat);color:var(--amber-400);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_con_so.t7}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s02_con_so.t8}</span></div>
+<section class="st-sec st-sec--dark"><div class="st-wrap st-wrap--s"><Stats items={c.stats} /></div></section>
+
+<section id="vi-sao" class="st-sec">
+<div class="st-wrap">
+<Head eyebrow={c.reasons.eyebrow} title={c.reasons.title} />
+<div class="st-grid" style="--min:280px">
+{c.reasons.items.map((r, k) => <div class="st-card st-card--top"><div class="st-card__body"><span class="st-card__num">{String(k + 1).padStart(2, '0')}</span><strong class="st-card__title">{r.title}</strong><span class="st-card__text">{r.text}</span></div></div>)}
+</div>
+<a href={url('ve-tien-nong/van-hoa-doanh-nghiep')} style="align-self:flex-start;font-weight:600">{c.reasons.link_label}</a>
 </div></section>
 
-<section id="van-hoa" style="background:var(--surface-page);scroll-margin-top:120px">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s03_dai_ngo.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s03_dai_ngo.t2}</h2></div>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s03_dai_ngo.t3}</p>
+<section id="khoi-nghe" class="st-sec st-sec--card">
+<div class="st-wrap">
+<Head eyebrow={c.paths.eyebrow} title={c.paths.title} intro={c.paths.intro} split />
+<div class="st-grid" style="--min:210px">
+{c.paths.items.map((p) => <div class="st-card"><div class="st-card__body"><span class="st-card__tag">{p.where}</span><strong class="st-card__title">{p.title}</strong><span class="st-card__text">{p.text}</span></div></div>)}
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 40px)/3),calc((880px - 100%)*999),100%),1fr));gap:20px">
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ben-1" shape="rect" placeholder="Chuyến du lịch nước ngoài toàn công ty" image={c.s03_dai_ngo.img_ben_1_1} cms="src/content/pages/tuyen-dung.json#s03_dai_ngo.img_ben_1_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:19px">{c.s03_dai_ngo.t4}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t5}</span></div></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ben-2" shape="rect" placeholder="Lễ trao vàng tri ân" image={c.s03_dai_ngo.img_ben_2_1} cms="src/content/pages/tuyen-dung.json#s03_dai_ngo.img_ben_2_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:19px">{c.s03_dai_ngo.t6}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t7}</span></div></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="ben-3" shape="rect" placeholder="Lễ trao Bảo Bình tài lộc" image={c.s03_dai_ngo.img_ben_3_1} cms="src/content/pages/tuyen-dung.json#s03_dai_ngo.img_ben_3_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:19px">{c.s03_dai_ngo.t8}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t9}</span></div></div>
+</div></section>
+
+<section id="lo-trinh" class="st-sec">
+<div class="st-wrap">
+<div class="st-split">
+<div class="st-split__media" style="--ratio:4/5;max-height:620px"><ImageSlot style={fill} id="hr-story" shape="rounded" radius="24" placeholder="Chân dung người lao động gắn bó 20+ năm tại nơi làm việc" image={c.growth.image} cms={`${F}#growth.image`} sizes="(max-width: 899px) 92vw, 560px" /></div>
+<div>
+<Head eyebrow={c.growth.eyebrow} title={c.growth.title} />
+<blockquote class="st-quote"><p>{c.growth.quote}</p><footer><strong>{c.growth.person}</strong>{c.growth.role}</footer></blockquote>
+<ol class="st-timeline">
+{c.growth.timeline.map((t) => <li><span class="st-timeline__when">{t.when}</span><div class="st-timeline__what"><strong>{t.title}</strong><span>{t.text}</span></div></li>)}
+</ol>
 </div>
-<div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 84px)/4),calc((964px - 100%)*999),calc((100% - 28px)/2)),1fr));gap:16px 28px">
-<div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">{c.s03_dai_ngo.t10}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t11}</span></div>
-<div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">{c.s03_dai_ngo.t12}</strong><span style="color:var(--text-secondary);font-size:15px">{stripPlaceholders(c.s03_dai_ngo.t13)}</span></div>
-<div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">{c.s03_dai_ngo.t14}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t15}</span></div>
-<div style="border-top:2px solid var(--green-500);padding-top:14px"><strong style="display:block">{c.s03_dai_ngo.t16}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_dai_ngo.t17}</span></div>
-</div></div></section>
+</div>
+</div></section>
 
-<section style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:40px 72px;align-items:center">
-<div style="position:relative;aspect-ratio:4/5;max-height:560px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="hr-story" shape="rounded" radius="20" placeholder="Chân dung người lao động gắn bó 20+ năm tại nơi làm việc" image={c.s04_cau_chuyen.img_hr_story_1} cms="src/content/pages/tuyen-dung.json#s04_cau_chuyen.img_hr_story_1" /></div>
-<div style="display:flex;flex-direction:column;gap:22px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s04_cau_chuyen.t1}</span>
-<p style="margin:0;font:var(--type-quote);text-wrap:pretty">{c.s04_cau_chuyen.t2}</p>
-<div style="display:flex;flex-direction:column;padding-top:16px;border-top:1px solid var(--border-default)"><strong style="font-size:17px">{c.s04_cau_chuyen.t3}</strong><span style="color:var(--text-secondary)">{c.s04_cau_chuyen.t4}</span></div>
-</div></div></section>
+<section id="dao-tao" class="st-sec st-sec--card">
+<div class="st-wrap">
+<Head eyebrow={c.training.eyebrow} title={c.training.title} />
+<div class="st-grid" style="--min:240px">
+{c.training.items.map((t) => <div class="st-card"><div class="st-card__body"><strong class="st-card__title">{t.title}</strong><span class="st-card__text">{t.text}</span>{isFilled(t.link) && <a class="st-card__link" href={link(t.link)}>Đọc tin →</a>}</div></div>)}
+</div>
+</div></section>
 
-<section id="vi-tri" style="background:var(--surface-page);scroll-margin-top:120px">
-<div style="max-width:1080px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap"><div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s05_vi_tri_tuyen_dung.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em">{c.s05_vi_tri_tuyen_dung.t2}</h2></div><span style="color:var(--text-secondary)"><strong id="job-count" style="color:var(--text-primary)">{c.jobs.length}</strong> {c.s05_vi_tri_tuyen_dung.t3}</span></div>
+<section id="dai-ngo" class="st-sec">
+<div class="st-wrap">
+<Head eyebrow={c.benefits.eyebrow} title={c.benefits.title} intro={c.benefits.intro} split />
+<div class="st-grid" style="--min:280px">
+{c.benefits.cards.map((b, k) => <div class="st-card"><div class="st-card__img"><ImageSlot style={fill} id={`ben-${k + 1}`} shape="rect" placeholder={b.image.alt || b.title} image={b.image} cms={`${F}#benefits.cards.${k}.image`} sizes="(max-width: 767px) 92vw, 400px" /></div><div class="st-card__body"><strong class="st-card__title">{b.title}</strong><span class="st-card__text">{b.text}</span></div></div>)}
+</div>
+<div class="st-ruled">{c.benefits.items.map((b) => <div><strong>{b.title}</strong><span>{b.text}</span></div>)}</div>
+</div></section>
+
+<section id="vi-tri" class="st-sec st-sec--card">
+<div class="st-wrap st-wrap--narrow">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap">
+<Head eyebrow={c.jobs.eyebrow} title={c.jobs.title} intro={c.jobs.intro} />
+<span style="color:var(--text-secondary)"><strong id="job-count" style="color:var(--text-primary)">{jobs.length}</strong> {c.jobs.count_label}</span>
+</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
-<Select id="job-dept" label={c.s05_vi_tri_tuyen_dung.f1} options={opt(c.jobs.map((j) => j.dept), c.jobs_all_depts)} value="all" />
-<Select id="job-loc" label={c.s05_vi_tri_tuyen_dung.f2} options={opt(c.jobs.map((j) => j.loc), c.jobs_all_locations)} value="all" />
+<Select id="job-dept" label={c.jobs.dept_label} options={opt(jobs.map((j) => j.dept), c.jobs.all_depts)} value="all" />
+<Select id="job-loc" label={c.jobs.loc_label} options={opt(jobs.map((j) => j.loc), c.jobs.all_locations)} value="all" />
 </div>
-<div style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden">
-{c.jobs.map((j) => (
-<a href={applyHref(j)} data-dept={j.dept} data-loc={j.loc} style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--border-default);color:var(--text-primary)" class="hover-tint"><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{j.title}</strong><span style="font-size:14px;color:var(--text-secondary)">{j.dept} · {j.loc}{isFilled(j.due) && ` · Hạn nộp ${j.due}`}</span></div><span style="color:var(--green-600);font-weight:600">{c.jobs_apply_label}</span></a>
+<div class="td-jobs">
+{jobs.map((j, k) => (
+<details class="td-job" data-dept={j.dept} data-loc={j.loc} open={k === 0 ? true : undefined}>
+<summary>
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0"><strong style="font-size:19px">{j.title}</strong><span style="font-size:14px;color:var(--text-secondary)">{[j.dept, j.loc, isFilled(j.count) ? `Số lượng: ${j.count}` : '', j.type, isFilled(j.due) ? `Hạn nộp ${j.due}` : ''].filter(Boolean).join(' · ')}</span></div>
+<span class="td-job__sign" aria-hidden="true">+</span>
+</summary>
+<div class="td-job__body">
+{isFilled(j.summary) && <p style="margin:0;font-size:var(--fs-body);line-height:1.65">{j.summary}</p>}
+<div class="td-job__cols">
+{list(j.duties).length > 0 && <div><strong>{c.jobs.duties_label}</strong><ul>{list(j.duties).map((x) => <li>{x}</li>)}</ul></div>}
+{list(j.requirements).length > 0 && <div><strong>{c.jobs.requirements_label}</strong><ul>{list(j.requirements).map((x) => <li>{x}</li>)}</ul></div>}
+</div>
+{isFilled(c.jobs.common_benefits) && <p style="margin:0;color:var(--text-secondary);font-size:15px"><strong style="color:var(--text-primary)">{c.jobs.benefits_label}: </strong>{c.jobs.common_benefits}</p>}
+<a href={applyHref(j)} class="st-btn st-btn--solid" style="align-self:flex-start">{c.jobs.apply_label} →</a>
+</div>
+</details>
 ))}
-<div id="job-empty" hidden style="padding:32px 24px;color:var(--text-secondary)">{c.s05_vi_tri_tuyen_dung.t4} <strong>{jobsEmail}</strong> {c.s05_vi_tri_tuyen_dung.t6}</div>
+<div id="job-empty" hidden style="padding:32px 24px;color:var(--text-secondary)">{c.jobs.empty_text} <strong>{jobsEmail}</strong> {c.jobs.empty_after}</div>
 </div>
-<span style="font-size:14px;color:var(--text-tertiary)">{c.s05_vi_tri_tuyen_dung.t7}</span>
+</div></section>
+
+<section id="ung-tuyen" class="st-sec">
+<div class="st-wrap">
+<Head eyebrow={c.process.eyebrow} title={c.process.title} />
+<ol class="st-steps" style="--min:220px">{c.process.steps.map((s) => <li><strong>{s.title}</strong><span>{s.text}</span></li>)}</ol>
+<div class="st-split st-split--top">
+<div style="padding:24px;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg)">
+<strong style="font-size:18px">{c.process.documents_title}</strong>
+<ul style="margin:0;padding-left:1.2em;color:var(--text-secondary);line-height:1.8">{list(c.process.documents).map((d) => <li>{d}</li>)}</ul>
+{isFilled(c.process.note) && <p class="st-note" style="margin:6px 0 0">{c.process.note}</p>}
+</div>
+<div style="padding:24px;background:var(--green-800);color:#fff;border-radius:var(--radius-lg)">
+<strong style="font:var(--type-h3)">{c.contact.title}</strong>
+<a href={`mailto:${jobsEmail}`} style="color:#fff;font-size:20px;font-weight:700">{jobsEmail}</a>
+{isFilled(c.contact.phone) && <span style="color:var(--green-100)">{c.contact.person} · <a href={tel(c.contact.phone)} style="color:#fff;font-weight:700">{c.contact.phone}</a></span>}
+</div>
+</div>
+</div></section>
+
+<section id="hoi-dap" class="st-sec st-sec--card">
+<div class="st-wrap st-wrap--narrow">
+<Head eyebrow={c.faq.eyebrow} title={c.faq.title} />
+<Faq id="td-faq" items={c.faq.items} />
 </div></section>
 </Layout>
+
+<style>
+  .td-jobs { display: flex; flex-direction: column; background: var(--surface-page); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
+  .td-job { border-bottom: 1px solid var(--border-default); }
+  .td-job:last-of-type { border-bottom: 0; }
+  .td-job summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: center; padding: 20px 24px; }
+  .td-job summary::-webkit-details-marker { display: none; }
+  .td-job summary:hover { background: var(--green-50); }
+  .td-job__sign { font: 400 26px var(--font-body); color: var(--green-600); }
+  .td-job[open] .td-job__sign { transform: rotate(45deg); }
+  .td-job__body { padding: 0 24px 26px; display: flex; flex-direction: column; gap: 18px; }
+  .td-job__cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 18px 32px; }
+  .td-job__cols ul { margin: 8px 0 0; padding-left: 1.2em; color: var(--text-secondary); line-height: 1.65; display: flex; flex-direction: column; gap: 6px; }
+  #ung-tuyen .st-split > div { gap: 12px; }
+</style>
 
 <script>
   const dept = document.getElementById('job-dept') as HTMLSelectElement;
