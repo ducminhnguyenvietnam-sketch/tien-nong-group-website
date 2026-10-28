@@ -1,5 +1,5 @@
 ---
-title: RA MẮT LỰC LƯỢNG KHOA HỌC CÔNG NGHỆ TIÊN PHONG
+title: "Ra mắt lực lượng khoa học công nghệ tiên phong"
 category: cd
 date: 2019-10-07
 author: Tiến Nông

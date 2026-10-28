@@ -1,5 +1,5 @@
 ---
-title: "GIA ĐÌNH TIẾN NÔNG: TRAO YÊU THƯƠNG – GỬI NIỀM TIN TỚI NGƯỜI LAO ĐỘNG"
+title: "Gia đình Tiến Nông: trao yêu thương – gửi niềm tin tới người lao động"
 category: tn
 date: 2026-05-19
 author: Tiến Nông

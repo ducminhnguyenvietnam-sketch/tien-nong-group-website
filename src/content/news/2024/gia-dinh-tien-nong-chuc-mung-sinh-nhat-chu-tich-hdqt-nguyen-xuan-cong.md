@@ -1,5 +1,5 @@
 ---
-title: Gia Đình Tiến Nông Chúc Mừng Sinh Nhật Chủ Tịch HĐQT Nguyễn Xuân Cộng
+title: "Gia đình Tiến Nông chúc mừng sinh nhật Chủ tịch HĐQT Nguyễn Xuân Cộng"
 category: tn
 date: 2024-05-10
 author: Tiến Nông

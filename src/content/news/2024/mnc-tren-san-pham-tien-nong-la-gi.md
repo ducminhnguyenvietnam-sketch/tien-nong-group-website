@@ -1,5 +1,5 @@
 ---
-title: MNC TRÊN SẢN PHẨM TIẾN NÔNG LÀ GÌ?
+title: "MNC trên sản phẩm Tiến Nông là gì?"
 category: kt
 date: 2024-03-02
 author: Tiến Nông

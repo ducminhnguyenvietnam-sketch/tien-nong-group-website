@@ -6,23 +6,27 @@ import ImageSlot from '../components/ImageSlot.astro';
 import Select from '../components/Select.astro';
 import Tabs from '../components/Tabs.astro';
 import { url, link } from '../lib/routes';
+import { getProducts, productUrl } from '../lib/products';
 
 const c = withDefaults(raw, 'src/content/pages/san-pham.json');
 
-// Product lines used by a product but missing from the tab list still get a tab (e.g. "tvl" = trung vi lượng).
-const EXTRA_LINES: Record<string, string> = { tvl: 'Phân bón trung vi lượng' };
-const lines = [...c.lines, ...[...new Set(c.products.map((p) => p.line))]
-  .filter((k) => k && !c.lines.some((l) => l.key === k))
-  .map((k) => ({ key: k, label: EXTRA_LINES[k] ?? k }))];
-const lineLabel = (key: string) => (lines.find((l) => l.key === key)?.label ?? '').replace('Phân bón ', '').toUpperCase();
+const products = await getProducts();
+const lines = c.lines;
+const lineLabel = (key: string) => (lines.find((l) => l.key === key)?.label ?? '').replace('Phân bón ', '');
 const hasPoster = isFilled(c.poster.image?.src);
+const hasPosterText = isFilled(c.poster.title);
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Sản phẩm">
+{/* Launch banner, full width: the communications team swaps the image (and optional words) for each product launch. */}
+<section class="pd-banner" aria-label={c.poster.image.alt} data-needs-photos={hasPoster ? undefined : ''}>
 {(() => {
-  // Campaign poster (a designed image, usually with its own text), full width and as tall as the home-page hero; optional link.
-  const frame = <div style="position:relative;height:min(78vh,720px);min-height:520px;background:var(--gray-800)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="product-poster" sizes="100vw" shape="rect" placeholder={c.poster.image.alt} image={c.poster.image} cms="src/content/pages/san-pham.json#poster.image" /></div>;
-  return <section aria-label={c.poster.image.alt} data-needs-photos={hasPoster ? undefined : ''}>{c.poster.link ? <a href={link(c.poster.link)} style="display:block">{frame}</a> : frame}</section>;
+  const inner = <>
+    <div class="pd-banner__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="product-poster" sizes="100vw" priority shape="rect" placeholder={c.poster.image.alt} image={c.poster.image} cms="src/content/pages/san-pham.json#poster.image" /></div>
+    {hasPosterText && <><div class="pd-banner__scrim" aria-hidden="true"></div><div class="pd-banner__copy">{isFilled(c.poster.eyebrow) && <span class="pd-banner__eyebrow">{c.poster.eyebrow}</span>}<strong class="pd-banner__title">{c.poster.title}</strong>{isFilled(c.poster.text) && <span class="pd-banner__text">{c.poster.text}</span>}{isFilled(c.poster.button) && <span class="pd-banner__btn">{c.poster.button}</span>}</div></>}
+  </>;
+  return c.poster.link ? <a href={link(c.poster.link)} class="pd-banner__link">{inner}</a> : <div class="pd-banner__link">{inner}</div>;
 })()}
+</section>
 <section style="background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) 40px;display:flex;flex-direction:column;gap:28px">
 <span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_tieu_de.t1}</a> {c.s01_tieu_de.t2}</span>
@@ -45,18 +49,18 @@ const hasPoster = isFilled(c.poster.image?.src);
 <div style="flex:1 1 200px;min-width:0"><Select id="prod-crop" label={c.s02_danh_sach.f2} options={[{ value: 'all', label: c.crops_all_label }, ...c.crops.map((v) => ({ value: v, label: v }))]} value="all" /></div>
 <div style="flex:1 1 200px;min-width:0"><Select id="prod-sort" label={c.s02_danh_sach.f3} options={[{ value: 'pop', label: c.sort_popular_label }, { value: 'name', label: c.sort_name_label }]} value="pop" /></div>
 </div>
-<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:15px;color:var(--text-secondary)"><span><strong id="prod-count" style="color:var(--text-primary)">{c.products.length}</strong> {c.s02_danh_sach.t2}</span><button type="button" id="prod-reset" hidden style="background:none;border:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.s02_danh_sach.t3}</button></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:15px;color:var(--text-secondary)"><span><strong id="prod-count" style="color:var(--text-primary)">{products.length}</strong> {c.s02_danh_sach.t2}</span><button type="button" id="prod-reset" hidden style="background:none;border:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.s02_danh_sach.t3}</button></div>
 <div id="prod-grid" class="prod-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px">
-{c.products.map((p, i) => (
-<a data-line={p.line} data-crops={p.crops.join('|')} data-name={p.name.toLowerCase()} data-pop={i} href={url('chi-tiet-san-pham')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary);transition:box-shadow .15s" class="hover-lift">
-<div style="position:relative;height:250px;background:var(--surface-sunken);padding:16px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`prod-${i}`} shape="rounded" radius="10" fit="contain" placeholder={p.image.alt} image={p.image} cms={`src/content/pages/san-pham.json#products.${i}.image`} /></div>
-<div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1">
-<span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{lineLabel(p.line)}</span>
-<strong style="font-size:17px;line-height:1.35;flex:1">{p.name.replace(/\+/g, '+\u200B')}</strong>
-<div style="display:flex;gap:6px;flex-wrap:wrap">{p.npk.filter(({ value: v }) => isFilled(v)).map(({ value: v, unit: k }) => <span data-npk style="display:flex;flex-direction:column;align-items:center;min-width:52px;padding:4px 8px;border-radius:var(--radius-sm);background:var(--green-50)"><span style="font:700 15px var(--font-display);color:var(--green-800)">{v}</span><span style="font-size:11px;color:var(--text-secondary)">{k}</span></span>)}</div>
-<span style="font-size:13px;color:var(--text-tertiary)">{'Phù hợp: ' + p.crops.join(', ')}</span>
+{products.map((e, i) => { const p = e.data; return (
+<a data-line={p.line} data-crops={p.crops.join('|')} data-name={p.name.toLowerCase()} data-pop={i} href={productUrl(e)} class="prod-card hover-lift">
+<div class="prod-card__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`prod-${e.id}`} shape="rect" fit="contain" placeholder={p.front.alt || p.name} image={p.front} cms={`${e.filePath}#front`} sizes="(max-width: 599px) 45vw, 260px" /></div>
+<div class="prod-card__body">
+<span class="prod-card__line">{lineLabel(p.line)}</span>
+<strong class="prod-card__name">{p.name.replace(/\+/g, '+\u200B')}</strong>
+{p.npk.length > 0 && <div class="prod-card__npk">{p.npk.filter(({ value: v }) => isFilled(v)).slice(0, 4).map(({ value: v, unit: k }) => <span data-npk><b>{v}</b><small>{k}</small></span>)}</div>}
+{p.crops.length > 0 && <span class="prod-card__crops">{'Phù hợp: ' + p.crops.slice(0, 4).join(', ') + (p.crops.length > 4 ? '…' : '')}</span>}
 </div></a>
-))}
+); })}
 </div>
 <div id="prod-empty" hidden style="padding:48px;text-align:center;background:var(--surface-card);border:1px dashed var(--border-strong);border-radius:var(--radius-lg);color:var(--text-secondary)">{c.s02_danh_sach.t4} <a href={url('lien-he')}>{c.s02_danh_sach.t5}</a> {c.s02_danh_sach.t6}</div>
 </div></section>
@@ -109,12 +113,35 @@ const hasPoster = isFilled(c.poster.image?.src);
   render();
 </script>
 <style>
+  .pd-banner { position: relative; background: var(--green-900); }
+  .pd-banner__link { position: relative; display: block; height: clamp(300px, 40vw, 600px); color: #fff; text-decoration: none; overflow: hidden; }
+  .pd-banner__link:hover { color: #fff; text-decoration: none; }
+  .pd-banner__img { position: absolute; inset: 0; }
+  .pd-banner__scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2, 53, 26, .85) 0%, rgba(2, 53, 26, .45) 45%, rgba(2, 53, 26, 0) 80%); }
+  .pd-banner__copy { position: relative; max-width: 1280px; height: 100%; margin: 0 auto; padding: clamp(32px, 5vw, 72px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; }
+  .pd-banner__eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; color: var(--green-100); }
+  .pd-banner__title { font: var(--type-h1); max-width: 14em; text-wrap: balance; }
+  .pd-banner__text { max-width: 32em; color: var(--green-50); font-size: var(--fs-lead); text-align: start; }
+  .pd-banner__btn { margin-top: 6px; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: var(--radius-md); background: #fff; color: var(--green-700); font-weight: 700; }
+  /* Product cards: the bag stands on the card itself — no grey backdrop, no inner frame. */
+  .prod-card { display: flex; flex-direction: column; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; color: var(--text-primary); text-decoration: none; transition: box-shadow .15s, border-color .15s; }
+  .prod-card:hover { text-decoration: none; border-color: var(--green-300); }
+  .prod-card__img { position: relative; height: 250px; margin: 16px 16px 0; }
+  .prod-card__img :global(.img-slot__frame) { background: transparent !important; }
+  .prod-card__body { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .prod-card__line { font: var(--type-eyebrow); color: var(--green-600); letter-spacing: .06em; text-transform: uppercase; }
+  .prod-card__name { font-size: 17px; line-height: 1.35; flex: 1; }
+  .prod-card__npk { display: flex; gap: 6px; flex-wrap: wrap; }
+  .prod-card__npk span { display: flex; flex-direction: column; align-items: center; min-width: 52px; padding: 4px 8px; border-radius: var(--radius-sm); background: var(--green-50); }
+  .prod-card__npk b { font: 700 15px var(--font-display); color: var(--green-800); }
+  .prod-card__npk small { font-size: 11px; color: var(--text-secondary); }
+  .prod-card__crops { font-size: 13px; color: var(--text-tertiary); }
   /* Phones: two compact product cards per row. */
   @media (max-width: 599.98px) {
     .prod-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; }
-    .prod-grid > a > div:first-child { height: 160px !important; padding: 8px !important; }
-    .prod-grid > a > div:last-child { padding: 12px !important; gap: 8px !important; }
-    .prod-grid strong { font-size: 15px !important; }
-    .prod-grid [data-npk] { min-width: 40px !important; padding: 3px 5px !important; }
+    .prod-card__img { height: 160px; margin: 10px 10px 0; }
+    .prod-card__body { padding: 12px; gap: 8px; }
+    .prod-card__name { font-size: 15px; }
+    .prod-card__npk span { min-width: 40px; padding: 3px 5px; }
   }
 </style>

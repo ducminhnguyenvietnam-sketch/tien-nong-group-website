@@ -1,5 +1,5 @@
 ---
-title: CÀ RỐT – MÀU ÁO XANH MỚI TRÊN VÙNG ĐẤT HOẰNG HÓA
+title: "Cà rốt – màu áo xanh mới trên vùng đất Hoằng Hóa"
 category: kt
 date: 2019-03-06
 author: Tiến Nông

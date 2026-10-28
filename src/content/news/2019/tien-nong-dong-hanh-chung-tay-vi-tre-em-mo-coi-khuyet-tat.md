@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG ĐỒNG HÀNH “CHUNG TAY VÌ TRẺ EM MỒ CÔI, KHUYẾT TẬT”
+title: "Tiến Nông đồng hành “Chung tay vì trẻ em mồ côi, khuyết tật”"
 category: cd
 date: 2019-05-23
 author: Tiến Nông

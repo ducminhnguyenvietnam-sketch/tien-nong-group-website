@@ -1,5 +1,5 @@
 ---
-title: Điạ Chỉ Tư Vấn Kỹ Thuật Cắt Tỉa Cành Cho Cây Cà Phê
+title: "Điạ chỉ tư vấn kỹ thuật cắt tỉa cành cho cây cà phê"
 category: kt
 date: 2024-04-14
 author: Tiến Nông

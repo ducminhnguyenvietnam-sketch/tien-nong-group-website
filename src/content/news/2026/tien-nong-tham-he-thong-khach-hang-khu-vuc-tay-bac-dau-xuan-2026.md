@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG THĂM HỆ THỐNG KHÁCH HÀNG KHU VỰC TÂY BẮC ĐẦU XUÂN 2026
+title: "Tiến Nông thăm hệ thống khách hàng khu vực Tây Bắc đầu xuân 2026"
 category: tn
 date: 2026-03-06
 author: Tiến Nông

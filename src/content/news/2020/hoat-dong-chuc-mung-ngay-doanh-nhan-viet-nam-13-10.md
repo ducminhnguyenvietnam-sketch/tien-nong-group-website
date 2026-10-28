@@ -1,5 +1,5 @@
 ---
-title: HOẠT ĐỘNG CHÚC MỪNG NGÀY DOANH NHÂN VIỆT NAM 13/ 10
+title: "Hoạt động chúc mừng Ngày Doanh nhân Việt Nam 13/ 10"
 category: tn
 date: 2020-10-14
 author: Tiến Nông

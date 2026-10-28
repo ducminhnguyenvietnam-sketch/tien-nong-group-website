@@ -1,5 +1,5 @@
 ---
-title: "TIẾN NÔNG ĐỒNG HÀNH CÙNG NÔNG DÂN THÁI NGUYÊN: KIẾN TẠO MÔ HÌNH NÔNG NGHIỆP GIÁ TRỊ CAO CHO NÔNG SẢN VIỆT"
+title: "Tiến Nông đồng hành cùng nông dân Thái Nguyên: kiến tạo mô hình nông nghiệp giá trị cao cho nông sản Việt"
 category: tn
 date: 2026-04-15
 author: Tiến Nông

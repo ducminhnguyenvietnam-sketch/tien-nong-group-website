@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG TỔ CHỨC HỘI NGHỊ GẶP MẶT, TRI ÂN HỆ THỐNG ĐẠI DIỆN CHÍNH HÃNG TỈNH HẢI DƯƠNG
+title: "Tiến Nông tổ chức hội nghị gặp mặt, tri ân hệ thống đại diện chính hãng tỉnh Hải Dương"
 category: tn
 date: 2019-05-08
 author: Tiến Nông

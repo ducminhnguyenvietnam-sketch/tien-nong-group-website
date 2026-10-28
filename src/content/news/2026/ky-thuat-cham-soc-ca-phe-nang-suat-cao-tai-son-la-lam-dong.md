@@ -1,5 +1,5 @@
 ---
-title: KỸ THUẬT CHĂM SÓC CÀ PHÊ NĂNG SUẤT CAO TẠI SƠN LA – LÂM ĐỒNG
+title: "Kỹ thuật chăm sóc cà phê năng suất cao tại Sơn La – Lâm Đồng"
 category: kt
 date: 2026-04-14
 author: Tiến Nông

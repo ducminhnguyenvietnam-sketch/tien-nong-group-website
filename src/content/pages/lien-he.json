@@ -18,11 +18,18 @@
     "t13": "Khách hàng dự án, đối tác quốc tế",
     "t14": "BÁO CHÍ & TUYỂN DỤNG",
     "t15": "info@tiennong.vn",
-    "t16": "Truyền thông, hồ sơ ứng tuyển"
+    "t16": "Truyền thông, hồ sơ ứng tuyển",
+    "lead": "Kỹ sư nông học, bộ phận kinh doanh và chăm sóc khách hàng của Tiến Nông luôn sẵn sàng đồng hành cùng bà con và quý đối tác.",
+    "background": {
+      "src": "/uploads/tin-cu/2024/doan-khach-hang-hung-yen-ninh-binh-tham-nha-may-tien-nong-2.webp",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Khách hàng tham quan khuôn viên nhà máy Tiến Nông"
+    }
   },
   "s02_tim_dai_ly": {
     "t1": "TÌM ĐỐI TÁC",
-    "t2": "Hệ thống 10.000 điểm bán trên toàn quốc",
+    "t2": "Tìm đại lý Tiến Nông gần bạn",
     "f1": "Tỉnh / thành phố",
     "t3": "đại diện bán hàng tại",
     "t4": "Danh sách đại lý là dữ liệu mẫu. Bản chính thức sẽ kết nối với dữ liệu hệ thống phân phối.",
@@ -54,7 +61,31 @@
     "map1": "",
     "map2": "",
     "map3": "",
-    "map4": ""
+    "map4": "",
+    "img1": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Trụ sở chính Tiến Nông, 274B Bà Triệu, Thanh Hóa"
+    },
+    "img2": {
+      "src": "/uploads/Nha-may-Tien-Nong-Bim-Son-2025-scaled.jpg",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn"
+    },
+    "img3": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Gia Lai"
+    },
+    "img4": {
+      "src": "",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Nhà máy Dinh dưỡng cây trồng Tiến Nông 3"
+    }
   },
   "s04_gui_lien_he": {
     "t1": "Gửi yêu cầu",

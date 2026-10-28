@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG ĐÓN TIẾP ĐOÀN CỰU CHIẾN BINH THÀNH CỔ QUẢNG TRỊ
+title: "Tiến Nông đón tiếp đoàn cựu chiến binh thành cổ Quảng Trị"
 category: tn
 date: 2026-03-24
 author: Tiến Nông

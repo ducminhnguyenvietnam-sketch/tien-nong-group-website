@@ -1,5 +1,5 @@
 ---
-title: "NHÀ MÁY DINH DƯỠNG CÂY TRỒNG TIẾN NÔNG 3: TỔNG KẾT HOẠT ĐỘNG SẢN XUẤT NĂM 2025 VÀ TRIỂN KHAI MỤC TIÊU CHẤT LƯỢNG – MÔI TRƯỜNG NĂM 2026"
+title: "Nhà máy dinh dưỡng cây trồng Tiến Nông 3: tổng kết hoạt động sản xuất năm 2025 và triển khai mục tiêu chất lượng – môi trường năm 2026"
 category: tn
 date: 2026-02-06
 author: Tiến Nông

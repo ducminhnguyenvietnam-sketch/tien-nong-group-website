@@ -53,13 +53,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 <style>
   .na { display: flex; flex-direction: column; gap: 24px; }
-  .na__bar { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px 24px; flex-wrap: wrap; border-bottom: 1px solid var(--border-default); }
-  .na__tabs { display: flex; gap: 24px; overflow-x: auto; max-width: 100%; scrollbar-width: none; }
-  .na__tabs::-webkit-scrollbar { display: none; }
-  .na__tabs a { flex: none; padding: 10px 2px; margin-bottom: -1px; border-bottom: 2px solid transparent; color: var(--text-secondary); font-weight: 600; white-space: nowrap; text-decoration: none; }
-  .na__tabs a:hover { color: var(--text-primary); text-decoration: none; }
-  .na__tabs a[aria-current='page'] { color: var(--green-700); border-bottom-color: var(--green-500); }
-  .na__filters { display: flex; gap: 8px; flex: 0 1 380px; min-width: min(100%, 280px); padding-bottom: 10px; }
+  .na__bar { display: flex; flex-direction: column; gap: 14px; padding-bottom: 20px; border-bottom: 1px solid var(--border-default); }
+  /* Category chips wrap onto a second line instead of scrolling, so every name stays readable. */
+  .na__tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .na__tabs a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--surface-card); color: var(--text-secondary); font-weight: 600; font-size: 15px; text-decoration: none; }
+  .na__tabs a:hover { color: var(--green-700); border-color: var(--green-300); text-decoration: none; }
+  .na__tabs a[aria-current='page'] { color: #fff; background: var(--green-500); border-color: var(--green-500); }
+  .na__filters { display: flex; gap: 8px; max-width: 520px; }
   .na__filters input, .na__filters select { min-height: 44px; padding: 0 12px; border-radius: var(--radius-md); border: 1px solid var(--border-default); font: 16px var(--font-body); background: var(--surface-card); color: var(--text-primary); outline-color: var(--green-500); }
   .na__filters input { flex: 1; min-width: 0; }
   .na__filters select { flex: none; }
@@ -90,7 +90,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .na__results :global(em) { font-style: normal; font-size: 13px; color: var(--green-600); font-weight: 600; }
   .na__results :global(strong) { line-height: 1.4; }
   @media (max-width: 599.98px) {
-    .na__filters { flex-basis: 100%; }
+    .na__filters { max-width: none; }
+    .na__tabs a { min-height: 36px; padding: 0 12px; font-size: 14px; }
     .na__results :global(a) { grid-template-columns: minmax(0, 1fr); }
     .na__pager > * { min-width: 40px; height: 40px; padding: 0 10px; }
   }

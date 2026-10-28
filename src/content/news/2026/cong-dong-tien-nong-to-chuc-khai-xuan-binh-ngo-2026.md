@@ -1,5 +1,5 @@
 ---
-title: CỘNG ĐỒNG TIẾN NÔNG TỔ CHỨC KHAI XUÂN BÍNH NGỌ 2026
+title: "Cộng đồng Tiến Nông tổ chức khai Xuân Bính Ngọ 2026"
 category: tn
 date: 2026-02-25
 author: Tiến Nông

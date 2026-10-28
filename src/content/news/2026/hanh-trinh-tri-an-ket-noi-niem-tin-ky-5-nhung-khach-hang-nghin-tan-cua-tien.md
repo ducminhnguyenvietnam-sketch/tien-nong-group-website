@@ -1,5 +1,5 @@
 ---
-title: "HÀNH TRÌNH TRI ÂN – KẾT NỐI NIỀM TIN KỲ 5: NHỮNG KHÁCH HÀNG NGHÌN TẤN CỦA TIẾN NÔNG VỚI NIỀM TIN – KHÁT VỌNG TĂNG TRƯỞNG"
+title: "Hành trình tri ân – kết nối niềm tin kỳ 5: những khách hàng nghìn tấn của Tiến Nông với niềm tin – khát vọng tăng trưởng"
 category: tn
 date: 2026-04-23
 author: Tiến Nông

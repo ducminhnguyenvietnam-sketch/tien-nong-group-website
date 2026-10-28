@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG – LÀM CHỦ CÔNG NGHỆ SẢN XUẤT PHÂN BÓN NPK HỮU CƠ VI SINH – BƯỚC TIẾN CHO NÔNG NGHIỆP XANH, TUẦN HOÀN
+title: "Tiến Nông – làm chủ công nghệ sản xuất phân bón NPK hữu cơ vi sinh – bước tiến cho nông nghiệp xanh, tuần hoàn"
 category: khcn
 date: 2026-04-24
 author: Tiến Nông

@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG RA MẮT BỘ SẢN PHẨM MỚI CAO SẢN 1 – CAO SẢN 2
+title: "Tiến Nông ra mắt bộ sản phẩm mới cao sản 1 – cao sản 2"
 category: tn
 date: 2026-04-13
 author: Tiến Nông

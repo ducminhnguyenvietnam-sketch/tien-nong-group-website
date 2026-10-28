@@ -1,5 +1,5 @@
 ---
-title: "HỘI NÔNG DÂN XÃ HOẰNG THANH: TỔ CHỨC LỚP BỒI DƯỠNG, CẬP NHẬT KIẾN THỨC KHOA HỌC KỸ THUẬT TRONG TRỒNG TRỌT"
+title: "Hội Nông dân xã Hoằng Thanh: tổ chức lớp bồi dưỡng, cập nhật kiến thức khoa học kỹ thuật trong trồng trọt"
 category: kt
 date: 2026-01-21
 author: Tiến Nông

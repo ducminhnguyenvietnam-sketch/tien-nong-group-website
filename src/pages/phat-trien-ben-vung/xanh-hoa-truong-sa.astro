@@ -136,7 +136,7 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
   .ts-stat { display: flex; flex-direction: column; gap: 4px; padding-top: 14px; border-top: 2px solid var(--amber-400); }
   .ts-stat__value { font: 800 clamp(28px, 3vw, 40px)/1.1 var(--font-display); white-space: nowrap; }
   .ts-stat__label { font: 600 13px/1.4 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--green-100); }
-  .ts-stat__sub { font-size: 14px; color: var(--green-100); opacity: .85; text-align: start; }
+  .ts-stat__sub { font-size: 14px; color: var(--green-100); opacity: .85; }
   @media (max-width: 899.98px) { .ts-stats__row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 399.98px) { .ts-stat__value { font-size: 24px; } }
 
@@ -149,7 +149,7 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
   .ts-steps { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid var(--border-default); }
   .ts-steps li { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border-default); }
   .ts-steps__n { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--green-500); color: #fff; font-weight: 700; }
-  .ts-steps p { margin: 2px 0 0; color: var(--text-secondary); font-size: 15px; text-align: start; }
+  .ts-steps p { margin: 2px 0 0; color: var(--text-secondary); font-size: 15px; }
   .ts-campaign__visual { position: relative; aspect-ratio: 1920 / 900; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); }
   @media (max-width: 899.98px) { .ts-campaign__grid { grid-template-columns: minmax(0, 1fr); } .ts-campaign__visual { order: -1; } }
 
@@ -162,7 +162,7 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
   .ts-timeline__img { position: relative; aspect-ratio: 4 / 3; margin-bottom: 6px; }
   .ts-timeline__date { font: 700 13px/1.3 var(--font-mono); color: var(--green-700); }
   .ts-timeline__title { font: 700 17px/1.35 var(--font-display); text-wrap: balance; }
-  .ts-timeline__text { font-size: 14px; line-height: 1.5; color: var(--text-secondary); text-align: start; }
+  .ts-timeline__text { font-size: 14px; line-height: 1.5; color: var(--text-secondary); }
   .ts-timeline__more { font-size: 14px; font-weight: 600; color: var(--text-link); }
   @media (max-width: 1099.98px) {
     .ts-timeline { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(240px, 72%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin-inline: calc(-1 * clamp(20px, 4vw, 56px)); padding-inline: clamp(20px, 4vw, 56px); scroll-padding-inline: clamp(20px, 4vw, 56px); border-top: 0; }
@@ -206,11 +206,11 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
     .ts-wall:not(.is-open) li:nth-child(n+5) { display: none; }
     .ts-more[data-count] { display: block; }
   }
-  .ts-wall blockquote { margin: 0; font-size: 16px; line-height: 1.6; color: var(--text-primary); text-align: start; }
+  .ts-wall blockquote { margin: 0; font-size: 16px; line-height: 1.6; color: var(--text-primary); }
   .ts-wall blockquote::before { content: '“'; display: block; font: 700 40px/0.6 var(--font-display); color: var(--green-500); margin-bottom: 8px; }
   .ts-wall__who { display: flex; flex-direction: column; gap: 2px; padding-top: 12px; border-top: 1px solid var(--green-100); }
   .ts-wall__who strong { font-size: 15px; }
-  .ts-wall__who span { font-size: 13px; color: var(--text-secondary); text-align: start; }
+  .ts-wall__who span { font-size: 13px; color: var(--text-secondary); }
   .ts-more[hidden] { display: none !important; }
   .ts-more { display: block; margin: 8px auto 0; min-height: 48px; padding: 0 24px; border-radius: var(--radius-md); border: 1px solid var(--border-strong); background: var(--surface-card); font: 700 15px var(--font-body); color: var(--green-700); cursor: pointer; }
 
@@ -218,7 +218,7 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
   .ts-gallery__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
   .ts-gallery__grid figure { margin: 0; display: flex; flex-direction: column; gap: 8px; }
   .ts-gallery__img { position: relative; aspect-ratio: 3 / 2; }
-  .ts-gallery__grid figcaption { font-size: 14px; color: var(--text-secondary); text-align: start; }
+  .ts-gallery__grid figcaption { font-size: 14px; color: var(--text-secondary); }
   @media (max-width: 899.98px) { .ts-gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 559.98px) { .ts-gallery__grid { grid-template-columns: minmax(0, 1fr); } }
 

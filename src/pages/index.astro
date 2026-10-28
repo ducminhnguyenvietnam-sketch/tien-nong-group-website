@@ -7,13 +7,12 @@ import ImageSlot from '../components/ImageSlot.astro';
 import Tabs from '../components/Tabs.astro';
 import Slideshow from '../components/Slideshow.astro';
 import { link, url } from '../lib/routes';
-import { CATEGORIES, getNews, getPress, isPress, newsLinkAttrs, newsUrl } from '../lib/news';
+import { CATEGORIES, getNews, isPress, newsLinkAttrs, newsUrl } from '../lib/news';
 import newsRaw from '../content/pages/tin-tuc.json';
 
 const c = withDefaults(raw, 'src/content/pages/trang-chu.json');
 
 const latest = (await getNews()).filter((n) => !isPress(n)).slice(0, 3);
-const press = await getPress(3);
 const newsPage = withDefaults(newsRaw, 'src/content/pages/tin-tuc.json');
 const F = 'src/content/pages/trang-chu.json';
 const u = c.s02_uy_tin;
@@ -148,7 +147,7 @@ const hasBanner = isFilled(banner?.image?.src);
 <Tabs id="product-tabs" label="Xem sản phẩm" items={[{ value: 'line', label: c.product_tab_line }, { value: 'crop', label: c.product_tab_crop }]} value="line" />
 </div>
 <div data-panel="line" class="m-scroll" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 60px)/4),calc((1060px - 100%)*999),calc((100% - 20px)/2)),1fr));gap:20px">
-<a href={url('san-pham')} style="display:flex;flex-direction:column;gap:14px;color:var(--text-primary)"><div style="position:relative;height:260px;background:var(--surface-sunken);border-radius:var(--radius-lg)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="line-1" shape="rounded" radius="16" fit="contain" placeholder="Bao bì dòng Chuyên dụng" image={c.s05_san_pham.img_line_1_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_line_1_1" /></div><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:19px">{c.s05_san_pham.t3}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s05_san_pham.t4}</span></div></a>
+<a href={url('san-pham')} style="display:flex;flex-direction:column;gap:14px;color:var(--text-primary)"><div style="position:relative;height:260px;background:var(--surface-sunken);border-radius:var(--radius-lg)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="line-1" shape="rounded" radius="16" fit="contain" placeholder="Bao bì dòng Chuyên dùng" image={c.s05_san_pham.img_line_1_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_line_1_1" /></div><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:19px">{c.s05_san_pham.t3}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s05_san_pham.t4}</span></div></a>
 <a href={url('san-pham')} style="display:flex;flex-direction:column;gap:14px;color:var(--text-primary)"><div style="position:relative;height:260px;background:var(--surface-sunken);border-radius:var(--radius-lg)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="line-2" shape="rounded" radius="16" fit="contain" placeholder="Bao bì dòng Đa dụng" image={c.s05_san_pham.img_line_2_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_line_2_1" /></div><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:19px">{c.s05_san_pham.t5}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s05_san_pham.t6}</span></div></a>
 <a href={url('san-pham')} style="display:flex;flex-direction:column;gap:14px;color:var(--text-primary)"><div style="position:relative;height:260px;background:var(--surface-sunken);border-radius:var(--radius-lg)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="line-3" shape="rounded" radius="16" fit="contain" placeholder="Bao bì dòng Hữu cơ" image={c.s05_san_pham.img_line_3_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_line_3_1" /></div><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:19px">{c.s05_san_pham.t7}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s05_san_pham.t8}</span></div></a>
 <a href={url('san-pham')} style="display:flex;flex-direction:column;gap:14px;color:var(--text-primary)"><div style="position:relative;height:260px;background:var(--surface-sunken);border-radius:var(--radius-lg)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="line-4" shape="rounded" radius="16" fit="contain" placeholder="Bao bì dòng Hàm lượng cao" image={c.s05_san_pham.img_line_4_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_line_4_1" /></div><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:19px">{c.s05_san_pham.t9}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s05_san_pham.t10}</span></div></a>
@@ -220,12 +219,6 @@ const hasBanner = isFilled(banner?.image?.src);
 <a href={url('phat-trien-ben-vung')} style="align-self:flex-start;font-weight:600">{c.s08_vi_cong_dong.t11}</a>
 </div></section>
 
-{press.length > 0 && <section id="bao-chi" aria-labelledby="bao-chi-title" style="background:var(--surface-card);border-top:1px solid var(--border-default)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(48px,6vw,72px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:24px">
-<h2 id="bao-chi-title" style="margin:0;font:var(--type-eyebrow);letter-spacing:.08em;text-transform:uppercase;color:var(--green-700)">{newsPage.s03_bao_chi.t1}</h2>
-<div class="press-row m-scroll" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
-{press.map((p) => <a href={newsUrl(p)} {...newsLinkAttrs(p)} class="press-card"><span class="press-card__source">{p.data.source || CATEGORIES[p.data.category]}</span><strong class="press-card__title">“{p.data.title}”</strong><span class="press-card__more">{newsPage.s03_bao_chi.t3}</span></a>)}
-</div></div></section>}
 
 <section id="tin-tuc" style="background:var(--surface-page);border-top:1px solid var(--border-default)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
@@ -252,12 +245,6 @@ const hasBanner = isFilled(banner?.image?.src);
   @media (prefers-reduced-motion: reduce) { .hero-slide { transition: none; } }
   /* Phone: the award labels are kept unbroken, so give each its own row. */
   @media (max-width: 480px) { .awards, .aud-grid { grid-template-columns: 1fr !important; } }
-  .press-card { display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid var(--border-default); border-radius: var(--radius-lg);
-    background: var(--surface-page); color: var(--text-primary); transition: border-color var(--motion-base) var(--ease-out), transform var(--motion-base) var(--ease-out); }
-  .press-card:hover { text-decoration: none; border-color: var(--green-300); transform: translateY(-2px); }
-  .press-card__source { font: var(--type-eyebrow); letter-spacing: .06em; text-transform: uppercase; color: var(--green-700); }
-  .press-card__title { font: 600 18px/1.45 var(--font-display); flex: 1; }
-  .press-card__more { font-size: 14px; font-weight: 600; color: var(--text-link); }
   /* Phones: text sits low over a bottom-up scrim so it stays readable over any photo. */
   @media (max-width: 767.98px) {
     .hero-slider { height: 78svh !important; min-height: 540px !important; max-height: 720px; }

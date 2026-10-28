@@ -1,5 +1,5 @@
 ---
-title: HỘI ĐỒNG QUẢN TRỊ TIẾN NÔNG HỌP MỞ RỘNG – ĐỊNH HƯỚNG CHIẾN LƯỢC CHO GIAI ĐOẠN MỚI
+title: "Hội đồng quản trị Tiến Nông họp mở rộng – định hướng chiến lược cho giai đoạn mới"
 category: tn
 date: 2025-07-08
 author: Tiến Nông

@@ -1,5 +1,5 @@
 ---
-title: "PHÁT TRIỂN BỀN VỮNG TỪ NỘI LỰC DOANH NGHIỆP: CÂU CHUYỆN CỦA TIẾN NÔNG"
+title: "Phát triển bền vững từ nội lực doanh nghiệp: câu chuyện của Tiến Nông"
 category: tn
 date: 2026-04-17
 author: Tiến Nông

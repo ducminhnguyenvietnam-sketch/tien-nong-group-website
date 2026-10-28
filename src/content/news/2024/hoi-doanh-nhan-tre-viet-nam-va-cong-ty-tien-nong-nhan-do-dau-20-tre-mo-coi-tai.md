@@ -1,5 +1,5 @@
 ---
-title: HỘI DOANH NHÂN TRẺ VIỆT NAM VÀ CÔNG TY CP CÔNG NÔNG NGHIỆP TIẾN NÔNG NHẬN ĐỠ ĐẦU 20 TRẺ MỒ CÔI TẠI NGHỆ AN
+title: "Hội Doanh nhân trẻ Việt Nam và Công ty CP Công Nông nghiệp Tiến Nông nhận đỡ đầu 20 trẻ mồ côi tại Nghệ An"
 category: tn
 date: 2024-02-25
 author: Tiến Nông

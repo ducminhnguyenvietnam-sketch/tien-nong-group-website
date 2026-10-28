@@ -1,5 +1,5 @@
 ---
-title: "TIẾN NÔNG ĐÓN ĐOÀN LIÊN MINH HTX THANH HÓA: MỞ RỘNG HỢP TÁC, THÚC ĐẨY LIÊN KẾT SẢN XUẤT BỀN VỮNG"
+title: "Tiến Nông đón đoàn Liên minh HTX Thanh Hóa: mở rộng hợp tác, thúc đẩy liên kết sản xuất bền vững"
 category: tn
 date: 2026-03-25
 author: Tiến Nông

@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG KHUYẾN NGHỊ GIẢI PHÁP DINH DƯỠNG CHO LÚA GIAI ĐOẠN LÀM ĐÒNG GIÚP TĂNG CHẮC HẠT VÀ NĂNG SUẤT
+title: "Tiến Nông khuyến nghị giải pháp dinh dưỡng cho lúa giai đoạn làm đòng giúp tăng chắc hạt và năng suất"
 category: kt
 date: 2026-03-07
 author: Tiến Nông

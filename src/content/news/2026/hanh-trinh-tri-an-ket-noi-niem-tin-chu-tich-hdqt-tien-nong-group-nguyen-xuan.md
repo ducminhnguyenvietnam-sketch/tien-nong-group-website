@@ -1,5 +1,5 @@
 ---
-title: "HÀNH TRÌNH TRI ÂN – KẾT NỐI NIỀM TIN: CHỦ TỊCH HĐQT TIẾN NÔNG GROUP NGUYỄN XUÂN CỘNG TỚI THĂM KHÁCH HÀNG TIÊU BIỂU TẠI XÃ NGỌC LẶC – THANH HOÁ"
+title: "Hành trình tri ân – kết nối niềm tin: Chủ tịch HĐQT Tiến Nông Group Nguyễn Xuân Cộng tới thăm khách hàng tiêu biểu tại xã Ngọc Lặc – Thanh Hoá"
 category: tn
 date: 2026-04-02
 author: Tiến Nông

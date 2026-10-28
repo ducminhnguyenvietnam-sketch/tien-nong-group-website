@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG THÀNH LẬP PHÒNG CÔNG NGHỆ SINH HỌC, TĂNG CƯỜNG NĂNG LỰC NGHIÊN CỨU VÀ LÀM CHỦ CÔNG NGHỆ VI SINH
+title: "Tiến Nông thành lập phòng công nghệ sinh học, tăng cường năng lực nghiên cứu và làm chủ công nghệ vi sinh"
 category: khcn
 date: 2026-07-08
 author: Tiến Nông

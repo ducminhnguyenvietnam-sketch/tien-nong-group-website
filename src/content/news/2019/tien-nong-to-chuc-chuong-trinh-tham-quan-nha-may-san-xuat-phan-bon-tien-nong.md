@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG TỔ CHỨC CHƯƠNG TRÌNH THĂM QUAN NHÀ MÁY SẢN XUẤT PHÂN BÓN TIẾN NÔNG CHO HỘI NHÀ VƯỜN TỈNH HÀ NAM
+title: "Tiến Nông tổ chức chương trình thăm quan nhà máy sản xuất phân bón Tiến Nông cho hội nhà vườn tỉnh Hà Nam"
 category: tn
 date: 2019-03-20
 author: Tiến Nông

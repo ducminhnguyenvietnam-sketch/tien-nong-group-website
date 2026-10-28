@@ -1,5 +1,5 @@
 ---
-title: ĐẦU TƯ ĐÚNG PHÂN BÓN – CHI PHÍ TĂNG HAY LỢI NHUẬN TĂNG?
+title: "Đầu tư đúng phân bón – chi phí tăng hay lợi nhuận tăng?"
 category: kt
 date: 2026-04-16
 author: Tiến Nông

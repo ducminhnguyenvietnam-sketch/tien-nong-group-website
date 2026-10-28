@@ -1,5 +1,5 @@
 ---
-title: CHƯƠNG TRÌNH GẶP MĂT VÀ GIAO LƯU BẠN HÀNG TỈNH BẮC NINH NĂM 2023
+title: "Chương trình gặp măt và giao lưu bạn hàng tỉnh Bắc Ninh năm 2023"
 category: tn
 date: 2023-12-08
 author: Tiến Nông

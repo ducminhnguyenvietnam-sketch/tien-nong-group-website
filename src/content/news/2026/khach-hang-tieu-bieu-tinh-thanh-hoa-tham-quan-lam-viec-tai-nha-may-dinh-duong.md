@@ -1,5 +1,5 @@
 ---
-title: KHÁCH HÀNG TIÊU BIỂU TỈNH THANH HÓA THĂM QUAN, LÀM VIỆC TẠI NHÀ MÁY DINH DƯỠNG CÂY TRỒNG TIẾN NÔNG BỈM SƠN
+title: "Khách hàng tiêu biểu tỉnh Thanh Hóa thăm quan, làm việc tại nhà máy dinh dưỡng cây trồng Tiến Nông Bỉm Sơn"
 category: tn
 date: 2026-05-08
 author: Tiến Nông

@@ -6,7 +6,7 @@ name: Nhập tin tức từ web cũ
 on:
   push:
     branches: [nhap-tin-cu]
-    paths: ['scripts/wp-import/**', '.github/workflows/wp-import.yml']
+    paths: ['scripts/wp-import/run.txt']
   workflow_dispatch:
 
 permissions:

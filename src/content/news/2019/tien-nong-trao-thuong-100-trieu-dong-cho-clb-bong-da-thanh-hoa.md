@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG TRAO THƯỞNG 100 TRIỆU ĐỒNG CHO CLB BÓNG ĐÁ THANH HÓA
+title: "Tiến Nông trao thưởng 100 triệu đồng cho CLB Bóng đá Thanh Hóa"
 category: cd
 date: 2019-05-06
 author: Tiến Nông

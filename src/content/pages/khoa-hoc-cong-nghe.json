@@ -84,7 +84,7 @@
     "t14": "Kiểm chứng năng suất và chất lượng trên các mô hình thực tế.",
     "t15": "05",
     "t16": "Sản xuất & kiểm định",
-    "t17": "Sản xuất theo ISO 9001, kiểm định chất lượng theo từng lô."
+    "t17": "Sản xuất theo ISO 9001, kiểm nghiệm chất lượng theo từng lô."
   },
   "s06_vilas_1519": {
     "img_vilas_1": {
@@ -219,7 +219,7 @@
       "name": "Phân tích & Kiểm nghiệm chất lượng",
       "body": "Kiểm soát chất lượng từ nguyên liệu đầu vào đến từng lô thành phẩm theo tiêu chuẩn VILAS 1519 và các TCVN hiện hành.",
       "topics": [
-        "Kiểm định theo TCVN",
+        "Kiểm nghiệm theo TCVN",
         "Kiểm soát nguyên liệu đầu vào",
         "Truy xuất theo lô sản xuất"
       ],

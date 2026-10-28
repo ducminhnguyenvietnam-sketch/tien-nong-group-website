@@ -1,5 +1,5 @@
 ---
-title: PHÂN BÓN CÔNG NGHỆ CAO TIẾN NÔNG GIÚP NÔNG DÂN GIẢM CHI PHÍ VÀ TĂNG HIỆU QUẢ CANH TÁC
+title: "Phân bón công nghệ cao Tiến Nông giúp nông dân giảm chi phí và tăng hiệu quả canh tác"
 category: kt
 date: 2026-03-14
 author: Tiến Nông

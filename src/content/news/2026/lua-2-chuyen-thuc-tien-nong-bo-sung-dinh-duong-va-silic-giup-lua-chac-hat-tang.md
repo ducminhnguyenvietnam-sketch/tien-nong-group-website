@@ -1,5 +1,5 @@
 ---
-title: LÚA 2 CHUYÊN THÚC TIẾN NÔNG – BỔ SUNG DINH DƯỠNG VÀ SILIC GIÚP LÚA CHẮC HẠT, TĂNG NĂNG SUẤT
+title: "Lúa 2 chuyên thúc Tiến Nông – bổ sung dinh dưỡng và silic giúp lúa chắc hạt, tăng năng suất"
 category: kt
 date: 2026-03-18
 author: Tiến Nông

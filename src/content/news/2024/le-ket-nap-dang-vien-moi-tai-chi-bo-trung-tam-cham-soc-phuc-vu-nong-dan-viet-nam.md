@@ -1,5 +1,5 @@
 ---
-title: Lễ Kết Nạp Đảng Viên Mới tại Chi Bộ Trung Tâm Chăm Sóc Phục Vụ Nông Dân Việt Nam
+title: "Lễ kết nạp đảng viên mới tại chi bộ trung tâm chăm sóc phục vụ nông dân Việt Nam"
 category: tn
 date: 2024-10-10
 author: Tiến Nông

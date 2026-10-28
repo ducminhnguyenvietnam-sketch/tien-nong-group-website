@@ -1,5 +1,5 @@
 ---
-title: "HÀNH TRÌNH TRI ÂN – KẾT NỐI NIỀM TIN (KỲ 2): 7.500 TẤN PHÂN BÓN KHÔNG ĐƠN THUẦN CHỈ LÀ CON SỐ SẢN LƯỢNG"
+title: "Hành trình tri ân – kết nối niềm tin (kỳ 2): 7.500 tấn phân bón không đơn thuần chỉ là con số sản lượng"
 category: tn
 date: 2026-04-06
 author: Tiến Nông

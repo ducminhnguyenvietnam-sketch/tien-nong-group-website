@@ -1,5 +1,5 @@
 ---
-title: “KHÔNG THỂ ĐÀO TẠO KIỂU CŨ CHO NÔNG NGHIỆP MỚI”
+title: "“Không thể đào tạo kiểu cũ cho nông nghiệp mới”"
 category: tn
 date: 2026-04-14
 author: Tiến Nông

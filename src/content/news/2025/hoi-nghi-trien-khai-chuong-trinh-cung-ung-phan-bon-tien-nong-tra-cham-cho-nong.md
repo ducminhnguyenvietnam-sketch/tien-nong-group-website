@@ -1,5 +1,5 @@
 ---
-title: HỘI NGHỊ TRIỂN KHAI CHƯƠNG TRÌNH CUNG ỨNG PHÂN BÓN TIẾN NÔNG TRẢ CHẬM CHO NÔNG DÂN NĂM 2025 TẠI BẮC NINH
+title: "Hội nghị triển khai chương trình cung ứng phân bón Tiến Nông trả chậm cho nông dân năm 2025 tại Bắc Ninh"
 category: tn
 date: 2025-07-12
 author: Tiến Nông

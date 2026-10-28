@@ -33,10 +33,10 @@ a:hover { color: var(--text-link-hover); }
 .ds-tab { color: var(--text-secondary); border-bottom: 2px solid transparent; }
 .ds-tab[aria-selected="true"] { color: var(--green-700); border-bottom-color: var(--green-500); }
 
-/* Header nav: the design switches between inline nav and a Menu button at 1200px. */
+/* Header nav: the design switches between inline nav and a Menu button at 1280px. */
 .hdr-wide { display: contents; }
 .hdr-narrow, .hdr-panel { display: none; }
-@media (max-width: 1199.98px) {
+@media (max-width: 1279.98px) {
   .hdr-wide { display: none; }
   .hdr-narrow { display: flex; }
   .hdr-panel { display: block; }

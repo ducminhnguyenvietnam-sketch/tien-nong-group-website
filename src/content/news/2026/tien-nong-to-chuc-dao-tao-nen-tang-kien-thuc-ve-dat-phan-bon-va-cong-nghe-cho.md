@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG TỔ CHỨC ĐÀO TẠO NỀN TẢNG KIẾN THỨC VỀ ĐẤT, PHÂN BÓN VÀ CÔNG NGHỆ CHO ĐỘI NGŨ TOÀN HỆ THỐNG
+title: "Tiến Nông tổ chức đào tạo nền tảng kiến thức về đất, phân bón và công nghệ cho đội ngũ toàn hệ thống"
 category: tn
 date: 2026-04-29
 author: Tiến Nông

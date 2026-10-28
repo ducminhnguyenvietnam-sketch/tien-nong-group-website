@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG CẬP NHẬT XU HƯỚNG AI, ROBOT VÀ NHÀ MÁY THÔNG MINH TẠI THÂM QUYẾN
+title: "Tiến Nông cập nhật xu hướng AI, robot và nhà máy thông minh tại Thâm Quyến"
 category: tn
 date: 2026-06-16
 author: Tiến Nông

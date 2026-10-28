@@ -1,5 +1,5 @@
 ---
-title: ĐOÀN ĐẠI BIỂU ỦY BAN MẶT TRẬN LÀO XÂY DỰNG ĐẤT NƯỚC TỈNH HỦA PHĂN THAM QUAN VÀ LÀM VIỆC TẠI TIẾN NÔNG
+title: "Đoàn đại biểu Ủy ban Mặt trận Lào xây dựng đất nước tỉnh Hủa Phăn tham quan và làm việc tại Tiến Nông"
 category: tn
 date: 2025-05-09
 author: Tiến Nông

@@ -1,5 +1,5 @@
 ---
-title: "BÓN NHIỀU NHƯNG CÂY VẪN KÉM: “NÚT THẮT” KHÔNG NẰM Ở LƯỢNG PHÂN"
+title: "Bón nhiều nhưng cây vẫn kém: “Nút thắt” không nằm ở lượng phân"
 category: kt
 date: 2026-04-07
 author: Tiến Nông

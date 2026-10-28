@@ -1,5 +1,5 @@
 ---
-title: "HÀNH TRÌNH TRI ÂN – KẾT NỐI NIỀM TIN KỲ 4: CÔNG TY TNHH AGRI-LIFE TIẾN LỰC – DẤU ẤN ĐỐI TÁC CHIẾN LƯỢC CỦA TIẾN NÔNG TẠI TÂY BẮC"
+title: "Hành trình tri ân – kết nối niềm tin kỳ 4: Công ty TNHH Agri-Life Tiến Lực – dấu ấn đối tác chiến lược của Tiến Nông tại Tây Bắc"
 category: tn
 date: 2026-04-13
 author: Tiến Nông

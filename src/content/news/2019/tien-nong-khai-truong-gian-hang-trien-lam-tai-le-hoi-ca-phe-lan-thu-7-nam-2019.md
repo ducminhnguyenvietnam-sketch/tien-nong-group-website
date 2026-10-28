@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG KHAI TRƯƠNG GIAN HÀNG TRIỂN LÃM TẠI LỄ HỘI CÀ PHÊ LẦN THỨ 7 NĂM 2019.
+title: "Tiến Nông khai trương gian hàng triển lãm tại Lễ hội Cà phê lần thứ 7 năm 2019."
 category: tn
 date: 2019-03-09
 author: Tiến Nông

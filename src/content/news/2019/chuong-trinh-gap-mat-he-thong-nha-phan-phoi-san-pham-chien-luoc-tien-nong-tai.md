@@ -1,5 +1,5 @@
 ---
-title: CHƯƠNG TRÌNH GẶP MẶT HỆ THỐNG NHÀ PHÂN PHỐI SẢN PHẨM CHIẾN LƯỢC TIẾN NÔNG TẠI NGHỆ AN
+title: "Chương trình gặp mặt hệ thống nhà phân phối sản phẩm chiến lược Tiến Nông tại Nghệ An"
 category: tn
 date: 2019-03-29
 author: Tiến Nông
