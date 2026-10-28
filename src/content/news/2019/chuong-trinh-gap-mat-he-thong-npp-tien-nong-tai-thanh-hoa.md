@@ -1,5 +1,5 @@
 ---
-title: CHƯƠNG TRÌNH GẶP MẶT HỆ THỐNG NPP TIẾN NÔNG TẠI THANH HÓA
+title: "Chương trình gặp mặt hệ thống NPP Tiến Nông tại Thanh Hóa"
 category: tn
 date: 2019-10-09
 author: Tiến Nông

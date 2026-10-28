@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG MỞ RỘNG HỆ THỐNG PHÂN PHỐI – CƠ HỘI HỢP TÁC KINH DOANH BỀN VỮNG
+title: "Tiến Nông mở rộng hệ thống phân phối – cơ hội hợp tác kinh doanh bền vững"
 category: tn
 date: 2026-03-17
 author: Tiến Nông

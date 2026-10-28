@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG ĐỒNG HÀNH CÙNG GIẢI BÓNG CHUYỀN “BÔNG LÚA VÀNG” TỈNH THANH HÓA LẦN THỨ X NĂM 2026
+title: "Tiến Nông đồng hành cùng giải bóng chuyền “Bông lúa vàng” tỉnh Thanh Hóa lần thứ X năm 2026"
 category: tn
 date: 2026-09-26
 author: Tiến Nông

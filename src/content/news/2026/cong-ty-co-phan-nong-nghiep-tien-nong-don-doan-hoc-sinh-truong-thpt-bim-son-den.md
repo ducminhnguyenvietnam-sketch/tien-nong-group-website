@@ -1,5 +1,5 @@
 ---
-title: CÔNG TY CỔ PHẦN NÔNG NGHIỆP TIẾN NÔNG ĐÓN ĐOÀN HỌC SINH TRƯỜNG THPT BỈM SƠN ĐẾN THAM QUAN VÀ HỌC TẬP
+title: "Công ty cổ phần nông nghiệp Tiến Nông đón đoàn học sinh trường THPT Bỉm Sơn đến tham quan và học tập"
 category: cd
 date: 2026-02-02
 author: Tiến Nông

@@ -1,5 +1,5 @@
 ---
-title: "HỘI NGHỊ TRỰC TUYẾN: “TỔNG KẾT CHƯƠNG TRÌNH PHỐI HỢP CUNG ỨNG PHÂN BÓN CHO NÔNG DÂN NĂM 2021 VÀ TRIỂN KHAI CHÍNH SÁCH VỤ CHIÊM XUÂN NĂM 2021 – 2022.”"
+title: "Hội nghị trực tuyến: “Tổng kết chương trình phối hợp cung ứng phân bón cho nông dân năm 2021 và triển khai chính sách vụ chiêm xuân năm 2021 – 2022.”"
 category: nd
 date: 2021-12-04
 author: Tiến Nông

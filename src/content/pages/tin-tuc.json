@@ -31,5 +31,16 @@
     "related_title": "Bài viết liên quan",
     "related_all": "Tất cả tin tức →"
   },
-  "all_categories": "Tin tức chung"
+  "all_categories": "Tất cả",
+  "hero": {
+    "eyebrow": "TIN TỨC & SỰ KIỆN",
+    "title": "Tin tức",
+    "lead": "Hoạt động, câu chuyện và kiến thức nông nghiệp từ Tiến Nông – hơn 900 bài viết từ năm 2012 đến nay.",
+    "background": {
+      "src": "/uploads/news-hoi-thao-dau-bo-chia-se-kinh-nghiem-mvkfxko3.jpg",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Hội thảo đầu bờ cùng bà con nông dân"
+    }
+  }
 }

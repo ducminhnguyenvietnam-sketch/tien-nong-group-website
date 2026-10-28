@@ -1,5 +1,5 @@
 ---
-title: CÔNG NGHỆ TRỢ TẠO HẠT BƯỚC TIẾN MỚI TRONG SẢN XUẤT PHÂN BÓN TIẾN NÔNG
+title: "Công nghệ trợ tạo hạt bước tiến mới trong sản xuất phân bón Tiến Nông"
 category: kt
 date: 2026-04-25
 author: Tiến Nông

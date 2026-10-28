@@ -9,7 +9,7 @@
   var NB = '\u00A0', WJ = '\u2060';
   function clean(s) { return s.toLowerCase().replace(/^[“"‘'(\[«]+|[”"’'),.:;!?\]»…]+$/g, ''); }
   function fix(t) {
-    t = t.replace(/\u2060/g, '').replace(/\u00A0/g, ' ');
+    t = t.replace(/\u2060/g, ''); // keep the non-breaking spaces scripts/keep-words.mjs put in at build time
     t = t.replace(/(\d)-(?=[\dA-Za-z])/g, '$1-' + WJ);
     var p = t.split(/( +)/);
     for (var i = 1; i < p.length - 1; i += 2) {

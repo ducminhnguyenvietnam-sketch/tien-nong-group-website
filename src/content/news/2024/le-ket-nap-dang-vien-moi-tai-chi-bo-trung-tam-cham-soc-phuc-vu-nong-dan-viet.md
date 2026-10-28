@@ -1,5 +1,5 @@
 ---
-title: LỄ KẾT NẠP ĐẢNG VIÊN MỚI TẠI CHI BỘ TRUNG TÂM CHĂM SÓC PHỤC VỤ NÔNG DÂN VIỆT NAM NĂM 2023
+title: "Lễ kết nạp đảng viên mới tại chi bộ trung tâm chăm sóc phục vụ nông dân Việt Nam năm 2023"
 category: tn
 date: 2024-11-13
 author: Tiến Nông

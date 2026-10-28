@@ -1,5 +1,5 @@
 ---
-title: "TIẾN NÔNG: THÚC ĐẨY ĐỔI MỚI, NÂNG TẦM CÔNG NGHỆ SẢN XUẤT"
+title: "Tiến Nông: thúc đẩy đổi mới, nâng tầm công nghệ sản xuất"
 category: khcn
 date: 2025-05-12
 author: Tiến Nông

@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG TỔ CHỨC “ HỘI THAO THỂ DỤC THỂ THAO TIẾN NÔNG LẦN THỨ III”
+title: "Tiến Nông tổ chức “ Hội thao thể dục thể thao Tiến Nông lần thứ III”"
 category: tn
 date: 2022-03-26
 author: Tiến Nông

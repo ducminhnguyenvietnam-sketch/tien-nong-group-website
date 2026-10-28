@@ -1,5 +1,5 @@
 ---
-title: Công ty Tiến Nông Tổ Chức Khóa Đào Tạo An Toàn Vệ Sinh Lao Động Cho Khối Văn Phòng
+title: "Công ty Tiến Nông tổ chức khóa đào tạo an toàn vệ sinh lao động cho khối văn phòng"
 category: tn
 date: 2024-10-26
 author: Tiến Nông

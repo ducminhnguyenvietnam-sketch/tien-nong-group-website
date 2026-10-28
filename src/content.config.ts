@@ -36,4 +36,34 @@ const news = defineCollection({
   }),
 });
 
-export const collections = { news };
+/** Products (src/content/products/*.md): one file per product, from the old site's catalogue and the CMS. */
+const products = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/products' }),
+  schema: z.object({
+    name: z.string(),
+    // cd = chuyên dùng, dd = đa dụng, hc = hữu cơ, cnc = công nghệ cao
+    line: z.string().default('dd'),
+    order: z.coerce.number().default(999),
+    featured: z.boolean().default(false),
+    crops: z.array(z.string()).default([]),
+    summary: z.string().default(''),
+    type: z.string().default(''),
+    code: z.coerce.string().default(''),
+    tccs: z.coerce.string().default(''),
+    method: z.string().default(''),
+    pack: z.string().default(''),
+    shelf_life: z.string().default(''),
+    production: z.string().default(''),
+    standards: z.string().default(''),
+    npk: z.array(z.object({ value: z.coerce.string().default(''), unit: z.string().default('') })).default([]),
+    composition: z.array(z.object({ name: z.string().default(''), value: z.coerce.string().default(''), method: z.string().default('') })).default([]),
+    benefits: z.array(z.string()).default([]),
+    usage: z.array(z.object({ title: z.string().default(''), rate: z.string().default(''), timing: z.string().default(''), method: z.string().default(''), note: z.string().default('') })).default([]),
+    safety: z.array(z.string()).default([]),
+    front: image, back: image, granule: image, field: image,
+    certificate: z.string().default(''),
+    old_url: z.string().default(''),
+  }),
+});
+
+export const collections = { news, products };

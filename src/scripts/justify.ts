@@ -1,13 +1,15 @@
 /**
- * Justified text (v3): running text in <main> is justified (v2.css), but justification only reads
- * well on lines long enough to absorb the extra space. Text blocks narrower than ~38 characters
- * per line (card captions, small columns on phones) and display-size text (≥ 20px) fall back to
- * left alignment via .jx-left, as do short blocks (under ~120 characters: a two-line caption
- * justified opens wide gaps on its first line), so no line gets the wide gaps of a justified short column.
- * Re-checked on resize and when fonts finish loading.
+ * Justified text: running text in <main> is justified on every page and screen size (v2.css), with the
+ * last line of a paragraph left-aligned. Vietnamese words stay whole on a line (scripts/keep-words.mjs
+ * joins their syllables at build time). Only blocks that cannot be justified cleanly fall back to left
+ * alignment via .jx-left: short captions (under ~80 characters), very narrow columns (under ~30 characters a line, where the spaces would
+ * stretch too far), display-size text (≥ 22px) and uppercase labels. Re-checked on resize and when fonts
+ * finish loading.
  */
-const MIN_CHARS = 38;
-const MIN_TEXT = 120;
+const MIN_CHARS = 30;
+/** Short captions (one or two lines in a card) read better left-aligned than stretched across. */
+const MIN_TEXT = 80;
+
 /** The block boxes that lay out running text: the nearest non-inline ancestor of each sizeable text node. */
 function textBlocks() {
   const blocks = new Set<HTMLElement>();
@@ -29,7 +31,7 @@ function run() {
     const fs = parseFloat(cs.fontSize) || 16;
     const perLine = el.clientWidth / (fs * 0.5);
     const short = (el.textContent || '').trim().length < MIN_TEXT;
-    if (short || fs >= 20 || perLine < MIN_CHARS || /uppercase/.test(cs.textTransform)) el.classList.add('jx-left');
+    if (short || fs >= 22 || perLine < MIN_CHARS || /uppercase/.test(cs.textTransform)) el.classList.add('jx-left');
   }
 }
 let t = 0;

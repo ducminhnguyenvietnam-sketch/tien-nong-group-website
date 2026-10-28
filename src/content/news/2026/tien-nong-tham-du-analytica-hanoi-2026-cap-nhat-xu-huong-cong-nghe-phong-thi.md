@@ -1,5 +1,5 @@
 ---
-title: "TIẾN NÔNG THAM DỰ ANALYTICA HANOI 2026: CẬP NHẬT XU HƯỚNG CÔNG NGHỆ PHÒNG THÍ NGHIỆM, PHÂN TÍCH VÀ SINH HỌC HIỆN ĐẠI"
+title: "Tiến Nông tham dự Analytica Hanoi 2026: cập nhật xu hướng công nghệ phòng thí nghiệm, phân tích và sinh học hiện đại"
 category: khcn
 date: 2026-04-24
 author: Tiến Nông

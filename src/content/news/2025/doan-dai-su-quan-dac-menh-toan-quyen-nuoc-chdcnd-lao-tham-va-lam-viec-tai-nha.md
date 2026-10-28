@@ -1,5 +1,5 @@
 ---
-title: ĐOÀN ĐẠI SỨ QUÁN ĐẶC MỆNH TOÀN QUYỀN NƯỚC CHDCND LÀO THĂM VÀ LÀM VIỆC TẠI NHÀ MÁY DINH DƯỠNG CÂY TRỒNG TIẾN NÔNG BỈM SƠN
+title: "Đoàn Đại sứ quán đặc mệnh toàn quyền nước CHDCND Lào thăm và làm việc tại nhà máy dinh dưỡng cây trồng Tiến Nông Bỉm Sơn"
 category: tn
 date: 2025-07-03
 author: Tiến Nông

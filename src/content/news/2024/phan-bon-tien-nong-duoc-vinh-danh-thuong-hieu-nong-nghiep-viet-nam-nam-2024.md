@@ -1,5 +1,5 @@
 ---
-title: Phân Bón Tiến Nông Được Vinh Danh Thương Hiệu Nông Nghiệp Việt Nam Năm 2024
+title: "Phân bón Tiến Nông được vinh danh thương hiệu nông nghiệp Việt Nam năm 2024"
 category: tn
 date: 2024-10-12
 author: Tiến Nông

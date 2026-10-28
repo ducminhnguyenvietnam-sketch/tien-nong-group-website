@@ -298,7 +298,7 @@
     },
     "t3": "NGHIÊN CỨU",
     "t4": "Trung tâm R&D với Phòng thí nghiệm đạt chuẩn VILAS 1519 & VALAS 262",
-    "t5": "Nghiên cứu công thức, phân tích đất và kiểm định chất lượng sản phẩm.",
+    "t5": "Nghiên cứu công thức, phân tích đất và kiểm nghiệm chất lượng sản phẩm.",
     "t6": "Khoa học & Công nghệ →",
     "img_cap_mfg_1": {
       "focus": "0% 33.2%",
@@ -324,7 +324,7 @@
         "tab": "Nghiên cứu",
         "title": "Năng lực nghiên cứu",
         "subtitle": "Khoa học là nền tảng – Cánh đồng là thước đo",
-        "text": "Trung tâm Nghiên cứu Phát triển KH&CN Tiến Nông với phòng thí nghiệm đạt chuẩn VILAS 1519 & VALAS 262: nghiên cứu công thức, phân tích đất và kiểm định chất lượng sản phẩm.",
+        "text": "Trung tâm Nghiên cứu Phát triển KH&CN Tiến Nông với phòng thí nghiệm đạt chuẩn VILAS 1519 & VALAS 262: nghiên cứu công thức, phân tích đất và kiểm nghiệm chất lượng sản phẩm.",
         "stats": [
           {
             "value": "50+",
@@ -339,10 +339,10 @@
         ],
         "chips_title": "Hướng nghiên cứu trọng tâm",
         "chips": [
-          "Công nghệ phân bón",
+          "Công nghệ sản xuất",
           "Công nghệ sinh học",
           "Sức khỏe đất & cây trồng",
-          "Kiểm định chất lượng"
+          "Kiểm nghiệm chất lượng"
         ],
         "note": "Mỗi công thức được nghiên cứu trên đất, trên cây và kiểm chứng ngoài đồng ruộng trước khi đến tay nhà nông.",
         "link_label": "Khoa học & Công nghệ",
@@ -395,8 +395,7 @@
         "chips": [
           "Đa dụng",
           "Hữu cơ",
-          "Chuyên dụng",
-          "Trung vi lượng",
+          "Chuyên dùng",
           "Công nghệ cao"
         ],
         "note": "Mỗi sản phẩm của Tiến Nông đều trải qua quy trình kiểm soát chất lượng nghiêm ngặt, đáp ứng nhu cầu đa dạng của từng vùng đất, từng loại cây trồng.",

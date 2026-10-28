@@ -1,5 +1,5 @@
 ---
-title: "Giải Pháp Bón Lót Phân Hữu Cơ Tiến Nông Cho Cây Dưa Lưới: Bí Quyết Cho Năng Suất Vượt Trội"
+title: "Giải pháp bón lót phân hữu cơ Tiến Nông cho cây dưa lưới: bí quyết cho năng suất vượt trội"
 category: kt
 date: 2025-03-31
 author: Tiến Nông

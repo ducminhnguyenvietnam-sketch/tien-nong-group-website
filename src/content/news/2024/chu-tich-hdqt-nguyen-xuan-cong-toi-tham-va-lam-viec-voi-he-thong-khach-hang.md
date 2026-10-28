@@ -1,5 +1,5 @@
 ---
-title: Chủ tịch HĐQT Nguyễn Xuân Cộng Tới Thăm và Làm Việc Với Hệ Thống Khách Hàng Tỉnh Hưng Yên
+title: "Chủ tịch HĐQT Nguyễn Xuân Cộng tới thăm và làm việc với hệ thống khách hàng tỉnh Hưng Yên"
 category: tn
 date: 2024-08-19
 author: Tiến Nông

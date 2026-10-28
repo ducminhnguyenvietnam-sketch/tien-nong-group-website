@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG ĐỒNG HÀNH CÙNG BÀ CON NÔNG DÂN TRONG BỐI CẢNH GIÁ PHÂN BÓN VÀ THỜI TIẾT BIẾN ĐỘNG
+title: "Tiến Nông đồng hành cùng bà con nông dân trong bối cảnh giá phân bón và thời tiết biến động"
 category: nd
 date: 2026-05-09
 author: Tiến Nông

@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG CHỦ ĐỘNG PHỐI HỢP TỔ CHỨC ĐÀO TẠO LẤY MẪU PHÂN BÓN CẤP CHỨNG CHỈ – GÓP PHẦN CHUẨN HÓA NGÀNH PHÂN BÓN
+title: "Tiến Nông chủ động phối hợp tổ chức đào tạo lấy mẫu phân bón cấp chứng chỉ – góp phần chuẩn hóa ngành phân bón"
 category: tn
 date: 2026-03-28
 author: Tiến Nông

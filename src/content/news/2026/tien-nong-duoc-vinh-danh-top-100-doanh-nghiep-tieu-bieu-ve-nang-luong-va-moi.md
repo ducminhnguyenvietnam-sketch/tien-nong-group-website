@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG ĐƯỢC VINH DANH TOP 100 DOANH NGHIỆP TIÊU BIỂU VỀ NĂNG LƯỢNG VÀ MÔI TRƯỜNG XANH VIỆT NAM 2026
+title: "Tiến Nông được vinh danh top 100 doanh nghiệp tiêu biểu về năng lượng và môi trường xanh Việt Nam 2026"
 category: tn
 date: 2026-07-09
 author: Tiến Nông

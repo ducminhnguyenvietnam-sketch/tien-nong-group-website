@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG VÀ BÀI TOÁN PH ĐẤT – “LỜI GIẢI” CHO VIỆC NÂNG CAO HIỆU QUẢ SẢN XUẤT NÔNG NGHIỆP BỀN VỮNG
+title: "Tiến Nông và bài toán pH đất – “Lời giải” cho việc nâng cao hiệu quả sản xuất nông nghiệp bền vững"
 category: kt
 date: 2026-03-23
 author: Tiến Nông

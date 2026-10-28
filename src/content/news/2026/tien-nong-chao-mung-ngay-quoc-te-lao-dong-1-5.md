@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG CHÀO MỪNG NGÀY QUỐC TẾ LAO ĐỘNG 1/5
+title: "Tiến Nông chào mừng Ngày Quốc tế Lao động 1/5"
 category: tn
 date: 2026-04-29
 author: Tiến Nông

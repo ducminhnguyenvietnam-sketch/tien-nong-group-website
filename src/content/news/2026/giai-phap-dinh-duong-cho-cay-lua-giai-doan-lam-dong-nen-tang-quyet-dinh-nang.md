@@ -1,5 +1,5 @@
 ---
-title: "GIẢI PHÁP DINH DƯỠNG CHO CÂY LÚA GIAI ĐOẠN LÀM ĐÒNG: NỀN TẢNG QUYẾT ĐỊNH NĂNG SUẤT CÂY LÚA"
+title: "Giải pháp dinh dưỡng cho cây lúa giai đoạn làm đòng: nền tảng quyết định năng suất cây lúa"
 category: kt
 date: 2026-04-07
 author: Tiến Nông

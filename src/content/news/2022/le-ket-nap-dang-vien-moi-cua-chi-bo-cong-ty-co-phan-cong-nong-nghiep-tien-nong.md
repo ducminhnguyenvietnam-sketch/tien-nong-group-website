@@ -1,5 +1,5 @@
 ---
-title: LỄ KẾT NẠP ĐẢNG VIÊN MỚI CỦA CHI BỘ CÔNG TY CỔ PHẦN CÔNG NÔNG NGHIỆP TIẾN NÔNG
+title: "Lễ kết nạp đảng viên mới của chi bộ Công ty Cổ phần Công Nông nghiệp Tiến Nông"
 category: tn
 date: 2022-04-07
 author: Tiến Nông

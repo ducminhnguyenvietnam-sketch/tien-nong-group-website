@@ -1,0 +1,217 @@
+---
+/**
+ * Product page (/san-pham/<slug>/), one per file in src/content/products. The content follows the product's
+ * conformity certificate (chứng nhận hợp quy) and bag print: composition with test methods, uses,
+ * directions, safety, and the legal information. Four photo slots — front, back, granules, in the field —
+ * are filled in the CMS or on the site (?sua-anh); empty ones stay hidden from visitors.
+ */
+import raw from '../../content/pages/chi-tiet-san-pham.json';
+import { isFilled, withDefaults } from '../../lib/content';
+import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/Button.astro';
+import ImageSlot from '../../components/ImageSlot.astro';
+import { link, url } from '../../lib/routes';
+import { getProducts, lineLabel, productUrl, type Product } from '../../lib/products';
+
+export async function getStaticPaths() {
+  const all = await getProducts();
+  return all.map((entry) => ({ params: { slug: entry.id }, props: { entry, all } }));
+}
+interface Props { entry: Product; all: Product[] }
+const { entry, all } = Astro.props;
+const p = entry.data;
+const c = withDefaults(raw, 'src/content/pages/chi-tiet-san-pham.json');
+const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
+const views = [
+  { key: 'front', label: 'Mặt trước', image: p.front },
+  { key: 'back', label: 'Mặt sau', image: p.back },
+  { key: 'granule', label: 'Hạt phân', image: p.granule },
+  { key: 'field', label: 'Ứng dụng thực tế', image: p.field },
+] as const;
+const line = lineLabel(p.line);
+// With only the front photo there is nothing to switch between, so the photo buttons stay hidden.
+const hasMore = views.slice(1).some((v) => isFilled(v.image.src));
+const facts = [
+  ['Mã số phân bón', p.code], ['Loại phân bón', p.type], ['Phương thức sử dụng', p.method], ['Quy cách', p.pack], ['Tiêu chuẩn', p.standards],
+].filter(([, v]) => isFilled(v));
+const legal = [
+  ['Mã số phân bón', p.code], ['Loại phân bón', p.type], ['Phương thức sử dụng', p.method], ['Số TCCS', p.tccs],
+  ['Ngày sản xuất, nơi sản xuất', p.production], ['Hạn sử dụng', p.shelf_life], ['Tiêu chuẩn quản lý', p.standards],
+].filter(([, v]) => isFilled(v));
+// "…cho cây lúa giúp:" opens the list of uses; the rest are the points.
+const lead = p.benefits[0]?.trim().endsWith(':') ? p.benefits[0] : '';
+const points = lead ? p.benefits.slice(1) : p.benefits;
+const usage = p.usage.filter((u) => isFilled(u.rate) || isFilled(u.timing) || isFilled(u.method) || isFilled(u.note));
+const related = [...all.filter((e) => e.id !== entry.id && e.data.line === p.line), ...all.filter((e) => e.id !== entry.id && e.data.line !== p.line)].slice(0, 4);
+const sections = [
+  ['thanh-phan', 'Thành phần', p.composition.length > 0], ['tac-dung', 'Tác dụng', p.benefits.length > 0],
+  ['huong-dan', 'Hướng dẫn sử dụng', usage.length > 0], ['an-toan', 'An toàn & bảo quản', p.safety.length > 0], ['phap-ly', 'Thông tin pháp lý', legal.length > 0],
+].filter(([, , on]) => on) as [string, string, boolean][];
+---
+<Layout title={p.name} description={p.summary || `${p.name} – ${line} của Tiến Nông.`} active="Sản phẩm">
+<section class="pd-top">
+<div class="pd-wrap">
+<nav class="pd-crumbs" aria-label="Đường dẫn"><a href={url('trang-chu')}>Trang chủ</a> / <a href={url('san-pham')}>Sản phẩm</a>{line && <> / {line}</>}</nav>
+<div class="pd-grid">
+<div class="pd-gallery" data-picker>
+<div class="pd-stage">
+{views.map((v, k) => <div role="tabpanel" class="pd-stage__panel" data-pick-panel={k} hidden={k !== 0}><ImageSlot style={fill} id={`pd-${entry.id}-${v.key}`} shape="rect" fit={v.key === 'front' || v.key === 'back' ? 'contain' : 'cover'} placeholder={v.image.alt || v.label} image={v.image} cms={`${entry.filePath}#${v.key}`} priority={k === 0} sizes="(max-width: 899px) 92vw, 560px" /></div>)}
+</div>
+<div class="pd-thumbs" role="tablist" aria-label="Ảnh sản phẩm">
+{views.map((v, k) => <button type="button" role="tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'} data-needs-photos={(k > 0 ? !isFilled(v.image.src) : !hasMore) ? '' : undefined}>{v.label}</button>)}
+</div>
+</div>
+<div class="pd-info">
+<div class="pd-head">
+<span class="pd-eyebrow">{[line, ...p.crops.slice(0, 3)].filter(Boolean).join(' · ')}</span>
+<h1>{p.name}</h1>
+{isFilled(p.summary) && <p class="pd-summary">{p.summary}</p>}
+</div>
+{p.npk.length > 0 && <div class="pd-npk">{p.npk.filter((n) => isFilled(n.value)).slice(0, 5).map((n) => <div><b>{n.value}</b><span>{n.unit}</span></div>)}</div>}
+{facts.length > 0 && <dl class="pd-facts">{facts.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>}
+<div class="pd-actions">
+<a href={url('lien-he', 'dai-ly')} class="pd-btn"><Button as="span" size="lg">{c.s01_san_pham.t23 || 'Tìm đại lý gần nhất'}</Button></a>
+<a href={url('lien-he', 'lien-he-form')} class="pd-btn"><Button as="span" size="lg" variant="secondary">{c.s01_san_pham.t24 || 'Gọi kỹ sư tư vấn'}</Button></a>
+</div>
+{isFilled(p.certificate) && <a class="pd-cert" href={link(p.certificate)} target="_blank" rel="noopener">Xem chứng nhận hợp quy (PDF) ↗</a>}
+</div>
+</div></div></section>
+
+{sections.length > 1 && <nav class="pd-subnav" aria-label="Nội dung sản phẩm"><div class="pd-wrap">{sections.map(([id, label]) => <a href={`#${id}`}>{label}</a>)}</div></nav>}
+
+<div class="pd-body">
+{p.composition.length > 0 && <section id="thanh-phan">
+<h2>Thành phần định lượng</h2>
+<div class="pd-table"><table>
+<thead><tr><th>Chỉ tiêu chất lượng</th><th>Mức công bố</th><th>Phương pháp thử</th></tr></thead>
+<tbody>{p.composition.map((r) => <tr><td>{r.name}</td><td><strong>{r.value}</strong></td><td>{r.method || '—'}</td></tr>)}</tbody>
+</table></div>
+<p class="pd-note">Theo hồ sơ công bố hợp quy của sản phẩm. Kiểm nghiệm chất lượng tại phòng thí nghiệm đạt chuẩn VILAS 1519.</p>
+</section>}
+
+{p.benefits.length > 0 && <section id="tac-dung">
+<h2>Tác dụng</h2>
+{lead && <p class="pd-lead">{lead}</p>}
+<ul class="pd-points">{points.map((b) => <li>{b}</li>)}</ul>
+</section>}
+
+{usage.length > 0 && <section id="huong-dan">
+<h2>Hướng dẫn sử dụng</h2>
+<div class="pd-usage">
+{usage.map((u) => <article>
+{isFilled(u.title) && <h3>{u.title}</h3>}
+<dl>
+{isFilled(u.rate) && <div><dt>Liều lượng</dt><dd>{u.rate}</dd></div>}
+{isFilled(u.timing) && <div><dt>Thời kỳ bón</dt><dd>{u.timing}</dd></div>}
+{isFilled(u.method) && <div><dt>Cách bón</dt><dd>{u.method}</dd></div>}
+</dl>
+{isFilled(u.note) && <p>{u.note}</p>}
+</article>)}
+</div>
+<p class="pd-note">Liều lượng có thể điều chỉnh theo chân đất, giống và mục tiêu năng suất. Liên hệ kỹ sư Tiến Nông để được hướng dẫn cụ thể.</p>
+</section>}
+
+{p.safety.length > 0 && <section id="an-toan" class="pd-safety">
+<h2>Cảnh báo an toàn, bảo quản</h2>
+<ul>{p.safety.map((s) => <li>{s}</li>)}</ul>
+</section>}
+
+{legal.length > 0 && <section id="phap-ly">
+<h2>Thông tin pháp lý</h2>
+<dl class="pd-legal">{legal.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
+</section>}
+</div>
+
+{related.length > 0 && <section class="pd-related"><div class="pd-wrap">
+<div class="pd-related__head"><h2>{c.s08_san_pham_lien_quan.t1 || 'Các sản phẩm khác'}</h2><a href={url('san-pham')}>{c.s08_san_pham_lien_quan.t2 || 'Tất cả sản phẩm →'}</a></div>
+<div class="pd-related__grid">
+{related.map((r) => <a href={productUrl(r)} class="pd-rel">
+<div class="pd-rel__img"><ImageSlot style={fill} id={`rel-${r.id}`} shape="rect" fit="contain" placeholder={r.data.name} image={r.data.front} cms={`${r.filePath}#front`} sizes="220px" /></div>
+<span class="pd-rel__line">{lineLabel(r.data.line)}</span><strong>{r.data.name}</strong>
+</a>)}
+</div></div></section>}
+</Layout>
+
+<style>
+  .pd-wrap { max-width: 1280px; margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
+  .pd-top { background: var(--surface-card); }
+  .pd-top .pd-wrap { padding-block: 24px clamp(40px, 5vw, 64px); display: flex; flex-direction: column; gap: 24px; }
+  .pd-crumbs { font-size: 13px; color: var(--text-tertiary); }
+  .pd-crumbs a { color: var(--text-tertiary); }
+  .pd-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px clamp(32px, 5vw, 72px); align-items: start; }
+  .pd-gallery { display: flex; flex-direction: column; gap: 12px; }
+  .pd-stage { position: relative; height: clamp(340px, 40vw, 520px); }
+  .pd-stage__panel { position: absolute; inset: 0; }
+  .pd-stage__panel[hidden] { display: none; }
+  .pd-stage :global(.img-slot__frame) { background: transparent !important; }
+  .pd-thumbs { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .pd-thumbs button { min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--border-default); background: var(--surface-card); font: 600 14px var(--font-body); color: var(--text-secondary); cursor: pointer; }
+  .pd-thumbs button[aria-selected='true'] { border-color: var(--green-500); background: var(--green-50); color: var(--green-800); }
+  .pd-info { display: flex; flex-direction: column; gap: 20px; }
+  .pd-head { display: flex; flex-direction: column; gap: 10px; }
+  .pd-eyebrow { font: var(--type-eyebrow); letter-spacing: .06em; text-transform: uppercase; color: var(--green-600); }
+  .pd-head h1 { margin: 0; font: var(--type-h2); letter-spacing: -.01em; text-wrap: balance; }
+  .pd-summary { margin: 0; color: var(--text-secondary); font-size: var(--fs-body); }
+  .pd-npk { display: grid; grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); gap: 8px; }
+  .pd-npk div { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px 8px; border-radius: var(--radius-md); background: var(--green-50); }
+  .pd-npk b { font: 800 24px/1.1 var(--font-display); color: var(--green-800); white-space: nowrap; }
+  .pd-npk span { font-size: 13px; color: var(--text-secondary); text-align: center; }
+  .pd-facts { margin: 0; padding: 4px 0; border-top: 1px solid var(--border-default); border-bottom: 1px solid var(--border-default); }
+  .pd-facts div { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; font-size: 15px; }
+  .pd-facts div + div { border-top: 1px dashed var(--border-default); }
+  .pd-facts dt { color: var(--text-secondary); }
+  .pd-facts dd { margin: 0; font-weight: 700; text-align: right; }
+  .pd-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .pd-btn { display: inline-flex; text-decoration: none; }
+  .pd-cert { font-weight: 600; font-size: 15px; }
+  .pd-subnav { position: sticky; top: var(--hdr-h, 72px); z-index: 20; background: var(--surface-page); border-top: 1px solid var(--border-default); border-bottom: 1px solid var(--border-default); }
+  .pd-subnav .pd-wrap { display: flex; gap: 28px; overflow-x: auto; white-space: nowrap; font-size: 14px; font-weight: 600; scrollbar-width: none; }
+  .pd-subnav a { padding: 14px 0; color: var(--text-secondary); }
+  .pd-body { max-width: 960px; margin: 0 auto; padding: clamp(40px, 5vw, 72px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; gap: 56px; }
+  .pd-body section { display: flex; flex-direction: column; gap: 18px; scroll-margin-top: 150px; }
+  .pd-body h2 { margin: 0; font: var(--type-h3); }
+  .pd-table { overflow-x: auto; border: 1px solid var(--border-default); border-radius: var(--radius-lg); background: var(--surface-card); }
+  .pd-table table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 15px; }
+  .pd-table th { padding: 12px 18px; background: var(--surface-sunken); font: var(--type-eyebrow); letter-spacing: .05em; text-transform: uppercase; color: var(--text-secondary); text-align: left; }
+  .pd-table td { padding: 13px 18px; border-top: 1px solid var(--border-default); vertical-align: top; }
+  .pd-table td:nth-child(2) { white-space: nowrap; color: var(--green-800); }
+  .pd-table td:nth-child(3) { color: var(--text-secondary); }
+  .pd-note { margin: 0; font-size: 13px; color: var(--text-tertiary); }
+  .pd-lead { margin: 0; font-weight: 600; }
+  .pd-points { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px; }
+  .pd-points li { position: relative; padding: 16px 18px 16px 44px; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); line-height: 1.55; }
+  .pd-points li::before { content: '✓'; position: absolute; left: 16px; top: 15px; width: 20px; height: 20px; border-radius: 50%; background: var(--green-500); color: #fff; font: 700 12px/20px var(--font-body); text-align: center; }
+  .pd-usage { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+  .pd-usage article { display: flex; flex-direction: column; gap: 10px; padding: 20px; background: var(--surface-card); border: 1px solid var(--border-default); border-left: 3px solid var(--green-500); border-radius: var(--radius-lg); }
+  .pd-usage h3 { margin: 0; font: 700 17px/1.35 var(--font-display); color: var(--green-800); }
+  .pd-usage dl { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .pd-usage dt { font: var(--type-eyebrow); letter-spacing: .05em; text-transform: uppercase; color: var(--green-600); }
+  .pd-usage dd { margin: 2px 0 0; line-height: 1.55; }
+  .pd-usage p { margin: 0; color: var(--text-secondary); font-size: 15px; }
+  .pd-safety ul { margin: 0; padding: 18px 20px 18px 38px; background: var(--amber-100); border-radius: var(--radius-lg); display: flex; flex-direction: column; gap: 6px; }
+  .pd-legal { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 0 32px; font-size: 15px; }
+  .pd-legal div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border-default); }
+  .pd-legal dt { color: var(--text-secondary); }
+  .pd-legal dd { margin: 0; font-weight: 700; text-align: right; }
+  .pd-related { background: var(--surface-page); border-top: 1px solid var(--border-default); }
+  .pd-related .pd-wrap { padding-block: clamp(48px, 6vw, 80px); display: flex; flex-direction: column; gap: 24px; }
+  .pd-related__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+  .pd-related__head h2 { margin: 0; font: var(--type-h3); }
+  .pd-related__head a { font-weight: 600; }
+  .pd-related__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+  .pd-rel { display: flex; flex-direction: column; gap: 8px; padding: 16px; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); color: var(--text-primary); text-decoration: none; }
+  .pd-rel:hover { text-decoration: none; border-color: var(--green-300); }
+  .pd-rel__img { position: relative; height: 180px; }
+  .pd-rel__img :global(.img-slot__frame) { background: transparent !important; }
+  .pd-rel__line { font: var(--type-eyebrow); letter-spacing: .05em; text-transform: uppercase; color: var(--green-600); }
+  .pd-rel strong { line-height: 1.4; }
+  @media (max-width: 899.98px) {
+    .pd-grid { grid-template-columns: minmax(0, 1fr); }
+    .pd-stage { height: clamp(280px, 80vw, 420px); }
+  }
+  @media (max-width: 599.98px) {
+    .pd-related__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .pd-rel { padding: 10px; }
+    .pd-rel__img { height: 140px; }
+  }
+</style>

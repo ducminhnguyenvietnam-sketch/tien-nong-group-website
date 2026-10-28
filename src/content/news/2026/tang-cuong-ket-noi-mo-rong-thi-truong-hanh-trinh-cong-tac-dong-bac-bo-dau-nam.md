@@ -1,5 +1,5 @@
 ---
-title: "TĂNG CƯỜNG KẾT NỐI – MỞ RỘNG THỊ TRƯỜNG: HÀNH TRÌNH CÔNG TÁC ĐÔNG BẮC BỘ ĐẦU NĂM 2026 CỦA TỔNG GIÁM ĐỐC NGUYỄN HỒNG PHONG"
+title: "Tăng cường kết nối – mở rộng thị trường: hành trình công tác Đông Bắc Bộ đầu năm 2026 của Tổng giám đốc Nguyễn Hồng Phong"
 category: tn
 date: 2026-03-11
 author: Tiến Nông

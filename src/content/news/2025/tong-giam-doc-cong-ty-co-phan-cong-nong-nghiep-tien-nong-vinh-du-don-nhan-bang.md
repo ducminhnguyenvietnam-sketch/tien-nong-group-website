@@ -1,5 +1,5 @@
 ---
-title: TỔNG GIÁM ĐỐC CÔNG TY CỔ PHẦN CÔNG NÔNG NGHIỆP TIẾN NÔNG VINH DỰ ĐÓN NHẬN BẰNG KHEN CỦA UBND TỈNH THANH HOÁ
+title: "Tổng giám đốc Công ty Cổ phần Công Nông nghiệp Tiến Nông vinh dự đón nhận bằng khen của UBND tỉnh Thanh Hoá"
 category: tn
 date: 2025-05-23
 author: Tiến Nông

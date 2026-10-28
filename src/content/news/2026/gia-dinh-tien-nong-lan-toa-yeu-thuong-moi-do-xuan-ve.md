@@ -1,5 +1,5 @@
 ---
-title: "GIA ĐÌNH TIẾN NÔNG: LAN TỎA YÊU THƯƠNG MỖI ĐỘ XUÂN VỀ"
+title: "Gia đình Tiến Nông: lan tỏa yêu thương mỗi độ xuân về"
 category: tn
 date: 2026-02-11
 author: Tiến Nông

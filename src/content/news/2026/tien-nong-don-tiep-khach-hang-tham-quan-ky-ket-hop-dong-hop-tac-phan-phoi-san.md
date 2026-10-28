@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG ĐÓN TIẾP KHÁCH HÀNG THAM QUAN, KÝ KẾT HỢP ĐỒNG HỢP TÁC PHÂN PHỐI SẢN PHẨM TIẾN NÔNG
+title: "Tiến Nông đón tiếp khách hàng tham quan, ký kết hợp đồng hợp tác phân phối sản phẩm Tiến Nông"
 category: tn
 date: 2026-04-17
 author: Tiến Nông

@@ -1,5 +1,5 @@
 ---
-title: CHẤT ĐIỀU HÒA pH ĐẤT TIẾN NÔNG – “CHÌA KHÓA” PHỤC HỒI ĐẤT THOÁI HÓA, NÂNG CAO HIỆU QUẢ CANH TÁC
+title: "Chất điều hòa pH đất Tiến Nông – “Chìa khóa” phục hồi đất thoái hóa, nâng cao hiệu quả canh tác"
 category: kt
 date: 2026-04-10
 author: Tiến Nông

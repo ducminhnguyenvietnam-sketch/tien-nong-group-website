@@ -1,5 +1,5 @@
 ---
-title: CÔNG TY FORBON TECHNOLOGY HK HOLDINGS LIMITED (TRUNG QUỐC) THĂM VÀ LÀM VIỆC TẠI CÔNG TY TIẾN NÔNG
+title: "Công ty Forbon Technology HK Holdings Limited (Trung Quốc) thăm và làm việc tại công ty Tiến Nông"
 category: tn
 date: 2024-11-16
 author: Tiến Nông

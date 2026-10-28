@@ -1,5 +1,5 @@
 ---
-title: "HÀNH TRÌNH TRI ÂN – KẾT NỐI NIỀM TIN (KỲ 3): TỪ KHỞI ĐẦU KHÓ KHĂN TỚI SẢN LƯỢNG 1000 TẤN TẠI NINH BÌNH"
+title: "Hành trình tri ân – kết nối niềm tin (kỳ 3): từ khởi đầu khó khăn tới sản lượng 1000 tấn tại Ninh Bình"
 category: tn
 date: 2026-04-09
 author: Tiến Nông

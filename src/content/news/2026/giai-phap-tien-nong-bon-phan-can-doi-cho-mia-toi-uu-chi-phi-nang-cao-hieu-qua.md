@@ -1,5 +1,5 @@
 ---
-title: "GIẢI PHÁP TIẾN NÔNG: BÓN PHÂN CÂN ĐỐI CHO MÍA: TỐI ƯU CHI PHÍ – NÂNG CAO HIỆU QUẢ"
+title: "Giải pháp Tiến Nông: bón phân cân đối cho mía: tối ưu chi phí – nâng cao hiệu quả"
 category: kt
 date: 2026-04-20
 author: Tiến Nông

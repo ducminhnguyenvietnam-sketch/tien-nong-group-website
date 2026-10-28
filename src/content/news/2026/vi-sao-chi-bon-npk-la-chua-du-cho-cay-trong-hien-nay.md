@@ -1,5 +1,5 @@
 ---
-title: VÌ SAO CHỈ BÓN NPK LÀ CHƯA ĐỦ CHO CÂY TRỒNG HIỆN NAY?
+title: "Vì sao chỉ bón NPK là chưa đủ cho cây trồng hiện nay?"
 category: kt
 date: 2026-05-06
 author: Tiến Nông

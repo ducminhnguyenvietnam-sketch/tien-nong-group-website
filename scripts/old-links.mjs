@@ -1,5 +1,5 @@
 // Keeps links to the old WordPress site working once tiennong.vn points at the new site.
-// After the build, every article with an `old_url` (set when it was imported from the old site) gets a
+// After the build, every article and product with an `old_url` (set when it was imported from the old site) gets a
 // small page at that old address which forwards to the article's new address (/tin-tuc/<slug>/), and
 // the addresses in src/content/redirects.json (old pages and categories) forward to their new pages.
 // GitHub Pages has no server-side redirects, so these are static pages with a meta refresh + canonical
@@ -32,10 +32,12 @@ export default function oldLinks({ base = '/' } = {}) {
       'astro:build:done': async ({ dir, logger }) => {
         const out = fileURLToPath(dir);
         const pairs = [];
-        for (const file of await walk('src/content/news')) {
-          const fm = (await fs.readFile(file, 'utf8')).match(/^---\n([\s\S]*?)\n---/)?.[1] || '';
-          const old = fm.match(/^old_url:\s*["']?([^"'\n]+)["']?\s*$/m)?.[1]?.trim();
-          if (old) pairs.push([old, `/tin-tuc/${path.basename(file, '.md')}/`]);
+        for (const [dirName, prefixPath] of [['src/content/news', '/tin-tuc/'], ['src/content/products', '/san-pham/']]) {
+          for (const file of await walk(dirName)) {
+            const fm = (await fs.readFile(file, 'utf8')).match(/^---\n([\s\S]*?)\n---/)?.[1] || '';
+            const old = fm.match(/^old_url:\s*["']?([^"'\n]+)["']?\s*$/m)?.[1]?.trim();
+            if (old) pairs.push([old, `${prefixPath}${path.basename(file, '.md')}/`]);
+          }
         }
         try { for (const [from, to] of Object.entries(JSON.parse(await fs.readFile('src/content/redirects.json', 'utf8')))) pairs.push([from, to]); } catch { /* no extra redirects */ }
         let made = 0;

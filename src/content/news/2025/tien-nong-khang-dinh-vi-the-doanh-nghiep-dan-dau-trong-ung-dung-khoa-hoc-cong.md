@@ -1,5 +1,5 @@
 ---
-title: "TIẾN NÔNG: KHẲNG ĐỊNH VỊ THẾ DOANH NGHIỆP DẪN ĐẦU TRONG ỨNG DỤNG KHOA HỌC CÔNG NGHỆ PHỤC VỤ NÔNG NGHIỆP"
+title: "Tiến Nông: khẳng định vị thế doanh nghiệp dẫn đầu trong ứng dụng khoa học công nghệ phục vụ nông nghiệp"
 category: khcn
 date: 2025-05-17
 author: Tiến Nông

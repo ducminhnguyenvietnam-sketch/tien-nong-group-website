@@ -1,5 +1,5 @@
 ---
-title: Tiến Nông Trao Hỗ Trợ Xây Dựng Nhà Ở Cho Các Hộ Gia Đình Có Hoàn Cảnh Khó Khăn Tại Thị Xã Bỉm Sơn, Tỉnh Thanh Hóa
+title: "Tiến Nông trao hỗ trợ xây dựng nhà ở cho các hộ gia đình có hoàn cảnh khó khăn tại thị xã Bỉm Sơn, tỉnh Thanh Hóa"
 category: cd
 date: 2024-06-14
 author: Tiến Nông

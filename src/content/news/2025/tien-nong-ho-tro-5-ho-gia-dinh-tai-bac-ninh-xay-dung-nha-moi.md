@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG HỖ TRỢ 5 HỘ GIA ĐÌNH TẠI BẮC NINH XÂY DỰNG NHÀ MỚI
+title: "Tiến Nông hỗ trợ 5 hộ gia đình tại Bắc Ninh xây dựng nhà mới"
 category: cd
 date: 2025-05-07
 author: Tiến Nông

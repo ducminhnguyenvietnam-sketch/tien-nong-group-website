@@ -1,5 +1,5 @@
 ---
-title: "TIẾN NÔNG KỶ NIỆM 31 NĂM THÀNH LẬP: VỮNG VÀNG HÀNH TRÌNH KHOA HỌC – ĐỒNG HÀNH CÙNG NÔNG NGHIỆP VIỆT NAM"
+title: "Tiến Nông kỷ niệm 31 năm thành lập: vững vàng hành trình khoa học – đồng hành cùng nông nghiệp Việt Nam"
 category: khcn
 date: 2026-01-05
 author: Tiến Nông

@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG ĐỒNG HÀNH CÙNG HỘI NÔNG DÂN BẮC NINH – HƠN 10 NĂM GẮN KẾT VÌ NHÀ NÔNG
+title: "Tiến Nông đồng hành cùng Hội Nông dân Bắc Ninh – hơn 10 năm gắn kết vì nhà nông"
 category: tn
 date: 2026-03-20
 author: Tiến Nông

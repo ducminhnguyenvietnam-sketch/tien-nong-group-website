@@ -70,7 +70,7 @@
     "t15": "Sâm · Đinh lăng · Nghệ"
   },
   "s03_theo_van_de": {
-    "t1": "02 · THEO VẤN ĐỀ",
+    "t1": "05 · HỎI ĐÁP",
     "t2": "Nhận diện đúng vấn đề để chọn đúng giải pháp",
     "t3": "Mỗi vấn đề trên đồng ruộng đều có nguyên nhân khoa học. Hiểu đúng vì sao, chúng ta mới chọn đúng giải pháp.",
     "label_problem": "VẤN ĐỀ",
@@ -125,7 +125,7 @@
     "t7": "Nhận tư vấn từ kỹ sư"
   },
   "s06_mo_hinh_thuc_te": {
-    "t1": "05 · MÔ HÌNH THỰC TẾ",
+    "t1": "02 · MÔ HÌNH THỰC TẾ",
     "t2": "Giải pháp được kiểm chứng trên đồng ruộng",
     "t3": "Tất cả mô hình →",
     "img_model_1_1": {
@@ -223,14 +223,14 @@
       "steps": [
         "Phân tích pH và hữu cơ trong đất",
         "Bón vôi hoặc sản phẩm điều hòa pH đất trước vụ",
-        "Bổ sung phân hữu cơ – Humic kết hợp NPK chuyên dụng"
+        "Bổ sung phân hữu cơ – Humic kết hợp NPK chuyên dùng"
       ]
     },
     {
       "label": "Thiếu dinh dưỡng",
       "steps": [
         "Xác định giai đoạn sinh trưởng hiện tại",
-        "Dùng NPK chuyên dụng theo đúng giai đoạn",
+        "Dùng NPK chuyên dùng theo đúng giai đoạn",
         "Bổ sung trung – vi lượng khi cây có biểu hiện thiếu"
       ]
     },

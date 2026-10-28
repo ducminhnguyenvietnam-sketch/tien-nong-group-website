@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG ĐỒNG HÀNH CÙNG CHƯƠNG TRÌNH “NHÀ KHOA HỌC CỦA NHÀ NÔNG” NĂM 2026
+title: "Tiến Nông đồng hành cùng chương trình “Nhà khoa học của nhà nông” năm 2026"
 category: khcn
 date: 2026-10-03
 author: Tiến Nông

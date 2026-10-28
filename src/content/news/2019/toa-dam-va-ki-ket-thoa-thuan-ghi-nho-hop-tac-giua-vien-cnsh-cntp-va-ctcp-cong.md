@@ -1,5 +1,5 @@
 ---
-title: TỌA ĐÀM VÀ KÍ KẾT THỎA THUẬN GHI NHỚ HỢP TÁC GIỮA VIỆN CNSH & CNTP VÀ CTCP CÔNG NÔNG NGHIỆP TIẾN NÔNG
+title: "Tọa đàm và kí kết thỏa thuận ghi nhớ hợp tác giữa Viện CNSH & CNTP và CTCP Công Nông nghiệp Tiến Nông"
 category: tn
 date: 2019-06-07
 author: Tiến Nông

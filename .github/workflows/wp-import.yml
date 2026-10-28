@@ -5,8 +5,8 @@ name: Nhập tin tức từ web cũ
 # e.g. "inventory", "import --sample 20" or "import --all".
 on:
   push:
-    branches: [nhap-tin-cu, gop-y-28-10]
-    paths: ['scripts/wp-import/**', '.github/workflows/wp-import.yml']
+    branches: [nhap-tin-cu]
+    paths: ['scripts/wp-import/run.txt']
   workflow_dispatch:
 
 permissions:

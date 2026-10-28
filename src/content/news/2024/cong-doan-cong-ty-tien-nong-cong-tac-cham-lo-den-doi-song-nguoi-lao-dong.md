@@ -1,5 +1,5 @@
 ---
-title: "Công Đoàn Công Ty Tiến Nông: Công Tác Chăm Lo Đến Đời Sống Người Lao Động"
+title: "Công đoàn công ty Tiến Nông: Công tác chăm lo đến đời sống người lao động"
 category: tn
 date: 2024-05-14
 author: Tiến Nông

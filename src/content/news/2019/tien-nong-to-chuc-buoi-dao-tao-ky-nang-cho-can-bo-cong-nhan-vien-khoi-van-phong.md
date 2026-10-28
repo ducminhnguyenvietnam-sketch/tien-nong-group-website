@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG TỔ CHỨC BUỔI ĐÀO TẠO KỸ NĂNG CHO CÁN BỘ CÔNG NHÂN VIÊN KHỐI VĂN PHÒNG
+title: "Tiến Nông tổ chức buổi đào tạo kỹ năng cho cán bộ công nhân viên khối văn phòng"
 category: tn
 date: 2019-05-25
 author: Tiến Nông

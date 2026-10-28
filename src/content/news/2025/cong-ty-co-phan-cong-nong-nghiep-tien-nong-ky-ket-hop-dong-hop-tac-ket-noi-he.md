@@ -1,5 +1,5 @@
 ---
-title: Công Ty Cổ Phần Công Nông Nghiệp Tiến Nông Ký Kết Hợp Đồng Hợp Tác Kết Nối Hệ Thống Erp Với Ngân Hàng Thương Mại Cổ Phần Công Thương Việt Nam – Bước Tiến Quan Trọng Trong Chuyển Đổi Số
+title: "Công ty Cổ phần Công Nông nghiệp Tiến Nông ký kết hợp đồng hợp tác kết nối hệ thống ERP với Ngân hàng TMCP Công thương Việt Nam – bước tiến quan trọng trong chuyển đổi số"
 category: tn
 date: 2025-03-18
 author: Tiến Nông

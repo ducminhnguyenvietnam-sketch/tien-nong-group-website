@@ -131,6 +131,155 @@ content:
     label: Đường dẫn trên web cũ
     type: string
     description: Tự điền khi chuyển bài từ web cũ tiennong.vn. Người mở link cũ sẽ được chuyển sang bài này. Không cần sửa.
+- name: products
+  label: "Sản phẩm"
+  type: collection
+  path: src/content/products
+  format: yaml-frontmatter
+  filename: '{primary}.md'
+  view:
+    fields:
+    - name
+    - line
+    - order
+    primary: name
+    sort:
+    - order
+    - name
+    default:
+      sort: order
+      order: asc
+  fields:
+  - name: name
+    label: "Tên sản phẩm (đúng như trên bao bì)"
+    type: string
+    required: true
+  - name: line
+    label: "Dòng sản phẩm"
+    type: select
+    default: dd
+    options:
+      values:
+      - value: cd
+        label: Phân bón chuyên dùng
+      - value: dd
+        label: Phân bón đa dụng
+      - value: hc
+        label: Phân bón hữu cơ
+      - value: cnc
+        label: Phân bón công nghệ cao
+  - name: order
+    label: "Thứ tự hiển thị"
+    type: number
+    description: "Số nhỏ hiện trước (\"Bán nhiều nhất\" trên trang Sản phẩm)."
+  - name: featured
+    label: "Đưa lên đầu"
+    type: boolean
+  - name: crops
+    label: "Cây trồng phù hợp"
+    type: string
+    list: true
+    description: "Dùng đúng tên trong bộ lọc: Lúa, Ngô, Cà phê, Cây ăn quả, Cây công nghiệp, Cây lâm nghiệp, Rau màu, Chè, Mía, Sắn, Lạc."
+  - name: summary
+    label: "Mô tả ngắn"
+    type: text
+  - name: front
+    label: "Ảnh: Mặt trước bao (ảnh 3D nền trong suốt)"
+    component: photo
+    description: "PNG/WebP nền trong suốt, không viền."
+  - name: back
+    label: "Ảnh: Mặt sau bao"
+    component: photo
+  - name: granule
+    label: "Ảnh: Hạt phân"
+    component: photo
+  - name: field
+    label: "Ảnh: Ứng dụng thực tế"
+    component: photo
+  - name: type
+    label: "Loại phân bón (theo chứng nhận hợp quy)"
+    type: string
+  - name: code
+    label: "Mã số phân bón"
+    type: string
+  - name: tccs
+    label: "Số TCCS"
+    type: string
+  - name: method
+    label: "Phương thức sử dụng"
+    type: string
+  - name: pack
+    label: "Quy cách / khối lượng tịnh"
+    type: string
+  - name: shelf_life
+    label: "Hạn sử dụng"
+    type: string
+  - name: production
+    label: "Ngày sản xuất, nơi sản xuất"
+    type: string
+  - name: standards
+    label: "Tiêu chuẩn quản lý"
+    type: string
+  - name: npk
+    label: "Chỉ số trên thẻ sản phẩm"
+    type: object
+    list: true
+    fields:
+    - name: value
+      label: "Giá trị"
+      type: string
+    - name: unit
+      label: "Chất"
+      type: string
+  - name: composition
+    label: "Thành phần định lượng (theo chứng nhận hợp quy)"
+    type: object
+    list: true
+    fields:
+    - name: name
+      label: "Chỉ tiêu"
+      type: string
+    - name: value
+      label: "Mức công bố"
+      type: string
+    - name: method
+      label: "Phương pháp thử"
+      type: string
+  - name: benefits
+    label: "Tác dụng"
+    type: text
+    list: true
+  - name: usage
+    label: "Hướng dẫn sử dụng"
+    type: object
+    list: true
+    fields:
+    - name: title
+      label: "Nhóm cây / giai đoạn"
+      type: string
+    - name: rate
+      label: "Liều lượng"
+      type: string
+    - name: timing
+      label: "Thời kỳ bón"
+      type: text
+    - name: method
+      label: "Cách bón"
+      type: text
+    - name: note
+      label: "Ghi chú"
+      type: text
+  - name: safety
+    label: "Cảnh báo an toàn, bảo quản"
+    type: string
+    list: true
+  - name: certificate
+    label: "Tệp chứng nhận hợp quy (PDF)"
+    type: file
+  - name: old_url
+    label: "Đường dẫn trên web cũ"
+    type: string
+    description: "Tự điền khi chuyển từ web cũ, dùng để chuyển hướng link cũ. Không cần sửa."
 - name: pages
   label: Các trang
   type: group
@@ -291,13 +440,13 @@ content:
         label: 'Chữ đậm: Trung tâm Nghiên cứu Phát triển'
         type: string
       - name: t6
-        label: 'Chữ: Công nghệ phân bón, công nghệ sinh học'
+        label: 'Chữ: Công nghệ sản xuất, công nghệ sinh học'
         type: string
       - name: t7
         label: 'Nhãn in hoa: VILAS 1519'
         type: string
       - name: t8
-        label: 'Chữ đậm: Phân tích & kiểm định chất lượng'
+        label: 'Chữ đậm: Phân tích & kiểm nghiệm chất lượng'
         type: string
       - name: t9
         label: 'Chữ: Kiểm soát chất lượng theo từng lô'
@@ -452,11 +601,11 @@ content:
         label: 'Tiêu đề: Dinh dưỡng chuẩn xác cho từng loại cây, từng g…'
         type: string
       - name: img_line_1_1
-        label: 'Ảnh: Bao bì dòng Chuyên dụng'
+        label: 'Ảnh: Bao bì dòng Chuyên dùng'
         component: photo
         description: Khung ảnh khoảng 277×260 px trên máy tính — nên dùng ảnh rộng ít nhất 554 px.
       - name: t3
-        label: 'Chữ đậm: Phân bón chuyên dụng'
+        label: 'Chữ đậm: Phân bón chuyên dùng'
         type: string
       - name: t4
         label: 'Chữ: Công thức chuyên biệt cho lúa, ngô, cà phê, câ…'
@@ -1643,7 +1792,7 @@ content:
         label: 'Chữ đậm: Phòng Thí nghiệm chất lượng'
         type: string
       - name: t5
-        label: 'Chữ: Phân tích, kiểm định nguyên liệu và thành phẩm…'
+        label: 'Chữ: Phân tích, kiểm nghiệm nguyên liệu và thành phẩm…'
         type: string
       - name: img_lab_2_1
         label: 'Ảnh: Phòng Công nghệ sinh học'
@@ -1666,11 +1815,11 @@ content:
         label: 'Chữ: Đánh giá dinh dưỡng đất, theo dõi sinh trưởng …'
         type: string
       - name: img_lab_4_1
-        label: 'Ảnh: Phòng Công nghệ phân bón'
+        label: 'Ảnh: Phòng Công nghệ sản xuất'
         component: photo
         description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
       - name: t10
-        label: 'Chữ đậm: Phòng Công nghệ phân bón'
+        label: 'Chữ đậm: Phòng Công nghệ sản xuất'
         type: string
       - name: t11
         label: 'Chữ: Phát triển công thức và công nghệ sản xuất phâ…'
@@ -1735,10 +1884,10 @@ content:
         label: 'Chữ: 05'
         type: string
       - name: t16
-        label: 'Chữ đậm: Sản xuất & kiểm định'
+        label: 'Chữ đậm: Sản xuất & kiểm nghiệm'
         type: string
       - name: t17
-        label: 'Chữ: Sản xuất theo ISO 9001, kiểm định chất lượng t…'
+        label: 'Chữ: Sản xuất theo ISO 9001, kiểm nghiệm chất lượng t…'
         type: string
     - name: s06_vilas_1519
       label: 06 · VILAS 1519
@@ -1802,7 +1951,7 @@ content:
         component: photo
         description: Khung ảnh khoảng 373×240 px trên máy tính — nên dùng ảnh rộng ít nhất 746 px.
       - name: t4
-        label: 'Nhãn in hoa: CÔNG NGHỆ PHÂN BÓN'
+        label: 'Nhãn in hoa: CÔNG NGHỆ SẢN XUẤT'
         type: string
       - name: t5
         label: 'Chữ đậm: NPK bổ sung Silic hữu hiệu (SiO₂hh)'
@@ -1926,6 +2075,18 @@ content:
       label: Poster đầu trang
       type: object
       fields:
+      - name: eyebrow
+        label: "Chữ nhỏ trên banner (để trống nếu ảnh banner đã có chữ)"
+        type: string
+      - name: title
+        label: "Tiêu đề trên banner (để trống nếu ảnh banner đã có chữ)"
+        type: string
+      - name: text
+        label: "Dòng mô tả trên banner"
+        type: text
+      - name: button
+        label: "Chữ trên nút (cần điền thêm Đường dẫn)"
+        type: string
       - name: image
         label: Ảnh poster
         component: photo
@@ -2040,57 +2201,7 @@ content:
     - name: sort_name_label
       label: Sắp xếp – "theo tên"
       type: string
-    - name: products
-      label: Danh sách sản phẩm (thứ tự = "phổ biến nhất")
-      type: object
-      list:
-        collapsible:
-          collapsed: true
-          summary: '{fields.name}'
-      fields:
-      - name: name
-        label: Tên sản phẩm
-        type: string
-        required: true
-      - name: line
-        label: Dòng sản phẩm
-        type: select
-        options:
-          values:
-          - value: cd
-            label: Phân bón chuyên dụng
-          - value: dd
-            label: Phân bón đa dụng
-          - value: hc
-            label: Phân bón hữu cơ
-          - value: cnc
-            label: Phân bón công nghệ cao
-          - value: tvl
-            label: Phân bón trung vi lượng
-      - name: npk
-        label: Hàm lượng (ô số liệu)
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{fields.value} {fields.unit}'
-        fields:
-        - name: value
-          label: Số
-          type: string
-        - name: unit
-          label: Đơn vị / chất (N, P₂O₅, K₂O…)
-          type: string
-      - name: crops
-        label: Phù hợp với cây
-        type: string
-        list: true
-        description: Ghi đúng tên cây như trong "Cây trồng trong bộ lọc" để lọc được.
-      - name: image
-        label: Ảnh
-        component: photo
-        description: Khung ảnh khoảng 275×250 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px. Ảnh hiển thị trọn vẹn (không cắt), nên dùng
-          ảnh nền trắng/trong suốt.
+
   - name: chi_tiet_san_pham
     label: Chi tiết sản phẩm (mẫu)
     type: file
@@ -2119,10 +2230,10 @@ content:
         label: 'Liên kết: Sản phẩm'
         type: string
       - name: t3
-        label: 'Chữ: / Phân bón chuyên dụng'
+        label: 'Chữ: / Phân bón chuyên dùng'
         type: string
       - name: t4
-        label: 'Nhãn in hoa: PHÂN BÓN CHUYÊN DỤNG · CÂY LÚA'
+        label: 'Nhãn in hoa: PHÂN BÓN CHUYÊN DÙNG · CÂY LÚA'
         type: string
       - name: t5
         label: 'Tiêu đề chính: NPK 12-3-10+2SiO₂hh Tiến Nông (Lúa 2)'
@@ -2268,7 +2379,7 @@ content:
         label: 'Nhãn in hoa: TCVN 5815:2018'
         type: string
       - name: t20
-        label: 'Chữ: Kết quả kiểm định tại phòng thí nghiệm VILAS 1…'
+        label: 'Chữ: Kết quả kiểm nghiệm tại phòng thí nghiệm VILAS 1…'
         type: string
     - name: s03_cong_dung
       label: 03 · Cong dung
@@ -2426,7 +2537,7 @@ content:
         component: photo
         description: Khung ảnh khoảng 275×200 px trên máy tính — nên dùng ảnh rộng ít nhất 550 px.
       - name: t7
-        label: 'Nhãn in hoa: TRUNG VI LƯỢNG'
+        label: 'Nhãn in hoa: CÔNG NGHỆ CAO'
         type: string
       - name: t8
         label: 'Chữ đậm: Điều hòa pH đất 1 Tiến Nông'
@@ -4141,6 +4252,23 @@ content:
     path: src/content/pages/tin-tuc.json
     format: json
     fields:
+    - name: hero
+      label: "Đầu trang (ảnh nền tràn viền)"
+      type: object
+      fields:
+      - name: eyebrow
+        label: "Dòng chữ nhỏ"
+        type: string
+      - name: title
+        label: "Tiêu đề lớn"
+        type: string
+      - name: lead
+        label: "Đoạn giới thiệu"
+        type: text
+      - name: background
+        label: "Ảnh nền"
+        component: photo
+        description: "Ảnh ngang, rộng ít nhất 1920 px. Dùng chung cho trang Tin tức, các trang chuyên mục và trang 2, 3…"
     - name: seo
       label: Tiêu đề tab trình duyệt & mô tả Google
       type: object
@@ -4256,6 +4384,12 @@ content:
       label: 01 · Liên hệ
       type: object
       fields:
+      - name: lead
+        label: "Đoạn giới thiệu dưới tiêu đề"
+        type: text
+      - name: background
+        label: "Ảnh nền đầu trang (ảnh thật, tràn viền)"
+        component: photo
       - name: t1
         label: 'Liên kết: Trang chủ'
         type: string
@@ -4340,6 +4474,18 @@ content:
       label: 03 · Văn phòng & nhà máy
       type: object
       fields:
+      - name: img1
+        label: "Ảnh: Trụ sở chính"
+        component: photo
+      - name: img2
+        label: "Ảnh: Nhà máy Bỉm Sơn"
+        component: photo
+      - name: img3
+        label: "Ảnh: Nhà máy Gia Lai"
+        component: photo
+      - name: img4
+        label: "Ảnh: Nhà máy Tiến Nông 3"
+        component: photo
       - name: t1
         label: 'Tiêu đề: Trụ sở & nhà máy'
         type: string
@@ -4564,6 +4710,9 @@ content:
       label: "03 · Quyền lợi"
       type: object
       fields:
+      - name: image
+        label: "Ảnh minh hoạ quyền lợi"
+        component: photo
       - name: eyebrow
         label: "Dòng chữ nhỏ"
         type: string
@@ -4591,6 +4740,9 @@ content:
       label: "04 · Điều kiện"
       type: object
       fields:
+      - name: image
+        label: "Ảnh minh hoạ điều kiện"
+        component: photo
       - name: eyebrow
         label: "Dòng chữ nhỏ"
         type: string
@@ -4895,7 +5047,7 @@ content:
         label: 'Mục menu: Nông dân Tiến Nông'
         type: string
     - name: subnav
-      label: Tên các mục menu con (dưới Về Tiến Nông và Phát triển bền vững)
+      label: Tên các mục menu con (dưới Về Tiến Nông, Giải pháp và Phát triển bền vững)
       type: object
       fields:
       - name: gioi_thieu
@@ -4903,6 +5055,12 @@ content:
         type: string
       - name: van_hoa_doanh_nghiep
         label: 'Menu con: Văn hóa doanh nghiệp'
+        type: string
+      - name: giai_phap_cay_trong
+        label: 'Menu con: Giải pháp – Cho cây trồng'
+        type: string
+      - name: giai_phap_du_an
+        label: 'Menu con: Giải pháp – Cho dự án'
         type: string
       - name: ptbv_tong_quan
         label: 'Menu con: Phát triển bền vững – Tổng quan'

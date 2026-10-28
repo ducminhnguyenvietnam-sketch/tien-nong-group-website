@@ -1,5 +1,5 @@
 ---
-title: HỘI NGHỊ “TỔNG KẾT VỤ CHIÊM XUÂN 2018 – 2019 VÀ TRIỂN KHAI KẾ HOẠCH VỤ HÈ THU 2019 TẠI HẢI DƯƠNG
+title: "Hội nghị “Tổng kết vụ chiêm xuân 2018 – 2019 và triển khai kế hoạch vụ hè thu 2019 tại Hải Dương"
 category: tn
 date: 2019-05-09
 author: Tiến Nông

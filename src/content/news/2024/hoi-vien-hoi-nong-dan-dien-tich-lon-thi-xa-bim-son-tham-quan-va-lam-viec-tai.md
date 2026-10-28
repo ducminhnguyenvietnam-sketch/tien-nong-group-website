@@ -1,5 +1,5 @@
 ---
-title: Hội Viên Hội Nông Dân Diện Tích Lớn Thị Xã Bỉm Sơn Tham Quan Và Làm Việc Tại Nhà Máy Dinh Dưỡng Cây Trồng Tiến Nông Bỉm Sơn
+title: "Hội viên Hội Nông dân diện tích lớn thị xã Bỉm Sơn tham quan và làm việc tại nhà máy dinh dưỡng cây trồng Tiến Nông Bỉm Sơn"
 category: tn
 date: 2024-08-22
 author: Tiến Nông

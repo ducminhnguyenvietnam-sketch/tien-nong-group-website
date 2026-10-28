@@ -1,5 +1,5 @@
 ---
-title: CHƯƠNG TRÌNH TẬP HUẤN, TƯ VẤN KỶ THUẬT SỬ DỤNG PHÂN BÓN CHO BÀ CON NÔNG DÂN TẠI YÊN BÁI
+title: "Chương trình tập huấn, tư vấn kỷ thuật sử dụng phân bón cho bà con nông dân tại Yên Bái"
 category: nd
 date: 2019-05-03
 author: Tiến Nông

@@ -37,7 +37,7 @@ const closeLabel = (h.menu_close || 'Đóng').replace(/^[✕×\s]+/, '');
   if (!item.children.length) return <a href={item.href} aria-current={item.active ? 'page' : undefined} class:list={['hdr-link', { 'is-active': item.active }]}>{item.label}</a>;
   return (
     <div class="nav-dd">
-      <a href={item.href} aria-current={item.active ? 'page' : undefined} aria-haspopup="true" class:list={['hdr-link', { 'is-active': item.active }]}>{item.label} <span aria-hidden="true" style="font-size:11px">▾</span></a>
+      <a href={item.href} aria-current={item.active ? 'page' : undefined} aria-haspopup="true" class:list={['hdr-link', { 'is-active': item.active }]}>{item.label}<span aria-hidden="true" class="hdr-caret">▾</span></a>
       <div class="nav-dd__menu">
         {item.children.map((c) => <a href={c.href} aria-current={c.current ? 'page' : undefined}>{c.label}</a>)}
       </div>
@@ -88,14 +88,15 @@ const closeLabel = (h.menu_close || 'Đóng').replace(/^[✕×\s]+/, '');
   .hdr-lang { display: flex; gap: 6px; } .hdr-lang strong { color: #fff; }
   .site-header.is-scrolled .hdr-top { max-height: 0; }
 
-  .hdr-main { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 12px;
+  .hdr-main { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding-block: 12px;
     transition: padding var(--motion-base) var(--ease-out); }
   .hdr-logo { flex: none; display: block; }
   .hdr-logo img { height: 52px; width: auto; display: block; transition: height var(--motion-base) var(--ease-out); }
   .site-header.is-scrolled .hdr-main { padding-block: 8px; }
   .site-header.is-scrolled .hdr-logo img { height: 44px; }
 
-  .hdr-nav { flex: 1 1 auto; min-width: 0; display: flex; justify-content: center; gap: clamp(14px, 1.7vw, 28px); white-space: nowrap; font-size: 15px; font-weight: 600; }
+  .hdr-nav { flex: 1 1 auto; min-width: 0; display: flex; justify-content: center; align-items: center; gap: clamp(14px, 1.3vw, 18px); white-space: nowrap; font-size: 14.5px; font-weight: 600; }
+  .hdr-caret { display: inline-block; margin-left: 3px; font-size: 10px; opacity: .7; transform: translateY(-1px); }
   .hdr-link { color: var(--text-primary); text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent; transition: color var(--motion-fast), border-color var(--motion-fast); }
   .hdr-link:hover { color: var(--green-700); text-decoration: none; border-bottom-color: var(--green-200); }
   .hdr-link.is-active { color: var(--green-700); border-bottom-color: var(--green-500); }
@@ -133,7 +134,7 @@ const closeLabel = (h.menu_close || 'Đóng').replace(/^[✕×\s]+/, '');
   .hdr-panel__partner { border: 1px solid var(--border-strong); color: var(--text-primary) !important; }
   :global(html.menu-open) { overflow: hidden; }
 
-  @media (max-width: 1199.98px) {
+  @media (max-width: 1279.98px) {
     .hdr-top { display: none; }
     .hdr-main { padding-block: 10px; }
     .hdr-logo img, .site-header.is-scrolled .hdr-logo img { height: 44px; }

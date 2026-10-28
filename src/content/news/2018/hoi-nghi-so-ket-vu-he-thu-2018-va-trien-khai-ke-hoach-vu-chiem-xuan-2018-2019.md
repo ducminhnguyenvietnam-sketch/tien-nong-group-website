@@ -1,5 +1,5 @@
 ---
-title: HỘI NGHỊ SƠ KẾT VỤ HÈ THU 2018 VÀ TRIỂN KHAI KẾ HOẠCH VỤ CHIÊM XUÂN 2018-2019 TẠI TỈNH THÁI NGUYÊN
+title: "Hội nghị sơ kết vụ hè thu 2018 và triển khai kế hoạch vụ chiêm xuân 2018-2019 tại tỉnh Thái Nguyên"
 category: tn
 date: 2018-11-21
 author: Tiến Nông

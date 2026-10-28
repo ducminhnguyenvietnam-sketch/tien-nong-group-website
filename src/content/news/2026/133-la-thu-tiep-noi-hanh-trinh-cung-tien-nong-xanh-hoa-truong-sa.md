@@ -1,5 +1,5 @@
 ---
-title: 133 LÁ THƯ TIẾP NỐI HÀNH TRÌNH “CÙNG TIẾN NÔNG XANH HÓA TRƯỜNG SA”
+title: "133 lá thư tiếp nối hành trình “Cùng Tiến Nông xanh hóa Trường Sa”"
 category: cd
 date: 2026-07-11
 author: Tiến Nông

@@ -1,5 +1,5 @@
 ---
-title: TIẾN NÔNG TĂNG CƯỜNG NĂNG LỰC ĐỘI NGŨ, LÀM CHỦ CÔNG NGHỆ SẢN XUẤT PHÂN BÓN
+title: "Tiến Nông tăng cường năng lực đội ngũ, làm chủ công nghệ sản xuất phân bón"
 category: tn
 date: 2026-05-12
 author: Tiến Nông

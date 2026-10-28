@@ -7,6 +7,7 @@ import FormFallback from '../components/FormFallback.astro';
 import Button from '../components/Button.astro';
 import Checkbox from '../components/Checkbox.astro';
 import ImageSlot from '../components/ImageSlot.astro';
+import PageHero from '../components/PageHero.astro';
 import Input from '../components/Input.astro';
 import Select from '../components/Select.astro';
 import { url, link } from '../lib/routes';
@@ -23,15 +24,16 @@ const f = c.s03_van_phong_nha_may;
 const mapsFor = (address: string, custom?: string | null) =>
   custom?.trim() || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address.replace(/\u00a0/g, " "))}`;
 const sites = [
-  [f.t2, f.t3, f.t4, f.map1], [f.t5, f.t6, f.t7, f.map2], [f.t8, f.t9, f.t10, f.map3], [f.t11, f.t12, f.t13, f.map4],
-].map(([name, address, phone, map]) => ({ name, address, phone, map: mapsFor(address ?? '', map) }));
+  [f.t2, f.t3, f.t4, f.map1, f.img1, 1], [f.t5, f.t6, f.t7, f.map2, f.img2, 2], [f.t8, f.t9, f.t10, f.map3, f.img3, 3], [f.t11, f.t12, f.t13, f.map4, f.img4, 4],
+].map(([name, address, phone, map, img, n]) => ({ name, address, phone, map: mapsFor(String(address ?? ''), map as string), img: img as { src?: string; alt?: string; focus?: string; zoom?: string }, n }));
 
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
+<PageHero id="contact-hero" image={c.s01_lien_he.background} cms="src/content/pages/lien-he.json#s01_lien_he.background" placeholder="Ảnh thật của Tiến Nông"
+  crumbs={[{ label: c.s01_lien_he.t1, href: url('trang-chu') }, { label: c.s01_lien_he.t2.replace(/^\s*\/\s*/, '') }]}
+  eyebrow={c.s01_lien_he.t3} title={c.s01_lien_he.t4} lead={c.s01_lien_he.lead} />
 <section style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:32px">
-<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_lien_he.t1}</a> {c.s01_lien_he.t2}</span>
-<div style="display:flex;flex-direction:column;gap:14px;max-width:760px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s01_lien_he.t3}</span><h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_lien_he.t4}</h1></div>
+<div style="max-width:1280px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
 <div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/4),calc((1008px - 100%)*999),calc((100% - 16px)/2)),1fr));gap:16px">
 <div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t5}</span><a href={contactHref(contactValue(c.s01_lien_he.t6, co.hotline || co.phone))} style="font-size:20px;font-weight:700;color:var(--text-primary)">{contactValue(c.s01_lien_he.t6, co.hotline || co.phone)}</a><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t7}</span></div>
 <div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:6px"><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s01_lien_he.t8}</span><a href={contactHref(contactValue(c.s01_lien_he.t9, ''))} style="font-size:20px;font-weight:700;color:var(--text-primary)">{contactValue(c.s01_lien_he.t9, '')}</a><span style="color:var(--text-secondary);font-size:15px">{c.s01_lien_he.t10}</span></div>
@@ -63,7 +65,10 @@ const sites = [
 <h2 style="margin:0;font:var(--type-h2)">{c.s03_van_phong_nha_may.t1}</h2>
 <div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/4),calc((1088px - 100%)*999),calc((100% - 16px)/2)),1fr));gap:16px">
 {sites.map((p, k) => (
-<div style={`border-top:3px solid ${k === 0 ? 'var(--green-500)' : 'var(--border-strong)'};padding-top:16px;display:flex;flex-direction:column;gap:4px`}><strong style="font-size:18px">{p.name}</strong><span style="color:var(--text-secondary)">{p.address}</span><span>{p.phone}</span><a href={p.map} target="_blank" rel="noopener" style="margin-top:6px;font-weight:600;font-size:15px">{c.s03_van_phong_nha_may.map_label}</a></div>
+<article class="site-card">
+<div class:list={['site-card__img', { 'is-empty': !isFilled(p.img?.src) }]}><svg class="site-card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 42V22l10 6v-6l10 6v-6l10 6V8h8v34z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M12 36h4M22 36h4M32 36h4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`site-${p.n}`} shape="rect" placeholder={p.img?.alt || String(p.name)} image={p.img} cms={`src/content/pages/lien-he.json#s03_van_phong_nha_may.img${p.n}`} sizes="(max-width: 767px) 92vw, 320px" /></div>
+<div class="site-card__body"><span class="site-card__tag">{k === 0 ? 'Trụ sở' : 'Nhà máy'}</span><strong>{String(p.name)}</strong><span class="site-card__addr">{p.address}</span><a href={`tel:${String(p.phone).replace(/[^\d+]/g, '')}`} class="site-card__phone">{p.phone}</a><a href={p.map} target="_blank" rel="noopener" class="site-card__map">{c.s03_van_phong_nha_may.map_label}</a></div>
+</article>
 ))}
 </div></div></section>
 
@@ -87,6 +92,21 @@ const sites = [
 </form>
 </div></div></section>
 </Layout>
+
+<style>
+  .site-card { display: flex; flex-direction: column; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
+  .site-card__img { position: relative; aspect-ratio: 16 / 10; background: linear-gradient(135deg, var(--green-50), var(--green-100)); }
+  /* No photo yet: a soft branded panel for visitors; the photo slot itself shows in the photo editor (?sua-anh). */
+  .site-card__icon { position: absolute; left: 50%; top: 50%; width: 56px; height: 56px; transform: translate(-50%, -50%); color: var(--green-500); opacity: .55; }
+  .site-card__img:not(.is-empty) .site-card__icon { display: none; }
+  html:not(.pe-on) .site-card__img.is-empty :global(.img-slot) { display: none !important; }
+  .site-card__body { display: flex; flex-direction: column; gap: 6px; padding: 18px 20px 20px; flex: 1; }
+  .site-card__tag { font: var(--type-eyebrow); letter-spacing: .06em; text-transform: uppercase; color: var(--green-600); }
+  .site-card strong { font: 700 17px/1.35 var(--font-display); text-wrap: balance; }
+  .site-card__addr { color: var(--text-secondary); font-size: 15px; line-height: 1.5; }
+  .site-card__phone { color: var(--text-primary); font-weight: 600; }
+  .site-card__map { margin-top: auto; padding-top: 6px; font-weight: 600; font-size: 15px; }
+</style>
 
 <script>
   const prov = document.getElementById('dealer-prov') as HTMLSelectElement;

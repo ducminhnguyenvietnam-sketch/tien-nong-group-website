@@ -20,7 +20,10 @@ export const NAV: [string, PageSlug, SubNav[]?][] = [
   ['Tin tức', 'tin-tuc'],
   ['Khoa học & Công nghệ', 'khoa-hoc-cong-nghe'],
   ['Sản phẩm', 'san-pham'],
-  ['Giải pháp', 'giai-phap'],
+  ['Giải pháp', 'giai-phap', [
+    ['Cho cây trồng', 'giai-phap', 'giai_phap_cay_trong'],
+    ['Cho dự án', 'giai-phap-du-an', 'giai_phap_du_an'],
+  ]],
   ['Phát triển bền vững', 'phat-trien-ben-vung', [
     ['Tổng quan', 'phat-trien-ben-vung', 'ptbv_tong_quan'],
     ['Xanh hoá Trường Sa', 'phat-trien-ben-vung/xanh-hoa-truong-sa', 'xanh_hoa_truong_sa'],

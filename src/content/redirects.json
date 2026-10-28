@@ -23,5 +23,10 @@
   "/category/kien-thuc-nong-nghiep/cach-thuc-canh-tac/": "/tin-tuc/chuyen-muc/kien-thuc-nong-nghiep/",
   "/category/kien-thuc-nong-nghiep/kien-thuc-ve-cay-trong/": "/tin-tuc/chuyen-muc/kien-thuc-nong-nghiep/",
   "/category/tuyen-dung/": "/tuyen-dung/",
-  "/mamxanh/": "/phat-trien-ben-vung/xanh-hoa-truong-sa/"
+  "/mamxanh/": "/phat-trien-ben-vung/xanh-hoa-truong-sa/",
+  "/chi-tiet-san-pham/": "/san-pham/",
+  "/product-category/phan-bon-ham-luong-cao/": "/san-pham/",
+  "/product-category/phan-bon-huu-co/": "/san-pham/",
+  "/product-category/san-pham-chuyen-dung/": "/san-pham/",
+  "/product-category/san-pham-da-dung/": "/san-pham/"
 }

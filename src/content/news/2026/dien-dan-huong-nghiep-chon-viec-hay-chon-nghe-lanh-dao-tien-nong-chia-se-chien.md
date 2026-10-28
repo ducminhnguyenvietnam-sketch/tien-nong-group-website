@@ -1,5 +1,5 @@
 ---
-title: "DIỄN ĐÀN HƯỚNG NGHIỆP “CHỌN VIỆC HAY CHỌN NGHỀ”: LÃNH ĐẠO TIẾN NÔNG CHIA SẺ CHIẾN LƯỢC THÍCH ỨNG CHO SINH VIÊN TRONG KỶ NGUYÊN AI"
+title: "Diễn đàn hướng nghiệp “Chọn việc hay chọn nghề”: lãnh đạo Tiến Nông chia sẻ chiến lược thích ứng cho sinh viên trong kỷ nguyên AI"
 category: tn
 date: 2026-05-07
 author: Tiến Nông

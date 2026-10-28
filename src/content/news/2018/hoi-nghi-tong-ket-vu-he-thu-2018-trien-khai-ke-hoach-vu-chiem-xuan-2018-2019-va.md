@@ -1,5 +1,5 @@
 ---
-title: HỘI NGHỊ TỔNG KẾT VỤ HÈ THU 2018, TRIỂN KHAI KẾ HOẠCH VỤ CHIÊM XUÂN 2018-2019 VÀ CÔNG NHẬN ĐẠI DIỆN BÁN HÀNG TẠI CÁC HUYỆN ỨNG HÒA, MỸ ĐỨC –TP. HÀ NỘI
+title: "Hội nghị tổng kết vụ hè thu 2018, triển khai kế hoạch vụ chiêm xuân 2018-2019 và công nhận đại diện bán hàng tại các huyện Ứng Hòa, Mỹ Đức –TP. Hà Nội"
 category: cd
 date: 2018-11-05
 author: Tiến Nông

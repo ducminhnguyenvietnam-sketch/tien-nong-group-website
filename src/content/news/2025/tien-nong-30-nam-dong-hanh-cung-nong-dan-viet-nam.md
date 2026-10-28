@@ -1,5 +1,5 @@
 ---
-title: Tiến Nông – 30 Năm Đồng Hành Cùng Nông Dân Việt Nam, Sáng Tạo Dẫn Đầu Trong Dinh Dưỡng Cây Trồng
+title: "Tiến Nông – 30 năm đồng hành cùng nông dân Việt Nam, sáng tạo dẫn đầu trong dinh dưỡng cây trồng"
 category: nd
 date: 2025-02-05
 author: Tiến Nông

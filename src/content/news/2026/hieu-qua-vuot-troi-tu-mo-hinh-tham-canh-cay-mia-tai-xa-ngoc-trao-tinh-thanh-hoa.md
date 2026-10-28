@@ -1,5 +1,5 @@
 ---
-title: HIỆU QUẢ VƯỢT TRỘI TỪ MÔ HÌNH THÂM CANH CÂY MÍA TẠI XÃ NGỌC TRẠO TỈNH THANH HÓA
+title: "Hiệu quả vượt trội từ mô hình thâm canh cây mía tại xã Ngọc Trạo tỉnh Thanh Hóa"
 category: nd
 date: 2026-03-03
 author: Tiến Nông
