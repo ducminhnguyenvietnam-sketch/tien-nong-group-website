@@ -9,7 +9,6 @@
     "eyebrow": "LIÊN HỆ",
     "title": "Bạn cần gì, Tiến Nông chỉ đúng người",
     "lead": "Chọn đúng nhu cầu để gặp ngay bộ phận phụ trách — kỹ sư nông học, kinh doanh khu vực, dự án, truyền thông hay tuyển dụng.",
-    "hours": "",
     "background": {
       "src": "/uploads/tin-cu/2024/doan-khach-hang-hung-yen-ninh-binh-tham-nha-may-tien-nong-2.webp",
       "focus": "center",
@@ -37,7 +36,6 @@
       },
       {
         "label": "HỢP TÁC PHÂN PHỐI",
-        "value": "",
         "note": "Trở thành đại lý, nhà phân phối: quyền lợi, điều kiện và quy trình.",
         "link_label": "Trở thành đối tác →",
         "link": "/tro-thanh-doi-tac/"
@@ -58,7 +56,7 @@
       },
       {
         "label": "TUYỂN DỤNG",
-        "value": "0915 115 198",
+        "value": "02373 729 729",
         "note": "Phòng Hành chính Nhân sự; hồ sơ gửi info@tiennong.vn.",
         "link_label": "Vị trí đang tuyển →",
         "link": "/tuyen-dung/#vi-tri"
@@ -105,9 +103,7 @@
         "role": "Văn phòng điều hành của Tiến Nông.",
         "address": "274B Bà Triệu, phường Hàm Rồng, tỉnh Thanh Hóa",
         "phone": "02373.729.729",
-        "map": "",
         "image": {
-          "src": "",
           "focus": "center",
           "zoom": "100",
           "alt": "Trụ sở chính Tiến Nông, 274B Bà Triệu, Thanh Hóa"
@@ -119,7 +115,6 @@
         "role": "Nhà máy sản xuất và phòng thí nghiệm; nơi đón các đoàn tham quan.",
         "address": "Lô B5, Khu B, Khu Công nghiệp Bỉm Sơn, phường Bỉm Sơn, tỉnh Thanh Hóa",
         "phone": "02373.729.729",
-        "map": "",
         "image": {
           "src": "/uploads/Nha-may-Tien-Nong-Bim-Son-2025-scaled.jpg",
           "focus": "center",
@@ -133,9 +128,7 @@
         "role": "Nhà máy phục vụ khu vực Tây Nguyên.",
         "address": "Làng Del, xã Chư Sê, tỉnh Gia Lai",
         "phone": "02373.729.729",
-        "map": "",
         "image": {
-          "src": "",
           "focus": "center",
           "zoom": "100",
           "alt": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Gia Lai"
@@ -147,9 +140,7 @@
         "role": "Nhà máy sản xuất tại Hoằng Phú, Thanh Hóa.",
         "address": "Km 312, quốc lộ 1A, xã Hoằng Phú, tỉnh Thanh Hóa",
         "phone": "02373.729.729",
-        "map": "",
         "image": {
-          "src": "",
           "focus": "center",
           "zoom": "100",
           "alt": "Nhà máy Dinh dưỡng cây trồng Tiến Nông 3"
