@@ -9,23 +9,20 @@
     "breadcrumb_self": "Văn hóa doanh nghiệp",
     "eyebrow": "VĂN HÓA DOANH NGHIỆP",
     "title": "Một gia đình lớn, một lòng phụng sự nhà nông",
-    "intro": "Ba mươi năm qua, văn hóa Tiến Nông không nằm trên khẩu hiệu mà ở những việc được giữ đều đặn: hát chung một ca khúc tâm niệm, tri ân người gắn bó, chăm lo cho gia đình của nhau và đặt lợi ích của bà con nông dân lên trước. Thước đo rõ nhất là số năm người ta ở lại — bình quân mười năm mỗi người.",
+    "intro": "Hơn 30 năm, văn hóa Tiến Nông không nằm trên khẩu hiệu mà ở những việc được giữ đều đặn: hát chung một ca khúc tâm niệm, tri ân người gắn bó, chăm lo cho gia đình của nhau và đặt lợi ích của bà con nông dân lên trước. Thước đo rõ nhất là số năm người ta ở lại — bình quân mười năm mỗi người.",
     "button_principles": "5 điều tâm niệm",
     "button_media": "Nghe ca khúc Tâm niệm",
     "image_1": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Tập thể cán bộ, nhân viên Tiến Nông"
     },
     "image_2": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Lễ kỷ niệm ngày truyền thống"
     },
     "image_3": {
-      "src": "",
       "focus": "center",
       "zoom": "100",
       "alt": "Hoạt động văn hóa, văn nghệ"
@@ -262,8 +259,7 @@
       {
         "title": "Năm điều tâm niệm",
         "note": "Ca khúc truyền thống của gia đình Tiến Nông",
-        "youtube": "https://www.youtube.com/watch?v=MdqpwKYEWM4",
-        "file": ""
+        "youtube": "https://www.youtube.com/watch?v=MdqpwKYEWM4"
       }
     ]
   },
