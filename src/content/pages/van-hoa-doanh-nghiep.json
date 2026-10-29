@@ -233,10 +233,10 @@
   "media": {
     "eyebrow": "06 · TÂM NIỆM TIẾN NÔNG",
     "title": "5 điều Tâm Niệm, hát thành lời",
-    "intro": "5 điều Tâm Niệm là nền tảng văn hóa, định hướng mỗi người Tiến Nông trong công việc và cuộc sống. Đó không chỉ là những lời nhắc nhở mà còn là giá trị được gìn giữ, lan tỏa trong đại gia đình Tiến Nông, tạo nên bản sắc riêng và vun đắp những mối quan hệ bền chặt với đồng nghiệp, đối tác và bà con nông dân.",
     "empty_note": "Video sẽ hiển thị khi dán đường dẫn YouTube hoặc tải tệp video lên trong trang quản trị.",
     "videos": [
       {
+        "note": "5 điều Tâm Niệm là nền tảng văn hóa, định hướng mỗi người Tiến Nông trong công việc và cuộc sống. Đó không chỉ là những lời nhắc nhở mà còn là giá trị được gìn giữ, lan tỏa trong đại gia đình Tiến Nông, tạo nên bản sắc riêng và vun đắp những mối quan hệ bền chặt với đồng nghiệp, đối tác và bà con nông dân.",
         "youtube": "https://www.youtube.com/watch?v=MdqpwKYEWM4"
       }
     ]
