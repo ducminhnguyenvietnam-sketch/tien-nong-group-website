@@ -32,24 +32,20 @@
   },
   "stats": [
     {
-      "value": "500",
-      "label": "cán bộ, nhân viên",
-      "sub": ""
+      "value": "400+",
+      "label": "cán bộ, nhân viên"
     },
     {
       "value": "30+",
-      "label": "người gắn bó trên 20 năm",
-      "sub": ""
+      "label": "người gắn bó trên 20 năm"
     },
     {
       "value": "10 năm",
-      "label": "thâm niên trung bình",
-      "sub": ""
+      "label": "thâm niên trung bình"
     },
     {
       "value": "3",
-      "label": "nhà máy · 1 trụ sở chính",
-      "sub": ""
+      "label": "nhà máy · 1 trụ sở chính"
     }
   ],
   "reasons": {
@@ -242,7 +238,6 @@
         "loc": "Bỉm Sơn, Thanh Hóa",
         "count": "02",
         "type": "Toàn thời gian",
-        "due": "",
         "summary": "Nghiên cứu, khảo nghiệm và hoàn thiện công thức dinh dưỡng cây trồng tại Trung tâm Nghiên cứu Phát triển Khoa học & Công nghệ; triển khai mô hình trình diễn cùng Phòng Sức khỏe đất và cây trồng.",
         "duties": [
           "Thiết kế, triển khai và theo dõi thí nghiệm, khảo nghiệm phân bón trên đồng ruộng và trong nhà lưới.",
@@ -255,8 +250,7 @@
           "Vững kiến thức dinh dưỡng cây trồng, thiết kế thí nghiệm và xử lý số liệu thống kê.",
           "Đọc hiểu tài liệu chuyên ngành bằng tiếng Anh.",
           "Chịu khó, sẵn sàng làm việc ngoài đồng ruộng và đi công tác."
-        ],
-        "link": ""
+        ]
       },
       {
         "title": "Chuyên viên Kế hoạch Truyền thông (Planner)",
@@ -264,7 +258,6 @@
         "loc": "Trụ sở chính, TP Thanh Hóa",
         "count": "01",
         "type": "Toàn thời gian",
-        "due": "",
         "summary": "Lập và theo dõi kế hoạch truyền thông năm, quý, tháng cho thương hiệu Tiến Nông trên website, mạng xã hội, báo chí, sự kiện và ấn phẩm tại điểm bán.",
         "duties": [
           "Xây dựng kế hoạch truyền thông theo mùa vụ và dòng sản phẩm: thông điệp, lịch nội dung, ngân sách, chỉ số đo lường.",
@@ -277,8 +270,7 @@
           "Ưu tiên có từ 2 năm kinh nghiệm lập kế hoạch truyền thông, marketing; hiểu thị trường nông nghiệp, nông thôn là lợi thế.",
           "Viết tốt, tư duy số liệu, sử dụng được các công cụ quảng cáo và đo lường số.",
           "Sẵn sàng đi công tác địa phương, xuống đồng ruộng."
-        ],
-        "link": ""
+        ]
       },
       {
         "title": "Nhân viên Kinh doanh thị trường",
@@ -286,7 +278,6 @@
         "loc": "Các tỉnh, thành",
         "count": "Nhiều",
         "type": "Tuyển thường xuyên",
-        "due": "",
         "summary": "Phát triển và chăm sóc hệ thống nhà phân phối, đại lý trên địa bàn được giao; cùng kỹ sư tổ chức hội thảo, tư vấn cho bà con.",
         "duties": [
           "Quản lý, mở rộng hệ thống nhà phân phối, đại lý trên địa bàn; hoàn thành chỉ tiêu kinh doanh theo mùa vụ.",
@@ -299,8 +290,7 @@
           "Giao tiếp tốt, yêu thích công việc thị trường, gần gũi bà con nông dân.",
           "Có phương tiện, sẵn sàng đi công tác thường xuyên trên địa bàn phụ trách.",
           "Ưu tiên ứng viên sinh sống tại tỉnh tuyển dụng, có kinh nghiệm kinh doanh vật tư nông nghiệp."
-        ],
-        "link": ""
+        ]
       },
       {
         "title": "Chuyên viên Nhân sự",
@@ -308,7 +298,6 @@
         "loc": "Trụ sở chính, TP Thanh Hóa",
         "count": "01",
         "type": "Toàn thời gian",
-        "due": "",
         "summary": "Phụ trách tuyển dụng, đào tạo và chính sách lương, thưởng, phúc lợi cho trụ sở và các nhà máy.",
         "duties": [
           "Lập kế hoạch và tổ chức tuyển dụng; chuẩn hóa mô tả công việc cho các vị trí.",
@@ -321,8 +310,7 @@
           "Ưu tiên có từ 3 năm kinh nghiệm ở vị trí tương đương, nhất là trong doanh nghiệp sản xuất.",
           "Am hiểu Bộ luật Lao động, Luật Bảo hiểm xã hội; sử dụng tốt phần mềm quản trị nhân sự.",
           "Cẩn trọng, bảo mật thông tin, giao tiếp tốt."
-        ],
-        "link": ""
+        ]
       },
       {
         "title": "Chuyên viên Tài chính",
@@ -330,7 +318,6 @@
         "loc": "Trụ sở chính, TP Thanh Hóa",
         "count": "01",
         "type": "Toàn thời gian",
-        "due": "",
         "summary": "Lập kế hoạch tài chính, quản lý dòng tiền và phân tích hiệu quả kinh doanh, hỗ trợ Ban lãnh đạo ra quyết định.",
         "duties": [
           "Lập kế hoạch tài chính, ngân sách năm, quý; theo dõi thực hiện và phân tích chênh lệch.",
@@ -343,8 +330,7 @@
           "Ưu tiên có từ 3 năm kinh nghiệm tài chính doanh nghiệp.",
           "Thành thạo Excel và phần mềm kế toán; tư duy phân tích tốt.",
           "Trung thực, cẩn trọng, có định hướng gắn bó lâu dài."
-        ],
-        "link": ""
+        ]
       }
     ]
   },
