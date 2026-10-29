@@ -22,7 +22,7 @@
     "t11": "nhà phân phối",
     "t12": "10.000",
     "t13": "điểm bán",
-    "t14": "200.000+",
+    "t14": "300.000+",
     "t15": "hộ nông dân tin dùng",
     "t16": "10+",
     "t17": "quốc gia xuất khẩu",
@@ -415,7 +415,6 @@
             "alt": "Nhà máy Tiến Nông Bỉm Sơn"
           },
           {
-            "src": "/uploads/Day chuyen robot Tien Nong Bim Son 2024 - Copy.JPG",
             "focus": "center",
             "zoom": "100",
             "alt": "Dây chuyền đóng bao và xe nâng tại nhà máy Bỉm Sơn"
@@ -528,8 +527,7 @@
           "zoom": "100",
           "alt": "Logo Tiến Nông Garden"
         },
-        "featured": false,
-        "link": ""
+        "featured": false
       },
       {
         "name": "Hacheco",
@@ -539,41 +537,34 @@
           "zoom": "100",
           "alt": "Logo Hacheco"
         },
-        "featured": false,
-        "link": ""
+        "featured": false
       },
       {
         "name": "Nông nghiệp Hiện đại Tiến Nông",
         "logo": {
-          "src": "",
           "focus": "center",
           "zoom": "100",
           "alt": "Logo Nông nghiệp Hiện đại Tiến Nông"
         },
-        "featured": false,
-        "link": ""
+        "featured": false
       },
       {
         "name": "Đầu tư và Phát triển Nông nghiệp Tiến Nông",
         "logo": {
-          "src": "",
           "focus": "center",
           "zoom": "100",
           "alt": "Logo Đầu tư và Phát triển Nông nghiệp Tiến Nông"
         },
-        "featured": false,
-        "link": ""
+        "featured": false
       },
       {
         "name": "Tiến Nông Gia Lai",
         "logo": {
-          "src": "",
           "focus": "center",
           "zoom": "100",
           "alt": "Logo Tiến Nông Gia Lai"
         },
-        "featured": false,
-        "link": ""
+        "featured": false
       }
     ]
   },
