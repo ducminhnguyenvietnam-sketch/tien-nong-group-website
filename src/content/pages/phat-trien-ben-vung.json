@@ -22,7 +22,7 @@
     {
       "value": "Từ 1998",
       "label": "đỡ đầu trẻ mồ côi",
-      "sub": "Chương trình “Ông bố Tiến Nông”"
+      "sub": "Có hoàn cảnh đặc biệt khó khăn"
     },
     {
       "value": "208",
@@ -41,8 +41,7 @@
     },
     {
       "value": "[x] tỷ đồng",
-      "label": "đóng góp cho cộng đồng (lũy kế)",
-      "sub": ""
+      "label": "đóng góp cho cộng đồng (lũy kế)"
     }
   ],
   "nav": {
@@ -224,8 +223,7 @@
     "stats": [
       {
         "value": "1998",
-        "label": "năm bắt đầu",
-        "sub": ""
+        "label": "năm bắt đầu"
       },
       {
         "value": "208",
@@ -250,8 +248,7 @@
       {
         "when": "1998",
         "title": "Bắt đầu nhận đỡ đầu",
-        "text": "Những em nhỏ mồ côi đầu tiên ở Thanh Hóa được nhận trợ cấp hằng tháng.",
-        "link": ""
+        "text": "Những em nhỏ mồ côi đầu tiên ở Thanh Hóa được nhận trợ cấp hằng tháng."
       },
       {
         "when": "2018",
@@ -354,8 +351,7 @@
           "focus": "50% 51.3%",
           "zoom": "103",
           "alt": "Sinh viên tham quan nhà máy"
-        },
-        "link": ""
+        }
       },
       {
         "tag": "THIÊN TAI",
@@ -393,8 +389,7 @@
           "focus": "43% 90.5%",
           "zoom": "138",
           "alt": "Hoạt động hỗ trợ người yếu thế"
-        },
-        "link": ""
+        }
       }
     ]
   },
@@ -410,8 +405,7 @@
     "items": [
       {
         "title": "Nộp ngân sách cao nhất từ trước tới nay",
-        "text": "Năm 2025, mức đóng góp ngân sách nhà nước cao nhất trong lịch sử công ty; được Chủ tịch UBND tỉnh Thanh Hóa tặng Bằng khen vì chấp hành tốt chính sách thuế.",
-        "link": ""
+        "text": "Năm 2025, mức đóng góp ngân sách nhà nước cao nhất trong lịch sử công ty; được Chủ tịch UBND tỉnh Thanh Hóa tặng Bằng khen vì chấp hành tốt chính sách thuế."
       },
       {
         "title": "Sáu lần Sao Vàng Đất Việt",
@@ -420,13 +414,11 @@
       },
       {
         "title": "ISO 9001 và ISO 14001",
-        "text": "Hệ thống quản lý chất lượng và quản lý môi trường được áp dụng tại các nhà máy.",
-        "link": ""
+        "text": "Hệ thống quản lý chất lượng và quản lý môi trường được áp dụng tại các nhà máy."
       },
       {
         "title": "Uỷ ban ESG",
-        "text": "Thành lập 07/2026 để xây dựng bộ chỉ số và công bố báo cáo phát triển bền vững đầu tiên.",
-        "link": ""
+        "text": "Thành lập 07/2026 để xây dựng bộ chỉ số và công bố báo cáo phát triển bền vững đầu tiên."
       }
     ]
   },
