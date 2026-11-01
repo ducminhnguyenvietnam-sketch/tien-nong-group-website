@@ -180,12 +180,12 @@
     "link": "/tin-tuc/le-ra-mat-trung-tam-cham-soc-phuc-vu-nong-dan-viet-nam/"
   },
   "results": {
-    "eyebrow": "CÂU CHUYỆN NHÀ NÔNG",
-    "title": "Những câu chuyện thật, những mùa vàng thật",
-    "intro": "Hành trình thay đổi trên chính đồng ruộng của những người nông dân đồng hành cùng Tiến Nông.",
+    "eyebrow": "CÂU CHUYỆN NHÀ NÔNG",
+    "title": "Những câu chuyện thật, những mùa vàng thật",
+    "intro": "Hành trình thay đổi trên chính đồng ruộng của những người nông dân đồng hành cùng Tiến Nông.",
     "stories": [
       {
-        "crop": "NHÃN · XÃ HUỔI MỘT, TỈNH SƠN LA",
+        "crop": "NHÃN · XÃ HUỔI MỘT, TỈNH SƠN LA",
         "quote": "“Từ khi dùng phân bón Tiến Nông, vừa tiết kiệm được chi phí chăm bón, vừa nâng được năng suất, nên bà con chúng tôi yên tâm làm lâu dài”",
         "facts": [
           {
@@ -197,7 +197,7 @@
             "label": "đồng hành"
           }
         ],
-        "person": "Ông Quàng Văn Pành · 3 ha nhãn",
+        "person": "Ông Quàng Văn Pành · 3 ha nhãn",
         "image": {
           "src": "/uploads/story-1-mvc7n6uw.jpg",
           "focus": "52.1% 100%",
@@ -206,7 +206,7 @@
         }
       },
       {
-        "crop": "DỨA · XÃ NGỌC TRẠO, TỈNH THANH HÓA",
+        "crop": "DỨA · XÃ NGỌC TRẠO, TỈNH THANH HÓA",
         "quote": "“Bón theo từng giai đoạn giúp mình biết lúc nào cây cần gì, bón bao nhiêu”",
         "facts": [
           {
@@ -214,7 +214,7 @@
             "label": "Chi phí"
           }
         ],
-        "person": "Ông Quách Văn Tấn · 1.5 ha dứa",
+        "person": "Ông Quách Văn Tấn · 1.5 ha dứa",
         "image": {
           "src": "/uploads/story-2-mvkgg1hj.jpg",
           "focus": "60.7% 50%",
@@ -278,7 +278,7 @@
         }
       }
     ],
-    "more": "Xem thêm câu chuyện →"
+    "more": "Xem thêm câu chuyện →"
   },
   "hardship": {
     "eyebrow": "KHI MÙA VỤ GẶP KHÓ",
@@ -325,15 +325,15 @@
   },
   "workshops": {
     "eyebrow": "CHƯƠNG TRÌNH TẬP HUẤN",
-    "title": "Kỹ sư Tiến Nông đồng hành tại địa phương",
-    "intro": "Hình ảnh và chia sẻ từ các buổi tập huấn, hội nghị, hội thảo đầu bờ do kỹ sư Tiến Nông tổ chức cùng bà con tại địa phương.",
-    "all": "Xem tất cả bài hội thảo →",
-    "empty": "Bài hội thảo đầu bờ sẽ được cập nhật tại đây."
+    "title": "Kỹ sư Tiến Nông đồng hành tại địa phương",
+    "intro": "Hình ảnh và chia sẻ từ các buổi tập huấn, hội nghị, hội thảo đầu bờ do kỹ sư Tiến Nông tổ chức cùng bà con tại địa phương.",
+    "all": "Xem tất cả bài hội thảo →",
+    "empty": "Bài hội thảo đầu bờ sẽ được cập nhật tại đây."
   },
   "faq": {
-    "eyebrow": "NHÀ NÔNG HỎI · TIẾN NÔNG TRẢ LỜI",
-    "title": "Giải đáp những thắc mắc thường gặp",
-    "intro": "Chưa tìm thấy câu trả lời? Gọi hotline kỹ sư hoặc gửi câu hỏi qua Zalo OA Tiến Nông.",
+    "eyebrow": "NHÀ NÔNG HỎI · TIẾN NÔNG TRẢ LỜI",
+    "title": "Giải đáp những thắc mắc thường gặp",
+    "intro": "Chưa tìm thấy câu trả lời? Gọi hotline kỹ sư hoặc gửi câu hỏi qua Zalo OA Tiến Nông.",
     "items": [
       {
         "q": "Phân bón trả chậm là gì, ai được tham gia?",
@@ -364,17 +364,17 @@
   "register": {
     "eyebrow": "ĐĂNG KÝ TƯ VẤN",
     "title": "Để kỹ sư Tiến Nông liên hệ với bà con",
-    "intro": "Dành cho nông dân, chủ trang trại, hợp tác xã và tổ hợp tác muốn được hỗ trợ kỹ thuật và kết nối với cộng đồng canh tác hiệu quả.",
+    "intro": "Dành cho nông dân, chủ trang trại, hợp tác xã và tổ hợp tác muốn được hỗ trợ kỹ thuật và kết nối với cộng đồng canh tác hiệu quả.",
     "perks": [
-      "Cập nhật kiến thức và mô hình canh tác hiệu quả",
-      "Được kỹ sư nông học tư vấn miễn phí",
-      "Ưu tiên tham gia hội thảo đầu bờ, chương trình thực tế",
+      "Cập nhật kiến thức và mô hình canh tác hiệu quả",
+      "Được kỹ sư nông học tư vấn miễn phí",
+      "Ưu tiên tham gia hội thảo đầu bờ, chương trình thực tế",
       "Được hướng dẫn tham gia chương trình phân bón trả chậm tại địa phương"
     ],
-    "sent_label": "ĐÃ GỬI ĐĂNG KÝ",
-    "sent_title": "Cảm ơn bà con đã đăng ký!",
-    "sent_text": "Kỹ sư Tiến Nông phụ trách khu vực sẽ liên hệ qua số điện thoại đã đăng ký.",
-    "again": "Đăng ký thêm thành viên",
+    "sent_label": "ĐÃ GỬI ĐĂNG KÝ",
+    "sent_title": "Cảm ơn bà con đã đăng ký!",
+    "sent_text": "Kỹ sư Tiến Nông phụ trách khu vực sẽ liên hệ qua số điện thoại đã đăng ký.",
+    "again": "Đăng ký thêm thành viên",
     "name_label": "Họ và tên *",
     "name_ph": "Nguyễn Văn A",
     "phone_label": "Số điện thoại / Zalo *",
@@ -383,8 +383,8 @@
     "province_ph": "VD: Thanh Hóa",
     "crop_label": "Cây trồng chính *",
     "consent": "Tôi đồng ý để Tiến Nông xử lý dữ liệu cá nhân theo Chính sách bảo mật.",
-    "submit": "Gửi đăng ký",
-    "alt_text": "Hoặc nhắn Zalo OA Tiến Nông để đăng ký nhanh.",
+    "submit": "Gửi đăng ký",
+    "alt_text": "Hoặc nhắn Zalo OA Tiến Nông để đăng ký nhanh.",
     "crops": [
       "Lúa",
       "Ngô",

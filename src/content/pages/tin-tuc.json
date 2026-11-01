@@ -4,23 +4,23 @@
   },
   "s01_tin_noi_bat": {
     "t1": "Trang chủ",
-    "t2": "/ Tin tức",
+    "t2": "/ Tin tức",
     "t3": "Tin tức"
   },
   "s02_danh_sach": {
     "f1": "Tìm bài viết",
     "f2": "Tìm bài viết…",
-    "t1": "Chưa có bài viết phù hợp.",
+    "t1": "Chưa có bài viết phù hợp.",
     "t5": "Sau →"
   },
   "s03_bao_chi": {
-    "t1": "Báo chí nói về Tiến Nông",
-    "t2": "Xem thêm →",
+    "t1": "Báo chí nói về Tiến Nông",
+    "t2": "Xem thêm →",
     "t3": "Đọc bài gốc ↗"
   },
   "article": {
     "breadcrumb_home": "Trang chủ",
-    "breadcrumb_news": "Tin tức",
+    "breadcrumb_news": "Tin tức",
     "minutes_read": "phút đọc",
     "share_facebook": "Facebook",
     "share_zalo": "Zalo",
@@ -28,8 +28,8 @@
     "copied": "Đã sao chép",
     "album_more": "Xem toàn bộ album →",
     "tags_label": "Chủ đề:",
-    "related_title": "Bài viết liên quan",
-    "related_all": "Tất cả tin tức →"
+    "related_title": "Bài viết liên quan",
+    "related_all": "Tất cả tin tức →"
   },
   "all_categories": "Tất cả",
   "hero": {

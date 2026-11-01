@@ -6,6 +6,8 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import PageHero from '../components/PageHero.astro';
+import FigureCard from '../components/FigureCard.astro';
+import CtaBand from '../components/CtaBand.astro';
 import { asset, link, url } from '../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
@@ -17,6 +19,8 @@ const stats = [[c.s01_hero.t6, c.s01_hero.t7], [c.s01_hero.t8, c.s01_hero.t9], [
   [c.s01_hero.t12, c.s01_hero.t13], [c.s01_hero.t14, c.s01_hero.t15], [c.s01_hero.t16, c.s01_hero.t17]].filter(([v]) => isFilled(v));
 const t = c.s02_thu_ngo;
 const m = c.s03_su_menh_gia_tri;
+/** "Phụng sự nhà nông – Kiến tạo tương lai": the part after the dash is set in the accent yellow. */
+const slogan = String(t.slogan || '').split(/\s+[–-]\s+/);
 const awards = [...c.s06_thanh_tuu.featured_awards.map((w, k) => ({ ...w, big: true, path: `s06_thanh_tuu.featured_awards.${k}.image` })),
   ...c.s06_thanh_tuu.awards.map((w, k) => ({ ...w, big: false, path: `s06_thanh_tuu.awards.${k}.image` }))].filter((w) => isFilled(w.title));
 const caps = c.s07_nang_luc.capabilities.filter((x) => isFilled(x.title));
@@ -28,10 +32,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
   crumbs={[{ label: c.s01_hero.t1, href: url('trang-chu') }, { label: c.s01_hero.t2.replace(/^\s*\/\s*/, '') }]}
   eyebrow={c.s01_hero.t3} title={c.s01_hero.t4} lead={c.s01_hero.t5} />
 
-{stats.length > 0 && <section class="about-stats">
-<div class="about-stats__row">
-{stats.map(([v, l]) => <div class="about-stat"><span class="about-stat__value" style="font:var(--type-stat)">{v}</span><span class="about-stat__label">{l}</span></div>)}
-</div></section>}
+<FigureCard overlap items={stats.map(([value, label]) => ({ value, label }))} />
 
 <section id="thu-ngo" class="ceo">
 <div class="ceo__bg" aria-hidden="true"></div>
@@ -48,7 +49,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
 <span class="ceo__quote ceo__quote--close" aria-hidden="true">”</span>
 </div>
 <div class="ceo__band">
-<div class="ceo__badge"><span class="ceo__logo"><img src={asset('assets/logo-header.png')} alt="Tiến Nông" width="147" height="120" /></span><span class="ceo__slogan">{t.slogan}</span></div>
+<div class="ceo__badge"><img class="ceo__mark" src={asset('assets/logo-mark-vang.png')} alt="Tiến Nông" width="277" height="200" /><span class="ceo__rule" aria-hidden="true"></span><p class="ceo__slogan">{slogan.length > 1 ? <><span>{slogan[0]}</span><span class="ceo__dash"> – </span><span class="ceo__gold">{slogan.slice(1).join(' – ')}</span></> : t.slogan}</p></div>
 </div>
 </div>
 </section>
@@ -185,11 +186,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
 </ul>
 </div></section>}
 
-<section style="background:var(--green-500);color:#fff">
-<div style="max-width:1280px;margin:0 auto;padding:56px clamp(20px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
-<h2 style="margin:0;font:var(--type-h2);max-width:640px;text-wrap:balance">{c.s09_phan_9.t1}</h2>
-<div style="display:flex;gap:12px;flex-wrap:wrap"><a href={url('lien-he', 'lien-he-form')} style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s09_phan_9.t2}</a><a href={url('tuyen-dung', 'vi-tri')} style="color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md);border:1px solid rgba(255,255,255,.7)">{c.s09_phan_9.t3}</a></div>
-</div></section>
+<CtaBand title={c.s09_phan_9.t1} primary={{ label: c.s09_phan_9.t2, href: url('lien-he', 'lien-he-form') }} secondary={{ label: c.s09_phan_9.t3, href: url('tuyen-dung', 'vi-tri') }} />
 </Layout>
 
 <style>
@@ -199,20 +196,11 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
   .eyebrow-tag { display: block; font: var(--type-eyebrow); letter-spacing: .08em; text-transform: uppercase; color: var(--green-700); }
   section h2 { margin: 10px 0 0; font: var(--type-h2); letter-spacing: -.01em; text-wrap: balance; }
 
-  /* Stats under the hero */
-  .about-stats { background: var(--surface-card); border-bottom: 1px solid var(--border-default); }
-  .about-stats__row { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; padding-block: 40px 44px; }
-  .about-stat { display: flex; flex-direction: column; gap: 6px; }
-  .about-stat__value { font-size: clamp(28px, 2.3vw, 34px) !important; color: var(--green-700); white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .about-stat__label { font: 600 13px/1.45 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--text-secondary); }
-  @media (max-width: 1099.98px) { .about-stats__row { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-  @media (max-width: 599.98px) { .about-stats__row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; padding-block: 32px; } }
-
   /* CEO letter — brand panel with a curved foot, portrait overlapping a dark band (reference: "Lời chào từ Tổng Giám đốc") */
   .ceo { position: relative; padding: clamp(56px, 7vw, 96px) 0 clamp(56px, 7vw, 96px); background: var(--surface-page); overflow: hidden; scroll-margin-top: 120px; }
   .ceo__bg { position: absolute; left: -10%; right: -10%; top: 0; height: 78%; background: var(--green-600);
     border-radius: 0 0 50% 50% / 0 0 22% 22%; }
-  .ceo__wrap { position: relative; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto auto; column-gap: clamp(32px, 4vw, 64px); }
+  .ceo__wrap { position: relative; display: grid; grid-template-columns: minmax(0, 9fr) minmax(0, 15fr); grid-template-rows: auto auto; column-gap: clamp(32px, 4vw, 64px); }
   .ceo__photo { grid-row: 1 / span 2; grid-column: 1; position: relative; z-index: 2; align-self: end; aspect-ratio: 4 / 5; width: 100%; max-width: 440px; justify-self: center;
     margin-bottom: 0; filter: drop-shadow(0 18px 30px rgba(2, 53, 26, .28)); }
   .ceo__text { position: relative; grid-column: 2; color: #fff; display: flex; flex-direction: column; gap: 20px; padding-bottom: clamp(32px, 4vw, 48px); }
@@ -222,18 +210,21 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
   .ceo__quote { position: absolute; font: 700 clamp(120px, 12vw, 180px)/1 var(--font-display); color: rgba(255, 255, 255, .16); pointer-events: none; user-select: none; }
   .ceo__quote--open { left: clamp(-88px, -6vw, -40px); top: -36px; }
   .ceo__quote--close { right: 0; bottom: -40px; }
-  .ceo__lead { margin: 0; font: 600 clamp(18px, 1.6vw, 21px)/1.6 var(--font-display); color: #fff; position: relative; }
-  .ceo__body { margin: 0; font-size: var(--fs-body); line-height: 1.8; color: var(--green-50); position: relative; }
+  .ceo__lead { margin: 0; padding-left: 18px; border-left: 3px solid var(--brand-highlight); font: 600 clamp(16px, 1.25vw, 17px)/1.6 var(--font-display); color: #fff; position: relative; }
+  .ceo__body { margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255, 255, 255, .92); position: relative; }
   .ceo__sign { display: flex; flex-direction: column; gap: 4px; }
   .ceo__sign span { font-weight: 600; color: var(--green-50); }
   .ceo__sign strong { font: var(--type-h3); color: #fff; }
-  .ceo__band { grid-column: 1 / -1; grid-row: 2; position: relative; z-index: 1; align-self: end; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  .ceo__band { grid-column: 1 / -1; grid-row: 2; position: relative; z-index: 1; align-self: end; display: grid; grid-template-columns: minmax(0, 9fr) minmax(0, 15fr);
     column-gap: clamp(32px, 4vw, 64px); min-height: 200px; padding: 28px; border-radius: 24px; background: var(--green-900); margin-top: -1px; }
   .ceo__text { grid-row: 1; }
-  .ceo__badge { grid-column: 2; display: flex; align-items: center; gap: 24px; padding: 24px 28px; border: 1px solid rgba(255, 255, 255, .45); border-radius: 18px; }
-  .ceo__logo { flex: none; display: inline-flex; padding: 10px 14px; background: #fff; border-radius: 14px; }
-  .ceo__logo img { height: 64px; width: auto; display: block; }
-  .ceo__slogan { font: 700 clamp(22px, 2.4vw, 34px)/1.2 var(--font-display); color: #fff; text-wrap: balance; }
+  .ceo__badge { grid-column: 2; display: flex; align-items: center; gap: 20px; padding: 24px 26px; min-width: 0; border: 1px solid rgba(245, 196, 78, .45); border-radius: 18px;
+    background: linear-gradient(110deg, rgba(245, 196, 78, .08) 0%, rgba(245, 196, 78, 0) 60%); }
+  .ceo__mark { flex: none; height: 46px; width: auto; display: block; }
+  .ceo__rule { flex: none; width: 1px; align-self: stretch; background: rgba(245, 196, 78, .5); }
+  .ceo__slogan { margin: 0; font: 600 clamp(18px, 1.75vw, 25px)/1.25 var(--font-display); color: #fff; letter-spacing: -.005em; white-space: nowrap; text-align: start; }
+  .ceo__dash { color: rgba(245, 196, 78, .8); }
+  .ceo__gold { color: var(--brand-highlight); }
   @media (max-width: 899.98px) {
     .ceo { padding-top: 48px; }
     .ceo__bg { height: 70%; border-radius: 0 0 50% 50% / 0 0 8% 8%; }
@@ -242,6 +233,11 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
     .ceo__photo { grid-column: 1; grid-row: 2; max-width: 300px; margin-top: 8px; margin-bottom: -96px; }
     .ceo__band { grid-row: 3; grid-template-columns: minmax(0, 1fr); padding: 112px 20px 20px; }
     .ceo__badge { grid-column: 1; flex-direction: column; align-items: flex-start; gap: 14px; padding: 18px; }
+    .ceo__rule { display: none; }
+    .ceo__slogan { white-space: normal; }
+  }
+  @media (max-width: 1199.98px) and (min-width: 900px) {
+    .ceo__slogan { white-space: normal; }
     .ceo__quote--open { left: -8px; top: -48px; font-size: 96px; }
     .ceo__quote--close { display: none; }
   }

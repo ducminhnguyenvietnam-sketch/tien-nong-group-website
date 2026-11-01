@@ -6,7 +6,7 @@
   "hero": {
     "t1": "Trang chủ",
     "t2": "/ Liên hệ",
-    "eyebrow": "LIÊN HỆ",
+    "eyebrow": "LIÊN HỆ",
     "title": "Bạn cần gì, Tiến Nông chỉ đúng người",
     "lead": "Chọn đúng nhu cầu để gặp ngay bộ phận phụ trách — kỹ sư nông học, kinh doanh khu vực, dự án, truyền thông hay tuyển dụng.",
     "background": {
@@ -17,7 +17,7 @@
     }
   },
   "routes": {
-    "eyebrow": "01 · BẠN CẦN GÌ?",
+    "eyebrow": "BẠN CẦN GÌ?",
     "title": "Sáu đầu mối, mỗi việc một người phụ trách",
     "items": [
       {
@@ -64,7 +64,7 @@
     ]
   },
   "genuine": {
-    "eyebrow": "02 · HÀNG CHÍNH HÃNG",
+    "eyebrow": "HÀNG CHÍNH HÃNG",
     "title": "Kiểm tra phân bón Tiến Nông chính hãng",
     "intro": "Mỗi bao phân bón Tiến Nông có mã QR truy xuất nguồn gốc. Chỉ mất vài giây để bà con yên tâm về sản phẩm mình mua.",
     "steps": [
@@ -86,7 +86,7 @@
     "report_phone": "02373.729.729"
   },
   "regions": {
-    "eyebrow": "03 · TÌM ĐẠI LÝ GẦN BẠN",
+    "eyebrow": "TÌM ĐẠI LÝ GẦN BẠN",
     "title": "Gọi người phụ trách tỉnh của bạn",
     "intro": "Hơn 200 nhà phân phối và 10.000 điểm bán lẻ trên cả nước. Giám đốc kinh doanh phụ trách khu vực sẽ giới thiệu điểm bán gần nhất cho bà con và hướng dẫn đối tác muốn hợp tác.",
     "call_label": "Gọi",
@@ -94,14 +94,14 @@
     "map_label": "Xem bản đồ hệ thống phân phối →"
   },
   "sites": {
-    "title": "Trụ sở & nhà máy",
+    "title": "Trụ sở & nhà máy",
     "map_label": "Xem trên Google Maps ↗",
     "items": [
       {
         "tag": "Trụ sở",
-        "name": "Trụ sở chính",
+        "name": "Trụ sở chính",
         "role": "Văn phòng điều hành của Tiến Nông.",
-        "address": "274B Bà Triệu, phường Hàm Rồng, tỉnh Thanh Hóa",
+        "address": "274B Bà Triệu, phường Hàm Rồng, tỉnh Thanh Hóa",
         "phone": "02373.729.729",
         "image": {
           "focus": "center",
@@ -111,9 +111,9 @@
       },
       {
         "tag": "Nhà máy",
-        "name": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn",
+        "name": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn",
         "role": "Nhà máy sản xuất và phòng thí nghiệm; nơi đón các đoàn tham quan.",
-        "address": "Lô B5, Khu B, Khu Công nghiệp Bỉm Sơn, phường Bỉm Sơn, tỉnh Thanh Hóa",
+        "address": "Lô B5, Khu B, Khu Công nghiệp Bỉm Sơn, phường Bỉm Sơn, tỉnh Thanh Hóa",
         "phone": "02373.729.729",
         "image": {
           "src": "/uploads/Nha-may-Tien-Nong-Bim-Son-2025-scaled.jpg",
@@ -124,9 +124,9 @@
       },
       {
         "tag": "Nhà máy",
-        "name": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Gia Lai",
+        "name": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Gia Lai",
         "role": "Nhà máy phục vụ khu vực Tây Nguyên.",
-        "address": "Làng Del, xã Chư Sê, tỉnh Gia Lai",
+        "address": "Làng Del, xã Chư Sê, tỉnh Gia Lai",
         "phone": "02373.729.729",
         "image": {
           "focus": "center",
@@ -154,13 +154,13 @@
     "intro": "Tin mùa vụ, kỹ thuật canh tác và hoạt động của Tiến Nông."
   },
   "form": {
-    "title": "Gửi yêu cầu",
-    "intro": "Chọn nhu cầu để yêu cầu được chuyển đến đúng bộ phận.",
+    "title": "Gửi yêu cầu",
+    "intro": "Chọn nhu cầu để yêu cầu được chuyển đến đúng bộ phận.",
     "sent_label": "ĐÃ GỬI",
-    "sent_title": "Cảm ơn Quý khách đã liên hệ Tiến Nông.",
+    "sent_title": "Cảm ơn Quý khách đã liên hệ Tiến Nông.",
     "sent_before": "Bộ phận",
     "sent_after": "sẽ phản hồi qua thông tin Quý khách cung cấp.",
-    "again": "Gửi yêu cầu khác",
+    "again": "Gửi yêu cầu khác",
     "need_label": "Nhu cầu *",
     "name_label": "Họ và tên *",
     "name_ph": "Nguyễn Văn A",
@@ -173,7 +173,7 @@
     "message_label": "Nội dung",
     "message_ph": "Mô tả ngắn gọn nhu cầu",
     "consent": "Tôi đồng ý để Tiến Nông xử lý dữ liệu cá nhân theo Chính sách bảo mật.",
-    "submit": "Gửi yêu cầu",
+    "submit": "Gửi yêu cầu",
     "needs": [
       "Tư vấn kỹ thuật",
       "Mua hàng / tìm đại lý",

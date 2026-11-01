@@ -1,126 +1,180 @@
 ---
 /**
- * Văn hóa doanh nghiệp. Flow: hero → key figures → mottos → origin (where the culture comes from)
- * → five tâm niệm → core values, each with a real example → yearly traditions → learning → the
- * tâm niệm song → poems → gallery → invitation to join.
+ * Văn hóa doanh nghiệp. Flow: hero → key figures → the slogan → origin + the five "tốt cho" questions
+ * → five tâm niệm → five core values (photo + caption from a real news story) → traditions → training
+ * (news cards) → the Tiến Nông song → poems → gallery → invitation to join.
  */
 import raw from '../../content/pages/van-hoa-doanh-nghiep.json';
 import { isFilled, stripPlaceholders, withDefaults } from '../../lib/content';
 import Layout from '../../layouts/Layout.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
 import PageHero from '../../components/PageHero.astro';
+import FigureCard from '../../components/FigureCard.astro';
+import CtaBand from '../../components/CtaBand.astro';
 import Head from '../../components/story/Head.astro';
-import Stats from '../../components/story/Stats.astro';
+import siteRaw from '../../content/site.json';
 import { link, url, youtubeId } from '../../lib/routes';
+import { newsByLink } from '../../lib/news';
 
 const c = withDefaults(raw, 'src/content/pages/van-hoa-doanh-nghiep.json');
+const site = withDefaults(siteRaw, 'src/content/site.json');
 const F = 'src/content/pages/van-hoa-doanh-nghiep.json';
-const principles = c.principles.items.filter((p) => isFilled(p.title));
-const values = c.values.items.filter((v) => isFilled(v.title));
-const poems = c.poems.items.filter((p) => isFilled(p.text));
-const learning = c.learning.items.filter((l) => isFilled(l.title));
-const measures = (c.origin.measures as string[]).filter(isFilled);
-const hasMedia = c.media.videos.some((v) => isFilled(v.youtube) || isFilled(v.file));
-const hasGallery = c.gallery.photos.some((ph) => isFilled(ph.src));
 const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
+
+const principles = c.principles.items.filter((p) => isFilled(p.title));
+const poems = c.poems.items.filter((p) => isFilled(p.text));
+const measures = (c.origin.measures as string[]).filter(isFilled);
+const hasGallery = c.gallery.photos.some((ph) => isFilled(ph.src));
+
+// Slogan band: the "KHẨU HIỆU" line large, the other two lines beneath it.
+const mottos = c.mottos.filter((m) => isFilled(m.text));
+const slogan = mottos.find((m) => /khẩu hiệu/i.test(m.label)) ?? mottos.at(-1);
+const otherMottos = mottos.filter((m) => m !== slogan);
+const sloganParts = String(slogan?.text || '').split(/\s+[–-]\s+/);
+
+/** Photo for a card: its own CMS photo, otherwise the cover of the news story it links to. */
+const photoFor = async (img: any, href: string) => {
+  if (isFilled(img?.src)) return { image: img, own: true };
+  const n = await newsByLink(href);
+  return { image: n?.data.cover, own: false };
+};
+const values = await Promise.all(c.values.items.map(async (v, k) => ({ ...v, k, ...(await photoFor(v.image, v.link)) })));
+const shownValues = values.filter((v) => isFilled(v.title));
+const traditions = c.traditions.items.map((t, k) => ({ ...t, k })).filter((t) => isFilled(t.title));
+const learning = await Promise.all(c.learning.items.map(async (l, k) => ({ ...l, k, ...(await photoFor(l.image, l.link)) })));
+const shownLearning = learning.filter((l) => isFilled(l.title));
+
+const videos = c.media.videos.filter((v) => isFilled(v.youtube) || isFilled(v.file));
+const [mainVideo, ...moreVideos] = videos;
+const titleParts = (() => {
+  const t = String(c.media.title || ''), h = String(c.media.highlight || '').trim();
+  const i = h ? t.indexOf(h) : -1;
+  return i < 0 ? [t, '', ''] : [t.slice(0, i), h, t.slice(i + h.length)];
+})();
+const two = (n: number) => String(n + 1).padStart(2, '0');
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Về Tiến Nông">
 <PageHero id="vh-hero" image={c.hero.background} cms={`${F}#hero.background`} placeholder={c.hero.background?.alt || 'Tập thể cán bộ, nhân viên Tiến Nông'}
   crumbs={[{ label: c.hero.breadcrumb_home, href: url('trang-chu') }, { label: c.hero.breadcrumb_parent, href: url('ve-tien-nong') }, { label: c.hero.breadcrumb_self }]}
   eyebrow={c.hero.eyebrow} title={c.hero.title} lead={c.hero.intro}>
-{principles.length > 0 && <a href="#tam-niem" class="page-hero__btn page-hero__btn--solid">{c.hero.button_principles}</a>}{hasMedia && <a href="#bai-hat" class="page-hero__btn">{c.hero.button_media}</a>}
+{principles.length > 0 && <a href="#tam-niem" class="page-hero__btn page-hero__btn--solid">{c.hero.button_principles}</a>}{mainVideo && <a href="#bai-hat" class="page-hero__btn">{c.hero.button_media}</a>}
 </PageHero>
 
-<section class="st-sec st-sec--card"><div class="st-wrap st-wrap--s"><Stats items={c.stats} /></div></section>
+<FigureCard overlap items={c.stats} />
 
-<section class="st-sec st-sec--dark">
-<div class="st-wrap st-wrap--s"><div class="st-ruled" style="--min:260px">
-{c.mottos.map((m) => <div><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100)">{m.label}</span><strong style="font:var(--type-h3);color:#fff">{m.text}</strong></div>)}
-</div></div></section>
+{slogan && <section class="vh-slogan">
+<div class="vh-slogan__wrap">
+<span class="vh-slogan__label">{slogan.label}</span>
+<p class="vh-slogan__text">{sloganParts.length > 1 ? <><span>{sloganParts[0]}</span><span class="vh-slogan__dash"> – </span><span class="vh-slogan__gold">{sloganParts.slice(1).join(' – ')}</span></> : slogan.text}</p>
+{otherMottos.length > 0 && <dl class="vh-slogan__more">{otherMottos.map((m) => <div><dt>{m.label}</dt><dd>{m.text}</dd></div>)}</dl>}
+</div></section>}
 
 <section id="khoi-nguon" class="st-sec">
 <div class="st-wrap">
-<div class="st-split st-split--top">
-<div>
+<div class="vh-origin">
 <Head eyebrow={c.origin.eyebrow} title={c.origin.title} intro={c.origin.text} />
-{measures.length > 0 && <div style="display:flex;flex-direction:column;gap:12px;padding:22px 24px;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg)">
-<strong style="font-size:18px">{c.origin.measure_title}</strong>
-<span style="color:var(--text-secondary);font-size:15px">{c.origin.measure_intro}</span>
-<ul class="vh-measures">{measures.map((m) => <li>{m}</li>)}</ul>
+<div class="vh-origin__photo st-hide-empty"><ImageSlot style={fill} id="vh-origin" shape="rounded" radius="20" placeholder={c.origin.image.alt || 'Ảnh khởi nguồn'} image={c.origin.image} cms={`${F}#origin.image`} sizes="(max-width: 899px) 92vw, 520px" /></div>
+</div>
+{measures.length > 0 && <div class="vh-measure">
+<div class="vh-measure__head"><strong>{c.origin.measure_title}</strong><span>{c.origin.measure_intro}</span></div>
+<ul class="vh-measure__list" style={`--n:${measures.length}`}>{measures.map((m) => <li>{m}</li>)}</ul>
 </div>}
-</div>
-<div class="st-split__media st-hide-empty" style="--ratio:4/5"><ImageSlot style={fill} id="vh-origin" shape="rounded" radius="24" placeholder={c.origin.image.alt || 'Ảnh khởi nguồn'} image={c.origin.image} cms={`${F}#origin.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
-</div>
 </div></section>
 
-{principles.length > 0 && <section id="tam-niem" class="st-sec st-sec--card">
+{principles.length > 0 && <section id="tam-niem" class="st-sec st-sec--dark">
 <div class="st-wrap">
 <Head eyebrow={c.principles.eyebrow} title={c.principles.title} intro={c.principles.intro} split />
-<ol class="vh-principles">
-{principles.map((p, i) => <li><span class="st-card__num">{String(i + 1).padStart(2, '0')}</span><strong>{p.title}</strong>{isFilled(p.body) && <span>{p.body}</span>}</li>)}
+<div class="vh-tn">
+<div class="vh-tn__photo st-hide-empty"><ImageSlot style={fill} id="vh-tam-niem" shape="rounded" radius="20" placeholder="Bức Tâm niệm" image={c.principles.image} cms={`${F}#principles.image`} sizes="(max-width: 899px) 92vw, 560px" /></div>
+<ol class="vh-tn__list">
+{principles.map((p, i) => <li><span class="vh-tn__num">{i + 1}</span><div><strong>{p.title}</strong>{isFilled(p.body) && <span>{p.body}</span>}</div></li>)}
 </ol>
-{hasMedia && <a href="#bai-hat" class="st-btn" style="align-self:flex-start">♪ {c.hero.button_media}</a>}
+</div>
 </div></section>}
 
-<section id="gia-tri" class="st-sec">
+{shownValues.length > 0 && <section id="gia-tri" class="st-sec">
 <div class="st-wrap">
 <Head eyebrow={c.values.eyebrow} title={c.values.title} intro={c.values.intro} split />
-<div class="st-grid" style="--min:220px">
-{values.map((v) => (
-<div class="st-card st-card--top"><div class="st-card__body">
-<strong class="st-card__title">{v.title}</strong>
-<span class="st-card__text">{v.body}</span>
-{isFilled(v.proof) && <span class="st-card__proof"><strong>Minh chứng · </strong>{v.proof}{isFilled(v.link) && <> <a href={link(v.link)}>Xem →</a></>}</span>}
-</div></div>
-))}
-</div></div></section>
-
-<section id="nghi-thuc" class="st-sec st-sec--card">
-<div class="st-wrap">
-<Head eyebrow={c.traditions.eyebrow} title={c.traditions.title} intro={c.traditions.intro} split />
-<div class="st-grid" style="--min:300px">
-{c.traditions.items.map((t, k) => (
-<div class="st-card">
-<div class="st-card__img st-hide-empty"><ImageSlot style={fill} id={`vh-tradition-${k}`} shape="rect" placeholder={t.image.alt} image={t.image} cms={`${F}#traditions.items.${k}.image`} sizes="(max-width: 767px) 92vw, 400px" /></div>
-<div class="st-card__body"><strong class="st-card__title">{t.title}</strong><span class="st-card__text">{stripPlaceholders(t.body)}</span></div>
+<div class="vh-values" data-picker>
+<div class="vh-values__list" role="tablist" aria-label={c.values.title}>
+{shownValues.map((v, i) => <button type="button" role="tab" data-pick={i} aria-selected={i === 0 ? 'true' : 'false'}>
+<span class="vh-values__num">{two(i)}</span>
+<span class="vh-values__txt"><strong>{v.title}</strong><span>{v.body}</span></span>
+</button>)}
 </div>
-))}
-</div></div></section>
-
-{learning.length > 0 && <section id="hoc-tap" class="st-sec">
-<div class="st-wrap">
-<div class="st-split">
-<div>
-<Head eyebrow={c.learning.eyebrow} title={c.learning.title} intro={c.learning.intro} />
-{isFilled(c.learning.motto) && <blockquote class="st-quote"><p>{c.learning.motto}</p></blockquote>}
+<div class="vh-values__stage">
+{shownValues.map((v, i) => <figure role="tabpanel" data-pick-panel={i} hidden={i !== 0} class="vh-values__panel">
+<div class="vh-values__img"><ImageSlot style={fill} id={`vh-value-${v.k}`} shape="rect" placeholder={v.title} image={v.image} cms={v.own ? `${F}#values.items.${v.k}.image` : undefined} sizes="(max-width: 899px) 92vw, 640px" /></div>
+{isFilled(v.proof) && <figcaption><span>{v.proof}</span>{isFilled(v.link) && <a href={link(v.link)}>Đọc bài →</a>}</figcaption>}
+</figure>)}
 </div>
-<div class="st-split__media st-hide-empty" style="--ratio:3/2"><ImageSlot style={fill} id="vh-learning" shape="rounded" radius="24" placeholder={c.learning.image.alt || 'Ảnh đào tạo'} image={c.learning.image} cms={`${F}#learning.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
-</div>
-<div class="st-grid" style="--min:280px">
-{learning.map((l) => <div class="st-card"><div class="st-card__body"><strong class="st-card__title">{l.title}</strong><span class="st-card__text">{l.text}</span>{isFilled(l.link) && <a class="st-card__link" href={link(l.link)}>Đọc tin →</a>}</div></div>)}
 </div>
 </div></section>}
 
-{hasMedia && <section id="bai-hat" class="st-sec st-sec--dark">
+{traditions.length > 0 && <section id="nghi-thuc" class="st-sec st-sec--dark">
 <div class="st-wrap">
-<Head eyebrow={c.media.eyebrow} title={c.media.title} intro={c.media.intro} split />
-<div class="vh-videos">
-{c.media.videos.map((v) => {
-  const yt = youtubeId(v.youtube);
-  return (
-    <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
-      <div style="position:relative;aspect-ratio:16/9;border-radius:var(--radius-lg);overflow:hidden;background:var(--green-900)">
-        {yt
-          ? <iframe src={`https://www.youtube-nocookie.com/embed/${yt}`} title={v.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
-          : v.file
-            ? <video src={link(v.file)} controls preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video>
-            : <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center;color:var(--green-100);border:1.5px dashed rgba(255,255,255,.35);border-radius:inherit"><span style="font-size:40px;line-height:1" aria-hidden="true">▶</span><span style="font-size:14px;max-width:340px">{c.media.empty_note}</span></div>}
-      </div>
-      <figcaption style="display:flex;flex-direction:column;gap:2px"><strong style="font-size:19px">{v.title}</strong>{isFilled(v.note) && <span style="color:var(--green-100);font-size:14px">{v.note}</span>}</figcaption>
-    </figure>
-  );
-})}
-{principles.length > 0 && <ol class="vh-lyrics">{principles.map((p) => <li>{p.title}</li>)}</ol>}
+<Head eyebrow={c.traditions.eyebrow} title={c.traditions.title} intro={c.traditions.intro} split />
+<div class="vh-trad" data-picker>
+<div class="vh-trad__list">
+{traditions.map((t, i) => <div class="vh-trad__item">
+<button type="button" data-pick={i} aria-selected={i === 0 ? 'true' : 'false'} aria-controls={`vh-trad-${i}`}><span>{t.title}</span><span class="vh-trad__sign" aria-hidden="true"></span></button>
+<div id={`vh-trad-${i}`} class="vh-trad__body" data-pick-panel={i} hidden={i !== 0}><p>{stripPlaceholders(t.body)}</p></div>
+</div>)}
+</div>
+<div class="vh-trad__stage">
+{traditions.map((t, i) => <div class="vh-trad__img" data-pick-panel={i} hidden={i !== 0}><ImageSlot style={fill} id={`vh-tradition-${t.k}`} shape="rounded" radius="20" placeholder={t.image.alt || t.title} image={t.image} cms={`${F}#traditions.items.${t.k}.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>)}
+</div>
+</div>
+</div></section>}
+
+{shownLearning.length > 0 && <section id="hoc-tap" class="st-sec">
+<div class="st-wrap">
+<div class="st-split">
+<div class="vh-learn__copy">
+<Head eyebrow={c.learning.eyebrow} title={c.learning.title} intro={c.learning.intro} />
+{isFilled(c.learning.motto) && <blockquote class="vh-learn__motto"><p>{c.learning.motto}</p></blockquote>}
+</div>
+<div class="st-split__media st-hide-empty" style="--ratio:3/2"><ImageSlot style={fill} id="vh-learning" shape="rounded" radius="20" placeholder={c.learning.image.alt || 'Ảnh đào tạo'} image={c.learning.image} cms={`${F}#learning.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
+</div>
+<div class="vh-learn__head"><a href={url('tin-tuc')} class="vh-link">Tất cả tin tức →</a></div>
+<div class="vh-learn__grid">
+{shownLearning.map((l) => <a href={link(l.link)} class="vh-learn__card">
+<span class="vh-learn__img"><ImageSlot style={fill} id={`vh-learn-${l.k}`} shape="rect" placeholder={l.title} image={l.image} cms={l.own ? `${F}#learning.items.${l.k}.image` : undefined} sizes="(max-width: 767px) 92vw, 400px" /></span>
+<span class="vh-learn__body">
+{isFilled(l.label) && <span class="vh-learn__label">{l.label}</span>}
+<strong>{l.title}</strong>
+<span class="vh-learn__text">{l.text}</span>
+</span>
+</a>)}
+</div>
+</div></section>}
+
+{mainVideo && <section id="bai-hat" class="st-sec st-sec--dark">
+<div class="st-wrap">
+<div class="vh-song__head">
+<div class="st-head"><span class="st-eyebrow">{c.media.eyebrow}</span><h2 class="st-h2">{titleParts[0]}{titleParts[1] && <span class="vh-gold">{titleParts[1]}</span>}{titleParts[2]}</h2>{isFilled(c.media.intro) && <p class="st-lead">{c.media.intro}</p>}</div>
+{moreVideos.length > 0 && isFilled(site.social.youtube) && <a href={link(site.social.youtube)} target="_blank" rel="noopener" class="vh-link vh-link--light">Xem kênh YouTube →</a>}
+</div>
+<div class:list={['vh-song', { 'vh-song--solo': moreVideos.length === 0 }]}>
+<figure class="vh-song__main">
+<div class="vh-song__frame">
+{youtubeId(mainVideo.youtube)
+  ? <iframe src={`https://www.youtube-nocookie.com/embed/${youtubeId(mainVideo.youtube)}`} title={mainVideo.title || c.media.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  : <video src={link(mainVideo.file)} controls preload="metadata"></video>}
+</div>
+</figure>
+{moreVideos.length > 0
+  ? <ul class="vh-song__list">{moreVideos.map((v) => { const id = youtubeId(v.youtube); return (
+      <li><a href={isFilled(v.youtube) ? link(v.youtube) : link(v.file)} target="_blank" rel="noopener">
+        <span class="vh-song__thumb">{id && <img src={`https://i.ytimg.com/vi/${id}/mqdefault.jpg`} alt="" loading="lazy" width="320" height="180" />}<span class="vh-song__play" aria-hidden="true">▶</span></span>
+        <span class="vh-song__meta">{isFilled(v.label) && <span>{v.label}</span>}<strong>{v.title}</strong></span>
+      </a></li>); })}</ul>
+  : <div class="vh-song__info">
+      {isFilled(mainVideo.label) && <span class="vh-song__label">{mainVideo.label}</span>}
+      {isFilled(mainVideo.title) && <strong>{mainVideo.title}</strong>}
+      {isFilled(mainVideo.note) && <span>{mainVideo.note}</span>}
+      {isFilled(site.social.youtube) && <a href={link(site.social.youtube)} target="_blank" rel="noopener" class="vh-song__channel">Xem kênh YouTube Tiến Nông →</a>}
+    </div>}
 </div>
 </div></section>}
 
@@ -135,31 +189,149 @@ const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto
 <div class="st-wrap">
 <Head eyebrow={c.gallery.eyebrow} title={c.gallery.title} />
 <div class="vh-gallery">
-{c.gallery.photos.map((ph, k) => <div style="position:relative;min-height:200px"><ImageSlot style={fill} id={`vh-gallery-${k}`} shape="rounded" radius="12" placeholder={ph.alt} image={ph} cms={`${F}#gallery.photos.${k}`} /></div>)}
+{c.gallery.photos.map((ph, k) => <div style="position:relative;min-height:200px"><ImageSlot style={fill} id={`vh-gallery-${k}`} shape="rounded" radius="16" placeholder={ph.alt} image={ph} cms={`${F}#gallery.photos.${k}`} /></div>)}
 </div></div></section>
 
-<section class="st-sec st-sec--card st-sec--line">
-<div class="st-wrap st-wrap--s" style="flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
-<h2 class="st-h3" style="max-width:640px">{c.cta.title}</h2>
-<div class="st-actions"><a href={url('tuyen-dung', 'vi-tri')} class="st-btn st-btn--solid">{c.cta.button_jobs}</a><a href={url('ve-tien-nong')} class="st-btn">{c.cta.button_about}</a></div>
-</div></section>
+<CtaBand title={c.cta.title} text={c.cta.text} primary={{ label: c.cta.button_jobs, href: url('tuyen-dung', 'vi-tri') }} secondary={{ label: c.cta.button_about, href: url('ve-tien-nong') }} />
 </Layout>
 
 <style>
-  .vh-measures { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-  .vh-measures li { padding: 8px 14px; border-radius: var(--radius-full); background: var(--green-50); color: var(--green-800); font-weight: 600; font-size: 15px; }
-  .vh-principles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
-  .vh-principles li { display: flex; flex-direction: column; gap: 10px; padding: 24px 22px; background: var(--surface-page); border: 1px solid var(--border-default); border-top: 4px solid var(--green-500); border-radius: var(--radius-lg); }
-  .vh-principles strong { font: 700 20px/1.35 var(--font-display); text-wrap: balance; }
-  .vh-principles li > span:last-child { color: var(--text-secondary); font-size: 15px; line-height: 1.6; text-wrap: pretty; }
-  @media (max-width: 1099.98px) { .vh-principles { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); } }
-  .vh-videos { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 28px 48px; align-items: center; }
-  @media (max-width: 899.98px) { .vh-videos { grid-template-columns: minmax(0, 1fr); } }
-  .vh-lyrics { margin: 0; padding: 0 0 0 1.4em; display: flex; flex-direction: column; gap: 12px; font: 600 clamp(19px, 1.8vw, 23px)/1.4 var(--font-display); color: #fff; }
-  .vh-lyrics li::marker { color: var(--amber-400); }
-  /* Mosaic: first photo large, the rest fill a 3-column grid (2 columns on tablets, 1 on phones). */
+  /* Slogan band: one large line, two supporting lines (different from the figures card above). */
+  .vh-slogan { position: relative; overflow: hidden; background: radial-gradient(120% 140% at 50% 0%, var(--green-700) 0%, var(--green-800) 55%, var(--green-900) 100%); color: #fff; margin-top: clamp(40px, 5vw, 64px); }
+  .vh-slogan__wrap { max-width: 1280px; margin: 0 auto; padding: clamp(56px, 7vw, 88px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; }
+  .vh-slogan__label { font: 600 13px/1.4 var(--font-body); letter-spacing: .14em; text-transform: uppercase; color: var(--brand-highlight); }
+  .vh-slogan__text { margin: 0; font: 600 clamp(28px, 3.6vw, 48px)/1.2 var(--font-display); letter-spacing: -.01em; text-align: center; text-align-last: center; text-wrap: balance; }
+  .vh-slogan__dash { color: rgba(245, 196, 78, .75); }
+  .vh-slogan__gold { color: var(--brand-highlight); }
+  .vh-slogan__more { margin: 14px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, auto)); justify-content: center; gap: 16px 0; }
+  .vh-slogan__more > div { display: flex; flex-direction: column; gap: 6px; padding: 4px clamp(20px, 3vw, 40px); }
+  .vh-slogan__more > div + div { border-left: 1px solid rgba(245, 196, 78, .45); }
+  .vh-slogan__more dt { font: 600 12px/1.4 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--green-100); }
+  .vh-slogan__more dd { margin: 0; font: 500 clamp(16px, 1.4vw, 19px)/1.45 var(--font-display); color: #fff; text-align: center; text-align-last: center; }
+
+  /* Origin: text beside a shorter photo, then the five questions across the full width. */
+  .vh-origin { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px clamp(32px, 5vw, 64px); align-items: start; }
+  .vh-origin :global(.st-head) { max-width: none; }
+  .vh-origin__photo { position: relative; aspect-ratio: 4 / 3; }
+  .vh-measure { display: flex; flex-direction: column; gap: 18px; padding: clamp(22px, 3vw, 32px); border-radius: var(--radius-xl); background: var(--surface-card); border: 1px solid var(--border-default); }
+  .vh-measure__head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px 32px; flex-wrap: wrap; }
+  .vh-measure__head strong { font: 600 clamp(22px, 2vw, 26px)/1.3 var(--font-display); color: var(--text-primary); }
+  .vh-measure__head span { color: var(--text-secondary); font-size: 16px; text-align: start; }
+  .vh-measure__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 12px; }
+  .vh-measure__list li { display: flex; align-items: center; justify-content: center; min-height: 68px; padding: 12px 10px; border-radius: var(--radius-lg);
+    background: var(--green-800); color: #fff; font: 600 clamp(15px, 1.3vw, 18px)/1.3 var(--font-display); text-align: center; white-space: nowrap; }
+
+  /* Five tâm niệm: photo + numbered list on dark green (Figma). */
+  .vh-tn { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px clamp(32px, 5vw, 72px); align-items: start; }
+  .vh-tn__photo { position: relative; aspect-ratio: 4 / 3; }
+  .vh-tn__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+  .vh-tn__list li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 16px; align-items: start; padding-bottom: 18px; border-bottom: 1px solid rgba(255, 255, 255, .12); }
+  .vh-tn__list li:last-child { padding-bottom: 0; border-bottom: 0; }
+  .vh-tn__num { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(245, 196, 78, .6); color: var(--brand-highlight); font: 600 18px/1 var(--font-display); }
+  .vh-tn__list div { display: flex; flex-direction: column; gap: 4px; }
+  .vh-tn__list strong { font: 600 clamp(19px, 1.7vw, 22px)/1.35 var(--font-display); color: #fff; }
+  .vh-tn__list div > span { color: var(--green-100); font-size: 15px; line-height: 1.6; }
+
+  /* Core values: pick a value on the left, its photo and caption show on the right. */
+  .vh-values { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 24px clamp(28px, 4vw, 56px); align-items: start; }
+  .vh-values__list { display: flex; flex-direction: column; gap: 8px; }
+  .vh-values__list button { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; align-items: start; width: 100%; padding: 16px 18px; text-align: left; cursor: pointer;
+    border: 1px solid var(--border-default); border-radius: var(--radius-lg); background: var(--surface-card); color: var(--text-primary); font: inherit;
+    transition: background var(--motion-base), border-color var(--motion-base), box-shadow var(--motion-base); }
+  .vh-values__list button:hover { border-color: var(--green-200); }
+  .vh-values__list button[aria-selected='true'] { background: var(--green-800); border-color: var(--green-800); color: #fff; box-shadow: var(--shadow-md); }
+  .vh-values__num { font: 600 15px/1.6 var(--font-display); color: var(--brand-bright); }
+  .vh-values__list button[aria-selected='true'] .vh-values__num { color: var(--brand-highlight); }
+  .vh-values__txt { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .vh-values__txt strong { font: 600 18px/1.35 var(--font-display); }
+  .vh-values__txt span { font-size: 15px; line-height: 1.55; color: var(--text-secondary); text-align: start; }
+  .vh-values__list button[aria-selected='true'] .vh-values__txt span { color: var(--green-100); }
+  .vh-values__stage { position: sticky; top: calc(var(--hdr-h, 72px) + 24px); }
+  .vh-values__panel { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+  .vh-values__panel:not([hidden]) { animation: vh-in 450ms var(--ease-out) both; }
+  .vh-values__img { position: relative; aspect-ratio: 4 / 3; border-radius: var(--radius-xl); overflow: hidden; background: var(--surface-sunken); }
+  .vh-values__panel figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 20px; flex-wrap: wrap; padding: 0 4px; }
+  .vh-values__panel figcaption span { flex: 1 1 320px; font: 500 16px/1.5 var(--font-display); color: var(--text-primary); text-align: start; }
+  .vh-values__panel figcaption a { flex: none; font-weight: 600; color: var(--brand-bright); }
+  @keyframes vh-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+  /* Traditions: accordion on the left, the photo of the open item on the right (Figma). */
+  .vh-trad { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 24px clamp(28px, 4vw, 56px); align-items: start; }
+  .vh-trad__list { display: flex; flex-direction: column; gap: 10px; }
+  .vh-trad__item { border: 1px solid rgba(255, 255, 255, .16); border-radius: var(--radius-lg); background: rgba(255, 255, 255, .04); transition: background var(--motion-base), border-color var(--motion-base); }
+  .vh-trad__item:has([aria-selected='true']) { background: rgba(255, 255, 255, .08); border-color: rgba(245, 196, 78, .5); }
+  .vh-trad__item button { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 22px; background: none; border: 0; cursor: pointer;
+    color: #fff; font: 600 clamp(17px, 1.5vw, 19px)/1.35 var(--font-display); text-align: left; }
+  .vh-trad__sign { position: relative; flex: none; width: 14px; height: 14px; }
+  .vh-trad__sign::before, .vh-trad__sign::after { content: ''; position: absolute; left: 0; top: 6px; width: 14px; height: 2px; background: var(--brand-highlight); transition: transform var(--motion-base) var(--ease-out); }
+  .vh-trad__sign::after { transform: rotate(90deg); }
+  .vh-trad__item button[aria-selected='true'] .vh-trad__sign::after { transform: rotate(0deg); }
+  .vh-trad__body { padding: 0 22px 20px; }
+  .vh-trad__body p { margin: 0; color: var(--green-50); font-size: 16px; line-height: 1.65; }
+  .vh-trad__stage { position: relative; }
+  .vh-trad__img { position: relative; aspect-ratio: 3 / 2; }
+  .vh-trad__img:not([hidden]) { animation: vh-in 450ms var(--ease-out) both; }
+
+  /* Training: short intro, then three news cards. */
+  .vh-learn__copy { display: flex; flex-direction: column; gap: 20px; }
+  .vh-learn__motto { margin: 0; padding: 16px 20px; border-left: 4px solid var(--brand-highlight); border-radius: 0 var(--radius-md) var(--radius-md) 0; background: var(--surface-card); }
+  .vh-learn__motto p { margin: 0; font: 600 17px/1.55 var(--font-display); color: var(--text-primary); }
+  .vh-learn__head { display: flex; justify-content: flex-end; margin-bottom: -20px; }
+  .vh-learn__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .vh-learn__card { display: flex; flex-direction: column; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden;
+    color: var(--text-primary); text-decoration: none; transition: box-shadow var(--motion-base), border-color var(--motion-base); }
+  .vh-learn__card:hover { color: var(--text-primary); text-decoration: none; border-color: var(--green-200); box-shadow: var(--shadow-md); }
+  .vh-learn__img { position: relative; display: block; aspect-ratio: 16 / 9; background: var(--surface-sunken); }
+  .vh-learn__body { display: flex; flex-direction: column; gap: 8px; padding: 18px 20px 20px; }
+  .vh-learn__label { font: 600 11.5px/1.4 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--brand-bright); }
+  .vh-learn__body strong { font: 600 18px/1.35 var(--font-display); }
+  .vh-learn__text { color: var(--text-secondary); font-size: 15px; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-align: start; }
+  .vh-link { font-weight: 600; color: var(--brand-bright); }
+  .vh-link--light { color: var(--brand-highlight); }
+  .vh-link--light:hover { color: #fff; }
+
+  /* Song: main video and a list of other clips (Figma). With one video, the song's lines sit beside it. */
+  .vh-song__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px 32px; flex-wrap: wrap; }
+  .vh-gold { color: var(--brand-highlight); }
+  .vh-song { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 20px; align-items: stretch; }
+  .vh-song--solo { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 24px clamp(28px, 4vw, 56px); align-items: center; }
+  .vh-song__main { margin: 0; }
+  .vh-song__frame { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius-xl); overflow: hidden; background: var(--green-900); }
+  .vh-song__frame iframe, .vh-song__frame video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; }
+  .vh-song__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .vh-song__list a { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 14px; align-items: center; padding: 8px; border-radius: var(--radius-lg); border: 1px solid rgba(255, 255, 255, .14); background: rgba(255, 255, 255, .05); color: #fff; text-decoration: none; }
+  .vh-song__list a:hover { background: rgba(255, 255, 255, .1); color: #fff; }
+  .vh-song__thumb { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius-md); overflow: hidden; background: var(--green-900); }
+  .vh-song__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .vh-song__play { position: absolute; inset: 0; margin: auto; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, .9); color: var(--green-700); font-size: 11px; }
+  .vh-song__meta { display: flex; flex-direction: column; gap: 4px; }
+  .vh-song__meta span { font: 600 11px/1.4 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--green-100); }
+  .vh-song__meta strong { font: 600 15px/1.4 var(--font-display); }
+  .vh-song__info { display: flex; flex-direction: column; gap: 10px; }
+  .vh-song__label { font: 600 12px/1.4 var(--font-body); letter-spacing: .08em; text-transform: uppercase; color: var(--brand-highlight); }
+  .vh-song__info > strong { font: 600 clamp(24px, 2.2vw, 30px)/1.25 var(--font-display); color: #fff; }
+  .vh-song__info > span { color: var(--green-100); }
+  .vh-song__channel { align-self: flex-start; margin-top: 10px; display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: var(--radius-btn); border: 1px solid rgba(245, 196, 78, .7); color: var(--brand-highlight); font-weight: 600; text-decoration: none; }
+  .vh-song__channel:hover { background: rgba(245, 196, 78, .12); color: #fff; text-decoration: none; }
+  .vh-song__info ol { margin: 12px 0 0; padding: 0 0 0 1.3em; display: flex; flex-direction: column; gap: 10px; font: 500 17px/1.45 var(--font-display); color: #fff; }
+  .vh-song__info li::marker { color: var(--brand-highlight); }
+
+  /* Gallery mosaic: first photo large, the rest fill a 3-column grid. */
   .vh-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 220px; gap: 12px; }
   .vh-gallery > :first-child { grid-column: span 2; grid-row: span 2; }
-  @media (max-width: 900px) { .vh-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 180px; } }
-  @media (max-width: 520px) { .vh-gallery { grid-template-columns: 1fr; } .vh-gallery > :first-child { grid-column: auto; grid-row: span 1; } }
+
+  @media (max-width: 1023.98px) {
+    .vh-origin, .vh-tn, .vh-values, .vh-trad, .vh-song, .vh-song--solo { grid-template-columns: minmax(0, 1fr); }
+    .vh-measure__list { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+    .vh-values__stage { position: static; order: -1; }
+    .vh-trad__stage { order: -1; }
+    .vh-learn__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 899.98px) { .vh-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 180px; } }
+  @media (max-width: 599.98px) {
+    .vh-slogan__more { grid-template-columns: minmax(0, 1fr); }
+    .vh-slogan__more > div + div { border-left: 0; border-top: 1px solid rgba(245, 196, 78, .4); padding-top: 14px; }
+    .vh-learn__grid { grid-template-columns: minmax(0, 1fr); }
+    .vh-gallery { grid-template-columns: 1fr; } .vh-gallery > :first-child { grid-column: auto; grid-row: span 1; }
+  }
 </style>
