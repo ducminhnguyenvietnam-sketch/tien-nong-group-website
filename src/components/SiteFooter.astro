@@ -7,86 +7,128 @@ const site = withDefaults(siteRaw, 'src/content/site.json');
 
 const { company: co, social, legal, footer: f } = site;
 const has = (v?: string | null) => typeof v === 'string' && v.trim() !== '' && !/^\[.*\]$/.test(v.trim());
+/* Social icons in each network's own colours (Figma layout, original brand colours). */
 const socials = [
-  ['Facebook', social.facebook], ['YouTube', social.youtube], ['TikTok', social.tiktok], ['Zalo', social.zalo],
-].filter(([, href]) => has(href)) as [string, string][];
+  ['Facebook', social.facebook, 'fb'], ['YouTube', social.youtube, 'yt'], ['TikTok', social.tiktok, 'tt'], ['LinkedIn', social.linkedin, 'li'],
+].filter(([, href]) => has(href)) as [string, string, string][];
 const legalLinks = [[legal.privacy_label, legal.privacy_url], [legal.terms_label, legal.terms_url]].filter(([, href]) => has(href)) as [string, string][];
-const callNumber = ((co as Record<string, string>).hotline || co.phone || '').replace(/[^\d+]/g, '');
+const phone = (co as Record<string, string>).phone || '';
+const callNumber = ((co as Record<string, string>).hotline || phone).replace(/[^\d+]/g, '');
 const zalo = has(social.zalo) ? social.zalo : '';
+const messenger = has(social.messenger) ? social.messenger : '';
+const explore = [
+  [f.link_about, url('ve-tien-nong')], [f.link_products, url('san-pham')], [f.link_solutions, url('giai-phap')],
+  [f.link_science, url('khoa-hoc-cong-nghe')], [f.link_sustainability, url('phat-trien-ben-vung')], [f.link_farmers, url('nong-dan')],
+].filter(([label]) => has(label));
+const connect = [
+  [f.link_news, url('tin-tuc')], [f.link_partner, url('tro-thanh-doi-tac')], [f.link_dealers, url('lien-he', 'dai-ly')],
+  [f.link_jobs, url('tuyen-dung')], [f.link_contact, url('lien-he')],
+].filter(([label]) => has(label));
 ---
 <footer class="site-footer">
-<div class="ftr-container">
-<div class="ftr-top">
+<div class="ftr-container ftr-top">
 <div class="ftr-brand">
-<span class="ftr-logo"><img src={asset("assets/logo-header.png")} alt="Tiến Nông" width="147" height="120" /></span>
-<strong>{co.name}</strong>
-<span>{co.address}</span>
-<span>{has(co.phone) && <a href={`tel:${co.phone.replace(/[^\d+]/g, '')}`}>{co.phone}</a>}{has(co.phone) && has(co.email) && ' · '}{has(co.email) && <a href={`mailto:${co.email}`}>{co.email}</a>}</span>
-{has(co.tax_code) && <span>{co.tax_code_label} {co.tax_code}</span>}
+<a href={url('trang-chu')} class="ftr-logo"><img src={asset("assets/logo-ngang.png")} alt="Tiến Nông — Dinh dưỡng cây trồng" width="1249" height="240" loading="lazy" /></a>
+<strong class="ftr-name">{co.name}</strong>
+<ul class="ftr-contact">
+{has(co.email) && <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg><a href={`mailto:${co.email}`}>{co.email}</a></li>}
+{has(phone) && <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16.4v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.1 3.6 2 2 0 0 1 3.1 1.5h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L7 9.4a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><a href={`tel:${phone.replace(/[^\d+]/g, '')}`}>{phone}</a></li>}
+{has(co.address) && <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>{co.address}</span></li>}
+{has(co.tax_code) && <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>{co.tax_code_label} {co.tax_code}</span></li>}
+</ul>
 </div>
-<div class="ftr-col"><strong>{f.col1_title}</strong><a href={url('ve-tien-nong')}>{f.col1_about}</a><a href={url('khoa-hoc-cong-nghe')}>{f.col1_science}</a><a href={url('phat-trien-ben-vung')}>{f.col1_sustainability}</a><a href={url('tuyen-dung')}>{f.col1_jobs}</a></div>
-<div class="ftr-col"><strong>{f.col2_title}</strong><a href={url('san-pham')}>{f.col2_products}</a><a href={url('giai-phap')}>{f.col2_crop_solutions}</a><a href={url('giai-phap-du-an')}>{f.col2_project_solutions}</a><a href={url('nong-dan')}>{f.col2_farmers}</a></div>
-<div class="ftr-col"><strong>{f.col3_title}</strong><a href={url('lien-he', 'dai-ly')}>{f.col3_dealers}</a><a href={url('lien-he')}>{f.col3_contact}</a><a href={url('tin-tuc')}>{f.col3_news}</a></div>
+<nav class="ftr-col" aria-label={f.explore_title}><strong>{f.explore_title}</strong>{explore.map(([label, href]) => <a href={href}>{label}</a>)}</nav>
+<nav class="ftr-col" aria-label={f.connect_title}><strong>{f.connect_title}</strong>{connect.map(([label, href]) => <a href={href}>{label}</a>)}</nav>
+{socials.length > 0 && <div class="ftr-col ftr-follow"><strong>{f.follow_title}</strong>
+<div class="ftr-social">
+{socials.map(([name, href, key]) => <a href={link(href)} target="_blank" rel="noopener" class={`ftr-social__${key}`} aria-label={name} title={name}>
+{key === 'fb' && <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path fill="#fff" d="M13.4 19.5v-6.2h2.1l.3-2.4h-2.4V9.3c0-.7.2-1.2 1.2-1.2h1.3V6c-.2 0-1-.1-1.9-.1-1.9 0-3.1 1.1-3.1 3.2v1.8H8.8v2.4h2.1v6.2z"/></svg>}
+{key === 'yt' && <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4.5" width="22" height="15" rx="4.5" fill="#FF0000"/><path fill="#fff" d="m10 8.8 5.6 3.2-5.6 3.2z"/></svg>}
+{key === 'tt' && <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#000"/><g transform="translate(6.3 5.6) scale(.5)"><path fill="#25F4EE" transform="translate(-.9 -.9)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FE2C55" transform="translate(.9 .9)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#fff" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></g></svg>}
+{key === 'li' && <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M5.3 9.4h2.9v9.3H5.3zm1.5-4.6a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4m3.2 4.6h2.8v1.3c.4-.7 1.3-1.5 2.8-1.5 3 0 3.5 2 3.5 4.5v5H16v-4.4c0-1 0-2.4-1.5-2.4s-1.7 1.1-1.7 2.3v4.5H10z"/></svg>}
+</a>)}
+</div></div>}
 </div>
 <div class="ftr-bottom">
+<div class="ftr-container ftr-bottom__row">
 <span>{co.copyright}</span>
-{(socials.length > 0 || legalLinks.length > 0) && <div class="ftr-links">
-{socials.map(([name, href]) => <a href={link(href)} target="_blank" rel="noopener">{name}</a>)}
-{socials.length > 0 && legalLinks.length > 0 && <span class="ftr-sep" aria-hidden="true">|</span>}
-{legalLinks.map(([label, href]) => <a href={link(href)}>{label}</a>)}
-</div>}
+{legalLinks.length > 0 && <div class="ftr-links">{legalLinks.map(([label, href]) => <a href={link(href)}>{label}</a>)}</div>}
 </div></div>
 
-<!-- Desktop: a quiet floating contact button. Phones: a fixed action bar (call / Zalo / contact). -->
-<a href={url('lien-he')} class="ftr-float">{f.floating_button}</a>
-<div class="ftr-actionbar" role="navigation" aria-label="Liên hệ nhanh">
+<!-- Desktop: floating contact buttons (Figma). Phones: a fixed action bar (call / Zalo / contact). -->
+<div class="ftr-float" role="navigation" aria-label="Liên hệ nhanh">
+{messenger && <a href={link(messenger)} target="_blank" rel="noopener" aria-label="Nhắn tin Messenger" title="Messenger" class="ftr-float__ms"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ftr-ms" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0866FF"/><stop offset=".6" stop-color="#A033FF"/><stop offset="1" stop-color="#FF5C87"/></linearGradient></defs><path fill="url(#ftr-ms)" d="M12 2C6.4 2 2 6.1 2 11.7c0 2.9 1.2 5.4 3.2 7.2.2.2.3.4.3.6l.1 1.8c0 .6.6.9 1.1.7l2-.9c.2-.1.4-.1.6 0 .9.2 1.8.4 2.7.4 5.6 0 10-4.1 10-9.7S17.6 2 12 2z"/><path fill="#fff" d="m6 14.5 2.9-4.7c.5-.7 1.5-.9 2.2-.4l2.3 1.7c.2.2.5.2.7 0l3.2-2.4c.4-.3 1 .2.7.6l-2.9 4.7c-.5.7-1.5.9-2.2.4l-2.3-1.7c-.2-.2-.5-.2-.7 0l-3.2 2.4c-.4.3-1-.2-.7-.6z"/></svg></a>}
+{has(social.facebook) && <a href={link(social.facebook)} target="_blank" rel="noopener" aria-label="Facebook Tiến Nông" title="Facebook" class="ftr-float__fb"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path fill="#fff" d="M13.4 19.5v-6.2h2.1l.3-2.4h-2.4V9.3c0-.7.2-1.2 1.2-1.2h1.3V6c-.2 0-1-.1-1.9-.1-1.9 0-3.1 1.1-3.1 3.2v1.8H8.8v2.4h2.1v6.2z"/></svg></a>}
+{zalo && <a href={link(zalo)} target="_blank" rel="noopener" aria-label="Nhắn tin Zalo" title="Zalo" class="ftr-float__zl"><span>Zalo</span></a>}
+{callNumber && <a href={`tel:${callNumber}`} aria-label={`Gọi ${phone}`} title={`Gọi ${phone}`} class="ftr-float__call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16.4v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.1 3.6 2 2 0 0 1 3.1 1.5h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L7 9.4a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></a>}
+</div>
+<div class="ftr-actionbar" role="navigation" aria-label="Liên hệ nhanh trên điện thoại">
 {callNumber && <a href={`tel:${callNumber}`} class="ftr-actionbar__primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Gọi kỹ sư</a>}
 {zalo
   ? <a href={link(zalo)} target="_blank" rel="noopener">Zalo</a>
-  : <a href={url('lien-he')}>{f.floating_button}</a>}
+  : messenger ? <a href={link(messenger)} target="_blank" rel="noopener">Messenger</a> : <a href={url('lien-he')}>{f.floating_button}</a>}
 </div>
 </footer>
 
 <style>
-  .site-footer { font-family: var(--font-body); background: var(--gray-900); color: var(--gray-300); font-size: 14px; line-height: 1.6; }
-  .site-footer a { color: var(--gray-300); text-decoration: none; transition: color var(--motion-fast); }
-  .site-footer a:hover { color: #fff; }
-  .ftr-container { max-width: 1280px; margin: 0 auto; padding: 64px clamp(20px, 4vw, 56px) 28px; display: flex; flex-direction: column; gap: 40px; }
-  .ftr-top { display: grid; grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr)); gap: 32px 40px; }
-  .ftr-brand { display: flex; flex-direction: column; gap: 6px; max-width: 440px; }
-  .ftr-brand strong { color: #fff; margin-top: 8px; }
-  .ftr-logo { display: inline-flex; align-self: flex-start; background: #fff; border-radius: 10px; padding: 6px 12px; }
-  .ftr-logo img { height: 44px; width: auto; display: block; }
+  .site-footer { font-family: var(--font-body); background: var(--surface-card); color: var(--text-secondary); font-size: 14px; line-height: 1.6;
+    border-top: 1px solid var(--border-default); }
+  .site-footer a { color: var(--text-primary); text-decoration: none; transition: color var(--motion-fast); }
+  .site-footer a:hover { color: var(--brand-bright); }
+  .ftr-container { max-width: 1280px; margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
+  .ftr-top { padding-block: 64px 56px; display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr); gap: 36px 40px; }
+  .ftr-brand { display: flex; flex-direction: column; gap: 14px; max-width: 460px; }
+  .ftr-logo { display: block; align-self: flex-start; }
+  .ftr-logo img { height: 76px; width: auto; display: block; }
+  .ftr-name { color: var(--brand-bright); font-weight: 600; font-size: 15px; letter-spacing: .02em; text-transform: uppercase; line-height: 1.45; }
+  .ftr-contact { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .ftr-contact li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; align-items: start; color: var(--text-primary); }
+  .ftr-contact svg { width: 18px; height: 18px; margin-top: 2px; fill: none; stroke: var(--text-secondary); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
   .ftr-col { display: flex; flex-direction: column; gap: 4px; }
-  .ftr-col strong { color: #fff; margin-bottom: 6px; }
-  .ftr-col a { min-height: 32px; display: inline-flex; align-items: center; }
-  .ftr-bottom { display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--gray-700); font-size: 13px; color: var(--gray-400); }
-  .ftr-links { display: flex; gap: 8px 20px; flex-wrap: wrap; }
-  .ftr-links a { color: var(--gray-400); }
-  .ftr-sep { color: var(--gray-600); }
+  .ftr-col strong { color: var(--brand-bright); font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+  .ftr-col a { min-height: 34px; display: inline-flex; align-items: center; align-self: flex-start; }
+  .ftr-social { display: flex; gap: 12px; flex-wrap: wrap; }
+  .ftr-social a { width: 36px; height: 36px; min-height: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; transition: transform var(--motion-fast) var(--ease-out); }
+  .ftr-social a:hover { transform: translateY(-2px); }
+  .ftr-social svg { width: 34px; height: 34px; display: block; }
+  .ftr-social__yt svg { width: 36px; }
 
-  .ftr-float { position: fixed; right: 24px; bottom: 24px; z-index: 40; background: var(--green-500); color: #fff !important; font-weight: 600;
-    padding: 12px 20px; border-radius: var(--radius-full); box-shadow: var(--shadow-md); transition: background var(--motion-fast), transform var(--motion-base) var(--ease-out); }
-  .ftr-float:hover { background: var(--green-600); transform: translateY(-2px); }
+  .ftr-bottom { background: var(--brand-bright); color: #fff; font-size: 13px; }
+  .ftr-bottom__row { display: flex; justify-content: center; align-items: center; gap: 8px 32px; flex-wrap: wrap; padding-block: 14px; text-align: center; }
+  .ftr-links { display: flex; gap: 8px 20px; flex-wrap: wrap; }
+  .site-footer .ftr-links a { color: rgba(255, 255, 255, .9); }
+  .site-footer .ftr-links a:hover { color: #fff; text-decoration: underline; }
+
+  /* Floating contact buttons (desktop and tablet). */
+  .ftr-float { position: fixed; right: 18px; bottom: 24px; z-index: 40; display: flex; flex-direction: column; gap: 10px; }
+  .ftr-float a { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #fff;
+    box-shadow: 0 4px 14px rgba(28, 32, 28, .18); transition: transform var(--motion-base) var(--ease-out), box-shadow var(--motion-base); }
+  .ftr-float a:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 8px 20px rgba(28, 32, 28, .22); }
+  .ftr-float svg { width: 26px; height: 26px; display: block; }
+  .ftr-float__fb svg { width: 44px; height: 44px; }
+  .ftr-float__zl span { font: 700 12px/1 var(--font-body); color: #0068ff; letter-spacing: -.01em; }
+  .site-footer .ftr-float__call { background: var(--brand-bright); }
+  .ftr-float__call svg { width: 20px; height: 20px; fill: none; stroke: #fff; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
   .ftr-actionbar { display: none; }
 
-  @media (max-width: 899.98px) {
+  @media (max-width: 1023.98px) {
     .ftr-top { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .ftr-brand { grid-column: 1 / -1; }
+    .ftr-brand { grid-column: 1 / -1; max-width: none; }
   }
   @media (max-width: 599.98px) {
-    .ftr-container { padding-top: 48px; padding-bottom: 96px; gap: 32px; }
-    .ftr-top { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
-    .ftr-col:last-child { grid-column: 1 / -1; }
+    .ftr-top { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; padding-block: 48px 40px; }
+    .ftr-follow { grid-column: 1 / -1; }
+    .ftr-logo img { height: 60px; }
+    .ftr-bottom { padding-bottom: 72px; }
   }
   @media (max-width: 767.98px) {
     .ftr-float { display: none; }
     .ftr-actionbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 8px;
       padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); background: rgba(255, 255, 255, .96); backdrop-filter: blur(8px);
       border-top: 1px solid var(--border-default); box-shadow: 0 -4px 16px rgba(28, 32, 28, .06); }
-    .ftr-actionbar a { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border-radius: var(--radius-md);
-      font-weight: 700; font-size: 15px; color: var(--green-700); border: 1px solid var(--border-strong); background: var(--surface-card); }
-    .ftr-actionbar a.ftr-actionbar__primary { background: var(--green-500); border-color: var(--green-500); color: #fff; }
+    .site-footer .ftr-actionbar a { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border-radius: var(--radius-btn);
+      font-weight: 600; font-size: 15px; color: var(--green-700); border: 1px solid var(--border-strong); background: var(--surface-card); }
+    .site-footer .ftr-actionbar a.ftr-actionbar__primary { background: var(--brand-bright); border-color: var(--brand-bright); color: #fff; }
     :global(html.menu-open) .ftr-actionbar { display: none; }
   }
 </style>

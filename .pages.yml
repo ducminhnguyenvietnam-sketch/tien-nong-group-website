@@ -347,55 +347,52 @@ content:
       type: object
       fields:
       - name: t1
-        label: 'Chữ: 200.000+'
+        label: 'Số liệu 1: 300.000+'
         type: string
       - name: t2
-        label: 'Chữ: hộ nông dân tin dùng'
+        label: 'Số liệu 1 – chú thích'
         type: string
       - name: t3
-        label: 'Chữ: 10.000'
+        label: 'Số liệu 2: 10.000'
         type: string
       - name: t4
-        label: 'Chữ: điểm bán trên toàn quốc'
+        label: 'Số liệu 2 – chú thích'
         type: string
       - name: t5
-        label: 'Chữ: 200+'
+        label: 'Số liệu 3: 200+'
         type: string
       - name: t6
-        label: 'Chữ: nhà phân phối'
+        label: 'Số liệu 3 – chú thích'
         type: string
       - name: t7
-        label: 'Chữ: 650.000'
+        label: 'Số liệu 4: 650.000'
         type: string
       - name: t8
-        label: 'Chữ: tấn/năm · 3 nhà máy'
+        label: 'Số liệu 4 – chú thích'
         type: string
       - name: t9
-        label: 'Chữ: Huân chương'
+        label: 'Thành tựu 1 – tên (hiện chữ in hoa)'
         type: string
       - name: t10
-        label: 'Chữ: Lao động hạng Ba'
+        label: 'Thành tựu 1 – chú thích'
         type: string
       - name: t11
-        label: 'Chữ: Bằng khen'
+        label: 'Thành tựu 2 – tên'
         type: string
       - name: t12
-        label: 'Chữ: Thủ tướng Chính phủ · 2022'
+        label: 'Thành tựu 2 – chú thích'
         type: string
       - name: t13
-        label: 'Chữ: Doanh nghiệp KH&CN đầu tiên'
+        label: 'Thành tựu 3 – tên'
         type: string
       - name: t14
-        label: 'Chữ: ngành dinh dưỡng cây trồng'
+        label: 'Thành tựu 3 – chú thích'
         type: string
       - name: t15
-        label: 'Chữ: 6 lần đạt'
+        label: 'Thành tựu 4 – tên'
         type: string
       - name: t16
-        label: 'Chữ: Sao Vàng Đất Việt'
-        type: string
-      - name: t17
-        label: 'Chữ: Số liệu 2025 ·'
+        label: 'Thành tựu 4 – chú thích'
         type: string
       - name: t18
         label: 'Liên kết: Xem tất cả thành tựu →'
@@ -416,6 +413,25 @@ content:
         label: 'Ảnh thành tựu 4 (hiện phía trên chữ)'
         component: photo
         description: Ảnh nền trong suốt hoặc nền trắng, đặt vừa khung vuông.
+      - name: years_value
+        label: 'Số năm lớn (ví dụ 30+)'
+        type: string
+      - name: years_label
+        label: 'Chữ dưới số năm (ví dụ Năm phát triển)'
+        type: string
+      - name: intro_image
+        label: 'Ảnh lớn bên trái khối số liệu'
+        component: photo
+        description: 'Ảnh ngang, nên rộng ít nhất 1200 px.'
+      - name: intro_caption
+        label: 'Chú thích nhỏ trên ảnh (để trống thì ẩn)'
+        type: string
+      - name: story_cta
+        label: 'Nút dưới số liệu (ví dụ Khám phá câu chuyện Tiến Nông →)'
+        type: string
+      - name: story_link
+        label: 'Đường dẫn của nút (ví dụ /ve-tien-nong/)'
+        type: string
     - name: s03_khoa_hoc_cong_nghe
       label: 03 · Khoa học & Công nghệ
       type: object
@@ -647,12 +663,18 @@ content:
       - name: t11
         label: 'Chữ: Lúa'
         type: string
+      - name: crop_lua_desc
+        label: 'Mô tả ngắn khi di chuột: Lúa'
+        type: string
       - name: img_crop_ngo_1
         label: 'Ảnh: Ngô'
         component: photo
         description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
       - name: t12
         label: 'Chữ: Ngô'
+        type: string
+      - name: crop_ngo_desc
+        label: 'Mô tả ngắn khi di chuột: Ngô'
         type: string
       - name: img_crop_caphe_1
         label: 'Ảnh: Cà phê'
@@ -661,12 +683,18 @@ content:
       - name: t13
         label: 'Chữ: Cà phê'
         type: string
+      - name: crop_caphe_desc
+        label: 'Mô tả ngắn khi di chuột: Cà phê'
+        type: string
       - name: img_crop_anqua_1
         label: 'Ảnh: Cây ăn quả'
         component: photo
         description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
       - name: t14
         label: 'Chữ: Cây ăn quả'
+        type: string
+      - name: crop_anqua_desc
+        label: 'Mô tả ngắn khi di chuột: Cây ăn quả'
         type: string
       - name: img_crop_rau_1
         label: 'Ảnh: Rau màu'
@@ -675,12 +703,18 @@ content:
       - name: t15
         label: 'Chữ: Rau màu'
         type: string
+      - name: crop_rau_desc
+        label: 'Mô tả ngắn khi di chuột: Rau màu'
+        type: string
       - name: img_crop_congnghiep_1
         label: 'Ảnh: Cây công nghiệp'
         component: photo
         description: Khung ảnh khoảng 181×200 px trên máy tính — nên dùng ảnh rộng ít nhất 362 px.
       - name: t16
         label: 'Chữ: Cây công nghiệp'
+        type: string
+      - name: crop_congnghiep_desc
+        label: 'Mô tả ngắn khi di chuột: Cây công nghiệp'
         type: string
       - name: t17
         label: 'Liên kết: Xem tất cả sản phẩm →'
@@ -835,6 +869,32 @@ content:
       - name: t10
         label: 'Chữ đậm: Đồng hành cùng chương trình “Triệu mầm xanh” v…'
         type: string
+      - name: img_csr_4_1
+        label: 'Ảnh thẻ 4'
+        component: photo
+        description: 'Khung ảnh khoảng 290×180 px trên máy tính — nên dùng ảnh rộng ít nhất 600 px.'
+      - name: t12
+        label: 'Thẻ 4 – nhãn (ví dụ VÌ CỘNG ĐỒNG)'
+        type: string
+      - name: t13
+        label: 'Thẻ 4 – tiêu đề'
+        type: string
+      - name: link_1
+        label: 'Thẻ 1 – đường dẫn khi bấm (để trống nếu không cần)'
+        type: string
+        description: 'Ví dụ /tin-tuc/ten-bai-viet/ hoặc https://…'
+      - name: link_2
+        label: 'Thẻ 2 – đường dẫn khi bấm (để trống nếu không cần)'
+        type: string
+        description: 'Ví dụ /tin-tuc/ten-bai-viet/ hoặc https://…'
+      - name: link_3
+        label: 'Thẻ 3 – đường dẫn khi bấm (để trống nếu không cần)'
+        type: string
+        description: 'Ví dụ /tin-tuc/ten-bai-viet/ hoặc https://…'
+      - name: link_4
+        label: 'Thẻ 4 – đường dẫn khi bấm (để trống nếu không cần)'
+        type: string
+        description: 'Ví dụ /tin-tuc/ten-bai-viet/ hoặc https://…'
       - name: t11
         label: 'Liên kết: Phát triển bền vững tại Tiến Nông →'
         type: string
@@ -5764,9 +5824,9 @@ content:
       label: Điện thoại
       type: string
     - name: hotline
-      label: Hotline kỹ sư (nút "Gọi kỹ sư" trên điện thoại)
+      label: Hotline kỹ sư (nút gọi điện)
       type: string
-      description: Số bà con gọi để được kỹ sư tư vấn. Để trống thì nút gọi dùng số Điện thoại ở trên.
+      description: Số bà con gọi để được kỹ sư tư vấn (nút gọi nổi bên phải và nút "Gọi kỹ sư" trên điện thoại). Để trống thì dùng số Điện thoại ở trên.
     - name: email
       label: Email
       type: string
@@ -5780,13 +5840,17 @@ content:
       label: Dòng bản quyền
       type: string
   - name: social
-    label: Mạng xã hội
+    label: Mạng xã hội (biểu tượng ở chân trang và nút nổi bên phải)
     type: object
     fields:
     - name: facebook
       label: Facebook
       type: string
       description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+    - name: messenger
+      label: Messenger (nút chat nổi bên phải)
+      type: string
+      description: Ví dụ https://m.me/tiennong.vn. Để trống thì ẩn nút.
     - name: youtube
       label: YouTube
       type: string
@@ -5795,10 +5859,14 @@ content:
       label: TikTok
       type: string
       description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
-    - name: zalo
-      label: Zalo OA
+    - name: linkedin
+      label: LinkedIn
       type: string
       description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+    - name: zalo
+      label: Zalo OA (nút Zalo nổi bên phải)
+      type: string
+      description: Dán đường dẫn Zalo OA đầy đủ (https://zalo.me/…). Để trống thì ẩn nút Zalo.
   - name: legal
     label: Pháp lý
     type: object
@@ -5817,23 +5885,36 @@ content:
       label: Đường dẫn Điều khoản sử dụng
       type: string
       description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
-    - name: ministry_badge
-      label: Chữ/ô logo Bộ Công Thương
-      type: string
   - name: header
     label: Đầu trang (menu)
     type: object
     fields:
+    - name: top_dealers
+      label: Thanh trên – Đại lý
+      type: string
     - name: top_jobs
       label: Thanh trên – Tuyển dụng
       type: string
     - name: top_contact
       label: Thanh trên – Liên hệ
       type: string
-    - name: english_url
-      label: Đường dẫn bản tiếng Anh (EN)
+    - name: lang_vi
+      label: Thanh trên – chữ Tiếng Việt
       type: string
-      description: Dán đường dẫn đầy đủ (https://…). Để trống nếu chưa có.
+    - name: lang_en
+      label: Thanh trên – chữ English
+      type: string
+    - name: lang_zh
+      label: Thanh trên – chữ 中文 (tiếng Trung)
+      type: string
+    - name: english_url
+      label: Đường dẫn bản tiếng Anh
+      type: string
+      description: 'Dán đường dẫn bản tiếng Anh khi có. Để trống: nút English mở bản dịch tự động của Google cho trang đang xem.'
+    - name: chinese_url
+      label: Đường dẫn bản tiếng Trung
+      type: string
+      description: 'Dán đường dẫn bản tiếng Trung khi có. Để trống: nút 中文 mở bản dịch tự động của Google cho trang đang xem.'
     - name: cta
       label: Nút xanh bên phải (dẫn tới trang Trở thành đối tác)
       type: string
@@ -5844,29 +5925,32 @@ content:
       label: Nút đóng menu
       type: string
     - name: nav
-      label: Tên các mục menu
+      label: Tên các mục menu (hiện chữ in hoa)
       type: object
       fields:
+      - name: trang_chu
+        label: 'Mục menu: Trang chủ'
+        type: string
       - name: ve_tien_nong
         label: 'Mục menu: Về Tiến Nông'
-        type: string
-      - name: tin_tuc
-        label: 'Mục menu: Tin tức'
         type: string
       - name: khoa_hoc_cong_nghe
         label: 'Mục menu: Khoa học & Công nghệ'
         type: string
-      - name: san_pham
-        label: 'Mục menu: Sản phẩm'
-        type: string
       - name: giai_phap
         label: 'Mục menu: Giải pháp'
+        type: string
+      - name: san_pham
+        label: 'Mục menu: Sản phẩm'
         type: string
       - name: phat_trien_ben_vung
         label: 'Mục menu: Phát triển bền vững'
         type: string
       - name: nong_dan
         label: 'Mục menu: Nông dân Tiến Nông'
+        type: string
+      - name: tin_tuc
+        label: 'Mục menu: Tin tức'
         type: string
     - name: subnav
       label: Tên các mục menu con (dưới Về Tiến Nông, Giải pháp và Phát triển bền vững)
@@ -5894,48 +5978,48 @@ content:
     label: Chân trang
     type: object
     fields:
-    - name: col1_title
-      label: Chân trang – Tiến Nông
+    - name: explore_title
+      label: Cột 1 – tiêu đề (Khám phá)
       type: string
-    - name: col1_about
-      label: Chân trang – Về chúng tôi
+    - name: link_about
+      label: Cột 1 – Về Tiến Nông
       type: string
-    - name: col1_science
-      label: Chân trang – Khoa học & Công nghệ
+    - name: link_products
+      label: Cột 1 – Sản phẩm
       type: string
-    - name: col1_sustainability
-      label: Chân trang – Phát triển bền vững
+    - name: link_solutions
+      label: Cột 1 – Giải pháp
       type: string
-    - name: col1_jobs
-      label: Chân trang – Tuyển dụng
+    - name: link_science
+      label: Cột 1 – Khoa học & Công nghệ
       type: string
-    - name: col2_title
-      label: Chân trang – Sản phẩm & giải pháp
+    - name: link_sustainability
+      label: Cột 1 – Phát triển bền vững
       type: string
-    - name: col2_products
-      label: Chân trang – Sản phẩm
+    - name: link_farmers
+      label: Cột 1 – Nông dân Tiến Nông
       type: string
-    - name: col2_crop_solutions
-      label: Chân trang – Giải pháp theo cây trồng
+    - name: connect_title
+      label: Cột 2 – tiêu đề (Kết nối)
       type: string
-    - name: col2_project_solutions
-      label: Chân trang – Giải pháp cho dự án
+    - name: link_news
+      label: Cột 2 – Tin tức
       type: string
-    - name: col2_farmers
-      label: Chân trang – Nông dân Tiến Nông
+    - name: link_partner
+      label: Cột 2 – Trở thành đối tác
       type: string
-    - name: col3_title
-      label: Chân trang – Kết nối
+    - name: link_dealers
+      label: Cột 2 – Đại lý
       type: string
-    - name: col3_dealers
-      label: Chân trang – Tìm đại lý
+    - name: link_jobs
+      label: Cột 2 – Tuyển dụng
       type: string
-    - name: col3_contact
-      label: Chân trang – Liên hệ
+    - name: link_contact
+      label: Cột 2 – Liên hệ
       type: string
-    - name: col3_news
-      label: Chân trang – Tin tức
+    - name: follow_title
+      label: Cột 3 – tiêu đề (Theo dõi Tiến Nông)
       type: string
     - name: floating_button
-      label: Chân trang – Liên hệ tư vấn
+      label: Nút Liên hệ trên thanh dưới cùng (điện thoại)
       type: string

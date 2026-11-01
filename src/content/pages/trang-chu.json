@@ -1,7 +1,7 @@
 {
   "hero_slides": [
     {
-      "eyebrow": "TIẾN NÔNG GROUP · TỪ 1995",
+      "eyebrow": "TIẾN NÔNG GROUP · TỪ NĂM 1995",
       "title": "Hơn 30 năm khoa học công nghệ phụng sự nhà nông",
       "text": "Nghiên cứu giải pháp dinh dưỡng cây trồng từ phòng thí nghiệm đến cánh đồng. Nông nghiệp bền vững, nông thôn văn minh, nông dân thịnh vượng.",
       "button1_label": "Khám phá giải pháp →",
@@ -56,14 +56,14 @@
     "t6": "nhà phân phối",
     "t7": "650.000",
     "t8": "tấn/năm · 3 nhà máy",
-    "t9": "Huân chương Lao động",
-    "t10": "Tập thể và cá nhân",
-    "t11": "3 lần nhận Bằng khen",
-    "t12": "Thủ tướng Chính phủ · 2001, 2014, 2022",
-    "t13": "Doanh nghiệp KH&CN đầu tiên",
-    "t14": "ngành dinh dưỡng cây trồng",
-    "t15": "6 lần đạt",
-    "t16": "Sao Vàng Đất Việt",
+    "t9": "Huân chương Lao động",
+    "t10": "Chủ tịch nước trao tặng năm 2009",
+    "t11": "Bằng khen Thủ tướng Chính phủ",
+    "t12": "Trao tặng năm 2001 · 2014 · 2022",
+    "t13": "Doanh nghiệp KH&CN đầu tiên",
+    "t14": "trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam",
+    "t15": "6 lần Sao Vàng Đất Việt",
+    "t16": "năm 2003 · 2005 · 2007 · 2009 · 2013 · 2024",
     "t18": "Xem tất cả thành tựu →",
     "img_award_1": {
       "src": "/uploads/award-hc-mverpbix.png",
@@ -88,7 +88,18 @@
       "focus": "center",
       "zoom": "100",
       "alt": "Giải thưởng Sao Vàng Đất Việt"
-    }
+    },
+    "years_value": "30+",
+    "years_label": "Năm phát triển",
+    "intro_image": {
+      "src": "/uploads/canh-dong-binh-minh.jpg",
+      "focus": "50% 60%",
+      "zoom": "100",
+      "alt": "Cánh đồng lúa lúc bình minh"
+    },
+    "intro_caption": "Tiến Nông Group · Từ năm 1995",
+    "story_cta": "Khám phá câu chuyện Tiến Nông →",
+    "story_link": "/ve-tien-nong/"
   },
   "s03_khoa_hoc_cong_nghe": {
     "t1": "01 · KHOA HỌC & CÔNG NGHỆ",
@@ -288,7 +299,13 @@
       "src": "/uploads/crop-congnghiep-mves8q0r.jpg"
     },
     "t16": "Cây công nghiệp",
-    "t17": "Xem tất cả sản phẩm →"
+    "t17": "Xem tất cả sản phẩm →",
+    "crop_lua_desc": "Dinh dưỡng theo từng giai đoạn: bón lót, đẻ nhánh, làm đòng",
+    "crop_ngo_desc": "Phân bón chuyên dùng cho ngô, từ bón lót đến nuôi bắp",
+    "crop_caphe_desc": "Dinh dưỡng cho cà phê, chè, hồ tiêu theo mùa vụ",
+    "crop_anqua_desc": "Nuôi cây, nuôi quả và phục hồi sau thu hoạch",
+    "crop_rau_desc": "Rau ăn lá, rau ăn quả, củ: lớn nhanh, an toàn",
+    "crop_congnghiep_desc": "Mía, sắn, cao su: dinh dưỡng cân đối, giữ sức đất"
   },
   "s06_nha_may_xanh": {
     "img_plant_flycam_1": {
@@ -361,9 +378,10 @@
     "t3": "Cộng đồng thịnh vượng",
     "t4": "Xác định “Sẻ chia lợi ích” là giá trị cốt lõi, Tiến Nông đồng hành cùng nhà nông và các địa phương, từ những lớp tập huấn kỹ thuật đến công tác khuyến học và các chương trình hướng về biển đảo.",
     "img_csr_1_1": {
-      "focus": "0% 50%",
+      "src": "/uploads/tin-cu/2019/gia-dinh-tien-nong-tiep-tuc-nhan-do-dau-23-tre-mo-coi-tinh-thanh-hoa.webp",
+      "focus": "center",
       "zoom": "100",
-      "alt": "Đỡ đầu 200 trẻ em mồ côi"
+      "alt": "Gia đình Tiến Nông nhận đỡ đầu trẻ mồ côi tỉnh Thanh Hóa"
     },
     "t5": "AN SINH XÃ HỘI",
     "t6": "Đỡ đầu hơn 200 trẻ em mồ côi, đồng hành cùng tương lai đất nước",
@@ -382,8 +400,17 @@
       "src": "/uploads/csr-3-mves3xns.jpg"
     },
     "t9": "BIỂN ĐẢO",
-    "t10": "Đồng hành hỗ trợ 1,26 tỷ đồng chương trình “Xanh hoá Trường Sa\" ",
-    "t11": "Phát triển bền vững tại Tiến Nông →"
+    "t10": "Đồng hành hỗ trợ 1,26 tỷ đồng chương trình “Xanh hoá Trường Sa”",
+    "t11": "Phát triển bền vững tại Tiến Nông →",
+    "t12": "VÌ CỘNG ĐỒNG",
+    "t13": "Tặng hơn 100 tấn phân bón humic giúp nông dân Bắc Giang tái sản xuất sau lũ",
+    "img_csr_4_1": {
+      "src": "/uploads/tin-cu/2024/cong-ty-tien-nong-trao-tang-hon-100-tan-phan-bon-huu-co-sinh-hoc-humic-tien.webp",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Tiến Nông trao tặng phân bón hữu cơ sinh học humic cho nông dân Bắc Giang"
+    },
+    "link_4": "/tin-tuc/cong-ty-tien-nong-trao-tang-hon-100-tan-phan-bon-huu-co-sinh-hoc-humic-tien/"
   },
   "s09_tin_tuc": {
     "t1": "Tin tức",
@@ -393,15 +420,15 @@
   "product_tab_crop": "Theo cây trồng",
   "product_banner": {
     "image": {
-      "src": "/uploads/SX4.jpg",
-      "focus": "50% 55%",
+      "src": "/uploads/banner-giai-phap-dinh-duong.jpg",
+      "focus": "center",
       "zoom": "100",
-      "alt": "Sản phẩm Tiến Nông xuất xưởng từ nhà máy"
+      "alt": "Giải pháp dinh dưỡng toàn diện cho cây trồng – các dòng phân bón Tiến Nông"
     },
-    "eyebrow": "SẢN PHẨM TIẾN NÔNG",
-    "title": "Dinh dưỡng chuẩn khoa học cho mọi mùa vụ",
-    "text": "Phân bón chuyên dùng, đa dụng, hữu cơ và công nghệ cao, sản xuất theo ISO 9001:2015 & ISO 14001:2015.",
-    "button": "Xem sản phẩm →",
+    "eyebrow": "",
+    "title": "",
+    "text": "",
+    "button": "",
     "link": "/san-pham/"
   }
 }

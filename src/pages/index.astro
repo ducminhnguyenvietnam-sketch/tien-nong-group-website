@@ -2,45 +2,73 @@
 import raw from '../content/pages/trang-chu.json';
 import { isFilled, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
-import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Tabs from '../components/Tabs.astro';
 import Slideshow from '../components/Slideshow.astro';
 import { link, url } from '../lib/routes';
-import { CATEGORIES, getNews, isPress, newsLinkAttrs, newsUrl } from '../lib/news';
-import newsRaw from '../content/pages/tin-tuc.json';
+import { CATEGORIES, formatDate, getNews, isPress, newsUrl } from '../lib/news';
 
 const c = withDefaults(raw, 'src/content/pages/trang-chu.json');
-
-const latest = (await getNews()).filter((n) => !isPress(n)).slice(0, 3);
-const newsPage = withDefaults(newsRaw, 'src/content/pages/tin-tuc.json');
 const F = 'src/content/pages/trang-chu.json';
+const FILL = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
+
+const latest = (await getNews()).filter((n) => !isPress(n)).slice(0, 4);
 const u = c.s02_uy_tin;
-const homeAwards = [[u.t9, u.t10, u.img_award_1, 1], [u.t11, u.t12, u.img_award_2, 2], [u.t13, u.t14, u.img_award_3, 3], [u.t15, u.t16, u.img_award_4, 4]] as const;
+const k = c.s03_khoa_hoc_cong_nghe;
+const g = c.s04_giai_phap_theo_doi_tuong;
+const sp = c.s05_san_pham;
+const nm = c.s06_nha_may_xanh;
+const cn = c.s07_con_nguoi;
+const bv = c.s08_vi_cong_dong;
+
 /** Card text written one point per line ("→ " in front is optional). */
 const points = (v: string) => (v || '').split('\n').map((l) => l.replace(/^\s*(→|-|•)\s*/, '').trim()).filter(Boolean);
+/** "30+" → number and a separate "+" (drawn in the accent colour, as in the Figma design). */
+const years = String(u.years_value || '').match(/^(.*?)(\+?)$/) ?? ['', '', ''];
+
+const stats = [[u.t1, u.t2], [u.t3, u.t4], [u.t5, u.t6], [u.t7, u.t8]].filter(([v]) => isFilled(v));
+const awards = [[u.t9, u.t10, u.img_award_1, 1], [u.t11, u.t12, u.img_award_2, 2], [u.t13, u.t14, u.img_award_3, 3], [u.t15, u.t16, u.img_award_4, 4]] as const;
+const labs = [[k.t4, k.t5], [k.t7, k.t8], [k.t10, k.t11], [k.t13, k.t14]].filter(([, t]) => isFilled(t));
+const labStats = [[k.t16, k.t17], [k.t18, k.t19], [k.t20, k.t21]].filter(([v]) => isFilled(v));
+const audiences = [
+  { title: g.t3, pts: g.t4, cta: g.t5, href: url('giai-phap'), img: g.img_aud_farmer_1, key: 'farmer', ph: 'Nông dân trên ruộng' },
+  { title: g.t6, pts: g.t7, cta: g.t8, href: url('lien-he', 'dai-ly'), img: g.img_aud_dealer_1, key: 'dealer', ph: 'Cửa hàng đại lý vật tư nông nghiệp' },
+  { title: g.t9, pts: g.t10, cta: g.t11, href: url('giai-phap-du-an'), img: g.img_aud_project_1, key: 'project', ph: 'Sân golf / cảnh quan đô thị / nhà kính' },
+  { title: g.t12, pts: g.t13, cta: g.t14, href: url('lien-he'), img: g.img_aud_export_1, key: 'export', ph: 'Container hàng xuất khẩu / kho' },
+];
+const lines = [[sp.t3, sp.t4, sp.img_line_1_1, 1], [sp.t5, sp.t6, sp.img_line_2_1, 2], [sp.t7, sp.t8, sp.img_line_3_1, 3], [sp.t9, sp.t10, sp.img_line_4_1, 4]] as const;
+const crops = [
+  [sp.t11, sp.crop_lua_desc, sp.img_crop_lua_1, 'lua'], [sp.t12, sp.crop_ngo_desc, sp.img_crop_ngo_1, 'ngo'],
+  [sp.t13, sp.crop_caphe_desc, sp.img_crop_caphe_1, 'caphe'], [sp.t14, sp.crop_anqua_desc, sp.img_crop_anqua_1, 'anqua'],
+  [sp.t15, sp.crop_rau_desc, sp.img_crop_rau_1, 'rau'], [sp.t16, sp.crop_congnghiep_desc, sp.img_crop_congnghiep_1, 'congnghiep'],
+] as const;
+const factories = [[nm.t4, nm.t5], [nm.t6, nm.t7], [nm.t8, nm.t9]].filter(([n]) => isFilled(n));
+const [capacity, ...certs] = nm.highlights.filter((h) => isFilled(h.value));
+const csr = [
+  [bv.t5, bv.t6, bv.img_csr_1_1, bv.link_1, 1, 'Đỡ đầu trẻ em mồ côi'], [bv.t7, bv.t8, bv.img_csr_2_1, bv.link_2, 2, 'Lễ trao học bổng khuyến học Thanh Hóa'],
+  [bv.t9, bv.t10, bv.img_csr_3_1, bv.link_3, 3, 'Chương trình Xanh hoá Trường Sa'], [bv.t12, bv.t13, bv.img_csr_4_1, bv.link_4, 4, 'Hoạt động vì cộng đồng'],
+].filter(([, title]) => isFilled(title)) as [string, string, any, string, number, string][];
+const people = [[cn.t4, cn.t5], [cn.t6, cn.t7], [cn.t8, cn.t9], [cn.t10, cn.t11]].filter(([t]) => isFilled(t));
 const banner = c.product_banner;
 const hasBanner = isFilled(banner?.image?.src);
-
+const bannerText = isFilled(banner?.title);
 ---
-<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
-<section class="hero-slider" data-slider aria-roledescription="carousel" aria-label="Giới thiệu Tiến Nông" style="position:relative;height:min(78vh,720px);min-height:520px;background:var(--gray-800);overflow:hidden">
-{c.hero_slides.map((s, k) => (
-<div class:list={['hero-slide', { 'is-active': k === 0 }]} data-slide={k} data-empty-slide={k > 0 && !s.image?.src ? '' : undefined} role="group" aria-roledescription="slide" aria-label={`${k + 1} / ${c.hero_slides.length}`} aria-hidden={k === 0 ? 'false' : 'true'}>
-<ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`hero-${k}`} shape="rect" placeholder={s.image.alt || 'Ảnh slide'} image={s.image} cms={`src/content/pages/trang-chu.json#hero_slides.${k}.image`} />
+<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Trang chủ">
+<section class="hero-slider" data-slider aria-roledescription="carousel" aria-label="Giới thiệu Tiến Nông">
+{c.hero_slides.map((s, n) => (
+<div class:list={['hero-slide', { 'is-active': n === 0 }]} data-slide={n} data-empty-slide={n > 0 && !s.image?.src ? '' : undefined} role="group" aria-roledescription="slide" aria-label={`${n + 1} / ${c.hero_slides.length}`} aria-hidden={n === 0 ? 'false' : 'true'}>
+<ImageSlot style={FILL} id={`hero-${n}`} shape="rect" placeholder={s.image.alt || 'Ảnh slide'} image={s.image} cms={`${F}#hero_slides.${n}.image`} />
 {s.show_text !== false && <>
-<div class="hero-scrim" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,53,26,.8) 0%,rgba(2,53,26,.5) 45%,rgba(2,53,26,0) 78%)"></div>
-<div class="hero-layer" style="position:absolute;inset:0;pointer-events:none;display:flex;align-items:center">
-<div style="max-width:1280px;width:100%;margin:0 auto;padding:0 clamp(20px,4vw,56px)">
-<div class="hero-copy" style="max-width:780px;display:flex;flex-direction:column;gap:22px;color:#fff">
-{s.eyebrow && <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-100)">{s.eyebrow}</span>}
-{k === 0
-  ? <h1 style="margin:0;font:var(--type-display);letter-spacing:-.015em;text-wrap:balance">{s.title}</h1>
-  : <h2 style="margin:0;font:var(--type-display);letter-spacing:-.015em;text-wrap:balance">{s.title}</h2>}
-{s.text && <p style="margin:0;font-size:var(--fs-lead);line-height:1.55;color:var(--green-50);max-width:580px;text-wrap:pretty">{s.text}</p>}
-<div style="display:flex;gap:12px;flex-wrap:wrap;pointer-events:auto">
-{s.button1_label && <a href={link(s.button1_link)} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg">{s.button1_label}</Button></a>}
-{s.button2_label && <a href={link(s.button2_link)} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg" variant="secondary">{s.button2_label}</Button></a>}
+<div class="hero-scrim"></div>
+<div class="hero-layer">
+<div class="h-wrap">
+<div class="hero-copy">
+{s.eyebrow && <span class="hero-eyebrow">{s.eyebrow}</span>}
+{n === 0 ? <h1 class="hero-title">{s.title}</h1> : <h2 class="hero-title">{s.title}</h2>}
+{s.text && <p class="hero-text">{s.text}</p>}
+<div class="hero-actions">
+{s.button1_label && <a href={link(s.button1_link)} class="h-btn">{s.button1_label}</a>}
+{s.button2_label && <a href={link(s.button2_link)} class="h-btn h-btn--white">{s.button2_label}</a>}
 </div></div></div></div>
 </>}
 </div>
@@ -49,84 +77,90 @@ const hasBanner = isFilled(banner?.image?.src);
 <button type="button" class="hero-arrow" data-slide-step="-1" aria-label="Slide trước" style="left:clamp(8px,2vw,24px)">‹</button>
 <button type="button" class="hero-arrow" data-slide-step="1" aria-label="Slide sau" style="right:clamp(8px,2vw,24px)">›</button>
 <div class="hero-dots" role="tablist" aria-label="Chọn slide">
-{c.hero_slides.map((_s, k) => <button type="button" role="tab" data-slide-to={k} aria-selected={k === 0 ? 'true' : 'false'} aria-label={`Slide ${k + 1}`}></button>)}
+{c.hero_slides.map((_s, n) => <button type="button" role="tab" data-slide-to={n} aria-selected={n === 0 ? 'true' : 'false'} aria-label={`Slide ${n + 1}`}></button>)}
 </div>
 </>}
 </section>
 
-<section style="background:var(--surface-card);border-bottom:1px solid var(--border-default)">
-<div style="max-width:1280px;margin:0 auto;padding:40px clamp(20px,4vw,56px) 44px;display:flex;flex-direction:column;gap:28px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 72px)/4),calc((900px - 100%)*999),calc((100% - 24px)/2)),1fr));gap:24px">
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_uy_tin.t1}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s02_uy_tin.t2}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_uy_tin.t3}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s02_uy_tin.t4}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_uy_tin.t5}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s02_uy_tin.t6}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-stat);color:var(--green-700);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_uy_tin.t7}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s02_uy_tin.t8}</span></div>
+<!-- 30+ năm: ảnh + số liệu, rồi 4 thành tựu -->
+<section class="h-sec h-sec--page h-intro">
+<div class="h-wrap">
+<div class="intro-grid">
+<div class="intro-photo">
+<ImageSlot style={FILL} id="intro-photo" shape="rect" placeholder="Ảnh cánh đồng" image={u.intro_image} cms={`${F}#s02_uy_tin.intro_image`} sizes="(max-width: 899px) 92vw, 620px" />
+{isFilled(u.intro_caption) && <span class="intro-photo__cap">{u.intro_caption}</span>}
 </div>
-<ul class="home-awards">
-{homeAwards.filter(([title]) => isFilled(title)).map(([title, sub, img, n]) => <li class="home-award">
-<div class="home-award__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`home-award-${n}`} shape="rect" fit="contain" placeholder={title} image={img} cms={`${F}#s02_uy_tin.img_award_${n}`} sizes="200px" /></div>
-<strong class="home-award__title">{title}</strong>{isFilled(sub) && <span class="home-award__sub">{sub}</span>}
+<div class="intro-facts">
+{isFilled(u.years_value) && <p class="intro-years"><span class="intro-years__num">{years[1]}<span class="intro-years__plus">{years[2]}</span></span><span class="intro-years__label">{u.years_label}</span></p>}
+<dl class="intro-stats">
+{stats.map(([v, l]) => <div><dt>{v}</dt><dd>{l}</dd></div>)}
+</dl>
+{isFilled(u.story_cta) && <a href={link(u.story_link || '/ve-tien-nong/')} class="h-btn intro-cta">{u.story_cta}</a>}
+</div>
+</div>
+<ul class="h-awards">
+{awards.filter(([title]) => isFilled(title)).map(([title, sub, img, n]) => <li class="h-award">
+<div class="h-award__img"><ImageSlot style={FILL} id={`home-award-${n}`} shape="rect" fit="contain" placeholder={title} image={img} cms={`${F}#s02_uy_tin.img_award_${n}`} sizes="220px" /></div>
+<strong class="h-award__title">{title}</strong>{isFilled(sub) && <span class="h-award__sub">{sub}</span>}
 </li>)}
 </ul>
-<span style="font-size:13px;color:var(--text-tertiary)">{c.s02_uy_tin.t17} <a href={url('ve-tien-nong', 'thanh-tuu')}>{c.s02_uy_tin.t18}</a></span>
+{isFilled(u.t18) && <a href={url('ve-tien-nong', 'thanh-tuu')} class="h-link">{u.t18}</a>}
 </div></section>
 
-<section id="khoa-hoc" style="background:var(--green-800);color:#fff">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:48px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:16px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s03_khoa_hoc_cong_nghe.t1}</span>
-<h2 style="margin:0;font:var(--type-h1);letter-spacing:-.01em;text-wrap:balance; max-width:578px">{c.s03_khoa_hoc_cong_nghe.t2}</h2>
+<!-- Khoa học & Công nghệ -->
+<section id="khoa-hoc" class="h-sec h-sec--dark">
+<div class="h-wrap h-stack">
+<div class="h-head h-head--split">
+<div class="h-head__main"><span class="h-eyebrow">{k.t1}</span><h2 class="h-h2">{k.t2}</h2></div>
+<p class="h-lead">{k.t3}</p>
 </div>
-<p style="margin:0;font-size:var(--fs-lead);color:var(--green-100);text-wrap:pretty">{c.s03_khoa_hoc_cong_nghe.t3}</p>
+<div class="lab-grid">
+<div class="lab-photo">{k.slides.some((x) => x?.src)
+  ? <Slideshow id="rd-slide" slides={k.slides} cms={`${F}#s03_khoa_hoc_cong_nghe.slides`} label="Ảnh phòng thí nghiệm Tiến Nông" radius={20} />
+  : <ImageSlot style={FILL} id="rd-main" shape="rounded" radius="20" placeholder="Phòng thí nghiệm VILAS 1519 đang vận hành" image={k.img_rd_main_1} cms={`${F}#s03_khoa_hoc_cong_nghe.img_rd_main_1`} />}</div>
+<ul class="lab-list">
+{labs.map(([tag, title]) => <li><span>{tag}</span><strong>{title}</strong></li>)}
+</ul>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px">
-<div class="rd-show" style="position:relative;height:420px">{c.s03_khoa_hoc_cong_nghe.slides.some((x) => x?.src)
-  ? <Slideshow id="rd-slide" slides={c.s03_khoa_hoc_cong_nghe.slides} cms={`${F}#s03_khoa_hoc_cong_nghe.slides`} label="Ảnh phòng thí nghiệm Tiến Nông" />
-  : <ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="rd-main" shape="rounded" radius="16" placeholder="Phòng thí nghiệm VILAS 1519 đang vận hành" image={c.s03_khoa_hoc_cong_nghe.img_rd_main_1} cms="src/content/pages/trang-chu.json#s03_khoa_hoc_cong_nghe.img_rd_main_1" />}</div>
-<div class="g-stack" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px">
-<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">{c.s03_khoa_hoc_cong_nghe.t4}</span><strong style="font-size:18px;line-height:1.3">{c.s03_khoa_hoc_cong_nghe.t5}</strong></div>
-<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">{c.s03_khoa_hoc_cong_nghe.t7}</span><strong style="font-size:18px;line-height:1.3">{c.s03_khoa_hoc_cong_nghe.t8}</strong></div>
-<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">{c.s03_khoa_hoc_cong_nghe.t10}</span><strong style="font-size:18px;line-height:1.3">{c.s03_khoa_hoc_cong_nghe.t11}</strong></div>
-<div style="background:var(--green-700);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px"><span style="font:700 13px var(--font-mono);color:var(--green-200)">{c.s03_khoa_hoc_cong_nghe.t13}</span><strong style="font-size:18px;line-height:1.3">{c.s03_khoa_hoc_cong_nghe.t14}</strong></div>
-</div></div>
-<div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:28px;border-top:1px solid var(--green-700)">
-<div style="display:flex;gap:40px;flex-wrap:wrap">
-<div style="display:flex;flex-direction:column"><span style="font:var(--type-stat);color:var(--amber-400);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s03_khoa_hoc_cong_nghe.t16}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s03_khoa_hoc_cong_nghe.t17}</span></div>
-<div style="display:flex;flex-direction:column"><span style="font:var(--type-stat);color:var(--amber-400);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s03_khoa_hoc_cong_nghe.t18}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s03_khoa_hoc_cong_nghe.t19}</span></div>
-<div style="display:flex;flex-direction:column"><span style="font:var(--type-stat);color:var(--amber-400);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s03_khoa_hoc_cong_nghe.t20}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--green-100);margin-top:6px">{c.s03_khoa_hoc_cong_nghe.t21}</span></div>
+<div class="lab-foot">
+<dl class="lab-stats">{labStats.map(([v, l]) => <div><dt>{v}</dt><dd>{l}</dd></div>)}</dl>
+<a href={url('khoa-hoc-cong-nghe')} class="h-btn h-btn--white">{k.t22}</a>
 </div>
-<a href={url('khoa-hoc-cong-nghe')} style="color:#fff;font-weight:600;border:1px solid var(--green-400);border-radius:var(--radius-md);padding:12px 20px">{c.s03_khoa_hoc_cong_nghe.t22}</a>
-</div></div></section>
+</div></section>
 
-<section id="doi-tuong" style="background:var(--surface-page)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:720px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s04_giai_phap_theo_doi_tuong.t1}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s04_giai_phap_theo_doi_tuong.t2}</h2>
+<!-- Giải pháp theo đối tác -->
+<section id="doi-tuong" class="h-sec h-sec--page">
+<div class="h-wrap h-stack">
+<div class="h-head"><span class="h-eyebrow">{g.t1}</span><h2 class="h-h2">{g.t2}</h2></div>
+<div class="aud-grid">
+{audiences.map((a) => <a href={a.href} class="aud">
+<ImageSlot style={FILL} id={`aud-${a.key}`} shape="rect" placeholder={a.ph} image={a.img} cms={`${F}#s04_giai_phap_theo_doi_tuong.img_aud_${a.key}_1`} sizes="(max-width: 767px) 92vw, 600px" />
+<span class="aud__shade" aria-hidden="true"></span>
+<span class="aud__body">
+<strong class="aud__title">{a.title}</strong>
+<span class="aud__more"><span class="aud__more-in">
+<ul class="aud__points">{points(a.pts).slice(0, 3).map((l) => <li>{l}</li>)}</ul>
+<span class="aud__cta">{a.cta}</span>
+</span></span>
+</span>
+</a>)}
 </div>
-<div class="aud-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 60px)/4),calc((1100px - 100%)*999),calc((100% - 20px)/2)),1fr));gap:20px">
-<a href={url('giai-phap')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-farmer" shape="rect" placeholder="Nông dân trên ruộng" image={c.s04_giai_phap_theo_doi_tuong.img_aud_farmer_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_farmer_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t3}</strong><ul class="aud-points">{points(c.s04_giai_phap_theo_doi_tuong.t4).slice(0, 3).map((l) => <li>{l}</li>)}</ul><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t5}</span></div></a>
-<a href={url('lien-he', 'dai-ly')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-dealer" shape="rect" placeholder="Cửa hàng đại lý vật tư nông nghiệp" image={c.s04_giai_phap_theo_doi_tuong.img_aud_dealer_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_dealer_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t6}</strong><ul class="aud-points">{points(c.s04_giai_phap_theo_doi_tuong.t7).slice(0, 3).map((l) => <li>{l}</li>)}</ul><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t8}</span></div></a>
-<a href={url('giai-phap-du-an')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-project" shape="rect" placeholder="Sân golf / cảnh quan đô thị / nhà kính" image={c.s04_giai_phap_theo_doi_tuong.img_aud_project_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_project_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t9}</strong><ul class="aud-points">{points(c.s04_giai_phap_theo_doi_tuong.t10).slice(0, 3).map((l) => <li>{l}</li>)}</ul><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t11}</span></div></a>
-<a href={url('lien-he')} style="display:flex;flex-direction:column;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;color:var(--text-primary)"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-export" shape="rect" placeholder="Container hàng xuất khẩu / kho" image={c.s04_giai_phap_theo_doi_tuong.img_aud_export_1} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.img_aud_export_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1"><strong style="font-size:20px">{c.s04_giai_phap_theo_doi_tuong.t12}</strong><ul class="aud-points">{points(c.s04_giai_phap_theo_doi_tuong.t13).slice(0, 3).map((l) => <li>{l}</li>)}</ul><span style="color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.t14}</span></div></a>
-</div>
-<article class="org-card" style="display:grid;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden">
-<div style="position:relative;min-height:260px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="aud-org" shape="rect" placeholder={c.s04_giai_phap_theo_doi_tuong.org_image.alt} image={c.s04_giai_phap_theo_doi_tuong.org_image} cms="src/content/pages/trang-chu.json#s04_giai_phap_theo_doi_tuong.org_image" /></div>
-<div style="padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:12px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s04_giai_phap_theo_doi_tuong.org_eyebrow}</span>
-<strong style="font:var(--type-h3)">{c.s04_giai_phap_theo_doi_tuong.org_title}</strong>
-<p style="margin:0;color:var(--text-secondary);text-wrap:pretty">{c.s04_giai_phap_theo_doi_tuong.org_text}</p>
-{c.s04_giai_phap_theo_doi_tuong.org_facts.length > 0 && <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px 20px;padding-top:14px;border-top:1px solid var(--border-default)">{c.s04_giai_phap_theo_doi_tuong.org_facts.map((f) => <div style="display:flex;flex-direction:column;gap:2px"><span style="font:var(--type-num);color:var(--green-700)">{f.value}</span><span style="font-size:13px;line-height:1.45;color:var(--text-secondary)">{f.label}</span></div>)}</div>}
-<a href={link(c.s04_giai_phap_theo_doi_tuong.org_link)} style="align-self:flex-start;color:var(--green-600);font-weight:600">{c.s04_giai_phap_theo_doi_tuong.org_cta}</a>
+<article class="org">
+<div class="org__photo"><ImageSlot style={FILL} id="aud-org" shape="rect" placeholder={g.org_image.alt} image={g.org_image} cms={`${F}#s04_giai_phap_theo_doi_tuong.org_image`} /></div>
+<div class="org__body">
+<span class="h-eyebrow">{g.org_eyebrow}</span>
+<h3 class="org__title">{g.org_title}</h3>
+<p class="org__text">{g.org_text}</p>
+{g.org_facts.length > 0 && <dl class="org__facts">{g.org_facts.map((f) => <div><dt>{f.value}</dt><dd>{f.label}</dd></div>)}</dl>}
+<a href={link(g.org_link)} class="h-btn org__cta">{g.org_cta}</a>
 </div>
 </article>
 </div></section>
 
-{(hasBanner || isFilled(banner?.title)) && <section class="promo" aria-label={banner.title || banner.image?.alt || 'Sản phẩm Tiến Nông'}>
+{(hasBanner || bannerText) && <section class:list={['promo', { 'promo--image': !bannerText }]} aria-label={banner.title || banner.image?.alt || 'Sản phẩm Tiến Nông'}>
 <a href={link(banner.link || '/san-pham/')} class="promo__link">
-<div class="promo__photo" data-needs-photos={hasBanner ? undefined : ''}><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="promo-banner" shape="rect" placeholder="Banner giới thiệu sản phẩm" image={banner.image} cms={`${F}#product_banner.image`} sizes="100vw" /></div>
-{isFilled(banner.title) && <>
+<div class="promo__photo" data-needs-photos={hasBanner ? undefined : ''}><ImageSlot style={FILL} id="promo-banner" shape="rect" placeholder="Banner giới thiệu sản phẩm" image={banner.image} cms={`${F}#product_banner.image`} sizes="100vw" /></div>
+{bannerText && <>
 <div class="promo__scrim" aria-hidden="true"></div>
 <div class="promo__copy">
 {isFilled(banner.eyebrow) && <span class="promo__eyebrow">{banner.eyebrow}</span>}
@@ -137,167 +171,360 @@ const hasBanner = isFilled(banner?.image?.src);
 </a>
 </section>}
 
-<section id="san-pham" style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
-<div style="display:flex;flex-direction:column;gap:14px;max-width:640px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s05_san_pham.t1}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance; max-width:787px">{c.s05_san_pham.t2}</h2>
-</div>
+<!-- Sản phẩm -->
+<section id="san-pham" class="h-sec h-sec--card">
+<div class="h-wrap h-stack">
+<div class="h-head h-head--tabs">
+<div class="h-head__main"><span class="h-eyebrow">{sp.t1}</span><h2 class="h-h2">{sp.t2}</h2></div>
 <Tabs id="product-tabs" label="Xem sản phẩm" items={[{ value: 'line', label: c.product_tab_line }, { value: 'crop', label: c.product_tab_crop }]} value="line" />
 </div>
-<div data-panel="line" class="m-scroll" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 60px)/4),calc((1060px - 100%)*999),calc((100% - 20px)/2)),1fr));gap:20px">
-<a href={url('san-pham')} style="display:flex;flex-direction:column;gap:14px;color:var(--text-primary)"><div style="position:relative;height:260px;background:var(--surface-sunken);border-radius:var(--radius-lg)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="line-1" shape="rounded" radius="16" fit="contain" placeholder="Bao bì dòng Chuyên dùng" image={c.s05_san_pham.img_line_1_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_line_1_1" /></div><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:19px">{c.s05_san_pham.t3}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s05_san_pham.t4}</span></div></a>
-<a href={url('san-pham')} style="display:flex;flex-direction:column;gap:14px;color:var(--text-primary)"><div style="position:relative;height:260px;background:var(--surface-sunken);border-radius:var(--radius-lg)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="line-2" shape="rounded" radius="16" fit="contain" placeholder="Bao bì dòng Đa dụng" image={c.s05_san_pham.img_line_2_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_line_2_1" /></div><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:19px">{c.s05_san_pham.t5}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s05_san_pham.t6}</span></div></a>
-<a href={url('san-pham')} style="display:flex;flex-direction:column;gap:14px;color:var(--text-primary)"><div style="position:relative;height:260px;background:var(--surface-sunken);border-radius:var(--radius-lg)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="line-3" shape="rounded" radius="16" fit="contain" placeholder="Bao bì dòng Hữu cơ" image={c.s05_san_pham.img_line_3_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_line_3_1" /></div><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:19px">{c.s05_san_pham.t7}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s05_san_pham.t8}</span></div></a>
-<a href={url('san-pham')} style="display:flex;flex-direction:column;gap:14px;color:var(--text-primary)"><div style="position:relative;height:260px;background:var(--surface-sunken);border-radius:var(--radius-lg)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="line-4" shape="rounded" radius="16" fit="contain" placeholder="Bao bì dòng Hàm lượng cao" image={c.s05_san_pham.img_line_4_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_line_4_1" /></div><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:19px">{c.s05_san_pham.t9}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s05_san_pham.t10}</span></div></a>
+<div data-panel="line" class="pcard-grid m-scroll">
+{lines.map(([title, desc, img, n]) => <a href={url('san-pham')} class="pcard">
+<span class="pcard__img"><ImageSlot style={FILL} id={`line-${n}`} shape="rect" placeholder={title} image={img} cms={`${F}#s05_san_pham.img_line_${n}_1`} sizes="(max-width: 767px) 80vw, 300px" /></span>
+<span class="pcard__body"><strong class="pcard__title">{title}</strong>{isFilled(desc) && <span class="pcard__desc"><span>{desc}</span></span>}</span>
+</a>)}
 </div>
-<div data-panel="crop" hidden class="crop-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
-<a href={url('giai-phap', 'tim-giai-phap')} style="position:relative;height:200px;border-radius:var(--radius-lg);overflow:hidden;display:block"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="crop-lua" shape="rect" placeholder="Lúa" image={c.s05_san_pham.img_crop_lua_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_crop_lua_1" /><span style="position:absolute;left:12px;bottom:12px;background:var(--surface-card);color:var(--text-primary);font-weight:700;padding:6px 12px;border-radius:var(--radius-full);pointer-events:none">{c.s05_san_pham.t11}</span></a>
-<a href={url('giai-phap', 'tim-giai-phap')} style="position:relative;height:200px;border-radius:var(--radius-lg);overflow:hidden;display:block"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="crop-ngo" shape="rect" placeholder="Ngô" image={c.s05_san_pham.img_crop_ngo_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_crop_ngo_1" /><span style="position:absolute;left:12px;bottom:12px;background:var(--surface-card);color:var(--text-primary);font-weight:700;padding:6px 12px;border-radius:var(--radius-full);pointer-events:none">{c.s05_san_pham.t12}</span></a>
-<a href={url('giai-phap', 'tim-giai-phap')} style="position:relative;height:200px;border-radius:var(--radius-lg);overflow:hidden;display:block"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="crop-caphe" shape="rect" placeholder="Cà phê" image={c.s05_san_pham.img_crop_caphe_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_crop_caphe_1" /><span style="position:absolute;left:12px;bottom:12px;background:var(--surface-card);color:var(--text-primary);font-weight:700;padding:6px 12px;border-radius:var(--radius-full);pointer-events:none">{c.s05_san_pham.t13}</span></a>
-<a href={url('giai-phap', 'tim-giai-phap')} style="position:relative;height:200px;border-radius:var(--radius-lg);overflow:hidden;display:block"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="crop-anqua" shape="rect" placeholder="Cây ăn quả" image={c.s05_san_pham.img_crop_anqua_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_crop_anqua_1" /><span style="position:absolute;left:12px;bottom:12px;background:var(--surface-card);color:var(--text-primary);font-weight:700;padding:6px 12px;border-radius:var(--radius-full);pointer-events:none">{c.s05_san_pham.t14}</span></a>
-<a href={url('giai-phap', 'tim-giai-phap')} style="position:relative;height:200px;border-radius:var(--radius-lg);overflow:hidden;display:block"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="crop-rau" shape="rect" placeholder="Rau màu" image={c.s05_san_pham.img_crop_rau_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_crop_rau_1" /><span style="position:absolute;left:12px;bottom:12px;background:var(--surface-card);color:var(--text-primary);font-weight:700;padding:6px 12px;border-radius:var(--radius-full);pointer-events:none">{c.s05_san_pham.t15}</span></a>
-<a href={url('giai-phap', 'tim-giai-phap')} style="position:relative;height:200px;border-radius:var(--radius-lg);overflow:hidden;display:block"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="crop-congnghiep" shape="rect" placeholder="Cây công nghiệp" image={c.s05_san_pham.img_crop_congnghiep_1} cms="src/content/pages/trang-chu.json#s05_san_pham.img_crop_congnghiep_1" /><span style="position:absolute;left:12px;bottom:12px;background:var(--surface-card);color:var(--text-primary);font-weight:700;padding:6px 12px;border-radius:var(--radius-full);pointer-events:none">{c.s05_san_pham.t16}</span></a>
+<div data-panel="crop" hidden class="pcard-grid pcard-grid--crops">
+{crops.map(([title, desc, img, key]) => <a href={url('giai-phap', 'tim-giai-phap')} class="pcard">
+<span class="pcard__img"><ImageSlot style={FILL} id={`crop-${key}`} shape="rect" placeholder={title} image={img} cms={`${F}#s05_san_pham.img_crop_${key}_1`} sizes="(max-width: 767px) 46vw, 400px" /></span>
+<span class="pcard__body"><strong class="pcard__title">{title}</strong>{isFilled(desc) && <span class="pcard__desc"><span>{desc}</span></span>}</span>
+</a>)}
 </div>
-<a href={url('san-pham')} style="align-self:flex-start;font-weight:600">{c.s05_san_pham.t17}</a>
+<a href={url('san-pham')} class="h-btn h-btn--start">{sp.t17}</a>
 </div></section>
 
-<section id="nha-may" style="position:relative;min-height:600px;background:var(--gray-800);display:flex">
-<div style="position:absolute;inset:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="plant-flycam" sizes="100vw" shape="rect" placeholder="Flycam nhà máy Bỉm Sơn: cây xanh, khuôn viên sạch đẹp" image={c.s06_nha_may_xanh.img_plant_flycam_1} cms="src/content/pages/trang-chu.json#s06_nha_may_xanh.img_plant_flycam_1" /></div>
-<div style="position:relative;max-width:1280px;width:100%;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,56px);display:flex;align-items:flex-end;pointer-events:none">
-<div style="background:var(--surface-card);border-radius:var(--radius-xl);padding:clamp(28px,3vw,40px);max-width:560px;display:flex;flex-direction:column;gap:16px;pointer-events:auto;box-shadow:var(--shadow-lg)">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s06_nha_may_xanh.t1}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s06_nha_may_xanh.t2}</h2>
-{c.s06_nha_may_xanh.highlights.length > 0
-  ? <ul class="green-highlights">{c.s06_nha_may_xanh.highlights.filter((h) => isFilled(h.value)).map((h) => <li><strong>{h.value}</strong>{isFilled(h.label) && <span>{h.label}</span>}</li>)}</ul>
-  : <p style="margin:0;color:var(--text-secondary)">{c.s06_nha_may_xanh.t3}</p>}
+<!-- Sản xuất xanh -->
+<section id="nha-may" class="plant">
+<div class="plant__photo"><ImageSlot style={FILL} id="plant-flycam" sizes="100vw" shape="rect" placeholder="Flycam nhà máy Bỉm Sơn: cây xanh, khuôn viên sạch đẹp" image={nm.img_plant_flycam_1} cms={`${F}#s06_nha_may_xanh.img_plant_flycam_1`} /></div>
+<div class="h-wrap plant__wrap">
+<div class="plant__card">
+<span class="h-eyebrow">{nm.t1}</span>
+<h2 class="plant__title">{nm.t2}</h2>
+{capacity
+  ? <>
+    <div class="plant__capacity"><strong>{capacity.value}</strong>{isFilled(capacity.label) && <span>{capacity.label}</span>}</div>
+    {certs.length > 0 && <ul class="plant__certs">{certs.map((h) => <li><strong>{h.value}</strong>{isFilled(h.label) && <span>{h.label}</span>}</li>)}</ul>}
+  </>
+  : <p class="plant__text">{nm.t3}</p>}
 <ul class="factories">
-<li><span class="factories__kind">Nhà máy</span><strong>{c.s06_nha_may_xanh.t4.replace(/^Nhà máy\s+/i, '')}</strong><span class="factories__place">{c.s06_nha_may_xanh.t5}</span></li>
-<li><span class="factories__kind">Nhà máy</span><strong>{c.s06_nha_may_xanh.t6.replace(/^Nhà máy\s+/i, '')}</strong><span class="factories__place">{c.s06_nha_may_xanh.t7}</span></li>
-<li><span class="factories__kind">Nhà máy</span><strong>{c.s06_nha_may_xanh.t8.replace(/^Nhà máy\s+/i, '')}</strong><span class="factories__place">{c.s06_nha_may_xanh.t9}</span></li>
+{factories.map(([name, place]) => <li><span class="factories__kind">Nhà máy</span><strong>{name.replace(/^Nhà máy\s+/i, '')}</strong><span class="factories__place">{place}</span></li>)}
 </ul>
-<a href={url('lien-he', 'nha-may')} style="font-weight:600">{c.s06_nha_may_xanh.t10}</a>
+<a href={url('lien-he', 'nha-may')} class="h-link">{nm.t10}</a>
 </div></div></section>
 
-<section id="con-nguoi" style="background:var(--surface-page)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px 72px;align-items:center">
-<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:280px 200px;gap:14px">
-<div style="position:relative;grid-row:span 2;min-width:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="people-1" shape="rounded" radius="16" placeholder="Chân dung người lao động gắn bó 20+ năm" image={c.s07_con_nguoi.img_people_1_1} cms="src/content/pages/trang-chu.json#s07_con_nguoi.img_people_1_1" /></div>
-<div style="position:relative"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="people-2" shape="rounded" radius="16" placeholder="Chuyến du lịch nước ngoài toàn công ty" image={c.s07_con_nguoi.img_people_2_1} cms="src/content/pages/trang-chu.json#s07_con_nguoi.img_people_2_1" /></div>
-<div style="position:relative"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="people-3" shape="rounded" radius="16" placeholder="Lễ trao Bảo Bình tài lộc" image={c.s07_con_nguoi.img_people_3_1} cms="src/content/pages/trang-chu.json#s07_con_nguoi.img_people_3_1" /></div>
+<!-- Phát triển bền vững -->
+<section id="ben-vung" class="h-sec h-sec--card">
+<div class="h-wrap h-stack">
+<div class="h-head h-head--split">
+<div class="h-head__main"><span class="h-eyebrow">{bv.t1}</span><h2 class="h-h2">{bv.t2}<br />{bv.t3}</h2></div>
+<p class="h-lead">{bv.t4}</p>
 </div>
-<div style="display:flex;flex-direction:column;gap:20px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s07_con_nguoi.t1}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s07_con_nguoi.t2}</h2>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s07_con_nguoi.t3}</p>
-<div class="g-stack" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px 24px">
-<div style="display:flex;flex-direction:column;gap:2px;padding-top:14px;border-top:2px solid var(--green-500)"><strong>{c.s07_con_nguoi.t4}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s07_con_nguoi.t5}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px;padding-top:14px;border-top:2px solid var(--green-500)"><strong>{c.s07_con_nguoi.t6}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s07_con_nguoi.t7}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px;padding-top:14px;border-top:2px solid var(--green-500)"><strong>{c.s07_con_nguoi.t8}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s07_con_nguoi.t9}</span></div>
-<div style="display:flex;flex-direction:column;gap:2px;padding-top:14px;border-top:2px solid var(--green-500)"><strong>{c.s07_con_nguoi.t10}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s07_con_nguoi.t11}</span></div>
+<div class="ncard-grid m-scroll">
+{csr.map(([tag, title, img, href, n, ph]) => {
+  const inner = <>
+    <span class="ncard__img"><ImageSlot style={FILL} id={`csr-${n}`} shape="rect" placeholder={ph} image={img} cms={`${F}#s08_vi_cong_dong.img_csr_${n}_1`} sizes="(max-width: 767px) 80vw, 300px" /></span>
+    {isFilled(tag) && <span class="ncard__meta"><span class="h-chip">{tag}</span></span>}
+    <strong class="ncard__title">{title}</strong>
+  </>;
+  return isFilled(href) ? <a href={link(href)} class="ncard">{inner}</a> : <div class="ncard">{inner}</div>;
+})}
 </div>
-<div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:8px">
-<a href={url('tuyen-dung', 'vi-tri')} style="text-decoration:none;display:inline-flex"><Button as="span" >{c.s07_con_nguoi.t12}</Button></a>
-<a href={url('ve-tien-nong/van-hoa-doanh-nghiep')} style="text-decoration:none;display:inline-flex"><Button as="span" variant="ghost">{c.s07_con_nguoi.t13}</Button></a>
-</div></div></div></section>
-
-<section id="ben-vung" style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:14px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s08_vi_cong_dong.t1}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance; max-width:817px">{c.s08_vi_cong_dong.t2} <br>{c.s08_vi_cong_dong.t3}</h2>
-</div>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s08_vi_cong_dong.t4}</p>
-</div>
-<div class="m-scroll" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 40px)/3),calc((880px - 100%)*999),100%),1fr));gap:20px">
-<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="csr-1" shape="rounded" radius="16" placeholder="Lớp tập huấn kỹ thuật cho nông dân" image={c.s08_vi_cong_dong.img_csr_1_1} cms="src/content/pages/trang-chu.json#s08_vi_cong_dong.img_csr_1_1" /></div><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s08_vi_cong_dong.t5}</span><strong style="font-size:19px;line-height:1.35">{c.s08_vi_cong_dong.t6}</strong></div>
-<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="csr-2" shape="rounded" radius="16" placeholder="Lễ trao học bổng khuyến học Thanh Hóa" image={c.s08_vi_cong_dong.img_csr_2_1} cms="src/content/pages/trang-chu.json#s08_vi_cong_dong.img_csr_2_1" /></div><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s08_vi_cong_dong.t7}</span><strong style="font-size:19px;line-height:1.35">{c.s08_vi_cong_dong.t8}</strong></div>
-<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="csr-3" shape="rounded" radius="16" placeholder="Chương trình Triệu mầm xanh Trường Sa" image={c.s08_vi_cong_dong.img_csr_3_1} cms="src/content/pages/trang-chu.json#s08_vi_cong_dong.img_csr_3_1" /></div><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s08_vi_cong_dong.t9}</span><strong style="font-size:19px;line-height:1.35">{c.s08_vi_cong_dong.t10}</strong></div>
-</div>
-<a href={url('phat-trien-ben-vung')} style="align-self:flex-start;font-weight:600">{c.s08_vi_cong_dong.t11}</a>
+<a href={url('phat-trien-ben-vung')} class="h-btn h-btn--line h-btn--start">{bv.t11}</a>
 </div></section>
 
-
-<section id="tin-tuc" style="background:var(--surface-page);border-top:1px solid var(--border-default)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap">
-<h2 style="margin:0;font:var(--type-h2)">{c.s09_tin_tuc.t1}</h2>
-<a href={url('tin-tuc')} style="font-weight:600">{c.s09_tin_tuc.t2}</a>
+<!-- Con người -->
+<section id="con-nguoi" class="h-sec h-sec--page">
+<div class="h-wrap people">
+<div class="people__photos">
+<div class="people__photo people__photo--tall"><ImageSlot style={FILL} id="people-1" shape="rect" placeholder="Chân dung người lao động gắn bó 20+ năm" image={cn.img_people_1_1} cms={`${F}#s07_con_nguoi.img_people_1_1`} /></div>
+<div class="people__photo"><ImageSlot style={FILL} id="people-2" shape="rect" placeholder="Chuyến du lịch nước ngoài toàn công ty" image={cn.img_people_2_1} cms={`${F}#s07_con_nguoi.img_people_2_1`} /></div>
+<div class="people__photo"><ImageSlot style={FILL} id="people-3" shape="rect" placeholder="Lễ trao Bảo Bình tài lộc" image={cn.img_people_3_1} cms={`${F}#s07_con_nguoi.img_people_3_1`} /></div>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/3),calc((948px - 100%)*999),100%),1fr));gap:24px">
-{latest.map((n) => <a href={newsUrl(n)} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:210px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${n.id}`} shape="rounded" radius="12" placeholder="Ảnh bài viết" image={n.data.cover} cms={`${n.filePath}#cover`} /></div><span style="font-size:13px;color:var(--text-tertiary)">{CATEGORIES[n.data.category]}</span><strong style="font-size:18px;line-height:1.4">{n.data.title}</strong></a>)}
+<div class="people__body">
+<span class="h-eyebrow">{cn.t1}</span>
+<h2 class="h-h2">{cn.t2}</h2>
+<p class="people__text">{cn.t3}</p>
+<dl class="people__points">{people.map(([t, d]) => <div><dt>{t}</dt><dd>{d}</dd></div>)}</dl>
+<div class="people__actions">
+<a href={url('tuyen-dung', 'vi-tri')} class="h-btn">{cn.t12}</a>
+<a href={url('ve-tien-nong/van-hoa-doanh-nghiep')} class="h-btn h-btn--line">{cn.t13}</a>
+</div>
+</div></div></section>
+
+<!-- Tin tức -->
+<section id="tin-tuc" class="h-sec h-sec--page h-sec--line">
+<div class="h-wrap h-stack">
+<div class="h-head h-head--row">
+<h2 class="h-h2">{c.s09_tin_tuc.t1}</h2>
+<a href={url('tin-tuc')} class="h-link">{c.s09_tin_tuc.t2}</a>
+</div>
+<div class="ncard-grid m-scroll">
+{latest.map((n) => <a href={newsUrl(n)} class="ncard">
+<span class="ncard__img"><ImageSlot style={FILL} id={`news-${n.id}`} shape="rect" placeholder="Ảnh bài viết" image={n.data.cover} cms={`${n.filePath}#cover`} sizes="(max-width: 767px) 80vw, 300px" /></span>
+<span class="ncard__meta"><span class="h-chip">{CATEGORIES[n.data.category]}</span>{n.data.date && <time datetime={n.data.date.toISOString().slice(0, 10)}>{formatDate(n.data.date)}</time>}</span>
+<strong class="ncard__title">{n.data.title}</strong>
+</a>)}
 </div></div></section>
 </Layout>
 
 <style>
-  .org-card { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); }
-  @media (max-width: 760px) { .org-card { grid-template-columns: 1fr; } }
+  /* ── Shared pieces of the home page (Figma "Final" layout, web content and colours) ── */
+  .h-wrap { max-width: 1280px; margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
+  .h-sec { padding-block: clamp(64px, 7.5vw, 104px); }
+  .h-sec--page { background: var(--surface-page); }
+  .h-sec--card { background: var(--surface-card); }
+  .h-sec--dark { background: var(--green-800); color: #fff; }
+  .h-sec--line { border-top: 1px solid var(--border-default); }
+  .h-stack { display: flex; flex-direction: column; gap: 40px; }
+  .h-head { display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
+  .h-head--split { max-width: none; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 64px; align-items: end; }
+  .h-head--tabs, .h-head--row { max-width: none; flex-direction: row; justify-content: space-between; align-items: flex-end; gap: 20px 40px; }
+  .h-head--tabs > :last-child { flex: none; }
+  .h-head__main { display: flex; flex-direction: column; gap: 12px; min-width: 0; max-width: 820px; }
+  .h-eyebrow { font: 600 13px/1.4 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--brand-bright); }
+  .h-sec--dark .h-eyebrow { color: var(--brand-highlight); }
+  .h-h2 { margin: 0; font: var(--type-h2); letter-spacing: -.01em; color: var(--text-primary); text-wrap: balance; }
+  .h-sec--dark .h-h2 { color: #fff; }
+  .h-lead { margin: 0; font-size: var(--fs-body); line-height: 1.7; color: var(--text-secondary); }
+  .h-sec--dark .h-lead { color: var(--green-100); }
+  .h-chip { display: inline-flex; align-items: center; padding: 3px 8px; border: 1px solid var(--border-default); border-radius: 6px;
+    background: var(--surface-card); font: 600 11px/1.4 var(--font-body); letter-spacing: .03em; text-transform: uppercase; color: var(--green-700); }
+  .h-link { align-self: flex-start; font-weight: 600; color: var(--brand-bright); }
+  .h-link:hover { color: var(--green-700); }
+
+  /* Buttons: Figma shapes with the agreed in-between corner radius. */
+  .h-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 22px; border-radius: var(--radius-btn);
+    border: 1px solid var(--brand-bright); background: var(--brand-bright); color: #fff; font: 600 15px/1.2 var(--font-body); text-decoration: none;
+    transition: background var(--motion-fast), border-color var(--motion-fast), color var(--motion-fast); white-space: nowrap; }
+  .h-btn:hover { background: var(--green-600); border-color: var(--green-600); color: #fff; text-decoration: none; }
+  .h-btn--white { background: #fff; border-color: #fff; color: var(--green-700); }
+  .h-btn--white:hover { background: var(--green-50); border-color: var(--green-50); color: var(--green-800); }
+  .h-btn--line { background: transparent; color: var(--green-700); border-color: var(--brand-bright); }
+  .h-btn--line:hover { background: var(--green-50); color: var(--green-800); border-color: var(--brand-bright); }
+  .h-btn--start { align-self: flex-start; }
+
+  /* ── Hero ── */
+  .hero-slider { position: relative; height: min(76vh, 700px); min-height: 520px; background: var(--gray-800); overflow: hidden; }
   .hero-slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .7s ease, visibility .7s; }
   .hero-slide.is-active { opacity: 1; visibility: visible; }
+  .hero-scrim { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(0, 71, 35, .86) 0%, rgba(0, 71, 35, .55) 42%, rgba(0, 71, 35, 0) 75%); }
+  .hero-layer { position: absolute; inset: 0; pointer-events: none; display: flex; align-items: center; }
+  .hero-layer .h-wrap { width: 100%; }
+  .hero-copy { max-width: 760px; display: flex; flex-direction: column; gap: 22px; color: #fff; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 16px; font: 600 13px/1.4 var(--font-body); letter-spacing: .08em; color: #fff; }
+  .hero-eyebrow::before { content: ''; width: 48px; height: 2px; background: var(--brand-highlight); }
+  .hero-title { margin: 0; font: var(--type-display); letter-spacing: -.015em; text-wrap: balance; }
+  .hero-text { margin: 0; font-size: var(--fs-lead); line-height: 1.6; color: var(--green-50); max-width: 560px; text-wrap: pretty; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; pointer-events: auto; }
   .hero-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(0,0,0,.28); color: #fff; font: 400 30px/1 var(--font-body); cursor: pointer; display: flex; align-items: center; justify-content: center; padding-bottom: 4px; }
   .hero-arrow:hover { background: rgba(0,0,0,.5); }
   .hero-dots { position: absolute; left: 0; right: 0; bottom: 20px; z-index: 3; display: flex; justify-content: center; gap: 10px; }
   .hero-dots button { width: 10px; height: 10px; padding: 0; border-radius: 999px; border: 0; background: rgba(255,255,255,.55); cursor: pointer; transition: width .3s, background .3s; }
   .hero-dots button[aria-selected='true'] { width: 28px; background: #fff; }
-  @media (max-width: 600px) { .hero-arrow { display: none; } }
-  @media (prefers-reduced-motion: reduce) { .hero-slide { transition: none; } }
-  /* Phone: the award labels are kept unbroken, so give each its own row. */
-  @media (max-width: 480px) { .awards, .aud-grid { grid-template-columns: 1fr !important; } }
-  /* Phones: text sits low over a bottom-up scrim so it stays readable over any photo. */
-  @media (max-width: 767.98px) {
-    .hero-slider { height: 78svh !important; min-height: 540px !important; max-height: 720px; }
-    .hero-scrim { background: linear-gradient(0deg, rgba(2,53,26,.92) 0%, rgba(2,53,26,.72) 45%, rgba(2,53,26,.2) 100%) !important; }
-    .hero-layer { align-items: flex-end !important; padding-bottom: 64px; }
-    .hero-copy { gap: 16px !important; }
-    .crop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-    .crop-grid > a { height: 150px !important; }
+
+  /* ── 30+ năm + thành tựu ── */
+  .h-intro .h-wrap { display: flex; flex-direction: column; gap: 48px; }
+  .intro-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 24px 40px; align-items: stretch; }
+  .intro-photo { position: relative; min-height: 400px; border-radius: var(--radius-lg); overflow: hidden; background: var(--surface-sunken); }
+  .intro-photo__cap { position: absolute; left: 20px; bottom: 16px; font-size: 13px; color: rgba(255, 255, 255, .92); text-shadow: 0 1px 6px rgba(0, 0, 0, .45); }
+  .intro-facts { display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+  .intro-years { margin: 0; display: flex; flex-direction: column; gap: 6px; }
+  .intro-years__num { font: 700 clamp(96px, 11vw, 150px)/.9 var(--font-display); letter-spacing: -.04em; color: var(--brand-bright); }
+  .intro-years__plus { color: var(--brand-highlight); }
+  .intro-years__label { font: 700 clamp(26px, 2.6vw, 36px)/1.15 var(--font-display); letter-spacing: .02em; text-transform: uppercase; color: var(--green-800); }
+  .intro-stats { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; }
+  .intro-stats div { padding: 16px 0 14px; border-bottom: 1px solid var(--border-default); }
+  .intro-stats dt { font: 700 clamp(26px, 2.4vw, 32px)/1.15 var(--font-display); color: var(--green-800); font-variant-numeric: tabular-nums; }
+  .intro-stats dd { margin: 6px 0 0; font-size: 15px; color: var(--text-secondary); }
+  .intro-stats dd::first-letter { text-transform: uppercase; }
+  .intro-cta { align-self: flex-start; min-width: min(100%, 340px); }
+
+  .h-awards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px 24px; }
+  .h-award { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+  .h-award__img { position: relative; width: 100%; max-width: 220px; height: 160px; margin-bottom: 18px; }
+  .h-award__img::after { content: ''; position: absolute; left: 12%; right: 12%; bottom: -14px; height: 10px; border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(28, 32, 28, .16), rgba(28, 32, 28, 0) 70%); }
+  .h-award__img :global(.img-slot__frame) { background: transparent !important; }
+  .h-award__img :global(.img-slot__img) { mix-blend-mode: multiply; }
+  .h-award__title { font: 700 15px/1.4 var(--font-display); text-transform: uppercase; letter-spacing: .02em; color: var(--text-primary); text-align: center; text-wrap: balance; }
+  .h-award__sub { font-size: 14px; line-height: 1.5; color: var(--text-secondary); text-align: center; text-align-last: center; text-wrap: balance; }
+
+  /* ── Khoa học & Công nghệ ── */
+  .lab-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+  .lab-photo { position: relative; min-height: 400px; }
+  .lab-list { list-style: none; margin: 0; padding: 0; display: grid; grid-auto-rows: 1fr; gap: 14px; }
+  .lab-list li { display: flex; flex-direction: column; justify-content: center; gap: 8px; padding: 18px 22px; border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, .14); background: rgba(255, 255, 255, .04); transition: background var(--motion-base), border-color var(--motion-base); }
+  .lab-list li:hover { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .24); }
+  .lab-list span { font: 600 12px/1.3 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--brand-highlight); }
+  .lab-list strong { font: 500 18px/1.4 var(--font-display); color: #fff; }
+  .lab-foot { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .16); }
+  .lab-stats { margin: 0; display: flex; gap: 24px 56px; flex-wrap: wrap; }
+  .lab-stats dt { font: var(--type-stat); color: var(--brand-highlight); font-variant-numeric: tabular-nums; }
+  .lab-stats dd { margin: 6px 0 0; font: 600 12px/1.45 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--green-100); }
+
+  /* ── Giải pháp: 4 thẻ ảnh; di chuột hiện 3 ý + liên kết ── */
+  .aud-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .aud { position: relative; display: block; height: 300px; border-radius: var(--radius-lg); overflow: hidden; color: #fff; text-decoration: none; isolation: isolate; }
+  .aud:hover { color: #fff; text-decoration: none; }
+  .aud__shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(0deg, rgba(0, 71, 35, .92) 0%, rgba(0, 71, 35, .55) 28%, rgba(0, 71, 35, 0) 50%);
+    transition: opacity var(--motion-slow) var(--ease-out); }
+  .aud::after { content: ''; position: absolute; inset: 0; z-index: 1; opacity: 0; transition: opacity var(--motion-slow) var(--ease-out);
+    background: linear-gradient(90deg, rgba(0, 71, 35, .9) 0%, rgba(0, 71, 35, .72) 50%, rgba(0, 71, 35, .35) 100%); }
+  .aud__body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 24px 28px; display: flex; flex-direction: column; }
+  .aud__title { font: 600 clamp(22px, 2vw, 28px)/1.25 var(--font-display); text-shadow: 0 1px 10px rgba(0, 0, 0, .2); }
+  .aud__more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--motion-slow) var(--ease-out); }
+  .aud__more-in { min-height: 0; overflow: hidden; display: flex; flex-direction: column; gap: 16px; opacity: 0; transition: opacity var(--motion-slow) var(--ease-out); }
+  .aud__points { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.45; }
+  .aud__points li { position: relative; padding-left: 20px; text-align: start; }
+  .aud__points li::before { content: ''; position: absolute; left: 2px; top: .5em; width: 8px; height: 8px; border-radius: 50%; background: var(--green-300); }
+  .aud__cta { align-self: flex-start; font-weight: 700; font-size: 15px; color: #fff; padding-bottom: 2px; border-bottom: 2px solid var(--brand-highlight); }
+  @media (hover: hover) {
+    .aud:hover::after, .aud:focus-visible::after { opacity: 1; }
+    .aud:hover .aud__shade, .aud:focus-visible .aud__shade { opacity: 0; }
+    .aud:hover .aud__more, .aud:focus-visible .aud__more { grid-template-rows: 1fr; }
+    .aud:hover .aud__more-in, .aud:focus-visible .aud__more-in { opacity: 1; }
   }
-  /* Achievements: photo above the words, centred, no frames */
-  .home-awards { list-style: none; margin: 0; padding: 28px 0 0; border-top: 1px solid var(--border-default); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 24px; }
-  .home-award { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; }
-  .home-award__img { position: relative; width: 100%; max-width: 180px; height: 120px; margin-bottom: 8px; }
-  .home-award__img :global(.img-slot__frame) { background: transparent !important; }
-  .home-award__img :global(.img-slot__img) { mix-blend-mode: multiply; }
-  .home-award__title { font: 700 15px/1.4 var(--font-display); text-transform: uppercase; letter-spacing: .02em; text-align: center; }
-  .home-award__sub { font-size: 14px; color: var(--text-secondary); text-align: center; text-align-last: center; }
-  @media (max-width: 899.98px) { .home-awards { grid-template-columns: repeat(2, minmax(0, 1fr)); } .home-award__img { height: 100px; } }
+  /* Touch screens can't hover: the points are always shown. */
+  @media (hover: none) {
+    .aud { height: auto; min-height: 300px; }
+    .aud::after { opacity: 1; background: linear-gradient(0deg, rgba(0, 71, 35, .95) 0%, rgba(0, 71, 35, .75) 55%, rgba(0, 71, 35, .15) 100%); }
+    .aud__body { position: relative; min-height: 300px; justify-content: flex-end; }
+    .aud__more { grid-template-rows: 1fr; } .aud__more-in { opacity: 1; }
+  }
 
-  /* Audience cards: three short points */
-  .aud-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; flex: 1; color: var(--text-secondary); font-size: 15px; line-height: 1.45; }
-  .aud-points li { position: relative; padding-left: 18px; text-align: start; }
-  .aud-points li::before { content: ''; position: absolute; left: 2px; top: .55em; width: 7px; height: 7px; border-radius: 50%; background: var(--green-500); }
+  .org { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
+  .org__photo { position: relative; min-height: 300px; }
+  .org__body { padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 14px; }
+  .org__title { margin: 0; font: 600 clamp(22px, 2vw, 28px)/1.3 var(--font-display); color: var(--text-primary); }
+  .org__text { margin: 0; color: var(--text-secondary); font-size: 16px; line-height: 1.7; }
+  .org__facts { margin: 0; padding-top: 16px; border-top: 1px solid var(--border-default); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 24px; }
+  .org__facts dt { font: 600 21px/1.3 var(--font-display); color: var(--green-800); }
+  .org__facts dd { margin: 4px 0 0; font-size: 14px; line-height: 1.5; color: var(--text-secondary); text-align: start; }
+  .org__cta { align-self: flex-start; margin-top: 6px; }
 
-  /* Full-width product banner */
+  /* ── Banner ── */
   .promo { position: relative; background: var(--green-900); }
   .promo__link { position: relative; display: block; min-height: clamp(280px, 34vw, 480px); color: #fff; text-decoration: none; overflow: hidden; }
+  .promo--image .promo__link { min-height: 0; aspect-ratio: 3200 / 802; }
   .promo__link:hover { text-decoration: none; color: #fff; }
   .promo__photo { position: absolute; inset: 0; }
   .promo__photo :global(.img-slot__img) { transition: scale 1.2s var(--ease-out); }
-  .promo__link:hover .promo__photo :global(.img-slot__img) { scale: 1.03; }
+  .promo__link:hover .promo__photo :global(.img-slot__img) { scale: 1.02; }
   .promo__scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2, 53, 26, .88) 0%, rgba(2, 53, 26, .55) 45%, rgba(2, 53, 26, 0) 80%); }
   .promo__copy { position: relative; max-width: 1280px; margin: 0 auto; min-height: inherit; padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; }
   .promo__eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; color: var(--green-100); }
   .promo__title { font: var(--type-h2); max-width: 15em; text-wrap: balance; }
   .promo__text { max-width: 34em; color: var(--green-50); font-size: var(--fs-lead); line-height: 1.55; text-align: start; }
-  .promo__btn { margin-top: 6px; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: var(--radius-md); background: #fff; color: var(--green-700); font-weight: 700; }
-  @media (max-width: 767.98px) { .promo__scrim { background: linear-gradient(0deg, rgba(2, 53, 26, .9) 0%, rgba(2, 53, 26, .55) 60%, rgba(2, 53, 26, .2) 100%); } .promo__copy { justify-content: flex-end; } }
+  .promo__btn { margin-top: 6px; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: var(--radius-btn); background: #fff; color: var(--green-700); font-weight: 700; }
 
-  /* Green production: the two facts that matter, then the three factories on one grid */
-  .green-highlights { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-  .green-highlights li { display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; border-radius: 14px; background: var(--green-50); border: 1px solid var(--green-100); }
-  .green-highlights li:first-child { flex-basis: 100%; background: var(--green-500); border-color: var(--green-500); color: #fff; }
-  .green-highlights strong { font: 700 20px/1.2 var(--font-display); color: var(--green-800); white-space: nowrap; }
-  .green-highlights li:first-child strong { font: 800 clamp(28px, 2.8vw, 36px)/1.1 var(--font-display); color: #fff; }
-  .green-highlights span { font-size: 13px; color: var(--text-secondary); text-align: start; }
-  .green-highlights li:first-child span { color: var(--green-50); font-size: 14px; }
-  .factories { list-style: none; margin: 0; padding: 14px 0 0; border-top: 1px solid var(--border-default); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  /* ── Sản phẩm: thẻ ảnh + tên; di chuột hiện mô tả ── */
+  .pcard-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+  .pcard-grid--crops { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
+  .pcard-grid--crops .pcard__body { padding: 14px 16px 16px; }
+  .pcard-grid--crops .pcard__title { font-size: 16px; }
+  .pcard-grid--crops .pcard__desc > span { font-size: 14px; }
+  .pcard { display: flex; flex-direction: column; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg);
+    overflow: hidden; color: var(--text-primary); text-decoration: none; transition: box-shadow var(--motion-base) var(--ease-out), border-color var(--motion-base), transform var(--motion-base) var(--ease-out); }
+  .pcard:hover { color: var(--text-primary); text-decoration: none; border-color: var(--green-200); box-shadow: var(--shadow-md); }
+  .pcard__img { position: relative; display: block; height: 236px; background: var(--surface-sunken); }
+  .pcard-grid--crops .pcard__img { height: 190px; }
+  .pcard__body { display: flex; flex-direction: column; padding: 18px 20px 20px; }
+  .pcard__title { font: 600 18px/1.35 var(--font-display); }
+  .pcard__desc { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--motion-slow) var(--ease-out); }
+  .pcard__desc > span { min-height: 0; overflow: hidden; opacity: 0; color: var(--text-secondary); font-size: 15px; line-height: 1.55; text-align: start; transition: opacity var(--motion-slow) var(--ease-out), margin var(--motion-slow); }
+  @media (hover: hover) {
+    .pcard:hover .pcard__desc, .pcard:focus-visible .pcard__desc { grid-template-rows: 1fr; }
+    .pcard:hover .pcard__desc > span, .pcard:focus-visible .pcard__desc > span { opacity: 1; margin-top: 8px; }
+  }
+  @media (hover: none) { .pcard__desc { grid-template-rows: 1fr; } .pcard__desc > span { opacity: 1; margin-top: 6px; } }
+
+  /* ── Sản xuất xanh ── */
+  .plant { position: relative; display: flex; min-height: 720px; background: var(--gray-800); }
+  .plant__photo { position: absolute; inset: 0; }
+  .plant__wrap { position: relative; width: 100%; padding-block: 56px; display: flex; align-items: flex-start; pointer-events: none; }
+  .plant__card { width: min(100%, 500px); pointer-events: auto; display: flex; flex-direction: column; gap: 16px; padding: clamp(26px, 3vw, 34px);
+    background: rgba(255, 255, 255, .96); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); backdrop-filter: blur(6px); }
+  .plant__title { margin: 0; font: var(--type-h3); font-size: clamp(24px, 2.2vw, 30px); color: var(--green-800); text-wrap: balance; }
+  .plant__text { margin: 0; color: var(--text-secondary); }
+  .plant__capacity { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border-radius: var(--radius-md); background: var(--brand-bright); color: #fff; }
+  .plant__capacity strong { font: 700 clamp(28px, 2.6vw, 34px)/1.1 var(--font-display); }
+  .plant__capacity span { font-size: 14px; color: var(--green-50); }
+  .plant__certs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .plant__certs li { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border: 1px solid var(--border-default); border-radius: var(--radius-md); background: #fff; }
+  .plant__certs strong { font: 600 17px/1.3 var(--font-display); color: var(--text-primary); white-space: nowrap; }
+  .plant__certs span { font-size: 13px; color: var(--text-secondary); }
+  .factories { list-style: none; margin: 0; padding: 16px 0 0; border-top: 1px solid var(--border-default); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
   .factories li { display: flex; flex-direction: column; gap: 2px; text-align: start; }
-  .factories__kind { font: var(--type-eyebrow); letter-spacing: .06em; text-transform: uppercase; color: var(--green-700); font-size: 11px; }
-  .factories strong { font: 700 15px/1.3 var(--font-display); }
+  .factories__kind { font: 600 11px/1.4 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--green-700); }
+  .factories strong { font: 600 14px/1.35 var(--font-display); }
   .factories__place { font-size: 13px; color: var(--text-secondary); }
-  @media (max-width: 479.98px) { .green-highlights li:not(:first-child) { flex: 1 1 0; min-width: 0; padding: 10px 12px; } .green-highlights strong { font-size: 16px; } .factories { grid-template-columns: minmax(0, 1fr); gap: 10px; } }
+
+  /* ── Thẻ tin (Phát triển bền vững, Tin tức) ── */
+  .ncard-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+  .ncard { display: flex; flex-direction: column; gap: 12px; color: var(--text-primary); text-decoration: none; min-width: 0; }
+  a.ncard:hover { color: var(--green-700); text-decoration: none; }
+  .ncard__img { position: relative; display: block; aspect-ratio: 285 / 176; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-sunken); }
+  .ncard__meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 24px; min-width: 0; }
+  .ncard__meta .h-chip { min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: block; }
+  .ncard__meta time { font-size: 12px; color: var(--text-tertiary); white-space: nowrap; }
+  .ncard__title { font: 500 17px/1.45 var(--font-display); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-wrap: pretty; }
+
+  /* ── Con người ── */
+  .people { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px 56px; align-items: center; }
+  .people__photos { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: 236px 168px; gap: 12px; }
+  .people__photo { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-width: 0; }
+  .people__photo--tall { grid-row: span 2; }
+  .people__body { display: flex; flex-direction: column; gap: 18px; }
+  .people__text { margin: 0; color: var(--text-secondary); font-size: var(--fs-body); line-height: 1.7; }
+  .people__points { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 28px; }
+  .people__points div { display: flex; flex-direction: column; gap: 4px; padding-top: 14px; border-top: 2px solid var(--brand-bright); }
+  .people__points dt { font: 600 16px/1.35 var(--font-display); color: var(--text-primary); }
+  .people__points dd { margin: 0; font-size: 14px; line-height: 1.5; color: var(--text-secondary); text-align: start; }
+  .people__actions { display: flex; gap: 12px; flex-wrap: wrap; padding-top: 6px; }
+
+  /* ── Tablet & phone ── */
+  @media (max-width: 1023.98px) {
+    .h-head--split { grid-template-columns: minmax(0, 1fr); align-items: start; }
+    .h-head--tabs { flex-direction: column; align-items: flex-start; }
+    .intro-grid, .lab-grid, .people { grid-template-columns: minmax(0, 1fr); }
+    .intro-photo { min-height: 320px; }
+    .lab-photo { min-height: 340px; }
+    .h-awards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pcard-grid, .ncard-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pcard-grid--crops { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .org { grid-template-columns: minmax(0, 1fr); }
+    .org__photo { min-height: 260px; }
+  }
+  @media (max-width: 767.98px) {
+    .hero-slider { height: 78svh; min-height: 540px; max-height: 720px; }
+    .hero-scrim { background: linear-gradient(0deg, rgba(0, 71, 35, .92) 0%, rgba(0, 71, 35, .72) 45%, rgba(0, 71, 35, .2) 100%); }
+    .hero-layer { align-items: flex-end; padding-bottom: 64px; }
+    .hero-copy { gap: 16px; }
+    .hero-arrow { display: none; }
+    .aud-grid { grid-template-columns: minmax(0, 1fr); }
+    .pcard-grid--crops { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .pcard-grid--crops .pcard__img { height: 130px; }
+    .pcard-grid--crops .pcard__body { padding: 12px 14px 14px; }
+    .pcard-grid--crops .pcard__title { font-size: 16px; }
+    .org__facts { grid-template-columns: minmax(0, 1fr); }
+    .plant { min-height: 0; flex-direction: column; }
+    .plant__photo { position: relative; height: 260px; }
+    .plant__wrap { padding-block: 0 40px; margin-top: -48px; }
+    .people__photos { grid-template-rows: 200px 140px; }
+    .intro-stats { gap: 0 18px; }
+    .intro-cta { min-width: 0; }
+  }
+  @media (max-width: 479.98px) {
+    .h-awards { gap: 28px 16px; }
+    .h-award__img { height: 120px; }
+    .h-award__title { font-size: 14px; }
+    .h-award__sub { font-size: 13px; }
+    .people__points { grid-template-columns: minmax(0, 1fr); }
+    .factories { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+    .plant__certs strong { font-size: 15px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .hero-slide { transition: none; } }
 </style>
 <script>
   // Hero slider: manual only (arrows, dots, swipe); slides without a photo are dropped on public pages.
@@ -307,7 +534,6 @@ const hasBanner = isFilled(banner?.image?.src);
     try { return localStorage.getItem('tn-edit-photos') === '1'; } catch { return false; }
   })();
   if (slider && !editing) {
-    // Slides without a photo stay out of the public slider (the photo editor still shows them).
     slider.querySelectorAll<HTMLElement>('[data-empty-slide]').forEach((s) => {
       slider.querySelector(`[data-slide-to="${s.dataset.slide}"]`)?.remove();
       s.remove();
@@ -317,18 +543,14 @@ const hasBanner = isFilled(banner?.image?.src);
   if (slider) {
     const slides = [...slider.querySelectorAll<HTMLElement>('.hero-slide')];
     const dots = [...slider.querySelectorAll<HTMLElement>('[data-slide-to]')];
-    let cur = 0, paused = false;
-    const show = (k: number) => {
-      cur = (k + slides.length) % slides.length;
+    let cur = 0;
+    const show = (n: number) => {
+      cur = (n + slides.length) % slides.length;
       slides.forEach((s, i) => { s.classList.toggle('is-active', i === cur); s.setAttribute('aria-hidden', String(i !== cur)); });
       dots.forEach((d, i) => d.setAttribute('aria-selected', String(i === cur)));
     };
     slider.querySelectorAll<HTMLElement>('[data-slide-step]').forEach((b) => b.addEventListener('click', () => show(cur + Number(b.dataset.slideStep))));
     dots.forEach((d) => d.addEventListener('click', () => show(Number(d.dataset.slideTo))));
-    slider.addEventListener('mouseenter', () => { paused = true; });
-    slider.addEventListener('mouseleave', () => { paused = false; });
-    slider.addEventListener('focusin', () => { paused = true; });
-    slider.addEventListener('focusout', () => { paused = false; });
     let x0: number | null = null;
     slider.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') x0 = e.clientX; });
     slider.addEventListener('pointerup', (e) => {
@@ -336,8 +558,6 @@ const hasBanner = isFilled(banner?.image?.src);
       const dx = e.clientX - x0; x0 = null;
       if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
     });
-    // No autoplay: people read the first message, then choose to see more (arrows, dots, swipe).
-    void paused;
   }
 
   document.getElementById('product-tabs')?.addEventListener('tabs:change', (e) => {
