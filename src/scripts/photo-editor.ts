@@ -41,14 +41,14 @@ const store = {
 const css = `
 .pe-on .img-slot{cursor:pointer}
 .pe-on .img-slot::after{content:'';position:absolute;inset:0;border-radius:inherit;outline:2px dashed rgba(0,149,79,.55);outline-offset:-2px;pointer-events:none;z-index:5}
-.pe-badge{position:absolute;left:8px;top:8px;z-index:6;display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:0;border-radius:999px;background:#00954f;color:#fff;font:600 13px 'Be Vietnam Pro',system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:pointer}
+.pe-badge{position:absolute;left:8px;top:8px;z-index:6;display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:0;border-radius:999px;background:#00954f;color:#fff;font:600 13px 'Alexandria',system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:pointer}
 .pe-active{z-index:20;touch-action:none;cursor:grab !important}
 .pe-active::after{outline:3px solid #00954f !important}
 .pe-active .pe-badge{display:none}
-.pe-bar{position:fixed;left:12px;bottom:12px;z-index:70;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;max-width:calc(100vw - 24px);padding:10px 14px;border-radius:14px;background:#1c201c;color:#fff;font:500 14px 'Be Vietnam Pro',system-ui,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.3)}
-.pe-bar button,.pe-panel button{font:600 14px 'Be Vietnam Pro',system-ui,sans-serif;border-radius:10px;padding:8px 14px;cursor:pointer;border:1px solid transparent}
+.pe-bar{position:fixed;left:12px;bottom:12px;z-index:70;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;max-width:calc(100vw - 24px);padding:10px 14px;border-radius:14px;background:#1c201c;color:#fff;font:500 14px 'Alexandria',system-ui,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.pe-bar button,.pe-panel button{font:600 14px 'Alexandria',system-ui,sans-serif;border-radius:10px;padding:8px 14px;cursor:pointer;border:1px solid transparent}
 .pe-ghost{background:transparent;color:inherit;border-color:rgba(255,255,255,.35) !important}
-.pe-panel{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:80;width:min(560px,calc(100vw - 24px));display:flex;flex-direction:column;gap:10px;padding:14px 16px;border-radius:16px;background:#fff;color:#1c201c;font:14px/1.45 'Be Vietnam Pro',system-ui,sans-serif;box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.pe-panel{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:80;width:min(560px,calc(100vw - 24px));display:flex;flex-direction:column;gap:10px;padding:14px 16px;border-radius:16px;background:#fff;color:#1c201c;font:14px/1.45 'Alexandria',system-ui,sans-serif;box-shadow:0 12px 40px rgba(0,0,0,.3)}
 .pe-panel strong{font-size:15px}
 .pe-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .pe-primary{background:#00954f;color:#fff}
@@ -57,7 +57,7 @@ const css = `
 .pe-muted{color:#565f56;font-size:13px}
 .pe-panel input[type=range]{flex:1;min-width:140px;accent-color:#00954f}
 .pe-dialog{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.45)}
-.pe-dialog>div{width:min(520px,100%);max-height:90vh;overflow:auto;display:flex;flex-direction:column;gap:12px;padding:20px;border-radius:16px;background:#fff;color:#1c201c;font:14px/1.55 'Be Vietnam Pro',system-ui,sans-serif}
+.pe-dialog>div{width:min(520px,100%);max-height:90vh;overflow:auto;display:flex;flex-direction:column;gap:12px;padding:20px;border-radius:16px;background:#fff;color:#1c201c;font:14px/1.55 'Alexandria',system-ui,sans-serif}
 .pe-dialog input[type=password]{padding:10px 12px;border:1px solid #c2c8c1;border-radius:10px;font:14px monospace}
 .pe-dialog ol{margin:0;padding-left:20px}
 `;

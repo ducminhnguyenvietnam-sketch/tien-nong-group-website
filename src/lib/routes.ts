@@ -9,26 +9,27 @@ export type PageSlug = (typeof PAGES)[number];
 export type SubNav = [string, PageSlug, string];
 
 /**
- * Main navigation: [label, slug, sub-pages?]. The label doubles as the header's `active` key;
+ * Main navigation (order from the Figma "Final" header): [label, slug, sub-pages?]. The label doubles as the header's `active` key;
  * shown labels come from site.json (header.nav / header.subnav).
  */
 export const NAV: [string, PageSlug, SubNav[]?][] = [
+  ['Trang chủ', 'trang-chu'],
   ['Về Tiến Nông', 've-tien-nong', [
     ['Giới thiệu chung', 've-tien-nong', 'gioi_thieu'],
     ['Văn hóa doanh nghiệp', 've-tien-nong/van-hoa-doanh-nghiep', 'van_hoa_doanh_nghiep'],
   ]],
-  ['Tin tức', 'tin-tuc'],
   ['Khoa học & Công nghệ', 'khoa-hoc-cong-nghe'],
-  ['Sản phẩm', 'san-pham'],
   ['Giải pháp', 'giai-phap', [
     ['Cho cây trồng', 'giai-phap', 'giai_phap_cay_trong'],
     ['Cho dự án', 'giai-phap-du-an', 'giai_phap_du_an'],
   ]],
+  ['Sản phẩm', 'san-pham'],
   ['Phát triển bền vững', 'phat-trien-ben-vung', [
     ['Tổng quan', 'phat-trien-ben-vung', 'ptbv_tong_quan'],
     ['Xanh hoá Trường Sa', 'phat-trien-ben-vung/xanh-hoa-truong-sa', 'xanh_hoa_truong_sa'],
   ]],
   ['Nông dân Tiến Nông', 'nong-dan'],
+  ['Tin tức', 'tin-tuc'],
 ];
 
 /** URL for a page, optionally with an in-page anchor. The home page lives at the site root. */

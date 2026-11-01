@@ -10,21 +10,30 @@
   },
   "social": {
     "facebook": "https://www.facebook.com/tiennong.vn",
+    "messenger": "https://m.me/tiennong.vn",
     "youtube": "https://www.youtube.com/@tiennong",
-    "tiktok": "https://www.tiktok.com/@tiennong.vn"
+    "tiktok": "https://www.tiktok.com/@tiennong.vn",
+    "linkedin": "",
+    "zalo": ""
   },
   "legal": {
     "privacy_label": "Chính sách bảo mật",
-    "terms_label": "Điều khoản sử dụng",
-    "ministry_badge": "Logo Bộ Công Thương"
+    "terms_label": "Điều khoản sử dụng"
   },
   "header": {
+    "top_dealers": "Đại lý",
     "top_jobs": "Tuyển dụng",
     "top_contact": "Liên hệ",
+    "lang_vi": "Tiếng Việt",
+    "lang_en": "English",
+    "lang_zh": "中文",
+    "english_url": "",
+    "chinese_url": "",
     "cta": "Trở thành đối tác",
     "menu_open": "☰ Menu",
     "menu_close": "✕ Đóng",
     "nav": {
+      "trang_chu": "Trang chủ",
       "ve_tien_nong": "Về Tiến Nông",
       "tin_tuc": "Tin tức",
       "khoa_hoc_cong_nghe": "Khoa học & Công nghệ",
@@ -43,20 +52,20 @@
     }
   },
   "footer": {
-    "col1_title": "Tiến Nông",
-    "col1_about": "Về chúng tôi",
-    "col1_science": "Khoa học & Công nghệ",
-    "col1_sustainability": "Phát triển bền vững",
-    "col1_jobs": "Tuyển dụng",
-    "col2_title": "Sản phẩm & giải pháp",
-    "col2_products": "Sản phẩm",
-    "col2_crop_solutions": "Giải pháp theo cây trồng",
-    "col2_project_solutions": "Giải pháp cho dự án",
-    "col2_farmers": "Nông dân Tiến Nông",
-    "col3_title": "Kết nối",
-    "col3_dealers": "Tìm đại lý",
-    "col3_contact": "Liên hệ",
-    "col3_news": "Tin tức",
+    "explore_title": "Khám phá",
+    "link_about": "Về Tiến Nông",
+    "link_products": "Sản phẩm",
+    "link_solutions": "Giải pháp",
+    "link_science": "Khoa học & Công nghệ",
+    "link_sustainability": "Phát triển bền vững",
+    "link_farmers": "Nông dân Tiến Nông",
+    "connect_title": "Kết nối",
+    "link_news": "Tin tức",
+    "link_partner": "Trở thành đối tác",
+    "link_dealers": "Đại lý",
+    "link_jobs": "Tuyển dụng",
+    "link_contact": "Liên hệ",
+    "follow_title": "Theo dõi Tiến Nông",
     "floating_button": "Liên hệ tư vấn"
   }
 }

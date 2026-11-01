@@ -25,7 +25,7 @@ const variants = {
   ghost: 'background:transparent;color:var(--green-700);border:1px solid transparent',
   danger: 'background:var(--color-error);color:#fff;border:1px solid transparent',
 };
-const css = `${sizes[size]};${variants[variant]};font-family:var(--font-body);font-weight:var(--weight-semibold);line-height:normal;border-radius:var(--radius-md);display:inline-flex;align-items:center;gap:8px;cursor:pointer;${style}`;
+const css = `${sizes[size]};${variants[variant]};font-family:var(--font-body);font-weight:var(--weight-semibold);line-height:normal;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:8px;cursor:pointer;${style}`;
 const cls = `ds-btn ds-btn--${variant}`;
 ---
 {as === 'span'
