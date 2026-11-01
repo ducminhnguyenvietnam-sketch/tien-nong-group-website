@@ -41,7 +41,7 @@
     }
   ],
   "models": {
-    "eyebrow": "01 · HÌNH THỨC HỢP TÁC",
+    "eyebrow": "HÌNH THỨC HỢP TÁC",
     "title": "Bạn là ai, chúng tôi hợp tác theo cách phù hợp",
     "intro": "",
     "items": [
@@ -76,7 +76,7 @@
     ]
   },
   "why": {
-    "eyebrow": "02 · VÌ SAO CHỌN TIẾN NÔNG",
+    "eyebrow": "VÌ SAO CHỌN TIẾN NÔNG",
     "title": "Bán được hàng, giữ được uy tín, đi được đường dài",
     "items": [
       {
@@ -98,7 +98,7 @@
     ]
   },
   "benefits": {
-    "eyebrow": "03 · QUYỀN LỢI",
+    "eyebrow": "QUYỀN LỢI",
     "title": "Đối tác của Tiến Nông được gì?",
     "intro": "Tiến Nông xây dựng quan hệ hợp tác dài hạn, cùng chia sẻ lợi ích với đại lý và nhà phân phối.",
     "items": [
@@ -135,7 +135,7 @@
     }
   },
   "spotlight": {
-    "eyebrow": "04 · CÂU CHUYỆN ĐỐI TÁC",
+    "eyebrow": "CÂU CHUYỆN ĐỐI TÁC",
     "title": "Những người đã đi cùng Tiến Nông",
     "intro": "Trích từ chuỗi bài “Hành trình tri ân – kết nối niềm tin” năm 2026, khi Tiến Nông đến thăm những nhà phân phối gắn bó lâu năm.",
     "partners": [
@@ -242,7 +242,7 @@
     "link": "/tin-tuc/le-ra-mat-clb-nha-phan-phoi-tien-nong-ha-tinh/"
   },
   "process": {
-    "eyebrow": "05 · QUY TRÌNH",
+    "eyebrow": "QUY TRÌNH",
     "title": "Năm bước để trở thành đối tác",
     "steps": [
       {
@@ -268,7 +268,7 @@
     ]
   },
   "conditions": {
-    "eyebrow": "06 · ĐIỀU KIỆN",
+    "eyebrow": "ĐIỀU KIỆN",
     "title": "Điều kiện trở thành đối tác",
     "intro": "Tiến Nông hợp tác với cửa hàng vật tư nông nghiệp và doanh nghiệp phân phối đáp ứng các điều kiện sau.",
     "items": [
@@ -334,7 +334,7 @@
     ]
   },
   "region": {
-    "eyebrow": "07 · LIÊN HỆ KHU VỰC",
+    "eyebrow": "LIÊN HỆ KHU VỰC",
     "title": "Chọn tỉnh/thành, gặp ngay người phụ trách",
     "intro": "Ba giám đốc kinh doanh phụ trách ba vùng trên cả nước. Chọn tỉnh/thành để liên hệ trực tiếp người phụ trách.",
     "select_label": "Tỉnh / thành phố",

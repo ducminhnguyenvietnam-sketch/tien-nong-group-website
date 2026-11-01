@@ -1636,6 +1636,9 @@ content:
       - name: intro
         label: Đoạn giới thiệu
         type: text
+      - name: image
+        label: Ảnh bên trái (ví dụ bức Tâm niệm)
+        component: photo
       - name: items
         label: Các điều tâm niệm
         type: object
@@ -1683,6 +1686,9 @@ content:
         - name: link
           label: Đường dẫn tới minh chứng
           type: string
+        - name: image
+          label: Ảnh minh hoạ (để trống thì lấy ảnh bìa của bài tin ở Đường dẫn)
+          component: photo
     - name: traditions
       label: 07 · Nghi thức của gia đình Tiến Nông
       type: object
@@ -1737,6 +1743,9 @@ content:
             collapsed: true
             summary: '{fields.title}'
         fields:
+        - name: label
+          label: Nhãn nhỏ (ví dụ ĐÀO TẠO NỘI BỘ · 04/2026)
+          type: string
         - name: title
           label: Tiêu đề
           type: string
@@ -1759,6 +1768,9 @@ content:
       - name: title
         label: Tiêu đề
         type: string
+      - name: highlight
+        label: Phần tiêu đề tô màu vàng (gõ đúng chữ có trong tiêu đề)
+        type: string
       - name: intro
         label: Đoạn giới thiệu
         type: text
@@ -1766,7 +1778,7 @@ content:
         label: Chữ hiện khi chưa có video
         type: string
       - name: videos
-        label: Video bài hát
+        label: Video (video đầu tiên hiện lớn, các video sau xếp bên phải)
         type: object
         list:
           collapsible:
@@ -1775,6 +1787,9 @@ content:
         fields:
         - name: title
           label: Tên bài hát
+          type: string
+        - name: label
+          label: Nhãn nhỏ (ví dụ BÀI HÁT, PHIM GIỚI THIỆU)
           type: string
         - name: note
           label: Sáng tác / trình bày
@@ -1841,6 +1856,9 @@ content:
       fields:
       - name: title
         label: Lời mời
+        type: string
+      - name: text
+        label: Dòng mô tả ngắn (có thể để trống)
         type: string
       - name: button_jobs
         label: Nút cơ hội nghề nghiệp

@@ -69,3 +69,10 @@ export function pageList(page: number, pages: number): number[] {
   [...keep].sort((a, b) => a - b).forEach((n, i, arr) => { if (i && n - arr[i - 1] > 1) out.push(0); out.push(n); });
   return out;
 }
+
+/** The article a site link points to ("/tin-tuc/<id>/"), if it is one of our news articles. */
+export async function newsByLink(href?: string | null): Promise<NewsEntry | undefined> {
+  const m = (href ?? '').match(/\/tin-tuc\/([^/#?]+)\/?/);
+  if (!m) return undefined;
+  return (await getCollection('news')).find((e) => e.id === m[1]);
+}

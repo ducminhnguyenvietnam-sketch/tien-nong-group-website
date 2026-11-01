@@ -17,29 +17,29 @@
   },
   "s01_tieu_de": {
     "t1": "Trang chủ",
-    "t2": "/ Sản phẩm",
-    "t3": "SẢN PHẨM",
+    "t2": "/ Sản phẩm",
+    "t3": "SẢN PHẨM",
     "t4": "Dinh dưỡng lý tưởng cho từng loại cây trồng",
-    "t5": "Các sản phẩm đều có mã số phân bón, được sản xuất theo ISO 9001:2015 & ISO 14001:2015 và kiểm nghiệm chất lượng tại phòng thí nghiệm đạt chuẩn VILAS 1519 & VALAS 262.",
-    "t6": "Tải catalogue sản phẩm (PDF) →",
-    "t7": "Tìm đại lý gần nhất →"
+    "t5": "Các sản phẩm đều có mã số phân bón, được sản xuất theo ISO 9001:2015 & ISO 14001:2015 và kiểm nghiệm chất lượng tại phòng thí nghiệm đạt chuẩn VILAS 1519 & VALAS 262.",
+    "t6": "Tải catalogue sản phẩm (PDF) →",
+    "t7": "Tìm đại lý gần nhất →"
   },
   "s02_danh_sach": {
-    "t1": "Tìm sản phẩm",
+    "t1": "Tìm sản phẩm",
     "f1": "Tên sản phẩm, công thức NPK…",
     "f2": "Cây trồng",
     "f3": "Sắp xếp",
-    "t2": "sản phẩm",
-    "t3": "Xóa bộ lọc",
-    "t4": "Không tìm thấy sản phẩm phù hợp. Hãy thử bỏ bớt bộ lọc hoặc",
-    "t5": "liên hệ kỹ sư Tiến Nông",
-    "t6": "để được tư vấn."
+    "t2": "sản phẩm",
+    "t3": "Xóa bộ lọc",
+    "t4": "Không tìm thấy sản phẩm phù hợp. Hãy thử bỏ bớt bộ lọc hoặc",
+    "t5": "liên hệ kỹ sư Tiến Nông",
+    "t6": "để được tư vấn."
   },
   "s03_tu_van": {
-    "t1": "Cần tư vấn lựa chọn sản phẩm phù hợp?",
-    "t2": "Kỹ sư nông học của Tiến Nông sẽ tư vấn chương trình dinh dưỡng phù hợp với từng loại cây trồng và điều kiện canh tác.",
-    "t3": "Giải pháp theo cây trồng",
-    "t4": "Gọi kỹ sư tư vấn"
+    "t1": "Cần tư vấn lựa chọn sản phẩm phù hợp?",
+    "t2": "Kỹ sư nông học của Tiến Nông sẽ tư vấn chương trình dinh dưỡng phù hợp với từng loại cây trồng và điều kiện canh tác.",
+    "t3": "Giải pháp theo cây trồng",
+    "t4": "Gọi kỹ sư tư vấn"
   },
   "lines_all_label": "Tất cả",
   "lines": [

@@ -1,0 +1,56 @@
+---
+/**
+ * Key figures in one white card under a page hero (Về Tiến Nông, Văn hóa doanh nghiệp): big numbers,
+ * a "+" in the accent yellow, a short label on one line, thin dividers between the figures.
+ * With `overlap` the card rides up onto the bottom of the hero photo on wide screens.
+ */
+import { isFilled } from '../lib/content';
+
+interface Fig { value?: string; label?: string; sub?: string }
+interface Props { items: Fig[]; overlap?: boolean }
+const items = (Astro.props.items ?? []).filter((f) => isFilled(f.value));
+const { overlap = false } = Astro.props;
+const parts = (v: string) => { const m = String(v).match(/^(.*?)(\+?)$/); return m ? [m[1], m[2]] : [v, '']; };
+---
+{items.length > 0 && <section class:list={['figs', { 'figs--overlap': overlap }]}>
+<div class="figs__wrap">
+<ul class="figs__card" style={`--n:${items.length};--tn:${items.length % 3 === 0 ? 3 : 2}`}>
+{items.map((f) => { const [num, plus] = parts(f.value!); return (
+  <li class="figs__item">
+    <span class="figs__value">{num}{plus && <span class="figs__plus">{plus}</span>}</span>
+    <span class="figs__label">{f.label}</span>
+    {isFilled(f.sub) && <span class="figs__sub">{f.sub}</span>}
+  </li>
+); })}
+</ul>
+</div></section>}
+
+<style>
+  .figs { position: relative; z-index: 2; background: var(--surface-page); }
+  .figs__wrap { max-width: 1280px; margin: 0 auto; padding: clamp(28px, 4vw, 44px) clamp(20px, 4vw, 56px) 0; }
+  .figs--overlap .figs__wrap { padding-top: 0; }
+  .figs--overlap .figs__card { margin-top: -56px; }
+  .figs__card { list-style: none; margin: 0; padding: 8px; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+    background: var(--surface-card); border-radius: var(--radius-xl); box-shadow: 0 18px 40px rgba(0, 71, 35, .12), 0 2px 6px rgba(0, 71, 35, .06);
+    border-top: 4px solid var(--brand-bright); }
+  .figs__item { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 26px 14px 24px; min-width: 0; }
+  .figs__item + .figs__item::before { content: ''; position: absolute; left: 0; top: 24px; bottom: 24px; width: 1px; background: var(--border-default); }
+  .figs__value { display: block; font: 700 clamp(28px, 2.6vw, 38px)/1 var(--font-display); color: var(--green-800); letter-spacing: -.01em; white-space: nowrap; }
+  .figs__plus { color: var(--brand-highlight); margin-left: 1px; }
+  .figs__value::after { content: ''; display: block; width: 28px; height: 3px; margin: 14px auto 0; border-radius: 2px; background: var(--brand-bright); }
+  .figs__label { font-size: 15px; line-height: 1.4; color: var(--text-primary); white-space: nowrap; text-align: center; }
+  .figs__label::first-letter { text-transform: uppercase; }
+  .figs__sub { font-size: 13px; line-height: 1.45; color: var(--text-tertiary); text-align: center; text-align-last: center; }
+  @media (max-width: 1099.98px) {
+    .figs__card { grid-template-columns: repeat(var(--tn), minmax(0, 1fr)); }
+    .figs__item::before { display: none; }
+    .figs__label { white-space: normal; }
+  }
+  @media (max-width: 767.98px) {
+    .figs--overlap .figs__wrap { padding-top: 28px; }
+    .figs--overlap .figs__card { margin-top: 0; }
+    .figs__card { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .figs__item::before { display: none; }
+    .figs__item { padding: 18px 10px; }
+  }
+</style>

@@ -137,7 +137,7 @@
   "plant": {
     "eyebrow": "TRỤ CỘT 2 · NHÀ MÁY XANH",
     "title": "Sản xuất quy mô lớn, thân thiện với môi trường",
-    "text": "Các nhà máy của Tiến Nông vận hành theo hệ thống quản lý môi trường ISO 14001, với khuôn viên xanh và quy trình kiểm soát phát thải trong toàn bộ dây chuyền. Nước thải được xử lý và tuần hoàn để dùng lại trong sản xuất phân vi sinh, tưới cây và xử lý khí thải; khuôn viên nhà máy có vườn cây ăn trái và vườn rau bón bằng phân hữu cơ do chính nhà máy sản xuất.",
+    "text": "Các nhà máy của Tiến Nông vận hành theo hệ thống quản lý môi trường ISO 14001, với khuôn viên xanh và quy trình kiểm soát phát thải trong toàn bộ dây chuyền. Nước thải được xử lý và tuần hoàn để dùng lại trong sản xuất phân vi sinh, tưới cây và xử lý khí thải; khuôn viên nhà máy có vườn cây ăn trái và vườn rau bón bằng phân hữu cơ do chính nhà máy sản xuất.",
     "image": {
       "focus": "100% 2.6%",
       "zoom": "110",
@@ -147,7 +147,7 @@
     "facts": [
       {
         "value": "[x]%",
-        "label": "diện tích cây xanh"
+        "label": "diện tích cây xanh"
       },
       {
         "value": "Kiểm soát tại nguồn",
@@ -393,9 +393,9 @@
   },
   "workers": {
     "eyebrow": "NGƯỜI LAO ĐỘNG",
-    "title": "Gắn bó bền lâu, cùng nhau phát triển",
+    "title": "Gắn bó bền lâu, cùng nhau phát triển",
     "text": "Môi trường làm việc an toàn, đãi ngộ xứng đáng và sự ghi nhận dành cho mỗi chặng đường cống hiến — thâm niên làm việc bình quân của người Tiến Nông là 10 năm.",
-    "button": "Con người Tiến Nông →"
+    "button": "Con người Tiến Nông →"
   },
   "governance": {
     "eyebrow": "MINH BẠCH & GHI NHẬN",
@@ -422,23 +422,23 @@
   },
   "roadmap": {
     "eyebrow": "LỘ TRÌNH",
-    "title": "Hướng tới báo cáo phát triển bền vững đầu tiên",
-    "intro": "Chúng tôi đang chuẩn hóa việc đo lường và công bố các chỉ số môi trường, xã hội và quản trị, hướng tới minh bạch theo thông lệ quốc tế.",
+    "title": "Hướng tới báo cáo phát triển bền vững đầu tiên",
+    "intro": "Chúng tôi đang chuẩn hóa việc đo lường và công bố các chỉ số môi trường, xã hội và quản trị, hướng tới minh bạch theo thông lệ quốc tế.",
     "steps": [
       {
         "when": "2026",
         "title": "Thực hành",
-        "text": "ISO 14001, chương trình cộng đồng và tập huấn nhà nông được duy trì thường xuyên."
+        "text": "ISO 14001, chương trình cộng đồng và tập huấn nhà nông được duy trì thường xuyên."
       },
       {
         "when": "07/2026",
         "title": "Đo lường",
-        "text": "Uỷ ban ESG được thành lập. Xây dựng bộ chỉ số và hệ thống thu thập dữ liệu."
+        "text": "Uỷ ban ESG được thành lập. Xây dựng bộ chỉ số và hệ thống thu thập dữ liệu."
       },
       {
         "when": "2027",
         "title": "Công bố",
-        "text": "Phát hành báo cáo phát triển bền vững đầu tiên."
+        "text": "Phát hành báo cáo phát triển bền vững đầu tiên."
       }
     ]
   }

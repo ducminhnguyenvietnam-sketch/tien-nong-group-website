@@ -9,6 +9,7 @@ import raw from '../../content/pages/xanh-hoa-truong-sa.json';
 import siteRaw from '../../content/site.json';
 import { isFilled, withDefaults } from '../../lib/content';
 import Layout from '../../layouts/Layout.astro';
+import CtaBand from '../../components/CtaBand.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
 import PageHero from '../../components/PageHero.astro';
 import Head from '../../components/story/Head.astro';
@@ -135,10 +136,7 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 </div>
 </div></section>}
 
-<section class="ts-cta"><div class="ts-wrap ts-cta__row">
-<div class="ts-cta__copy"><h2>{c.cta.title}</h2>{!c.form.open && isFilled(c.form.closed_text) && <p>{c.form.closed_text}</p>}</div>
-<div class="ts-cta__actions">{c.form.open && <a href="#gui-loi-chuc" class="ts-btn ts-btn--solid">{c.cta.button_wish}</a>}<a href={url('phat-trien-ben-vung')} class="ts-btn">{c.cta.button_back}</a></div>
-</div></section>
+<CtaBand title={c.cta.title} text={!c.form.open ? c.form.closed_text : ''} primary={c.form.open ? { label: c.cta.button_wish, href: '#gui-loi-chuc' } : undefined} secondary={{ label: c.cta.button_back, href: url('phat-trien-ben-vung') }} />
 </Layout>
 
 <style>

@@ -5,11 +5,11 @@
   },
   "hero": {
     "t1": "Trang chủ",
-    "t2": "/ Con người & Tuyển dụng",
+    "t2": "/ Con người & Tuyển dụng",
     "eyebrow": "CON NGƯỜI & TUYỂN DỤNG",
     "title": "Nơi người ta gắn bó và trưởng thành",
     "intro": "Thâm niên làm việc bình quân của người Tiến Nông là mười năm; hơn ba mươi người đã gắn bó trên hai mươi năm. Chúng tôi tìm những người trẻ được đào tạo bài bản, đúng chuyên ngành, muốn dùng nghề của mình để phục vụ đồng ruộng và sẵn sàng đi đường dài.",
-    "button1": "Xem vị trí đang tuyển →",
+    "button1": "Xem vị trí đang tuyển →",
     "button2": "Vì sao chọn Tiến Nông",
     "img1": {
       "src": "/uploads/hr-hero-1-mvelbc4b.jpg",
@@ -33,23 +33,23 @@
   "stats": [
     {
       "value": "400+",
-      "label": "cán bộ, nhân viên"
+      "label": "cán bộ, nhân viên"
     },
     {
       "value": "40+",
-      "label": "người gắn bó trên 20 năm"
+      "label": "người gắn bó trên 20 năm"
     },
     {
       "value": "10 năm",
-      "label": "thâm niên trung bình"
+      "label": "thâm niên trung bình"
     },
     {
       "value": "3",
-      "label": "nhà máy · trụ sở chính · TTNC"
+      "label": "nhà máy · trụ sở chính · TTNC"
     }
   ],
   "reasons": {
-    "eyebrow": "01 · VÌ SAO CHỌN TIẾN NÔNG",
+    "eyebrow": "VÌ SAO CHỌN TIẾN NÔNG",
     "title": "Tiến Nông cam kết",
     "items": [
       {
@@ -68,7 +68,7 @@
     "link_label": "Tìm hiểu văn hóa Tiến Nông →"
   },
   "paths": {
-    "eyebrow": "02 · CÁC KHỐI NGHỀ",
+    "eyebrow": "CÁC KHỐI NGHỀ",
     "title": "Bạn sẽ làm việc ở đâu",
     "intro": "Tiến Nông có trụ sở tại TP Thanh Hóa, ba nhà máy ở Bỉm Sơn, Hoằng Phú (Thanh Hóa) và Chư Sê (Gia Lai), cùng đội ngũ thị trường trên khắp cả nước.",
     "items": [
@@ -100,7 +100,7 @@
     ]
   },
   "growth": {
-    "eyebrow": "03 · LỘ TRÌNH PHÁT TRIỂN",
+    "eyebrow": "LỘ TRÌNH PHÁT TRIỂN",
     "title": "Từ nhân viên thị trường đến giám đốc kinh doanh",
     "quote": "“Tôi luôn tận tâm với công việc được giao, lan tỏa giá trị biết ơn và sẻ chia tới đồng nghiệp, cùng hướng tới Cộng đồng Tiến Nông”",
     "person": "Nguyễn Trung Trụ",
@@ -135,7 +135,7 @@
     ]
   },
   "training": {
-    "eyebrow": "04 · ĐÀO TẠO",
+    "eyebrow": "ĐÀO TẠO",
     "title": "Học liên tục, từ đồng ruộng đến nhà máy thông minh",
     "items": [
       {
@@ -161,13 +161,13 @@
     ]
   },
   "benefits": {
-    "eyebrow": "05 · ĐÃI NGỘ & GHI NHẬN",
-    "title": "Sự ghi nhận xứng đáng cho mỗi chặng đường",
-    "intro": "Ngoài chế độ lương thưởng cạnh tranh, Tiến Nông có những hình thức tri ân riêng dành cho người lao động gắn bó lâu năm.",
+    "eyebrow": "ĐÃI NGỘ & GHI NHẬN",
+    "title": "Sự ghi nhận xứng đáng cho mỗi chặng đường",
+    "intro": "Ngoài chế độ lương thưởng cạnh tranh, Tiến Nông có những hình thức tri ân riêng dành cho người lao động gắn bó lâu năm.",
     "cards": [
       {
-        "title": "Du lịch nước ngoài",
-        "text": "Hành trình khám phá dành cho toàn thể cán bộ, nhân viên.",
+        "title": "Du lịch nước ngoài",
+        "text": "Hành trình khám phá dành cho toàn thể cán bộ, nhân viên.",
         "image": {
           "src": "/uploads/ben-1-mvek6xtk.jpg",
           "focus": "51.9% 100%",
@@ -176,8 +176,8 @@
         }
       },
       {
-        "title": "Tặng vàng tri ân",
-        "text": "Dành cho người lao động gắn bó lâu năm cùng doanh nghiệp.",
+        "title": "Tặng vàng tri ân",
+        "text": "Dành cho người lao động gắn bó lâu năm cùng doanh nghiệp.",
         "image": {
           "src": "/uploads/ben-2-mvekzk8w.jpg",
           "focus": "76.7% 100%",
@@ -186,7 +186,7 @@
         }
       },
       {
-        "title": "Bảo Bình tài lộc",
+        "title": "Bảo Bình tài lộc",
         "text": "“Chiếc bình quý” mang số hiệu riêng, trao cho thành viên gắn bó lâu năm, quyền lợi tăng theo sự phát triển của công ty.",
         "image": {
           "src": "/uploads/ben-3-mvesebpt.jpg",
@@ -198,8 +198,8 @@
     ],
     "items": [
       {
-        "title": "Lương thưởng cạnh tranh",
-        "text": "Gắn với hiệu quả công việc và thâm niên"
+        "title": "Lương thưởng cạnh tranh",
+        "text": "Gắn với hiệu quả công việc và thâm niên"
       },
       {
         "title": "Bảo hiểm đầy đủ",
@@ -210,16 +210,16 @@
         "text": "Cùng chuyên gia R&D và đối tác."
       },
       {
-        "title": "Môi trường gần gũi",
-        "text": "Làm việc cùng nhau như một gia đình"
+        "title": "Môi trường gần gũi",
+        "text": "Làm việc cùng nhau như một gia đình"
       }
     ]
   },
   "jobs": {
-    "eyebrow": "06 · CƠ HỘI NGHỀ NGHIỆP",
+    "eyebrow": "CƠ HỘI NGHỀ NGHIỆP",
     "title": "Vị trí đang tuyển",
     "intro": "Với các vị trí chuyên môn, Tiến Nông tuyển ứng viên tốt nghiệp đại học đúng chuyên ngành. Bấm vào từng vị trí để xem mô tả công việc.",
-    "count_label": "vị trí",
+    "count_label": "vị trí",
     "dept_label": "Khối",
     "loc_label": "Địa điểm",
     "all_depts": "Tất cả khối",
@@ -229,8 +229,8 @@
     "requirements_label": "Yêu cầu",
     "benefits_label": "Quyền lợi",
     "common_benefits": "Lương, thưởng theo năng lực và hiệu quả công việc; BHXH, BHYT, BHTN đầy đủ; cơ hội đào tạo trong và ngoài nước; du lịch, tri ân thâm niên theo chế độ của công ty.",
-    "empty_text": "Hiện chưa có vị trí phù hợp. Gửi hồ sơ tới",
-    "empty_after": "để được liên hệ khi có cơ hội.",
+    "empty_text": "Hiện chưa có vị trí phù hợp. Gửi hồ sơ tới",
+    "empty_after": "để được liên hệ khi có cơ hội.",
     "items": [
       {
         "title": "Kỹ sư Nông học",
@@ -335,7 +335,7 @@
     ]
   },
   "process": {
-    "eyebrow": "07 · QUY TRÌNH ỨNG TUYỂN",
+    "eyebrow": "QUY TRÌNH ỨNG TUYỂN",
     "title": "Bốn bước, minh bạch và không mất phí",
     "steps": [
       {

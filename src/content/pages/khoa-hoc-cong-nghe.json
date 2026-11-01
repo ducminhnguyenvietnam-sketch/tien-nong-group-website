@@ -9,27 +9,27 @@
       "alt": "Nhà khoa học thao tác trong phòng thí nghiệm VILAS 1519",
       "src": "/uploads/khcn-hero-mvat01c5.jpg"
     },
-    "t1": "Trang chủ / Khoa học & Công nghệ",
-    "t2": "KHOA HỌC & CÔNG NGHỆ",
+    "t1": "Trang chủ / Khoa học & Công nghệ",
+    "t2": "KHOA HỌC & CÔNG NGHỆ",
     "t3": "Khoa học phụng sự nông nghiệp",
-    "t4": "Mỗi giải pháp của Tiến Nông đều bắt nguồn từ nghiên cứu về môi trường, về cây và được kiểm chứng trên đồng ruộng trước khi đến tay nhà nông."
+    "t4": "Mỗi giải pháp của Tiến Nông đều bắt nguồn từ nghiên cứu về môi trường, về cây và được kiểm chứng trên đồng ruộng trước khi đến tay nhà nông."
   },
   "s02_dinh_vi": {
     "t1": "Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam",
-    "t2": "Giấy chứng nhận số 228/DNKHCN · cấp năm 2014",
+    "t2": "Giấy chứng nhận số 228/DNKHCN · cấp năm 2014",
     "t3": "50+",
-    "t4": "nhà khoa học & kỹ sư",
+    "t4": "nhà khoa học & kỹ sư",
     "t5": "10+/ năm",
-    "t6": "đề tài nghiên cứu đã thực hiện",
+    "t6": "đề tài nghiên cứu đã thực hiện",
     "t7": "10.000+",
-    "t8": "mẫu phân tích mỗi năm",
+    "t8": "mẫu phân tích mỗi năm",
     "t9": "56",
-    "t10": "sản phẩm từ kết quả nghiên cứu"
+    "t10": "sản phẩm từ kết quả nghiên cứu"
   },
   "s03_trung_tam_r_d": {
-    "t1": "01 · TRUNG TÂM NGHIÊN CỨU PHÁT TRIỂN",
-    "t2": "Bốn phòng chuyên môn, một mục tiêu chung",
-    "t3": "Trung tâm quy tụ đội ngũ chuyên gia về nông hóa, thổ nhưỡng và công nghệ sinh học, phối hợp chặt chẽ để nghiên cứu và chuyển hóa kết quả nghiên cứu thành sản phẩm, quy trình canh tác hiệu quả.",
+    "t1": "TRUNG TÂM NGHIÊN CỨU PHÁT TRIỂN",
+    "t2": "Bốn phòng chuyên môn, một mục tiêu chung",
+    "t3": "Trung tâm quy tụ đội ngũ chuyên gia về nông hóa, thổ nhưỡng và công nghệ sinh học, phối hợp chặt chẽ để nghiên cứu và chuyển hóa kết quả nghiên cứu thành sản phẩm, quy trình canh tác hiệu quả.",
     "img_lab_1_1": {
       "src": "/uploads/lab-1-mvc6dnef.jpg",
       "focus": "10.7% 68.4%",
@@ -44,7 +44,7 @@
       "zoom": "142",
       "alt": "Phòng Công nghệ Sinh học"
     },
-    "t6": "Phòng Công nghệ Sinh học",
+    "t6": "Phòng Công nghệ Sinh học",
     "t7": "Quản lý, vận hành phòng thí nghiệm Sinh học theo ISO/IEC 17025:2017; nghiên cứu, ứng dụng và chuyển giao công nghệ sinh học, trọng tâm là công nghệ vi sinh.",
     "img_lab_3_1": {
       "src": "/uploads/lab-3-mvc6lu8i.jpg",
@@ -52,7 +52,7 @@
       "zoom": "162",
       "alt": "Phòng Sức khỏe đất & Cây trồng"
     },
-    "t8": "Phòng Sức khỏe đất & cây trồng",
+    "t8": "Phòng Sức khỏe đất & cây trồng",
     "t9": "Đánh giá sức khỏe đất, dinh dưỡng và sinh trưởng cây trồng; nghiên cứu giải pháp cải tạo đất, quản lý dinh dưỡng hợp lý, nâng cao năng suất và chất lượng nông sản.",
     "img_lab_4_1": {
       "focus": "50% 50%",
@@ -60,31 +60,31 @@
       "alt": "Phòng Công nghệ - Sản xuất",
       "src": "/uploads/lab-4-mvat28v3.jpg"
     },
-    "t10": "Phòng Công nghệ Sản xuất",
-    "t11": "Phát triển công thức và công nghệ sản xuất phân bón thế hệ mới."
+    "t10": "Phòng Công nghệ Sản xuất",
+    "t11": "Phát triển công thức và công nghệ sản xuất phân bón thế hệ mới."
   },
   "s04_linh_vuc_nghien_cuu": {
-    "t1": "02 · LĨNH VỰC NGHIÊN CỨU",
-    "t2": "Nền tảng khoa học cho nông nghiệp thế hệ mới"
+    "t1": "LĨNH VỰC NGHIÊN CỨU",
+    "t2": "Nền tảng khoa học cho nông nghiệp thế hệ mới"
   },
   "s05_quy_trinh": {
-    "t1": "03 · TỪ NGHIÊN CỨU ĐẾN ĐỒNG RUỘNG",
-    "t2": "Quy trình năm bước từ phòng thí nghiệm đến đồng ruộng",
+    "t1": "TỪ NGHIÊN CỨU ĐẾN ĐỒNG RUỘNG",
+    "t2": "Quy trình năm bước từ phòng thí nghiệm đến đồng ruộng",
     "t3": "01",
-    "t4": "Khảo sát & phân tích đất",
-    "t5": "Lấy mẫu tại vùng trồng, xác định đặc tính đất và nhu cầu dinh dưỡng.",
+    "t4": "Khảo sát & phân tích đất",
+    "t5": "Lấy mẫu tại vùng trồng, xác định đặc tính đất và nhu cầu dinh dưỡng.",
     "t6": "02",
-    "t7": "Nghiên cứu công thức",
-    "t8": "Thiết kế tỷ lệ dinh dưỡng phù hợp từng loại cây, từng giai đoạn.",
+    "t7": "Nghiên cứu công thức",
+    "t8": "Thiết kế tỷ lệ dinh dưỡng phù hợp từng loại cây, từng giai đoạn.",
     "t9": "03",
-    "t10": "Thử nghiệm nhà lưới",
-    "t11": "Đánh giá hiệu quả trong điều kiện có kiểm soát.",
+    "t10": "Thử nghiệm nhà lưới",
+    "t11": "Đánh giá hiệu quả trong điều kiện có kiểm soát.",
     "t12": "04",
-    "t13": "Trình diễn đồng ruộng",
-    "t14": "Kiểm chứng năng suất và chất lượng trên các mô hình thực tế.",
+    "t13": "Trình diễn đồng ruộng",
+    "t14": "Kiểm chứng năng suất và chất lượng trên các mô hình thực tế.",
     "t15": "05",
-    "t16": "Sản xuất & kiểm định",
-    "t17": "Sản xuất theo ISO 9001, kiểm nghiệm chất lượng theo từng lô."
+    "t16": "Sản xuất & kiểm định",
+    "t17": "Sản xuất theo ISO 9001, kiểm nghiệm chất lượng theo từng lô."
   },
   "s06_vilas_1519": {
     "img_vilas_1": {
@@ -93,56 +93,56 @@
       "alt": "Thiết bị phân tích hiện đại trong phòng thí nghiệm",
       "src": "/uploads/vilas-mvhvkkg5.jpg"
     },
-    "t1": "04 · NĂNG LỰC PHÂN TÍCH",
-    "t2": "Kết quả phân tích đạt chuẩn quốc tế",
+    "t1": "NĂNG LỰC PHÂN TÍCH",
+    "t2": "Kết quả phân tích đạt chuẩn quốc tế",
     "t3": "Phòng thí nghiệm của Tiến Nông được công nhận phù hợp theo tiêu chuẩn ISO/IEC 17025:2017, bảo đảm năng lực kỹ thuật và độ tin cậy của kết quả phân tích. Kết quả thử nghiệm thuộc phạm vi công nhận được thừa nhận quốc tế theo nguyên tắc “Thử nghiệm một lần – Được chấp nhận ở mọi nơi”",
-    "t4": "Phân tích đất",
-    "t5": "pH, hữu cơ, đa – trung – vi lượng",
-    "t6": "Phân tích phân bón",
-    "t7": "Hàm lượng dinh dưỡng, độ ẩm",
-    "t8": "Nguyên liệu đầu vào",
-    "t9": "Kiểm soát trước khi sản xuất",
-    "t10": "Phân tích mô lá",
-    "t11": "[Cần xác nhận phạm vi]",
-    "t12": "Yêu cầu phân tích đất →"
+    "t4": "Phân tích đất",
+    "t5": "pH, hữu cơ, đa – trung – vi lượng",
+    "t6": "Phân tích phân bón",
+    "t7": "Hàm lượng dinh dưỡng, độ ẩm",
+    "t8": "Nguyên liệu đầu vào",
+    "t9": "Kiểm soát trước khi sản xuất",
+    "t10": "Phân tích mô lá",
+    "t11": "[Cần xác nhận phạm vi]",
+    "t12": "Yêu cầu phân tích đất →"
   },
   "s07_thanh_qua": {
-    "t1": "05 · KẾT QUẢ NGHIÊN CỨU",
-    "t2": "Khoa học được chuyển hóa thành sản phẩm và giải pháp",
-    "t3": "Xem sản phẩm →",
+    "t1": "KẾT QUẢ NGHIÊN CỨU",
+    "t2": "Khoa học được chuyển hóa thành sản phẩm và giải pháp",
+    "t3": "Xem sản phẩm →",
     "img_res_1_1": {
       "focus": "50% 60.6%",
       "zoom": "104",
       "alt": "Bao bì NPK bổ sung Silic",
       "src": "/uploads/res-1-mvgcjv25.jpg"
     },
-    "t4": "CÔNG NGHỆ PHÂN BÓN",
-    "t5": "NPK bổ sung Silic hữu hiệu (SiO₂hh)",
-    "t6": "Giúp cây cứng cáp, tăng khả năng chống đổ và chống chịu sâu bệnh.",
+    "t4": "CÔNG NGHỆ PHÂN BÓN",
+    "t5": "NPK bổ sung Silic hữu hiệu (SiO₂hh)",
+    "t6": "Giúp cây cứng cáp, tăng khả năng chống đổ và chống chịu sâu bệnh.",
     "img_res_2_1": {
       "focus": "57.6% 80.5%",
       "zoom": "141",
       "alt": "Mô hình NPK – hữu cơ – vi sinh",
       "src": "/uploads/res-2-mvc7awp0.jpg"
     },
-    "t7": "GIẢI PHÁP TÍCH HỢP",
-    "t8": "Kết hợp NPK – hữu cơ – vi sinh",
-    "t9": "Nâng cao hiệu quả sử dụng phân bón đồng thời cải thiện sức khỏe đất.",
+    "t7": "GIẢI PHÁP TÍCH HỢP",
+    "t8": "Kết hợp NPK – hữu cơ – vi sinh",
+    "t9": "Nâng cao hiệu quả sử dụng phân bón đồng thời cải thiện sức khỏe đất.",
     "img_res_3_1": {
       "focus": "32.1% 45%",
       "zoom": "103",
       "alt": "Phân bón hữu cơ, phân bón lỏng",
       "src": "/uploads/res-3-mvgcp45s.jpg"
     },
-    "t10": "DINH DƯỠNG THẾ HỆ MỚI",
-    "t11": "Phân bón hữu cơ, phân bón lỏng và các dạng dinh dưỡng mới",
-    "t12": "Đáp ứng nhu cầu canh tác bền vững và nông nghiệp công nghệ cao."
+    "t10": "DINH DƯỠNG THẾ HỆ MỚI",
+    "t11": "Phân bón hữu cơ, phân bón lỏng và các dạng dinh dưỡng mới",
+    "t12": "Đáp ứng nhu cầu canh tác bền vững và nông nghiệp công nghệ cao."
   },
   "s08_doi_tac_nghien_cuu": {
-    "t1": "06 · HỢP TÁC NGHIÊN CỨU",
-    "t2": "Kết nối cùng viện nghiên cứu và trường đại học",
-    "t3": "Tiến Nông chào đón các nhà khoa học, viện nghiên cứu và trường đại học cùng hợp tác nghiên cứu, thử nghiệm và đào tạo.",
-    "t4": "Đề xuất hợp tác",
+    "t1": "HỢP TÁC NGHIÊN CỨU",
+    "t2": "Kết nối cùng viện nghiên cứu và trường đại học",
+    "t3": "Tiến Nông chào đón các nhà khoa học, viện nghiên cứu và trường đại học cùng hợp tác nghiên cứu, thử nghiệm và đào tạo.",
+    "t4": "Đề xuất hợp tác",
     "img_part_1_1": {
       "focus": "center",
       "zoom": "100",
@@ -166,7 +166,7 @@
       "zoom": "100",
       "alt": "Logo"
     },
-    "t8": "[Viện / trường đối tác]"
+    "t8": "[Viện / trường đối tác]"
   },
   "domains_topics_label": "HƯỚNG NGHIÊN CỨU TRỌNG TÂM",
   "domains": [

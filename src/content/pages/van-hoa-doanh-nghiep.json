@@ -48,12 +48,12 @@
     {
       "value": "10 năm",
       "label": "thâm niên bình quân",
-      "sub": "Mỗi người ở lại cùng Tiến Nông"
+      "sub": ""
     },
     {
       "value": "40+",
       "label": "người gắn bó trên 20 năm",
-      "sub": "Có người đi cùng từ những ngày đầu"
+      "sub": ""
     }
   ],
   "mottos": [
@@ -71,14 +71,14 @@
     }
   ],
   "origin": {
-    "eyebrow": "01 · KHỞI NGUỒN",
+    "eyebrow": "KHỞI NGUỒN",
     "title": "Văn hóa bắt đầu từ hành trình vượt khó và khát vọng phụng sự",
     "text": "Ngày 04/01/1995, Tiến Nông ra đời tại Thanh Hóa từ khát vọng đưa tiến bộ về cho nông nghiệp Việt Nam, góp phần nâng cao đời sống người nông dân. Người sáng lập, Chủ tịch HĐQT Nguyễn Xuân Cộng, từng trải qua tuổi thơ mồ côi, sớm thấu hiểu những nhọc nhằn của cuộc sống và giá trị của sự sẻ chia. \n\nTừ hành trình ấy, Tiến Nông xây dựng văn hóa doanh nghiệp trên tinh thần đoàn kết, trách nhiệm và sẻ chia lợi ích. Mỗi thành viên không chỉ cùng lao động, cống hiến mà còn gắn bó như người thân trong một gia đình, chung khát vọng phụng sự để nông dân giàu có, cùng Việt Nam thịnh vượng.\n\nNhững giá trị ấy được kết tinh trong năm điều tâm niệm, trở thành nền tảng cho cách nghĩ, cách làm và cách ứng xử của người Tiến Nông.",
     "image": {
-      "src": "/uploads/tin-cu/2025/7177-2.webp",
-      "focus": "50% 40%",
+      "src": "/uploads/1995.jpg",
+      "focus": "center",
       "zoom": "100",
-      "alt": "Bảng Năm điều tâm niệm tại lễ kỷ niệm 30 năm thành lập Tiến Nông"
+      "alt": "Những ngày đầu sản xuất tại Tiến Nông"
     },
     "measure_title": "Thước đo của mỗi quyết định",
     "measure_intro": "Trước mỗi việc lớn nhỏ, người Tiến Nông tự hỏi việc đó có tốt cho năm điều sau không:",
@@ -91,9 +91,9 @@
     ]
   },
   "principles": {
-    "eyebrow": "02 · NĂM ĐIỀU TÂM NIỆM",
+    "eyebrow": "NĂM ĐIỀU TÂM NIỆM",
     "title": "Năm điều tâm niệm của người Tiến Nông",
-    "intro": "Năm câu ngắn, dễ nhớ, là kim chỉ nam cho cách mỗi người Tiến Nông làm việc và đối xử với đồng nghiệp, khách hàng, bà con nông dân. Năm điều ấy đã được phổ nhạc: cả gia đình Tiến Nông cùng hát trước mỗi sự kiện lớn, và bức “Tâm niệm” được trao tặng, treo trang trọng tại nhà nhiều nhà phân phối đã gắn bó hàng chục năm.",
+    "intro": "Năm điều tâm niệm là nền tảng văn hóa, định hướng cách mỗi người Tiến Nông làm việc và ứng xử với đồng nghiệp, khách hàng, bà con nông dân. Năm điều đã được phổ nhạc; bức “Tâm niệm” được trao tặng và treo tại nhà nhiều nhà phân phối gắn bó lâu năm.",
     "items": [
       {
         "title": "Được làm việc phải tận tâm",
@@ -115,47 +115,53 @@
         "title": "Được hưởng thụ phải sẻ chia",
         "body": "Thành quả có được là để chia lại cho đồng nghiệp, gia đình và cộng đồng — từ tâm niệm này mà có chương trình “Ông bố Tiến Nông” đỡ đầu trẻ mồ côi từ năm 1998."
       }
-    ]
+    ],
+    "image": {
+      "src": "/uploads/tin-cu/2025/7177-2.webp",
+      "focus": "50% 40%",
+      "zoom": "100",
+      "alt": "Năm điều tâm niệm tại lễ kỷ niệm 30 năm thành lập Tiến Nông"
+    }
   },
   "values": {
-    "eyebrow": "03 · THÔNG ĐIỆP TIẾN NÔNG",
-    "title": "Năm giá trị, mỗi giá trị một việc làm cụ thể",
-    "intro": "Giá trị chỉ có nghĩa khi nhìn thấy được trong việc làm. Dưới mỗi giá trị là một minh chứng có thật trong những năm gần đây.",
+    "eyebrow": "THÔNG ĐIỆP TIẾN NÔNG",
+    "title": "Năm giá trị cốt lõi",
+    "intro": "",
     "items": [
       {
         "title": "Đam mê chân chính",
         "body": "Tận tâm với nông nghiệp và khoa học, bền bỉ theo đuổi những giá trị thực cho nhà nông.",
-        "proof": "Sau trận ngập úng 09/2026, kỹ sư Phòng Sức khỏe đất và cây trồng xuống từng ruộng dứa ở Yên Phú lấy mẫu đất, mẫu cây để tìm cách phục hồi.",
+        "proof": "Kỹ sư Tiến Nông lấy mẫu đất, mẫu cây trên ruộng dứa Yên Phú (Thanh Hóa) sau ngập úng, 09/2026",
         "link": "/tin-tuc/sau-ngap-ung-o-yen-phu-tien-nong-xuong-dong-tim-loi-giai-tu-dat-va-cay/"
       },
       {
         "title": "Khát vọng cháy bỏng",
         "body": "Không ngừng vươn lên, cống hiến trọn vẹn trong lĩnh vực mình đã chọn.",
-        "proof": "Sáu lần nhận Giải thưởng Sao Vàng Đất Việt — lần gần nhất năm 2024.",
+        "proof": "Tiến Nông nhận Giải thưởng Sao Vàng Đất Việt lần thứ sáu, năm 2024",
         "link": "/tin-tuc/cong-ty-tien-nong-lan-thu-6-nhan-giai-thuong-sao-vang-dat-viet-2024/"
       },
       {
         "title": "Sáng tạo không ngừng",
         "body": "Đổi mới để giữ vị thế dẫn đầu về dinh dưỡng cây trồng tại Việt Nam và vươn ra thế giới.",
-        "proof": "Cùng Sở Khoa học và Công nghệ Thanh Hóa nghiên cứu NPK hữu cơ vi sinh dạng hạt bằng công nghệ dây chuyền hơi nước (2025).",
+        "proof": "Hội nghị đầu bờ mô hình NPK hữu cơ vi sinh tại Hoằng Xuân, Thanh Hóa, 06/2025",
         "link": "/tin-tuc/hoi-nghi-dau-bo-danh-gia-hieu-qua-mo-hinh-phan-bon-npk-huu-co-vi-sinh-gieo-mam/"
       },
       {
         "title": "Sẻ chia lợi ích",
         "body": "Lợi ích của nhà nông luôn được đặt lên trên hết trong mọi quyết định.",
-        "proof": "Từ năm 2014, bà con mua phân bón trước, trả tiền sau thu hoạch qua chương trình phân bón trả chậm cùng Hội Nông dân.",
-        "link": "/nong-dan/#tra-cham"
+        "proof": "Triển khai chương trình phân bón trả chậm cùng Hội Nông dân tại Bắc Ninh, 07/2025",
+        "link": "/tin-tuc/hoi-nghi-trien-khai-chuong-trinh-cung-ung-phan-bon-tien-nong-tra-cham-cho-nong/"
       },
       {
         "title": "Trách nhiệm cộng đồng",
         "body": "Trách nhiệm với xã hội, bảo vệ môi trường, đồng hành cùng cộng đồng.",
-        "proof": "Gần 30 năm đỡ đầu trẻ mồ côi; năm 2025 có 208 em ở Thanh Hóa, Nghệ An, Hà Tĩnh đang được Tiến Nông chăm lo.",
-        "link": "/phat-trien-ben-vung/#ong-bo"
+        "proof": "Tháng hành động vì trẻ em 2025: 208 trẻ mồ côi ở Thanh Hóa, Nghệ An, Hà Tĩnh được Tiến Nông chăm lo",
+        "link": "/tin-tuc/thang-hanh-dong-vi-tre-em-2025-tien-nong-tiep-tuc-hanh-trinh-trao-yeu-thuong/"
       }
     ]
   },
   "traditions": {
-    "eyebrow": "04 · TRUYỀN THỐNG TIẾN NÔNG",
+    "eyebrow": "TRUYỀN THỐNG TIẾN NÔNG",
     "title": "Những truyền thống được tiếp nối qua nhiều thế hệ",
     "items": [
       {
@@ -170,7 +176,7 @@
       },
       {
         "title": "Bảo Bình Tiến Nông",
-        "body": "“Bảo Bình” nghĩa là chiếc bình quý dành riêng cho cán bộ, công nhân viên gắn bó từ 4 năm trở lên tại Tiến Nông Group. Bảo Bình tượng trưng cho sự kết tinh giá trị, hội tụ tinh hoa và tinh thần gắn kết bền chặt; gắn liền với chương trình quay số may mắn mang lại tài lộc cho người lao động.",
+        "body": "“Bảo Bình” là chiếc bình quý trao cho cán bộ, công nhân viên gắn bó từ 4 năm trở lên, đi kèm chương trình quay số may mắn dịp đầu năm.",
         "image": {
           "src": "/uploads/vh-tradition-1-mvrk44ve.jpg",
           "focus": "51.2% 50%",
@@ -180,7 +186,7 @@
       },
       {
         "title": "Tặng vàng tri ân",
-        "body": "Những cán bộ, nhân viên đồng hành nhiều năm được tặng vàng - là sự tri ân của Tiến Nông dành cho mỗi chặng đường cống hiến.",
+        "body": "Cán bộ, nhân viên đồng hành nhiều năm được tặng vàng, ghi nhận từng chặng đường cống hiến.",
         "image": {
           "src": "/uploads/ben-2-mvekzk8w.jpg",
           "focus": "center",
@@ -190,7 +196,7 @@
       },
       {
         "title": "Hành trình cùng nhau",
-        "body": "Những chương trình tham quan, học tập kinh nghiệm trong và ngoài nước không chỉ giúp người lao động Tiến Nông nâng cao kiến thức, tích lũy kinh nghiệm mà còn tăng cường sự thấu hiểu, gắn kết và tinh thần đồng đội, cùng vun đắp văn hóa Gia đình Tiến Nông và xây dựng doanh nghiệp ngày càng vững mạnh.",
+        "body": "Các chuyến tham quan, học tập kinh nghiệm trong và ngoài nước dành cho toàn thể cán bộ, nhân viên, để cập nhật kiến thức và gắn kết đội ngũ.",
         "image": {
           "src": "/uploads/vh-tradition-2-mvrk8l7q.jpg",
           "focus": "51.7% 91.1%",
@@ -201,25 +207,28 @@
     ]
   },
   "learning": {
-    "eyebrow": "05 · ĐÀO TẠO - TẬP HUẤN",
+    "eyebrow": "ĐÀO TẠO - TẬP HUẤN",
     "title": "Học để sáng tạo - Hiểu để phụng sự",
     "motto": "Lấy tri thức làm nền móng - lấy con người làm trung tâm - lấy người nông dân làm mục tiêu phụng sự.",
-    "intro": "Tiến Nông chú trọng đào tạo, bồi dưỡng kiến thức chuyên môn, kỹ năng nghiệp vụ cho đội ngũ cán bộ công nhân viên. Qua các chương trình đào tạo và tập huấn, tri thức được cập nhật, kinh nghiệm được chia sẻ và kiến thức được vận dụng vào thực tiễn, góp phần nâng cao hiệu quả công việc, năng lực phục vụ nông dân và thúc đẩy sự phát triển bền vững của doanh nghiệp.",
+    "intro": "Tiến Nông đào tạo, tập huấn định kỳ cho cán bộ, công nhân viên về đất, phân bón, công nghệ và kỹ năng nghiệp vụ, để kiến thức mới được đưa vào công việc phục vụ bà con.",
     "items": [
       {
         "title": "Nền tảng về đất, phân bón và công nghệ",
-        "text": "Khóa đào tạo toàn hệ thống do Trung tâm Nghiên cứu Phát triển Khoa học & Công nghệ Tiến Nông tổ chức (04/2026), chuẩn hóa kiến thức cho đội ngũ kinh doanh, kỹ thuật và quản lý.",
-        "link": "/tin-tuc/tien-nong-to-chuc-dao-tao-nen-tang-kien-thuc-ve-dat-phan-bon-va-cong-nghe-cho/"
+        "text": "Khóa đào tạo toàn hệ thống do Trung tâm Nghiên cứu Phát triển KH&CN Tiến Nông tổ chức, chuẩn hóa kiến thức cho đội ngũ kinh doanh, kỹ thuật và quản lý.",
+        "link": "/tin-tuc/tien-nong-to-chuc-dao-tao-nen-tang-kien-thuc-ve-dat-phan-bon-va-cong-nghe-cho/",
+        "label": "ĐÀO TẠO NỘI BỘ · 04/2026"
       },
       {
         "title": "Lấy mẫu phân bón cấp chứng chỉ",
-        "text": "Phối hợp tổ chức đào tạo lấy mẫu phân bón có cấp chứng chỉ (03/2026), góp phần nâng chuẩn kiểm soát chất lượng.",
-        "link": "/tin-tuc/tien-nong-chu-dong-phoi-hop-to-chuc-dao-tao-lay-mau-phan-bon-cap-chung-chi-gop/"
+        "text": "Phối hợp tổ chức đào tạo lấy mẫu phân bón có cấp chứng chỉ, góp phần nâng chuẩn kiểm soát chất lượng.",
+        "link": "/tin-tuc/tien-nong-chu-dong-phoi-hop-to-chuc-dao-tao-lay-mau-phan-bon-cap-chung-chi-gop/",
+        "label": "CHỨNG CHỈ NGHIỆP VỤ · 03/2026"
       },
       {
         "title": "Học từ thế giới",
-        "text": "Đoàn cán bộ cập nhật xu hướng AI, robot và nhà máy thông minh tại Thâm Quyến, Trung Quốc (06/2026).",
-        "link": "/tin-tuc/tien-nong-cap-nhat-xu-huong-ai-robot-va-nha-may-thong-minh-tai-tham-quyen/"
+        "text": "Đoàn cán bộ cập nhật xu hướng AI, robot và nhà máy thông minh tại Thâm Quyến, Trung Quốc.",
+        "link": "/tin-tuc/tien-nong-cap-nhat-xu-huong-ai-robot-va-nha-may-thong-minh-tai-tham-quyen/",
+        "label": "HỌC TẬP QUỐC TẾ · 06/2026"
       }
     ],
     "image": {
@@ -230,18 +239,22 @@
     }
   },
   "media": {
-    "eyebrow": "06 · TÂM NIỆM TIẾN NÔNG",
+    "eyebrow": "BÀI HÁT TIẾN NÔNG",
     "empty_note": "Video sẽ hiển thị khi dán đường dẫn YouTube hoặc tải tệp video lên trong trang quản trị.",
     "videos": [
       {
-        "youtube": "https://www.youtube.com/watch?v=MdqpwKYEWM4"
+        "youtube": "https://www.youtube.com/watch?v=MdqpwKYEWM4",
+        "title": "Năm điều tâm niệm",
+        "note": "Ca khúc của gia đình Tiến Nông",
+        "label": "BÀI HÁT"
       }
     ],
-    "intro": "5 điều Tâm Niệm là nền tảng văn hóa, định hướng mỗi người Tiến Nông trong công việc và cuộc sống. Đó không chỉ là những lời nhắc nhở mà còn là giá trị được gìn giữ, lan tỏa trong đại gia đình Tiến Nông, tạo nên bản sắc riêng và vun đắp những mối quan hệ bền chặt với đồng nghiệp, đối tác và bà con nông dân.",
-    "title": "5 điều Tâm Niệm"
+    "intro": "",
+    "title": "Tiến Nông qua từng lời hát",
+    "highlight": "qua từng lời hát"
   },
   "poems": {
-    "eyebrow": "05 · THƠ TẶNG TIẾN NÔNG",
+    "eyebrow": "THƠ TẶNG TIẾN NÔNG",
     "title": "Những vần thơ nhà nông gửi tặng",
     "intro": "Những bài thơ khách hàng, bà con nông dân và đối tác gửi tặng Tiến Nông qua các mùa vụ.",
     "items": [
@@ -304,6 +317,7 @@
   "cta": {
     "title": "Trở thành một phần của gia đình Tiến Nông",
     "button_jobs": "Cơ hội nghề nghiệp →",
-    "button_about": "Về Tiến Nông"
+    "button_about": "Về Tiến Nông",
+    "text": ""
   }
 }

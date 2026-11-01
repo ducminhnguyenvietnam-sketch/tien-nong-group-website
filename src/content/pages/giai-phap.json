@@ -9,16 +9,16 @@
       "alt": "Cận cảnh bông lúa chín trên cánh đồng",
       "src": "/uploads/sol-hero-mvc2rzfz.jpg"
     },
-    "t1": "Trang chủ / Giải pháp / Theo cây trồng",
-    "t2": "GIẢI PHÁP DINH DƯỠNG",
+    "t1": "Trang chủ / Giải pháp / Theo cây trồng",
+    "t2": "GIẢI PHÁP DINH DƯỠNG",
     "t3": "Đất khỏe. Cây khỏe. Nông nghiệp hiệu quả hơn.",
     "t4": "Mỗi loại cây, mỗi chất đất có nhu cầu dinh dưỡng khác nhau. Tiến Nông xây dựng quy trình chăm sóc dựa trên phân tích thổ nhưỡng, khí hậu, vùng miền và đặc điểm sinh trưởng của từng cây trồng.",
-    "t5": "Tìm giải pháp cho cây trồng →",
-    "t6": "Giải pháp cho dự án"
+    "t5": "Tìm giải pháp cho cây trồng →",
+    "t6": "Giải pháp cho dự án"
   },
   "s02_cay_trong": {
-    "t1": "01 · THEO CÂY TRỒNG",
-    "t2": "Mỗi nhóm cây trồng, một giải pháp dinh dưỡng riêng",
+    "t1": "THEO CÂY TRỒNG",
+    "t2": "Mỗi nhóm cây trồng, một giải pháp dinh dưỡng riêng",
     "t3": "Mỗi loại cây trồng có nhu cầu dinh dưỡng khác nhau, thay đổi theo giai đoạn sinh trưởng, điều kiện đất đai, khí hậu và mục tiêu sản xuất. Tiến Nông xây dựng giải pháp chăm sóc và quản lý dinh dưỡng dựa trên đặc điểm cây trồng, nhu cầu dinh dưỡng và kết quả đánh giá đất, góp phần nâng cao hiệu quả sử dụng phân bón, năng suất và chất lượng nông sản.",
     "img_cg_1_1": {
       "src": "/uploads/cg-1-mvc2zgs0.jpg",
@@ -26,52 +26,52 @@
       "zoom": "100",
       "alt": "Lúa, ngô"
     },
-    "t4": "Cây lương thực",
-    "t5": "Lúa · Ngô · Khoai · Sắn",
+    "t4": "Cây lương thực",
+    "t5": "Lúa · Ngô · Khoai · Sắn",
     "img_cg_2_1": {
       "focus": "84.5% 50%",
       "zoom": "100",
       "alt": "Rau màu",
       "src": "/uploads/cg-2-mvc30sn5.jpg"
     },
-    "t6": "Rau màu & cây thực phẩm",
-    "t7": "Rau ăn lá · Rau ăn quả · Củ",
+    "t6": "Rau màu & cây thực phẩm",
+    "t7": "Rau ăn lá · Rau ăn quả · Củ",
     "img_cg_3_1": {
       "focus": "48.7% 50%",
       "zoom": "100",
       "alt": "Cây ăn quả",
       "src": "/uploads/cg-3-mvgcqcd0.jpg"
     },
-    "t8": "Cây ăn quả",
-    "t9": "Cam · Bưởi · Sầu riêng · Thanh long",
+    "t8": "Cây ăn quả",
+    "t9": "Cam · Bưởi · Sầu riêng · Thanh long",
     "img_cg_4_1": {
       "focus": "46.1% 50%",
       "zoom": "100",
       "alt": "Cà phê, chè",
       "src": "/uploads/cg-4-mvc37fak.jpg"
     },
-    "t10": "Cây công nghiệp",
-    "t11": "Cà phê · Chè · Hồ tiêu · Mía",
+    "t10": "Cây công nghiệp",
+    "t11": "Cà phê · Chè · Hồ tiêu · Mía",
     "img_cg_5_1": {
       "focus": "50% 50%",
       "zoom": "100",
       "alt": "Hoa, cây cảnh",
       "src": "/uploads/cg-5-mvc34pwq.jpg"
     },
-    "t12": "Hoa, cây cảnh & cảnh quan",
-    "t13": "Hoa · Cây cảnh · Thảm cỏ",
+    "t12": "Hoa, cây cảnh & cảnh quan",
+    "t13": "Hoa · Cây cảnh · Thảm cỏ",
     "img_cg_6_1": {
       "focus": "61.4% 50%",
       "zoom": "100",
       "alt": "Cây dược liệu",
       "src": "/uploads/cg-6-mvc38s0a.jpg"
     },
-    "t14": "Cây dược liệu",
-    "t15": "Sâm · Đinh lăng · Nghệ"
+    "t14": "Cây dược liệu",
+    "t15": "Sâm · Đinh lăng · Nghệ"
   },
   "s03_theo_van_de": {
-    "t1": "05 · HỎI ĐÁP",
-    "t2": "Nhận diện đúng vấn đề để chọn đúng giải pháp",
+    "t1": "HỎI ĐÁP",
+    "t2": "Nhận diện đúng vấn đề để chọn đúng giải pháp",
     "t3": "Mỗi vấn đề trên đồng ruộng đều có nguyên nhân khoa học. Hiểu đúng vì sao, chúng ta mới chọn đúng giải pháp.",
     "label_problem": "VẤN ĐỀ",
     "label_why": "VÌ SAO?",
@@ -96,8 +96,8 @@
       "alt": "Bàn tay cầm nắm đất có cây con",
       "src": "/uploads/soil-mvc3b47j.jpg"
     },
-    "t1": "03 · QUY TRÌNH",
-    "t2": "Đất là nền tảng của sản xuất nông nghiệp",
+    "t1": "QUY TRÌNH",
+    "t2": "Đất là nền tảng của sản xuất nông nghiệp",
     "t3": "01",
     "t4": "Đánh giá đất và cây trồng",
     "t5": "Khảo sát đồng ruộng, lấy mẫu đất và phân tích các chỉ tiêu phù hợp; kiểm tra tình trạng sinh trưởng của cây.",
@@ -112,32 +112,32 @@
     "t14": "Theo dõi sinh trưởng, năng suất, chất lượng và hiệu quả kinh tế; điều chỉnh giải pháp theo kết quả thực tế."
   },
   "s05_tim_giai_phap": {
-    "t1": "04 · TÌM GIẢI PHÁP",
-    "t2": "Tìm giải pháp phù hợp cho từng cây trồng",
-    "t3": "1. Cây trồng",
-    "t4": "2. Vấn đề đang gặp",
-    "t5": "ĐỀ XUẤT SƠ BỘ",
-    "t6": "Đây là định hướng chung. Kỹ sư Tiến Nông sẽ tư vấn liều lượng cụ thể theo chân đất và giống cây trồng thực tế.",
+    "t1": "TÌM GIẢI PHÁP",
+    "t2": "Tìm giải pháp phù hợp cho từng cây trồng",
+    "t3": "1. Cây trồng",
+    "t4": "2. Vấn đề đang gặp",
+    "t5": "ĐỀ XUẤT SƠ BỘ",
+    "t6": "Đây là định hướng chung. Kỹ sư Tiến Nông sẽ tư vấn liều lượng cụ thể theo chân đất và giống cây trồng thực tế.",
     "f1": "Số điện thoại",
     "f2": "09xx xxx xxx",
     "f3": "Tỉnh / thành phố",
     "f4": "VD: Thanh Hóa",
-    "t7": "Nhận tư vấn từ kỹ sư"
+    "t7": "Nhận tư vấn từ kỹ sư"
   },
   "s06_mo_hinh_thuc_te": {
-    "t1": "02 · MÔ HÌNH THỰC TẾ",
-    "t2": "Giải pháp được kiểm chứng trên đồng ruộng",
-    "t3": "Tất cả mô hình →",
+    "t1": "MÔ HÌNH THỰC TẾ",
+    "t2": "Giải pháp được kiểm chứng trên đồng ruộng",
+    "t3": "Tất cả mô hình →",
     "img_model_1_1": {
       "focus": "50% 50%",
       "zoom": "100",
       "alt": "Mô hình lúa",
       "src": "/uploads/model-1-mvc3cafj.jpg"
     },
-    "t4": "CAM · THANH HÓA",
+    "t4": "CAM · THANH HÓA",
     "t5": "Mô hình sử dụng phân bón NPK 15-3-15+10%OM +106 CFU/g VSV hữu ích trên cây cam",
     "t6": "+30.835 kg/ha",
-    "t7": "năng suất",
+    "t7": "năng suất",
     "t8": "4000 m2",
     "t9": "diện tích",
     "img_model_2_1": {
@@ -149,7 +149,7 @@
     "t10": "DƯA HẤU · ",
     "t11": "Mô hình sử dụng bộ sản phẩm phân bón NPK hữu cơ vi sinh trên cây dưa hấu Thiên Vũ",
     "t12": "+33 tấn/ha",
-    "t13": "năng suất",
+    "t13": "năng suất",
     "t14": "10.4 ha",
     "t15": "diện tích",
     "img_model_3_1": {
@@ -158,17 +158,17 @@
       "alt": "Mô hình cây ăn quả",
       "src": "/uploads/model-3-mvkedfyi.jpg"
     },
-    "t16": "LÚA · THANH HÓA",
+    "t16": "LÚA · THANH HÓA",
     "t17": "Mô hình sử dụng bộ sản phẩm phân bón NPK hữu cơ vi sinh trên lúa TBJ3",
     "t18": "+14.790 kg/ha",
-    "t19": "năng suất",
+    "t19": "năng suất",
     "t20": "5 ha",
     "t21": "diện tích"
   },
   "s07_phan_7": {
-    "t1": "Giải pháp chuyên biệt cho sân golf, cảnh quan và khu công nghiệp",
-    "t2": "Tiến Nông thiết kế chương trình dinh dưỡng riêng cho từng dự án.",
-    "t3": "Giải pháp cho dự án →"
+    "t1": "Giải pháp chuyên biệt cho sân golf, cảnh quan và khu công nghiệp",
+    "t2": "Tiến Nông thiết kế chương trình dinh dưỡng riêng cho từng dự án.",
+    "t3": "Giải pháp cho dự án →"
   },
   "problems_fix_label": "Hướng xử lý:",
   "problems": [
