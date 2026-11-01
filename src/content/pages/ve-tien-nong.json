@@ -328,13 +328,11 @@
         "stats": [
           {
             "value": "50+",
-            "label": "Nhà khoa học",
-            "sub": "& kỹ sư"
+            "label": "Nhà khoa học & kỹ sư"
           },
           {
             "value": "10.000+",
-            "label": "Mẫu phân tích",
-            "sub": "mỗi năm"
+            "label": "Mẫu phân tích mỗi năm"
           }
         ],
         "chips_title": "Hướng nghiên cứu trọng tâm",
