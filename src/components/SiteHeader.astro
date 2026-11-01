@@ -19,7 +19,7 @@ const items = NAV.map(([key, slug, children = []]) => ({
 // Languages: a real translated site when its address is filled in the CMS; otherwise Google's automatic
 // translation of the page being viewed (the address is completed in the browser, see the script below).
 const page = Astro.site ? new URL(here, Astro.site).href : '';
-const gt = (tl: string) => `https://translate.google.com/translate?sl=vi&tl=${tl}&u=${encodeURIComponent(page)}`;
+const gt = (tl: string) => `https://translate.google.com/translate?sl=vi&tl=${tl}&hl=${tl}&u=${encodeURIComponent(page)}`;
 const langs = [
   { code: 'en', label: h.lang_en || 'English', href: (h.english_url ?? '').trim(), tl: 'en' },
   { code: 'zh', label: h.lang_zh || '中文', href: (h.chinese_url ?? '').trim(), tl: 'zh-CN' },
@@ -36,7 +36,7 @@ const closeLabel = (h.menu_close || 'Đóng').replace(/^[✕×\s]+/, '');
 <span class="hdr-top__sep" aria-hidden="true"></span>
 <span class="hdr-lang">
 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5s1.3-6.7 3.9-9.5z"/></svg>
-<strong aria-current="true">{h.lang_vi || 'Tiếng Việt'}</strong>
+<strong aria-current="true" data-lang-vi>{h.lang_vi || 'Tiếng Việt'}</strong>
 {langs.map((l) => <a href={l.href} hreflang={l.code} lang={l.code} data-gt={l.auto ? l.tl : undefined} rel={l.auto ? 'nofollow' : undefined}>{l.label}</a>)}
 </span>
 </div></div>
@@ -77,7 +77,7 @@ const closeLabel = (h.menu_close || 'Đóng').replace(/^[✕×\s]+/, '');
 <a href={url('lien-he', 'dai-ly')}>{h.top_dealers || 'Đại lý'}</a><a href={url('tuyen-dung')}>{h.top_jobs}</a><a href={url('lien-he')}>{h.top_contact}</a>
 </div>
 <div class="hdr-panel__langs">
-<strong>{h.lang_vi || 'Tiếng Việt'}</strong>
+<strong data-lang-vi>{h.lang_vi || 'Tiếng Việt'}</strong>
 {langs.map((l) => <a href={l.href} hreflang={l.code} lang={l.code} data-gt={l.auto ? l.tl : undefined} rel={l.auto ? 'nofollow' : undefined}>{l.label}</a>)}
 </div>
 <div class="hdr-panel__actions">
@@ -181,10 +181,28 @@ const closeLabel = (h.menu_close || 'Đóng').replace(/^[✕×\s]+/, '');
   const panel = document.getElementById('hdr-panel');
   const label = toggle?.querySelector<HTMLElement>('[data-menu-label]');
 
-  // English / 中文 without a translated site yet: Google's translation of the page being viewed.
-  document.querySelectorAll<HTMLAnchorElement>('a[data-gt]').forEach((a) => {
-    a.href = `https://translate.google.com/translate?sl=vi&tl=${a.dataset.gt}&u=${encodeURIComponent(location.href)}`;
-  });
+  // English / 中文 without a translated site yet: Google's translation of the page being viewed, opened
+  // straight on Google's translation address (<host>.translate.goog). On a page that is already translated,
+  // the link only switches the language, and "Tiếng Việt" leads back to the original page.
+  const onGoogle = location.hostname.endsWith('.translate.goog');
+  const originalHost = () => location.hostname.replace(/\.translate\.goog$/, '').replace(/--/g, '\u0000').replace(/-/g, '.').replace(/\u0000/g, '-');
+  const translated = (tl: string) => {
+    const u = onGoogle ? new URL(location.href)
+      : new URL(`https://${location.hostname.replace(/-/g, '--').replace(/\./g, '-')}.translate.goog${location.pathname}${location.search}`);
+    u.searchParams.set('_x_tr_sl', 'vi'); u.searchParams.set('_x_tr_tl', tl); u.searchParams.set('_x_tr_hl', tl); u.searchParams.set('_x_tr_pto', 'wapp');
+    return u.href;
+  };
+  if (!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+    document.querySelectorAll<HTMLAnchorElement>('a[data-gt]').forEach((a) => { a.href = translated(a.dataset.gt || 'en'); });
+  }
+  if (onGoogle) {
+    const back = new URL(location.href);
+    [...back.searchParams.keys()].filter((k) => k.startsWith('_x_tr_')).forEach((k) => back.searchParams.delete(k));
+    back.hostname = originalHost();
+    document.querySelectorAll<HTMLElement>('[data-lang-vi]').forEach((el) => {
+      const a = document.createElement('a'); a.href = back.href; a.textContent = el.textContent; a.hreflang = 'vi'; el.replaceWith(a);
+    });
+  }
 
   // Compact header after the first 80px of scrolling.
   if (header) {

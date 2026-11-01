@@ -4,9 +4,9 @@
       "eyebrow": "TIẾN NÔNG GROUP · TỪ NĂM 1995",
       "title": "Hơn 30 năm Khoa học công nghệ Phụng sự nhà nông",
       "text": "Nghiên cứu giải pháp dinh dưỡng cây trồng từ phòng thí nghiệm đến cánh đồng. Nông nghiệp bền vững, nông thôn văn minh, nông dân thịnh vượng.",
-      "button1_label": "Khám phá giải pháp →",
+      "button1_label": "Khám phá giải pháp →",
       "button1_link": "/giai-phap/",
-      "button2_label": "Tìm đại lý gần nhất",
+      "button2_label": "Tìm đại lý gần nhất",
       "button2_link": "/lien-he/#dai-ly",
       "show_text": true,
       "image": {
@@ -49,13 +49,13 @@
   ],
   "s02_uy_tin": {
     "t1": "300.000+",
-    "t2": "hộ nông dân tin dùng",
+    "t2": "hộ nông dân tin dùng",
     "t3": "10.000",
-    "t4": "điểm bán trên toàn quốc",
+    "t4": "điểm bán trên toàn quốc",
     "t5": "200+",
-    "t6": "nhà phân phối",
+    "t6": "nhà phân phối",
     "t7": "650.000",
-    "t8": "tấn/năm · 3 nhà máy",
+    "t8": "tấn/năm · 3 nhà máy",
     "t9": "Huân chương Lao động",
     "t10": "Chủ tịch nước trao tặng năm 2009",
     "t11": "Bằng khen Thủ tướng Chính phủ",
@@ -64,7 +64,7 @@
     "t14": "trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam",
     "t15": "6 lần Sao Vàng Đất Việt",
     "t16": "năm 2003 · 2005 · 2007 · 2009 · 2013 · 2024",
-    "t18": "Xem tất cả thành tựu →",
+    "t18": "Xem tất cả thành tựu →",
     "img_award_1": {
       "src": "/uploads/award-hc-mverpbix.png",
       "focus": "center",
@@ -101,8 +101,8 @@
     "story_link": "/ve-tien-nong/"
   },
   "s03_khoa_hoc_cong_nghe": {
-    "t1": "01 · KHOA HỌC & CÔNG NGHỆ",
-    "t2": "Khoa học là nền tảng, cánh đồng là thước đo",
+    "t1": "01 · KHOA HỌC & CÔNG NGHỆ",
+    "t2": "Khoa học là nền tảng, cánh đồng là thước đo",
     "t3": "Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam. Mỗi công thức được nghiên cứu trên đất, trên cây và kiểm chứng ngoài đồng ruộng trước khi đến tay nhà nông.",
     "img_rd_main_1": {
       "focus": "44% 100%",
@@ -111,24 +111,24 @@
       "src": "/uploads/rd-main-mvc6bady.jpg"
     },
     "t4": "R&D",
-    "t5": "Trung tâm Nghiên cứu Phát triển KH&CN Tiến Nông",
+    "t5": "Trung tâm Nghiên cứu Phát triển KH&CN Tiến Nông",
     "t6": "Thành lập từ năm 2012.",
-    "t7": "VILAS 1519 · 2023",
-    "t8": "Phân tích đất & Đảm bảo chất lượng phân bón",
+    "t7": "VILAS 1519 · 2023",
+    "t8": "Phân tích đất & Đảm bảo chất lượng phân bón",
     "t9": "Kiểm soát chất lượng nguyên liệu đầu vào và đầu ra của sản phẩm.",
     "t10": "VALAS 262 · 2026",
     "t11": "Công nghệ sinh học",
     "t12": "Nghiên cứu nhóm vi sinh vật có ích trong nông nghiệp.",
     "t13": "ISO/IEC 17025:2017",
     "t14": "\"Tiêu chuẩn vàng\" cho các Phòng Thí nghiệm trên thế giới",
-    "t15": "Mô hình trình diễn tại các vùng sản xuất trọng điểm",
+    "t15": "Mô hình trình diễn tại các vùng sản xuất trọng điểm",
     "t16": "50+",
-    "t17": "nhà khoa học & kỹ sư",
+    "t17": "nhà khoa học & kỹ sư",
     "t18": "10/ năm",
-    "t19": "đề tài nghiên cứu",
+    "t19": "đề tài nghiên cứu",
     "t20": "+10.000",
-    "t21": "mẫu đất phân tích/năm",
-    "t22": "Tìm hiểu Khoa học & Công nghệ →",
+    "t21": "mẫu đất phân tích/năm",
+    "t22": "Tìm hiểu Khoa học & Công nghệ →",
     "slides": [
       {
         "src": "/uploads/rd-main-mvc6bady.jpg",
@@ -157,8 +157,8 @@
     ]
   },
   "s04_giai_phap_theo_doi_tuong": {
-    "t1": "02 · GIẢI PHÁP",
-    "t2": "Giải pháp phù hợp cho từng đối tác",
+    "t1": "02 · GIẢI PHÁP",
+    "t2": "Giải pháp phù hợp cho từng đối tác",
     "img_aud_farmer_1": {
       "focus": "0% 0%",
       "zoom": "108",
@@ -167,7 +167,7 @@
     },
     "t3": "Nhà nông",
     "t4": "Giải pháp dinh dưỡng theo cây trồng\nQuy trình bón phân khoa học\nKỹ sư tư vấn tận nơi",
-    "t5": "Giải pháp theo cây trồng →",
+    "t5": "Giải pháp theo cây trồng →",
     "img_aud_dealer_1": {
       "focus": "center",
       "zoom": "100",
@@ -176,16 +176,16 @@
     },
     "t6": "Đại lý & Nhà phân phối",
     "t7": "Chính sách hợp tác minh bạch\nChương trình hỗ trợ bán hàng linh hoạt\nBộ sản phẩm đa dạng",
-    "t8": "Trở thành đại lý →",
+    "t8": "Trở thành đại lý →",
     "img_aud_project_1": {
       "focus": "50% 0%",
       "zoom": "100",
       "alt": "Sân golf / cảnh quan đô thị / nhà kính",
       "src": "/uploads/aud-project-mvger7ed.jpg"
     },
-    "t9": "Khách hàng dự án",
+    "t9": "Khách hàng dự án",
     "t10": "Sân golf, cảnh quan đô thị\nKhu công nghiệp\nNông nghiệp công nghệ cao",
-    "t11": "Yêu cầu tư vấn dự án →",
+    "t11": "Yêu cầu tư vấn dự án →",
     "img_aud_export_1": {
       "focus": "23.5% 40.9%",
       "zoom": "111",
@@ -194,7 +194,7 @@
     },
     "t12": "Hợp tác quốc tế",
     "t13": "Bạn hàng tại hơn 10 quốc gia\nCung ứng ổn định 650.000 tấn/năm\nSản xuất theo ISO 9001:2015 & ISO 14001:2015",
-    "t14": "Hợp tác xuất khẩu →",
+    "t14": "Hợp tác xuất khẩu →",
     "org_eyebrow": "HỘI NÔNG DÂN · LIÊN MINH HỢP TÁC XÃ",
     "org_title": "Hợp tác tổ chức chính trị – xã hội",
     "org_text": "Tiến Nông đồng hành cùng Hội Nông dân, Liên minh hợp tác xã cung cấp thông tin, kỹ thuật canh tác và vật tư nông nghiệp chất lượng đến từng hộ nông dân.",
@@ -222,15 +222,15 @@
     ]
   },
   "s05_san_pham": {
-    "t1": "03 · SẢN PHẨM",
-    "t2": "Dinh dưỡng lý tưởng cho từng loại cây trồng, từng giai đoạn sinh trưởng",
+    "t1": "03 · SẢN PHẨM",
+    "t2": "Dinh dưỡng lý tưởng cho từng loại cây trồng, từng giai đoạn sinh trưởng",
     "img_line_1_1": {
       "focus": "50% 50%",
       "zoom": "100",
       "alt": "Bao bì dòng Chuyên dùng",
       "src": "/uploads/line-1-mvg6e848.png"
     },
-    "t3": "Phân bón chuyên dùng",
+    "t3": "Phân bón chuyên dùng",
     "t4": "Công thức chuyên biệt cho từng loại cây trồng",
     "img_line_2_1": {
       "focus": "50% 50%",
@@ -238,23 +238,23 @@
       "alt": "Bao bì dòng Đa dụng",
       "src": "/uploads/line-2-mvg6slxi.png"
     },
-    "t5": "Phân bón đa dụng",
-    "t6": "Phù hợp với nhiều loại cây trồng",
+    "t5": "Phân bón đa dụng",
+    "t6": "Phù hợp với nhiều loại cây trồng",
     "img_line_3_1": {
       "focus": "50% 50%",
       "zoom": "100",
       "alt": "Bao bì dòng Hữu cơ",
       "src": "/uploads/line-3-mvhrt9tv.png"
     },
-    "t7": "Phân bón hữu cơ",
-    "t8": "Bổ sung hữu cơ, cải tạo đất, hướng tới canh tác bền vững",
+    "t7": "Phân bón hữu cơ",
+    "t8": "Bổ sung hữu cơ, cải tạo đất, hướng tới canh tác bền vững",
     "img_line_4_1": {
       "focus": "50% 50%",
       "zoom": "100",
       "alt": "Bao bì dòng Hàm lượng cao",
       "src": "/uploads/line-4-mvg7aomv.png"
     },
-    "t9": "Phân bón công nghệ cao",
+    "t9": "Phân bón công nghệ cao",
     "t10": "Được nghiên cứu chuyên sâu, mang lại giá trị cao cho nhà nông và nông nghiệp bền vững",
     "img_crop_lua_1": {
       "focus": "17.7% 0%",
@@ -276,29 +276,29 @@
       "alt": "Cà phê",
       "src": "/uploads/crop-caphe-mveryddr.jpg"
     },
-    "t13": "Cà phê",
+    "t13": "Cà phê",
     "img_crop_anqua_1": {
       "focus": "47.5% 50%",
       "zoom": "100",
       "alt": "Cây ăn quả",
       "src": "/uploads/crop-anqua-mvg7d46l.jpg"
     },
-    "t14": "Cây ăn quả",
+    "t14": "Cây ăn quả",
     "img_crop_rau_1": {
       "focus": "74.5% 50%",
       "zoom": "100",
       "alt": "Rau màu",
       "src": "/uploads/crop-rau-mves6oej.jpg"
     },
-    "t15": "Rau màu",
+    "t15": "Rau màu",
     "img_crop_congnghiep_1": {
       "focus": "0% 50%",
       "zoom": "100",
       "alt": "Cây công nghiệp",
       "src": "/uploads/crop-congnghiep-mves8q0r.jpg"
     },
-    "t16": "Cây công nghiệp",
-    "t17": "Xem tất cả sản phẩm →",
+    "t16": "Cây công nghiệp",
+    "t17": "Xem tất cả sản phẩm →",
     "crop_lua_desc": "Dinh dưỡng theo từng giai đoạn: bón lót, đẻ nhánh, làm đòng",
     "crop_ngo_desc": "Phân bón chuyên dùng cho ngô, từ bón lót đến nuôi bắp",
     "crop_caphe_desc": "Dinh dưỡng cho cà phê, chè, hồ tiêu theo mùa vụ",
@@ -313,16 +313,16 @@
       "alt": "Flycam nhà máy Bỉm Sơn: cây xanh, khuôn viên sạch đẹp",
       "src": "/uploads/plant-flycam-mvm23uwo.jpg"
     },
-    "t1": "04 · SẢN XUẤT XANH",
-    "t2": "Sản xuất quy mô lớn, thân thiện với môi trường",
-    "t3": "Ba nhà máy với tổng công suất 650.000 tấn/năm, vận hành theo tiêu chuẩn ISO 9001:2015 về chất lượng và ISO 14001:2015 về môi trường, trong khuôn viên xanh, sạch và an toàn.",
-    "t4": "Nhà máy Tiến Nông Bỉm Sơn",
+    "t1": "04 · SẢN XUẤT XANH",
+    "t2": "Sản xuất quy mô lớn, thân thiện với môi trường",
+    "t3": "Ba nhà máy với tổng công suất 650.000 tấn/năm, vận hành theo tiêu chuẩn ISO 9001:2015 về chất lượng và ISO 14001:2015 về môi trường, trong khuôn viên xanh, sạch và an toàn.",
+    "t4": "Nhà máy Tiến Nông Bỉm Sơn",
     "t5": "Bỉm Sơn, Thanh Hoá",
     "t6": "Nhà máy Tiến Nông 3",
     "t7": "Hoằng Phú, Thanh Hoá",
     "t8": "Nhà máy Tiến Nông Gia Lai",
     "t9": "Chư Sê, Gia Lai",
-    "t10": "Khám phá hệ thống nhà máy →",
+    "t10": "Khám phá hệ thống nhà máy →",
     "highlights": [
       {
         "value": "650.000 tấn/năm",
@@ -357,25 +357,25 @@
       "alt": "Lễ trao Bảo Bình tài lộc",
       "src": "/uploads/people-3-mvg2xkwm.jpg"
     },
-    "t1": "05 · CON NGƯỜI",
-    "t2": "Gắn bó, đồng hành, cùng phát triển",
-    "t3": "Nhiều cán bộ, nhân viên đã đồng hành cùng Tiến Nông hơn 20 năm. Chúng tôi xây dựng môi trường làm việc gần gũi, chế độ đãi ngộ xứng đáng và sự ghi nhận dành cho mỗi chặng đường cống hiến.",
+    "t1": "06 · CON NGƯỜI",
+    "t2": "Gắn bó, đồng hành, cùng phát triển",
+    "t3": "Nhiều cán bộ, nhân viên đã đồng hành cùng Tiến Nông hơn 20 năm. Chúng tôi xây dựng môi trường làm việc gần gũi, chế độ đãi ngộ xứng đáng và sự ghi nhận dành cho mỗi chặng đường cống hiến.",
     "t4": "Thu nhập xứng đáng, minh bạch",
-    "t5": "Gắn với hiệu quả công việc và thâm niên công tác",
+    "t5": "Gắn với hiệu quả công việc và thâm niên công tác",
     "t6": "Thăm quan, học tập kinh nghiệm",
-    "t7": "Chương trình dành cho toàn thể cán bộ, nhân viên",
+    "t7": "Chương trình dành cho toàn thể cán bộ, nhân viên",
     "t8": "Tri ân người lao động",
     "t9": "Chương trình tặng vàng, tôn vinh đóng góp",
-    "t10": "Bảo Bình tài lộc",
-    "t11": "Vinh danh những chặng đường cống hiến",
-    "t12": "Cơ hội nghề nghiệp →",
-    "t13": "Văn hóa Tiến Nông"
+    "t10": "Bảo Bình tài lộc",
+    "t11": "Vinh danh những chặng đường cống hiến",
+    "t12": "Cơ hội nghề nghiệp →",
+    "t13": "Văn hóa Tiến Nông"
   },
   "s08_vi_cong_dong": {
-    "t1": "06 · PHÁT TRIỂN BỀN VỮNG",
-    "t2": "Nông nghiệp bền vững",
-    "t3": "Cộng đồng thịnh vượng",
-    "t4": "Xác định “Sẻ chia lợi ích” là giá trị cốt lõi, Tiến Nông đồng hành cùng nhà nông và các địa phương, từ những lớp tập huấn kỹ thuật đến công tác khuyến học và các chương trình hướng về biển đảo.",
+    "t1": "05 · PHÁT TRIỂN BỀN VỮNG",
+    "t2": "Nông nghiệp bền vững",
+    "t3": "Cộng đồng thịnh vượng",
+    "t4": "Xác định “Sẻ chia lợi ích” là giá trị cốt lõi, Tiến Nông đồng hành cùng nhà nông và các địa phương, từ những lớp tập huấn kỹ thuật đến công tác khuyến học và các chương trình hướng về biển đảo.",
     "img_csr_1_1": {
       "src": "/uploads/tin-cu/2019/gia-dinh-tien-nong-tiep-tuc-nhan-do-dau-23-tre-mo-coi-tinh-thanh-hoa.webp",
       "focus": "center",
@@ -390,17 +390,17 @@
       "alt": "Lễ trao học bổng khuyến học Thanh Hóa",
       "src": "/uploads/csr-2-mvel3swo.jpg"
     },
-    "t7": "KHUYẾN HỌC",
-    "t8": "Ủng hộ 1,55 tỷ đồng cho công tác khuyến học tỉnh Thanh Hóa năm 2026",
+    "t7": "KHUYẾN HỌC",
+    "t8": "Ủng hộ 1,55 tỷ đồng cho công tác khuyến học tỉnh Thanh Hóa năm 2026",
     "img_csr_3_1": {
       "focus": "4.4% 50%",
       "zoom": "100",
       "alt": "Chương trình Triệu mầm xanh Trường Sa",
       "src": "/uploads/csr-3-mves3xns.jpg"
     },
-    "t9": "BIỂN ĐẢO",
-    "t10": "Đồng hành hỗ trợ 1,26 tỷ đồng chương trình “Xanh hoá Trường Sa”",
-    "t11": "Phát triển bền vững tại Tiến Nông →",
+    "t9": "BIỂN ĐẢO",
+    "t10": "Đồng hành hỗ trợ 1,26 tỷ đồng chương trình “Xanh hoá Trường Sa”",
+    "t11": "Phát triển bền vững tại Tiến Nông →",
     "t12": "VÌ CỘNG ĐỒNG",
     "t13": "Tặng hơn 100 tấn phân bón humic giúp nông dân Bắc Giang tái sản xuất sau lũ",
     "img_csr_4_1": {
@@ -408,11 +408,14 @@
       "zoom": "100",
       "alt": "Tiến Nông trao tặng phân bón hữu cơ sinh học humic cho nông dân Bắc Giang"
     },
-    "link_4": "/tin-tuc/cong-ty-tien-nong-trao-tang-hon-100-tan-phan-bon-huu-co-sinh-hoc-humic-tien/"
+    "link_4": "/tin-tuc/cong-ty-tien-nong-trao-tang-hon-100-tan-phan-bon-huu-co-sinh-hoc-humic-tien/",
+    "link_1": "/tin-tuc/thang-hanh-dong-vi-tre-em-2025-tien-nong-tiep-tuc-hanh-trinh-trao-yeu-thuong/",
+    "link_2": "/tin-tuc/tien-nong-dang-ky-ung-ho-155-ty-dong-cho-cong-tac-khuyen-hoc-tinh-thanh-hoa/",
+    "link_3": "/tin-tuc/tien-nong-dong-hanh-xanh-hoa-truong-sa/"
   },
   "s09_tin_tuc": {
-    "t1": "Tin tức",
-    "t2": "Tất cả tin tức →"
+    "t1": "Tin tức",
+    "t2": "Tất cả tin tức →"
   },
   "product_tab_line": "Theo dòng sản phẩm",
   "product_tab_crop": "Theo cây trồng",
