@@ -3,6 +3,14 @@
 @import './v2.css';
 @import './story.css';
 
+/* Chữ số: Alexandria vẽ số 0 hơi gầy, nên các chữ số 0–9 lấy từ Lexend (cùng phong cách, số tròn hơn).
+   Chỉ 10 chữ số, mỗi độ đậm ~2 KB (giấy phép OFL: src/assets/fonts/LEXEND-OFL.txt). */
+@font-face { font-family: 'TN So'; font-style: normal; font-weight: 300; font-display: swap; src: url('../assets/fonts/lexend-so-300.woff2') format('woff2'); unicode-range: U+0030-0039; }
+@font-face { font-family: 'TN So'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/lexend-so-400.woff2') format('woff2'); unicode-range: U+0030-0039; }
+@font-face { font-family: 'TN So'; font-style: normal; font-weight: 500; font-display: swap; src: url('../assets/fonts/lexend-so-500.woff2') format('woff2'); unicode-range: U+0030-0039; }
+@font-face { font-family: 'TN So'; font-style: normal; font-weight: 600; font-display: swap; src: url('../assets/fonts/lexend-so-600.woff2') format('woff2'); unicode-range: U+0030-0039; }
+@font-face { font-family: 'TN So'; font-style: normal; font-weight: 700; font-display: swap; src: url('../assets/fonts/lexend-so-700.woff2') format('woff2'); unicode-range: U+0030-0039; }
+
 /* Page-level rules every design page declared in its <helmet>. */
 html, body { margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 110px; }

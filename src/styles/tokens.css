@@ -14,7 +14,7 @@
 --brand-bright:#0ca64e;--brand-highlight:#f5c44e;
 }
 :root{
---font-display:'Alexandria',-apple-system,sans-serif;--font-body:'Alexandria',-apple-system,sans-serif;--font-mono:'Alexandria',-apple-system,sans-serif;
+--font-display:'TN So','Alexandria',-apple-system,sans-serif;--font-body:'TN So','Alexandria',-apple-system,sans-serif;--font-mono:'TN So','Alexandria',-apple-system,sans-serif;
 --text-xs:12px;--text-sm:14px;--text-base:16px;--text-lg:18px;--text-xl:20px;--text-2xl:24px;--text-3xl:30px;--text-4xl:36px;--text-5xl:48px;--text-6xl:60px;
 --leading-tight:1.1;--leading-snug:1.25;--leading-normal:1.5;--leading-relaxed:1.65;
 --weight-regular:400;--weight-medium:500;--weight-semibold:600;--weight-bold:700;--weight-extrabold:800;
