@@ -2,7 +2,7 @@
   "hero_slides": [
     {
       "eyebrow": "TIẾN NÔNG GROUP · TỪ NĂM 1995",
-      "title": "Hơn 30 năm khoa học công nghệ phụng sự nhà nông",
+      "title": "Hơn 30 năm Khoa học công nghệ Phụng sự nhà nông",
       "text": "Nghiên cứu giải pháp dinh dưỡng cây trồng từ phòng thí nghiệm đến cánh đồng. Nông nghiệp bền vững, nông thôn văn minh, nông dân thịnh vượng.",
       "button1_label": "Khám phá giải pháp →",
       "button1_link": "/giai-phap/",
@@ -92,7 +92,6 @@
     "years_value": "30+",
     "years_label": "Năm phát triển",
     "intro_image": {
-      "src": "/uploads/canh-dong-binh-minh.jpg",
       "focus": "50% 60%",
       "zoom": "100",
       "alt": "Cánh đồng lúa lúc bình minh"
@@ -405,7 +404,6 @@
     "t12": "VÌ CỘNG ĐỒNG",
     "t13": "Tặng hơn 100 tấn phân bón humic giúp nông dân Bắc Giang tái sản xuất sau lũ",
     "img_csr_4_1": {
-      "src": "/uploads/tin-cu/2024/cong-ty-tien-nong-trao-tang-hon-100-tan-phan-bon-huu-co-sinh-hoc-humic-tien.webp",
       "focus": "center",
       "zoom": "100",
       "alt": "Tiến Nông trao tặng phân bón hữu cơ sinh học humic cho nông dân Bắc Giang"
@@ -425,10 +423,6 @@
       "zoom": "100",
       "alt": "Giải pháp dinh dưỡng toàn diện cho cây trồng – các dòng phân bón Tiến Nông"
     },
-    "eyebrow": "",
-    "title": "",
-    "text": "",
-    "button": "",
     "link": "/san-pham/"
   }
 }
