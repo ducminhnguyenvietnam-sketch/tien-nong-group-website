@@ -74,7 +74,7 @@
     "t21": "Trách nhiệm cộng đồng",
     "t22": "Trách nhiệm với xã hội, bảo vệ môi trường, đồng hành cùng nông dân.",
     "background": {
-      "src": "/uploads/Nhà máy DDCT TN Bỉm Sơn.jpg",
+      "src": "/uploads/canh-dong-binh-minh.jpg",
       "focus": "50% 60%",
       "zoom": "100",
       "alt": "Nhà máy Tiến Nông Bỉm Sơn lúc bình minh"
@@ -438,8 +438,7 @@
           },
           {
             "value": "10.000",
-            "label": "Điểm bán",
-            "sub": ""
+            "label": "Điểm bán"
           },
           {
             "value": "10+",
