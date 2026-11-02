@@ -26,7 +26,7 @@ function textBlocks() {
 function run() {
   for (const el of textBlocks()) {
     el.classList.remove('jx-left');
-    if (el.closest('.jx-justify')) continue; // asked to stay justified (e.g. card titles on the home page)
+    if (el.closest('.jx-justify, .jx-start')) continue; // asked to stay justified (card titles) or left-aligned (short card texts)
     const cs = getComputedStyle(el);
     if (cs.textAlign !== 'justify') continue;
     const fs = parseFloat(cs.fontSize) || 16;

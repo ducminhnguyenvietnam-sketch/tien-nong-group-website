@@ -5468,6 +5468,12 @@ content:
       - name: intro
         label: Đoạn giới thiệu
         type: text
+      - name: who_label
+        label: 'Nhãn dòng "Đối tượng"'
+        type: string
+      - name: get_label
+        label: 'Nhãn dòng "Quyền lợi chính"'
+        type: string
       - name: items
         label: Các hình thức
         type: object
@@ -5491,30 +5497,6 @@ content:
         - name: link
           label: Đường dẫn (link)
           type: string
-    - name: why
-      label: 04 · Vì sao chọn Tiến Nông
-      type: object
-      fields:
-      - name: eyebrow
-        label: Dòng chữ nhỏ
-        type: string
-      - name: title
-        label: Tiêu đề
-        type: string
-      - name: items
-        label: Các mục
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{fields.title}'
-        fields:
-        - name: title
-          label: Tiêu đề
-          type: string
-        - name: text
-          label: Nội dung
-          type: text
     - name: benefits
       label: 05 · Quyền lợi
       type: object
@@ -5558,6 +5540,9 @@ content:
       - name: intro
         label: Đoạn giới thiệu
         type: text
+      - name: card_label
+        label: Nhãn nhỏ trên mỗi thẻ (VD CÂU CHUYỆN ĐỐI TÁC)
+        type: string
       - name: partners
         label: Các đối tác
         type: object
@@ -5574,6 +5559,9 @@ content:
           type: string
         - name: place
           label: Địa chỉ ngắn (xã, tỉnh)
+          type: string
+        - name: line
+          label: Một câu ngắn hiện trên thẻ (nét chính của đối tác)
           type: string
         - name: facts
           label: Số liệu nổi bật
@@ -5604,25 +5592,6 @@ content:
         - name: link
           label: Đường dẫn (link)
           type: string
-    - name: club
-      label: 07 · Câu lạc bộ nhà phân phối
-      type: object
-      fields:
-      - name: eyebrow
-        label: Dòng chữ nhỏ
-        type: string
-      - name: title
-        label: Tiêu đề
-        type: string
-      - name: text
-        label: Nội dung
-        type: text
-      - name: image
-        label: Ảnh
-        component: photo
-      - name: link
-        label: Đường dẫn (link)
-        type: string
     - name: process
       label: 08 · Quy trình 5 bước
       type: object
@@ -5680,26 +5649,6 @@ content:
       - name: image
         label: Ảnh minh hoạ điều kiện
         component: photo
-    - name: expansion
-      label: 10 · Khu vực ưu tiên mở rộng
-      type: object
-      fields:
-      - name: eyebrow
-        label: Dòng chữ nhỏ
-        type: string
-      - name: title
-        label: Tiêu đề
-        type: string
-      - name: text
-        label: Nội dung
-        type: text
-      - name: areas
-        label: Các tỉnh ưu tiên
-        type: string
-        list: true
-      - name: link
-        label: Đường dẫn (link)
-        type: string
     - name: faq
       label: 11 · Hỏi đáp
       type: object

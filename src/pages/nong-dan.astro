@@ -63,7 +63,7 @@ const hardship = await Promise.all(c.hardship.items.map(async (h) => {
 <div class="st-wrap">
 <Head eyebrow={c.promises.eyebrow} title={c.promises.title} intro={c.promises.intro} />
 <div class="nd-promises">
-{c.promises.items.map((p, k) => <div class="nd-promise"><span class="nd-promise__n">{String(k + 1).padStart(2, '0')}</span><strong>{p.title}</strong><p class="jx-left">{p.text}</p></div>)}
+{c.promises.items.map((p, k) => <div class="nd-promise"><span class="nd-promise__n">{String(k + 1).padStart(2, '0')}</span><strong>{p.title}</strong><p class="jx-start">{p.text}</p></div>)}
 </div>
 </div></section>
 
@@ -72,7 +72,7 @@ const hardship = await Promise.all(c.hardship.items.map(async (h) => {
 <Head eyebrow={c.season.eyebrow} title={c.season.title} intro={c.season.intro} split />
 <ol class="nd-season">{c.season.steps.map((s, k) => <li>
 <div class="nd-season__img"><ImageSlot style={fill} id={`season-${k}`} shape="rect" placeholder={s.image?.alt || s.title} image={s.image} cms={`${F}#season.steps.${k}.image`} sizes="(max-width: 899px) 92vw, 400px" /><span class="nd-season__n">{String(k + 1).padStart(2, '0')}</span></div>
-<div class="nd-season__body"><strong>{s.title}</strong><p class="jx-left">{s.text}</p></div>
+<div class="nd-season__body"><strong>{s.title}</strong><p class="jx-start">{s.text}</p></div>
 </li>)}</ol>
 </div></section>
 
@@ -139,7 +139,7 @@ const hardship = await Promise.all(c.hardship.items.map(async (h) => {
 <div class="st-wrap">
 <Head eyebrow={c.hardship.eyebrow} title={c.hardship.title} intro={c.hardship.intro} />
 <div class="st-grid" style="--min:250px">
-{hardship.map((h, k) => <a class="st-card" href={isFilled(h.link) ? link(h.link) : undefined}><div class="st-card__img st-hide-empty" style="--img-h:180px"><ImageSlot style={fill} id={`hardship-${k}`} shape="rect" placeholder={h.title} image={h.img} cms={`${F}#hardship.items.${k}.image`} sizes="(max-width: 767px) 92vw, 300px" /></div><div class="st-card__body"><span class="st-card__tag">{h.when}</span><strong class="st-card__title">{h.title}</strong><span class="st-card__text jx-left">{h.text}</span>{isFilled(h.link) && <span class="st-card__link">Đọc tin →</span>}</div></a>)}
+{hardship.map((h, k) => <a class="st-card" href={isFilled(h.link) ? link(h.link) : undefined}><div class="st-card__img st-hide-empty" style="--img-h:180px"><ImageSlot style={fill} id={`hardship-${k}`} shape="rect" placeholder={h.title} image={h.img} cms={`${F}#hardship.items.${k}.image`} sizes="(max-width: 767px) 92vw, 300px" /></div><div class="st-card__body"><span class="st-card__tag">{h.when}</span><strong class="st-card__title">{h.title}</strong><span class="st-card__text jx-start">{h.text}</span>{isFilled(h.link) && <span class="st-card__link">Đọc tin →</span>}</div></a>)}
 </div>
 </div></section>
 
@@ -147,7 +147,7 @@ const hardship = await Promise.all(c.hardship.items.map(async (h) => {
 <div class="st-wrap">
 <div class="nd-ws-head"><Head eyebrow={c.workshops.eyebrow} title={c.workshops.title} intro={c.workshops.intro} split /></div>
 <div class="nd-ws">
-{workshops.map((n) => <a href={newsUrl(n)} {...newsLinkAttrs(n)} class="nd-ws__card"><div class="nd-ws__img"><ImageSlot style={fill} id={`news-${n.id}`} shape="rounded" radius="14" placeholder="Ảnh hội thảo" image={n.data.cover} cms={`${n.filePath}#cover`} sizes="(max-width: 767px) 92vw, 300px" /></div><span class="nd-ws__meta"><strong>{CATEGORIES[n.data.category]}</strong>{n.data.date && <time>{formatDate(n.data.date)}</time>}</span><strong class="nd-ws__title jx-left">{n.data.title}</strong></a>)}
+{workshops.map((n) => <a href={newsUrl(n)} {...newsLinkAttrs(n)} class="nd-ws__card"><div class="nd-ws__img"><ImageSlot style={fill} id={`news-${n.id}`} shape="rounded" radius="14" placeholder="Ảnh hội thảo" image={n.data.cover} cms={`${n.filePath}#cover`} sizes="(max-width: 767px) 92vw, 300px" /></div><span class="nd-ws__meta"><strong>{CATEGORIES[n.data.category]}</strong>{n.data.date && <time>{formatDate(n.data.date)}</time>}</span><strong class="nd-ws__title jx-start">{n.data.title}</strong></a>)}
 </div>
 {workshops.length === 0 && <span style="color:var(--text-secondary)">{c.workshops.empty}</span>}
 <a href={listUrl('nd')} class="nd-more">{c.workshops.all} <span aria-hidden="true">→</span></a>

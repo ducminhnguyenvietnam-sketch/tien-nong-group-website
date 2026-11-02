@@ -9,6 +9,8 @@ main :is(h1, h2, h3, h4, h5, h6, strong, b, button, label, input, select, textar
 main :is(h1, h2, h3, h4, strong) { text-wrap: balance; }
 main :is(p, li, blockquote, dd) { text-wrap: pretty; }
 .jx-left { text-align: start !important; }
+/* Set in the markup: short texts in narrow cards stay left-aligned whatever their length. */
+main .jx-start { text-align: start !important; text-align-last: auto !important; }
 /* Blocks that should stay justified even when short (titles of news cards on the home page). */
 main .jx-justify { text-align: justify !important; text-align-last: start !important; }
 /* Copy laid over a photo (heroes, banners) reads as a headline block, so it stays left-aligned. */
