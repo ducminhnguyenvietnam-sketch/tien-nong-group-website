@@ -3875,22 +3875,6 @@ content:
         - name: link
           label: Đường dẫn (link)
           type: string
-    - name: workers
-      label: 10 · Người lao động
-      type: object
-      fields:
-      - name: eyebrow
-        label: Dòng chữ nhỏ
-        type: string
-      - name: title
-        label: Tiêu đề
-        type: string
-      - name: text
-        label: Nội dung
-        type: text
-      - name: button
-        label: Nút
-        type: string
     - name: roadmap
       label: 12 · Lộ trình
       type: object
@@ -4452,39 +4436,6 @@ content:
       - name: image
         label: Ảnh
         component: photo
-    - name: center
-      label: 06 · Trung tâm Chăm sóc Phục vụ Nông dân
-      type: object
-      fields:
-      - name: eyebrow
-        label: Dòng chữ nhỏ
-        type: string
-      - name: title
-        label: Tiêu đề
-        type: string
-      - name: text
-        label: Nội dung
-        type: text
-      - name: items
-        label: Các dịch vụ
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{fields.title}'
-        fields:
-        - name: title
-          label: Tiêu đề
-          type: string
-        - name: text
-          label: Nội dung
-          type: text
-      - name: image
-        label: Ảnh
-        component: photo
-      - name: link
-        label: Đường dẫn (link)
-        type: string
     - name: results
       label: 07 · Kết quả trên đồng ruộng
       type: object
