@@ -10,6 +10,7 @@
  * place. Off on phones, short screens, with reduced motion, and when the content would not fit on
  * one screen (then the section works by clicking as before).
  */
+export {};
 const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const editing = new URLSearchParams(location.search).has('sua-anh');
 
