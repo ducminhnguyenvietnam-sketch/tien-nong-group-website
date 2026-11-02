@@ -76,6 +76,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 20-6-4+1SiO₂hh Tiến Nông (Cà phê số 1) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/ca-phe-so-1/

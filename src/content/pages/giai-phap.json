@@ -13,65 +13,91 @@
     "t2": "GIẢI PHÁP DINH DƯỠNG",
     "t3": "Đất khỏe. Cây khỏe. Nông nghiệp hiệu quả hơn.",
     "t4": "Mỗi loại cây, mỗi chất đất có nhu cầu dinh dưỡng khác nhau. Tiến Nông xây dựng quy trình chăm sóc dựa trên phân tích thổ nhưỡng, khí hậu, vùng miền và đặc điểm sinh trưởng của từng cây trồng.",
-    "t5": "Tìm giải pháp cho cây trồng →",
+    "t5": "Tìm giải pháp cho cây trồng",
     "t6": "Giải pháp cho dự án"
   },
   "s02_cay_trong": {
     "t1": "THEO CÂY TRỒNG",
     "t2": "Mỗi nhóm cây trồng, một giải pháp dinh dưỡng riêng",
     "t3": "Mỗi loại cây trồng có nhu cầu dinh dưỡng khác nhau, thay đổi theo giai đoạn sinh trưởng, điều kiện đất đai, khí hậu và mục tiêu sản xuất. Tiến Nông xây dựng giải pháp chăm sóc và quản lý dinh dưỡng dựa trên đặc điểm cây trồng, nhu cầu dinh dưỡng và kết quả đánh giá đất, góp phần nâng cao hiệu quả sử dụng phân bón, năng suất và chất lượng nông sản.",
-    "img_cg_1_1": {
-      "src": "/uploads/cg-1-mvc2zgs0.jpg",
-      "focus": "51.5% 50%",
-      "zoom": "100",
-      "alt": "Lúa, ngô"
-    },
-    "t4": "Cây lương thực",
-    "t5": "Lúa · Ngô · Khoai · Sắn",
-    "img_cg_2_1": {
-      "focus": "84.5% 50%",
-      "zoom": "100",
-      "alt": "Rau màu",
-      "src": "/uploads/cg-2-mvc30sn5.jpg"
-    },
-    "t6": "Rau màu & cây thực phẩm",
-    "t7": "Rau ăn lá · Rau ăn quả · Củ",
-    "img_cg_3_1": {
-      "focus": "48.7% 50%",
-      "zoom": "100",
-      "alt": "Cây ăn quả",
-      "src": "/uploads/cg-3-mvgcqcd0.jpg"
-    },
-    "t8": "Cây ăn quả",
-    "t9": "Cam · Bưởi · Sầu riêng · Thanh long",
-    "img_cg_4_1": {
-      "focus": "46.1% 50%",
-      "zoom": "100",
-      "alt": "Cà phê, chè",
-      "src": "/uploads/cg-4-mvc37fak.jpg"
-    },
-    "t10": "Cây công nghiệp",
-    "t11": "Cà phê · Chè · Hồ tiêu · Mía",
-    "img_cg_5_1": {
-      "focus": "50% 50%",
-      "zoom": "100",
-      "alt": "Hoa, cây cảnh",
-      "src": "/uploads/cg-5-mvc34pwq.jpg"
-    },
-    "t12": "Hoa, cây cảnh & cảnh quan",
-    "t13": "Hoa · Cây cảnh · Thảm cỏ",
-    "img_cg_6_1": {
-      "focus": "61.4% 50%",
-      "zoom": "100",
-      "alt": "Cây dược liệu",
-      "src": "/uploads/cg-6-mvc38s0a.jpg"
-    },
-    "t14": "Cây dược liệu",
-    "t15": "Sâm · Đinh lăng · Nghệ"
+    "tiles": [
+      {
+        "name": "Lúa",
+        "image": {
+          "src": "/uploads/gp-cay-lua.jpg",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Bông lúa chín"
+        }
+      },
+      {
+        "name": "Ngô",
+        "image": {
+          "src": "/uploads/gp-cay-ngo.jpg",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Bắp ngô trên cây"
+        }
+      },
+      {
+        "name": "Rau màu",
+        "image": {
+          "src": "/uploads/crop-rau-mves6oej.jpg",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Rau củ tươi"
+        }
+      },
+      {
+        "name": "Cây ăn quả",
+        "image": {
+          "focus": "48.7% 50%",
+          "zoom": "100",
+          "alt": "Cây ăn quả",
+          "src": "/uploads/cg-3-mvgcqcd0.jpg"
+        }
+      },
+      {
+        "name": "Cà phê",
+        "image": {
+          "src": "/uploads/crop-caphe-mveryddr.jpg",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Cành cà phê chín đỏ"
+        }
+      },
+      {
+        "name": "Chè",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Nương chè xanh"
+        }
+      },
+      {
+        "name": "Mía",
+        "image": {
+          "src": "/uploads/gp-cay-mia.jpg",
+          "focus": "40% 50%",
+          "zoom": "100",
+          "alt": "Kỹ sư Tiến Nông đo độ đường cây mía"
+        }
+      },
+      {
+        "name": "Cây trồng khác",
+        "image": {
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Hoa, cây cảnh",
+          "src": "/uploads/cg-5-mvc34pwq.jpg"
+        }
+      }
+    ]
   },
   "s03_theo_van_de": {
-    "t1": "HỎI ĐÁP",
-    "t2": "Nhận diện đúng vấn đề để chọn đúng giải pháp",
+    "t1": "NHẬN DIỆN ĐÚNG VẤN ĐỀ",
+    "t2": "Các vấn đề thường gặp và giải pháp",
     "t3": "Mỗi vấn đề trên đồng ruộng đều có nguyên nhân khoa học. Hiểu đúng vì sao, chúng ta mới chọn đúng giải pháp.",
     "label_problem": "VẤN ĐỀ",
     "label_why": "VÌ SAO?",
@@ -80,14 +106,18 @@
     "label_pack": "Bao bì sản phẩm",
     "label_result": "Kết quả thực tế",
     "faq_eyebrow": "HỎI ĐÁP",
-    "faq_title": "Câu hỏi thường gặp của bà con",
-    "faq_intro": "Những thắc mắc phổ biến khi chăm sóc cây trồng và cách xử lý. Cần tư vấn cụ thể cho ruộng vườn của mình, bà con hãy gọi kỹ sư Tiến Nông.",
+    "faq_title": "Hỏi đáp kỹ thuật",
+    "faq_intro": "Tra cứu theo nhóm hoặc nhập từ khóa về đất, cây trồng và cách sử dụng phân bón. Cần tư vấn cho ruộng vườn cụ thể, bà con gọi kỹ sư Tiến Nông.",
     "faq_image": {
       "src": "/uploads/esg-farm-3-mvc45k3i.jpg",
       "focus": "37.9% 50%",
       "zoom": "100",
       "alt": "Kỹ sư Tiến Nông giải đáp thắc mắc cho bà con ngay tại ruộng"
-    }
+    },
+    "faq_search_label": "TÌM CÂU HỎI",
+    "faq_search_placeholder": "Ví dụ: đất chua, vàng lá, bón vôi…",
+    "faq_all": "Tất cả câu hỏi",
+    "faq_empty": "Chưa có câu hỏi phù hợp. Bà con gọi kỹ sư Tiến Nông để được giải đáp trực tiếp."
   },
   "s04_suc_khoe_dat": {
     "img_soil_1": {
@@ -175,37 +205,44 @@
     {
       "title": "Cây vàng lá, sinh trưởng kém, năng suất không ổn định?",
       "cause": "• Thiếu trung – vi lượng: sắt (Fe), kẽm (Zn), magie (Mg), lưu huỳnh (S), bo (B)…\n• Rễ hoạt động kém do đất chua, đất bí, ngộ độc hữu cơ hoặc úng nước\n• Bón thiếu hoặc lệch đạm, kali",
-      "fix": "Bổ sung trung – vi lượng (như Vinafer Tiến Nông), cải thiện môi trường rễ (thoát nước, điều hòa pH đất) và bón cân đối theo từng giai đoạn."
+      "fix": "Bổ sung trung – vi lượng (như Vinafer Tiến Nông), cải thiện môi trường rễ (thoát nước, điều hòa pH đất) và bón cân đối theo từng giai đoạn.",
+      "category": "Dinh dưỡng & biểu hiện bất thường"
     },
     {
       "title": "Vì sao hiệu quả sử dụng phân bón chưa cao?",
       "cause": "• Bón chưa đúng liều lượng: thừa gây lãng phí, xót rễ; thiếu thì cây không đủ sức cho năng suất\n• Bón không đúng chủng loại, không theo nhu cầu của cây ở từng giai đoạn\n• Bón sai thời điểm, sai cách: rải trên đất khô hoặc ngay trước mưa lớn làm đạm bay hơi, rửa trôi\n• Đất chua giữ chặt lân, cây không hấp thu được",
-      "fix": "Bón theo nguyên tắc 4 đúng: đúng loại, đúng liều, đúng lúc, đúng cách. Dùng phân chuyên dùng theo cây trồng và điều hòa pH đất trước khi bón."
+      "fix": "Bón theo nguyên tắc 4 đúng: đúng loại, đúng liều, đúng lúc, đúng cách. Dùng phân chuyên dùng theo cây trồng và điều hòa pH đất trước khi bón.",
+      "category": "Sử dụng phân bón hiệu quả"
     },
     {
       "title": "Bón nhiều phân nhưng cây vẫn thiếu dinh dưỡng?",
       "cause": "• Bón theo thói quen, không theo nhu cầu của cây ở từng giai đoạn sinh trưởng\n• Chỉ chú trọng đạm, lân, kali mà bỏ quên trung – vi lượng\n• Đất nghèo hữu cơ, không giữ được phân",
-      "fix": "Dùng phân bón chuyên dùng theo cây trồng và giai đoạn, kết hợp phân hữu cơ và phân tích đất định kỳ."
+      "fix": "Dùng phân bón chuyên dùng theo cây trồng và giai đoạn, kết hợp phân hữu cơ và phân tích đất định kỳ.",
+      "category": "Dinh dưỡng & biểu hiện bất thường"
     },
     {
       "title": "Vì sao lúa bón nhiều đạm lại dễ lốp, đổ và nhiều sâu bệnh?",
       "cause": "• Thừa đạm làm thân lá mềm yếu, rậm rạp, dễ nhiễm rầy, đạo ôn, khô vằn\n• Thiếu kali và silic khiến thân cây yếu, dễ đổ ngã khi gặp mưa gió",
-      "fix": "Bón cân đối đạm – lân – kali; chọn NPK có bổ sung silic như dòng NPK lúa Tiến Nông giúp cứng cây, hạn chế đổ ngã và sâu bệnh."
+      "fix": "Bón cân đối đạm – lân – kali; chọn NPK có bổ sung silic như dòng NPK lúa Tiến Nông giúp cứng cây, hạn chế đổ ngã và sâu bệnh.",
+      "category": "Sinh trưởng & năng suất"
     },
     {
       "title": "Đã bón đủ NPK, có cần bón thêm phân hữu cơ không?",
       "cause": "• NPK cung cấp dinh dưỡng cho cây nhưng không bù lại chất hữu cơ cho đất\n• Đất thiếu hữu cơ lâu ngày sẽ chai cứng, giữ nước và giữ phân kém, vi sinh vật có ích suy giảm",
-      "fix": "Nên kết hợp phân hữu cơ, hữu cơ vi sinh (như Hữu cơ – Humic, NPK hữu cơ vi sinh Tiến Nông) với phân khoáng để vừa nuôi cây vừa nuôi đất."
+      "fix": "Nên kết hợp phân hữu cơ, hữu cơ vi sinh (như Hữu cơ – Humic, NPK hữu cơ vi sinh Tiến Nông) với phân khoáng để vừa nuôi cây vừa nuôi đất.",
+      "category": "Sức khỏe & cải tạo đất"
     },
     {
       "title": "Có nên trộn vôi chung với phân đạm, phân lân để bón một lần?",
       "cause": "• Vôi trộn với đạm (urê, phân amoni) làm đạm chuyển thành khí amoniac bay hơi, gây mất đạm\n• Vôi trộn với lân làm lân kết tủa, cây khó hấp thu",
-      "fix": "Không nên trộn. Bón vôi hoặc sản phẩm điều hòa pH đất trước, sau khoảng 7–10 ngày mới bón phân đạm, lân."
+      "fix": "Không nên trộn. Bón vôi hoặc sản phẩm điều hòa pH đất trước, sau khoảng 7–10 ngày mới bón phân đạm, lân.",
+      "category": "Sử dụng phân bón hiệu quả"
     },
     {
       "title": "Khi nào nên phân tích đất?",
       "cause": "• Năng suất giảm dần qua nhiều vụ dù vẫn bón phân như cũ\n• Chuyển đổi cây trồng hoặc bắt đầu canh tác trên đất mới",
-      "fix": "Nên phân tích đất định kỳ 2–3 năm một lần để biết pH, hữu cơ, đạm, lân, kali. Kỹ sư Tiến Nông sẽ dựa vào kết quả để tư vấn chương trình bón phù hợp."
+      "fix": "Nên phân tích đất định kỳ 2–3 năm một lần để biết pH, hữu cơ, đạm, lân, kali. Kỹ sư Tiến Nông sẽ dựa vào kết quả để tư vấn chương trình bón phù hợp.",
+      "category": "Sức khỏe & cải tạo đất"
     }
   ],
   "finder_crops": [
@@ -362,5 +399,11 @@
       "result_caption": "[Địa điểm, thời gian mô hình]"
     }
   ],
-  "problems_cause_label": "Nguyên nhân:"
+  "problems_cause_label": "Nguyên nhân:",
+  "faq_categories": [
+    "Sức khỏe & cải tạo đất",
+    "Dinh dưỡng & biểu hiện bất thường",
+    "Sử dụng phân bón hiệu quả",
+    "Sinh trưởng & năng suất"
+  ]
 }

@@ -34,35 +34,27 @@ Nhân dịp Ngày Quốc tế Phụ nữ 8/3, đoàn công tác cũng đã gửi
 
 Ông Nguyễn Hồng Lâm – Thành viên HĐQT và ông Lê Viết Thiện – Giám đốc Kinh doanh 3 cùng đoàn công tác Tiến Nông gặp gỡ, trao đổi với hệ thống Nhà phân phối, đại lý tại các tỉnh Phú Thọ, Sơn La và Lai Châu:
 
-*
 
 ![TIẾN NÔNG THĂM HỆ THỐNG KHÁCH HÀNG KHU VỰC TÂY BẮC ĐẦU XUÂN 2026](/uploads/tin-cu/2026/tien-nong-tham-he-thong-khach-hang-khu-vuc-tay-bac-dau-xuan-2026-1.webp)
 
-*
 
 *Công ty TNHH TM & DV Nông nghiệp Thanh Hòa (xã Đà Bắc, tỉnh Phú Thọ)* 
 
-*
 
 ![TIẾN NÔNG THĂM HỆ THỐNG KHÁCH HÀNG KHU VỰC TÂY BẮC ĐẦU XUÂN 2026](/uploads/tin-cu/2026/tien-nong-tham-he-thong-khach-hang-khu-vuc-tay-bac-dau-xuan-2026-2.webp)
 
-*
 
 *Nhà Phân phối Lưu Thanh Tân( xã Cao Phong, tỉnh Phú Thọ)*
 
-*
 
 ![TIẾN NÔNG THĂM HỆ THỐNG KHÁCH HÀNG KHU VỰC TÂY BẮC ĐẦU XUÂN 2026](/uploads/tin-cu/2026/tien-nong-tham-he-thong-khach-hang-khu-vuc-tay-bac-dau-xuan-2026-3.webp)
 
-*
 
 *Công ty TNHH Agri-Life Tiến Lực (xã Mộc Châu, tỉnh Sơn La)*
 
-*
 
 ![TIẾN NÔNG THĂM HỆ THỐNG KHÁCH HÀNG KHU VỰC TÂY BẮC ĐẦU XUÂN 2026](/uploads/tin-cu/2026/tien-nong-tham-he-thong-khach-hang-khu-vuc-tay-bac-dau-xuan-2026-4.webp)
 
-*
 
 *Công ty TNHH Tươi Vy (xã Yên Châu, tỉnh Sơn La)*
 
@@ -72,51 +64,39 @@ Nhân dịp Ngày Quốc tế Phụ nữ 8/3, đoàn công tác cũng đã gửi
 
 *Công ty TNHH Vật tư Nông nghiệp Hải Đăng (xã Chiềng Mai, tỉnh Sơn La)*
 
-*
 
 ![TIẾN NÔNG THĂM HỆ THỐNG KHÁCH HÀNG KHU VỰC TÂY BẮC ĐẦU XUÂN 2026](/uploads/tin-cu/2026/tien-nong-tham-he-thong-khach-hang-khu-vuc-tay-bac-dau-xuan-2026-7.webp)
 
-*
 
 *Công ty TNHH TM &DV Tổng hợp Tùng Trang (xã Sốp Cộp, tỉnh Sơn La)*
 
-*
 
 ![TIẾN NÔNG THĂM HỆ THỐNG KHÁCH HÀNG KHU VỰC TÂY BẮC ĐẦU XUÂN 2026](/uploads/tin-cu/2026/tien-nong-tham-he-thong-khach-hang-khu-vuc-tay-bac-dau-xuan-2026-8.webp)
 
-*
 
 *Công ty TNHH Thương mại Dung Tuấn (xã Sông Mã, tỉnh Sơn La)*
 
-*
 
 ![TIẾN NÔNG THĂM HỆ THỐNG KHÁCH HÀNG KHU VỰC TÂY BẮC ĐẦU XUÂN 2026](/uploads/tin-cu/2026/tien-nong-tham-he-thong-khach-hang-khu-vuc-tay-bac-dau-xuan-2026-9.webp)
 
-*
 
 *Công ty TNHH Vật tư Nông nghiệp Quân Luyến (xã Tà Hộc, tỉnh Sơn La)*
 
-*
 
 ![TIẾN NÔNG THĂM HỆ THỐNG KHÁCH HÀNG KHU VỰC TÂY BẮC ĐẦU XUÂN 2026](/uploads/tin-cu/2026/tien-nong-tham-he-thong-khach-hang-khu-vuc-tay-bac-dau-xuan-2026-10.webp)
 
-*
 
 *Công ty TNHH Thương mại Thuận Lập (xã Mường Bú, tỉnh Sơn La)*
 
-*
 
 ![TIẾN NÔNG THĂM HỆ THỐNG KHÁCH HÀNG KHU VỰC TÂY BẮC ĐẦU XUÂN 2026](/uploads/tin-cu/2026/tien-nong-tham-he-thong-khach-hang-khu-vuc-tay-bac-dau-xuan-2026-11.webp)
 
-*
 
 *Công ty TNHH Bảo Phú Sơn La (xã Thuận Châu, tỉnh Sơn La)*
 
-*
 
 ![TIẾN NÔNG THĂM HỆ THỐNG KHÁCH HÀNG KHU VỰC TÂY BẮC ĐẦU XUÂN 2026](/uploads/tin-cu/2026/tien-nong-tham-he-thong-khach-hang-khu-vuc-tay-bac-dau-xuan-2026-12.webp)
 
-*
 
 *Công ty TNHH MTV Dũng Long (xã Than Uyên, tỉnh Lai Châu)*
 

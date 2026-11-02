@@ -34,17 +34,13 @@ Tham dự giải năm nay có hơn 100 vận động viên tiêu biểu đến t
 
 Ngay sau lễ khai mạc, các đội bóng đã bước vào tranh tài với tinh thần **“Đoàn kết – Trung thực – Cao thượng – Thi đấu hết mình”**, mang đến những trận đấu sôi nổi, hấp dẫn và giàu tinh thần thể thao.
 
-*
 
 ![TIẾN NÔNG ĐỒNG HÀNH CÙNG GIẢI BÓNG CHUYỀN “BÔNG LÚA VÀNG” TỈNH THANH HÓA LẦN THỨ X NĂM 2026](/uploads/tin-cu/2026/tien-nong-dong-hanh-cung-giai-bong-chuyen-bong-lua-vang-tinh-thanh-hoa-lan-thu-3.webp)
 
-*
 
-*
 
 ![TIẾN NÔNG ĐỒNG HÀNH CÙNG GIẢI BÓNG CHUYỀN “BÔNG LÚA VÀNG” TỈNH THANH HÓA LẦN THỨ X NĂM 2026](/uploads/tin-cu/2026/tien-nong-dong-hanh-cung-giai-bong-chuyen-bong-lua-vang-tinh-thanh-hoa-lan-thu-4.webp)
 
-*
 
 *Các vận động viên thi đấu sôi nổi ngay sau lễ khai mạc Giải Bóng chuyền “Bông lúa vàng” tỉnh Thanh Hóa lần thứ X*
 

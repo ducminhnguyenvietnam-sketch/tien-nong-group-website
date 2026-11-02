@@ -34,11 +34,9 @@ Tại chương trình, ông Trần Văn Tiến đã đánh giá kết quả vụ
 
 Phát biểu tại chương trình, Ông Lê Viết Thiện – Đại diện Ban Lãnh đạo TT CSPVNDVN đánh giá cao sự tin tưởng, đồng hành của khách hàng tỉnh Bắc Ninh đối với sản phẩm Tiến Nông trong suốt thời gian qua; chia sẻ các định hướng phát triển của công ty trong thời gian tới. Thay mặt công ty, Ông Thiện cam kết đồng hành, sẻ chia các khó khăn trong kinh doanh cùng các bạn hàng khu vực Bắc Ninh.
 
-*
 
 ![CHƯƠNG TRÌNH GẶP MĂT VÀ GIAO LƯU BẠN HÀNG TỈNH BẮC NINH NĂM 2023](/uploads/tin-cu/2023/chuong-trinh-gap-mat-va-giao-luu-ban-hang-tinh-bac-ninh-nam-2023-3.webp)
 
-*
 
 *Ông Lê Viết Thiện – Đại diện Ban Lãnh đạo TT CSPVNDVN phát biểu tại chương trình*
 

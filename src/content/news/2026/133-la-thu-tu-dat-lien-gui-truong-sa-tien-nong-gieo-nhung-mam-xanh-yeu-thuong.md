@@ -66,7 +66,6 @@ Tại buổi lễ, Ban Tổ chức đã vinh danh **16 tác giả có tác phẩ
 
 ![133 lá thư từ đất liền gửi Trường Sa: Tiến Nông gieo những mầm xanh yêu thương](/uploads/tin-cu/2026/133-la-thu-tu-dat-lien-gui-truong-sa-tien-nong-gieo-nhung-mam-xanh-yeu-thuong-7.webp)
 
-*
 
 *Em Nguyễn Minh Anh, tác giả đạt Giải Nhất  chia sẻ niềm xúc động và gửi lời tri ân tới các cán bộ, chiến sĩ đang ngày đêm bảo vệ chủ quyền biển đảo của Tổ quốc.*
 

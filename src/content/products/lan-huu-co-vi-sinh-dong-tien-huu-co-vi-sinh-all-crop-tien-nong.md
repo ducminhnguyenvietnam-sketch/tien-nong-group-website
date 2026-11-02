@@ -86,6 +86,7 @@ field:
   focus: center
   zoom: '100'
   alt: Lân hữu cơ vi sinh Đồng Tiến (Hữu cơ vi sinh All crop – Tiến Nông) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/lan-huu-co-vi-sinh-dong-tien/

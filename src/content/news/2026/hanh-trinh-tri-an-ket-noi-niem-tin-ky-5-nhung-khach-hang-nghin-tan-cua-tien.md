@@ -24,11 +24,9 @@ old_url: /hanh-trinh-tri-an-ket-noi-niem-tin-ky-5-nhung-khach-hang-nghin-tan-cua
 
 Tại xã Yên Thành, điểm dừng chân đầu tiên là Công ty TNHH Thiên Trang Cung Huề – một trong những nhà phân phối đầu tiên của Tiến Nông tại xã Yên Thành, tỉnh Nghệ An.
 
-*
 
 ![HÀNH TRÌNH TRI ÂN – KẾT NỐI NIỀM TIN KỲ 5: NHỮNG KHÁCH HÀNG NGHÌN TẤN CỦA TIẾN NÔNG VỚI NIỀM TIN – KHÁT VỌNG TĂNG TRƯỞNG](/uploads/tin-cu/2026/hanh-trinh-tri-an-ket-noi-niem-tin-ky-5-nhung-khach-hang-nghin-tan-cua-tien-1.webp)
 
-*
 
 *Chủ tịch HĐQT Tiến Nông gặp gỡ Công ty TNHH Thiên Trang Cung Huề*
 

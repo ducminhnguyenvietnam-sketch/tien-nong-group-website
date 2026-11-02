@@ -41,11 +41,9 @@ Thông qua những hoạt động ý nghĩa như chương trình kỷ niệm **N
 
 **Một số hình ảnh trong chương trình:** 
 
-*
 
 ![TIẾN NÔNG TRI ÂN NỮ CÁN BỘ NHÂN VIÊN NHÂN NGÀY QUỐC TẾ PHỤ NỮ 8/3](/uploads/tin-cu/2026/tien-nong-tri-an-nu-can-bo-nhan-vien-nhan-ngay-quoc-te-phu-nu-8-3-2.webp)
 
-*
 
 ![TIẾN NÔNG TRI ÂN NỮ CÁN BỘ NHÂN VIÊN NHÂN NGÀY QUỐC TẾ PHỤ NỮ 8/3](/uploads/tin-cu/2026/tien-nong-tri-an-nu-can-bo-nhan-vien-nhan-ngay-quoc-te-phu-nu-8-3-3.webp)
 
@@ -55,7 +53,6 @@ Thông qua những hoạt động ý nghĩa như chương trình kỷ niệm **N
 
 ![TIẾN NÔNG TRI ÂN NỮ CÁN BỘ NHÂN VIÊN NHÂN NGÀY QUỐC TẾ PHỤ NỮ 8/3](/uploads/tin-cu/2026/tien-nong-tri-an-nu-can-bo-nhan-vien-nhan-ngay-quoc-te-phu-nu-8-3-4.webp)
 
-*
 
 *Đoàn phụ nữ Tiến Nông tham quan và chụp ảnh lưu niệm tại Khu di tích Phủ Chủ tịch – nơi gắn liền với cuộc sống giản dị của Bác Hồ*
 
@@ -63,7 +60,6 @@ Thông qua những hoạt động ý nghĩa như chương trình kỷ niệm **N
 
 ![TIẾN NÔNG TRI ÂN NỮ CÁN BỘ NHÂN VIÊN NHÂN NGÀY QUỐC TẾ PHỤ NỮ 8/3](/uploads/tin-cu/2026/tien-nong-tri-an-nu-can-bo-nhan-vien-nhan-ngay-quoc-te-phu-nu-8-3-5.webp)
 
-*
 
 *Đoàn phụ nữ Tiến Nông chụp ảnh lưu niệm tại khu đô thị Vinhomes Ocean Park (Hưng Yên) trong hành trình tham quan, học hỏi.*
 

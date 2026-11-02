@@ -46,11 +46,9 @@ Cách đây 31 năm, Tiến Nông được thành lập từ một khát vọng 
 
 Trong khuôn khổ chương trình, Tiến Nông đã tổ chức khen thưởng các tập thể xuất sắc năm 2025, ghi nhận những nỗ lực và đóng góp nổi bật trong hoạt động sản xuất – kinh doanh, nghiên cứu khoa học và phát triển thị trường.
 
-*
 
 ![TIẾN NÔNG KỶ NIỆM 31 NĂM THÀNH LẬP: VỮNG VÀNG HÀNH TRÌNH KHOA HỌC – ĐỒNG HÀNH CÙNG NÔNG NGHIỆP VIỆT NAM](/uploads/tin-cu/2026/tien-nong-ky-niem-31-nam-thanh-lap-vung-vang-hanh-trinh-khoa-hoc-dong-hanh-cung-4.webp)
 
-*
 
 *Hai tập thể xuất sắc là Trung tâm Nghiên cứu phát triển Khoa học & Công nghệ TN và Phòng Tài chính – Kế toán*
 

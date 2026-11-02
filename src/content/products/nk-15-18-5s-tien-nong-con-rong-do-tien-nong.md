@@ -73,6 +73,7 @@ field:
   focus: center
   zoom: '100'
   alt: NK 15-18+5S Tiến Nông (Con rồng đỏ Tiến Nông) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/con-rong-do-nk-15-185s-tien-nong/

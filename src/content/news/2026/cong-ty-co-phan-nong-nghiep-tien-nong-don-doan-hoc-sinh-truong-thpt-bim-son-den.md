@@ -30,11 +30,9 @@ Trong nhiều năm qua, Tiến Nông luôn khẳng định vai trò doanh nghi�
 
 Tại chương trình, ông Nguyễn Hồng Lâm chia sẻ: *“Tiến Nông lựa chọn con đường phát triển dài hạn: nghiên cứu – tạo giải pháp – sản xuất – đồng hành kỹ thuật, gắn chặt với trách nhiệm môi trường và cộng đồng. Chúng tôi mong muốn mỗi chuyến tham quan không chỉ dừng lại ở việc xem máy móc, mà là nơi truyền cảm hứng về sự tử tế và khát vọng vươn lên cho thế hệ trẻ.”*
 
-*
 
 ![CÔNG TY CỔ PHẦN NÔNG NGHIỆP TIẾN NÔNG ĐÓN ĐOÀN HỌC SINH TRƯỜNG THPT BỈM SƠN ĐẾN THAM QUAN VÀ HỌC TẬP](/uploads/tin-cu/2026/cong-ty-co-phan-nong-nghiep-tien-nong-don-doan-hoc-sinh-truong-thpt-bim-son-den-1.webp)
 
-*
 
 *Ông Nguyễn Hồng Lâm – Thành viên HĐQT, Giám đốc Truyền thông Công ty phát biểu tại chương trình*
 
@@ -50,11 +48,9 @@ Mọi công đoạn từ định lượng nguyên liệu, trộn sản phẩm đ
 
 Dưới sự hướng dẫn của ông Nguyễn Viết Giang, các em học sinh đã có cơ hội “chạm” vào khoa học thực tiễn. Không chỉ đứng quan sát, các em còn được xem và tham gia vào quá trình đánh giá chất lượng mẫu đất, mẫu phân bón. Những kiến thức khô khan trong sách giáo khoa Hóa học, Sinh học nay trở nên sống động và đầy thuyết phục khi được ứng dụng để giải quyết bài toán năng suất cây trồng và bảo vệ môi trường.
 
-*
 
 ![CÔNG TY CỔ PHẦN NÔNG NGHIỆP TIẾN NÔNG ĐÓN ĐOÀN HỌC SINH TRƯỜNG THPT BỈM SƠN ĐẾN THAM QUAN VÀ HỌC TẬP](/uploads/tin-cu/2026/cong-ty-co-phan-nong-nghiep-tien-nong-don-doan-hoc-sinh-truong-thpt-bim-son-den-2.webp)
 
-*
 
 *Ông Nguyễn Viết Giang – Giám đốc Trung tâm Nghiên cứu Khoa học và Công nghệ Tiến Nông chia sẻ cùng các em học sinh*
 
@@ -70,11 +66,9 @@ Giải đáp các thắc mắc này, ông Nguyễn Hồng Lâm đã chia sẻ v�
 
 Thầy Nguyễn Văn Xuân – Hiệu trưởng trường THPT Bỉm Sơn xúc động chia sẻ: *“Chứng kiến sự đón tiếp nồng hậu và những trải nghiệm thực tế quý báu này, chúng tôi tin rằng các em học sinh đã có một bài học định hướng nghề nghiệp vô cùng ý nghĩa. Ngay tại quê hương Bỉm Sơn vẫn luôn có những doanh nghiệp tầm cỡ như Tiến Nông để các em nỗ lực học tập và trở về cống hiến.”*
 
-*
 
 ![CÔNG TY CỔ PHẦN NÔNG NGHIỆP TIẾN NÔNG ĐÓN ĐOÀN HỌC SINH TRƯỜNG THPT BỈM SƠN ĐẾN THAM QUAN VÀ HỌC TẬP](/uploads/tin-cu/2026/cong-ty-co-phan-nong-nghiep-tien-nong-don-doan-hoc-sinh-truong-thpt-bim-son-den-3.webp)
 
-*
 
 ***Thầy Nguyễn Văn Xuân** – Hiệu trưởng nhà trường THPT Bỉm Sơn chia sẻ tại chương trình*
 

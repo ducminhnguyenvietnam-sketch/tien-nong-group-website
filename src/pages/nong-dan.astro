@@ -1,25 +1,21 @@
 ---
 /**
  * Nông dân Tiến Nông. Flow: hero → key figures → four commitments → a season with Tiến Nông →
- * phân bón trả chậm (how it works, milestones, how to join) → Trung tâm Chăm sóc Phục vụ Nông dân →
- * results on the field (farmer stories, demonstration plots) → when a season goes wrong → CLB Gắn kết →
- * workshops (latest news) → FAQ → registration form.
+ * phân bón trả chậm (how it works, milestones as year tabs, how to join) → Trung tâm Chăm sóc Phục vụ
+ * Nông dân → farmer stories and demonstration plots → when a season goes wrong → engineers in the
+ * field (latest articles) → closing call-to-action band.
  */
 import raw from '../content/pages/nong-dan.json';
 import siteRaw from '../content/site.json';
 import { isFilled, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
-import FormFallback from '../components/FormFallback.astro';
-import Button from '../components/Button.astro';
-import Checkbox from '../components/Checkbox.astro';
+import CtaBand from '../components/CtaBand.astro';
 import ImageSlot from '../components/ImageSlot.astro';
-import Input from '../components/Input.astro';
-import Select from '../components/Select.astro';
 import Head from '../components/story/Head.astro';
 import Stats from '../components/story/Stats.astro';
-import Faq from '../components/story/Faq.astro';
+import YearTabs from '../components/story/YearTabs.astro';
 import { url, link } from '../lib/routes';
-import { formatDate, getNews, newsLinkAttrs, newsUrl } from '../lib/news';
+import { CATEGORIES, formatDate, getNews, listUrl, newsByLink, newsLinkAttrs, newsUrl } from '../lib/news';
 
 const c = withDefaults(raw, 'src/content/pages/nong-dan.json');
 const site = withDefaults(siteRaw, 'src/content/site.json');
@@ -31,13 +27,18 @@ const tel = (v: string) => `tel:${v.replace(/[^\d+]/g, '')}`;
 
 // Hội thảo đầu bờ: 2 newest articles in "Nông dân & Mô hình hiệu quả" tagged "hội thảo";
 // if fewer are tagged, the rest are filled with the newest articles of that category.
-const WORKSHOPS_SHOWN = 2;
+const WORKSHOPS_SHOWN = 4;
 const farmerNews = (await getNews()).filter((n) => n.data.category === 'nd');
 const isWorkshop = (n: (typeof farmerNews)[number]) => n.data.tags.some((t) => t.trim().toLowerCase().normalize('NFC') === 'hội thảo'.normalize('NFC'));
 const workshops = [...farmerNews.filter(isWorkshop), ...farmerNews.filter((n) => !isWorkshop(n))].slice(0, WORKSHOPS_SHOWN);
 const stories = c.results.stories.filter((s) => isFilled(s.quote));
 const models = c.results.models.filter((m) => isFilled(m.title));
-const timeline = c.deferred.timeline.filter((t) => isFilled(t.title));
+// "Khi mùa vụ gặp khó": each item shows its own photo, or the cover of the article it links to.
+const hardship = await Promise.all(c.hardship.items.map(async (h) => {
+  if (isFilled(h.image?.src)) return { ...h, img: h.image };
+  const n = await newsByLink(h.link);
+  return { ...h, img: n?.data.cover?.src ? { ...n.data.cover, alt: n.data.cover.alt || h.title } : h.image };
+}));
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Nông dân Tiến Nông">
 <section style="position:relative;min-height:min(72vh,620px);background:var(--green-900);display:flex">
@@ -50,8 +51,8 @@ const timeline = c.deferred.timeline.filter((t) => isFilled(t.title));
 <h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.hero.title}</h1>
 <p style="margin:0;font-size:var(--fs-lead);line-height:1.55;color:var(--green-50);text-wrap:pretty">{c.hero.intro}</p>
 <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;pointer-events:auto">
-<a href="#dang-ky" style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.hero.button1}</a>
-<a href="#tra-cham" style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.hero.button2}</a>
+<a href="#dang-ky" class="nd-hbtn nd-hbtn--solid">{c.hero.button1}<span aria-hidden="true">↗</span></a>
+<a href="#tra-cham" class="nd-hbtn">{c.hero.button2}<span aria-hidden="true">↗</span></a>
 {isFilled(hotline) && <a href={tel(hotline)} style="color:#fff;font-weight:600;padding:13px 4px">☎ {c.hero.hotline_label}: {hotline}</a>}
 </div>
 </div></div></section>
@@ -61,15 +62,18 @@ const timeline = c.deferred.timeline.filter((t) => isFilled(t.title));
 <section id="cam-ket" class="st-sec">
 <div class="st-wrap">
 <Head eyebrow={c.promises.eyebrow} title={c.promises.title} intro={c.promises.intro} />
-<div class="st-grid" style="--min:240px">
-{c.promises.items.map((p, k) => <div class="st-card st-card--top"><div class="st-card__body"><span class="st-card__num">{String(k + 1).padStart(2, '0')}</span><strong class="st-card__title">{p.title}</strong><span class="st-card__text">{p.text}</span></div></div>)}
+<div class="nd-promises">
+{c.promises.items.map((p, k) => <div class="nd-promise"><span class="nd-promise__n">{String(k + 1).padStart(2, '0')}</span><strong>{p.title}</strong><p class="jx-start">{p.text}</p></div>)}
 </div>
 </div></section>
 
 <section id="mua-vu" class="st-sec st-sec--card">
 <div class="st-wrap">
 <Head eyebrow={c.season.eyebrow} title={c.season.title} intro={c.season.intro} split />
-<ol class="st-steps" style="--min:260px">{c.season.steps.map((s) => <li><strong>{s.title}</strong><span>{s.text}</span></li>)}</ol>
+<ol class="nd-season">{c.season.steps.map((s, k) => <li>
+<div class="nd-season__img"><ImageSlot style={fill} id={`season-${k}`} shape="rect" placeholder={s.image?.alt || s.title} image={s.image} cms={`${F}#season.steps.${k}.image`} sizes="(max-width: 899px) 92vw, 400px" /><span class="nd-season__n">{String(k + 1).padStart(2, '0')}</span></div>
+<div class="nd-season__body"><strong>{s.title}</strong><p class="jx-start">{s.text}</p></div>
+</li>)}</ol>
 </div></section>
 
 <section id="tra-cham" class="st-sec st-sec--dark">
@@ -80,15 +84,11 @@ const timeline = c.deferred.timeline.filter((t) => isFilled(t.title));
 </div>
 <h3 class="st-h3">{c.deferred.how_title}</h3>
 <ol class="st-steps" style="--min:220px">{c.deferred.how.map((s) => <li><strong>{s.title}</strong><span>{s.text}</span></li>)}</ol>
-<div class="st-split st-split--top">
-{timeline.length > 0 && <ol class="st-timeline">
-{timeline.map((t) => <li><span class="st-timeline__when">{t.when}</span><div class="st-timeline__what"><strong>{t.title}</strong><span>{t.text}</span>{isFilled(t.link) && <a href={link(t.link)}>Đọc tin →</a>}</div></li>)}
-</ol>}
-<div style="background:#fff;color:var(--text-primary);border-radius:var(--radius-xl);padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;gap:14px">
-<strong style="font:var(--type-h3)">{c.deferred.join_title}</strong>
-<p style="margin:0;color:var(--text-secondary);line-height:1.65">{c.deferred.join_text}</p>
-<div class="st-actions"><a href="#dang-ky" class="st-btn st-btn--solid" style="background:var(--green-500);border-color:var(--green-500);color:#fff">{c.hero.button1}</a>{isFilled(hotline) && <a href={tel(hotline)} class="st-btn" style="border-color:var(--border-strong);color:var(--green-700)">☎ {hotline}</a>}</div>
-</div>
+{isFilled(c.deferred.timeline_title) && <h3 class="st-h3">{c.deferred.timeline_title}</h3>}
+<YearTabs items={c.deferred.timeline} tone="dark" linkLabel="Xem thêm" cms={`${F}#deferred.timeline`} id="deferred-year" />
+<div class="nd-join">
+<div><strong>{c.deferred.join_title}</strong><p class="jx-justify">{c.deferred.join_text}</p></div>
+<div class="nd-join__actions"><a href="#dang-ky" class="nd-hbtn nd-hbtn--solid">{c.hero.button1}<span aria-hidden="true">↗</span></a>{isFilled(hotline) && <a href={tel(hotline)} class="nd-hbtn">☎ {hotline}</a>}</div>
 </div>
 </div></section>
 
@@ -107,17 +107,15 @@ const timeline = c.deferred.timeline.filter((t) => isFilled(t.title));
 <section id="ket-qua" class="st-sec st-sec--card">
 <div class="st-wrap">
 <Head eyebrow={c.results.eyebrow} title={c.results.title} intro={c.results.intro} split />
-<div class="st-grid" style="--min:520px">
+<div class="nd-stories">
 {stories.map((s, k) => (
 <article class="nd-story">
-<div style="position:relative;min-height:300px"><ImageSlot style={fill} id={`story-${k + 1}`} shape="rect" placeholder={s.image.alt || 'Chân dung nông dân'} image={s.image} cms={`${F}#results.stories.${k}.image`} /></div>
-<div style="padding:24px;display:flex;flex-direction:column;gap:12px">
-<span style="font:600 12px var(--font-mono);color:var(--green-600)">{s.crop}</span>
-<p style="margin:0;font:var(--type-quote)">{s.quote}</p>
-<div style="display:flex;gap:24px;flex-wrap:wrap;padding-top:12px;border-top:1px solid var(--border-default);margin-top:auto">
-{s.facts.filter((f) => isFilled(f.value)).map((f) => <div><div style="font:var(--type-num);color:var(--amber-600)">{f.value}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{f.label}</span></div>)}
-</div>
-<strong style="font-size:15px">{s.person}</strong>
+<div class="nd-story__img"><ImageSlot style={fill} id={`story-${k + 1}`} shape="rect" placeholder={s.image.alt || 'Chân dung nông dân'} image={s.image} cms={`${F}#results.stories.${k}.image`} sizes="(max-width: 899px) 92vw, 600px" /><span class="nd-story__chip">{s.crop.split('·')[0].trim().toLowerCase().replace(/^./, (x) => x.toUpperCase())}{s.crop.includes('TỈNH') ? ` · ${s.crop.split('TỈNH').pop()!.trim().toLowerCase().replace(/(^|\s)\S/g, (x) => x.toUpperCase())}` : ''}</span></div>
+<div class="nd-story__body">
+<span class="nd-story__crop">{s.crop}</span>
+<p class="nd-story__quote">{s.quote.replace(/^[“"]|[”"]$/g, '')}</p>
+<div class="nd-story__facts">{s.facts.filter((f) => isFilled(f.value)).map((f) => <div><b>{f.value}</b><span>{f.label}</span></div>)}</div>
+<strong class="nd-story__who">{s.person}</strong>
 </div>
 </article>
 ))}
@@ -141,70 +139,80 @@ const timeline = c.deferred.timeline.filter((t) => isFilled(t.title));
 <div class="st-wrap">
 <Head eyebrow={c.hardship.eyebrow} title={c.hardship.title} intro={c.hardship.intro} />
 <div class="st-grid" style="--min:250px">
-{c.hardship.items.map((h) => <div class="st-card"><div class="st-card__body"><span class="st-card__tag">{h.when}</span><strong class="st-card__title">{h.title}</strong><span class="st-card__text">{h.text}</span>{isFilled(h.link) && <a class="st-card__link" href={link(h.link)}>Đọc tin →</a>}</div></div>)}
-</div>
-</div></section>
-
-<section id="clb" class="st-sec st-sec--tint">
-<div class="st-wrap st-wrap--s">
-<div class="st-split">
-<div>
-<Head eyebrow={c.club.eyebrow} title={c.club.title} intro={c.club.text} />
-{isFilled(c.club.link) && <a href={link(c.club.link)} style="font-weight:600">Đọc tin →</a>}
-</div>
-<div class="st-split__media st-hide-empty" style="--ratio:16/10"><ImageSlot style={fill} id="farmer-club" shape="rounded" radius="24" placeholder={c.club.image.alt || 'CLB Gắn kết Tiến Nông'} image={c.club.image} cms={`${F}#club.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
+{hardship.map((h, k) => <a class="st-card" href={isFilled(h.link) ? link(h.link) : undefined}><div class="st-card__img st-hide-empty" style="--img-h:180px"><ImageSlot style={fill} id={`hardship-${k}`} shape="rect" placeholder={h.title} image={h.img} cms={`${F}#hardship.items.${k}.image`} sizes="(max-width: 767px) 92vw, 300px" /></div><div class="st-card__body"><span class="st-card__tag">{h.when}</span><strong class="st-card__title">{h.title}</strong><span class="st-card__text jx-start">{h.text}</span>{isFilled(h.link) && <span class="st-card__link">Đọc tin →</span>}</div></a>)}
 </div>
 </div></section>
 
 <section id="hoi-thao" class="st-sec st-sec--card">
 <div class="st-wrap">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:32px 64px;align-items:start">
-<Head eyebrow={c.workshops.eyebrow} title={c.workshops.title} intro={c.workshops.intro} />
-<div style="display:flex;flex-direction:column;gap:16px">
-<div style="display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
-{workshops.map((n) => <a href={newsUrl(n)} {...newsLinkAttrs(n)} style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border-default);color:var(--text-primary)"><div style="position:relative;height:84px"><ImageSlot style={fill} id={`news-${n.id}`} shape="rounded" radius="10" placeholder="Ảnh hội thảo" image={n.data.cover} cms={`${n.filePath}#cover`} /></div><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:var(--text-tertiary)">{formatDate(n.data.date)}</span><strong style="line-height:1.4">{n.data.title}</strong></div></a>)}
-{workshops.length === 0 && <span style="padding:16px 0;color:var(--text-secondary)">{c.workshops.empty}</span>}
+<div class="nd-ws-head"><Head eyebrow={c.workshops.eyebrow} title={c.workshops.title} intro={c.workshops.intro} split /></div>
+<div class="nd-ws">
+{workshops.map((n) => <a href={newsUrl(n)} {...newsLinkAttrs(n)} class="nd-ws__card"><div class="nd-ws__img"><ImageSlot style={fill} id={`news-${n.id}`} shape="rounded" radius="14" placeholder="Ảnh hội thảo" image={n.data.cover} cms={`${n.filePath}#cover`} sizes="(max-width: 767px) 92vw, 300px" /></div><span class="nd-ws__meta"><strong>{CATEGORIES[n.data.category]}</strong>{n.data.date && <time>{formatDate(n.data.date)}</time>}</span><strong class="nd-ws__title jx-start">{n.data.title}</strong></a>)}
 </div>
-<a href={url('tin-tuc', 'nd')} style="font-weight:600;font-size:15px">{c.workshops.all}</a>
-</div></div>
+{workshops.length === 0 && <span style="color:var(--text-secondary)">{c.workshops.empty}</span>}
+<a href={listUrl('nd')} class="nd-more">{c.workshops.all} <span aria-hidden="true">→</span></a>
 </div></section>
 
-<section id="hoi-dap" class="st-sec st-sec--dark">
-<div class="st-wrap">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px 72px;align-items:start">
-<Head eyebrow={c.faq.eyebrow} title={c.faq.title} intro={c.faq.intro} />
-<Faq id="faq" items={c.faq.items} />
-</div>
-</div></section>
-
-<section id="dang-ky" class="st-sec st-sec--card">
-<div class="st-wrap">
-<div class="st-split st-split--top">
-<div>
-<Head eyebrow={c.register.eyebrow} title={c.register.title} intro={c.register.intro} />
-<ul class="st-checks">{(c.register.perks as string[]).filter(isFilled).map((p) => <li><span style="color:var(--text-primary);font-size:16px">{p}</span></li>)}</ul>
-{isFilled(hotline) && <a href={tel(hotline)} style="font-weight:700;font-size:18px">☎ {c.hero.hotline_label}: {hotline}</a>}
-</div>
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:16px">
-<div id="reg-sent" hidden style="padding:32px 8px;display:flex;flex-direction:column;gap:10px;align-items:flex-start"><span style="font:700 13px var(--font-mono);color:var(--green-600)">{c.register.sent_label}</span><strong style="font-size:22px">{c.register.sent_title}</strong><span style="color:var(--text-secondary)">{c.register.sent_text}</span><button type="button" data-form-again style="background:none;border:0;padding:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.register.again}</button></div>
-<FormFallback />
-<form data-lead-form="nong-dan" data-sent="reg-sent" style="display:flex;flex-direction:column;gap:14px">
-<Input label={c.register.name_label} name="name" autocomplete="name" required placeholder={c.register.name_ph} />
-<Input label={c.register.phone_label} name="phone" type="tel" autocomplete="tel" required placeholder={c.register.phone_ph} />
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px">
-<Input label={c.register.province_label} name="province" required placeholder={c.register.province_ph} />
-<Select label={c.register.crop_label} name="crop" options={(c.register.crops as string[]).map((v) => ({ value: v, label: v }))} />
-</div>
-<Checkbox label={c.register.consent} name="consent" data-consent required />
-<Button size="lg" type="submit">{c.register.submit}</Button>
-<span style="font-size:14px;color:var(--text-tertiary)">{c.register.alt_text}</span>
-</form>
-</div>
-</div>
-</div></section>
+<CtaBand id="dang-ky" title={c.cta.title} text={c.cta.text} primary={isFilled(hotline) ? { label: `☎ ${c.hero.hotline_label}: ${hotline}`, href: tel(hotline) } : undefined} secondary={{ label: c.cta.contact, href: url('lien-he', 'lien-he-form') }} />
 </Layout>
 
 <style>
-  .nd-story { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); background: var(--surface-page); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
-  @media (max-width: 640px) { .nd-story { grid-template-columns: minmax(0, 1fr); } }
+  .nd-hbtn { display: inline-flex; align-items: center; gap: 14px; min-height: 48px; padding: 0 22px; border-radius: var(--radius-btn); background: #fff; color: var(--green-700); font-weight: 700; text-decoration: none; pointer-events: auto; }
+  .nd-hbtn:hover { background: var(--green-50); color: var(--green-800); text-decoration: none; }
+  .nd-hbtn--solid { background: var(--brand-bright); color: #fff; }
+  .nd-hbtn--solid:hover { background: var(--green-500); color: #fff; }
+  .nd-hbtn span { font-size: 14px; }
+  /* Commitments (Figma): four white cards, big green number. */
+  .nd-promises { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+  .nd-promise { display: flex; flex-direction: column; gap: 10px; padding: 26px 24px 28px; background: var(--surface-card); border: 1px solid var(--border-default); border-top: 3px solid var(--green-100); border-radius: var(--radius-lg); transition: border-color var(--motion-fast), box-shadow var(--motion-fast), transform var(--motion-fast); }
+  .nd-promise:hover { border-top-color: var(--brand-bright); box-shadow: 0 14px 30px rgba(0, 71, 35, .08); transform: translateY(-2px); }
+  .nd-promise__n { font: 700 40px/1 var(--font-display); color: var(--brand-bright); margin-bottom: 6px; }
+  .nd-promise strong { font: 700 18px/1.35 var(--font-display); }
+  .nd-promise p { margin: 0; color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
+  /* A season: three photo cards joined by a line, the step number on the photo. */
+  .nd-season { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; position: relative; }
+  .nd-season li { display: flex; flex-direction: column; background: var(--surface-page); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; transition: box-shadow var(--motion-base), transform var(--motion-base); }
+  .nd-season li:hover { box-shadow: 0 16px 34px rgba(0, 71, 35, .1); transform: translateY(-3px); }
+  .nd-season__img { position: relative; aspect-ratio: 16 / 10; }
+  .nd-season__n { position: absolute; left: 18px; bottom: -22px; z-index: 1; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--brand-bright); color: #fff; font: 700 16px/1 var(--font-display); border: 4px solid var(--surface-page); }
+  .nd-season__body { padding: 32px 22px 24px; display: flex; flex-direction: column; gap: 8px; }
+  .nd-season__body strong { font: 700 19px/1.3 var(--font-display); color: var(--green-800); }
+  .nd-season__body p { margin: 0; color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
+  .nd-join { display: flex; justify-content: space-between; align-items: center; gap: 20px 40px; flex-wrap: wrap; padding: clamp(22px, 3vw, 30px); border-radius: var(--radius-xl); background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .16); }
+  .nd-join > div:first-child { flex: 1 1 420px; display: flex; flex-direction: column; gap: 8px; }
+  .nd-join strong { font: 700 22px/1.3 var(--font-display); color: #fff; }
+  .nd-join p { margin: 0; color: var(--green-100); line-height: 1.6; }
+  .nd-join__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  /* Farmer stories (Figma): photo on top with a small place chip, quote and figures below. */
+  .nd-stories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .nd-story { display: flex; flex-direction: column; background: var(--surface-page); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-default); }
+  .nd-story__img { position: relative; aspect-ratio: 16 / 10; }
+  .nd-story__chip { position: absolute; left: 16px; bottom: 16px; padding: 5px 12px; border-radius: 8px; background: #fff; color: var(--text-primary); font: 600 12.5px/1.2 var(--font-display); box-shadow: 0 2px 8px rgba(0, 0, 0, .12); }
+  .nd-story__body { padding: 24px 26px 26px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+  .nd-story__crop { font: 600 11.5px/1.3 var(--font-display); letter-spacing: .08em; color: var(--green-600); }
+  .nd-story__quote { position: relative; margin: 0; padding-left: 32px; font: 500 19px/1.55 var(--font-display); color: var(--text-primary); }
+  .nd-story__quote::before { content: '“'; position: absolute; left: 0; top: -8px; font: 800 44px/1 var(--font-display); color: var(--brand-highlight); }
+  .nd-story__facts { display: flex; gap: 32px; flex-wrap: wrap; padding-top: 14px; border-top: 1px solid var(--border-default); margin-top: auto; }
+  .nd-story__facts b { display: block; font: 700 24px/1.2 var(--font-display); color: var(--amber-600); }
+  .nd-story__facts span { font: 600 12px/1.4 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--text-secondary); }
+  .nd-story__who { font-size: 15px; }
+  /* Engineers in the field: the latest workshop articles as photo cards. */
+  .nd-ws { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+  .nd-ws__card { display: flex; flex-direction: column; gap: 10px; color: var(--text-primary); text-decoration: none; }
+  .nd-ws__card:hover { text-decoration: none; color: var(--text-primary); }
+  .nd-ws__card:hover .nd-ws__title { color: var(--green-700); }
+  .nd-ws__img { position: relative; aspect-ratio: 16 / 10; }
+  .nd-ws__meta { display: flex; justify-content: space-between; gap: 10px; font-size: 13px; color: var(--text-tertiary); }
+  .nd-ws__meta strong { color: var(--green-600); }
+  .nd-ws__title { font-size: 16.5px; line-height: 1.4; transition: color var(--motion-fast); }
+  .nd-more { align-self: flex-start; font-weight: 600; color: var(--brand-bright); }
+  @media (max-width: 1099.98px) {
+    .nd-promises, .nd-ws { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 899.98px) {
+    .nd-season, .nd-stories { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 599.98px) {
+    .nd-promises, .nd-ws { grid-template-columns: minmax(0, 1fr); }
+  }
 </style>

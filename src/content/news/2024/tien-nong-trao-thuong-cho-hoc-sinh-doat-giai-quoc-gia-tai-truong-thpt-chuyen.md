@@ -28,18 +28,14 @@ Trao học bổng và nhận đỡ đầu cho các em học sinh nghèo vượt 
 
 *Đồng chí Phó Bí thư Thường trực Tỉnh ủy Lại Thế Nguyên và đồng chí Chủ tịch UBND tỉnh Đỗ Minh Tuấn tặng hoa và Bằng khen của Chủ tịch UBND tỉnh cho GV có HS đoạt giải Quốc gia. Ảnh: Hoàng Duyên.*
 
-*
 
 ![Tiến Nông Trao thưởng cho học sinh đoạt giải quốc gia tại Trường THPT Chuyên Lam Sơn tỉnh Thanh](/uploads/tin-cu/2024/tien-nong-trao-thuong-cho-hoc-sinh-doat-giai-quoc-gia-tai-truong-thpt-chuyen-2.webp)
 
-*
 
 *Đồng chí Trưởng ban Dân vận Tỉnh ủy, Chủ tịch Ủy ban MTTQ tỉnh Phạm Thị Thanh Thủy và đồng chí Phó Chủ tịch HĐND tỉnh Nguyễn Quang Hải tặng hoa và Bằng khen của Chủ tịch UBND tỉnh cho HS đoạt giải Ba kỳ thi học sinh giỏi Quốc gia THPT năm học 2023-2024. Ảnh: Hoàng Duyên.*
 
-*
 
 ![Tiến Nông Trao thưởng cho học sinh đoạt giải quốc gia tại Trường THPT Chuyên Lam Sơn tỉnh Thanh](/uploads/tin-cu/2024/tien-nong-trao-thuong-cho-hoc-sinh-doat-giai-quoc-gia-tai-truong-thpt-chuyen-3.webp)
 
-*
 
 *Ông Cao Trọng Tú Phó Tổng Giám Đốc Công ty CP CNN Tiến Nông trao giải thưởng cho học sinh giỏi xuất sắc đạt giải nhất các môn học ở kỳ thi quốc gia tại Trường THPT Chuyên Lam Sơn. Ảnh: Hoàng Duyên.*

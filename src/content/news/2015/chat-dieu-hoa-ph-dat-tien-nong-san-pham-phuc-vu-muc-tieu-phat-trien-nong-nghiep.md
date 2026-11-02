@@ -60,11 +60,9 @@ pH đất thấp báo hiệu việc thiếu các nguyên tố trung vi lượng 
 
 Khi bón chất điều hòa pH Tiến Nông, pH đất sẽ tăng từ từ, tránh gây sốc và giúp cây hấp thu các đa trung vi lượng một cách hiệu quả hơn. Việc sử dụng chất điều hòa pH phải tuân thủ đúng hướng dẫn, liều lượng trên bao bì. Tại Hội nghị tái cơ cấu ngành nông nghiệp toàn quốc vừa qua, Bộ trưởng Bộ Nông nghiệp và Phát triển nông thôn Cao Đức Phát cùng các đại biểu tham dự Hội nghị đã đánh giá cao sản phẩm chất điều hòa pH của Tiến Nông. Đây là sản phẩm phục vụ mục tiêu phát triển nông nghiệp bền vững.
 
-*
 
 ![Chất điều hòa pH đất Tiến Nông – Sản phẩm phục vụ mục tiêu phát triển nông nghiệp bền vững](/uploads/tin-cu/2015/chat-dieu-hoa-ph-dat-tien-nong-san-pham-phuc-vu-muc-tieu-phat-trien-nong-nghiep-6.webp)
 
-*
 
 *Hình ảnh bao bì chất điều hòa pH Tiến Nông*
 

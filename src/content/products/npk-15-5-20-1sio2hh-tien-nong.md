@@ -80,6 +80,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 15-5-20+1SiO₂hh Tiến Nông – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/npk-15-5-201-sio2hh-tien-nong/

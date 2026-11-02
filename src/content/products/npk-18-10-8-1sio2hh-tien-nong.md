@@ -84,6 +84,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 18-10-8+1SiO₂hh Tiến Nông – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/npk-18-10-81-sio2hh-tien-nong/

@@ -76,6 +76,7 @@ field:
   focus: center
   zoom: '100'
   alt: NK vi lượng đa năng (Siêu đạm Tiến Nông) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/sieu-dam-tien-nong/

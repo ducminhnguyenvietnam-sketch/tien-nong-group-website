@@ -83,6 +83,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 16-8-16 Tiến Nông – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/npk-16-8-16-tien-nong/

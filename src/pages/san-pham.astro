@@ -10,135 +10,263 @@ import { url, link } from '../lib/routes';
 import { getProducts, productUrl } from '../lib/products';
 
 const c = withDefaults(raw, 'src/content/pages/san-pham.json');
+const s = c.s02_danh_sach;
+const PER_PAGE = 16;
 
 const products = await getProducts();
 const lines = c.lines;
 const lineLabel = (key: string) => (lines.find((l) => l.key === key)?.label ?? '').replace('Phân bón ', '');
-const hasPoster = isFilled(c.poster.image?.src);
-const hasPosterText = isFilled(c.poster.title);
+const bags = (['bag1', 'bag2', 'bag3'] as const).map((k) => ({ key: k, image: c.hero?.[k] }));
+
+/** Composition boxes on the hover card: the bag's headline nutrients, value as a percentage. */
+const pct = (v: string) => (/%$/.test(v.trim()) ? v.trim() : `${v.trim()}%`);
+/** Up to three benefits, word for word from the bag. "Đạm: Là thành phần…" becomes a bold lead + text;
+ *  an intro line ending in ":" ("…cho cây lúa giúp:") is skipped. */
+function highlights(benefits: string[], summary: string) {
+  const list = benefits.map((b) => b.trim().replace(/^[–-]\s*/, '')).filter((b) => b && !/:$/.test(b));
+  const src = list.length ? list : (isFilled(summary) ? [summary.replace(/^[–-]\s*/, '')] : []);
+  return src.slice(0, 3).map((b) => {
+    const i = b.indexOf(':');
+    return i > 0 && i <= 28 ? { lead: b.slice(0, i), text: b.slice(i + 1).trim() } : { lead: '', text: b };
+  });
+}
+const breakName = (n: string) => n.replace(/\+/g, '+​');
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Sản phẩm">
-{/* Launch banner, full width: the communications team swaps the image (and optional words) for each product launch. */}
-<section class="pd-banner" aria-label={c.poster.image.alt} data-needs-photos={hasPoster ? undefined : ''}>
-{(() => {
-  const inner = <>
-    <div class="pd-banner__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="product-poster" sizes="100vw" priority shape="rect" placeholder={c.poster.image.alt} image={c.poster.image} cms="src/content/pages/san-pham.json#poster.image" /></div>
-    {hasPosterText && <><div class="pd-banner__scrim" aria-hidden="true"></div><div class="pd-banner__copy">{isFilled(c.poster.eyebrow) && <span class="pd-banner__eyebrow">{c.poster.eyebrow}</span>}<strong class="pd-banner__title">{c.poster.title}</strong>{isFilled(c.poster.text) && <span class="pd-banner__text">{c.poster.text}</span>}{isFilled(c.poster.button) && <span class="pd-banner__btn">{c.poster.button}</span>}</div></>}
-  </>;
-  return c.poster.link ? <a href={link(c.poster.link)} class="pd-banner__link">{inner}</a> : <div class="pd-banner__link">{inner}</div>;
-})()}
+<section class="sp-hero">
+<div class="sp-hero__row">
+<div class="sp-hero__copy">
+<span class="sp-hero__eyebrow">{c.s01_tieu_de.t3}</span>
+<h1>{c.s01_tieu_de.t4}</h1>
+<p>{c.s01_tieu_de.t5}</p>
+<div class="sp-hero__actions">
+<a class="sp-btn sp-btn--solid" href={`${url('lien-he')}#dai-ly`}>{c.s01_tieu_de.t7}<span aria-hidden="true">↗</span></a>
+<a class="sp-btn sp-btn--light" href={url('tro-thanh-doi-tac')}>{c.s01_tieu_de.t8}<span aria-hidden="true">↗</span></a>
+</div>
+{isFilled(c.s01_tieu_de.link1) && <a class="sp-hero__catalogue" href={link(c.s01_tieu_de.link1)} target="_blank" rel="noopener">{c.s01_tieu_de.t6} →</a>}
+</div>
+<div class="sp-hero__bags" aria-hidden="true">
+{bags.map((b, i) => <div class={`sp-hero__bag sp-hero__bag--${i + 1}`}><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`product-hero-${b.key}`} shape="rect" fit="contain" priority placeholder="Ảnh bao sản phẩm nền trong suốt" image={b.image} cms={`src/content/pages/san-pham.json#hero.${b.key}`} sizes="240px" /></div>)}
+</div>
+</div>
 </section>
-<section style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) 40px;display:flex;flex-direction:column;gap:28px">
-<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_tieu_de.t1}</a> {c.s01_tieu_de.t2}</span>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:14px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s01_tieu_de.t3}</span>
-<h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_tieu_de.t4}</h1>
-</div>
-<div style="display:flex;flex-direction:column;gap:14px">
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s01_tieu_de.t5}</p>
-<div style="display:flex;gap:16px;flex-wrap:wrap">{isFilled(c.s01_tieu_de.link1) && <a href={link(c.s01_tieu_de.link1)} target="_blank" rel="noopener" style="font-weight:600">{c.s01_tieu_de.t6}</a>}<a href={url('lien-he')} style="font-weight:600">{c.s01_tieu_de.t7}</a></div>
-</div></div>
-<div style="overflow-x:auto"><Tabs id="line-tabs" label="Dòng sản phẩm" items={[{ value: 'all', label: c.lines_all_label }, ...lines.map((l) => ({ value: l.key, label: l.label }))]} value="all" /></div>
-</div></section>
 
-<section style="background:var(--surface-page)">
-<div style="max-width:1280px;margin:0 auto;padding:32px clamp(20px,4vw,56px) clamp(64px,8vw,104px);display:flex;flex-direction:column;gap:28px">
-<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end">
-<label style="display:flex;flex-direction:column;gap:6px;flex:2 1 320px;min-width:0"><span style="font-size:14px;font-weight:500">{c.s02_danh_sach.t1}</span><input id="prod-q" type="search" placeholder={c.s02_danh_sach.f1} style="padding:10px 14px;border-radius:var(--radius-md);border:1px solid var(--border-default);font:16px var(--font-body);background:var(--surface-card);color:var(--text-primary);outline-color:var(--green-500)" /></label>
-<div style="flex:1 1 200px;min-width:0"><Select id="prod-crop" label={c.s02_danh_sach.f2} options={[{ value: 'all', label: c.crops_all_label }, ...c.crops.map((v) => ({ value: v, label: v }))]} value="all" /></div>
-<div style="flex:1 1 200px;min-width:0"><Select id="prod-sort" label={c.s02_danh_sach.f3} options={[{ value: 'pop', label: c.sort_popular_label }, { value: 'name', label: c.sort_name_label }]} value="pop" /></div>
+<section class="sp-list">
+<div class="sp-list__wrap">
+<nav class="sp-crumbs" aria-label="Đường dẫn"><a href={url('trang-chu')}>{c.s01_tieu_de.t1}</a> <span aria-current="page">{c.s01_tieu_de.t2}</span></nav>
+<div class="sp-tabs"><Tabs id="line-tabs" label="Dòng sản phẩm" items={[{ value: 'all', label: c.lines_all_label }, ...lines.map((l) => ({ value: l.key, label: l.label }))]} value="all" /></div>
+<div class="sp-filters">
+<label class="sp-filters__q"><span>{s.t1}</span><input id="prod-q" type="search" placeholder={s.f1} /></label>
+<div class="sp-filters__sel"><Select id="prod-crop" label={s.f2} options={[{ value: 'all', label: c.crops_all_label }, ...c.crops.map((v) => ({ value: v, label: v }))]} value="all" /></div>
+<div class="sp-filters__sel"><Select id="prod-sort" label={s.f3} options={[{ value: 'pop', label: c.sort_popular_label }, { value: 'name', label: c.sort_name_label }]} value="pop" /></div>
 </div>
-<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:15px;color:var(--text-secondary)"><span><strong id="prod-count" style="color:var(--text-primary)">{products.length}</strong> {c.s02_danh_sach.t2}</span><button type="button" id="prod-reset" hidden style="background:none;border:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.s02_danh_sach.t3}</button></div>
-<div id="prod-grid" class="prod-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px">
-{products.map((e, i) => { const p = e.data; return (
-<a data-line={p.line} data-crops={p.crops.join('|')} data-name={p.name.toLowerCase()} data-pop={i} href={productUrl(e)} class="prod-card hover-lift">
+<div class="sp-meta"><span><strong id="prod-count">{products.length}</strong> {s.t2}<span id="prod-page-of"></span></span><button type="button" id="prod-reset" hidden>{s.t3}</button></div>
+<div id="prod-grid" class="prod-grid">
+{products.map((e, i) => { const p = e.data; const npk = p.npk.filter(({ value: v }) => isFilled(v)).slice(0, 4); const hl = highlights(p.benefits, p.summary); return (
+<a data-line={p.line} data-crops={p.crops.join('|')} data-name={p.name.toLowerCase()} data-pop={i} href={productUrl(e)} class="prod-card">
 <div class="prod-card__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`prod-${e.id}`} shape="rect" fit="contain" placeholder={p.front.alt || p.name} image={p.front} cms={`${e.filePath}#front`} sizes="(max-width: 599px) 45vw, 260px" /></div>
 <div class="prod-card__body">
 <span class="prod-card__line">{lineLabel(p.line)}</span>
-<strong class="prod-card__name">{p.name.replace(/\+/g, '+\u200B')}</strong>
-{p.npk.length > 0 && <div class="prod-card__npk">{p.npk.filter(({ value: v }) => isFilled(v)).slice(0, 4).map(({ value: v, unit: k }) => <span data-npk><b>{v}</b><small>{k}</small></span>)}</div>}
-{p.crops.length > 0 && <span class="prod-card__crops">{'Phù hợp: ' + p.crops.slice(0, 4).join(', ') + (p.crops.length > 4 ? '…' : '')}</span>}
-</div></a>
+<strong class="prod-card__name">{breakName(p.name)}</strong>
+</div>
+<div class="prod-card__over" aria-hidden="true">
+<strong class="pco__name">{breakName(p.name)}</strong>
+{npk.length > 0 && <><span class="pco__label">{s.t9}</span>
+<div class="pco__npk" style={`--n:${npk.length}`}>{npk.map(({ value: v, unit: k }) => <span><small>{k}</small><b>{pct(v)}</b></span>)}</div></>}
+{hl.length > 0 && <><span class="pco__label">{s.t10}</span>
+<ol class="pco__points">{hl.map((h, j) => <li><i>{j + 1}</i><span>{h.lead && <b>{h.lead}: </b>}{h.text}</span></li>)}</ol></>}
+{p.crops.length > 0 && <span class="pco__crops"><b>{s.t11}:</b> {p.crops.join(', ')}</span>}
+<span class="pco__btn">{s.t8}<span aria-hidden="true">↗</span></span>
+</div>
+</a>
 ); })}
 </div>
-<div id="prod-empty" hidden style="padding:48px;text-align:center;background:var(--surface-card);border:1px dashed var(--border-strong);border-radius:var(--radius-lg);color:var(--text-secondary)">{c.s02_danh_sach.t4} <a href={url('lien-he')}>{c.s02_danh_sach.t5}</a> {c.s02_danh_sach.t6}</div>
+<div id="prod-empty" hidden class="sp-empty">{s.t4} <a href={url('lien-he')}>{s.t5}</a> {s.t6}</div>
+<nav id="prod-pages" class="sp-pages" aria-label="Phân trang" data-no-reveal hidden></nav>
 </div></section>
 
 <CtaBand title={c.s03_tu_van.t1} text={c.s03_tu_van.t2} primary={{ label: c.s03_tu_van.t3, href: url('giai-phap') }} secondary={{ label: c.s03_tu_van.t4, href: url('lien-he') }} />
 </Layout>
 
-<script>
-  const grid = document.getElementById('prod-grid')!;
-  const cards = [...grid.children] as HTMLElement[];
-  const q = document.getElementById('prod-q') as HTMLInputElement;
-  const crop = document.getElementById('prod-crop') as HTMLSelectElement;
-  const sort = document.getElementById('prod-sort') as HTMLSelectElement;
-  const tabs = document.getElementById('line-tabs')!;
-  const count = document.getElementById('prod-count')!;
-  const reset = document.getElementById('prod-reset')!;
-  const empty = document.getElementById('prod-empty')!;
+<script define:vars={{ PER_PAGE, pageWord: s.t7 }}>
+  const grid = document.getElementById('prod-grid');
+  const cards = [...grid.children];
+  const q = document.getElementById('prod-q');
+  const crop = document.getElementById('prod-crop');
+  const sort = document.getElementById('prod-sort');
+  const tabs = document.getElementById('line-tabs');
+  const count = document.getElementById('prod-count');
+  const pageOf = document.getElementById('prod-page-of');
+  const reset = document.getElementById('prod-reset');
+  const empty = document.getElementById('prod-empty');
+  const pager = document.getElementById('prod-pages');
   let line = 'all';
+  let page = 1;
 
-  function render() {
+  function render(scroll) {
     const qq = q.value.trim().toLowerCase();
     const c = crop.value;
-    const visible = cards.filter((el) => {
-      const ok = (line === 'all' || el.dataset.line === line)
-        && (c === 'all' || el.dataset.crops!.split('|').includes(c))
-        && (!qq || el.dataset.name!.includes(qq));
-      el.hidden = !ok;
-      return ok;
-    });
-    const byName = (a: HTMLElement, b: HTMLElement) => a.dataset.name!.localeCompare(b.dataset.name!, 'vi');
-    const byPop = (a: HTMLElement, b: HTMLElement) => Number(a.dataset.pop) - Number(b.dataset.pop);
-    [...cards].sort(sort.value === 'name' ? byName : byPop).forEach((el) => grid.appendChild(el));
-    count.textContent = String(visible.length);
-    empty.hidden = visible.length > 0;
+    const byName = (a, b) => a.dataset.name.localeCompare(b.dataset.name, 'vi');
+    const byPop = (a, b) => Number(a.dataset.pop) - Number(b.dataset.pop);
+    const sorted = [...cards].sort(sort.value === 'name' ? byName : byPop);
+    sorted.forEach((el) => grid.appendChild(el));
+    const match = sorted.filter((el) => (line === 'all' || el.dataset.line === line)
+      && (c === 'all' || el.dataset.crops.split('|').includes(c))
+      && (!qq || el.dataset.name.includes(qq)));
+    const pages = Math.max(1, Math.ceil(match.length / PER_PAGE));
+    page = Math.min(page, pages);
+    const shown = new Set(match.slice((page - 1) * PER_PAGE, page * PER_PAGE));
+    cards.forEach((el) => { el.hidden = !shown.has(el); });
+    count.textContent = String(match.length);
+    pageOf.textContent = pages > 1 ? ` · ${pageWord} ${page}/${pages}` : '';
+    empty.hidden = match.length > 0;
     reset.hidden = !(line !== 'all' || c !== 'all' || qq);
+    pager.hidden = pages < 2;
+    pager.innerHTML = '';
+    if (pages > 1) {
+      const btn = (label, to, opts = {}) => {
+        const b = document.createElement('button');
+        b.type = 'button'; b.textContent = label; b.className = opts.cls || '';
+        if (opts.aria) b.setAttribute('aria-label', opts.aria);
+        if (to === page && !opts.cls) b.setAttribute('aria-current', 'page');
+        b.disabled = to < 1 || to > pages;
+        b.addEventListener('click', () => { page = to; render(true); });
+        pager.appendChild(b);
+      };
+      btn('←', page - 1, { cls: 'sp-pages__step', aria: 'Trang trước' });
+      for (let i = 1; i <= pages; i++) btn(String(i), i);
+      btn('→', page + 1, { cls: 'sp-pages__step', aria: 'Trang sau' });
+    }
+    if (scroll) document.querySelector('.sp-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-  function setLine(v: string) {
+  function setLine(v) {
     line = v;
-    tabs.querySelectorAll('[role="tab"]').forEach((t) => t.setAttribute('aria-selected', String((t as HTMLElement).dataset.value === v)));
+    tabs.querySelectorAll('[role="tab"]').forEach((t) => t.setAttribute('aria-selected', String(t.dataset.value === v)));
   }
-  tabs.addEventListener('tabs:change', (e) => { setLine((e as CustomEvent<string>).detail); render(); });
-  q.addEventListener('input', render);
-  crop.addEventListener('change', render);
-  sort.addEventListener('change', render);
-  reset.addEventListener('click', () => { setLine('all'); crop.value = 'all'; q.value = ''; render(); });
-  render();
+  const fresh = () => { page = 1; render(false); };
+  tabs.addEventListener('tabs:change', (e) => { setLine(e.detail); fresh(); });
+  q.addEventListener('input', fresh);
+  crop.addEventListener('change', fresh);
+  sort.addEventListener('change', fresh);
+  reset.addEventListener('click', () => { setLine('all'); crop.value = 'all'; q.value = ''; fresh(); });
+  render(false);
+  /* The hover card shows at most three benefits: drop the last ones that don't fit, measured once per card. */
+  grid.addEventListener('mouseover', (e) => {
+    const card = e.target.closest('.prod-card');
+    if (!card || card.dataset.fit) return;
+    card.dataset.fit = '1';
+    const over = card.querySelector('.prod-card__over');
+    const items = [...over.querySelectorAll('.pco__points li')];
+    while (over.scrollHeight > over.clientHeight + 1 && items.length > 1) items.pop().remove();
+  });
 </script>
 <style>
-  .pd-banner { position: relative; background: var(--green-900); }
-  .pd-banner__link { position: relative; display: block; height: clamp(300px, 40vw, 600px); color: #fff; text-decoration: none; overflow: hidden; }
-  .pd-banner__link:hover { color: #fff; text-decoration: none; }
-  .pd-banner__img { position: absolute; inset: 0; }
-  .pd-banner__scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2, 53, 26, .85) 0%, rgba(2, 53, 26, .45) 45%, rgba(2, 53, 26, 0) 80%); }
-  .pd-banner__copy { position: relative; max-width: 1280px; height: 100%; margin: 0 auto; padding: clamp(32px, 5vw, 72px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; }
-  .pd-banner__eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; color: var(--green-100); }
-  .pd-banner__title { font: var(--type-h1); max-width: 14em; text-wrap: balance; }
-  .pd-banner__text { max-width: 32em; color: var(--green-50); font-size: var(--fs-lead); text-align: start; }
-  .pd-banner__btn { margin-top: 6px; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: var(--radius-md); background: #fff; color: var(--green-700); font-weight: 700; }
-  /* Product cards: the bag stands on the card itself — no grey backdrop, no inner frame. */
-  .prod-card { display: flex; flex-direction: column; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; color: var(--text-primary); text-decoration: none; transition: box-shadow .15s, border-color .15s; }
-  .prod-card:hover { text-decoration: none; border-color: var(--green-300); }
-  .prod-card__img { position: relative; height: 250px; margin: 16px 16px 0; }
+  /* Hero: brand green, title and two buttons on the left, three product bags standing on the right. */
+  .sp-hero { position: relative; overflow: hidden; color: #fff;
+    background: radial-gradient(90% 120% at 82% 60%, #0b5a30 0%, var(--green-800) 55%, #003a1c 100%); }
+  .sp-hero::after { content: ''; position: absolute; right: 8%; bottom: 46px; width: 520px; height: 60px; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(0, 0, 0, .35), rgba(0, 0, 0, 0)); pointer-events: none; }
+  .sp-hero__row { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 56px);
+    display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 32px; align-items: center; min-height: clamp(380px, 32vw, 460px); }
+  .sp-hero__copy { display: flex; flex-direction: column; gap: 18px; max-width: 600px; }
+  .sp-hero__eyebrow { display: flex; align-items: center; gap: 14px; font: var(--type-eyebrow); letter-spacing: .1em; color: var(--green-50); }
+  .sp-hero__eyebrow::before { content: ''; width: 40px; height: 2px; background: var(--brand-highlight); flex: none; }
+  .sp-hero h1 { margin: 0; font: var(--type-h1); color: #fff; letter-spacing: -.015em; text-wrap: balance; }
+  .sp-hero p { margin: 0; font-size: var(--fs-lead); line-height: 1.6; color: var(--green-50); }
+  .sp-hero__actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; }
+  .sp-btn { display: inline-flex; align-items: center; gap: 14px; min-height: 48px; padding: 0 22px; border-radius: var(--radius-btn);
+    font-weight: 700; text-decoration: none; transition: background var(--motion-fast), color var(--motion-fast); }
+  .sp-btn span { font-size: 14px; }
+  .sp-btn--solid { background: var(--brand-bright); color: #fff; }
+  .sp-btn--solid:hover { background: var(--green-500); color: #fff; text-decoration: none; }
+  .sp-btn--light { background: #fff; color: var(--green-700); }
+  .sp-btn--light:hover { background: var(--green-50); color: var(--green-800); text-decoration: none; }
+  .sp-hero__catalogue { color: var(--green-100); font-weight: 600; font-size: 15px; }
+  .sp-hero__catalogue:hover { color: #fff; }
+  .sp-hero__bags { position: relative; display: flex; justify-content: center; align-items: flex-end; height: clamp(260px, 25vw, 340px); }
+  .sp-hero__bag { position: relative; aspect-ratio: 1 / 1.96; filter: drop-shadow(0 18px 22px rgba(0, 0, 0, .35)); }
+  .sp-hero__bag :global(.img-slot__frame) { background: transparent !important; }
+  .sp-hero__bag--1 { height: 74%; margin-right: -4%; transform: rotate(-4deg); transform-origin: bottom center; }
+  .sp-hero__bag--2 { height: 100%; z-index: 2; }
+  .sp-hero__bag--3 { height: 90%; margin-left: -2%; transform: rotate(3deg); transform-origin: bottom center; }
+
+  .sp-list { background: var(--surface-page); }
+  .sp-list__wrap { max-width: 1280px; margin: 0 auto; padding: 24px clamp(20px, 4vw, 56px) clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 24px; }
+  .sp-crumbs { font-size: 13px; color: var(--text-tertiary); display: flex; gap: 6px; }
+  .sp-crumbs a { color: var(--text-tertiary); }
+  .sp-crumbs [aria-current] { color: var(--green-600); }
+  .sp-tabs { overflow-x: auto; scroll-margin-top: 96px; }
+  .sp-filters { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; }
+  .sp-filters__q { display: flex; flex-direction: column; gap: 6px; flex: 2 1 320px; min-width: 0; }
+  .sp-filters__q span { font-size: 14px; font-weight: 500; }
+  .sp-filters__q input { padding: 10px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-default); font: 16px var(--font-body);
+    background: var(--surface-card); color: var(--text-primary); outline-color: var(--green-500); }
+  .sp-filters__sel { flex: 1 1 200px; min-width: 0; }
+  .sp-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 15px; color: var(--text-secondary); margin-top: -4px; }
+  .sp-meta strong { color: var(--text-primary); }
+  #prod-reset { background: none; border: 0; color: var(--green-700); font: 600 15px var(--font-body); cursor: pointer; }
+  .sp-empty { padding: 48px; text-align: center; background: var(--surface-card); border: 1px dashed var(--border-strong); border-radius: var(--radius-lg); color: var(--text-secondary); }
+
+  /* Product cards: the bag on white, line and name below. On a mouse, hovering the card shows its key facts. */
+  .prod-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+  .prod-card { position: relative; display: flex; flex-direction: column; min-height: 440px; background: var(--surface-card); border-radius: var(--radius-lg);
+    overflow: hidden; color: var(--text-primary); text-decoration: none; box-shadow: 0 1px 2px rgba(0, 71, 35, .06), 0 6px 18px rgba(0, 71, 35, .06);
+    transition: box-shadow var(--motion-base) var(--ease-out), transform var(--motion-base) var(--ease-out); }
+  .prod-card[hidden] { display: none; }
+  .prod-card:hover { text-decoration: none; color: var(--text-primary); }
+  .prod-card__img { position: relative; height: 280px; margin: 24px 22px 0; }
   .prod-card__img :global(.img-slot__frame) { background: transparent !important; }
-  .prod-card__body { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
-  .prod-card__line { font: var(--type-eyebrow); color: var(--green-600); letter-spacing: .06em; text-transform: uppercase; }
-  .prod-card__name { font-size: 17px; line-height: 1.35; flex: 1; }
-  .prod-card__npk { display: flex; gap: 6px; flex-wrap: wrap; }
-  .prod-card__npk span { display: flex; flex-direction: column; align-items: center; min-width: 52px; padding: 4px 8px; border-radius: var(--radius-sm); background: var(--green-50); }
-  .prod-card__npk b { font: 700 15px var(--font-display); color: var(--green-800); }
-  .prod-card__npk small { font-size: 11px; color: var(--text-secondary); }
-  .prod-card__crops { font-size: 13px; color: var(--text-tertiary); }
-  /* Phones: two compact product cards per row. */
+  .prod-card__body { padding: 18px 22px 22px; display: flex; flex-direction: column; gap: 8px; }
+  .prod-card__line { font: var(--type-eyebrow); color: var(--green-500); letter-spacing: .06em; text-transform: uppercase; }
+  .prod-card__name { font: 700 17px/1.35 var(--font-display); }
+
+  .prod-card__over { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 10px; overflow: hidden; padding: 20px 18px 18px;
+    background: linear-gradient(160deg, #3d9a57 0%, #2f8549 60%, #2a7a43 100%); color: #fff;
+    opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s; }
+  .pco__name { font: 700 16px/1.35 var(--font-display); padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, .25); }
+  .pco__label { font: 700 12.5px/1.2 var(--font-display); letter-spacing: .06em; text-transform: uppercase; color: #fff; }
+  .pco__npk { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 6px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, .25); }
+  .pco__npk span { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 2px; border: 1px solid rgba(255, 255, 255, .35); border-radius: 10px; min-width: 0; }
+  .pco__npk small { font: 600 12px/1.2 var(--font-display); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+  .pco__npk b { font: 700 14px/1.2 var(--font-display); }
+  .pco__points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .pco__points { flex: none; }
+  .pco__name, .pco__npk, .pco__label { flex: none; }
+  .pco__points li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; align-items: start; }
+  .pco__points i { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, .8); font: 600 11px/1 var(--font-display); font-style: normal; }
+  .pco__points li > span { font-size: 13px; line-height: 1.4; color: var(--green-50); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-align: start; }
+  .pco__points b { color: #fff; font-weight: 700; }
+  .pco__crops { flex: none; font-size: 12.5px; line-height: 1.4; color: var(--green-50); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-align: start; }
+  .pco__crops b { color: var(--brand-highlight); font-weight: 600; }
+  .pco__btn { flex: none; margin-top: auto; display: flex; justify-content: center; align-items: center; gap: 14px; min-height: 42px; border-radius: 999px; background: #fff;
+    color: var(--green-700); font: 700 14px var(--font-display); box-shadow: 0 6px 16px rgba(0, 0, 0, .12); }
+  @media (hover: hover) and (pointer: fine) {
+    .prod-card:hover, .prod-card:focus-visible { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(0, 71, 35, .18); }
+    .prod-card:hover .prod-card__over, .prod-card:focus-visible .prod-card__over { opacity: 1; visibility: visible; transform: none; transition: opacity .2s ease, transform .2s ease; }
+  }
+  :global(html.pe-on) .prod-card__over { display: none; }
+
+  .sp-pages { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .sp-pages :global(button) { min-width: 44px; height: 44px; padding: 0 12px; border-radius: 12px; border: 1px solid var(--border-default); background: var(--surface-card);
+    color: var(--text-primary); font: 600 15px var(--font-display); cursor: pointer; transition: background var(--motion-fast), border-color var(--motion-fast); }
+  .sp-pages :global(button:hover:not(:disabled)) { border-color: var(--green-500); color: var(--green-700); }
+  .sp-pages :global(button[aria-current]) { background: var(--brand-bright); border-color: var(--brand-bright); color: #fff; }
+  .sp-pages :global(button:disabled) { opacity: .4; cursor: default; }
+
+  @media (max-width: 1099.98px) {
+    .prod-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (max-width: 899.98px) {
+    .sp-hero__row { grid-template-columns: 1fr; }
+    .sp-hero__bags { height: 240px; }
+    .sp-hero::after { right: 50%; transform: translateX(50%); width: 360px; }
+  }
   @media (max-width: 599.98px) {
-    .prod-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; }
-    .prod-card__img { height: 160px; margin: 10px 10px 0; }
-    .prod-card__body { padding: 12px; gap: 8px; }
-    .prod-card__name { font-size: 15px; }
-    .prod-card__npk span { min-width: 40px; padding: 3px 5px; }
+    .prod-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .prod-card { min-height: 0; }
+    .prod-card__img { height: 170px; margin: 12px 12px 0; }
+    .prod-card__body { padding: 12px 12px 14px; gap: 6px; }
+    .prod-card__name { font-size: 14.5px; }
+    .sp-hero__bags { height: 200px; }
   }
 </style>

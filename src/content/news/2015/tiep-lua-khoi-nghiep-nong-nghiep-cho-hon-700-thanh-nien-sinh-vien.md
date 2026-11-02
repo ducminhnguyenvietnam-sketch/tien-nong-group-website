@@ -26,11 +26,9 @@ old_url: /tiep-lua-khoi-nghiep-nong-nghiep-cho-hon-700-thanh-nien-sinh-vien/
 
 Tham gia chương trình về phía đơn vị chỉ đạo, đơn vị tổ chức có ông Phạm Ngọc Tuấn – Tổng Biên tập Báo Diễn đàn Doanh nghiệp, Phó Trưởng Ban Thường trực Ban Tổ chức Chương trình Khởi nghiệp Quốc gia, ông Lại Hợp Nhân – Phó Tổng Biên tập Báo Diễn đàn Doanh nghiệp, Tổng Thư ký Chương trình Khởi nghiệp quốc gia; Về phía Hội đồng Tư vấn – hỗ trợ Chương trình Khởi nghiệp có thầy Nguyễn Văn Mỹ – Giảng viên cao cấp Chương trình CEFE Việt Nam, cố vấn cao cấp Chương trình Khởi nghiệp Quốc gia, ông Đinh Trọng Nguyên – Giám đốc Công ty Cổ phần Liên minh Phú Gia, Phó Chủ tịch CLB CEO Hà Nội, ông Bạch Quốc Thắng – Đại diện HĐQT Công ty CP Thú y Xanh Việt Nam, ông Nguyễn Hồng Phong – Tổng giám đốc Công ty CP Công nông nghiệp Tiến Nông, bà Đinh Thị Thu Hoài – Phó Chủ tịch, Trưởng ban Phát triển hội viên, Hội Nữ Doanh nhân Hà Nội, Giám đốc Công ty TNHH Đầu tư Xây dựng và Thương mại Nhật Hà, bà Phạm Thị Thơm – Giảng viên Trường Đào tạo, Bồi dưỡng cán bộ Công thương TW, ông Nguyễn Thành Đồng – Phó Hiệu trưởng Trường Cao đẳng Nghề Công thương Việt Nam, TS Lê Hồng Quân – Trưởng khoa Công nghệ ô tô Đại học Công nghiệp Hà Nội, ông Cao Hồng Hưng – Phó Chánh Văn phòng Hội Liên hiệp Thanh niên Việt Nam, bà Nguyễn Thị Lan Hương – Phó Chủ tịch Doanh nhân nữ Hà Nội.
 
-*
 
 ![“Tiếp lửa” khởi nghiệp Nông nghiệp cho hơn 700 thanh niên – sinh viên](/uploads/tin-cu/2015/tiep-lua-khoi-nghiep-nong-nghiep-cho-hon-700-thanh-nien-sinh-vien-2.webp)
 
-*
 *Các đại biểu tham quan các gian hàng của sinh viên*
 
 Phát biểu chào mừng, thầy Phạm Văn Cường – Phó Giám đốc Học viện Nông nghiệp cho biết, qua Chương trình Khởi nghiệp, các bạn sinh viên đã thể hiện được niềm đam mệ, trí tuệ, sức sáng tạo, nhiệt huyết và khát vọng tuổi trẻ. Bản thân nhà trường cũng nhận thức được rằng cần phải thay đổi chương trình đào tạo để làm sao đào tạo được nhiều đối tượng thay vì chỉ đào tạo cán bộ phục vụ nhà nước như chương trình đào tạo cách đây 30 năm, đặc biệt là đào tạo về nông nghiệp. Khởi nghiệp nông nghiệp hiện nay không chỉ đơn giản là biết nuôi gia cầm, trồng cây cối…mà cái quan trọng là phải ươm mầm, tạo ra được các doanh nhân. Thầy Cường bày tỏ hy vọng thông qua Chương trình khởi nghiệp, các bạn sinh viên – những chủ nhân tương lai của đất nước sẽ có những đóng giúp quan trọng trong lĩnh vực nông nghiệp, góp sức vào sự lớn mạnh, phồn vinh của đất nước, xây dựng nước ta đàng hoàng hơn, to đẹp hơn, sánh vai với các cường quốc năm châu như Bác Hồ thầm mong muốn.
@@ -100,11 +98,9 @@ Thầy Huyên cũng cho biết thêm, qua nhận xét, đánh giá của Hội �
 
 Thầy Huyên bày tỏ mong muốn Chương trình Khởi nghiệp Nông nghiệp nói riêng, Chương trình Khởi nghiệp quốc gia nói chung sẽ tiếp tục nhận được sự quan tâm giúp đỡ, ủng hộ của các cơ quan, tổ chức, các doanh nghiệp, doanh nhân, các thầy cô giáo, các nhà khoa học và các em sinh viên để tiếp tục phát triển sâu rộng đi vào thực tiễn hơn trong năm 2015.
 
-*
 
 ![“Tiếp lửa” khởi nghiệp Nông nghiệp cho hơn 700 thanh niên – sinh viên](/uploads/tin-cu/2015/tiep-lua-khoi-nghiep-nong-nghiep-cho-hon-700-thanh-nien-sinh-vien-8.webp)
 
-*
 *Ông Lại Hợp Nhân -Phó Tổng Biên tập báo Diễn đàn Doanh nghiệp (bên trái) tặng khóa học “Khởi sự Kinh doanh” cho Học viện Nông nghiệp*
 
 **Diễn đàn doanh nghiệp**

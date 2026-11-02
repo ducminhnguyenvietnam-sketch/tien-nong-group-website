@@ -88,6 +88,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK Hữu cơ khoáng Vina Green (HC-NPK 15-3-2-3 Tiến Nông) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/phan-bon-huu-co-khoang-vina-green-hc-npk-15-3-2-3-tien-nong/

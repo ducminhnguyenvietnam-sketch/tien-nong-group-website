@@ -60,8 +60,10 @@ const products = defineCollection({
     benefits: z.array(z.string()).default([]),
     usage: z.array(z.object({ title: z.string().default(''), rate: z.string().default(''), timing: z.string().default(''), method: z.string().default(''), note: z.string().default('') })).default([]),
     safety: z.array(z.string()).default([]),
-    front: image, back: image, granule: image, field: image,
+    front: image, back: image, granule: image, field: image, field2: image, field3: image,
     certificate: z.string().default(''),
+    // PDF of the product's tiêu chuẩn cơ sở (TCCS), offered as a download under "Thông tin pháp lý".
+    tccs_pdf: z.string().default(''),
     old_url: z.string().default(''),
   }),
 });

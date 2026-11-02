@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Tabs from '../components/Tabs.astro';
 import Slideshow from '../components/Slideshow.astro';
-import { link, url } from '../lib/routes';
+import { link, url, youtubeId } from '../lib/routes';
 import { CATEGORIES, formatDate, getNews, isPress, newsUrl } from '../lib/news';
 
 const c = withDefaults(raw, 'src/content/pages/trang-chu.json');
@@ -26,6 +26,8 @@ const points = (v: string) => (v || '').split('\n').map((l) => l.replace(/^\s*(�
 /** "30+" → number and a separate "+" (drawn in the accent colour, as in the Figma design). */
 const years = String(u.years_value || '').match(/^(.*?)(\+?)$/) ?? ['', '', ''];
 
+/** Video for the "30+ năm" photo: the photo (set in the CMS) is the thumbnail; a click plays the YouTube video in place. */
+const introVideo = youtubeId(u.intro_youtube);
 const stats = [[u.t1, u.t2], [u.t3, u.t4], [u.t5, u.t6], [u.t7, u.t8]].filter(([v]) => isFilled(v));
 const awards = [[u.t9, u.t10, u.img_award_1, 1], [u.t11, u.t12, u.img_award_2, 2], [u.t13, u.t14, u.img_award_3, 3], [u.t15, u.t16, u.img_award_4, 4]] as const;
 const labs = [[k.t4, k.t5], [k.t7, k.t8], [k.t10, k.t11], [k.t13, k.t14]].filter(([, t]) => isFilled(t));
@@ -88,7 +90,8 @@ const bannerText = isFilled(banner?.title);
 <div class="intro-grid">
 <div class="intro-photo">
 <ImageSlot style={FILL} id="intro-photo" shape="rect" placeholder="Ảnh cánh đồng" image={u.intro_image} cms={`${F}#s02_uy_tin.intro_image`} sizes="(max-width: 899px) 92vw, 620px" />
-{isFilled(u.intro_caption) && <span class="intro-photo__cap">{u.intro_caption}</span>}
+{introVideo && <button type="button" class="intro-play" data-yt={introVideo} aria-label={`Xem video: ${u.intro_caption || 'Giới thiệu Tiến Nông'}`}><span class="yt__play yt__play--big" aria-hidden="true"></span></button>}
+{isFilled(u.intro_caption) && <span class="intro-photo__cap">{introVideo && <span class="intro-photo__tag">VIDEO</span>}{u.intro_caption}</span>}
 </div>
 <div class="intro-facts">
 {isFilled(u.years_value) && <p class="intro-years"><span class="intro-years__num">{years[1]}<span class="intro-years__plus">{years[2]}</span></span><span class="intro-years__label">{u.years_label}</span></p>}
@@ -327,7 +330,14 @@ const bannerText = isFilled(banner?.title);
   .h-intro .h-wrap { display: flex; flex-direction: column; gap: 48px; }
   .intro-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 24px 40px; align-items: stretch; }
   .intro-photo { position: relative; min-height: 400px; border-radius: var(--radius-lg); overflow: hidden; background: var(--surface-sunken); }
-  .intro-photo__cap { position: absolute; left: 20px; bottom: 16px; font-size: 13px; color: rgba(255, 255, 255, .92); text-shadow: 0 1px 6px rgba(0, 0, 0, .45); }
+  .intro-photo__cap { position: absolute; left: 20px; bottom: 16px; z-index: 2; display: flex; align-items: center; gap: 10px; font-size: 13px; color: #fff; text-shadow: 0 1px 6px rgba(0, 0, 0, .45); pointer-events: none; }
+  .intro-photo__tag { padding: 3px 8px; border-radius: 6px; background: var(--brand-bright); font: 600 11px/1.3 var(--font-body); letter-spacing: .08em; text-shadow: none; }
+  .intro-play { position: absolute; inset: 0; z-index: 1; width: 100%; padding: 0; border: 0; cursor: pointer;
+    background: linear-gradient(0deg, rgba(0, 40, 20, .55) 0%, rgba(0, 40, 20, 0) 45%); }
+  .intro-play :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  div.intro-play { background: #000; }
+  .intro-play:hover .yt__play { transform: scale(1.08); }
+  :global(html.pe-on) .intro-play { display: none; }
   .intro-facts { display: flex; flex-direction: column; justify-content: center; gap: 22px; }
   .intro-years { margin: 0; display: flex; flex-direction: column; gap: 6px; }
   .intro-years__num { font: 700 clamp(96px, 11vw, 150px)/.9 var(--font-display); letter-spacing: -.04em; color: var(--brand-bright); }

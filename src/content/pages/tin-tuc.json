@@ -5,7 +5,8 @@
   "s01_tin_noi_bat": {
     "t1": "Trang chủ",
     "t2": "/ Tin tức",
-    "t3": "Tin tức"
+    "t3": "Tin tức",
+    "t4": "Tin nổi bật"
   },
   "s02_danh_sach": {
     "f1": "Tìm bài viết",
@@ -15,7 +16,7 @@
   },
   "s03_bao_chi": {
     "t1": "Báo chí nói về Tiến Nông",
-    "t2": "Xem thêm →",
+    "t2": "Tất cả bài báo",
     "t3": "Đọc bài gốc ↗"
   },
   "article": {
@@ -29,18 +30,19 @@
     "album_more": "Xem toàn bộ album →",
     "tags_label": "Chủ đề:",
     "related_title": "Bài viết liên quan",
-    "related_all": "Tất cả tin tức →"
+    "related_all": "Tất cả tin tức →",
+    "categories_title": "Danh mục"
   },
   "all_categories": "Tất cả",
   "hero": {
     "eyebrow": "TIN TỨC & SỰ KIỆN",
-    "title": "Tin tức",
-    "lead": "Hoạt động, câu chuyện và kiến thức nông nghiệp từ Tiến Nông – hơn 900 bài viết từ năm 2012 đến nay.",
+    "title": "TIN TỨC",
+    "lead": "Hoạt động, câu chuyện và kiến thức nông nghiệp từ Tiến Nông.",
     "background": {
-      "src": "/uploads/news-hoi-thao-dau-bo-chia-se-kinh-nghiem-mvkfxko3.jpg",
+      "src": "/uploads/khcn-hero-mvat01c5.jpg",
       "focus": "center",
       "zoom": "100",
-      "alt": "Hội thảo đầu bờ cùng bà con nông dân"
+      "alt": "Toà nhà Tiến Nông – Tiến cùng nông nghiệp Việt Nam"
     }
   }
 }

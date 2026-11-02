@@ -1,9 +1,8 @@
 ---
 /**
- * Phát triển bền vững. Flow: hero → key figures → why sustainability is core for a fertiliser company
- * (four pillars) → 1 Đất khỏe → 2 Nhà máy xanh → 3 Sinh kế nhà nông → 4 Cộng đồng: "Ông bố Tiến Nông"
- * (the main social programme) and the other programmes → Xanh hoá Trường Sa teaser → people →
- * governance & recognition → roadmap.
+ * Phát triển bền vững. Flow: hero → key figures → why (four illustrated pillars) → 1 Đất khỏe →
+ * 2 Nhà máy xanh → 3 Sinh kế nhà nông → 4 Cộng đồng: "Ông bố Tiến Nông" (photo, figures, year
+ * tabs, the first child's story) and the other programmes → Xanh hoá Trường Sa teaser → people → ESG roadmap.
  */
 import raw from '../content/pages/phat-trien-ben-vung.json';
 import { isFilled, withDefaults } from '../lib/content';
@@ -12,8 +11,9 @@ import ImageSlot from '../components/ImageSlot.astro';
 import PageHero from '../components/PageHero.astro';
 import Head from '../components/story/Head.astro';
 import Stats from '../components/story/Stats.astro';
+import YearTabs from '../components/story/YearTabs.astro';
 import tsRaw from '../content/pages/xanh-hoa-truong-sa.json';
-import { link, url } from '../lib/routes';
+import { asset, link, url } from '../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/phat-trien-ben-vung.json');
 const F = 'src/content/pages/phat-trien-ben-vung.json';
@@ -23,7 +23,6 @@ const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto
 const programs = c.programs.items.filter((p) => isFilled(p.title));
 const tags = [...new Set(programs.map((p) => p.tag).filter(isFilled))];
 const sentence = (t: string) => t.charAt(0) + t.slice(1).toLowerCase();
-const timeline = c.orphans.timeline.filter((t) => isFilled(t.title));
 const facts = c.plant.facts.filter((f) => isFilled(f.value));
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Phát triển bền vững">
@@ -36,7 +35,7 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 <section class="st-sec st-sec--card"><div class="st-wrap st-wrap--s"><Stats items={c.stats} /></div></section>
 
 <nav class="st-subnav" aria-label="Các phần của trang"><div>
-<a href="#vi-sao">{c.nav.why}</a><a href="#dat-khoe">{c.nav.soil}</a><a href="#nha-may-xanh">{c.nav.plant}</a><a href="#nha-nong">{c.nav.farmers}</a><a href="#cong-dong">{c.nav.community}</a><a href="#minh-bach">{c.nav.governance}</a><a href="#lo-trinh">{c.nav.roadmap}</a>
+<a href="#vi-sao">{c.nav.why}</a><a href="#dat-khoe">{c.nav.soil}</a><a href="#nha-may-xanh">{c.nav.plant}</a><a href="#nha-nong">{c.nav.farmers}</a><a href="#cong-dong">{c.nav.community}</a><a href="#lo-trinh">{c.nav.roadmap}</a>
 </div></nav>
 
 <section id="vi-sao" class="st-sec">
@@ -45,8 +44,11 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 <Head eyebrow={c.why.eyebrow} title={c.why.title} intro={c.why.text} />
 <div>{isFilled(c.why.quote) && <blockquote class="st-quote"><p>“{c.why.quote}”</p>{isFilled(c.why.quote_source) && <footer>{c.why.quote_source}</footer>}</blockquote>}</div>
 </div>
-<div class="st-grid" style="--min:230px">
-{c.why.pillars.map((p, k) => <a class="st-card st-card--top" href={`#${p.anchor}`}><div class="st-card__body"><span class="st-card__tag">Trụ cột {k + 1}</span><strong class="st-card__title">{p.title}</strong><span class="st-card__text">{p.text}</span></div></a>)}
+<div class="pv-pillars">
+{c.why.pillars.map((p, k) => <a class="pv-pillar" href={`#${p.anchor}`}>
+<div class="pv-pillar__img"><ImageSlot style={fill} id={`pillar-${k}`} shape="rect" placeholder={p.title} image={p.image} cms={`${F}#why.pillars.${k}.image`} sizes="(max-width: 767px) 92vw, 300px" /><span class="pv-pillar__n">{String(k + 1).padStart(2, '0')}</span></div>
+<div class="pv-pillar__body"><span class="pv-pillar__tag">Trụ cột {k + 1}</span><strong>{p.title}</strong><span class="jx-start">{p.text}</span><span class="pv-pillar__go" aria-hidden="true">↓</span></div>
+</a>)}
 </div>
 </div></section>
 
@@ -93,29 +95,32 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 </div>
 </div></section>
 
-<section id="cong-dong" class="st-sec st-sec--dark">
+<section id="cong-dong" class="st-sec st-sec--dark pv-community" style={`--leaf:url(${asset('assets/logo-la-trang.png')})`}>
 <div class="st-wrap" id="ong-bo">
-<div class="st-split st-split--top">
+<div class="pv-c-top">
 <Head eyebrow={c.orphans.eyebrow} title={c.orphans.title} intro={c.orphans.intro} />
-<div class="st-split__media st-hide-empty" style="--ratio:4/3"><ImageSlot style={fill} id="esg-orphans" shape="rounded" radius="24" placeholder={c.orphans.image.alt || 'Ông bố Tiến Nông'} image={c.orphans.image} cms={`${F}#orphans.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
+<figure class="pv-c-photo"><ImageSlot style={fill} id="esg-orphans" shape="rounded" radius="20" placeholder={c.orphans.image.alt || 'Ông bố Tiến Nông'} image={c.orphans.image} cms={`${F}#orphans.image`} sizes="(max-width: 899px) 92vw, 600px" />{isFilled(c.orphans.photo_caption) && <figcaption>{c.orphans.photo_caption}</figcaption>}</figure>
 </div>
-<Stats items={c.orphans.stats} />
-<div class="st-split st-split--top">
-<div>
-{isFilled(c.orphans.story) && <blockquote class="st-quote"><footer><strong>{c.orphans.story_title}</strong></footer><p style="font:400 var(--fs-body)/1.7 var(--font-body)">{c.orphans.story}</p></blockquote>}
+<ul class="pv-c-stats">{c.orphans.stats.filter((st) => isFilled(st.value)).map((st) => <li><b>{st.value}{isFilled(st.unit) && <small>{st.unit}</small>}</b><span>{st.label}</span></li>)}</ul>
+<YearTabs items={c.orphans.timeline} tone="dark" photos={false} title={c.orphans.timeline_title} hint={c.orphans.timeline_hint} cms={`${F}#orphans.timeline`} id="orphan-year">
+<article slot="aside" class="pv-c-story">
+<div class="pv-c-story__img"><ImageSlot style={fill} id="orphan-story" shape="rounded" radius="12" placeholder="Ảnh em Ngô Hùng Hà" image={c.orphans.story_image} cms={`${F}#orphans.story_image`} sizes="200px" /></div>
+<div class="pv-c-story__text">
+{isFilled(c.orphans.story_eyebrow) && <span class="pv-c-story__eyebrow">{c.orphans.story_eyebrow}</span>}
+<strong>{c.orphans.story_title}</strong>
+<p class="jx-justify">{c.orphans.story}</p>
+{isFilled(c.orphans.story_link) && <a href={link(c.orphans.story_link)}>Đọc câu chuyện <span aria-hidden="true">↗</span></a>}
+</div>
+</article>
+</YearTabs>
 {isFilled(c.orphans.partners) && <p class="st-lead" style="font-size:15px">{c.orphans.partners}</p>}
-</div>
-{timeline.length > 0 && <ol class="st-timeline">
-{timeline.map((t) => <li><span class="st-timeline__when">{t.when}</span><div class="st-timeline__what"><strong>{t.title}</strong><span>{t.text}</span>{isFilled(t.link) && <a href={link(t.link)}>Đọc tin →</a>}</div></li>)}
-</ol>}
-</div>
 </div></section>
 
 <section class="st-sec">
 <div class="st-wrap">
 <Head eyebrow={c.programs.eyebrow} title={c.programs.title} intro={c.programs.intro} split />
 {tags.length > 1 && <div data-filter-group="prog" style="display:flex;gap:8px;flex-wrap:wrap">{['*', ...tags].map((t, k) => <button type="button" class="chip" data-filter={t} aria-pressed={k === 0 ? 'true' : 'false'} style="padding:8px 16px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);color:var(--text-primary);font:600 15px var(--font-body);cursor:pointer">{t === '*' ? c.programs.all_label : sentence(t)}</button>)}</div>}
-<div class="st-grid st-grid--fill" style="--min:300px">
+<div class="st-grid st-grid--fill pv-programs" style="--min:240px">
 {programs.map((p, k) => {
   const inner = <>
     <div class="st-card__img"><ImageSlot style={fill} id={`prog-${k}`} shape="rect" placeholder={p.image.alt} image={p.image} cms={`${F}#programs.items.${k}.image`} sizes="(max-width: 767px) 92vw, 400px" /></div>
@@ -141,14 +146,6 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 <a href={url('tuyen-dung')} class="st-btn st-btn--solid">{c.workers.button}</a>
 </div></section>
 
-<section id="minh-bach" class="st-sec">
-<div class="st-wrap">
-<Head eyebrow={c.governance.eyebrow} title={c.governance.title} />
-<div class="st-ruled" style="--min:240px">
-{c.governance.items.map((g) => <div><strong>{g.title}</strong><span>{g.text}</span>{isFilled(g.link) && <a href={link(g.link)} style="font-size:14px;font-weight:600">Đọc tin →</a>}</div>)}
-</div>
-</div></section>
-
 <section id="lo-trinh" class="st-sec st-sec--card">
 <div class="st-wrap">
 <Head eyebrow={c.roadmap.eyebrow} title={c.roadmap.title} intro={c.roadmap.intro} />
@@ -159,6 +156,51 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 </Layout>
 
 <style>
+  /* Four pillars: photo cards with a large number, linking to each pillar's section. */
+  .pv-pillars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+  .pv-pillar { position: relative; display: flex; flex-direction: column; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; color: var(--text-primary); text-decoration: none; transition: transform var(--motion-base), box-shadow var(--motion-base); }
+  .pv-pillar:hover { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(0, 71, 35, .12); text-decoration: none; color: var(--text-primary); }
+  .pv-pillar__img { position: relative; aspect-ratio: 4 / 3; }
+  .pv-pillar__img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(2, 53, 26, .7), rgba(2, 53, 26, 0) 55%); pointer-events: none; }
+  .pv-pillar__n { position: absolute; left: 18px; bottom: 12px; z-index: 1; font: 800 44px/1 var(--font-display); color: #fff; text-shadow: 0 2px 10px rgba(0, 0, 0, .3); }
+  .pv-pillar__body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .pv-pillar__tag { font: 700 11.5px/1.3 var(--font-display); letter-spacing: .1em; text-transform: uppercase; color: var(--green-600); }
+  .pv-pillar__body strong { font: 700 20px/1.3 var(--font-display); }
+  .pv-pillar__body > span:not(.pv-pillar__tag):not(.pv-pillar__go) { color: var(--text-secondary); font-size: 15px; line-height: 1.55; }
+  .pv-pillar__go { margin-top: auto; padding-top: 6px; color: var(--brand-bright); font-weight: 700; }
+  /* Pillar 4 (Figma): leaf watermark on dark green, photo with a caption, yellow figures, year tabs and the first child's story. */
+  .pv-community { position: relative; overflow: hidden; }
+  .pv-community::before { content: ''; position: absolute; left: -12%; bottom: -14%; width: 52%; aspect-ratio: 1.4; background: var(--leaf) left bottom / contain no-repeat; opacity: .07; pointer-events: none; }
+  .pv-community > .st-wrap { position: relative; }
+  .pv-community :global(.yt-tl) { --yt-year: #49c06f; }
+  .pv-c-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px clamp(32px, 5vw, 72px); align-items: center; }
+  .pv-c-photo { position: relative; margin: 0; aspect-ratio: 4 / 3; }
+  .pv-c-photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 40px 22px 18px; border-radius: 0 0 20px 20px; background: linear-gradient(0deg, rgba(2, 53, 26, .85), rgba(2, 53, 26, 0)); color: #fff; font: 600 16px/1.3 var(--font-display); pointer-events: none; }
+  .pv-c-stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .pv-c-stats li { display: flex; flex-direction: column; gap: 8px; padding-top: 18px; border-top: 1px solid rgba(245, 196, 78, .45); }
+  .pv-c-stats b { font: 700 clamp(34px, 3.4vw, 46px)/1 var(--font-display); color: var(--brand-highlight); }
+  .pv-c-stats small { margin-left: 8px; font-size: 18px; font-weight: 600; }
+  .pv-c-stats span { font-size: 14px; color: var(--green-100); }
+  .pv-c-story { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 18px; padding: 22px; border-radius: var(--radius-lg); background: rgba(255, 255, 255, .06); border: 1px solid rgba(245, 196, 78, .35); }
+  .pv-c-story__img { position: relative; aspect-ratio: 3 / 4; }
+  .pv-c-story__text { display: flex; flex-direction: column; gap: 8px; }
+  .pv-c-story__eyebrow { font: 700 11px/1.3 var(--font-display); letter-spacing: .1em; color: var(--brand-highlight); }
+  .pv-c-story strong { font: 700 20px/1.3 var(--font-display); color: #fff; }
+  .pv-c-story p { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--green-50); }
+  .pv-c-story a { align-self: flex-start; font-weight: 600; font-size: 14px; color: var(--brand-highlight); }
+  .pv-programs { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  @media (max-width: 1099.98px) {
+    .pv-pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pv-programs { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  }
+  @media (max-width: 899.98px) {
+    .pv-c-top { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 599.98px) {
+    .pv-pillars, .pv-programs { grid-template-columns: minmax(0, 1fr) !important; }
+    .pv-c-stats { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+    .pv-c-story { grid-template-columns: 88px minmax(0, 1fr); padding: 16px; }
+  }
   .ts-teaser { background: var(--green-900); }
   .ts-teaser__link { position: relative; display: block; min-height: clamp(300px, 34vw, 460px); color: #fff; text-decoration: none; overflow: hidden; }
   .ts-teaser__link:hover { text-decoration: none; color: #fff; }

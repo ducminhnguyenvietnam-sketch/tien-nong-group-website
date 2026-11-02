@@ -30,11 +30,9 @@ Trong quá trình sinh trưởng, cây trồng cần được cung cấp đầy 
 
 Dấu hiệu đầu tiên dễ nhận thấy là cây sinh trưởng chậm, còi cọc. Cây thiếu dinh dưỡng thường có tốc độ phát triển thấp hơn bình thường, thân nhỏ, lá phát triển kém, khoảng cách giữa các đốt ngắn hoặc cây không đạt kích thước như kỳ vọng. Đặc biệt, thiếu đạm có thể khiến cây giảm sinh khối, lá có màu xanh nhạt và toàn bộ cây trở nên kém phát triển. Nếu tình trạng kéo dài, cây khó phục hồi dù điều kiện nước và ánh sáng vẫn phù hợp.
 
-*
 
 ![5 dấu hiệu cây trồng thiếu dinh dưỡng cần lưu ý](/uploads/tin-cu/2026/5-dau-hieu-cay-trong-thieu-dinh-duong-can-luu-y-2.webp)
 
-*
 
 *Cây còi cọc, sinh trưởng chậm*
 
@@ -42,21 +40,17 @@ Lá vàng hoặc đổi màu bất thường cũng là tín hiệu cần đặc 
 
 Mép lá cháy, lá quăn hoặc xuất hiện các đốm bất thường cũng có thể liên quan đến mất cân đối dinh dưỡng. Thiếu kali thường khiến mép và chóp lá già chuyển vàng, sau đó có thể cháy khô. Một số trường hợp thiếu magie có thể xuất hiện hiện tượng vàng giữa các gân lá trên lá già. Những biểu hiện này nếu không được phát hiện và xử lý sớm có thể làm giảm khả năng quang hợp, ảnh hưởng trực tiếp đến quá trình tích lũy dinh dưỡng của cây.
 
-*
 
 ![5 dấu hiệu cây trồng thiếu dinh dưỡng cần lưu ý](/uploads/tin-cu/2026/5-dau-hieu-cay-trong-thieu-dinh-duong-can-luu-y-3.webp)
 
-*
 
 *Mép lá cháy, lá quăn hoặc xuất hiện các đốm bất thường cũng có thể liên quan đến mất cân đối dinh dưỡng*
 
 Bộ rễ phát triển kém là dấu hiệu thường bị bỏ qua. Rễ khỏe là nền tảng giúp cây hấp thu nước và dinh dưỡng hiệu quả. Khi dinh dưỡng không cân đối hoặc đất trồng có vấn đề, cây có thể hình thành bộ rễ yếu, ít rễ tơ, khả năng hút dinh dưỡng giảm, từ đó tiếp tục làm cây sinh trưởng kém. Đây cũng là nguyên nhân tạo thành vòng luẩn quẩn: rễ yếu khiến cây hấp thu kém, cây thiếu dinh dưỡng lại càng khó phục hồi.
 
-*
 
 ![5 dấu hiệu cây trồng thiếu dinh dưỡng cần lưu ý](/uploads/tin-cu/2026/5-dau-hieu-cay-trong-thieu-dinh-duong-can-luu-y-4.webp)
 
-*
 
 *Bộ rễ khỏe (bên trái) là nền tảng giúp cây hấp thu nước và dinh dưỡng hiệu quả*
 
@@ -66,21 +60,17 @@ Tuy nhiên, các dấu hiệu thiếu dinh dưỡng không phải lúc nào cũn
 
 Việc cung cấp dinh dưỡng cho cây vì thế không chỉ đơn giản là “bón thêm phân” khi thấy cây vàng lá. Quan trọng hơn là xây dựng chế độ dinh dưỡng đúng loại, đúng lượng, đúng thời điểm và phù hợp với từng loại cây, từng giai đoạn sinh trưởng, đồng thời duy trì môi trường đất thuận lợi để rễ có thể hấp thu dinh dưỡng hiệu quả.
 
-*
 
 ![5 dấu hiệu cây trồng thiếu dinh dưỡng cần lưu ý](/uploads/tin-cu/2026/5-dau-hieu-cay-trong-thieu-dinh-duong-can-luu-y-5.webp)
 
-*
 
 *Xây dựng chế độ dinh dưỡng đúng, đủ cho từng giai đoạn sinh trưởng và phát triển của cây*
 
 Từ yêu cầu thực tế đó, Tiến Nông đang chuẩn bị ra mắt dòng sản phẩm NPK Hữu cơ vi sinh, hướng tới giải pháp dinh dưỡng kết hợp giữa các chất dinh dưỡng khoáng và nguồn hữu cơ, vi sinh vật có lợi cho đất. Sản phẩm được kỳ vọng sẽ mang đến thêm một lựa chọn trong chăm sóc cây trồng theo hướng cân đối dinh dưỡng, nâng cao hiệu quả sử dụng phân bón và hướng tới nền canh tác bền vững hơn.
 
-*
 
 ![5 dấu hiệu cây trồng thiếu dinh dưỡng cần lưu ý](/uploads/tin-cu/2026/5-dau-hieu-cay-trong-thieu-dinh-duong-can-luu-y-6.webp)
 
-*
 
 *Tiến Nông chuẩn bị ra mắt các dòng sản phẩm NPK Hữu cơ vi sinh*
 

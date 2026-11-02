@@ -8,8 +8,8 @@
     "t2": "/ Con người & Tuyển dụng",
     "eyebrow": "CON NGƯỜI & TUYỂN DỤNG",
     "title": "Nơi người ta gắn bó và trưởng thành",
-    "intro": "Thâm niên làm việc bình quân của người Tiến Nông là mười năm; hơn ba mươi người đã gắn bó trên hai mươi năm. Chúng tôi tìm những người trẻ được đào tạo bài bản, đúng chuyên ngành, muốn dùng nghề của mình để phục vụ đồng ruộng và sẵn sàng đi đường dài.",
-    "button1": "Xem vị trí đang tuyển →",
+    "intro": "Thâm niên làm việc bình quân của người Tiến Nông là mười năm; hơn bốn mươi người đã gắn bó trên hai mươi năm. Chúng tôi tìm những người trẻ được đào tạo bài bản, đúng chuyên ngành, muốn dùng nghề của mình để phục vụ đồng ruộng và sẵn sàng đi đường dài.",
+    "button1": "Xem vị trí đang tuyển",
     "button2": "Vì sao chọn Tiến Nông",
     "img1": {
       "src": "/uploads/hr-hero-1-mvelbc4b.jpg",
@@ -32,7 +32,7 @@
   },
   "stats": [
     {
-      "value": "400+",
+      "value": "500+",
       "label": "cán bộ, nhân viên"
     },
     {
@@ -68,13 +68,13 @@
     "link_label": "Tìm hiểu văn hóa Tiến Nông →"
   },
   "paths": {
-    "eyebrow": "CÁC KHỐI NGHỀ",
-    "title": "Bạn sẽ làm việc ở đâu",
-    "intro": "Tiến Nông có trụ sở tại TP Thanh Hóa, ba nhà máy ở Bỉm Sơn, Hoằng Phú (Thanh Hóa) và Chư Sê (Gia Lai), cùng đội ngũ thị trường trên khắp cả nước.",
+    "eyebrow": "CÁC KHỐI CHUYÊN MÔN",
+    "title": "Chọn lĩnh vực hợp với chuyên môn của bạn",
+    "intro": "Trụ sở tại TP Thanh Hóa, ba nhà máy ở Bỉm Sơn, Hoằng Phú (Thanh Hóa), Chư Sê (Gia Lai) và đội ngũ thị trường trên khắp cả nước.",
     "items": [
       {
         "title": "Khối Nghiên cứu",
-        "text": "Trung tâm Nghiên cứu Phát triển Khoa học & Công nghệ, Phòng Sức khỏe đất và cây trồng: nghiên cứu công thức, khảo nghiệm, phân tích đất.",
+        "text": "Nghiên cứu công thức, khảo nghiệm, phân tích đất tại Trung tâm Nghiên cứu Phát triển KH&CN.",
         "where": "Bỉm Sơn, Thanh Hóa"
       },
       {
@@ -88,13 +88,13 @@
         "where": "Ba nhà máy"
       },
       {
-        "title": "Khối Tài chính - Kế toán",
-        "text": "Kế hoạch truyền thông, nội dung, sự kiện và các chương trình cộng đồng.",
+        "title": "Khối Tài chính – Kế toán",
+        "text": "Kế hoạch tài chính, kế toán, kiểm soát chi phí và thanh toán.",
         "where": "Trụ sở chính"
       },
       {
         "title": "Khối Văn phòng",
-        "text": "Nhân sự, tài chính – kế toán, công nghệ, hành chính.",
+        "text": "Nhân sự, hành chính, truyền thông, công nghệ thông tin.",
         "where": "Trụ sở chính"
       }
     ]
@@ -141,22 +141,46 @@
       {
         "title": "Nền tảng về đất, phân bón và công nghệ",
         "text": "Khóa đào tạo toàn hệ thống cho đội ngũ kinh doanh, kỹ thuật và quản lý (04/2026).",
-        "link": "/tin-tuc/tien-nong-to-chuc-dao-tao-nen-tang-kien-thuc-ve-dat-phan-bon-va-cong-nghe-cho/"
+        "link": "/tin-tuc/tien-nong-to-chuc-dao-tao-nen-tang-kien-thuc-ve-dat-phan-bon-va-cong-nghe-cho/",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Nền tảng về đất, phân bón và công nghệ"
+        }
       },
       {
         "title": "Chứng chỉ lấy mẫu phân bón",
         "text": "Đào tạo có cấp chứng chỉ, nâng chuẩn kiểm soát chất lượng (03/2026).",
-        "link": "/tin-tuc/tien-nong-chu-dong-phoi-hop-to-chuc-dao-tao-lay-mau-phan-bon-cap-chung-chi-gop/"
+        "link": "/tin-tuc/tien-nong-chu-dong-phoi-hop-to-chuc-dao-tao-lay-mau-phan-bon-cap-chung-chi-gop/",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Chứng chỉ lấy mẫu phân bón"
+        }
       },
       {
         "title": "Tập huấn tại nhà máy",
         "text": "Đào tạo cán bộ, công nhân về vận hành và an toàn tại Nhà máy Bỉm Sơn (05/2025).",
-        "link": "/tin-tuc/nha-may-dinh-duong-cay-trong-tien-nong-bim-son-to-chuc-lop-tap-huan-dao-tao-can/"
+        "link": "/tin-tuc/nha-may-dinh-duong-cay-trong-tien-nong-bim-son-to-chuc-lop-tap-huan-dao-tao-can/",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Tập huấn tại nhà máy"
+        }
       },
       {
         "title": "Học hỏi quốc tế",
         "text": "Cập nhật xu hướng AI, robot và nhà máy thông minh tại Thâm Quyến, Trung Quốc (06/2026).",
-        "link": "/tin-tuc/tien-nong-cap-nhat-xu-huong-ai-robot-va-nha-may-thong-minh-tai-tham-quyen/"
+        "link": "/tin-tuc/tien-nong-cap-nhat-xu-huong-ai-robot-va-nha-may-thong-minh-tai-tham-quyen/",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Học hỏi quốc tế"
+        }
       }
     ]
   },
@@ -334,63 +358,15 @@
       }
     ]
   },
-  "process": {
-    "eyebrow": "QUY TRÌNH ỨNG TUYỂN",
-    "title": "Bốn bước, minh bạch và không mất phí",
-    "steps": [
-      {
-        "title": "Gửi hồ sơ",
-        "text": "Gửi CV qua email, ghi rõ vị trí ứng tuyển ở tiêu đề thư."
-      },
-      {
-        "title": "Sàng lọc",
-        "text": "Phòng Hành chính Nhân sự xem xét và liên hệ ứng viên phù hợp."
-      },
-      {
-        "title": "Phỏng vấn",
-        "text": "Trao đổi chuyên môn với trưởng bộ phận; một số vị trí có bài kiểm tra."
-      },
-      {
-        "title": "Nhận việc & hội nhập",
-        "text": "Đào tạo hội nhập, làm quen văn hóa năm điều tâm niệm và người hướng dẫn trực tiếp."
-      }
-    ],
-    "documents_title": "Hồ sơ khi trúng tuyển",
-    "documents": [
-      "CV xin việc và sơ yếu lý lịch",
-      "Phiếu xác nhận nhân sự",
-      "Giấy khám sức khỏe (còn hiệu lực trong 6 tháng)",
-      "Bản sao công chứng văn bằng, chứng chỉ",
-      "Bản sao công chứng căn cước công dân và giấy khai sinh"
-    ],
-    "note": "Tiến Nông không thu bất kỳ khoản phí nào của ứng viên."
-  },
-  "faq": {
-    "eyebrow": "HỎI ĐÁP",
-    "title": "Ứng viên hay hỏi",
-    "items": [
-      {
-        "q": "Có bắt buộc tốt nghiệp đúng chuyên ngành không?",
-        "a": "Với các vị trí chuyên môn như kỹ sư nông học, truyền thông, nhân sự, tài chính, Tiến Nông tuyển ứng viên tốt nghiệp đại học đúng chuyên ngành để phát huy tốt nhất năng lực. Chuyên ngành phù hợp được ghi trong mô tả từng vị trí."
-      },
-      {
-        "q": "Chưa có vị trí phù hợp thì sao?",
-        "a": "Bạn vẫn có thể gửi hồ sơ, ghi rõ vị trí mong muốn. Phòng Hành chính Nhân sự sẽ lưu hồ sơ và liên hệ khi có cơ hội."
-      },
-      {
-        "q": "Tôi sẽ làm việc ở đâu?",
-        "a": "Tùy vị trí: trụ sở chính tại TP Thanh Hóa, các nhà máy ở Bỉm Sơn, Hoằng Phú (Thanh Hóa), Chư Sê (Gia Lai), hoặc tại tỉnh mình phụ trách với khối kinh doanh."
-      },
-      {
-        "q": "Công ty có thu phí tuyển dụng không?",
-        "a": "Không. Tiến Nông không thu bất kỳ khoản phí nào của ứng viên. Nếu có ai yêu cầu nộp phí, vui lòng báo cho Phòng Hành chính Nhân sự."
-      }
-    ]
-  },
   "contact": {
     "title": "Liên hệ tuyển dụng",
     "email": "info@tiennong.vn",
     "person": "Bà Lê Thị Thanh – Phó Trưởng phòng Hành chính Nhân sự",
     "phone": "0915 115 198"
+  },
+  "cta": {
+    "title": "Sẵn sàng đi đường dài cùng Tiến Nông?",
+    "text": "Gửi hồ sơ qua email hoặc liên hệ phòng Hành chính Nhân sự để được tư vấn vị trí phù hợp.",
+    "apply": "Gửi hồ sơ ứng tuyển"
   }
 }

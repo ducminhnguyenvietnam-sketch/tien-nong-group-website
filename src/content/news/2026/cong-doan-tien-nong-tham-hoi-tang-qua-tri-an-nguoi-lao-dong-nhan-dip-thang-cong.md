@@ -62,35 +62,27 @@ Anh Hoàng Văn Côi – *Tổ trưởng Tổ sản xuất số 1 – Nhà máy 
 
 *Anh Trịnh Văn Hoàng – Tổ trưởng Tổ quản lý chất lượng – Nhà máy Dinh dưỡng cây trồng Tiến Nông 3*
 
-*
 
 ![Công đoàn Tiến Nông thăm hỏi, tặng quà tri ân người lao động nhân dịp Tháng Công nhân](/uploads/tin-cu/2026/cong-doan-tien-nong-tham-hoi-tang-qua-tri-an-nguoi-lao-dong-nhan-dip-thang-cong-8.webp)
 
-*
 
 *Anh Mai Văn Chuyên – Tổ phó Tổ sản xuất số 1 – Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn*
 
-*
 
 ![Công đoàn Tiến Nông thăm hỏi, tặng quà tri ân người lao động nhân dịp Tháng Công nhân](/uploads/tin-cu/2026/cong-doan-tien-nong-tham-hoi-tang-qua-tri-an-nguoi-lao-dong-nhan-dip-thang-cong-9.webp)
 
-*
 
 *Anh Lê Tự Bắc – Tổ phó Tổ cơ điện – Nhà máy Dinh dưỡng cây trồng Tiến Nông 3*
 
-*
 
 ![Công đoàn Tiến Nông thăm hỏi, tặng quà tri ân người lao động nhân dịp Tháng Công nhân](/uploads/tin-cu/2026/cong-doan-tien-nong-tham-hoi-tang-qua-tri-an-nguoi-lao-dong-nhan-dip-thang-cong-10.webp)
 
-*
 
 *Anh Nguyễn Văn Thành – Tổ trưởng Tổ sản xuất số 4 – Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn*
 
-*
 
 ![Công đoàn Tiến Nông thăm hỏi, tặng quà tri ân người lao động nhân dịp Tháng Công nhân](/uploads/tin-cu/2026/cong-doan-tien-nong-tham-hoi-tang-qua-tri-an-nguoi-lao-dong-nhan-dip-thang-cong-11.webp)
 
-*
 
 *Chị Lê Thị Nhàn – Nhân viên Tổ hành chính cấp dưỡng – Nhà máy Dinh dưỡng cây trồng Tiến Nông 3*
 
@@ -98,27 +90,21 @@ Anh Hoàng Văn Côi – *Tổ trưởng Tổ sản xuất số 1 – Nhà máy 
 
 *Anh Mai Văn Hùng – Tổ trưởng Tổ sản xuất số 3 – Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn*
 
-*
 
 ![Công đoàn Tiến Nông thăm hỏi, tặng quà tri ân người lao động nhân dịp Tháng Công nhân](/uploads/tin-cu/2026/cong-doan-tien-nong-tham-hoi-tang-qua-tri-an-nguoi-lao-dong-nhan-dip-thang-cong-13.webp)
 
-*
 
 *Anh Phạm Viết Đồng – Tổ trưởng Tổ sản xuất số 3 – Nhà máy Dinh dưỡng cây trồng Tiến Nông 3*
 
-*
 
 ![Công đoàn Tiến Nông thăm hỏi, tặng quà tri ân người lao động nhân dịp Tháng Công nhân](/uploads/tin-cu/2026/cong-doan-tien-nong-tham-hoi-tang-qua-tri-an-nguoi-lao-dong-nhan-dip-thang-cong-14.webp)
 
-*
 
 *Anh Cao Văn Thưởng – Tổ trưởng Tổ sản xuất số 5 – Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn*
 
-*
 
 ![Công đoàn Tiến Nông thăm hỏi, tặng quà tri ân người lao động nhân dịp Tháng Công nhân](/uploads/tin-cu/2026/cong-doan-tien-nong-tham-hoi-tang-qua-tri-an-nguoi-lao-dong-nhan-dip-thang-cong-15.webp)
 
-*
 
 *Anh Lê Tuấn Vũ – Tổ trưởng Tổ thủ kho – Nhà máy Dinh dưỡng cây trồng Tiến Nông 3*
 

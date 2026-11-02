@@ -92,13 +92,15 @@
     "years_value": "30+",
     "years_label": "Năm phát triển",
     "intro_image": {
-      "focus": "50% 60%",
+      "src": "/uploads/Nha-may-Tien-Nong-Bim-Son-2025-scaled.jpg",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Cánh đồng lúa lúc bình minh"
+      "alt": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn"
     },
-    "intro_caption": "Tiến Nông Group · Từ năm 1995",
+    "intro_caption": "Giới thiệu Tiến Nông Group",
     "story_cta": "Khám phá câu chuyện Tiến Nông →",
-    "story_link": "/ve-tien-nong/"
+    "story_link": "/ve-tien-nong/",
+    "intro_youtube": "https://www.youtube.com/watch?v=HsANmf2jJjY"
   },
   "s03_khoa_hoc_cong_nghe": {
     "t1": "KHOA HỌC & CÔNG NGHỆ",

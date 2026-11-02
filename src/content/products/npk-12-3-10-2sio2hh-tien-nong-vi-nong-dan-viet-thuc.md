@@ -86,6 +86,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 12-3-10+2SiO₂hh Tiến Nông (Vì nông dân Việt thúc) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/vi-nong-dan-viet-chuyen-thuc/

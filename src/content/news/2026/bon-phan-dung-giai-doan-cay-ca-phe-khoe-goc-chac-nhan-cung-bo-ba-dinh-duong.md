@@ -24,21 +24,17 @@ old_url: /bon-phan-dung-giai-doan-cay-ca-phe-khoe-goc-chac-nhan-cung-bo-ba-dinh-
 
 Trên những vùng chuyên canh cà phê, năng suất không chỉ được quyết định ở thời điểm thu hoạch mà bắt đầu từ cả một quá trình chăm sóc, nuôi dưỡng cây qua từng giai đoạn sinh trưởng. Sau mỗi vụ quả, cây cần được phục hồi sức sinh trưởng; khi bước vào mùa mưa, nhu cầu dinh dưỡng tăng cao để phát triển cành, lá và nuôi quả; đến cuối vụ, cây lại cần được bổ sung dưỡng chất phù hợp để hoàn thiện chất lượng hạt.
 
-*
 
 ![Bón phân đúng giai đoạn, cây cà phê khỏe gốc, chắc nhân cùng bộ ba dinh dưỡng Tiến Nông](/uploads/tin-cu/2026/bon-phan-dung-giai-doan-cay-ca-phe-khoe-goc-chac-nhan-cung-bo-ba-dinh-duong-1.webp)
 
-*
 
 *Năng suất cây cà phê không chỉ được quyết định ở thời điểm thu hoạch mà bắt đầu từ cả một quá trình chăm sóc*
 
 Thực tế cho thấy, việc bón phân thiếu cân đối hoặc không đúng thời điểm có thể khiến cây sinh trưởng kém, quả phát triển không đồng đều, ảnh hưởng đến năng suất và khả năng phục hồi sau thu hoạch. Ngược lại, khi được cung cấp dinh dưỡng hợp lý, kết hợp chăm sóc đất và quản lý vườn cây khoa học, cà phê có điều kiện phát triển khỏe mạnh, duy trì sức sản xuất qua nhiều năm.
 
-*
 
 ![Bón phân đúng giai đoạn, cây cà phê khỏe gốc, chắc nhân cùng bộ ba dinh dưỡng Tiến Nông](/uploads/tin-cu/2026/bon-phan-dung-giai-doan-cay-ca-phe-khoe-goc-chac-nhan-cung-bo-ba-dinh-duong-2.webp)
 
-*
 
 *Cây cà phê bị vàng lá*
 
@@ -46,21 +42,17 @@ Thực tế cho thấy, việc bón phân thiếu cân đối hoặc không đú
 
 Không chỉ cải thiện năng suất, vườn cây còn ghi nhận những chuyển biến tích cực về sinh trưởng. Cây duy trì bộ lá xanh khỏe, cành mang nhiều quả, quả phát triển to, màu sắc đẹp khi chín. Đây là kết quả của quá trình chăm sóc tổng hợp, trong đó việc cung cấp dinh dưỡng theo từng giai đoạn sinh trưởng giữ vai trò quan trọng.
 
-*
 
 ![Bón phân đúng giai đoạn, cây cà phê khỏe gốc, chắc nhân cùng bộ ba dinh dưỡng Tiến Nông](/uploads/tin-cu/2026/bon-phan-dung-giai-doan-cay-ca-phe-khoe-goc-chac-nhan-cung-bo-ba-dinh-duong-3.webp)
 
-*
 
 *Vườn cà phê của chị Thu tăng hơn 5 tấn/ha khi sử dụng bộ sản phẩm chuyên dùng cho cây cà phê của Tiến Nông*
 
 Từ những yêu cầu thực tiễn của cây cà phê, Công ty Cổ phần Công Nông nghiệp Tiến Nông đã nghiên cứu và phát triển bộ ba sản phẩm phân bón chuyên biệt gồm Cà phê số 1 – Mùa khô và phục hồi; Cà phê số 2 – Đầu và giữa mùa mưa; Cà phê số 3 – Cuối mùa mưa và chắc hạt. Mỗi sản phẩm có công thức dinh dưỡng riêng, đáp ứng nhu cầu của cây theo từng thời kỳ, hướng đến nguyên tắc bón đúng loại, đúng lúc, đúng liều lượng để nâng cao hiệu quả sử dụng phân bón.
 
-*
 
 ![Bón phân đúng giai đoạn, cây cà phê khỏe gốc, chắc nhân cùng bộ ba dinh dưỡng Tiến Nông](/uploads/tin-cu/2026/bon-phan-dung-giai-doan-cay-ca-phe-khoe-goc-chac-nhan-cung-bo-ba-dinh-duong-4.webp)
 
-*
 
 *Bộ sản phẩm chuyên dùng cho cây cà phê của Tiến Nông*
 
@@ -68,11 +60,9 @@ Sau thu hoạch là thời điểm cây cà phê đã tiêu hao một lượng l
 
 Ở giai đoạn này, Cà phê số 1 (NPK 20-6-4+1SiO2hh Tiến Nông) được sử dụng nhằm bổ sung nguồn dinh dưỡng cần thiết, đặc biệt là đạm, giúp cây phục hồi sau thu hoạch, thúc đẩy phát triển chồi mới, nuôi mầm hoa và tạo nền tảng cho sự phát triển của cành dự trữ. Thành phần silic hữu hiệu góp phần hỗ trợ các quá trình sinh trưởng của cây.
 
-*
 
 ![Bón phân đúng giai đoạn, cây cà phê khỏe gốc, chắc nhân cùng bộ ba dinh dưỡng Tiến Nông](/uploads/tin-cu/2026/bon-phan-dung-giai-doan-cay-ca-phe-khoe-goc-chac-nhan-cung-bo-ba-dinh-duong-5.webp)
 
-*
 
 *Cà phê số 1 (NPK 20-6-4+1SiO**2hh* *Tiến Nông)*
 
@@ -84,11 +74,9 @@ Khi những cơn mưa đầu mùa xuất hiện, cây cà phê bước vào giai
 
 Cà phê số 2 (NPK 20-10-10+MNC Tiến Nông) được thiết kế cho giai đoạn đầu và giữa mùa mưa, với tỷ lệ đạm, lân, kali cân đối hơn so với công thức sử dụng trong mùa khô, kết hợp bổ sung các nguyên tố vi lượng cần thiết. Sản phẩm giúp hỗ trợ bộ rễ phát triển, thúc đẩy sinh trưởng cành dự trữ, nuôi quả non và góp phần hạn chế tình trạng rụng quả liên quan đến mất cân đối dinh dưỡng.
 
-*
 
 ![Bón phân đúng giai đoạn, cây cà phê khỏe gốc, chắc nhân cùng bộ ba dinh dưỡng Tiến Nông](/uploads/tin-cu/2026/bon-phan-dung-giai-doan-cay-ca-phe-khoe-goc-chac-nhan-cung-bo-ba-dinh-duong-6.webp)
 
-*
 
 *Cà phê số 2 (NPK 20-10-10+MNC Tiến Nông)*
 
@@ -98,11 +86,9 @@ Liều lượng sử dụng Cà phê số 2 từ 0,2–1,0 kg/cây/lần, tùy t
 
 Với Cà phê số 3 (NPK 17-6-17+MNC Tiến Nông), hàm lượng kali được nâng lên 17%, cao hơn hai sản phẩm còn lại trong bộ ba, nhằm đáp ứng nhu cầu dinh dưỡng trong giai đoạn nuôi quả và chắc nhân. Việc cung cấp kali hợp lý giúp hỗ trợ quả phát triển, tăng khả năng tích lũy chất khô, góp phần tạo hạt chắc và thúc đẩy quá trình chín đồng đều.
 
-*
 
 ![Bón phân đúng giai đoạn, cây cà phê khỏe gốc, chắc nhân cùng bộ ba dinh dưỡng Tiến Nông](/uploads/tin-cu/2026/bon-phan-dung-giai-doan-cay-ca-phe-khoe-goc-chac-nhan-cung-bo-ba-dinh-duong-7.webp)
 
-*
 
 *Cà phê số 3 (NPK 17-6-17+MNC Tiến Nông)*
 
@@ -114,11 +100,9 @@ Tuy nhiên, để phát huy hiệu quả của bộ ba sản phẩm, yếu tố 
 
 Vì vậy, Tiến Nông khuyến nghị bà con kết hợp sử dụng Chất điều hòa pH đất Tiến Nông, đồng thời chú trọng bổ sung hữu cơ, duy trì độ ẩm và quản lý đất hợp lý. Đất có môi trường thuận lợi sẽ tạo điều kiện để bộ rễ phát triển, nâng cao hiệu quả sử dụng phân bón và góp phần duy trì sức sinh trưởng lâu dài của vườn cây.
 
-*
 
 ![Bón phân đúng giai đoạn, cây cà phê khỏe gốc, chắc nhân cùng bộ ba dinh dưỡng Tiến Nông](/uploads/tin-cu/2026/bon-phan-dung-giai-doan-cay-ca-phe-khoe-goc-chac-nhan-cung-bo-ba-dinh-duong-8.webp)
 
-*
 
 *Chất điều hòa pH đất Tiến Nông*
 
@@ -128,11 +112,9 @@ Quay trở lại vườn cà phê của bà Hoàng Thị Thu tại Sơn La, sự
 
 Trong bối cảnh chi phí sản xuất ngày càng được người nông dân quan tâm, việc bón phân khoa học không chỉ hướng tới mục tiêu tăng năng suất mà còn giúp sử dụng vật tư hiệu quả, hạn chế lãng phí và bảo vệ sức khỏe đất trồng. Thay vì bón nhiều, người trồng cà phê cần hiểu cây đang cần dưỡng chất gì, đất có đủ điều kiện để cây hấp thu hay không và đâu là thời điểm thích hợp để bổ sung dinh dưỡng.
 
-*
 
 ![Bón phân đúng giai đoạn, cây cà phê khỏe gốc, chắc nhân cùng bộ ba dinh dưỡng Tiến Nông](/uploads/tin-cu/2026/bon-phan-dung-giai-doan-cay-ca-phe-khoe-goc-chac-nhan-cung-bo-ba-dinh-duong-9.webp)
 
-*
 
 *Người nông dân cần hiểu về đất, về cây để tối ưu vật tư đầu vào và nâng cao năng suất*            
 

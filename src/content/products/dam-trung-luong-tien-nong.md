@@ -107,6 +107,7 @@ field:
   focus: center
   zoom: '100'
   alt: Đạm Trung Lượng Tiến Nông – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/dam-hat-vang-tien-nong-dam-trung-luong-tien-nong/

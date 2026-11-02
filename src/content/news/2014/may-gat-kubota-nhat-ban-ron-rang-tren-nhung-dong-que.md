@@ -34,11 +34,9 @@ Trong những ngày mùa tháng 9, trên các cánh đồng của các huyện N
 
 Trong các buổi trình diễn, bà con các huyện đã được cán bộ Kubota, cán bộ Công ty Tiến Nông giới thiệu về tính năng và công dụng của DC70. Chiếc máy DC70 có ưu điển công suất cao và hiệu suất gặt lớn, dễ vận hành tiêu hao ít nhiên liệu chỉ sau 5-7 phút máy đã gặt xong 1 sào lúa 500m2, hoạt động tốt trên mọi địa hình đồng ruộng nên rất phù hợp với đặc điểm đồng ruộng lầy lội, khó khăn như tỉnh Thanh Hóa. Chiếc máy DC70 đã ghi điểm cao trong mắt những người tham dự buổi trình diễn và đặc biệt là những người nông dân khi trực tiếp tham gia lái thử nghiệm.
 
-*
 
 ![Máy gặt Kubota – Nhật Bản rộn ràng trên những đồng quê](/uploads/tin-cu/2014/may-gat-kubota-nhat-ban-ron-rang-tren-nhung-dong-que-2.webp)
 
-*
 
 *Người dân huyện Vĩnh Lộc lái thử máy DC70*
 

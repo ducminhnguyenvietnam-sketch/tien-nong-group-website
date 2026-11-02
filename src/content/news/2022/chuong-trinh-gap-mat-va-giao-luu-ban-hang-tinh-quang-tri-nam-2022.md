@@ -22,11 +22,9 @@ old_url: /chuong-trinh-gap-mat-va-giao-luu-ban-hang-tinh-quang-tri-nam-2022/
 
 Tham dự chương trình có Ông Nguyễn Hồng Phong – Phó Chủ tịch Hội Doanh nhân trẻ VN – Tổng Giám đốc (TGĐ) Công ty CP CNN Tiến Nông cùng Ban Lãnh đạo, cán bộ Trung tâm Chăm sóc Phục vụ Nông dân Việt Nam (TT CSPVNDVN); Bà Trần Thị Thanh – Giám đốc Công ty TNHH Thanh Thanh và hơn 40 đại diện bán hàng Tiến Nông trên địa bàn tỉnh Quảng Trị.
 
-*
 
 ![Chương trình Gặp mặt và giao lưu bạn hàng tỉnh Quảng Trị năm 2022](/uploads/tin-cu/2022/chuong-trinh-gap-mat-va-giao-luu-ban-hang-tinh-quang-tri-nam-2022-1.webp)
 
-*
 
 *Toàn cảnh chương trình*
 
@@ -48,10 +46,8 @@ Chương trình nhằm thực hiện tổng kết, đánh giá công tác triể
 
 Nhân dịp này, NPP và hệ thống đại diện đã bày tỏ sự hài lòng trước sự hợp tác hiệu quả của Công ty Tiến Nông, đặc biệt ghi nhận sự quan tâm, hỗ trợ tận tình của Ban Lãnh đạo Công ty và đội ngũ cán bộ TT CSPVNDVN. Thay mặt Công ty CP CNN Tiến Nông, TGĐ Nguyễn Hồng Phong đã bày tỏ tình cảm đặc biệt đối với mảnh đất Quảng Trị, đồng thời chia sẻ định hướng phát triển của Tiến Nông trong thời gian tới.
 
-*
 
 ![Chương trình Gặp mặt và giao lưu bạn hàng tỉnh Quảng Trị năm 2022](/uploads/tin-cu/2022/chuong-trinh-gap-mat-va-giao-luu-ban-hang-tinh-quang-tri-nam-2022-5.webp)
 
-*
 
 *Bà Dương Thị Mỹ Phượng – Đại diện Công ty TNHH Thanh Thanh phát biểu tại chương trình*

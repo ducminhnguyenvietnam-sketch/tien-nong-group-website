@@ -74,6 +74,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 16-6-18+1SiO₂hh Tiến Nông (Cây Dứa) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/cay-dua/

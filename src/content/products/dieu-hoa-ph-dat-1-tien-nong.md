@@ -56,6 +56,7 @@ field:
   focus: center
   zoom: '100'
   alt: Điều hoà pH đất 1 – Tiến Nông – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/dieu-hoa-ph-dat-1-tien-nong/

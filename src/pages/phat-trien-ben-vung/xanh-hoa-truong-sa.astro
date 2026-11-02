@@ -12,8 +12,8 @@ import Layout from '../../layouts/Layout.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
 import PageHero from '../../components/PageHero.astro';
+import FigureCard from '../../components/FigureCard.astro';
 import Head from '../../components/story/Head.astro';
-import { formatDate, getNews, isArticle, listUrl, newsUrl } from '../../lib/news';
 import { link, url } from '../../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/xanh-hoa-truong-sa.json');
@@ -27,9 +27,8 @@ const steps = c.campaign.steps.filter((s) => isFilled(s.title));
 const journey = c.journey.items.filter((j) => isFilled(j.title));
 const wishes = c.wishes.items.filter((w) => isFilled(w.text));
 const photos = c.gallery.photos.map((ph, k) => ({ ph, k })).filter(({ ph }) => isFilled(ph.src));
-// Articles about the programme: anything mentioning Trường Sa in the title, newest first.
-const news = (await getNews()).filter((n) => isArticle(n) && /trường sa/i.test(n.data.title) && isFilled(n.data.cover.src))
-  .sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0)).slice(0, 6);
+// Press coverage: articles about the programme on other newspapers' sites (set in the CMS).
+const press = (c.press?.items ?? []).filter((p) => isFilled(p.title) && isFilled(p.url));
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h : link(h));
 ---
@@ -40,17 +39,7 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 {c.form.open ? <a href="#gui-loi-chuc" class="page-hero__btn page-hero__btn--solid">{c.hero.button_wish}</a> : wishes.length > 0 && isFilled(c.hero.button_read) && <a href="#loi-chuc" class="page-hero__btn page-hero__btn--solid">{c.hero.button_read}</a>}<a href="#hanh-trinh" class="page-hero__btn">{c.hero.button_journey}</a>
 </PageHero>
 
-{stats.length > 0 && <section class="ts-stats"><div class="ts-wrap ts-stats__row">
-{stats.map((s) => <div class="ts-stat"><span class="ts-stat__value">{s.value}</span><span class="ts-stat__label">{s.label}</span>{isFilled(s.sub) && <span class="ts-stat__sub">{s.sub}</span>}</div>)}
-</div></section>}
-
-{isFilled(c.challenge.title) && <section class="st-sec" id="vi-sao"><div class="st-wrap">
-<Head eyebrow={c.challenge.eyebrow} title={c.challenge.title} intro={c.challenge.intro} split />
-<div class="st-grid" style="--min:240px">
-{c.challenge.items.map((it, k) => <div class="st-card st-card--top"><div class="st-card__body"><span class="st-card__num">{String(k + 1).padStart(2, '0')}</span><strong class="st-card__title">{it.title}</strong><span class="st-card__text">{it.text}</span></div></div>)}
-</div>
-{isFilled(c.challenge.solution) && <div class="ts-solution"><span aria-hidden="true">🌱</span><div><strong>{c.challenge.solution_title}</strong><p>{c.challenge.solution}</p></div></div>}
-</div></section>}
+<FigureCard items={stats} overlap />
 
 <section class="ts-campaign" id="chien-dich"><div class="ts-wrap ts-campaign__grid">
 <div class="ts-campaign__copy">
@@ -62,6 +51,14 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 </div>
 <div class="ts-campaign__visual"><ImageSlot style={fill} id="ts-kv" shape="rounded" radius="20" fit="cover" placeholder="Key visual chiến dịch" image={c.campaign.image} cms={`${F}#campaign.image`} sizes="(max-width: 899px) 92vw, 640px" /></div>
 </div></section>
+
+{isFilled(c.challenge.title) && <section class="st-sec st-sec--card" id="vi-sao"><div class="st-wrap">
+<Head eyebrow={c.challenge.eyebrow} title={c.challenge.title} intro={c.challenge.intro} split />
+<div class="st-grid" style="--min:240px">
+{c.challenge.items.map((it, k) => <div class="st-card st-card--top"><div class="st-card__body"><span class="st-card__num">{String(k + 1).padStart(2, '0')}</span><strong class="st-card__title">{it.title}</strong><span class="st-card__text">{it.text}</span></div></div>)}
+</div>
+{isFilled(c.challenge.solution) && <div class="ts-solution"><span aria-hidden="true">🌱</span><div><strong>{c.challenge.solution_title}</strong><p>{c.challenge.solution}</p></div></div>}
+</div></section>}
 
 {journey.length > 0 && <section class="ts-journey" id="hanh-trinh"><div class="ts-wrap">
 <div class="ts-head"><span class="ts-eyebrow">{c.journey.eyebrow}</span><h2>{c.journey.title}</h2></div>
@@ -125,18 +122,24 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 {photos.length > 0 && <section class="ts-gallery"><div class="ts-wrap">
 <div class="ts-head"><span class="ts-eyebrow">{c.gallery.eyebrow}</span><h2>{c.gallery.title}</h2></div>
 <div class="ts-gallery__grid" data-count={Math.min(photos.length, 6)}>
-{photos.slice(0, 6).map(({ ph, k }) => <figure><div class="ts-gallery__img"><ImageSlot style={fill} id={`ts-g-${k}`} shape="rounded" radius="14" placeholder={ph.alt || 'Ảnh'} image={ph} cms={`${F}#gallery.photos.${k}`} sizes="(max-width: 767px) 92vw, 33vw" /></div>{isFilled(ph.alt) && <figcaption>{ph.alt}</figcaption>}</figure>)}
+{photos.slice(0, 6).map(({ ph, k }) => <figure><ImageSlot style={fill} id={`ts-g-${k}`} shape="rect" placeholder={ph.alt || 'Ảnh'} image={ph} cms={`${F}#gallery.photos.${k}`} sizes="(max-width: 767px) 92vw, 33vw" />{isFilled(ph.alt) && <figcaption>{ph.alt}</figcaption>}</figure>)}
 </div>
 </div></section>}
 
-{news.length > 0 && <section class="ts-news"><div class="ts-wrap">
-<div class="ts-head ts-head--split"><div><span class="ts-eyebrow">{c.news.eyebrow}</span><h2>{c.news.title}</h2></div><a href={listUrl('cd')} class="ts-link">{c.news.all} →</a></div>
-<div class="ts-news__grid">
-{news.map((n) => <a href={newsUrl(n)} class="ts-news__card"><div class="ts-news__img"><ImageSlot style={fill} id={`news-${n.id}`} shape="rounded" radius="12" placeholder="Ảnh bài viết" image={n.data.cover} cms={`${n.filePath}#cover`} sizes="(max-width: 767px) 92vw, 400px" /></div><span class="ts-news__date">{formatDate(n.data.date)}</span><strong>{n.data.title}</strong></a>)}
-</div>
+{press.length > 0 && <section class="ts-press"><div class="ts-wrap">
+<div class="ts-head"><span class="ts-eyebrow">{c.press.eyebrow}</span><h2>{c.press.title}</h2></div>
+<ul class="ts-press__grid">
+{press.map((p) => <li><a href={p.url} target="_blank" rel="noopener" class="ts-press__card">
+<span class="ts-press__src">{p.source}</span>
+{isFilled(p.date) && <span class="ts-press__date">{p.date}</span>}
+<strong>{p.title}</strong>
+{isFilled(p.summary) && <span class="ts-press__sum jx-start">{p.summary}</span>}
+<span class="ts-press__more">{c.press.read || 'Đọc trên'} {p.source} <span aria-hidden="true">↗</span></span>
+</a></li>)}
+</ul>
 </div></section>}
 
-<CtaBand title={c.cta.title} text={!c.form.open ? c.form.closed_text : ''} primary={c.form.open ? { label: c.cta.button_wish, href: '#gui-loi-chuc' } : undefined} secondary={{ label: c.cta.button_back, href: url('phat-trien-ben-vung') }} />
+<CtaBand wide title={c.cta.title} text={!c.form.open ? c.form.closed_text : ''} primary={c.form.open ? { label: c.cta.button_wish, href: '#gui-loi-chuc' } : undefined} secondary={{ label: c.cta.button_back, href: url('phat-trien-ben-vung') }} />
 </Layout>
 
 <style>
@@ -159,7 +162,7 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
   @media (max-width: 899.98px) { .ts-stats__row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 399.98px) { .ts-stat__value { font-size: 24px; } }
 
-  .ts-campaign { background: var(--surface-card); padding-block: clamp(64px, 8vw, 112px); }
+  .ts-campaign { background: var(--surface-page); padding-block: clamp(64px, 8vw, 112px); }
   .ts-campaign__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px 64px; align-items: center; }
   .ts-campaign__copy { display: flex; flex-direction: column; gap: 18px; }
   .ts-lead { margin: 0; color: var(--text-secondary); font-size: var(--fs-body); }
@@ -216,8 +219,10 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
   @media (max-width: 899.98px) { .ts-form__grid { grid-template-columns: minmax(0, 1fr); } }
 
   .ts-wishes { background: var(--surface-card); padding-block: clamp(64px, 8vw, 112px); }
-  .ts-wall { list-style: none; margin: 0; padding: 0; columns: 3 300px; column-gap: 20px; }
-  .ts-wall li { break-inside: avoid; margin-bottom: 20px; padding: 22px 22px 18px; border-radius: 16px; background: var(--green-50); border: 1px solid var(--green-100); display: flex; flex-direction: column; gap: 14px; }
+  .ts-wall { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: start; }
+  @media (max-width: 899.98px) { .ts-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 599.98px) { .ts-wall { grid-template-columns: minmax(0, 1fr); } }
+  .ts-wall li { padding: 22px 22px 18px; border-radius: 16px; background: var(--green-50); border: 1px solid var(--green-100); display: flex; flex-direction: column; gap: 14px; }
   /* 9 wishes at first (4 on phones); "Xem thêm" shows the rest. */
   .ts-wall:not(.is-open) li:nth-child(n+10) { display: none; }
   .ts-more[data-count='5'], .ts-more[data-count='6'], .ts-more[data-count='7'], .ts-more[data-count='8'], .ts-more[data-count='9'] { display: none; }
@@ -235,11 +240,24 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 
   .ts-gallery { background: var(--surface-page); padding-block: clamp(64px, 8vw, 112px); }
   .ts-gallery__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-  .ts-gallery__grid figure { margin: 0; display: flex; flex-direction: column; gap: 8px; }
-  .ts-gallery__img { position: relative; aspect-ratio: 3 / 2; }
-  .ts-gallery__grid figcaption { font-size: 14px; color: var(--text-secondary); }
-  @media (max-width: 899.98px) { .ts-gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 559.98px) { .ts-gallery__grid { grid-template-columns: minmax(0, 1fr); } }
+  /* Photos first: the caption sits inside the photo over a green fade. */
+  .ts-gallery__grid figure { position: relative; margin: 0; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden; }
+  .ts-gallery__grid figure:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+  .ts-gallery__grid figcaption { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 44px 16px 14px; background: linear-gradient(0deg, rgba(2, 53, 26, .9) 0%, rgba(2, 53, 26, .55) 55%, rgba(2, 53, 26, 0) 100%); color: #fff; font: 600 14px/1.4 var(--font-display); pointer-events: none; }
+  .ts-gallery__grid figure:first-child figcaption { font-size: 17px; padding: 60px 22px 20px; }
+  @media (max-width: 899.98px) { .ts-gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ts-gallery__grid figure:first-child { grid-row: auto; aspect-ratio: 16 / 9; } }
+  @media (max-width: 559.98px) { .ts-gallery__grid { grid-template-columns: minmax(0, 1fr); } .ts-gallery__grid figure:first-child { grid-column: auto; aspect-ratio: 4 / 3; } }
+  .ts-press { background: var(--surface-card); padding-block: clamp(64px, 8vw, 104px); }
+  .ts-press__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+  .ts-press__card { height: 100%; display: flex; flex-direction: column; gap: 10px; padding: 22px 20px 20px; border: 1px solid var(--border-default); border-top: 3px solid var(--brand-bright); border-radius: var(--radius-lg); background: var(--surface-page); color: var(--text-primary); text-decoration: none; transition: box-shadow var(--motion-fast), transform var(--motion-fast); }
+  .ts-press__card:hover { text-decoration: none; color: var(--text-primary); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0, 71, 35, .1); }
+  .ts-press__src { font: 800 17px/1.2 var(--font-display); color: var(--green-800); letter-spacing: -.005em; }
+  .ts-press__date { font-size: 13px; color: var(--text-tertiary); margin-top: -4px; }
+  .ts-press__card strong { font: 700 16.5px/1.4 var(--font-display); }
+  .ts-press__sum { font-size: 14.5px; line-height: 1.55; color: var(--text-secondary); }
+  .ts-press__more { margin-top: auto; padding-top: 6px; font-size: 14px; font-weight: 600; color: var(--brand-bright); }
+  @media (max-width: 1099.98px) { .ts-press__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 559.98px) { .ts-press__grid { grid-template-columns: minmax(0, 1fr); } }
 
   .ts-news { background: var(--surface-card); padding-block: clamp(64px, 8vw, 112px); }
   .ts-news__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 32px 24px; }

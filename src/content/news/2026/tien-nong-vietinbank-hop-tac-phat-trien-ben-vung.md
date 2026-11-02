@@ -30,11 +30,9 @@ Buổi tọa đàm diễn ra trong không khí cởi mở, xây dựng. Hai bên
 
 Phát biểu tại buổi làm việc, ông Nguyễn Hồng Phong nhấn mạnh vai trò của nguồn vốn ngân hàng trong việc hỗ trợ Tiến Nông mở rộng sản xuất, đầu tư công nghệ, nâng cao chất lượng sản phẩm và phục vụ tốt hơn cho bà con nông dân. Ông khẳng định Tiến Nông mong muốn tiếp tục nhận được sự đồng hành, chia sẻ từ VietinBank để doanh nghiệp phát triển ổn định, hiệu quả và bền vững trong bối cảnh ngành nông nghiệp đang chuyển mình mạnh mẽ theo hướng xanh và hiện đại.
 
-*
 
 ![Tiến Nông – VietinBank hợp tác phát triển bền vững](/uploads/tin-cu/2026/tien-nong-vietinbank-hop-tac-phat-trien-ben-vung-2.webp)
 
-*
 
 *Ông Nguyễn Hồng Phong phát biểu tại buổi tọa đàm*
 

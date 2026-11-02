@@ -24,19 +24,15 @@ old_url: /tien-nong-tang-qua-tet-cho-cong-nhan-co-hoan-canh-kho-khan/
 
 *Đoàn trao quà tết cho gia đình anh Nguyễn Đình Hải – Nhà máy Tiến Nông 2*
 
-*
 
 ![Tiến Nông tặng quà tết cho công nhân có hoàn cảnh khó khăn](/uploads/tin-cu/2015/tien-nong-tang-qua-tet-cho-cong-nhan-co-hoan-canh-kho-khan-2.webp)
 
-*
 
 *Gia đình anh Lê Quang Hưng – Nhà máy Tiến Nông 3*
 
-*
 
 ![Tiến Nông tặng quà tết cho công nhân có hoàn cảnh khó khăn](/uploads/tin-cu/2015/tien-nong-tang-qua-tet-cho-cong-nhan-co-hoan-canh-kho-khan-3.webp)
 
-*
 
 *Gia đình Chị Lê Thị Toàn – Nhà máy Tiến Nông 3*
 

@@ -13,7 +13,6 @@ import FormFallback from '../components/FormFallback.astro';
 import Button from '../components/Button.astro';
 import Checkbox from '../components/Checkbox.astro';
 import ImageSlot from '../components/ImageSlot.astro';
-import PageHero from '../components/PageHero.astro';
 import Input from '../components/Input.astro';
 import Select from '../components/Select.astro';
 import Head from '../components/story/Head.astro';
@@ -33,6 +32,15 @@ const contactHref = (v: string) => (v.includes('@') ? `mailto:${v.trim()}` : v.r
 // In-page anchors stay as they are; site paths get the deploy base.
 const href = (h: string) => (h.startsWith('#') ? h : link(h));
 const tel = (phone: string) => phone.replace(/[^\d+]/g, '');
+// Icons for the six contact points: leaf (engineers), cart, handshake, briefcase, megaphone, people.
+const ROUTE_ICONS = [
+  '<path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14z"/><path d="M5 19l7-7"/>',
+  '<circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/><path d="M3 4h2l2.4 11h11L21 7H6.2"/>',
+  '<path d="M3 12l4-4 4 3 3-3 7 6"/><path d="M7 16l3 3M10 14l3 3M13 13l3 3"/>',
+  '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/>',
+  '<path d="M4 10v4h3l7 4V6L7 10z"/><path d="M18 9a4 4 0 0 1 0 6"/>',
+  '<circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4a3 3 0 0 1 0 6M21 20c0-2.6-1.6-4.8-4-5.6"/>',
+];
 const prettyPhone = (phone: string) => {
   const d = tel(phone);
   return /^0\d{9}$/.test(d) ? `${d.slice(0, 4)} ${d.slice(4, 7)} ${d.slice(7)}` : phone;
@@ -42,27 +50,30 @@ const mapsFor = (address: string, custom?: string | null) =>
   custom?.trim() || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address.replace(/ /g, ' '))}`;
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
-<PageHero id="contact-hero" image={c.hero.background} cms={`${F}#hero.background`} placeholder="Ảnh thật của Tiến Nông"
-  crumbs={[{ label: c.hero.t1, href: url('trang-chu') }, { label: c.hero.t2.replace(/^\s*\/\s*/, '') }]}
-  eyebrow={c.hero.eyebrow} title={c.hero.title} lead={[c.hero.lead, c.hero.hours].filter(isFilled).join(' ')} />
-
-<section class="st-sec st-sec--card" id="dau-moi">
-<div class="st-wrap">
-<Head eyebrow={c.routes.eyebrow} title={c.routes.title} />
-<div class="st-grid" style="--min:300px">
-{c.routes.items.map((r) => {
+<section class="lh-hero">
+<div class="lh-hero__wrap">
+<nav class="lh-hero__crumbs" aria-label="Đường dẫn"><a href={url('trang-chu')}>{c.hero.t1}</a> <span aria-hidden="true">/</span> <span aria-current="page">{c.hero.t2.replace(/^\s*\/\s*/, '')}</span></nav>
+<span class="lh-hero__eyebrow">{c.hero.eyebrow}</span>
+<h1>{c.hero.title}</h1>
+<p>{[c.hero.lead, c.hero.hours].filter(isFilled).join(' ')}</p>
+</div>
+</section>
+<section class="lh-routes" id="dau-moi" aria-label={c.routes.eyebrow}>
+<div class="lh-routes__grid">
+{c.routes.items.map((r, k) => {
   const v = value(r.value);
   return (
-    <div class="st-card st-card--top"><div class="st-card__body">
-      <span class="st-card__tag">{r.label}</span>
-      {isFilled(v) && <a href={contactHref(v)} style="font-size:22px;font-weight:700;color:var(--text-primary)">{v}</a>}
-      <span class="st-card__text">{r.note}</span>
-      {isFilled(r.link) && <a class="st-card__link" href={href(r.link)}>{r.link_label}</a>}
-    </div></div>
+    <div class="lh-route">
+      <span class="lh-route__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={ROUTE_ICONS[k % ROUTE_ICONS.length]} /></span>
+      <span class="lh-route__label">{r.label}</span>
+      {isFilled(v) && <a class="lh-route__value" href={contactHref(v)}>{v}</a>}
+      <span class="lh-route__note jx-start">{r.note}</span>
+      {isFilled(r.link) && <a class="lh-route__link" href={href(r.link)}>{r.link_label}</a>}
+    </div>
   );
 })}
 </div>
-</div></section>
+</section>
 
 <section class="st-sec" id="chinh-hang">
 <div class="st-wrap">
@@ -82,18 +93,21 @@ const mapsFor = (address: string, custom?: string | null) =>
 <section class="st-sec st-sec--card" id="dai-ly">
 <div class="st-wrap">
 <Head eyebrow={c.regions.eyebrow} title={c.regions.title} intro={c.regions.intro} split />
-<div class="st-grid" style="--min:300px">
-{partner.managers.map((m) => (
-<div class="st-card"><div class="st-card__body">
-<span class="st-card__tag">{m.region}</span>
-<strong class="st-card__title">{m.name}</strong>
-<span class="st-card__text">{m.title}</span>
-<a href={`tel:${tel(m.phone)}`} style="font:700 20px var(--font-mono);color:var(--green-700)">{prettyPhone(m.phone)}</a>
-{Array.isArray(m.provinces) && m.provinces.length > 0 && <span class="st-card__proof"><strong>{c.regions.provinces_label}: </strong>{(m.provinces as string[]).join(', ')}</span>}
-</div></div>
+<div class="lh-dirs">
+{partner.managers.map((m, k) => (
+<article class="lh-dir">
+<div class="lh-dir__img"><ImageSlot style={fill} id={`dir-${k}`} shape="rect" placeholder={m.image?.alt || m.area || m.region} image={m.image} cms={`src/content/pages/tro-thanh-doi-tac.json#managers.${k}.image`} sizes="(max-width: 899px) 92vw, 400px" /><span class="lh-dir__region">{m.region}</span></div>
+<div class="lh-dir__body">
+{isFilled(m.area) && <span class="lh-dir__area">{m.area}</span>}
+<strong class="lh-dir__name">{m.name}</strong>
+<span class="lh-dir__title">{m.title}</span>
+<a class="lh-dir__call" href={`tel:${tel(m.phone)}`}><span aria-hidden="true">☎</span><span>{prettyPhone(m.phone)}</span><em>{c.regions.call_label}</em></a>
+{Array.isArray(m.provinces) && m.provinces.length > 0 && <div class="lh-dir__prov"><span>{c.regions.provinces_label}</span><ul>{(m.provinces as string[]).map((pv) => <li>{pv}</li>)}</ul></div>}
+</div>
+</article>
 ))}
 </div>
-<a href={url('tro-thanh-doi-tac', 'lien-he-khu-vuc')} style="align-self:flex-start;font-weight:600">{c.regions.map_label}</a>
+<a href={url('tro-thanh-doi-tac', 'lien-he-khu-vuc')} class="lh-more">{c.regions.map_label}</a>
 </div></section>
 
 <section id="nha-may" class="st-sec">
@@ -145,6 +159,49 @@ const mapsFor = (address: string, custom?: string | null) =>
 </Layout>
 
 <style>
+  /* Hero without a photo (Figma): brand green, title and lead; the six contact cards ride up onto it. */
+  .lh-hero { position: relative; overflow: hidden; color: #fff; background: radial-gradient(110% 140% at 85% 0%, #1d7a42 0%, var(--green-800) 50%, var(--green-900) 100%); }
+  .lh-hero::after { content: ''; position: absolute; right: -60px; top: -40px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, rgba(245, 196, 78, .16), rgba(245, 196, 78, 0) 70%); pointer-events: none; }
+  .lh-hero__wrap { position: relative; max-width: 1280px; margin: 0 auto; padding: 28px clamp(20px, 4vw, 56px) 150px; display: flex; flex-direction: column; gap: 16px; }
+  .lh-hero__crumbs { font-size: 13px; color: var(--green-100); display: flex; gap: 6px; margin-bottom: clamp(20px, 3vw, 36px); }
+  .lh-hero__crumbs a { color: var(--green-100); }
+  .lh-hero__eyebrow { display: flex; align-items: center; gap: 14px; font: var(--type-eyebrow); letter-spacing: .1em; color: var(--green-50); }
+  .lh-hero__eyebrow::before { content: ''; width: 40px; height: 2px; background: var(--brand-highlight); }
+  .lh-hero h1 { margin: 0; font: var(--type-h1); color: #fff; letter-spacing: -.015em; }
+  .lh-hero p { margin: 0; max-width: 640px; font-size: var(--fs-lead); line-height: 1.6; color: var(--green-50); text-align: start; }
+  .lh-routes { position: relative; z-index: 2; display: flow-root; background: var(--surface-page); }
+  .lh-routes__grid { max-width: 1280px; margin: -110px auto 0; padding: 0 clamp(20px, 4vw, 56px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .lh-route { display: flex; flex-direction: column; gap: 8px; padding: 24px 24px 22px; background: var(--surface-card); border-radius: var(--radius-lg); border-top: 3px solid var(--brand-bright); box-shadow: 0 18px 40px rgba(0, 71, 35, .12), 0 2px 6px rgba(0, 71, 35, .06); }
+  .lh-route__ic { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--green-50); color: var(--green-700); margin-bottom: 4px; }
+  .lh-route__label { font: 700 12px/1.3 var(--font-display); letter-spacing: .1em; color: var(--green-600); }
+  .lh-route__value { font: 700 21px/1.3 var(--font-display); color: var(--text-primary); }
+  .lh-route__value:hover { color: var(--green-700); }
+  .lh-route__note { color: var(--text-secondary); font-size: 15px; line-height: 1.55; }
+  .lh-route__link { margin-top: auto; padding-top: 4px; font-weight: 600; font-size: 15px; color: var(--brand-bright); }
+  #chinh-hang { padding-top: clamp(56px, 6vw, 88px); }
+  /* Sales directors: photo, region, name, a call button and the provinces they look after. */
+  .lh-dirs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+  .lh-dir { display: flex; flex-direction: column; background: var(--surface-page); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
+  .lh-dir__img { position: relative; aspect-ratio: 16 / 10; }
+  .lh-dir__region { position: absolute; left: 16px; top: 16px; padding: 6px 12px; border-radius: 8px; background: var(--brand-highlight); color: var(--green-900); font: 700 12.5px/1 var(--font-display); letter-spacing: .04em; }
+  .lh-dir__body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .lh-dir__area { font: 700 11.5px/1.3 var(--font-display); letter-spacing: .08em; text-transform: uppercase; color: var(--green-600); }
+  .lh-dir__name { font: 700 21px/1.3 var(--font-display); }
+  .lh-dir__title { color: var(--text-secondary); font-size: 15px; }
+  .lh-dir__call { margin: 10px 0 4px; display: flex; align-items: center; gap: 10px; padding: 10px 10px 10px 16px; border-radius: 12px; background: var(--green-800); color: #fff; text-decoration: none; font: 700 18px/1 var(--font-display); }
+  .lh-dir__call em { margin-left: auto; font-style: normal; font-size: 13px; padding: 8px 12px; border-radius: 8px; background: var(--brand-bright); }
+  .lh-dir__call:hover { color: #fff; text-decoration: none; background: var(--green-700); }
+  .lh-dir__prov > span { font-size: 13px; font-weight: 600; color: var(--text-tertiary); }
+  .lh-dir__prov ul { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .lh-dir__prov li { padding: 4px 10px; border-radius: 999px; background: var(--surface-card); border: 1px solid var(--border-default); font-size: 13px; color: var(--text-secondary); }
+  .lh-more { align-self: flex-start; font-weight: 600; color: var(--brand-bright); }
+  @media (max-width: 1023.98px) {
+    .lh-routes__grid, .lh-dirs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 639.98px) {
+    .lh-routes__grid, .lh-dirs { grid-template-columns: minmax(0, 1fr); }
+    .lh-hero__wrap { padding-bottom: 130px; }
+  }
   .site-card { display: flex; flex-direction: column; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
   .site-card__img { position: relative; aspect-ratio: 16 / 10; background: linear-gradient(135deg, var(--green-50), var(--green-100)); }
   /* No photo yet: a soft branded panel for visitors; the photo slot itself shows in the photo editor (?sua-anh). */

@@ -38,11 +38,9 @@ Trong khuôn khổ chương trình, đoàn đã tham quan trực tiếp Nhà má
 
 Phát biểu tại buổi làm việc, ông Nguyễn Đình Tuấn đánh giá cao năng lực, uy tín và tâm huyết của Tiến Nông đối với nông nghiệp, khẳng định đây là doanh nghiệp “xứng đáng để Liên minh HTX chọn mặt gửi vàng”. Ông nhấn mạnh, việc hợp tác thời gian tới sẽ được triển khai theo hướng bài bản, chuyên nghiệp, có ký kết rõ ràng, trách nhiệm, đồng thời hướng tới xây dựng Trung tâm hỗ trợ HTX, góp phần nâng cao hiệu quả hoạt động của các HTX trong toàn tỉnh.
 
-*
 
 ![TIẾN NÔNG ĐÓN ĐOÀN LIÊN MINH HTX THANH HÓA: MỞ RỘNG HỢP TÁC, THÚC ĐẨY LIÊN KẾT SẢN XUẤT BỀN VỮNG](/uploads/tin-cu/2026/tien-nong-don-doan-lien-minh-htx-thanh-hoa-mo-rong-hop-tac-thuc-day-lien-ket-3.webp)
 
-*
 
 *Ông Nguyễn Đình Tuấn phát biểu tại chương trình.*
 
@@ -52,11 +50,9 @@ Phát biểu tại buổi làm việc, ông Nguyễn Đình Tuấn đánh giá c
 
 *Ông Mai Tài Sáng – Giám đốc HTX SXNN Định Liên bày tỏ ấn tượng với quy mô, công nghệ sản xuất và đánh giá cao các dòng sản phẩm chuyên dùng cho cây lúa của Tiến Nông, đồng thời cam kết tiên phong ứng dụng các sản phẩm mới.*
 
-*
 
 ![TIẾN NÔNG ĐÓN ĐOÀN LIÊN MINH HTX THANH HÓA: MỞ RỘNG HỢP TÁC, THÚC ĐẨY LIÊN KẾT SẢN XUẤT BỀN VỮNG](/uploads/tin-cu/2026/tien-nong-don-doan-lien-minh-htx-thanh-hoa-mo-rong-hop-tac-thuc-day-lien-ket-5.webp)
 
-*
 
 *Ông Hoàng Văn Tuyên – Giám đốc HTX DVNN Quảng Ngọc đề xuất doanh nghiệp tăng cường hỗ trợ kỹ thuật nhằm nâng cao hiệu quả sản xuất cho nông dân.*
 
@@ -66,21 +62,17 @@ Phát biểu tại buổi làm việc, ông Nguyễn Đình Tuấn đánh giá c
 
 Một điểm nhấn quan trọng tại chương trình là việc công ty Tiến Nông giới thiệu bộ sản phẩm mới “Cao sản 1 – Cao sản 2” được nghiên cứu dành riêng cho hệ thống HTX. Bộ sản phẩm hướng tới tối ưu năng suất cây trồng, giảm chi phí, phù hợp với sản xuất quy mô lớn và giải quyết các vấn đề thực tế như đất thoái hóa, ngộ độc hữu cơ.
 
-*
 
 ![TIẾN NÔNG ĐÓN ĐOÀN LIÊN MINH HTX THANH HÓA: MỞ RỘNG HỢP TÁC, THÚC ĐẨY LIÊN KẾT SẢN XUẤT BỀN VỮNG](/uploads/tin-cu/2026/tien-nong-don-doan-lien-minh-htx-thanh-hoa-mo-rong-hop-tac-thuc-day-lien-ket-7.webp)
 
-*
 
 *Ông Nguyễn Trung Trụ – Giám đốc Phòng Kinh doanh 1 giới thiệu công ty và các sản phẩm phân bón Tiến Nông tại buổi làm việc*
 
 Phát biểu tại buổi làm việc, Tổng Giám đốc Nguyễn Hồng Phong chia sẻ: Tiến Nông không chỉ mang đến sản phẩm, mà mang đến cách làm mới, câu chuyện mới. Chúng tôi mong muốn cùng HTX tạo ra giá trị thực sự cho nông nghiệp và người nông dân.”
 
-*
 
 ![TIẾN NÔNG ĐÓN ĐOÀN LIÊN MINH HTX THANH HÓA: MỞ RỘNG HỢP TÁC, THÚC ĐẨY LIÊN KẾT SẢN XUẤT BỀN VỮNG](/uploads/tin-cu/2026/tien-nong-don-doan-lien-minh-htx-thanh-hoa-mo-rong-hop-tac-thuc-day-lien-ket-8.webp)
 
-*
 
 *Ông Nguyễn Hồng Phong – Phó CT HĐQT, Phó CT Hiệp hội phân bón Việt Nam, Tổng Giám đốc Công ty phát biểu tại buổi làm việc*
 

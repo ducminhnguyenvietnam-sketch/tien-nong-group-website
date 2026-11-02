@@ -36,9 +36,9 @@
   },
   "s02_thu_ngo": {
     "img_ceo_portrait_1": {
-      "src": "/uploads/Anh chan dung a Phong T8.2018 - Copy.jpg",
-      "focus": "center",
-      "zoom": "125",
+      "src": "/uploads/ceo-chan-dung-tach-nen.png",
+      "focus": "50% 100%",
+      "zoom": "100",
       "alt": "Chân dung Tổng Giám đốc Nguyễn Hồng Phong"
     },
     "t1": "THƯ NGỎ CỦA TỔNG GIÁM ĐỐC",
@@ -343,7 +343,7 @@
           "Kiểm nghiệm Chất lượng"
         ],
         "note": "Mỗi công thức được nghiên cứu trên đất, trên cây và kiểm chứng ngoài đồng ruộng trước khi đến tay nhà nông.",
-        "link_label": "Khoa học & Công nghệ",
+        "link_label": "Khám phá Khoa học & Công nghệ",
         "link": "/khoa-hoc-cong-nghe/",
         "photos": [
           {
@@ -397,7 +397,7 @@
           "Công nghệ cao"
         ],
         "note": "Mỗi sản phẩm của Tiến Nông đều trải qua quy trình kiểm soát chất lượng nghiêm ngặt, đáp ứng nhu cầu đa dạng của từng vùng đất, từng loại cây trồng.",
-        "link_label": "Xem thêm",
+        "link_label": "Xem các dòng sản phẩm",
         "link": "/san-pham/",
         "photos": [
           {
@@ -454,7 +454,7 @@
           "Đối tác quốc tế"
         ],
         "note": "Đội ngũ kỹ sư cùng đại lý tư vấn cho bà con, tổ chức hội thảo đầu bờ và mô hình trình diễn tại địa phương.",
-        "link_label": "Tìm đại lý",
+        "link_label": "Tìm đại lý gần bạn",
         "link": "/lien-he/#dai-ly",
         "photos": [
           {

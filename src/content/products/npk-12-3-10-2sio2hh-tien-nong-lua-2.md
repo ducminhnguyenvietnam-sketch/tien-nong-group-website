@@ -74,6 +74,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 12-3-10+2SiO₂hh Tiến Nông (Lúa 2) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/lua-2-chuyen-thuc/

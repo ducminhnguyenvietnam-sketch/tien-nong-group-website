@@ -9,6 +9,8 @@ main :is(h1, h2, h3, h4, h5, h6, strong, b, button, label, input, select, textar
 main :is(h1, h2, h3, h4, strong) { text-wrap: balance; }
 main :is(p, li, blockquote, dd) { text-wrap: pretty; }
 .jx-left { text-align: start !important; }
+/* Set in the markup: short texts in narrow cards stay left-aligned whatever their length. */
+main .jx-start { text-align: start !important; text-align-last: auto !important; }
 /* Blocks that should stay justified even when short (titles of news cards on the home page). */
 main .jx-justify { text-align: justify !important; text-align-last: start !important; }
 /* Copy laid over a photo (heroes, banners) reads as a headline block, so it stays left-aligned. */
@@ -93,3 +95,15 @@ html:not(.pe-on) [data-needs-photos] { display: none !important; }
 
 /* Picker autoplay (picker.ts): restart the progress line of the selected item when the count restarts. */
 .pick-reset [aria-selected='true']::after { animation: none !important; }
+
+/* YouTube facade (scripts/yt.ts): a poster with a play button; the player loads only when clicked. */
+.yt { position: relative; display: block; width: 100%; padding: 0; border: 0; border-radius: var(--radius-xl); overflow: hidden; background: var(--green-900); cursor: pointer; }
+.yt img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: scale 600ms var(--ease-out); }
+.yt:hover img { scale: 1.03; }
+.yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.yt__play { position: absolute; left: 50%; top: 50%; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: rgba(255, 255, 255, .92); box-shadow: 0 6px 18px rgba(0, 0, 0, .25); transition: transform var(--motion-base) var(--ease-out); }
+.yt__play::after { content: ''; position: absolute; left: 50%; top: 50%; margin: -7px 0 0 -4px; border-style: solid; border-width: 7px 0 7px 12px; border-color: transparent transparent transparent var(--green-700); }
+.yt__play--big { width: 96px; height: 96px; margin: -48px 0 0 -48px; background: var(--brand-bright); box-shadow: 0 0 0 12px rgba(12, 166, 78, .25), 0 10px 30px rgba(0, 0, 0, .3); }
+.yt__play--big::after { margin: -14px 0 0 -8px; border-width: 14px 0 14px 24px; border-color: transparent transparent transparent #fff; }
+.yt:hover .yt__play, a:hover .yt__play { transform: scale(1.08); }
+@media (max-width: 767.98px) { .yt__play--big { width: 64px; height: 64px; margin: -32px 0 0 -32px; } }

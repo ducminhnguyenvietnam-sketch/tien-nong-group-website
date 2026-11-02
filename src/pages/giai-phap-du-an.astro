@@ -6,6 +6,7 @@ import FormFallback from '../components/FormFallback.astro';
 import Button from '../components/Button.astro';
 import Checkbox from '../components/Checkbox.astro';
 import ImageSlot from '../components/ImageSlot.astro';
+import PageHero from '../components/PageHero.astro';
 import Input from '../components/Input.astro';
 import Select from '../components/Select.astro';
 import { url } from '../lib/routes';
@@ -14,19 +15,11 @@ const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
 
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Giải pháp">
-<section style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:32px">
-<span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.s01_hero.t1}</a> / <a href={url('giai-phap')} style="color:var(--text-tertiary)">{c.s01_hero.t2}</a> {c.s01_hero.t3}</span>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:40px 64px;align-items:center">
-<div style="display:flex;flex-direction:column;gap:20px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s01_hero.t4}</span>
-<h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero.t5}</h1>
-<p style="margin:0;font-size:var(--fs-lead);color:var(--text-secondary);text-wrap:pretty">{c.s01_hero.t6}</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap"><a href="#tu-van" style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s01_hero.t7}</a><a href="#quy-trinh" style="color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md);border:1px solid var(--border-strong)">{c.s01_hero.t8}</a></div>
-</div>
-<div style="position:relative;height:clamp(320px,36vw,480px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="proj-hero" shape="rounded" radius="24" placeholder="Thảm cỏ sân golf / cảnh quan khu đô thị" image={c.s01_hero.img_proj_hero_1} cms="src/content/pages/giai-phap-du-an.json#s01_hero.img_proj_hero_1" /></div>
-</div></div></section>
-
+<PageHero id="proj-hero" image={c.s01_hero.img_proj_hero_1} cms="src/content/pages/giai-phap-du-an.json#s01_hero.img_proj_hero_1" placeholder="Thảm cỏ sân golf giữa núi đồi"
+  crumbs={[{ label: c.s01_hero.t1, href: url('trang-chu') }, { label: c.s01_hero.t2, href: url('giai-phap') }, { label: c.s01_hero.t3.replace(/^\/\s*/, '') }]}
+  eyebrow={c.s01_hero.t4} title={c.s01_hero.t5} lead={c.s01_hero.t6}>
+<a href="#tu-van" class="page-hero__btn page-hero__btn--solid">{c.s01_hero.t7}</a><a href="#quy-trinh" class="page-hero__btn">{c.s01_hero.t8}</a>
+</PageHero>
 <section style="background:var(--surface-page)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
 <div style="display:flex;flex-direction:column;gap:14px;max-width:680px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s02_nhom_khach_hang.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s02_nhom_khach_hang.t2}</h2></div>
@@ -62,13 +55,13 @@ const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
 <div style="border-top:2px solid var(--green-500);padding-top:14px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{c.s04_nang_luc.t10}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s04_nang_luc.t11}</span></div>
 </div></div></section>
 
-<section id="tu-van" style="background:var(--surface-page);scroll-margin-top:120px">
+<section id="tu-van" class="pj-talk" style="scroll-margin-top:120px">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 64px;align-items:start">
 <div style="display:flex;flex-direction:column;gap:20px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s05_yeu_cau_tu_van.t1}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s05_yeu_cau_tu_van.t2}</h2>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s05_yeu_cau_tu_van.t3}</p>
-{isFilled(c.s05_yeu_cau_tu_van.t5) && <div style="display:flex;flex-direction:column;gap:4px;padding-top:16px;border-top:1px solid var(--border-default)"><span style="font-size:14px;color:var(--text-tertiary)">{c.s05_yeu_cau_tu_van.t4}</span><strong style="font-size:18px">{c.s05_yeu_cau_tu_van.t5}</strong><span>{c.s05_yeu_cau_tu_van.t6}</span></div>}
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--brand-highlight)">{c.s05_yeu_cau_tu_van.t1}</span>
+<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance;color:#fff">{c.s05_yeu_cau_tu_van.t2}</h2>
+<p class="jx-justify" style="margin:0;color:var(--green-100);font-size:var(--fs-body);line-height:1.6">{c.s05_yeu_cau_tu_van.t3}</p>
+{isFilled(c.s05_yeu_cau_tu_van.t5) && <div style="display:flex;flex-direction:column;gap:4px;padding-top:16px;border-top:1px solid rgba(255,255,255,.2)"><span style="font-size:14px;color:var(--green-200)">{c.s05_yeu_cau_tu_van.t4}</span><strong style="font-size:18px">{c.s05_yeu_cau_tu_van.t5}</strong><span>{c.s05_yeu_cau_tu_van.t6}</span></div>}
 </div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:16px">
 <div id="project-sent" hidden style="display:flex;flex-direction:column;gap:8px;padding:16px 0"><span style="font:700 13px var(--font-mono);color:var(--green-600)">{c.s05_yeu_cau_tu_van.t7}</span><strong style="font-size:22px">{c.s05_yeu_cau_tu_van.t8}</strong><span style="color:var(--text-secondary)">{c.s05_yeu_cau_tu_van.t9}</span><button type="button" data-form-again style="align-self:flex-start;background:none;border:0;padding:0;color:var(--green-700);font:600 15px var(--font-body);cursor:pointer">{c.s05_yeu_cau_tu_van.t10}</button></div>
@@ -88,3 +81,9 @@ const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
 </form>
 </div></div></section>
 </Layout>
+
+<style>
+  .pj-talk { position: relative; overflow: hidden; background: var(--green-800); color: #fff; }
+  .pj-talk::before { content: ''; position: absolute; left: -160px; bottom: -200px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(245, 196, 78, .14), rgba(245, 196, 78, 0) 70%); pointer-events: none; }
+  .pj-talk > div { position: relative; }
+</style>

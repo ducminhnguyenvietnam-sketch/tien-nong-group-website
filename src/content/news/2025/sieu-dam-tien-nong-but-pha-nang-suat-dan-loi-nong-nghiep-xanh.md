@@ -58,11 +58,9 @@ Các cuộc khảo nghiệm thực tế trên cây ngô và cam đã chứng mi
 
 Siêu Đạm Tiến Nông không chỉ giúp nâng cao năng suất, mà còn là giải pháp bền vững đồng hành cùng người nông dân nhờ nhiều ưu điểm vượt trội như: Giảm chi phí phân bón nhờ khả năng hấp thu dinh dưỡng cao; tăng rõ rệt năng suất và chất lượng nông sản; cải thiện độ phì nhiêu đất, giảm ô nhiễm và hạn chế suy thoái môi trường canh tác; dễ sử dụng, phù hợp với đa dạng loại cây trồng và điều kiện thổ nhưỡng khác nhau.
 
-*
 
 ![Siêu đạm Tiến Nông bứt phá năng suất, dẫn lối nông nghiệp xanh](/uploads/tin-cu/2025/sieu-dam-tien-nong-but-pha-nang-suat-dan-loi-nong-nghiep-xanh-4.webp)
 
-*
 
 *Sản phẩm Siêu Đạm Tiến Nông giúp bà con nông dân gặt hái mùa vàng bội thu. Ảnh: Duyên Hoàng.*
 

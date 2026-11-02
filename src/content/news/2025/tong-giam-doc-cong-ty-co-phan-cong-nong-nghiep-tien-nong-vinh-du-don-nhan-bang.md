@@ -35,11 +35,9 @@ Những kết quả ấn tượng trên là minh chứng rõ ràng cho sự chuy
 Hướng tới giai đoạn 2025–2030, Hội Làm vườn và Trang trại tỉnh Thanh Hoá chính thức phát động phong trào thi đua mới với chủ đề:
 **“Phát triển sản xuất – kinh doanh VAC, trang trại xanh, sạch, hiệu quả; xây dựng Hội vững mạnh toàn diện”**.
 
-*
 
 ![TỔNG GIÁM ĐỐC CÔNG TY CỔ PHẦN CÔNG NÔNG NGHIỆP TIẾN NÔNG VINH DỰ ĐÓN NHẬN BẰNG KHEN CỦA UBND TỈNH THANH HOÁ](/uploads/tin-cu/2025/tong-giam-doc-cong-ty-co-phan-cong-nong-nghiep-tien-nong-vinh-du-don-nhan-bang-2.webp)
 
-*
 
 *Ông  Nguyễn Hồng Phong – Ủy viên Ban Thường vụ Hội Làm vườn và Trang trại Thanh Hoá, Tổng Giám đốc Công ty Cổ phần Công Nông nghiệp Tiến Nông phát biểu tại Hội nghị*
 

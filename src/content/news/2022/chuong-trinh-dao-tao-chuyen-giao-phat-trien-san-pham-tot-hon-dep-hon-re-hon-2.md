@@ -28,7 +28,6 @@ Sau thời gian tích cực nghiên cứu, tìm giải pháp giúp Tiến Nông 
 
 Với công nghệ số thông minh của Viện Malik Thụy Sỹ và sự hướng dẫn của các chuyên gia của Viện Sleader thông qua các cuộc trao đổi, thực hành với phương thức làm việc nhóm theo từng chuyên đề, các thành viên của Tiến Nông đã tham gia tích cực và tự mình kiến tạo được những giải pháp cụ thể, phù hợp với thực tiễn, nhằm tạo ra những sản phẩm đạt được cùng lúc cả 3 mục tiêu “đẹp hơn, tốt hơn, rẻ hơn”. Hơn thế nữa, các thành viên còn xác định và hiểu rõ hơn về sứ mệnh của Tiến Nông và vai trò của bản thân, của tập thể, từ đó thêm gắn kết và quyết tâm phát triển Công ty lên một tầm cao mới trong giai đoạn khởi nghiệp lần 2.
 
-*
 
 ![Chương trình đào tạo chuyển giao “Phát triển sản phẩm tốt hơn – đẹp hơn – rẻ hơn”](/uploads/tin-cu/2022/chuong-trinh-dao-tao-chuyen-giao-phat-trien-san-pham-tot-hon-dep-hon-re-hon-2-2.webp)
 

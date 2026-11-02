@@ -77,6 +77,7 @@ field:
   focus: center
   zoom: '100'
   alt: Phân trung lượng lân PA Tiến Nông – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/phan-trung-luong-lan-pa-tien-nong/

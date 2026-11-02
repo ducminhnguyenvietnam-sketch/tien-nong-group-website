@@ -98,6 +98,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 17-6-17+MNC Tiến Nông – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/npk-17-6-17mnc-tien-nong/

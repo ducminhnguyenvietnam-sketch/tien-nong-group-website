@@ -90,6 +90,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 6-8-4+3SiO₂hh Tiến Nông – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/npk-6-8-43-sio2hh-tien-nong/

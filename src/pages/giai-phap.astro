@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
-import { url } from '../lib/routes';
+import { asset, url } from '../lib/routes';
 import { listUrl } from '../lib/news';
 import { findProduct, getProducts, productUrl } from '../lib/products';
 
@@ -31,31 +31,17 @@ const defaultIssue = c.finder_issues.length - 1;
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-100)">{c.s01_hero.t2}</span>
 <h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero.t3}</h1>
 <p style="margin:0;font-size:var(--fs-lead);line-height:1.55;color:var(--green-50);text-wrap:pretty">{c.s01_hero.t4}</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;pointer-events:auto"><a href="#tim-giai-phap" style="background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s01_hero.t5}</a><a href={url('giai-phap-du-an')} style="background:#fff;color:var(--green-700);font-weight:700;padding:13px 22px;border-radius:var(--radius-md)">{c.s01_hero.t6}</a></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;pointer-events:auto"><a href="#tim-giai-phap" class="gp-hbtn gp-hbtn--solid">{c.s01_hero.t5}<span aria-hidden="true">↗</span></a><a href={url('giai-phap-du-an')} class="gp-hbtn">{c.s01_hero.t6}<span aria-hidden="true">↗</span></a></div>
 </div></div></section>
 
-<section style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
-<div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s02_cay_trong.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s02_cay_trong.t2}</h2></div>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s02_cay_trong.t3}</p>
-</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:20px">
-<a href="#tim-giai-phap" style="position:relative;height:300px;border-radius:var(--radius-lg);overflow:hidden;display:block;color:#fff"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cg-1" shape="rect" placeholder="Lúa, ngô" image={c.s02_cay_trong.img_cg_1_1} cms="src/content/pages/giai-phap.json#s02_cay_trong.img_cg_1_1" /><div style="position:absolute;inset:auto 0 0 0;padding:22px;background:linear-gradient(0deg,rgba(2,53,26,.85),rgba(2,53,26,0));pointer-events:none;display:flex;flex-direction:column;gap:4px"><strong style="font-size:21px">{c.s02_cay_trong.t4}</strong><span style="font-size:14px;color:var(--green-50)">{c.s02_cay_trong.t5}</span></div></a>
-<a href="#tim-giai-phap" style="position:relative;height:300px;border-radius:var(--radius-lg);overflow:hidden;display:block;color:#fff"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cg-2" shape="rect" placeholder="Rau màu" image={c.s02_cay_trong.img_cg_2_1} cms="src/content/pages/giai-phap.json#s02_cay_trong.img_cg_2_1" /><div style="position:absolute;inset:auto 0 0 0;padding:22px;background:linear-gradient(0deg,rgba(2,53,26,.85),rgba(2,53,26,0));pointer-events:none;display:flex;flex-direction:column;gap:4px"><strong style="font-size:21px">{c.s02_cay_trong.t6}</strong><span style="font-size:14px;color:var(--green-50)">{c.s02_cay_trong.t7}</span></div></a>
-<a href="#tim-giai-phap" style="position:relative;height:300px;border-radius:var(--radius-lg);overflow:hidden;display:block;color:#fff"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cg-3" shape="rect" placeholder="Cây ăn quả" image={c.s02_cay_trong.img_cg_3_1} cms="src/content/pages/giai-phap.json#s02_cay_trong.img_cg_3_1" /><div style="position:absolute;inset:auto 0 0 0;padding:22px;background:linear-gradient(0deg,rgba(2,53,26,.85),rgba(2,53,26,0));pointer-events:none;display:flex;flex-direction:column;gap:4px"><strong style="font-size:21px">{c.s02_cay_trong.t8}</strong><span style="font-size:14px;color:var(--green-50)">{c.s02_cay_trong.t9}</span></div></a>
-<a href="#tim-giai-phap" style="position:relative;height:300px;border-radius:var(--radius-lg);overflow:hidden;display:block;color:#fff"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cg-4" shape="rect" placeholder="Cà phê, chè" image={c.s02_cay_trong.img_cg_4_1} cms="src/content/pages/giai-phap.json#s02_cay_trong.img_cg_4_1" /><div style="position:absolute;inset:auto 0 0 0;padding:22px;background:linear-gradient(0deg,rgba(2,53,26,.85),rgba(2,53,26,0));pointer-events:none;display:flex;flex-direction:column;gap:4px"><strong style="font-size:21px">{c.s02_cay_trong.t10}</strong><span style="font-size:14px;color:var(--green-50)">{c.s02_cay_trong.t11}</span></div></a>
-<a href="#tim-giai-phap" style="position:relative;height:300px;border-radius:var(--radius-lg);overflow:hidden;display:block;color:#fff"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cg-5" shape="rect" placeholder="Hoa, cây cảnh" image={c.s02_cay_trong.img_cg_5_1} cms="src/content/pages/giai-phap.json#s02_cay_trong.img_cg_5_1" /><div style="position:absolute;inset:auto 0 0 0;padding:22px;background:linear-gradient(0deg,rgba(2,53,26,.85),rgba(2,53,26,0));pointer-events:none;display:flex;flex-direction:column;gap:4px"><strong style="font-size:21px">{c.s02_cay_trong.t12}</strong><span style="font-size:14px;color:var(--green-50)">{c.s02_cay_trong.t13}</span></div></a>
-<a href="#tim-giai-phap" style="position:relative;height:300px;border-radius:var(--radius-lg);overflow:hidden;display:block;color:#fff"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="cg-6" shape="rect" placeholder="Cây dược liệu" image={c.s02_cay_trong.img_cg_6_1} cms="src/content/pages/giai-phap.json#s02_cay_trong.img_cg_6_1" /><div style="position:absolute;inset:auto 0 0 0;padding:22px;background:linear-gradient(0deg,rgba(2,53,26,.85),rgba(2,53,26,0));pointer-events:none;display:flex;flex-direction:column;gap:4px"><strong style="font-size:21px">{c.s02_cay_trong.t14}</strong><span style="font-size:14px;color:var(--green-50)">{c.s02_cay_trong.t15}</span></div></a>
-</div></div></section>
-
-<section id="mo-hinh" style="background:var(--surface-page);scroll-margin-top:120px">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:36px">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap"><div style="display:flex;flex-direction:column;gap:14px;max-width:640px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s06_mo_hinh_thuc_te.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s06_mo_hinh_thuc_te.t2}</h2></div><a href={listUrl('nd')} style="font-weight:600">{c.s06_mo_hinh_thuc_te.t3}</a></div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/3),calc((1068px - 100%)*999),100%),1fr));gap:24px">
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="model-1" shape="rect" placeholder="Mô hình lúa" image={c.s06_mo_hinh_thuc_te.img_model_1_1} cms="src/content/pages/giai-phap.json#s06_mo_hinh_thuc_te.img_model_1_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:10px"><span style="font:600 12px var(--font-mono);color:var(--green-600)">{c.s06_mo_hinh_thuc_te.t4}</span><strong style="font-size:19px;line-height:1.35">{c.s06_mo_hinh_thuc_te.t5}</strong><div style="display:flex;gap:28px;padding-top:10px;border-top:1px solid var(--border-default)"><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t6}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t7}</span></div><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t8}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t9}</span></div></div></div></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="model-2" shape="rect" placeholder="Mô hình cà phê" image={c.s06_mo_hinh_thuc_te.img_model_2_1} cms="src/content/pages/giai-phap.json#s06_mo_hinh_thuc_te.img_model_2_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:10px"><span style="font:600 12px var(--font-mono);color:var(--green-600)">{c.s06_mo_hinh_thuc_te.t10}</span><strong style="font-size:19px;line-height:1.35">{c.s06_mo_hinh_thuc_te.t11}</strong><div style="display:flex;gap:28px;padding-top:10px;border-top:1px solid var(--border-default)"><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t12}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t13}</span></div><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t14}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t15}</span></div></div></div></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="model-3" shape="rect" placeholder="Mô hình cây ăn quả" image={c.s06_mo_hinh_thuc_te.img_model_3_1} cms="src/content/pages/giai-phap.json#s06_mo_hinh_thuc_te.img_model_3_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:10px"><span style="font:600 12px var(--font-mono);color:var(--green-600)">{c.s06_mo_hinh_thuc_te.t16}</span><strong style="font-size:19px;line-height:1.35">{c.s06_mo_hinh_thuc_te.t17}</strong><div style="display:flex;gap:28px;padding-top:10px;border-top:1px solid var(--border-default)"><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t18}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t19}</span></div><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t20}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t21}</span></div></div></div></div>
+<section class="gp-crops">
+<div class="gp-wrap">
+<div class="gp-head"><div class="gp-head__title"><span class="gp-eyebrow">{c.s02_cay_trong.t1}</span><h2>{c.s02_cay_trong.t2}</h2></div><p class="jx-justify">{c.s02_cay_trong.t3}</p></div>
+<div class="gp-tiles" style={`--leaf:url(${asset('assets/logo-la-trang.png')})`}>
+{c.s02_cay_trong.tiles.map((t, k) => <a href="#tim-giai-phap" class="gp-tile" data-crop-pick={t.name} data-empty-tile={isFilled(t.image?.src) ? undefined : ''}>
+<span class="gp-tile__img" data-needs-photos={isFilled(t.image?.src) ? undefined : ''}><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`gp-tile-${k}`} shape="rect" placeholder={t.image?.alt || t.name} image={t.image} cms={`src/content/pages/giai-phap.json#s02_cay_trong.tiles.${k}.image`} sizes="(max-width: 767px) 46vw, 300px" /></span>
+<span class="gp-tile__name">{t.name}</span><span class="gp-tile__go" aria-hidden="true">↗</span>
+</a>)}
 </div></div></section>
 
 <section id="quy-trinh" style="background:var(--green-800);color:#fff;scroll-margin-top:120px">
@@ -71,25 +57,16 @@ const defaultIssue = c.finder_issues.length - 1;
 <div style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid var(--green-700)"><span style="font:var(--type-num);color:var(--amber-400)">{c.s04_suc_khoe_dat.t12}</span><div><strong>{c.s04_suc_khoe_dat.t13}</strong><div style="color:var(--green-100);font-size:15px">{c.s04_suc_khoe_dat.t14}</div></div></div>
 </div></div></div></section>
 
-<section id="tim-giai-phap" style="background:var(--surface-card);scroll-margin-top:120px">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 64px;align-items:start">
-<div style="display:flex;flex-direction:column;gap:24px">
-<div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s05_tim_giai_phap.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s05_tim_giai_phap.t2}</h2></div>
-<div style="display:flex;flex-direction:column;gap:10px"><span style="font-weight:600">{c.s05_tim_giai_phap.t3}</span><div style="display:flex;gap:8px;flex-wrap:wrap">{c.finder_crops.map((crop, k) => <button type="button" class="chip" data-chip="crop" data-k={k} aria-pressed={k === 0 ? 'true' : 'false'} style="padding:8px 16px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);color:var(--text-primary);font:600 15px var(--font-body);cursor:pointer">{crop}</button>)}</div></div>
-<div style="display:flex;flex-direction:column;gap:10px"><span style="font-weight:600">{c.s05_tim_giai_phap.t4}</span><div style="display:flex;gap:8px;flex-wrap:wrap">{c.finder_issues.map((issue, k) => <button type="button" class="chip" data-chip="issue" data-k={k} aria-pressed={k === defaultIssue ? 'true' : 'false'} style="padding:8px 16px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);color:var(--text-primary);font:600 15px var(--font-body);cursor:pointer">{issue.label}</button>)}</div></div>
-</div>
-<div style="background:var(--surface-page);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:18px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--text-tertiary)">{c.s05_tim_giai_phap.t5}</span>
-<h3 id="rec-title" style="margin:0;font:var(--type-num)">{c.finder_crops[0] + ' · ' + c.finder_issues[defaultIssue].label.toLowerCase()}</h3>
-{c.finder_issues.map(({ steps }, i) => <div data-rec={i} hidden={i !== defaultIssue} style="display:flex;flex-direction:column;gap:10px">{steps.map((t, k) => <div style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:baseline"><span style="font:700 14px var(--font-mono);color:var(--green-600)">{String(k + 1).padStart(2, '0')}</span><span>{t}</span></div>)}</div>)}
-<span style="font-size:14px;color:var(--text-tertiary)">{c.s05_tim_giai_phap.t6}</span>
-<div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--border-default)">
-{callNumber && <a href={`tel:${callNumber}`} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg">Gọi kỹ sư tư vấn</Button></a>}
-<a href={url('lien-he', 'lien-he-form')} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg" variant="secondary">{c.s05_tim_giai_phap.t7}</Button></a>
-</div>
+<section id="mo-hinh" style="background:var(--surface-page);scroll-margin-top:120px">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap"><div style="display:flex;flex-direction:column;gap:14px;max-width:640px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s06_mo_hinh_thuc_te.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s06_mo_hinh_thuc_te.t2}</h2></div><a href={listUrl('nd')} style="font-weight:600">{c.s06_mo_hinh_thuc_te.t3}</a></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/3),calc((1068px - 100%)*999),100%),1fr));gap:24px">
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="model-1" shape="rect" placeholder="Mô hình lúa" image={c.s06_mo_hinh_thuc_te.img_model_1_1} cms="src/content/pages/giai-phap.json#s06_mo_hinh_thuc_te.img_model_1_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:10px"><span style="font:600 12px var(--font-mono);color:var(--green-600)">{c.s06_mo_hinh_thuc_te.t4}</span><strong style="font-size:19px;line-height:1.35">{c.s06_mo_hinh_thuc_te.t5}</strong><div style="display:flex;gap:28px;padding-top:10px;border-top:1px solid var(--border-default)"><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t6}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t7}</span></div><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t8}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t9}</span></div></div></div></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="model-2" shape="rect" placeholder="Mô hình cà phê" image={c.s06_mo_hinh_thuc_te.img_model_2_1} cms="src/content/pages/giai-phap.json#s06_mo_hinh_thuc_te.img_model_2_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:10px"><span style="font:600 12px var(--font-mono);color:var(--green-600)">{c.s06_mo_hinh_thuc_te.t10}</span><strong style="font-size:19px;line-height:1.35">{c.s06_mo_hinh_thuc_te.t11}</strong><div style="display:flex;gap:28px;padding-top:10px;border-top:1px solid var(--border-default)"><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t12}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t13}</span></div><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t14}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t15}</span></div></div></div></div>
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="model-3" shape="rect" placeholder="Mô hình cây ăn quả" image={c.s06_mo_hinh_thuc_te.img_model_3_1} cms="src/content/pages/giai-phap.json#s06_mo_hinh_thuc_te.img_model_3_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:10px"><span style="font:600 12px var(--font-mono);color:var(--green-600)">{c.s06_mo_hinh_thuc_te.t16}</span><strong style="font-size:19px;line-height:1.35">{c.s06_mo_hinh_thuc_te.t17}</strong><div style="display:flex;gap:28px;padding-top:10px;border-top:1px solid var(--border-default)"><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t18}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t19}</span></div><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t20}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t21}</span></div></div></div></div>
 </div></div></section>
 
-<section id="theo-van-de" style="background:var(--surface-page);scroll-margin-top:120px">
+<section id="theo-van-de" style="background:var(--surface-card);scroll-margin-top:120px">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:32px">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
 <div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{v.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{v.t2}</h2></div>
@@ -123,28 +100,123 @@ const defaultIssue = c.finder_issues.length - 1;
 </div>
 ))}
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 72px;align-items:start;margin-top:clamp(24px,4vw,48px);padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--border-default)">
-<div style="display:flex;flex-direction:column;gap:16px;position:sticky;top:140px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{v.faq_eyebrow}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{v.faq_title}</h2>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{v.faq_intro}</p>
-<div style="position:relative;aspect-ratio:4/3;margin-top:8px;border-radius:16px;overflow:hidden"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="faq-photo" shape="rounded" radius="16" placeholder="Kỹ sư Tiến Nông giải đáp thắc mắc cho bà con trên đồng ruộng" image={v.faq_image} cms="src/content/pages/giai-phap.json#s03_theo_van_de.faq_image" sizes="(max-width: 767px) 92vw, 520px" /></div>
+</div></section>
+
+<section id="tim-giai-phap" style="background:var(--surface-page);scroll-margin-top:120px">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 64px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s05_tim_giai_phap.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s05_tim_giai_phap.t2}</h2></div>
+<div style="display:flex;flex-direction:column;gap:10px"><span style="font-weight:600">{c.s05_tim_giai_phap.t3}</span><div style="display:flex;gap:8px;flex-wrap:wrap">{c.finder_crops.map((crop, k) => <button type="button" class="chip" data-chip="crop" data-k={k} aria-pressed={k === 0 ? 'true' : 'false'} style="padding:8px 16px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);color:var(--text-primary);font:600 15px var(--font-body);cursor:pointer">{crop}</button>)}</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><span style="font-weight:600">{c.s05_tim_giai_phap.t4}</span><div style="display:flex;gap:8px;flex-wrap:wrap">{c.finder_issues.map((issue, k) => <button type="button" class="chip" data-chip="issue" data-k={k} aria-pressed={k === defaultIssue ? 'true' : 'false'} style="padding:8px 16px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);color:var(--text-primary);font:600 15px var(--font-body);cursor:pointer">{issue.label}</button>)}</div></div>
 </div>
-<div data-accordion style="display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
+<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:18px;box-shadow:0 10px 30px rgba(0,71,35,.06)">
+<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--text-tertiary)">{c.s05_tim_giai_phap.t5}</span>
+<h3 id="rec-title" style="margin:0;font:var(--type-num)">{c.finder_crops[0] + ' · ' + c.finder_issues[defaultIssue].label.toLowerCase()}</h3>
+{c.finder_issues.map(({ steps }, i) => <div data-rec={i} hidden={i !== defaultIssue} style="display:flex;flex-direction:column;gap:10px">{steps.map((t, k) => <div style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:baseline"><span style="font:700 14px var(--font-mono);color:var(--green-600)">{String(k + 1).padStart(2, '0')}</span><span>{t}</span></div>)}</div>)}
+<span style="font-size:14px;color:var(--text-tertiary)">{c.s05_tim_giai_phap.t6}</span>
+<div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--border-default)">
+{callNumber && <a href={`tel:${callNumber}`} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg">Gọi kỹ sư tư vấn</Button></a>}
+<a href={url('lien-he', 'lien-he-form')} style="text-decoration:none;display:inline-flex"><Button as="span" size="lg" variant="secondary">{c.s05_tim_giai_phap.t7}</Button></a>
+</div>
+</div></div></section>
+
+<section id="hoi-dap" class="gp-faq">
+<div class="gp-wrap">
+<div class="gp-head"><div class="gp-head__title"><span class="gp-eyebrow">{v.faq_eyebrow}</span><h2>{v.faq_title}</h2></div><p class="jx-justify">{v.faq_intro}</p></div>
+<label class="gp-faq__search"><span>{v.faq_search_label}</span><input id="faq-q" type="search" placeholder={v.faq_search_placeholder} autocomplete="off" /></label>
+<div class="gp-faq__grid">
+<div class="gp-faq__side">
+<div class="gp-faq__cats" role="tablist" aria-label={v.faq_title}>
+<button type="button" role="tab" data-faq-cat="" aria-selected="true">{v.faq_all}<i>{c.problems.length}</i></button>
+{c.faq_categories.map((cat) => { const n = c.problems.filter((p) => p.category === cat).length; return n > 0 && <button type="button" role="tab" data-faq-cat={cat} aria-selected="false">{cat}<i>{n}</i></button>; })}
+</div>
+<div class="gp-faq__photo"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="faq-photo" shape="rounded" radius="16" placeholder="Kỹ sư Tiến Nông giải đáp thắc mắc cho bà con trên đồng ruộng" image={v.faq_image} cms="src/content/pages/giai-phap.json#s03_theo_van_de.faq_image" sizes="(max-width: 767px) 92vw, 380px" /></div>
+</div>
+<div>
+<div data-accordion class="gp-faq__list">
 {c.problems.map((p, k) => (
-<div style="border-bottom:1px solid var(--border-default)">
-<button type="button" data-acc aria-expanded={k === 0 ? 'true' : 'false'} aria-controls={`pb-${k}`} style="width:100%;display:flex;gap:16px;align-items:baseline;text-align:left;padding:22px 0;border:0;background:none;cursor:pointer;font:700 19px/1.35 var(--font-body);color:var(--text-primary)"><span style="font:600 14px var(--font-mono);color:var(--green-600)">{String(k + 1).padStart(2, '0')}</span><span style="flex:1">{p.title}</span><span data-acc-sign style="font:400 22px var(--font-body);color:var(--green-600)">{k === 0 ? '−' : '+'}</span></button>
-<div id={`pb-${k}`} hidden={k !== 0} style="padding:0 0 24px 38px;display:flex;flex-direction:column;gap:12px"><div style="color:var(--text-secondary);white-space:pre-line"><strong style="color:var(--text-primary);display:block;margin-bottom:4px">{c.problems_cause_label}</strong>{p.cause}</div><div style="background:var(--green-50);border-radius:var(--radius-md);padding:14px 16px"><strong style="color:var(--green-800)">{c.problems_fix_label} </strong>{p.fix}</div></div>
+<div class="gp-faq__item" data-faq-item data-cat={p.category} data-text={`${p.title} ${p.cause} ${p.fix}`.toLowerCase()}>
+<button type="button" data-acc aria-expanded="false" aria-controls={`pb-${k}`}><span class="gp-faq__q">{p.title}</span><span data-acc-sign aria-hidden="true">+</span></button>
+<div id={`pb-${k}`} hidden class="gp-faq__a"><div class="gp-faq__cause"><strong>{c.problems_cause_label}</strong>{p.cause}</div><div class="gp-faq__fix"><strong>{c.problems_fix_label} </strong>{p.fix}</div></div>
 </div>
 ))}
-</div></div>
-</div></section>
+</div>
+<p id="faq-empty" class="gp-faq__empty" hidden>{v.faq_empty}</p>
+</div>
+</div></div></section>
 
 <CtaBand title={c.s07_phan_7.t1} text={c.s07_phan_7.t2} primary={{ label: c.s07_phan_7.t3, href: url('giai-phap-du-an') }} />
 </Layout>
 
 <style>
-  .issue-flow { display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr) 28px minmax(0, 1.15fr); align-items: stretch; gap: 8px; }
+  .gp-hbtn { display: inline-flex; align-items: center; gap: 14px; min-height: 48px; padding: 0 22px; border-radius: var(--radius-btn); background: #fff; color: var(--green-700); font-weight: 700; text-decoration: none; }
+  .gp-hbtn:hover { background: var(--green-50); color: var(--green-800); text-decoration: none; }
+  .gp-hbtn--solid { background: var(--brand-bright); color: #fff; }
+  .gp-hbtn--solid:hover { background: var(--green-500); color: #fff; }
+  .gp-hbtn span { font-size: 14px; }
+  .gp-wrap { max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 104px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; gap: 36px; }
+  .gp-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 64px; align-items: end; }
+  .gp-head__title { display: flex; flex-direction: column; gap: 14px; }
+  .gp-head h2 { margin: 0; font: var(--type-h2); letter-spacing: -.01em; text-wrap: balance; }
+  .gp-head p { margin: 0; color: var(--text-secondary); font-size: var(--fs-body); line-height: 1.6; }
+  .gp-eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; color: var(--green-600); }
+  /* Crop tiles: 4 × 2 small photos, name bottom left, arrow bottom right. */
+  .gp-crops { background: var(--surface-card); }
+  .gp-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .gp-tile { position: relative; display: block; aspect-ratio: 16 / 10.5; border-radius: var(--radius-lg); overflow: hidden; color: #fff; text-decoration: none; isolation: isolate;
+    background: linear-gradient(150deg, #1f7a43 0%, var(--green-800) 70%); }
+  .gp-tile[data-empty-tile]::before { content: ''; position: absolute; right: -14%; bottom: -26%; width: 70%; aspect-ratio: 1; background: var(--leaf) center / contain no-repeat; opacity: .1; }
+  .gp-tile__img { position: absolute; inset: 0; transition: transform .5s var(--ease-out); }
+  .gp-tile::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(2, 53, 26, .78) 0%, rgba(2, 53, 26, .1) 55%, rgba(2, 53, 26, 0) 100%); pointer-events: none; }
+  .gp-tile__name { position: absolute; left: 18px; bottom: 16px; z-index: 1; font: 700 18px/1.25 var(--font-display); }
+  .gp-tile__go { position: absolute; right: 14px; bottom: 14px; z-index: 1; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: rgba(255, 255, 255, .18); font-size: 14px; transition: background var(--motion-fast), color var(--motion-fast); }
+  .gp-tile:hover { color: #fff; text-decoration: none; }
+  .gp-tile:hover .gp-tile__img { transform: scale(1.05); }
+  .gp-tile:hover .gp-tile__go { background: var(--brand-highlight); color: var(--green-900); }
+  /* FAQ: search on top; categories and the photo on the left, questions on the right. */
+  .gp-faq { background: var(--surface-card); scroll-margin-top: 120px; }
+  .gp-faq__search { display: flex; flex-direction: column; gap: 8px; }
+  .gp-faq__search span { font: var(--type-eyebrow); letter-spacing: .08em; color: var(--text-tertiary); }
+  .gp-faq__search input { width: 100%; padding: 14px 18px 14px 46px; border-radius: var(--radius-md); border: 1px solid var(--border-default); background: var(--surface-page) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%23005e31' stroke-width='2' viewBox='0 0 24 24'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") 16px center no-repeat;
+    font: 16px var(--font-body); color: var(--text-primary); outline-color: var(--green-500); }
+  .gp-faq__grid { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 32px clamp(32px, 4vw, 56px); align-items: start; }
+  .gp-faq__side { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 120px; }
+  .gp-faq__cats { display: flex; flex-direction: column; gap: 8px; }
+  .gp-faq__cats button { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 18px; border-radius: var(--radius-md); border: 1px solid var(--border-default); background: var(--surface-page);
+    font: 600 15px/1.35 var(--font-body); color: var(--text-primary); text-align: left; cursor: pointer; transition: background var(--motion-fast), border-color var(--motion-fast), color var(--motion-fast); }
+  .gp-faq__cats button i { font-style: normal; font: 600 12px/1 var(--font-display); min-width: 26px; padding: 5px 7px; border-radius: 999px; background: var(--surface-card); color: var(--text-secondary); text-align: center; }
+  .gp-faq__cats button:hover { border-color: var(--green-300); }
+  .gp-faq__cats button[aria-selected='true'] { background: var(--green-800); border-color: var(--green-800); color: #fff; }
+  .gp-faq__cats button[aria-selected='true'] i { background: var(--brand-highlight); color: var(--green-900); }
+  .gp-faq__photo { position: relative; aspect-ratio: 4 / 3; border-radius: 16px; overflow: hidden; }
+  .gp-faq__list { display: flex; flex-direction: column; gap: 10px; }
+  .gp-faq__item { border: 1px solid var(--border-default); border-radius: var(--radius-md); background: var(--surface-card); transition: border-color var(--motion-fast), box-shadow var(--motion-fast); }
+  .gp-faq__item[hidden] { display: none; }
+  .gp-faq__item:has([aria-expanded='true']) { border-color: var(--green-400); box-shadow: 0 8px 22px rgba(0, 71, 35, .07); }
+  .gp-faq__item > button { width: 100%; display: flex; gap: 16px; align-items: center; text-align: left; padding: 18px 20px; border: 0; background: none; cursor: pointer; font: 700 17px/1.4 var(--font-body); color: var(--text-primary); }
+  .gp-faq__q { flex: 1; }
+  .gp-faq__item [data-acc-sign] { flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--green-50); color: var(--green-700); font: 500 20px/1 var(--font-body); }
+  .gp-faq__a { padding: 0 20px 20px; display: flex; flex-direction: column; gap: 12px; }
+  .gp-faq__cause { color: var(--text-secondary); white-space: pre-line; }
+  .gp-faq__cause strong { color: var(--text-primary); display: block; margin-bottom: 4px; }
+  .gp-faq__fix { background: var(--green-50); border-radius: var(--radius-md); padding: 14px 16px; }
+  .gp-faq__fix strong { color: var(--green-800); }
+  .gp-faq__empty { margin: 0; padding: 28px; text-align: center; border: 1px dashed var(--border-strong); border-radius: var(--radius-md); color: var(--text-secondary); }
+  @media (max-width: 1023.98px) {
+    .gp-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .gp-head { grid-template-columns: minmax(0, 1fr); }
+    .gp-faq__grid { grid-template-columns: minmax(0, 1fr); }
+    .gp-faq__side { position: static; }
+    .gp-faq__cats { flex-direction: row; flex-wrap: wrap; }
+    .gp-faq__cats button { padding: 10px 14px; }
+    .gp-faq__photo { display: none; }
+  }
+  @media (max-width: 599.98px) {
+    .gp-tiles { gap: 10px; }
+    .gp-tile__name { left: 12px; bottom: 12px; font-size: 15px; }
+    .gp-tile__go { display: none; }
+  }
+  .issue-flow { display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1.25fr) 28px minmax(0, 1.15fr); align-items: stretch; gap: 8px; }
   .issue-flow[hidden] { display: none; }
   .issue-step { background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
   .issue-step__label { display: flex; align-items: center; gap: 8px; font: 700 12px var(--font-mono); letter-spacing: .1em; color: var(--green-600); }
@@ -158,6 +230,37 @@ const defaultIssue = c.finder_issues.length - 1;
 </style>
 
 <script>
+  // Crop tiles: jump to the finder with that crop selected.
+  document.querySelectorAll<HTMLElement>('[data-crop-pick]').forEach((t) => t.addEventListener('click', () => {
+    const name = (t.dataset.cropPick || '').trim().toLowerCase();
+    const chip = [...document.querySelectorAll<HTMLButtonElement>('[data-chip="crop"]')].find((c) => c.textContent!.trim().toLowerCase() === name);
+    chip?.click();
+  }));
+
+  // FAQ: category list + keyword search filter the questions.
+  const faqItems = [...document.querySelectorAll<HTMLElement>('[data-faq-item]')];
+  const faqCats = [...document.querySelectorAll<HTMLButtonElement>('[data-faq-cat]')];
+  const faqQ = document.getElementById('faq-q') as HTMLInputElement | null;
+  const faqEmpty = document.getElementById('faq-empty')!;
+  let faqCat = '';
+  const fold = (x: string) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').toLowerCase();
+  const filterFaq = () => {
+    const words = fold(faqQ?.value || '').split(/\s+/).filter(Boolean);
+    let n = 0;
+    faqItems.forEach((it) => {
+      const text = fold(it.dataset.text || '');
+      const ok = (!faqCat || it.dataset.cat === faqCat) && words.every((w) => text.includes(w));
+      it.hidden = !ok; if (ok) n++;
+    });
+    faqEmpty.hidden = n > 0;
+  };
+  faqCats.forEach((b) => b.addEventListener('click', () => {
+    faqCat = b.dataset.faqCat || '';
+    faqCats.forEach((x) => x.setAttribute('aria-selected', String(x === b)));
+    filterFaq();
+  }));
+  faqQ?.addEventListener('input', filterFaq);
+
   // "Theo vấn đề": one chip per issue, showing its problem → why → solution panel.
   const issueTabs = [...document.querySelectorAll<HTMLButtonElement>('[data-issue-tab]')];
   issueTabs.forEach((tab) => tab.addEventListener('click', () => {

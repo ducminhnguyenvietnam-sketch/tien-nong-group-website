@@ -80,6 +80,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 6-10-3+3SiO₂hh Tiến Nông (Ngô Chuyên Lót) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/cay-ngo-chuyen-lot/

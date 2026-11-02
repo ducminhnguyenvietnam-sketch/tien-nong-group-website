@@ -30,23 +30,17 @@ Một số hình ảnh của ngày làm việc:
   
 *Các đại biểu thăm Nhà máy sản xuất phân bón Tiến Nông 3*
 
-*
 
 ![Giao lưu chia sẻ kinh nghiệm giữa Công ty CP Mía đường Nông cống và Công ty CP CNN Tiến Nông](/uploads/tin-cu/2014/giao-luu-chia-se-kinh-nghiem-giua-cong-ty-cp-mia-duong-nong-cong-va-cong-ty-cp-1.webp)
 
-*
 *Các đại biểu đi thăm Trung tâm Nghiên cứu & PT Khoa học Công nghệ Tiến Nông*
 
-*
 
 ![Giao lưu chia sẻ kinh nghiệm giữa Công ty CP Mía đường Nông cống và Công ty CP CNN Tiến Nông](/uploads/tin-cu/2014/giao-luu-chia-se-kinh-nghiem-giua-cong-ty-cp-mia-duong-nong-cong-va-cong-ty-cp-2.webp)
 
-*
 *Ông Ngô Văn Long – TGĐ Công ty Mía đường Nông Cống thăm quan Nhà máy Bỉm Sơn*
 
-*
 
 ![Giao lưu chia sẻ kinh nghiệm giữa Công ty CP Mía đường Nông cống và Công ty CP CNN Tiến Nông](/uploads/tin-cu/2014/giao-luu-chia-se-kinh-nghiem-giua-cong-ty-cp-mia-duong-nong-cong-va-cong-ty-cp-3.webp)
 
-*
 *Đoàn thăm mô hình trồng mía chất lượng cao tại xã Thành Tâm – Huyện Thạch Thành*

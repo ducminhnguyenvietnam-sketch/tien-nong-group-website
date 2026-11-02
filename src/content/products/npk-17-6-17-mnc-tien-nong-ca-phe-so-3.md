@@ -80,6 +80,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 17-6-17+MNC Tiến Nông (Cà Phê Số 3) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/ca-phe-so-3/

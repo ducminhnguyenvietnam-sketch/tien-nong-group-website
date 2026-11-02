@@ -7,8 +7,8 @@
     "t1": "Trang chủ",
     "t2": "/ Trở thành đối tác",
     "eyebrow": "TRỞ THÀNH ĐỐI TÁC",
-    "title": "Cùng lớn lên với Tiến Nông, từ cửa hàng đầu tiên đến nhà phân phối của cả vùng",
-    "intro": "Hơn 200 nhà phân phối và 10.000 điểm bán lẻ ở 34 tỉnh, thành đang đồng hành cùng Tiến Nông. Nhiều đối tác đã gắn bó hàng chục năm — có gia đình đã sang thế hệ thứ hai. Chúng tôi tìm những người cùng chung một cách làm: bán đúng hàng, tư vấn tận tâm và đi đường dài với bà con.",
+    "title": "Cùng Tiến Nông mang khoa học đến từng thửa ruộng",
+    "intro": "Hơn 200 nhà phân phối và 10.000 điểm bán lẻ tại 34 tỉnh, thành đang đồng hành cùng Tiến Nông. Chúng tôi tìm đối tác cùng cách làm: bán đúng hàng, tư vấn tận tâm, gắn bó lâu dài với nhà nông.",
     "button1": "Liên hệ giám đốc khu vực",
     "button2": "Các hình thức hợp tác",
     "image": {
@@ -42,89 +42,69 @@
   ],
   "models": {
     "eyebrow": "HÌNH THỨC HỢP TÁC",
-    "title": "Bạn là ai, chúng tôi hợp tác theo cách phù hợp",
+    "title": "Hình thức hợp tác phù hợp với từng đối tác",
     "intro": "",
     "items": [
       {
-        "title": "Đại lý & cửa hàng vật tư nông nghiệp",
+        "title": "Đại lý, cửa hàng vật tư nông nghiệp",
         "who": "Cửa hàng bán lẻ phân bón, vật tư tại xã, thị trấn.",
-        "get": "Nguồn hàng qua nhà phân phối khu vực, biển hiệu, ấn phẩm, kỹ sư hỗ trợ tư vấn cho bà con.",
-        "link_label": "Gặp người phụ trách khu vực →",
+        "get": "Nguồn hàng từ nhà phân phối khu vực; biển hiệu, ấn phẩm và kỹ sư hỗ trợ tư vấn.",
+        "link_label": "Liên hệ phụ trách khu vực →",
         "link": "#lien-he-khu-vuc"
       },
       {
         "title": "Nhà phân phối khu vực",
-        "who": "Doanh nghiệp phân phối có kho bãi, hệ thống đại lý cấp 2 trong huyện, tỉnh.",
-        "get": "Chính sách phân phối theo vùng, hỗ trợ phát triển đại lý, hội nghị khách hàng và chương trình tri ân hằng năm.",
-        "link_label": "Gặp người phụ trách khu vực →",
+        "who": "Doanh nghiệp có kho bãi và hệ thống đại lý trong huyện, tỉnh.",
+        "get": "Chính sách phân phối theo vùng, hỗ trợ phát triển đại lý, hội nghị khách hàng hằng năm.",
+        "link_label": "Liên hệ phụ trách khu vực →",
         "link": "#lien-he-khu-vuc"
       },
       {
         "title": "Dự án, trang trại, hợp tác xã",
-        "who": "Vùng nguyên liệu, trang trại, doanh nghiệp nông nghiệp cần giải pháp dinh dưỡng theo quy mô.",
-        "get": "Phân tích đất, công thức dinh dưỡng riêng và kỹ sư theo dõi suốt vụ.",
+        "who": "Vùng nguyên liệu, trang trại, doanh nghiệp nông nghiệp quy mô lớn.",
+        "get": "Phân tích đất, công thức dinh dưỡng riêng, kỹ sư theo dõi suốt vụ.",
         "link_label": "Giải pháp cho dự án →",
         "link": "/giai-phap-du-an/"
       },
       {
-        "title": "Hội Nông dân & tổ chức đoàn thể",
-        "who": "Hội Nông dân các cấp, tổ chức muốn hỗ trợ hội viên tiếp cận vật tư chất lượng.",
-        "get": "Chương trình phân bón trả chậm: hội viên nhận phân trước, thanh toán sau thu hoạch.",
+        "title": "Hội Nông dân, tổ chức đoàn thể",
+        "who": "Hội Nông dân các cấp, tổ chức hỗ trợ hội viên tiếp cận vật tư chất lượng.",
+        "get": "Chương trình phân bón trả chậm: nhận phân trước, thanh toán sau thu hoạch.",
         "link_label": "Về phân bón trả chậm →",
         "link": "/nong-dan/#tra-cham"
       }
-    ]
-  },
-  "why": {
-    "eyebrow": "VÌ SAO CHỌN TIẾN NÔNG",
-    "title": "Bán được hàng, giữ được uy tín, đi được đường dài",
-    "items": [
-      {
-        "title": "Hàng dễ bán",
-        "text": "Thương hiệu hơn 30 năm, sáu lần đạt Sao Vàng Đất Việt; hơn 100 sản phẩm cho đủ loại cây trồng và vùng đất."
-      },
-      {
-        "title": "Ít rủi ro",
-        "text": "Công nghệ chống đóng cục giúp hàng giữ chất lượng khi lưu kho; mã QR trên từng bao giúp bà con phân biệt hàng thật, bảo vệ uy tín của đại lý."
-      },
-      {
-        "title": "Có người kéo khách",
-        "text": "Kỹ sư Tiến Nông cùng đại lý tổ chức hội thảo đầu bờ, mô hình trình diễn — tạo nhu cầu ngay tại điểm bán."
-      },
-      {
-        "title": "Cùng nhau lớn lên",
-        "text": "Câu lạc bộ nhà phân phối, hội nghị khách hàng, chương trình tri ân — quan hệ được giữ qua nhiều năm, nhiều thế hệ."
-      }
-    ]
+    ],
+    "who_label": "Đối tượng",
+    "get_label": "Quyền lợi chính"
   },
   "benefits": {
     "eyebrow": "QUYỀN LỢI",
     "title": "Đối tác của Tiến Nông được gì?",
-    "intro": "Tiến Nông xây dựng quan hệ hợp tác dài hạn, cùng chia sẻ lợi ích với đại lý và nhà phân phối.",
+    "intro": "Quan hệ hợp tác dài hạn, minh bạch và cùng chia sẻ lợi ích.",
     "items": [
       {
         "title": "Nguồn hàng ổn định",
         "text": "Sản phẩm từ ba nhà máy đạt ISO 9001:2015 và ISO 14001:2015, cung ứng đúng hẹn quanh năm."
       },
       {
+        "title": "Hàng chính hãng, có mã QR",
+        "text": "Mỗi bao có mã QR truy xuất nguồn gốc: bà con nhận biết hàng thật, điểm bán giữ được uy tín."
+      },
+      {
         "title": "Chính sách minh bạch",
-        "text": "Giá thống nhất theo vùng; chiết khấu theo sản lượng và thưởng doanh số theo mùa vụ."
+        "text": "Giá thống nhất theo vùng; chiết khấu theo sản lượng, thưởng doanh số theo mùa vụ."
       },
       {
         "title": "Kỹ sư hỗ trợ tận ruộng",
         "text": "Cùng đại lý tư vấn cho bà con, tổ chức hội thảo đầu bờ và mô hình trình diễn."
       },
       {
-        "title": "Hỗ trợ bán hàng",
-        "text": "Biển hiệu, ấn phẩm, tài liệu kỹ thuật và chương trình khuyến mại theo mùa vụ."
-      },
-      {
-        "title": "Đào tạo chuyên môn",
-        "text": "Tập huấn sản phẩm, kỹ thuật canh tác và kỹ năng tư vấn cho đội ngũ đại lý."
+        "title": "Hỗ trợ bán hàng, đào tạo",
+        "text": "Biển hiệu, ấn phẩm, khuyến mại theo mùa vụ; tập huấn sản phẩm và kỹ năng tư vấn."
       },
       {
         "title": "Tri ân đối tác",
-        "text": "Hội nghị khách hàng, tham quan và khen thưởng đại lý, nhà phân phối tiêu biểu hằng năm."
+        "text": "Hội nghị khách hàng, tham quan, khen thưởng đại lý và nhà phân phối tiêu biểu hằng năm."
       }
     ],
     "image": {
@@ -135,7 +115,7 @@
     }
   },
   "spotlight": {
-    "eyebrow": "CÂU CHUYỆN ĐỐI TÁC",
+    "eyebrow": "NIỀM TIN ĐƯỢC TIẾP NỐI",
     "title": "Những người đã đi cùng Tiến Nông",
     "intro": "Trích từ chuỗi bài “Hành trình tri ân – kết nối niềm tin” năm 2026, khi Tiến Nông đến thăm những nhà phân phối gắn bó lâu năm.",
     "partners": [
@@ -162,7 +142,8 @@
           "zoom": "100",
           "alt": "Gia đình nhà phân phối Lựu Sướng cùng đoàn Tiến Nông"
         },
-        "link": "/tin-tuc/hanh-trinh-tri-an-ket-noi-niem-tin-ky-2-7-500-tan-phan-bon-khong-don-thuan-chi/"
+        "link": "/tin-tuc/hanh-trinh-tri-an-ket-noi-niem-tin-ky-2-7-500-tan-phan-bon-khong-don-thuan-chi/",
+        "line": "Từ ngày đầu đồng hành, hai thế hệ cùng gìn giữ cửa hàng và niềm tin của bà con."
       },
       {
         "kind": "TỪ ĐƠN HÀNG ĐẦU TIÊN",
@@ -183,7 +164,8 @@
           "zoom": "100",
           "alt": "Biển hiệu nhà phân phối Mạnh Mùi, Ninh Bình"
         },
-        "link": "/tin-tuc/hanh-trinh-tri-an-ket-noi-niem-tin-ky-3-tu-khoi-dau-kho-khan-toi-doanh-thu-1000/"
+        "link": "/tin-tuc/hanh-trinh-tri-an-ket-noi-niem-tin-ky-3-tu-khoi-dau-kho-khan-toi-doanh-thu-1000/",
+        "line": "Năm lần chào hàng cho đơn đầu tiên, nay là lựa chọn quen thuộc của nhà vườn trồng dứa."
       },
       {
         "kind": "GẦN 30 NĂM GẮN BÓ",
@@ -204,7 +186,8 @@
           "zoom": "100",
           "alt": "Bức Năm điều tâm niệm treo trong nhà nhà phân phối Thiên Trang Cung Huề"
         },
-        "link": "/tin-tuc/hanh-trinh-tri-an-ket-noi-niem-tin-ky-5-nhung-khach-hang-nghin-tan-cua-tien/"
+        "link": "/tin-tuc/hanh-trinh-tri-an-ket-noi-niem-tin-ky-5-nhung-khach-hang-nghin-tan-cua-tien/",
+        "line": "Gần 30 năm gắn bó, một mối quan hệ không chỉ là làm ăn."
       },
       {
         "kind": "ĐANG TĂNG TRƯỞNG",
@@ -225,71 +208,61 @@
           "zoom": "100",
           "alt": "Đoàn Tiến Nông thăm nhà phân phối tại Nghệ An"
         },
-        "link": "/tin-tuc/hanh-trinh-tri-an-ket-noi-niem-tin-ky-5-nhung-khach-hang-nghin-tan-cua-tien/"
+        "link": "/tin-tuc/hanh-trinh-tri-an-ket-noi-niem-tin-ky-5-nhung-khach-hang-nghin-tan-cua-tien/",
+        "line": "Phân phối Tiến Nông từ năm 2015, chủ động chọn tập trung vào sản phẩm Tiến Nông."
       }
-    ]
-  },
-  "club": {
-    "eyebrow": "CỘNG ĐỒNG NHÀ PHÂN PHỐI",
-    "title": "Câu lạc bộ nhà phân phối Tiến Nông",
-    "text": "Các nhà phân phối trong cùng một tỉnh tự nguyện lập câu lạc bộ để đoàn kết, chia sẻ kinh nghiệm và cùng triển khai chiến lược của Tiến Nông trên địa bàn — như CLB Nhà phân phối Tiến Nông Hà Tĩnh ra mắt ngày 27/11/2020 và gặp mặt, tổng kết hằng năm.",
-    "image": {
-      "src": "/uploads/tin-cu/2020/le-ra-mat-clb-nha-phan-phoi-tien-nong-ha-tinh-1.webp",
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Lễ ra mắt CLB Nhà phân phối Tiến Nông Hà Tĩnh"
-    },
-    "link": "/tin-tuc/le-ra-mat-clb-nha-phan-phoi-tien-nong-ha-tinh/"
+    ],
+    "card_label": "CÂU CHUYỆN ĐỐI TÁC"
   },
   "process": {
     "eyebrow": "QUY TRÌNH",
-    "title": "Năm bước để trở thành đối tác",
+    "title": "Năm bước trở thành đối tác",
     "steps": [
       {
         "title": "Gửi đăng ký",
-        "text": "Để lại thông tin qua biểu mẫu hoặc gọi trực tiếp giám đốc kinh doanh phụ trách tỉnh của bạn."
+        "text": "Để lại thông tin hoặc gọi giám đốc kinh doanh phụ trách tỉnh."
       },
       {
         "title": "Trao đổi nhu cầu",
-        "text": "Giám đốc kinh doanh khu vực liên hệ, tìm hiểu địa bàn và mô hình kinh doanh của bạn."
+        "text": "Tìm hiểu địa bàn và mô hình kinh doanh của bạn."
       },
       {
         "title": "Khảo sát điểm bán",
-        "text": "Cán bộ Tiến Nông đến xem cửa hàng, kho bãi và thị trường xung quanh."
+        "text": "Cán bộ Tiến Nông xem cửa hàng, kho bãi và thị trường."
       },
       {
         "title": "Ký kết hợp tác",
-        "text": "Thống nhất chính sách theo vùng, sản phẩm phù hợp và kế hoạch theo mùa vụ."
+        "text": "Thống nhất chính sách vùng, sản phẩm và kế hoạch mùa vụ."
       },
       {
-        "title": "Khai trương & đồng hành",
-        "text": "Nhận hàng, tập huấn sản phẩm, cùng tổ chức hội thảo cho bà con ngay vụ đầu."
+        "title": "Khai trương, đồng hành",
+        "text": "Nhận hàng, tập huấn và cùng tổ chức hội thảo ngay vụ đầu."
       }
     ]
   },
   "conditions": {
     "eyebrow": "ĐIỀU KIỆN",
     "title": "Điều kiện trở thành đối tác",
-    "intro": "Tiến Nông hợp tác với cửa hàng vật tư nông nghiệp và doanh nghiệp phân phối đáp ứng các điều kiện sau.",
+    "intro": "Áp dụng cho cửa hàng vật tư nông nghiệp và doanh nghiệp phân phối.",
     "items": [
       {
         "title": "Pháp lý đầy đủ",
-        "text": "Đăng ký kinh doanh và Giấy chứng nhận đủ điều kiện buôn bán phân bón theo quy định."
+        "text": "Đăng ký kinh doanh và Giấy chứng nhận đủ điều kiện buôn bán phân bón."
       },
       {
         "title": "Cửa hàng và kho bảo quản",
-        "text": "Điểm bán thuận tiện; kho khô ráo, thoáng mát, bảo quản phân bón đúng quy cách."
+        "text": "Điểm bán thuận tiện; kho khô ráo, thoáng mát, đúng quy cách."
       },
       {
         "title": "Năng lực tài chính",
-        "text": "Đủ khả năng nhập hàng theo mùa vụ và thanh toán theo chính sách đã thống nhất."
+        "text": "Nhập hàng theo mùa vụ và thanh toán theo chính sách đã thống nhất."
       },
       {
         "title": "Kinh doanh chính trực",
-        "text": "Bán đúng giá, đúng hàng chính hãng và tư vấn tận tâm cho bà con."
+        "text": "Bán đúng giá, đúng hàng chính hãng, tư vấn tận tâm cho bà con."
       }
     ],
-    "note": "Chính sách cụ thể theo từng khu vực do giám đốc kinh doanh phụ trách tư vấn trực tiếp.",
+    "note": "Chính sách cụ thể theo khu vực do giám đốc kinh doanh phụ trách tư vấn trực tiếp.",
     "image": {
       "src": "/uploads/tin-cu/2026/hanh-trinh-tri-an-ket-noi-niem-tin-chu-tich-hdqt-tien-nong-group-nguyen-xuan-4.webp",
       "focus": "center",
@@ -297,23 +270,9 @@
       "alt": "Kho hàng của nhà phân phối Tiến Nông"
     }
   },
-  "expansion": {
-    "eyebrow": "ĐANG MỞ RỘNG",
-    "title": "Khu vực ưu tiên phát triển nhà phân phối",
-    "text": "Tiến Nông đang tìm kiếm nhà phân phối tại các tỉnh phía Bắc, ưu tiên những địa bàn sau. Nếu bạn ở khu vực khác, vẫn có thể gửi đăng ký.",
-    "areas": [
-      "Cao Bằng",
-      "Lạng Sơn",
-      "Quảng Ninh",
-      "Hải Phòng",
-      "Tuyên Quang (khu vực Hà Giang cũ)",
-      "Điện Biên"
-    ],
-    "link": "/tin-tuc/tien-nong-mo-rong-he-thong-phan-phoi-tim-kiem-doi-tac-kinh-doanh-phan-bon/"
-  },
   "faq": {
     "eyebrow": "HỎI ĐÁP",
-    "title": "Những câu đối tác hay hỏi",
+    "title": "Câu hỏi thường gặp",
     "items": [
       {
         "q": "Cần chuẩn bị gì để trở thành đại lý?",
@@ -366,7 +325,14 @@
         "Quảng Ninh",
         "Bắc Ninh",
         "Hưng Yên"
-      ]
+      ],
+      "area": "Thanh Hóa & Đồng bằng sông Hồng",
+      "image": {
+        "src": "/uploads/tin-cu/2023/chuong-trinh-gap-mat-va-giao-luu-ban-hang-tinh-bac-ninh-nam-2023.webp",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Tiến Nông gặp mặt khách hàng tỉnh Bắc Ninh"
+      }
     },
     {
       "name": "Trần Mạnh Tiến",
@@ -392,7 +358,14 @@
         "An Giang",
         "Cần Thơ",
         "Cà Mau"
-      ]
+      ],
+      "area": "Miền Trung, Tây Nguyên & Nam Bộ",
+      "image": {
+        "src": "/uploads/tin-cu/2023/tien-nong-to-chuc-hoi-nghi-khach-hang-tai-yen-thanh-nghe-an.webp",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Hội nghị khách hàng Tiến Nông tại Yên Thành, Nghệ An"
+      }
     },
     {
       "name": "Lê Viết Thiện",
@@ -409,7 +382,14 @@
         "Lạng Sơn",
         "Thái Nguyên",
         "Phú Thọ"
-      ]
+      ],
+      "area": "Trung du & miền núi phía Bắc",
+      "image": {
+        "src": "/uploads/tin-cu/2026/son-la-tu-nuong-ngo-nuong-san-den-nhung-vung-ca-phe-arabica-moi-4.webp",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Đoàn Tiến Nông thăm nương cà phê cùng nhà phân phối ở Sơn La"
+      }
     }
   ]
 }

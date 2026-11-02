@@ -64,10 +64,8 @@ Chuyến tham quan và làm việc không chỉ dừng lại ở việc tìm hi�
 
 *Đại diện Hội Nông dân tỉnh Thái Nguyên trao tặng quà lưu niệm cho Công ty CP Công Nông nghiệp Tiến Nông, thể hiện sự trân trọng và kỳ vọng hợp tác bền chặt giữa các bên.*
 
-*
 
 ![TIẾN NÔNG ĐỒNG HÀNH CÙNG NÔNG DÂN THÁI NGUYÊN: KIẾN TẠO MÔ HÌNH NÔNG NGHIỆP GIÁ TRỊ CAO CHO NÔNG SẢN VIỆT](/uploads/tin-cu/2026/tien-nong-dong-hanh-cung-nong-dan-thai-nguyen-kien-tao-mo-hinh-nong-nghiep-gia-6.webp)
 
-*
 
 *Công ty TNHH Vật tư Nông nghiệp Thái Nguyên trao tặng quà lưu niệm cho Công ty CP Công Nông nghiệp Tiến Nông, thể hiện sự trân trọng và kỳ vọng hợp tác bền chặt giữa các bên.*

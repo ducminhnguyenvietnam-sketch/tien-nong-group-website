@@ -75,6 +75,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 9-6-3+1SiO₂hh Tiến Nông (Cây Lâm Nghiệp) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/7769/

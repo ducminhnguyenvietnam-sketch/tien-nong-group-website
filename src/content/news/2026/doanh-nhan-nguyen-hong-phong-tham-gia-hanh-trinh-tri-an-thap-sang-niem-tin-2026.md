@@ -39,11 +39,9 @@ Ngay sau lễ xuất quân, đoàn công tác đã tổ chức trao tặng **30 
 
 ![Doanh nhân Nguyễn Hồng Phong tham gia hành trình tri ân – thắp sáng niềm tin 2026, Tiến Nông trao tặng nhà tình nghĩa tại Đắk Lắk](/uploads/tin-cu/2026/doanh-nhan-nguyen-hong-phong-tham-gia-hanh-trinh-tri-an-thap-sang-niem-tin-2026-4.webp)
 
-*
 
 ![Doanh nhân Nguyễn Hồng Phong tham gia hành trình tri ân – thắp sáng niềm tin 2026, Tiến Nông trao tặng nhà tình nghĩa tại Đắk Lắk](/uploads/tin-cu/2026/doanh-nhan-nguyen-hong-phong-tham-gia-hanh-trinh-tri-an-thap-sang-niem-tin-2026-5.webp)
 
-*
 
 *Lãnh đạo Hội doanh nhân trẻ Việt Nam trao quà và nhà tình nghĩa cho các gia đình chính sách, người có công với cách mạng và các hộ có hoàn cảnh khó khăn trên địa bàn tỉnh Đắk Lắk.*
 
