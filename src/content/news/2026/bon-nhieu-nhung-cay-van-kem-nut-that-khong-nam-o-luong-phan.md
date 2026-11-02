@@ -34,11 +34,9 @@ Cây có thể xanh tốt ban đầu nhưng thân mềm, dễ đổ ngã, sức 
 
 Theo ghi nhận từ thực tế sản xuất và tư vấn kỹ thuật của Công ty Cổ phần Công Nông nghiệp Tiến Nông, một trong những nguyên nhân phổ biến khiến cây không hấp thu được dinh dưỡng là độ pH đất không phù hợp.
 
-*
 
 ![BÓN NHIỀU NHƯNG CÂY VẪN KÉM: “NÚT THẮT” KHÔNG NẰM Ở LƯỢNG PHÂN](/uploads/tin-cu/2026/bon-nhieu-nhung-cay-van-kem-nut-that-khong-nam-o-luong-phan-1.webp)
 
-*
 
 *Độ pH đất ảnh hưởng đến khả năng hấp thụ chất dinh dưỡng của cây (Ảnh: Sưu tầm)*
 
@@ -52,11 +50,9 @@ Nhiều nông hộ bón dồn một lần, không chia theo giai đoạn sinh tr
 
 Trong những trường hợp này, cây không những không tận dụng được dinh dưỡng mà còn có nguy cơ bị “sốc phân”.
 
-*
 
 ![BÓN NHIỀU NHƯNG CÂY VẪN KÉM: “NÚT THẮT” KHÔNG NẰM Ở LƯỢNG PHÂN](/uploads/tin-cu/2026/bon-nhieu-nhung-cay-van-kem-nut-that-khong-nam-o-luong-phan-2.webp)
 
-*
 
 *Cán bộ Tiến Nông tiến hành lấy mẫu đất*
 
@@ -64,11 +60,9 @@ Theo các kỹ sư nông nghiệp của Tiến Nông, việc chia nhỏ lượng
 
 Đất canh tác lâu năm nhưng không được bổ sung hữu cơ sẽ dần mất đi độ tơi xốp và hệ vi sinh vật có lợi.
 
-*
 
 ![BÓN NHIỀU NHƯNG CÂY VẪN KÉM: “NÚT THẮT” KHÔNG NẰM Ở LƯỢNG PHÂN](/uploads/tin-cu/2026/bon-nhieu-nhung-cay-van-kem-nut-that-khong-nam-o-luong-phan-3.webp)
 
-*
 
 *Các mẫu đất được TTNC Phát triển Khoa học và Công Nghệ Tiến Nông lấy mẫu nghiên cứu*
 
@@ -80,11 +74,9 @@ Câu chuyện “bón nhiều phân nhưng cây vẫn kém phát triển” là 
 
 Từ thực tế đồng hành cùng nông dân, qua các chương trình lấy mẫu và phân tích mẫu đất tại huyện Thạch Thành (cũ), huyện Hoằng Hoá (cũ), Tây Nguyên,… Công ty Cổ phần Công Nông nghiệp Tiến Nông cho rằng, muốn nâng cao năng suất bền vững, cần bắt đầu từ việc hiểu đất, cân đối dinh dưỡng và áp dụng quy trình khoa học.
 
-*
 
 ![BÓN NHIỀU NHƯNG CÂY VẪN KÉM: “NÚT THẮT” KHÔNG NẰM Ở LƯỢNG PHÂN](/uploads/tin-cu/2026/bon-nhieu-nhung-cay-van-kem-nut-that-khong-nam-o-luong-phan-4.webp)
 
-*
 
 *Muốn nâng cao năng suất bền vững, cần bắt đầu từ việc hiểu đất*
 

@@ -25,7 +25,6 @@ old_url: /tu-van-ky-thuat-su-dung-phan-bon-va-ho-tro-phan-bon-cho-nong-dan-ngheo
 ![Tư vấn kỹ thuật sử dụng phân bón và hỗ trợ phân bón cho nông dân nghèo](/uploads/tin-cu/2017/tu-van-ky-thuat-su-dung-phan-bon-va-ho-tro-phan-bon-cho-nong-dan-ngheo-2.webp)
 
 *Đại diện công ty Tiến Nông phát biểu tại chương trình
-*
 
 Nhằm hỗ trợ các hộ nông dân nghèo trên địa bàn 3 xã, tại UBND xã Đức Thắng, cán bộ kỹ thuật của Công ty CP Công Nông nghiệp Tiến Nông đã tư vấn, hướng dẫn quy trình gieo cấy, chăm sóc cho cây lúa; cách sử dụng phân bón hiệu quả cho từng loại cây trồng, đồng đất khác nhau nhằm tăng năng suất, chất lượng và hiệu quả kinh tế trên một đơn vị canh tác.
 

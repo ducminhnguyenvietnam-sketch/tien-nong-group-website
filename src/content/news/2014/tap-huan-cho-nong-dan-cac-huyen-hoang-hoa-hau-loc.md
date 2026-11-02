@@ -31,42 +31,32 @@ Một số hình ảnh của khóa tập huấn:
 
 *Cụm Hoằng Đạt – Hoằng Hóa*
 
-*
 
 ![Tập huấn cho nông dân các huyện Hoằng Hóa, Hậu Lộc](/uploads/tin-cu/2014/tap-huan-cho-nong-dan-cac-huyen-hoang-hoa-hau-loc-2.webp)
 
-*
 
 *Cụm Hoằng Đức – Hoằng Hóa.*
 
-*
 
 ![Tập huấn cho nông dân các huyện Hoằng Hóa, Hậu Lộc](/uploads/tin-cu/2014/tap-huan-cho-nong-dan-cac-huyen-hoang-hoa-hau-loc-3.webp)
 
-*
 
 *Cụm Hoằng Vinh – Hoằng Hóa*
 
-*
 
 ![Tập huấn cho nông dân các huyện Hoằng Hóa, Hậu Lộc](/uploads/tin-cu/2014/tap-huan-cho-nong-dan-cac-huyen-hoang-hoa-hau-loc-4.webp)
 
-*
 
 *Cụm Thành Lộc – Hậu Lộc*
 
-*
 
 ![Tập huấn cho nông dân các huyện Hoằng Hóa, Hậu Lộc](/uploads/tin-cu/2014/tap-huan-cho-nong-dan-cac-huyen-hoang-hoa-hau-loc-5.webp)
 
-*
 
 *Cụm Thuần Lộc – Hậu Lộc.*
 
-*
 
 ![Tập huấn cho nông dân các huyện Hoằng Hóa, Hậu Lộc](/uploads/tin-cu/2014/tap-huan-cho-nong-dan-cac-huyen-hoang-hoa-hau-loc-6.webp)
 
-*
 
 *Cụm Xuân Lộc – Hậu Lộc*

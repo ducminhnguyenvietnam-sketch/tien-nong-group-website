@@ -30,48 +30,36 @@ Một số hình ảnh của chương trình:
 
 *Tập huấn tại cụm xã Đông Vinh:*
 
-*
 
 ![Tập huấn cho nông dân khu vực thành phố Thanh Hóa](/uploads/tin-cu/2014/tap-huan-cho-nong-dan-khu-vuc-thanh-pho-thanh-hoa-1.webp)
 
-*
 
 *Tập huấn tại cụm Xã Quảng Cát:*
 
-*
 
 ![Tập huấn cho nông dân khu vực thành phố Thanh Hóa](/uploads/tin-cu/2014/tap-huan-cho-nong-dan-khu-vuc-thanh-pho-thanh-hoa-2.webp)
 
-*
 
 *Tập huấn tại cụm Quảng Tâm:*
 
-*
 
 ![Tập huấn cho nông dân khu vực thành phố Thanh Hóa](/uploads/tin-cu/2014/tap-huan-cho-nong-dan-khu-vuc-thanh-pho-thanh-hoa-3.webp)
 
-*
 
 *Tập huấn tại cụm Thiệu Dương:*
 
-*
 
 ![Tập huấn cho nông dân khu vực thành phố Thanh Hóa](/uploads/tin-cu/2014/tap-huan-cho-nong-dan-khu-vuc-thanh-pho-thanh-hoa-4.webp)
 
-*
 
 *Tập huấn tại cụm Thiệu Khánh:*
 
-*
 
 ![Tập huấn cho nông dân khu vực thành phố Thanh Hóa](/uploads/tin-cu/2014/tap-huan-cho-nong-dan-khu-vuc-thanh-pho-thanh-hoa-5.webp)
 
-*
 
 *Tập huấn tại cụm Thiệu Vân:*
 
-*
 
 ![Tập huấn cho nông dân khu vực thành phố Thanh Hóa](/uploads/tin-cu/2014/tap-huan-cho-nong-dan-khu-vuc-thanh-pho-thanh-hoa-6.webp)
 
-*

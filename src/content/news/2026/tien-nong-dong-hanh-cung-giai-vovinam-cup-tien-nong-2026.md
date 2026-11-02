@@ -24,11 +24,9 @@ Với vai trò là đơn vị đồng hành, Công ty Cổ phần Công Nông ng
 
 Sáng 12/8, tại Nhà Thi đấu Thể dục thể thao tỉnh Thanh Hóa, Công ty Cổ phần Công Nông nghiệp Tiến Nông phối hợp cùng Liên đoàn Vovinam Thanh Hóa và Sở Văn hóa, Thể thao và Du lịch tổ chức Giải Vovinam các CLB tỉnh Thanh Hóa mở rộng – Cúp Tiến Nông năm 2026.
 
-*
 
 ![Tiến Nông đồng hành lan tỏa tinh thần võ Việt qua Giải Vovinam các CLB tỉnh Thanh Hóa mở rộng – Cúp Tiến Nông 2026](/uploads/tin-cu/2026/tien-nong-dong-hanh-cung-giai-vovinam-cup-tien-nong-2026-1.webp)
 
-*
 
 *Toàn cảnh lễ khai mạc*
 
@@ -52,11 +50,9 @@ Giữ vai trò Chủ tịch Liên đoàn Vovinam Thanh Hóa, Trưởng Ban Tổ 
 
 Phát biểu khai mạc, ông Nguyễn Hồng Phong cho biết, Giải Vovinam các CLB tỉnh Thanh Hóa mở rộng – Cúp Tiến Nông năm 2026 không chỉ là sân chơi đỉnh cao của môn võ Việt, mà còn là nơi truyền lửa đam mê, giữ gìn bản sắc văn hóa võ học dân tộc và khơi dậy lòng tự hào dân tộc qua từng thế võ, đường quyền.
 
-*
 
 ![Tiến Nông đồng hành lan tỏa tinh thần võ Việt qua Giải Vovinam các CLB tỉnh Thanh Hóa mở rộng – Cúp Tiến Nông 2026](/uploads/tin-cu/2026/tien-nong-dong-hanh-cung-giai-vovinam-cup-tien-nong-2026-3.webp)
 
-*
 
 *Ông Nguyễn Hồng Phong – Chủ tịch Liên đoàn Vovinam Thanh Hóa, Trưởng Ban Tổ chức giải – Tổng Giám đốc Công ty CP CNN Tiến Nông phát biểu tại chương trình*
 
@@ -74,11 +70,9 @@ Không chỉ hướng tới những tấm huy chương, giải đấu còn là d
 
 Tại lễ khai mạc, đại diện các vận động viên và tổ trọng tài đã thực hiện nghi thức tuyên thệ, thể hiện quyết tâm thi đấu và điều hành giải với tinh thần công tâm, khách quan, chấp hành nghiêm điều lệ và luật thi đấu.
 
-*
 
 ![Tiến Nông đồng hành lan tỏa tinh thần võ Việt qua Giải Vovinam các CLB tỉnh Thanh Hóa mở rộng – Cúp Tiến Nông 2026](/uploads/tin-cu/2026/tien-nong-dong-hanh-cung-giai-vovinam-cup-tien-nong-2026-4.webp)
 
-*
 
 *Đại diện các vận động viên thực hiện nghi thức tuyên thệ*
 

@@ -24,21 +24,17 @@ Ngày **06/02/2026**, trong không khí rộn ràng, ấm áp của những ngà
 
 Buổi lễ vinh dự có sự tham dự của Chủ tịch Hội đồng Quản trị Nguyễn Xuân Cộng, Tổng Giám đốc Nguyễn Hồng Phong cùng Ban Lãnh đạo Công ty Cổ phần Công Nông nghiệp Tiến Nông. Sự hiện diện của lãnh đạo Công ty thể hiện sự quan tâm sâu sắc, chỉ đạo sát sao và tinh thần đồng hành đối với tập thể Nhà máy Dinh dưỡng Cây trồng Tiến Nông 3.
 
-*
 
 ![NHÀ MÁY DINH DƯỠNG CÂY TRỒNG TIẾN NÔNG 3: TỔNG KẾT HOẠT ĐỘNG SẢN XUẤT NĂM 2025 VÀ TRIỂN KHAI MỤC TIÊU CHẤT LƯỢNG – MÔI TRƯỜNG NĂM 2026](/uploads/tin-cu/2026/nha-may-dinh-duong-cay-trong-tien-nong-3-tong-ket-hoat-dong-san-xuat-nam-2025-1.webp)
 
-*
 
 *Ban lãnh đạo công ty quyết tâm hoàn thành mục tiêu năm 2026, hướng tới sản xuất an toàn, chất lượng và phát triển bền vững.*
 
 Năm 2025 là một năm có nhiều khó khăn, thách thức khi chịu tác động mạnh từ điều kiện thời tiết bất lợi, biến động thị trường và chi phí đầu vào. Trong bối cảnh đó, tập thể cán bộ, công nhân viên Nhà máy Dinh dưỡng Cây trồng Tiến Nông 3 đã nỗ lực không ngừng, duy trì ổn định hoạt động sản xuất, bảo đảm tiến độ, chất lượng sản phẩm và an toàn lao động.
 
-*
 
 ![NHÀ MÁY DINH DƯỠNG CÂY TRỒNG TIẾN NÔNG 3: TỔNG KẾT HOẠT ĐỘNG SẢN XUẤT NĂM 2025 VÀ TRIỂN KHAI MỤC TIÊU CHẤT LƯỢNG – MÔI TRƯỜNG NĂM 2026](/uploads/tin-cu/2026/nha-may-dinh-duong-cay-trong-tien-nong-3-tong-ket-hoat-dong-san-xuat-nam-2025-2.webp)
 
-*
 
 *Chủ tịch HĐQT Ông Nguyễn Xuân Cộng trao bằng khen và hoa cho cán bộ công nhân viên suất sắc năm 2025*
 
@@ -48,11 +44,9 @@ Bước sang năm 2026, Nhà máy Dinh dưỡng Cây trồng Tiến Nông 3 xác
 
 Phát biểu bế mạc buổi lễ, Tổng Giám đốc Nguyễn Hồng Phong đã gửi lời tri ân sâu sắc tới toàn thể cán bộ, công nhân viên Nhà máy Dinh dưỡng Cây trồng Tiến Nông 3 – những người trực tiếp đứng máy, đứng chuyền, bám xưởng, bám kho trong suốt một năm nhiều gian khó. Tổng Giám đốc chia sẻ: *“Mỗi sản phẩm Tiến Nông làm ra không chỉ là kết quả của máy móc, mà là mồ hôi, trách nhiệm và tình yêu nghề của người lao động.”*
 
-*
 
 ![NHÀ MÁY DINH DƯỠNG CÂY TRỒNG TIẾN NÔNG 3: TỔNG KẾT HOẠT ĐỘNG SẢN XUẤT NĂM 2025 VÀ TRIỂN KHAI MỤC TIÊU CHẤT LƯỢNG – MÔI TRƯỜNG NĂM 2026](/uploads/tin-cu/2026/nha-may-dinh-duong-cay-trong-tien-nong-3-tong-ket-hoat-dong-san-xuat-nam-2025-3.webp)
 
-*
 
 *Tổng giám đốc Nguyễn Hồng Phong phát biểu tại buổi lễ* 
 

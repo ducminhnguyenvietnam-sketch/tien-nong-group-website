@@ -58,11 +58,9 @@ Công ty TNHH Thương mại Seven Mart là Nhà phân phối đang có tốc đ
 
 Seven Mart không chỉ phân phối sản phẩm, mà còn thường xuyên cùng cán bộ Tiến Nông đi thị trường, xuống các điểm bán, tiếp cận bà con, tặng phân dùng thử, tư vấn cách sử dụng và từng bước đưa sản phẩm Tiến Nông đến gần hơn với người nông dân vùng cao.
 
-*
 
 ![Tiến Nông đồng hành cùng hệ thống phân phối tại Tuyên Quang](/uploads/tin-cu/2026/tien-nong-dong-hanh-cung-he-thong-phan-phoi-tai-tuyen-quang-5.webp)
 
-*
 
 *Đại lý Bình Minh, xã Đồng Yên, tỉnh Tuyên Quang (Hà Giang cũ)*
 
@@ -70,11 +68,9 @@ Từ thực tế chuyến đi có thể thấy, để phát triển thị trư�
 
 Với Tiến Nông, việc đồng hành cùng các Nhà phân phối như Công ty Cổ phần Hải Hoa – Tuyên Quang, Công ty TNHH Thương mại Seven Mart và các đối tác tại Tuyên Quang không chỉ nhằm mở rộng sản lượng, mà còn là cách xây dựng hệ thống phân phối bền vững, gần dân và phục vụ mùa vụ kịp thời hơn.
 
-*
 
 ![Tiến Nông đồng hành cùng hệ thống phân phối tại Tuyên Quang](/uploads/tin-cu/2026/tien-nong-dong-hanh-cung-he-thong-phan-phoi-tai-tuyen-quang-6.webp)
 
-*
 
 *Không chỉ thăm hỏi các đại lý, đoàn cũng đến thăm vườn của nông dân để lấy mẫu đất về Trung tâm Nghiên cứu Phát triển Khoa học & Công nghệ Tiến Nông để phân tích*
 
@@ -84,35 +80,27 @@ Tiến Nông – Tiến cùng nông nghiệp Việt Nam.
 
 Một số hình ảnh của chuyến công tác:
 
-*
 
 ![Tiến Nông đồng hành cùng hệ thống phân phối tại Tuyên Quang](/uploads/tin-cu/2026/tien-nong-dong-hanh-cung-he-thong-phan-phoi-tai-tuyen-quang-7.webp)
 
-*
 
 *Đại lý Phương Huệ – xã Chiêm Hoá – tỉnh Tuyên Quang*
 
-*
 
 ![Tiến Nông đồng hành cùng hệ thống phân phối tại Tuyên Quang](/uploads/tin-cu/2026/tien-nong-dong-hanh-cung-he-thong-phan-phoi-tai-tuyen-quang-8.webp)
 
-*
 
 *Đại lý Tường Khánh – xã Tân An – Tuyên Quang*
 
-*
 
 ![Tiến Nông đồng hành cùng hệ thống phân phối tại Tuyên Quang](/uploads/tin-cu/2026/tien-nong-dong-hanh-cung-he-thong-phan-phoi-tai-tuyen-quang-9.webp)
 
-*
 
 *Đại lý Lâm Thị Hoa – xã Minh Quang – tỉnh Tuyên Quang*
 
-*
 
 ![Tiến Nông đồng hành cùng hệ thống phân phối tại Tuyên Quang](/uploads/tin-cu/2026/tien-nong-dong-hanh-cung-he-thong-phan-phoi-tai-tuyen-quang-10.webp)
 
-*
 
 *Đại lý Thế Huyền – xã Yên Nguyên – tỉnh Tuyên Quang*
 

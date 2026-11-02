@@ -22,17 +22,13 @@ old_url: /hoi-nghi-thuong-nien-he-thong-dai-dien-chinh-hang-tien-nong-tai-thanh-
 
 Trong chuỗi hoạt động sản xuất kinh doanh, Công ty Tiến Nông sớm nắm bắt được xu thế phát triển và tầm quan trọng của hệ thống bán lẻ. Lấy Thanh Hóa là tỉnh đầu tiên thử nghiệm mô hình Đại diện chính hãng, đến nay hệ thống Đại diện chính hãng Tiến Nông tại Thanh Hóa đã phát triển được 1.000 điểm. Xuyên suốt quá trình xây dựng & phát triển, Công ty Tiến Nông luôn quan tâm kịp thời, hỗ trợ tối đa, sát cánh cùng hệ thống đại diện chính hãng trong hoạt động kinh doanh, sẵn sàng san sẻ lợi ích và quyền lợi cho người bán hàng.
 
-*
 
 ![Hội nghị thường niên hệ thống Đại diện chính hãng Tiến Nông tại Thanh Hóa](/uploads/tin-cu/2017/hoi-nghi-thuong-nien-he-thong-dai-dien-chinh-hang-tien-nong-tai-thanh-hoa-1.webp)
 
-*
 
-*
 
 ![Hội nghị thường niên hệ thống Đại diện chính hãng Tiến Nông tại Thanh Hóa](/uploads/tin-cu/2017/hoi-nghi-thuong-nien-he-thong-dai-dien-chinh-hang-tien-nong-tai-thanh-hoa-2.webp)
 
-*
 
 *Toàn cảnh hội nghị*
 
@@ -40,11 +36,9 @@ Trong chuỗi hoạt động sản xuất kinh doanh, Công ty Tiến Nông sớ
 
 Việc phát triển hệ thống bán lẻ thông qua Đại diện chính hãng Tiến Nông, đã tạo điều kiện cho Doanh nghiệp đến gần hơn với nhà nông tạo nên sự gắn bó mật thiết, tin cậy, hợp tác và lựa chọn sản phẩm bền vững giữa Doanh nghiệp sản xuất, người kinh doanh và bà con nông dân. Bà Trịnh Thị Hoản, nông dân tiêu biểu tại xã Hạnh Phúc – Huyện Thọ Xuân cho biết: “Trước đây, để lựa chọn phân bón chất lượng là rất khó khăn do ra cửa hàng có hàng chục loại phân bón khác nhau. Từ khi tôi được tham gia hội thảo tư vấn của công ty Tiến Nông kết hợp với Đại lý Hồng Vân thì tôi đã mạnh dạn mua về dùng cho 8 sào lúa, kết quả gần như ngoài mong đợi, năng suất lúa vụ mùa của nhà tôi từ 3 tạ 7 tăng lên 4 tạ. Vụ Đông này tôi quyết định đầu tư 5 sào Ngô, dùng hoàn toàn phân bón chuyên dùng cho Ngô của Tiến Nông”.
 
-*
 
 ![Hội nghị thường niên hệ thống Đại diện chính hãng Tiến Nông tại Thanh Hóa](/uploads/tin-cu/2017/hoi-nghi-thuong-nien-he-thong-dai-dien-chinh-hang-tien-nong-tai-thanh-hoa-3.webp)
 
-*
 
 *Bà Trịnh Thị Hoản – Nông dân tiêu biểu tại xã Hạnh Phúc – huyện Thọ Xuân*
 
@@ -54,11 +48,9 @@ Với mục đích đưa sản phẩm và dịch vụ đến gần hơn với kh
 
 **Một số hình ảnh tại Hội nghị:**
 
-*
 
 ![Hội nghị thường niên hệ thống Đại diện chính hãng Tiến Nông tại Thanh Hóa](/uploads/tin-cu/2017/hoi-nghi-thuong-nien-he-thong-dai-dien-chinh-hang-tien-nong-tai-thanh-hoa-4.webp)
 
-*
 
 *Ông Nguyễn Xuân Cộng – Chủ tịch HĐQT Công ty Tiến Nông đến dự Hội nghị*
 
@@ -66,7 +58,6 @@ Với mục đích đưa sản phẩm và dịch vụ đến gần hơn với kh
 
 *Phút ngẫu hứng của Tổng giám đốc Cty Tiến Nông và Đại sứ Thương hiệu*
 
-*
 
 ![Hội nghị thường niên hệ thống Đại diện chính hãng Tiến Nông tại Thanh Hóa](/uploads/tin-cu/2017/hoi-nghi-thuong-nien-he-thong-dai-dien-chinh-hang-tien-nong-tai-thanh-hoa-6.webp)
 

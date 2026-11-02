@@ -36,11 +36,9 @@ Việc ký kết hợp tác với Công ty CP CNN Tiến Nông để “Triển 
 
 *Ông Nguyễn Hồng Phong và Ông Lôi Xuân Len trao đổi ký kết hợp tác về triển khai ứng dụng khoa học công nghệ, nâng cao chất lượng sản phẩm*
 
-*
 
 ![Tiến Nông ký kết hợp tác với Hội làm vườn và trang trại Thanh Hóa, giúp bà con nông dân làm giàu](/uploads/tin-cu/2014/tien-nong-ky-ket-hop-tac-voi-hoi-lam-vuon-va-trang-trai-thanh-hoa-giup-ba-con-2.webp)
 
-*
 
 *Toàn cảnh buổi sinh hoạt*
 

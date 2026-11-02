@@ -26,11 +26,9 @@ Tham dự buổi khai giảng có sự góp mặt của Ông Nguyễn Hồng Lâ
 
 Tại khóa học, học viên sẽ được bồi dưỡng, trang bị những kiến thức cơ bản về 4 nội dung: Vận hành lò hơi; Vận hành cẩu trục; Vận hành xe nâng; Vận hành máy móc, thiết bị.
 
-*
 
 ![Công ty Tiến Nông: Khai giảng khóa đào tạo thường xuyên cho cán bộ công nhân viên](/uploads/tin-cu/2024/cong-ty-tien-nong-khai-giang-khoa-dao-tao-thuong-xuyen-cho-can-bo-cong-nhan-vien-1.webp)
 
-*
 
 *Ông Nguyễn Hồng Lâm– Thành viên HĐQT, Giám đốc Nhà máy dinh dưỡng cây trồng Tiến Nông Bỉm Sơn phát biểu tại buổi lễ*
 

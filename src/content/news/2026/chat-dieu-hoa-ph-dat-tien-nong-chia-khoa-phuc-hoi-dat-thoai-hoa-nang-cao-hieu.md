@@ -38,11 +38,9 @@ Việc sử dụng chất điều hoà pH mang lại nhiều lợi ích đồng 
 
 Xuất phát từ nhu cầu thực tế, Công ty Cổ phần Công Nông nghiệp Tiến Nông đã phát triển chất điều hoà pH đất Tiến Nông với định hướng không chỉ cải tạo đất mà còn nâng cao hiệu quả sử dụng phân bón.
 
-*
 
 ![CHẤT ĐIỀU HÒA pH ĐẤT TIẾN NÔNG – “CHÌA KHÓA” PHỤC HỒI ĐẤT THOÁI HÓA, NÂNG CAO HIỆU QUẢ CANH TÁC](/uploads/tin-cu/2026/chat-dieu-hoa-ph-dat-tien-nong-chia-khoa-phuc-hoi-dat-thoai-hoa-nang-cao-hieu-1.webp)
 
-*
 
 *Chất điều hoà pH đất Tiến Nông – Giải pháp cho cải tạo đất và nâng cao hiệu quả sử dụng phân bón*
 
@@ -56,31 +54,25 @@ Việc kết hợp chất điều hoà pH với quy trình canh tác hợp lý k
 
 Điển hình là ruộng khu vực Hoằng Giang, nơi đất đai trồng cây rau màu của bà con bị thoái hóa nặng nề do ngập lụt, ảnh hưởng từ nhiều đợt mưa bão. Chính vì vậy, Tiến Nông đã cử cán bộ tơi địa bàn để lấy mẫu đất phân tích, từ đó đưa ra quy trình khôi phục, cải tạo đất.
 
-*
 
 ![CHẤT ĐIỀU HÒA pH ĐẤT TIẾN NÔNG – “CHÌA KHÓA” PHỤC HỒI ĐẤT THOÁI HÓA, NÂNG CAO HIỆU QUẢ CANH TÁC](/uploads/tin-cu/2026/chat-dieu-hoa-ph-dat-tien-nong-chia-khoa-phuc-hoi-dat-thoai-hoa-nang-cao-hieu-2.webp)
 
-*
 
 *Cán bộ Tiến Nông khảo sát, đo đạc, lấy mẫu đất tại Hoằng Giang*
 
 Sản phẩm chất điều hòa pH đất Tiến Nông đã thể hiện được tính năng vượt trội, kết hợp cùng các sản phẩm phân bón chất lượng như Hữu cơ Oganic Tiến Nông, NPK 20-10-10 Tiến Nông và NK 16-9 Tiến Nông, đem đến tín hiệu rất tốt cho bà con. Cây súp lơ phát triển đồng đều, lá xanh, bông to, chắc, mở ra hướng đi mới trong phong tục canh tác của bà con nông dân nơi đây.
 
-*
 
 ![CHẤT ĐIỀU HÒA pH ĐẤT TIẾN NÔNG – “CHÌA KHÓA” PHỤC HỒI ĐẤT THOÁI HÓA, NÂNG CAO HIỆU QUẢ CANH TÁC](/uploads/tin-cu/2026/chat-dieu-hoa-ph-dat-tien-nong-chia-khoa-phuc-hoi-dat-thoai-hoa-nang-cao-hieu-3.webp)
 
-*
 
 *Cây súp lơ phát triển đồng đều, lá xanh, bông to, chắc*
 
 Trong bối cảnh ngành nông nghiệp đang chuyển dịch theo hướng xanh và bền vững, việc phục hồi và bảo vệ đất trở thành yếu tố then chốt. Các giải pháp như điều chỉnh pH đất ngày càng được chú trọng, thay thế dần phương thức canh tác phụ thuộc vào hóa học.
 
-*
 
 ![CHẤT ĐIỀU HÒA pH ĐẤT TIẾN NÔNG – “CHÌA KHÓA” PHỤC HỒI ĐẤT THOÁI HÓA, NÂNG CAO HIỆU QUẢ CANH TÁC](/uploads/tin-cu/2026/chat-dieu-hoa-ph-dat-tien-nong-chia-khoa-phuc-hoi-dat-thoai-hoa-nang-cao-hieu-4.webp)
 
-*
 
 *Phục hồi và bảo vệ đất đang trở thành yếu tố then chốt trong việc chuyển dịch nông nghiệp xanh*
 

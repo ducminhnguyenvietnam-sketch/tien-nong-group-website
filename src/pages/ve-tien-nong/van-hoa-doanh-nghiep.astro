@@ -88,9 +88,9 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k })).filter((st) => i
 <Head eyebrow={c.principles.eyebrow} title={c.principles.title} intro={c.principles.intro} split />
 <div class="vh-tn">
 {tnVideo
-  ? <button type="button" class="vh-yt vh-tn__media" data-yt={tnVideo} aria-label={`Phát video ${c.principles.title}`}>
+  ? <button type="button" class="yt vh-tn__media" data-yt={tnVideo} aria-label={`Phát video ${c.principles.title}`}>
       <img src={`https://i.ytimg.com/vi/${tnVideo}/hqdefault.jpg`} alt="" loading="lazy" width="480" height="360" />
-      <span class="vh-yt__play" aria-hidden="true"></span>
+      <span class="yt__play" aria-hidden="true"></span>
     </button>
   : <div class="vh-tn__media st-hide-empty"><ImageSlot style={fill} id="vh-tam-niem" shape="rounded" radius="20" placeholder="Bức Tâm niệm" image={c.principles.image} cms={`${F}#principles.image`} sizes="(max-width: 899px) 92vw, 560px" /></div>}
 <ol class="vh-tn__list">
@@ -161,7 +161,6 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k })).filter((st) => i
 </div>
 <div class="st-split__media st-hide-empty" style="--ratio:3/2"><ImageSlot style={fill} id="vh-learning" shape="rounded" radius="20" placeholder={c.learning.image.alt || 'Ảnh đào tạo'} image={c.learning.image} cms={`${F}#learning.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
 </div>
-<div class="vh-learn__head"><a href={url('tin-tuc')} class="vh-link">Tất cả tin tức →</a></div>
 <div class="vh-learn__grid">
 {shownLearning.map((l) => <a href={link(l.link)} class="vh-learn__card">
 <span class="vh-learn__img"><ImageSlot style={fill} id={`vh-learn-${l.k}`} shape="rect" placeholder={l.title} image={l.image} cms={l.own ? `${F}#learning.items.${l.k}.image` : undefined} sizes="(max-width: 767px) 92vw, 400px" /></span>
@@ -182,18 +181,18 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k })).filter((st) => i
 </div>
 <div class:list={['vh-song', { 'vh-song--solo': moreVideos.length === 0 }]}>
 {(() => { const id = youtubeId(mainVideo.youtube); return id
-  ? <button type="button" class="vh-yt vh-song__main" data-yt={id} aria-label={`Phát video ${mainVideo.title || ''}`}>
+  ? <button type="button" class="yt vh-song__main" data-yt={id} aria-label={`Phát video ${mainVideo.title || ''}`}>
       <img src={`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`} alt="" loading="lazy" width="1280" height="720" />
       <span class="vh-song__shade" aria-hidden="true"></span>
       {isFilled(mainVideo.duration) && <span class="vh-song__dur">{mainVideo.duration}</span>}
-      <span class="vh-yt__play vh-yt__play--big" aria-hidden="true"></span>
+      <span class="yt__play yt__play--big" aria-hidden="true"></span>
       <span class="vh-song__cap">{isFilled(mainVideo.label) && <span>{mainVideo.label}</span>}{isFilled(mainVideo.title) && <strong>{mainVideo.title}</strong>}</span>
     </button>
   : <div class="vh-song__main"><video src={link(mainVideo.file)} controls preload="metadata"></video></div>; })()}
 {moreVideos.length > 0 && <ul class="vh-song__list">
 {moreVideos.slice(0, 3).map((v) => { const id = youtubeId(v.youtube); return (
   <li><a href={isFilled(v.youtube) ? link(v.youtube) : link(v.file)} target="_blank" rel="noopener" class="vh-song__item">
-    <span class="vh-song__thumb">{id && <img src={`https://i.ytimg.com/vi/${id}/mqdefault.jpg`} alt="" loading="lazy" width="320" height="180" />}<span class="vh-yt__play" aria-hidden="true"></span>{isFilled(v.duration) && <span class="vh-song__dur vh-song__dur--sm">{v.duration}</span>}</span>
+    <span class="vh-song__thumb">{id && <img src={`https://i.ytimg.com/vi/${id}/mqdefault.jpg`} alt="" loading="lazy" width="320" height="180" />}<span class="yt__play" aria-hidden="true"></span>{isFilled(v.duration) && <span class="vh-song__dur vh-song__dur--sm">{v.duration}</span>}</span>
     <span class="vh-song__meta">{isFilled(v.label) && <span>{v.label}</span>}<strong>{v.title}</strong></span>
   </a></li>); })}
 {moreVideos.length < 3 && isFilled(site.social.youtube) && <li><a href={link(site.social.youtube)} target="_blank" rel="noopener" class="vh-song__item vh-song__item--channel">
@@ -262,16 +261,6 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k })).filter((st) => i
   .vh-tn__num { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(245, 196, 78, .65); color: var(--brand-highlight); font: 600 18px/1 var(--font-display); }
   .vh-tn__list strong { font: 600 clamp(19px, 1.75vw, 24px)/1.35 var(--font-display); color: #fff; text-align: start; }
 
-  /* YouTube facade: a poster with a play button; the player loads only when clicked. */
-  .vh-yt { position: relative; display: block; width: 100%; padding: 0; border: 0; border-radius: var(--radius-xl); overflow: hidden; background: var(--green-900); cursor: pointer; }
-  .vh-yt img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: scale 600ms var(--ease-out); }
-  .vh-yt:hover img { scale: 1.03; }
-  .vh-yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .vh-yt__play { position: absolute; left: 50%; top: 50%; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: rgba(255, 255, 255, .92); box-shadow: 0 6px 18px rgba(0, 0, 0, .25); transition: transform var(--motion-base) var(--ease-out); }
-  .vh-yt__play::after { content: ''; position: absolute; left: 50%; top: 50%; margin: -7px 0 0 -4px; border-style: solid; border-width: 7px 0 7px 12px; border-color: transparent transparent transparent var(--green-700); }
-  .vh-yt__play--big { width: 96px; height: 96px; margin: -48px 0 0 -48px; background: var(--brand-bright); box-shadow: 0 0 0 12px rgba(12, 166, 78, .25), 0 10px 30px rgba(0, 0, 0, .3); }
-  .vh-yt__play--big::after { margin: -14px 0 0 -8px; border-width: 14px 0 14px 24px; border-color: transparent transparent transparent #fff; }
-  .vh-yt:hover .vh-yt__play, .vh-song__item:hover .vh-yt__play { transform: scale(1.08); }
 
   /* Family: two couples, photo + short story. */
   .vh-fam { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
@@ -389,19 +378,6 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k })).filter((st) => i
     .vh-learn__grid { grid-template-columns: minmax(0, 1fr); }
     .vh-song__cap strong { font-size: 22px; }
     .vh-song--solo .vh-song__main { aspect-ratio: 16 / 10; }
-    .vh-yt__play--big { width: 64px; height: 64px; margin: -32px 0 0 -32px; }
     .vh-gallery { grid-template-columns: 1fr; } .vh-gallery > :first-child { grid-column: auto; grid-row: span 1; }
   }
 </style>
-<script>
-  // YouTube facade: swap the poster for the player when clicked.
-  document.querySelectorAll<HTMLButtonElement>('button[data-yt]').forEach((b) => b.addEventListener('click', () => {
-    const f = document.createElement('iframe');
-    f.src = `https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&rel=0`;
-    f.title = b.getAttribute('aria-label') || 'Video';
-    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-    f.allowFullscreen = true;
-    const box = document.createElement('div');
-    box.className = b.className; box.append(f); b.replaceWith(box); f.focus();
-  }, { once: true }));
-</script>

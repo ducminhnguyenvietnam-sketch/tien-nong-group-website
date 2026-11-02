@@ -40,7 +40,6 @@ Tại hội nghị, Ban Chấp hành Hội Nông dân tỉnh đã biểu dương
 
 *Đồng chí Leo Thị Lịch – TUV, CHủ tịch HND tỉnh và đồng chí Nguyễn Hồng Phong – TGĐ công ty Tiến Nông tăng bằng khen cho các tập thể và cá nhân có thành tích xuất sắc trong cung ứng phân bón Tiến Nông vụ chiêm xuân năm 2016*
 
-*
 
 ![Hội nghị sơ kết hoạt động cung ứng phân bón trả chậm](/uploads/tin-cu/2016/hoi-nghi-so-ket-hoat-dong-cung-ung-phan-bon-tra-cham-5.webp)
 

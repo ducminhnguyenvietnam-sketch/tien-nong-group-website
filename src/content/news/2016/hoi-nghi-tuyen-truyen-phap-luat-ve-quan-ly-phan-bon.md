@@ -28,11 +28,9 @@ old_url: /hoi-nghi-tuyen-truyen-phap-luat-ve-quan-ly-phan-bon/
 
 Tại hội nghị, hơn 700 người là tiểu thương (đại lý, nhà phân phối phân bón Tiến Nông) trong toàn tỉnh đã được nghe đại diện lãnh đạo Chi cục Quản lý Thị trường Thanh Hóa tuyên truyền pháp luật trong lĩnh vực kinh doanh phân bón; thực trạng phân bón, phổ biến Nghị định 202, công tác quản lý liên quan đến giá bán lẻ và hóa đơn, chứng từ trong kinh doanh phân bón. Tại đây, các đại biểu cũng được hướng dẫn cách nhận biết phân bón giả mạo về bao bì, giả mạo về chất lượng, giả mạo về nhãn hiệu, cách phân biệt phân bón kém chất lượng trên thị trường; hướng dẫn cách sử dụng phân bón cho từng loại cây trồng để đạt hiệu quả cao trong sản xuất. Bên cạnh là một số hướng dẫn về quy định cần thực hiện trong quá trình kinh doanh cũng như các chế tài, quy định xử phạt vi phạm trong sản xuất, kinh doanh phân bón…
 
-*
 
 ![Hội nghị tuyên truyền pháp luật về quản lý phân bón](/uploads/tin-cu/2016/hoi-nghi-tuyen-truyen-phap-luat-ve-quan-ly-phan-bon-2.webp)
 
-*
 
 *Hơn 700 đại biểu trong toàn tỉnh về dự hội nghị*
 
@@ -44,19 +42,15 @@ Công ty CP Công nông nghiệp Tiến Nông, Thanh Hóa là đơn vị dẫn �
 
 Phát biểu tại hội nghị, ông Nguyễn Hồng Phong, Tổng Giám đốc công ty, cho biết: “Trong những năm qua, doanh nghiệp luôn quan tâm và coi trọng khoa học công nghệ, xem khoa học công nghệ là nền tảng để phát triển công ty thông qua việc đẩy mạnh nghiên cứu ứng dụng những tiến bộ mới vào sản xuất, liên tục nâng cao chất lượng sản phẩm để đáp ứng nhu cầu của thị trường trong và ngoài nước”.
 
-*
 
 ![Hội nghị tuyên truyền pháp luật về quản lý phân bón](/uploads/tin-cu/2016/hoi-nghi-tuyen-truyen-phap-luat-ve-quan-ly-phan-bon-3.webp)
 
-*
 
 *Ông Nguyễn Hồng Phong, Tổng Giám đốc Công ty CP Công nông nghiệp Tiến Nông phát biểu.*
 
-*
 
 ![Hội nghị tuyên truyền pháp luật về quản lý phân bón](/uploads/tin-cu/2016/hoi-nghi-tuyen-truyen-phap-luat-ve-quan-ly-phan-bon-4.webp)
 
-*
 
 Tại hội nghị, Công ty CP Công nông nghiệp Tiến Nông đã tuyên dương 22 đại diện chính hãng của Tiến Nông đạt thành tích xuất sắc năm 2016 và 3 nông dân tiêu biểu.
 

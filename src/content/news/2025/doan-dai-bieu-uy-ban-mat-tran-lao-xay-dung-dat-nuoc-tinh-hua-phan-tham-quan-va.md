@@ -52,11 +52,9 @@ Chuyến tham quan và làm việc  tại Công ty Cổ phần Công Nông nghi
 
 ***Một số hình ảnh tại buổi tham quan và làm việc tại Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn:***
 
-*
 
 ![ĐOÀN ĐẠI BIỂU ỦY BAN MẶT TRẬN LÀO XÂY DỰNG ĐẤT NƯỚC TỈNH HỦA PHĂN THAM QUAN VÀ LÀM VIỆC TẠI TIẾN NÔNG](/uploads/tin-cu/2025/doan-dai-bieu-uy-ban-mat-tran-lao-xay-dung-dat-nuoc-tinh-hua-phan-tham-quan-va-5.webp)
 
-*
 
 *Đồng chí Nguyễn Thị Phương  Phó Chủ tịch Ủy ban MTTQ Việt Nam tỉnh Thanh Hóa phát biểu tại chương trình*
 

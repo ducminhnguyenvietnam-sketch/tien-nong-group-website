@@ -21,7 +21,6 @@ old_url: /cong-ty-cp-cong-nong-nghiep-tien-nong-trao-qua-cho-50-tre-em-mo-coi/
 ---
 
 *Công ty CP Công Nông nghiệp Tiến Nông trao quà cho 50 trẻ em mồ côi do công ty nhận đỡ đầu
-*
 
 Hiện nay, Công ty CP Công Nông nghiệp Tiến Nông đang nhận đỡ đầu, chăm sóc, nuôi dưỡng 50 trẻ mồ côi trên địa bàn tỉnh với mức hỗ trợ 500.000 đồng/tháng/cháu. Tại buổi gặp mặt, nhân ngày Gia đình Việt Nam, lãnh đạo Công ty CP Công Nông nghiệp Tiến Nông đã trao quà, động viên, chia sẻ, đồng thời khích lệ các cháu vượt qua nỗi đau thiếu vắng tình cảm, sự chăm sóc của đấng sinh thành để nỗ lực học tập, vươn lên trong cuộc sống. Công ty CP Công Nông nghiệp Tiến Nông cam kết sẽ đồng hành, hỗ trợ các cháu chi phí học tập đến hết năm 18 tuổi và tiếp tục hỗ trợ nếu các cháu thi đậu vào các trường đại học, cao đẳng, trung cấp.
 

@@ -37,26 +37,20 @@ Ngoài hơn 1 sào của gia đình bà Bích, HTX Thống Nhất còn 12 hộ g
 Tham dự và phát biểu chỉ đạo tại buổi hội thảo, ông Nguyễn Phùng Hoan – GĐ sở Nông Nghiệp&PTNT tỉnh Nam Định nhấn mạnh mô hình cơ giới hóa đồng bộ theo giải pháp kỹ thuật Tiến Nông đã minh chứng cho việc cần thiết phải áp dụng cơ giới hóa đồng bộ và bón phân cân đối theo cây, theo đất nhằm giảm chi phí đầu tư và tăng năng suất đem lại lợi ích thiết thực cho nông dân. Mô hình sẽ được ứng dụng và triển khai mở rộng trong những vụ tới, giúp người nông dân nâng cao hiệu quả và giá trị sản phẩm trên một đơn vị diện tích. Ông Hoan cũng đề nghị, công ty Tiến Nông tiếp tục hỗ trợ chuyển giao tiến bộ khoa học kỹ thuật cho nông dân nhằm nâng cao thu nhập trên diện tích canh tác góp phần xây dựng nông thôn mới, cùng với Nam Định xây dựng thương hiệu lúa gạo chất lượng cao.
 *Một số hình ảnh tại hội thảo:*
 
-*
 
 ![Mô hình áp dụng cơ giới hóa đồng bộ theo giải pháp kỹ thuật Tiến Nông tại Nam Định](/uploads/tin-cu/2014/mo-hinh-ap-dung-co-gioi-hoa-dong-bo-theo-giai-phap-ky-thuat-tien-nong-tai-nam-2.webp)
 
-*
 
 *Ông Nguyễn Hồng Phong – TGĐ công ty Cổ phần CNN Tiến Nông phát biểu tại hội thảo*
 
-*
 
 ![Mô hình áp dụng cơ giới hóa đồng bộ theo giải pháp kỹ thuật Tiến Nông tại Nam Định](/uploads/tin-cu/2014/mo-hinh-ap-dung-co-gioi-hoa-dong-bo-theo-giai-phap-ky-thuat-tien-nong-tai-nam-3.webp)
 
-*
 
 *Đông đảo bà con nông dân đến thăm quan hiệu quả từ mô hình*
 
-*
 
 ![Mô hình áp dụng cơ giới hóa đồng bộ theo giải pháp kỹ thuật Tiến Nông tại Nam Định](/uploads/tin-cu/2014/mo-hinh-ap-dung-co-gioi-hoa-dong-bo-theo-giai-phap-ky-thuat-tien-nong-tai-nam-4.webp)
 
-*
 
 *Cán bộ kỹ thuật công ty Tiến Nông giới thiệu về mô hình*

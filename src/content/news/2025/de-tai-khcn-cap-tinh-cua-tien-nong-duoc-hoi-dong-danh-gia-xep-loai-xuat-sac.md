@@ -20,11 +20,9 @@ press_highlight: false
 old_url: /de-tai-khcn-cap-tinh-cua-tien-nong-duoc-hoi-dong-danh-gia-xep-loai-xuat-sac/
 ---
 
-*
 
 ![Đề tài KH&CN cấp tỉnh của Tiến Nông được Hội đồng đánh giá xếp loại Xuất sắc](/uploads/tin-cu/2025/de-tai-khcn-cap-tinh-cua-tien-nong-duoc-hoi-dong-danh-gia-xep-loai-xuat-sac-1.webp)
 
-*
 
 Hội đồng tự đánh giá là các chuyên gia khoa học, quản lý và đại diện doanh nghiệp, trong đó:
 
@@ -40,35 +38,27 @@ Tại phiên họp, Hội đồng đã nghe báo cáo tóm tắt quá trình tri
 
 *PGS.TS Nguyễn Bá Thông: Giám đốc Trung tâm tư vấn chuyển giao Khoa học Công nghệ Nông nghiệp và Phát triển nông thôn tỉnh Thanh Hoá – Hội giống cây trồng và vật tư nông nghiệp Thanh Hoá – Chủ tịch*
 
-*
 
 ![Đề tài KH&CN cấp tỉnh của Tiến Nông được Hội đồng đánh giá xếp loại Xuất sắc](/uploads/tin-cu/2025/de-tai-khcn-cap-tinh-cua-tien-nong-duoc-hoi-dong-danh-gia-xep-loai-xuat-sac-3.webp)
 
-*
 
 *Chủ nhiệm đề tài Th.S Nguyễn Hồng Phong, Tổng giám đốc Công ty CP Công Nông nghiệp Tiến Nông.*
 
-*
 
 ![Đề tài KH&CN cấp tỉnh của Tiến Nông được Hội đồng đánh giá xếp loại Xuất sắc](/uploads/tin-cu/2025/de-tai-khcn-cap-tinh-cua-tien-nong-duoc-hoi-dong-danh-gia-xep-loai-xuat-sac-4.webp)
 
-*
 
 *TS.Tống Văn Giang – Giảng viên Khoa Nông lâm ngư nghiệp – Trường đại học Hồng Đức – Ủy viên phản biện*
 
-*
 
 ![Đề tài KH&CN cấp tỉnh của Tiến Nông được Hội đồng đánh giá xếp loại Xuất sắc](/uploads/tin-cu/2025/de-tai-khcn-cap-tinh-cua-tien-nong-duoc-hoi-dong-danh-gia-xep-loai-xuat-sac-5.webp)
 
-*
 
 *TS. Nguyễn Trí Ngọc: Phó chủ tịch Hiệp Hội phân bón Việt Nam – Uỷ viên phản biện* 
 
-*
 
 ![Đề tài KH&CN cấp tỉnh của Tiến Nông được Hội đồng đánh giá xếp loại Xuất sắc](/uploads/tin-cu/2025/de-tai-khcn-cap-tinh-cua-tien-nong-duoc-hoi-dong-danh-gia-xep-loai-xuat-sac-6.webp)
 
-*
 
 *Ông Nguyễn Viết Giang – Giám đốc Trung tâm nghiên cứu phát triển Khoa học và Công nghệ Tiến Nông Ông Nguyễn Viết Giang đại diện cơ quan nghiệm thu công bố quyết định thành lập Hội đồng tự đánh giá nghiệm thu nhiệm vụ khoa học và công nghệ*
 

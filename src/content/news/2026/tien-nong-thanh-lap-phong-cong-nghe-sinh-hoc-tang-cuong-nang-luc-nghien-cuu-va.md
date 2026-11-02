@@ -30,11 +30,9 @@ Phòng Công nghệ Sinh học được giao nhiệm vụ nghiên cứu, phân l
 
 Phát biểu giao nhiệm vụ, Tổng Giám đốc Nguyễn Hồng Phong nhấn mạnh, việc thành lập Phòng Công nghệ Sinh học không chỉ bổ sung một đơn vị chuyên môn mới mà còn thể hiện quyết tâm của Tiến Nông trong việc đầu tư cho nghiên cứu và phát triển, từng bước làm chủ công nghệ lõi về vi sinh. Tổng Giám đốc đề nghị tập thể Phòng Công nghệ Sinh học nhanh chóng ổn định tổ chức, xây dựng kế hoạch nghiên cứu theo định hướng của Công ty, tăng cường phối hợp với các đơn vị chuyên môn, tập trung phát triển các giải pháp có tính ứng dụng cao, tạo ra những sản phẩm mang hàm lượng khoa học, công nghệ và giá trị gia tăng, đáp ứng yêu cầu phát triển của doanh nghiệp cũng như xu hướng phát triển nông nghiệp bền vững.
 
-*
 
 ![TIẾN NÔNG THÀNH LẬP PHÒNG CÔNG NGHỆ SINH HỌC, TĂNG CƯỜNG NĂNG LỰC NGHIÊN CỨU VÀ LÀM CHỦ CÔNG NGHỆ VI SINH](/uploads/tin-cu/2026/tien-nong-thanh-lap-phong-cong-nghe-sinh-hoc-tang-cuong-nang-luc-nghien-cuu-va-2.webp)
 
-*
 
 *Tổng giám đốc Nguyễn Hồng Phong phát biểu chỉ đạo* 
 
@@ -46,11 +44,9 @@ Phát biểu giao nhiệm vụ, Tổng Giám đốc Nguyễn Hồng Phong nhấn
 
 Phát biểu nhận nhiệm vụ, bà Nguyễn Thị Hảo cam kết sẽ cùng tập thể Phòng Công nghệ Sinh học phát huy tinh thần đoàn kết, chủ động học hỏi, nâng cao năng lực nghiên cứu, tích cực tiếp cận các tiến bộ khoa học, từng bước làm chủ công nghệ vi sinh và đẩy mạnh nghiên cứu ứng dụng vào thực tiễn sản xuất. Đồng thời, đơn vị sẽ tăng cường phối hợp với các phòng, ban và đơn vị chuyên môn trong Công ty để triển khai hiệu quả các nhiệm vụ được giao, góp phần tạo ra những sản phẩm có chất lượng, hiệu quả và giá trị thực tiễn cao, đóng góp vào mục tiêu phát triển bền vững của Tiến Nông.
 
-*
 
 ![TIẾN NÔNG THÀNH LẬP PHÒNG CÔNG NGHỆ SINH HỌC, TĂNG CƯỜNG NĂNG LỰC NGHIÊN CỨU VÀ LÀM CHỦ CÔNG NGHỆ VI SINH](/uploads/tin-cu/2026/tien-nong-thanh-lap-phong-cong-nghe-sinh-hoc-tang-cuong-nang-luc-nghien-cuu-va-4.webp)
 
-*
 
 *Bà Nguyễn Thị Hảo tân Phó trưởng phòng Công nghệ sinh học*
 

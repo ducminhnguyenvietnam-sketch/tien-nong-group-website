@@ -30,11 +30,9 @@ Tham gia chương trình: Về phía khách mời có Ông Hoàng Văn Dũng –
 
 Hội nghị đã tổng kết, đánh giá kết quả mô hình sử dụng phân bón Tiến Nông trên cây lúa đạt hiệu quả cao tại mô hình điểm. Kết quả của mô hình trình diễn kỹ thuật sử dụng đồng bộ sản phẩm phân bón Lúa 1 chuyên lót, lúa 2 chuyên thúc trên Giống lúa Thái Xuyên 111 ở xã Phổ Yên cho thấy cây lúa sinh trưởng, phát triển cân đối, tăng khả năng chống chịu sâu bệnh hại, đặc biệt trong điều kiện vụ Xuân năm 2019 mưa nhiều nhưng mô hình chỉ bị nhiễm bạc lá ở mức nhẹ so với các ruộng lúa canh tác theo phương pháp truyển thống, đồng thời cho năng suất vượt trội đạt 70 tạ/ha.
 
-*
 
 ![Chương trình Hội thảo đầu bờ mô hình trồng lúa sử dụng đồng bộ sản phẩm phân bón Tiến Nông tại Thái Nguyên](/uploads/tin-cu/2019/chuong-trinh-hoi-thao-dau-bo-mo-hinh-trong-lua-su-dung-dong-bo-san-pham-phan-3.webp)
 
-*
 
 *Hội nghị tổng kết mô hình sử dụng phân bón Tiến Nông chuyên dùng cho cây lúa*
 

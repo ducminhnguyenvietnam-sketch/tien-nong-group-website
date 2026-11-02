@@ -420,9 +420,13 @@ content:
         label: 'Chữ dưới số năm (ví dụ Năm phát triển)'
         type: string
       - name: intro_image
-        label: 'Ảnh lớn bên trái khối số liệu'
+        label: 'Ảnh lớn bên trái khối số liệu (cũng là ảnh bìa của video)'
         component: photo
-        description: 'Ảnh ngang, nên rộng ít nhất 1200 px.'
+        description: 'Ảnh ngang, nên rộng ít nhất 1200 px. Khi có video bên dưới, ảnh này là ảnh bìa; bấm vào sẽ phát video.'
+      - name: intro_youtube
+        label: 'Video YouTube cho ảnh này (để trống nếu không có)'
+        type: string
+        description: 'Dán đường dẫn YouTube, ví dụ https://www.youtube.com/watch?v=…'
       - name: intro_caption
         label: 'Chú thích nhỏ trên ảnh (để trống thì ẩn)'
         type: string

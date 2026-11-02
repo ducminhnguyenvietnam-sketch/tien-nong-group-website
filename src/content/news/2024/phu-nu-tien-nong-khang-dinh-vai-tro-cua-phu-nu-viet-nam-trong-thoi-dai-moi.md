@@ -34,11 +34,9 @@ Nhờ đó, phụ nữ Tiến Nông đã có thêm nhiều cơ hội được ti
 
 *Nữ công nhân Nhà máy DDCT Tiến Nông Bỉm Sơn duyên dáng trong tà áo dài rực rỡ*
 
-*
 
 ![Phụ nữ Tiến Nông khẳng định vai trò của phụ nữ Việt Nam trong thời đại mới](/uploads/tin-cu/2024/phu-nu-tien-nong-khang-dinh-vai-tro-cua-phu-nu-viet-nam-trong-thoi-dai-moi-2.webp)
 
-*
 
 *Phụ nữ Tiến Nông tự tin trong Hội thao chào mừng ngày thành lập Đoàn TNCS Hồ Chí Minh*
 
