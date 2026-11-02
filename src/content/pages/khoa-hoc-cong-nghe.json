@@ -158,9 +158,10 @@
     },
     "t6": "Viện Vi Sinh vật và Công nghệ Sinh học - Đại học Quốc Gia Hà Nội",
     "img_part_3_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Logo"
+      "alt": "Logo",
+      "src": "/uploads/part-3-mvz0emhg.png"
     },
     "t7": "Đại học Bách khoa Hà Nội",
     "img_part_4_1": {
