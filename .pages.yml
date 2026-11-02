@@ -3572,9 +3572,6 @@ content:
       - name: community
         label: Community
         type: string
-      - name: governance
-        label: Governance
-        type: string
       - name: roadmap
         label: Roadmap
         type: string
@@ -3614,6 +3611,9 @@ content:
         - name: anchor
           label: Neo liên kết (giữ nguyên)
           type: string
+        - name: image
+          label: Ảnh minh hoạ trụ cột
+          component: photo
     - name: soil
       label: 05 · Trụ cột 1 – Đất khỏe
       type: object
@@ -3774,18 +3774,39 @@ content:
         - name: label
           label: Nhãn
           type: string
+        - name: unit
+          label: Đơn vị nhỏ sau con số (VD triệu đồng)
+          type: string
         - name: sub
           label: Chú thích nhỏ
           type: string
       - name: story_title
         label: Tiêu đề câu chuyện
         type: string
+      - name: story_eyebrow
+        label: Dòng chữ nhỏ trên câu chuyện
+        type: string
       - name: story
         label: Câu chuyện
         type: text
-      - name: image
-        label: Ảnh
+      - name: story_image
+        label: Ảnh nhỏ cho câu chuyện (nên là ảnh em Ngô Hùng Hà)
         component: photo
+      - name: story_link
+        label: Đường dẫn bài viết về câu chuyện
+        type: string
+      - name: image
+        label: Ảnh lớn
+        component: photo
+      - name: photo_caption
+        label: Dòng chữ trên ảnh lớn
+        type: string
+      - name: timeline_title
+        label: Tiêu đề phần các mốc
+        type: string
+      - name: timeline_hint
+        label: Gợi ý nhỏ bên phải tiêu đề các mốc
+        type: string
       - name: timeline
         label: Các mốc
         type: object
@@ -3806,6 +3827,9 @@ content:
         - name: link
           label: Đường dẫn (link)
           type: string
+        - name: image
+          label: Ảnh (không bắt buộc)
+          component: photo
       - name: partners
         label: Đơn vị đồng hành
         type: text
@@ -3867,33 +3891,6 @@ content:
       - name: button
         label: Nút
         type: string
-    - name: governance
-      label: 11 · Minh bạch & ghi nhận
-      type: object
-      fields:
-      - name: eyebrow
-        label: Dòng chữ nhỏ
-        type: string
-      - name: title
-        label: Tiêu đề
-        type: string
-      - name: items
-        label: Các mục
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{fields.title}'
-        fields:
-        - name: title
-          label: Tiêu đề
-          type: string
-        - name: text
-          label: Nội dung
-          type: text
-        - name: link
-          label: Đường dẫn (link)
-          type: string
     - name: roadmap
       label: 12 · Lộ trình
       type: object

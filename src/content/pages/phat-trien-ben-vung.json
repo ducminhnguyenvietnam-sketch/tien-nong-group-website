@@ -7,7 +7,7 @@
     "breadcrumb_home": "Trang chủ",
     "breadcrumb_self": "Phát triển bền vững",
     "eyebrow": "PHÁT TRIỂN BỀN VỮNG",
-    "title": "Cam kết kiến tạo tương lai bền vững",
+    "title": "Vì nền nông nghiệp bền vững và cộng đồng thịnh vượng",
     "intro": "Với Tiến Nông, phát triển bền vững bắt đầu từ sản phẩm: Bón đúng, bón đủ để nuôi dưỡng đất khỏe lâu dài. Từ nền tảng ấy, Tiến Nông kiến tạo những nhà máy xanh, nâng tầm sinh kế cho nhà nông và lan tỏa giá trị nhân văn đến cộng đồng.",
     "button1": "Bốn trụ cột",
     "button2": "Ông bố Tiến Nông",
@@ -20,23 +20,24 @@
   },
   "stats": [
     {
-      "value": "Từ 1998",
-      "label": "đỡ đầu trẻ mồ côi, sinh viên",
-      "sub": "Có hoàn cảnh đặc biệt khó khăn"
+      "value": "Hàng tỷ đồng",
+      "label": "mỗi năm cho thiện nguyện",
+      "sub": "Đỡ đầu trẻ mồ côi, hỗ trợ thiên tai, xây nhà cho hộ nghèo"
     },
     {
-      "value": "200+",
-      "label": "em đang được đỡ đầu",
-      "sub": "Thanh Hóa, Nghệ An, Hà Tĩnh"
+      "value": "3+ tỷ đồng",
+      "label": "cho khuyến học Thanh Hóa",
+      "sub": "Năm 2025 và 2026"
     },
     {
-      "value": "ISO 14001:2015",
+      "value": "100+ tấn",
+      "label": "phân bón tặng bà con",
+      "sub": "Phục hồi đồng ruộng sau bão lũ 2024"
+    },
+    {
+      "value": "ISO 14001",
       "label": "quản lý môi trường",
       "sub": "Áp dụng tại các nhà máy"
-    },
-    {
-      "value": "[x] tỷ đồng",
-      "label": "đóng góp cho cộng đồng (lũy kế)"
     }
   ],
   "nav": {
@@ -45,12 +46,11 @@
     "plant": "Nhà máy xanh",
     "farmers": "Sinh kế nhà nông",
     "community": "Cộng đồng",
-    "governance": "Minh bạch",
-    "roadmap": "Lộ trình"
+    "roadmap": "Lộ trình ESG"
   },
   "why": {
     "eyebrow": "VÌ SAO",
-    "title": "Bền vững là việc cốt lõi của một công ty phân bón",
+    "title": "Phát triển bền vững trong từng bao phân bón",
     "text": "Đất canh tác ở nhiều vùng đang bạc màu, chua hóa sau nhiều năm bón phân hóa học thiếu cân đối; chi phí đầu vào tăng trong khi năng suất chững lại. Một bao phân bón đúng có thể giúp cây trồng khỏe hơn mà vẫn trả lại cho đất độ phì nhiêu; một bao phân sai làm điều ngược lại.\n\nVì thế Tiến Nông đặt phát triển bền vững vào chính sản phẩm và cách phục vụ: dinh dưỡng cân đối, tăng hữu cơ — vi sinh, phân tích đất trước khi bón, và đi cùng nhà nông đến hết mùa vụ.",
     "quote": "Đất luôn là nơi bắt đầu, cây là tiếng nói và phân bón chính là nhịp tim của mùa vụ.",
     "quote_source": "Tiến Nông, hội nghị đầu bờ mô hình NPK hữu cơ vi sinh (06/2025)",
@@ -58,22 +58,46 @@
       {
         "title": "Đất khỏe",
         "text": "Dinh dưỡng cân đối, hữu cơ — vi sinh, phân tích đất trước khi bón.",
-        "anchor": "dat-khoe"
+        "anchor": "dat-khoe",
+        "image": {
+          "src": "/uploads/tin-cu/2025/hoi-nghi-dau-bo-danh-gia-hieu-qua-mo-hinh-phan-bon-npk-huu-co-vi-sinh-gieo-mam-2.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Hội nghị đầu bờ đánh giá mô hình NPK hữu cơ vi sinh"
+        }
       },
       {
         "title": "Nhà máy xanh",
         "text": "Sản xuất theo ISO 14001, nước thải tuần hoàn, truy xuất nguồn gốc.",
-        "anchor": "nha-may-xanh"
+        "anchor": "nha-may-xanh",
+        "image": {
+          "focus": "100% 2.6%",
+          "zoom": "110",
+          "alt": "Flycam khuôn viên nhà máy với cây xanh",
+          "src": "/uploads/esg-plant-mvby1c2t.jpg"
+        }
       },
       {
         "title": "Sinh kế nhà nông",
         "text": "Phân bón trả chậm, kỹ sư tận ruộng, đồng hành khi mùa vụ gặp khó.",
-        "anchor": "nha-nong"
+        "anchor": "nha-nong",
+        "image": {
+          "focus": "0% 14.4%",
+          "zoom": "108",
+          "alt": "Lớp tập huấn kỹ thuật cho nông dân",
+          "src": "/uploads/esg-farm-1-mvc699rt.jpg"
+        }
       },
       {
         "title": "Cộng đồng",
         "text": "Đỡ đầu trẻ mồ côi, khuyến học, chung tay vượt thiên tai, hướng về biển đảo.",
-        "anchor": "cong-dong"
+        "anchor": "cong-dong",
+        "image": {
+          "src": "/uploads/tin-cu/2024/ong-bo-tien-nong-dem-tet-gan-ket-yeu-thuong-den-187-tre-mo-coi-1.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Các em nhỏ mồ côi được Tiến Nông đỡ đầu trong chương trình “Tết gắn kết yêu thương”"
+        }
       }
     ]
   },
@@ -218,15 +242,16 @@
     "stats": [
       {
         "value": "1998",
-        "label": "năm bắt đầu"
+        "label": "Năm bắt đầu hành trình"
       },
       {
         "value": "200+",
-        "label": "em đang được đỡ đầu"
+        "label": "Em đang được đỡ đầu"
       },
       {
-        "value": "8-12",
-        "label": "triệu đồng / em / năm"
+        "value": "8–12",
+        "unit": "triệu đồng",
+        "label": "Hỗ trợ mỗi em / năm"
       }
     ],
     "story_title": "Người con đầu tiên",
@@ -241,7 +266,8 @@
       {
         "when": "1998",
         "title": "Bắt đầu nhận đỡ đầu",
-        "text": "Những em nhỏ mồ côi đầu tiên ở Thanh Hóa được nhận trợ cấp hằng tháng."
+        "text": "Những em nhỏ mồ côi đầu tiên ở Thanh Hóa được nhận trợ cấp hằng tháng.",
+        "link": "/tin-tuc/diem-tua-tinh-thuong-cua-hang-chuc-tre-mo-coi-xu-thanh/"
       },
       {
         "when": "2018",
@@ -279,7 +305,18 @@
         "text": "Tiến Nông luôn đồng hành cùng công tác khuyến học, khuyến tài, hỗ trợ hàng trăm học sinh và sinh viên là trẻ mồ côi, có hoàn cảnh khó khăn",
         "link": "https://vhds.baothanhhoa.vn/tien-nong-uom-mam-tri-thuc-chap-canh-tuong-lai-45222.htm"
       }
-    ]
+    ],
+    "photo_caption": "Được hưởng thụ phải sẻ chia",
+    "timeline_title": "Hành trình trao yêu thương",
+    "timeline_hint": "Chọn một năm để khám phá",
+    "story_eyebrow": "TỪ MỘT EM NHỎ, ĐẾN MỘT ĐẠI GIA ĐÌNH",
+    "story_image": {
+      "src": "/uploads/tin-cu/2018/diem-tua-tinh-thuong-cua-hang-chuc-tre-mo-coi-xu-thanh-1.webp",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Vợ chồng ông Nguyễn Xuân Cộng trao học bổng cho các cháu được Tiến Nông đỡ đầu (2018)"
+    },
+    "story_link": "/tin-tuc/diem-tua-tinh-thuong-cua-hang-chuc-tre-mo-coi-xu-thanh/"
   },
   "programs": {
     "eyebrow": "NHỮNG CHƯƠNG TRÌNH KHÁC",
@@ -397,31 +434,8 @@
     "text": "Môi trường làm việc an toàn, đãi ngộ xứng đáng và sự ghi nhận dành cho mỗi chặng đường cống hiến — thâm niên làm việc bình quân của người Tiến Nông là 10 năm.",
     "button": "Con người Tiến Nông →"
   },
-  "governance": {
-    "eyebrow": "MINH BẠCH & GHI NHẬN",
-    "title": "Làm ăn đàng hoàng là nền móng của bền vững",
-    "items": [
-      {
-        "title": "Nộp ngân sách cao nhất từ trước tới nay",
-        "text": "Năm 2025, mức đóng góp ngân sách nhà nước cao nhất trong lịch sử công ty; được Chủ tịch UBND tỉnh Thanh Hóa tặng Bằng khen vì chấp hành tốt chính sách thuế."
-      },
-      {
-        "title": "Sáu lần Sao Vàng Đất Việt",
-        "text": "Giải thưởng dành cho thương hiệu Việt tiêu biểu — Tiến Nông nhận lần thứ sáu năm 2024.",
-        "link": "/tin-tuc/cong-ty-tien-nong-lan-thu-6-nhan-giai-thuong-sao-vang-dat-viet-2024/"
-      },
-      {
-        "title": "ISO 9001 và ISO 14001",
-        "text": "Hệ thống quản lý chất lượng và quản lý môi trường được áp dụng tại các nhà máy."
-      },
-      {
-        "title": "Uỷ ban ESG",
-        "text": "Thành lập 07/2026 để xây dựng bộ chỉ số và công bố báo cáo phát triển bền vững đầu tiên."
-      }
-    ]
-  },
   "roadmap": {
-    "eyebrow": "LỘ TRÌNH",
+    "eyebrow": "LỘ TRÌNH ESG",
     "title": "Hướng tới báo cáo phát triển bền vững đầu tiên",
     "intro": "Chúng tôi đang chuẩn hóa việc đo lường và công bố các chỉ số môi trường, xã hội và quản trị, hướng tới minh bạch theo thông lệ quốc tế.",
     "steps": [

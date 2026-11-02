@@ -11,8 +11,10 @@ import { newsByLink } from '../../lib/news';
 
 interface Img { src?: string; focus?: string; zoom?: string | number; alt?: string }
 interface Item { when: string; title: string; text?: string; link?: string; image?: Img }
-interface Props { items: Item[]; tone?: 'dark' | 'light'; linkLabel?: string; cms?: string; id?: string }
-const { tone = 'light', linkLabel = 'Đọc câu chuyện', cms, id = 'years' } = Astro.props;
+interface Props { items: Item[]; tone?: 'dark' | 'light'; linkLabel?: string; cms?: string; id?: string; photos?: boolean; title?: string; hint?: string }
+const { tone = 'light', linkLabel = 'Đọc câu chuyện', cms, id = 'years', photos = true, title, hint } = Astro.props;
+// Optional content beside the year panels (slot "aside"), e.g. a story card.
+const hasAside = Astro.slots.has('aside');
 const items = await Promise.all((Astro.props.items ?? []).filter((t) => isFilled(t.title)).map(async (t) => {
   if (isFilled(t.image?.src)) return { ...t, img: t.image!, own: true };
   const n = await newsByLink(t.link);
@@ -20,13 +22,16 @@ const items = await Promise.all((Astro.props.items ?? []).filter((t) => isFilled
 }));
 const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
 ---
-{items.length > 0 && <div class:list={['yt-tl', `yt-tl--${tone}`]} data-picker>
+{items.length > 0 && <div class:list={['yt-tl', `yt-tl--${tone}`, { 'yt-tl--text': !photos }]} data-picker>
+{(title || hint) && <div class="yt-tl__head">{title && <h3>{title}</h3>}{hint && <span>{hint}</span>}</div>}
 <div class="yt-tl__rail" role="tablist" aria-label="Các mốc">
 {items.map((t, k) => <button type="button" role="tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'}><span class="yt-tl__dot" aria-hidden="true"></span><span class="yt-tl__when">{t.when}</span></button>)}
 </div>
+<div class:list={['yt-tl__stage', { 'yt-tl__stage--aside': hasAside }]}>
+<div class="yt-tl__panels">
 {items.map((t, k) => (
 <div class="yt-tl__panel" role="tabpanel" data-pick-panel={k} hidden={k !== 0}>
-<div class="yt-tl__img"><ImageSlot style={fill} id={`${id}-${k}`} shape="rounded" radius={18} placeholder={t.title} image={t.img} cms={cms ? `${cms}.${k}.image` : undefined} sizes="(max-width: 899px) 92vw, 560px" /></div>
+{photos && <div class="yt-tl__img"><ImageSlot style={fill} id={`${id}-${k}`} shape="rounded" radius={18} placeholder={t.title} image={t.img} cms={cms ? `${cms}.${k}.image` : undefined} sizes="(max-width: 899px) 92vw, 560px" /></div>}
 <div class="yt-tl__text">
 <span class="yt-tl__year">{t.when}</span>
 <h3>{t.title}</h3>
@@ -35,6 +40,9 @@ const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto
 </div>
 </div>
 ))}
+</div>
+{hasAside && <div class="yt-tl__aside"><slot name="aside" /></div>}
+</div>
 </div>}
 
 <style>
@@ -51,17 +59,24 @@ const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto
   .yt-tl__rail button[aria-selected='true'] .yt-tl__dot { background: var(--yt-accent); border-color: var(--yt-accent); transform: scale(1.15); box-shadow: 0 0 0 5px var(--yt-halo); }
   .yt-tl__panel { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 28px clamp(28px, 4vw, 56px); align-items: center; }
   .yt-tl__panel[hidden] { display: none; }
+  .yt-tl__head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .yt-tl__head h3 { margin: 0; font: 700 clamp(20px, 1.8vw, 24px)/1.3 var(--font-display); color: var(--yt-fg); }
+  .yt-tl__head span { font-size: 13px; color: var(--yt-muted); }
+  .yt-tl__stage--aside { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 28px clamp(28px, 4vw, 56px); align-items: start; }
+  .yt-tl--text .yt-tl__panel { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .yt-tl--text .yt-tl__year { font-size: clamp(48px, 5vw, 68px); color: var(--yt-year, var(--yt-accent)); }
   .yt-tl__img { position: relative; aspect-ratio: 16 / 10; }
   .yt-tl__text { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
   .yt-tl__year { font: 700 clamp(40px, 4.4vw, 60px)/1 var(--font-display); color: var(--yt-accent); letter-spacing: -.01em; }
   .yt-tl__text h3 { margin: 0; font: 700 clamp(22px, 2vw, 28px)/1.3 var(--font-display); color: var(--yt-fg); text-wrap: balance; }
   .yt-tl__text p { margin: 0; color: var(--yt-body); font-size: var(--fs-body); line-height: 1.65; align-self: stretch; }
+  .yt-tl--text .yt-tl__more { min-height: 0; padding: 0; background: none; color: var(--yt-accent); }
   .yt-tl__more { margin-top: 6px; display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 20px; border-radius: 999px; background: var(--yt-btn-bg); color: var(--yt-btn-fg); font-weight: 700; font-size: 15px; text-decoration: none; transition: transform var(--motion-fast); }
   .yt-tl__more:hover { transform: translateY(-1px); text-decoration: none; color: var(--yt-btn-fg); }
   .yt-tl--dark { --yt-bg: var(--green-800); --yt-line: rgba(255, 255, 255, .18); --yt-line-strong: rgba(255, 255, 255, .45); --yt-muted: var(--green-200); --yt-fg: #fff; --yt-body: var(--green-50); --yt-accent: var(--brand-highlight); --yt-halo: rgba(245, 196, 78, .2); --yt-btn-bg: #fff; --yt-btn-fg: var(--green-700); }
   .yt-tl--light { --yt-bg: var(--surface-card); --yt-line: var(--border-default); --yt-line-strong: var(--green-300); --yt-muted: var(--text-tertiary); --yt-fg: var(--text-primary); --yt-body: var(--text-secondary); --yt-accent: var(--brand-bright); --yt-halo: rgba(12, 166, 78, .15); --yt-btn-bg: var(--brand-bright); --yt-btn-fg: #fff; }
   @media (max-width: 899.98px) {
-    .yt-tl__panel { grid-template-columns: minmax(0, 1fr); }
+    .yt-tl__panel, .yt-tl__stage--aside { grid-template-columns: minmax(0, 1fr); }
     .yt-tl__rail { justify-content: flex-start; }
     .yt-tl__rail button, .yt-tl__rail button:first-child, .yt-tl__rail button:last-child { flex: none; align-items: center; padding: 0 10px 4px; }
   }

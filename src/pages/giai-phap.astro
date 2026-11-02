@@ -37,7 +37,7 @@ const defaultIssue = c.finder_issues.length - 1;
 <section class="gp-crops">
 <div class="gp-wrap">
 <div class="gp-head"><div class="gp-head__title"><span class="gp-eyebrow">{c.s02_cay_trong.t1}</span><h2>{c.s02_cay_trong.t2}</h2></div><p class="jx-justify">{c.s02_cay_trong.t3}</p></div>
-<div class="gp-tiles" style={`--leaf:url(${asset('assets/logo-mark-trang.png')})`}>
+<div class="gp-tiles" style={`--leaf:url(${asset('assets/logo-la-trang.png')})`}>
 {c.s02_cay_trong.tiles.map((t, k) => <a href="#tim-giai-phap" class="gp-tile" data-crop-pick={t.name} data-empty-tile={isFilled(t.image?.src) ? undefined : ''}>
 <span class="gp-tile__img" data-needs-photos={isFilled(t.image?.src) ? undefined : ''}><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`gp-tile-${k}`} shape="rect" placeholder={t.image?.alt || t.name} image={t.image} cms={`src/content/pages/giai-phap.json#s02_cay_trong.tiles.${k}.image`} sizes="(max-width: 767px) 46vw, 300px" /></span>
 <span class="gp-tile__name">{t.name}</span><span class="gp-tile__go" aria-hidden="true">↗</span>
