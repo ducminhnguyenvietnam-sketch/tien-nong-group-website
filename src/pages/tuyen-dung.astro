@@ -1,8 +1,7 @@
 ---
 /**
- * Con người & Tuyển dụng. Flow: hero → key figures → why Tiến Nông (three promises) → where you would
- * work → a real career path → training → pay & recognition → open positions with full job
- * descriptions → how to apply → FAQ.
+ * Con người & Tuyển dụng. Flow: hero → key figures → why Tiến Nông → training → a real career path →
+ * pay & recognition → the five departments → open positions with full job descriptions → closing band.
  */
 import raw from '../content/pages/tuyen-dung.json';
 import { isFilled, withDefaults } from '../lib/content';
@@ -11,8 +10,9 @@ import ImageSlot from '../components/ImageSlot.astro';
 import Select from '../components/Select.astro';
 import Head from '../components/story/Head.astro';
 import Stats from '../components/story/Stats.astro';
-import Faq from '../components/story/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
 import { url, link } from '../lib/routes';
+import { newsByLink } from '../lib/news';
 import siteRaw from '../content/site.json';
 
 const c = withDefaults(raw, 'src/content/pages/tuyen-dung.json');
@@ -26,6 +26,12 @@ const applyHref = (j: { title: string; link?: string | null }) =>
 const opt = (arr: string[], all: string) => [{ value: 'all', label: all }, ...[...new Set(arr)].map((v) => ({ value: v, label: v }))];
 const list = (v: unknown) => (Array.isArray(v) ? (v as string[]).filter(isFilled) : []);
 const tel = (v: string) => `tel:${v.replace(/[^\d+]/g, '')}`;
+// Training: each item shows its own photo, or the cover of the article it links to.
+const training = await Promise.all(c.training.items.map(async (t) => {
+  if (isFilled(t.image?.src)) return { ...t, img: t.image };
+  const n = await newsByLink(t.link);
+  return { ...t, img: n?.data.cover?.src ? { ...n.data.cover, alt: n.data.cover.alt || t.title } : t.image };
+}));
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
 <section style="background:var(--surface-card)">
@@ -36,7 +42,7 @@ const tel = (v: string) => `tel:${v.replace(/[^\d+]/g, '')}`;
 <span class="st-eyebrow">{c.hero.eyebrow}</span>
 <h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.hero.title}</h1>
 <p style="margin:0;font-size:var(--fs-lead);color:var(--text-secondary);text-wrap:pretty">{c.hero.intro}</p>
-<div class="st-actions"><a href="#vi-tri" class="st-btn st-btn--solid">{c.hero.button1}</a><a href="#vi-sao" class="st-btn">{c.hero.button2}</a></div>
+<div class="st-actions"><a href="#vi-tri" class="st-btn st-btn--solid">{c.hero.button1} →</a><a href="#vi-sao" class="st-btn">{c.hero.button2}</a></div>
 </div>
 <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:260px 200px;gap:14px">
 <div style="position:relative;grid-row:span 2;min-width:0"><ImageSlot style={fill} id="hr-hero-1" shape="rounded" radius="16" placeholder="Chân dung người lao động thâm niên" image={c.hero.img1} cms={`${F}#hero.img1`} /></div>
@@ -55,11 +61,14 @@ const tel = (v: string) => `tel:${v.replace(/[^\d+]/g, '')}`;
 <a href={url('ve-tien-nong/van-hoa-doanh-nghiep')} style="align-self:flex-start;font-weight:600">{c.reasons.link_label}</a>
 </div></section>
 
-<section id="khoi-nghe" class="st-sec st-sec--card">
+<section id="dao-tao" class="st-sec st-sec--card">
 <div class="st-wrap">
-<Head eyebrow={c.paths.eyebrow} title={c.paths.title} intro={c.paths.intro} split />
-<div class="st-grid" style="--min:210px">
-{c.paths.items.map((p) => <div class="st-card"><div class="st-card__body"><span class="st-card__tag">{p.where}</span><strong class="st-card__title">{p.title}</strong><span class="st-card__text">{p.text}</span></div></div>)}
+<Head eyebrow={c.training.eyebrow} title={c.training.title} />
+<div class="td-train">
+{training.map((t, k) => <a class="td-train__card" href={isFilled(t.link) ? link(t.link) : undefined}>
+<div class="td-train__img"><ImageSlot style={fill} id={`train-${k}`} shape="rounded" radius="14" placeholder={t.title} image={t.img} cms={`${F}#training.items.${k}.image`} sizes="(max-width: 767px) 92vw, 300px" /></div>
+<strong>{t.title}</strong><span class="jx-start">{t.text}</span>{isFilled(t.link) && <span class="td-train__more">Đọc tin →</span>}
+</a>)}
 </div>
 </div></section>
 
@@ -69,7 +78,7 @@ const tel = (v: string) => `tel:${v.replace(/[^\d+]/g, '')}`;
 <div class="st-split__media" style="--ratio:4/5;max-height:620px"><ImageSlot style={fill} id="hr-story" shape="rounded" radius="24" placeholder="Chân dung người lao động gắn bó 20+ năm tại nơi làm việc" image={c.growth.image} cms={`${F}#growth.image`} sizes="(max-width: 899px) 92vw, 560px" /></div>
 <div>
 <Head eyebrow={c.growth.eyebrow} title={c.growth.title} />
-<blockquote class="st-quote"><p>{c.growth.quote}</p><footer><strong>{c.growth.person}</strong>{c.growth.role}</footer></blockquote>
+<blockquote class="st-quote td-quote"><p class="jx-start">{c.growth.quote}</p><footer><strong>{c.growth.person}</strong>{c.growth.role}</footer></blockquote>
 <ol class="st-timeline">
 {c.growth.timeline.map((t) => <li><span class="st-timeline__when">{t.when}</span><div class="st-timeline__what"><strong>{t.title}</strong><span>{t.text}</span></div></li>)}
 </ol>
@@ -77,15 +86,7 @@ const tel = (v: string) => `tel:${v.replace(/[^\d+]/g, '')}`;
 </div>
 </div></section>
 
-<section id="dao-tao" class="st-sec st-sec--card">
-<div class="st-wrap">
-<Head eyebrow={c.training.eyebrow} title={c.training.title} />
-<div class="st-grid" style="--min:240px">
-{c.training.items.map((t) => <div class="st-card"><div class="st-card__body"><strong class="st-card__title">{t.title}</strong><span class="st-card__text">{t.text}</span>{isFilled(t.link) && <a class="st-card__link" href={link(t.link)}>Đọc tin →</a>}</div></div>)}
-</div>
-</div></section>
-
-<section id="dai-ngo" class="st-sec">
+<section id="dai-ngo" class="st-sec st-sec--card">
 <div class="st-wrap">
 <Head eyebrow={c.benefits.eyebrow} title={c.benefits.title} intro={c.benefits.intro} split />
 <div class="st-grid" style="--min:280px">
@@ -94,7 +95,15 @@ const tel = (v: string) => `tel:${v.replace(/[^\d+]/g, '')}`;
 <div class="st-ruled">{c.benefits.items.map((b) => <div><strong>{b.title}</strong><span>{b.text}</span></div>)}</div>
 </div></section>
 
-<section id="vi-tri" class="st-sec st-sec--card">
+<section id="khoi-nghe" class="st-sec">
+<div class="st-wrap">
+<Head eyebrow={c.paths.eyebrow} title={c.paths.title} intro={c.paths.intro} split />
+<ul class="td-paths">
+{c.paths.items.map((p, k) => <li><span class="td-paths__n">{String(k + 1).padStart(2, '0')}</span><strong>{p.title}</strong><span class="td-paths__text jx-start">{p.text}</span><span class="td-paths__where">{p.where}</span></li>)}
+</ul>
+</div></section>
+
+<section id="vi-tri" class="st-sec td-jobs-sec">
 <div class="st-wrap st-wrap--narrow">
 <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap">
 <Head eyebrow={c.jobs.eyebrow} title={c.jobs.title} intro={c.jobs.intro} />
@@ -106,9 +115,9 @@ const tel = (v: string) => `tel:${v.replace(/[^\d+]/g, '')}`;
 </div>
 <div class="td-jobs">
 {jobs.map((j, k) => (
-<details class="td-job" data-dept={j.dept} data-loc={j.loc} open={k === 0 ? true : undefined}>
+<details class="td-job" data-dept={j.dept} data-loc={j.loc}>
 <summary>
-<div style="display:flex;flex-direction:column;gap:4px;min-width:0"><strong style="font-size:19px">{j.title}</strong><span style="font-size:14px;color:var(--text-secondary)">{[j.dept, j.loc, isFilled(j.count) ? `Số lượng: ${j.count}` : '', j.type, isFilled(j.due) ? `Hạn nộp ${j.due}` : ''].filter(Boolean).join(' · ')}</span></div>
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0"><strong style="font-size:19px">{j.title}</strong><span style="font-size:14px;color:var(--text-secondary)">{[j.dept, j.loc, isFilled(j.count) ? `Số lượng: ${j.count}` : '', isFilled(j.due) ? `Hạn nộp ${j.due}` : ''].filter(Boolean).join(' · ')}</span></div>
 <span class="td-job__sign" aria-hidden="true">+</span>
 </summary>
 <div class="td-job__body">
@@ -126,33 +135,12 @@ const tel = (v: string) => `tel:${v.replace(/[^\d+]/g, '')}`;
 </div>
 </div></section>
 
-<section id="ung-tuyen" class="st-sec">
-<div class="st-wrap">
-<Head eyebrow={c.process.eyebrow} title={c.process.title} />
-<ol class="st-steps" style="--min:220px">{c.process.steps.map((s) => <li><strong>{s.title}</strong><span>{s.text}</span></li>)}</ol>
-<div class="st-split st-split--top">
-<div style="padding:24px;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg)">
-<strong style="font-size:18px">{c.process.documents_title}</strong>
-<ul style="margin:0;padding-left:1.2em;color:var(--text-secondary);line-height:1.8">{list(c.process.documents).map((d) => <li>{d}</li>)}</ul>
-{isFilled(c.process.note) && <p class="st-note" style="margin:6px 0 0">{c.process.note}</p>}
-</div>
-<div style="padding:24px;background:var(--green-800);color:#fff;border-radius:var(--radius-lg)">
-<strong style="font:var(--type-h3)">{c.contact.title}</strong>
-<a href={`mailto:${jobsEmail}`} style="color:#fff;font-size:20px;font-weight:700">{jobsEmail}</a>
-{isFilled(c.contact.phone) && <span style="color:var(--green-100)">{c.contact.person} · <a href={tel(c.contact.phone)} style="color:#fff;font-weight:700">{c.contact.phone}</a></span>}
-</div>
-</div>
-</div></section>
-
-<section id="hoi-dap" class="st-sec st-sec--card">
-<div class="st-wrap st-wrap--narrow">
-<Head eyebrow={c.faq.eyebrow} title={c.faq.title} />
-<Faq id="td-faq" items={c.faq.items} />
-</div></section>
+<CtaBand title={c.cta.title} text={c.cta.text} primary={{ label: c.cta.apply, href: `mailto:${jobsEmail}?subject=${encodeURIComponent('Ứng tuyển vào Tiến Nông')}` }} secondary={isFilled(c.contact.phone) ? { label: `☎ ${c.contact.phone}`, href: tel(c.contact.phone) } : undefined} />
 </Layout>
 
 <style>
-  .td-jobs { display: flex; flex-direction: column; background: var(--surface-page); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
+  .td-jobs-sec { background: var(--surface-card); }
+  .td-jobs { display: flex; flex-direction: column; background: var(--surface-card); box-shadow: 0 10px 30px rgba(0, 71, 35, .05); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
   .td-job { border-bottom: 1px solid var(--border-default); }
   .td-job:last-of-type { border-bottom: 0; }
   .td-job summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: center; padding: 20px 24px; }
@@ -163,7 +151,32 @@ const tel = (v: string) => `tel:${v.replace(/[^\d+]/g, '')}`;
   .td-job__body { padding: 0 24px 26px; display: flex; flex-direction: column; gap: 18px; }
   .td-job__cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 18px 32px; }
   .td-job__cols ul { margin: 8px 0 0; padding-left: 1.2em; color: var(--text-secondary); line-height: 1.65; display: flex; flex-direction: column; gap: 6px; }
-  #ung-tuyen .st-split > div { gap: 12px; }
+  .td-quote { padding: 18px 20px; max-width: 92%; }
+  .td-quote p { font-size: clamp(16px, 1.3vw, 18px) !important; line-height: 1.55; }
+  /* Departments: one row each — number, name, short text, where. */
+  .td-paths { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border-default); }
+  .td-paths li { display: grid; grid-template-columns: 48px minmax(0, 240px) minmax(0, 1fr) auto; gap: 8px 24px; align-items: center; padding: 18px 4px; border-bottom: 1px solid var(--border-default); transition: background var(--motion-fast); }
+  .td-paths li:hover { background: var(--green-50); }
+  .td-paths__n { font: 700 22px/1 var(--font-display); color: var(--brand-bright); }
+  .td-paths strong { font: 700 18px/1.35 var(--font-display); }
+  .td-paths__text { color: var(--text-secondary); line-height: 1.55; }
+  .td-paths__where { justify-self: end; padding: 6px 12px; border-radius: 999px; background: var(--surface-page); border: 1px solid var(--border-default); font-size: 13px; font-weight: 600; color: var(--green-700); white-space: nowrap; }
+  /* Training: news photos with the title and one line. */
+  .td-train { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+  .td-train__card { display: flex; flex-direction: column; gap: 8px; color: var(--text-primary); text-decoration: none; }
+  .td-train__card:hover { text-decoration: none; color: var(--text-primary); }
+  .td-train__card:hover strong { color: var(--green-700); }
+  .td-train__img { position: relative; aspect-ratio: 16 / 10; margin-bottom: 6px; }
+  .td-train__card strong { font: 700 17px/1.35 var(--font-display); transition: color var(--motion-fast); }
+  .td-train__card > span:not(.td-train__more) { color: var(--text-secondary); font-size: 15px; line-height: 1.55; }
+  .td-train__more { font-size: 14px; font-weight: 600; color: var(--brand-bright); }
+  @media (max-width: 1099.98px) { .td-train { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 767.98px) {
+    .td-paths li { grid-template-columns: 36px minmax(0, 1fr); }
+    .td-paths__text, .td-paths__where { grid-column: 2; justify-self: start; }
+    .td-train { grid-template-columns: minmax(0, 1fr); }
+    .td-quote { max-width: none; }
+  }
 </style>
 
 <script>

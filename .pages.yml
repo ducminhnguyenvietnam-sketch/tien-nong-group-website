@@ -4804,6 +4804,9 @@ content:
         - name: link
           label: Đường dẫn (link)
           type: string
+        - name: image
+          label: Ảnh (để trống sẽ dùng ảnh bìa của bài tin ở đường dẫn)
+          component: photo
     - name: benefits
       label: 07 · Đãi ngộ & ghi nhận
       type: object
@@ -4937,64 +4940,6 @@ content:
         - name: link
           label: Link ứng tuyển riêng (để trống = gửi email)
           type: string
-    - name: process
-      label: 09 · Quy trình ứng tuyển
-      type: object
-      fields:
-      - name: eyebrow
-        label: Dòng chữ nhỏ
-        type: string
-      - name: title
-        label: Tiêu đề
-        type: string
-      - name: steps
-        label: Các bước
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{fields.title}'
-        fields:
-        - name: title
-          label: Tiêu đề
-          type: string
-        - name: text
-          label: Nội dung
-          type: text
-      - name: documents_title
-        label: Tiêu đề hồ sơ
-        type: string
-      - name: documents
-        label: Giấy tờ hồ sơ
-        type: string
-        list: true
-      - name: note
-        label: Ghi chú
-        type: text
-    - name: faq
-      label: 11 · Hỏi đáp
-      type: object
-      fields:
-      - name: eyebrow
-        label: Dòng chữ nhỏ
-        type: string
-      - name: title
-        label: Tiêu đề
-        type: string
-      - name: items
-        label: Các mục
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{fields.q}'
-        fields:
-        - name: q
-          label: Câu hỏi
-          type: string
-        - name: a
-          label: Trả lời
-          type: text
     - name: contact
       label: 10 · Liên hệ tuyển dụng
       type: object
@@ -5010,6 +4955,19 @@ content:
         type: string
       - name: phone
         label: Điện thoại
+        type: string
+    - name: cta
+      label: Dải kêu gọi cuối trang
+      type: object
+      fields:
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: text
+        label: Dòng mô tả
+        type: text
+      - name: apply
+        label: Nút gửi hồ sơ (mở email)
         type: string
   - name: tin_tuc
     label: Tin tức (khung trang)
