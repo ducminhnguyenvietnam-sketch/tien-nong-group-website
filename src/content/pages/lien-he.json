@@ -7,14 +7,8 @@
     "t1": "Trang chủ",
     "t2": "/ Liên hệ",
     "eyebrow": "LIÊN HỆ",
-    "title": "Bạn cần gì, Tiến Nông chỉ đúng người",
-    "lead": "Chọn đúng nhu cầu để gặp ngay bộ phận phụ trách — kỹ sư nông học, kinh doanh khu vực, dự án, truyền thông hay tuyển dụng.",
-    "background": {
-      "src": "/uploads/tin-cu/2024/doan-khach-hang-hung-yen-ninh-binh-tham-nha-may-tien-nong-2.webp",
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Khách hàng tham quan khuôn viên nhà máy Tiến Nông"
-    }
+    "title": "Kết nối với Tiến Nông",
+    "lead": "Chọn đúng nhu cầu để gặp ngay bộ phận phụ trách: kỹ sư nông học, kinh doanh khu vực, dự án, truyền thông hay tuyển dụng."
   },
   "routes": {
     "eyebrow": "BẠN CẦN GÌ?",
@@ -88,8 +82,8 @@
   "regions": {
     "eyebrow": "TÌM ĐẠI LÝ GẦN BẠN",
     "title": "Gọi người phụ trách tỉnh của bạn",
-    "intro": "Hơn 200 nhà phân phối và 10.000 điểm bán lẻ trên cả nước. Giám đốc kinh doanh phụ trách khu vực sẽ giới thiệu điểm bán gần nhất cho bà con và hướng dẫn đối tác muốn hợp tác.",
-    "call_label": "Gọi",
+    "intro": "Hơn 200 nhà phân phối và 10.000 điểm bán lẻ trên cả nước. Giám đốc kinh doanh phụ trách khu vực sẽ giới thiệu điểm bán gần nhất và hướng dẫn đối tác muốn hợp tác.",
+    "call_label": "Gọi ngay",
     "provinces_label": "Phụ trách",
     "map_label": "Xem bản đồ hệ thống phân phối →"
   },
@@ -129,9 +123,10 @@
         "address": "Làng Del, xã Chư Sê, tỉnh Gia Lai",
         "phone": "02373.729.729",
         "image": {
+          "src": "/uploads/tin-cu/2019/tong-giam-doc-nguyen-hong-phong-tham-va-lam-viec-tai-cong-ty-cp-tien-nong-gia-3.webp",
           "focus": "center",
           "zoom": "100",
-          "alt": "Nhà máy Dinh dưỡng cây trồng Tiến Nông Gia Lai"
+          "alt": "Cán bộ Tiến Nông Gia Lai tại trụ sở công ty"
         }
       },
       {
@@ -141,9 +136,10 @@
         "address": "Km 312, quốc lộ 1A, xã Hoằng Phú, tỉnh Thanh Hóa",
         "phone": "02373.729.729",
         "image": {
+          "src": "/uploads/tin-cu/2020/no-nuc-ngay-vang-ban-hang-tai-nha-may-tien-nong-3-xa-hoang-quy-huyen-hoang-hoa-6.webp",
           "focus": "center",
           "zoom": "100",
-          "alt": "Nhà máy Dinh dưỡng cây trồng Tiến Nông 3"
+          "alt": "Cán bộ, công nhân tại Nhà máy Tiến Nông 3"
         }
       }
     ],

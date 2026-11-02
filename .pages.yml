@@ -5131,9 +5131,6 @@ content:
       - name: hours
         label: Giờ làm việc (để trống nếu chưa có)
         type: string
-      - name: background
-        label: Ảnh nền đầu trang (tràn viền)
-        component: photo
     - name: routes
       label: 02 · Đầu mối theo nhu cầu
       type: object
@@ -5690,6 +5687,12 @@ content:
       - name: region
         label: Vùng phụ trách (ví dụ Vùng 1, Bắc Trung Bộ…)
         type: string
+      - name: area
+        label: Tên khu vực (hiện dưới số vùng ở trang Liên hệ)
+        type: string
+      - name: image
+        label: Ảnh chân dung hoặc ảnh khu vực (trang Liên hệ)
+        component: photo
       - name: phone
         label: Số điện thoại
         description: Khách bấm nút Liên hệ sẽ gọi thẳng số này.

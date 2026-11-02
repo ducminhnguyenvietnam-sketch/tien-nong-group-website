@@ -325,7 +325,14 @@
         "Quảng Ninh",
         "Bắc Ninh",
         "Hưng Yên"
-      ]
+      ],
+      "area": "Thanh Hóa & Đồng bằng sông Hồng",
+      "image": {
+        "src": "/uploads/tin-cu/2023/chuong-trinh-gap-mat-va-giao-luu-ban-hang-tinh-bac-ninh-nam-2023.webp",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Tiến Nông gặp mặt khách hàng tỉnh Bắc Ninh"
+      }
     },
     {
       "name": "Trần Mạnh Tiến",
@@ -351,7 +358,14 @@
         "An Giang",
         "Cần Thơ",
         "Cà Mau"
-      ]
+      ],
+      "area": "Miền Trung, Tây Nguyên & Nam Bộ",
+      "image": {
+        "src": "/uploads/tin-cu/2023/tien-nong-to-chuc-hoi-nghi-khach-hang-tai-yen-thanh-nghe-an.webp",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Hội nghị khách hàng Tiến Nông tại Yên Thành, Nghệ An"
+      }
     },
     {
       "name": "Lê Viết Thiện",
@@ -368,7 +382,14 @@
         "Lạng Sơn",
         "Thái Nguyên",
         "Phú Thọ"
-      ]
+      ],
+      "area": "Trung du & miền núi phía Bắc",
+      "image": {
+        "src": "/uploads/tin-cu/2026/son-la-tu-nuong-ngo-nuong-san-den-nhung-vung-ca-phe-arabica-moi-4.webp",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Đoàn Tiến Nông thăm nương cà phê cùng nhà phân phối ở Sơn La"
+      }
     }
   ]
 }
