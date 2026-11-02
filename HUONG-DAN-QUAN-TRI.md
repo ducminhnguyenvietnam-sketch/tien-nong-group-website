@@ -1,7 +1,8 @@
 # Hướng dẫn cập nhật website Tiến Nông
 
 Website được quản trị bằng **Pages CMS** — trang quản trị miễn phí, đăng nhập bằng tài khoản GitHub.
-Mỗi lần bấm **Save**, website tự cập nhật sau khoảng **2 phút**.
+Mỗi lần bấm **Save**, website tự cập nhật sau khoảng **3–5 phút**. Nếu lần sửa đó làm web dựng lỗi,
+web đang chạy giữ nguyên bản cũ (xem tab **Actions** của repo để biết lỗi).
 
 ## 1. Đăng nhập lần đầu
 
@@ -27,7 +28,7 @@ Người được mời đăng nhập bằng email, không cần tài khoản Gi
 Ảnh được thay và căn chỉnh **ngay trên trang web thật**, thấy kết quả tức thì:
 
 1. Mở website kèm chữ `?sua-anh` ở cuối địa chỉ:
-   **https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/?sua-anh**
+   **https://tiennong.com/?sua-anh** (trước khi chuyển tên miền: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/?sua-anh)
    Góc dưới màn hình hiện thanh **Chế độ sửa ảnh**; mọi ảnh có viền đứt và nút **✎ Thay / căn ảnh**
    (ô chưa có ảnh: **＋ Thêm ảnh**). Chế độ này vẫn bật khi chuyển sang trang khác.
 2. Bấm vào ảnh cần sửa:
@@ -124,3 +125,16 @@ Mọi lần lưu đều được ghi lại trong lịch sử GitHub, nên có th
   (biến `FORM_ENDPOINT` của repo). Khi chưa có, trang hiện nút Gọi / Zalo / Email thay cho biểu mẫu.
 - **Kiểm tra nội dung còn thiếu:** mỗi lần đăng, mục *Actions* của GitHub liệt kê các ô còn nội dung mẫu,
   ảnh còn trống và bài viết chưa có ngày (bước "check:content").
+
+## Đăng web lên tiennong.com (hosting Mắt Bão)
+
+Website là trang tĩnh: GitHub dựng sẵn các tệp HTML và ảnh rồi tải lên hosting qua FTPS (FTP có mã hoá).
+Không có cơ sở dữ liệu hay trang đăng nhập trên hosting.
+
+- Quy trình **Deploy to tiennong.com (Mắt Bão)** (`.github/workflows/deploy-mat-bao.yml`) chạy sau mỗi
+  thay đổi trên nhánh `main`, kể cả mỗi lần lưu trong Pages CMS. Bước dựng hoặc kiểm tra lỗi thì không tải gì lên.
+- Thông tin FTP nằm ở **Settings → Secrets and variables → Actions → Secrets**: `FTP_SERVER`, `FTP_USERNAME`,
+  `FTP_PASSWORD`. Dùng một tài khoản FTP riêng chỉ vào được thư mục web; không ghi mật khẩu vào tệp nào.
+- Tuỳ chọn (tab **Variables**): `SITE_URL` (mặc định `https://tiennong.com`), `FTP_DIR` (mặc định `public_html/`).
+- Tệp `public/.htaccess` ép https, bỏ `www`, đặt các lớp bảo vệ trình duyệt và trang 404.
+- Bản xem thử trên GitHub Pages chỉ chạy khi repo để public; repo private thì bỏ qua bước đó.
