@@ -6,12 +6,12 @@
 import { isFilled } from '../lib/content';
 
 interface Btn { label?: string; href: string; target?: string }
-interface Props { title: string; text?: string; primary?: Btn; secondary?: Btn; id?: string }
-const { title, text, primary, secondary, id } = Astro.props;
+interface Props { title: string; text?: string; primary?: Btn; secondary?: Btn; id?: string; wide?: boolean }
+const { title, text, primary, secondary, id, wide = false } = Astro.props;
 ---
 <section class="cta-band" id={id}>
 <div class="cta-band__row">
-<div class="cta-band__copy">
+<div class:list={['cta-band__copy', { 'cta-band__copy--wide': wide }]}>
 <h2>{title}</h2>
 {isFilled(text) && <p>{text}</p>}
 </div>
@@ -30,6 +30,7 @@ const { title, text, primary, secondary, id } = Astro.props;
   .cta-band__row { position: relative; max-width: 1280px; margin: 0 auto; padding: clamp(48px, 6vw, 72px) clamp(20px, 4vw, 56px);
     display: flex; justify-content: space-between; align-items: center; gap: 24px 48px; flex-wrap: wrap; }
   .cta-band__copy { display: flex; flex-direction: column; gap: 10px; max-width: 720px; }
+  .cta-band__copy--wide { max-width: 920px; }
   .cta-band h2 { margin: 0; font: var(--type-h2); color: #fff; text-wrap: balance; }
   .cta-band p { margin: 0; color: var(--green-100); font-size: var(--fs-body); line-height: 1.6; text-align: start; }
   .cta-band__actions { display: flex; gap: 12px; flex-wrap: wrap; }

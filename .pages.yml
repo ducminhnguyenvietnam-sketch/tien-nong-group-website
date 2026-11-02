@@ -4216,8 +4216,8 @@ content:
         label: Ảnh (tối đa 6, mô tả ảnh hiện làm chú thích)
         component: photo
         list: true
-    - name: news
-      label: 10 · Tin tức
+    - name: press
+      label: Báo chí nói về chương trình (bài trên báo ngoài)
       type: object
       fields:
       - name: eyebrow
@@ -4225,11 +4225,33 @@ content:
         type: string
       - name: title
         label: Tiêu đề
-        description: Tự hiện các bài có chữ “Trường Sa” trong tiêu đề, mới nhất trước.
         type: string
-      - name: all
-        label: 'Liên kết: tất cả tin'
+      - name: read
+        label: 'Chữ trên liên kết (VD: Đọc trên)'
         type: string
+      - name: items
+        label: Các bài báo (nên 4 bài, xếp một hàng)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.source} – {fields.title}'
+        fields:
+        - name: source
+          label: Tên báo
+          type: string
+        - name: date
+          label: Ngày đăng (dd/mm/yyyy)
+          type: string
+        - name: title
+          label: Tiêu đề bài báo
+          type: string
+        - name: summary
+          label: Một câu tóm tắt
+          type: text
+        - name: url
+          label: Đường dẫn bài báo gốc
+          type: string
     - name: cta
       label: 11 · Lời kêu gọi cuối trang
       type: object
