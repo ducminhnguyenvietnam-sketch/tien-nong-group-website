@@ -154,7 +154,7 @@ const [tsx, tsy] = project(11.75, 112.2);
 <a href={`tel:${tel(m.phone)}`} style="display:inline-flex;align-items:center;gap:8px;background:var(--green-500);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--radius-md);white-space:nowrap"><span aria-hidden="true">☎</span> {c.region.call_label}</a>
 </div>
 ))}
-<span style="color:var(--green-100);font-size:15px">{c.region.form_text} <a href={url('lien-he', 'lien-he-form')} style="color:#fff;font-weight:700">{c.region.form_link}</a></span>
+<span style="color:var(--green-100);font-size:15px">{c.region.form_text} <a href={`${url('lien-he')}?chu-de=${encodeURIComponent('Đăng ký làm đại lý')}#lien-he-form`} style="color:#fff;font-weight:700">{c.region.form_link}</a></span>
 </div>
 <figure style="margin:0;position:relative">
 {c.region.map_image.src ? (

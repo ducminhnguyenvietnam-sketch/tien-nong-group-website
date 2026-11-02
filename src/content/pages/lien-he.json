@@ -147,17 +147,16 @@
   },
   "social": {
     "title": "Theo dõi Tiến Nông",
-    "intro": "Tin mùa vụ, kỹ thuật canh tác và hoạt động của Tiến Nông."
+    "intro": "Tin mùa vụ, kỹ thuật canh tác và hoạt động của Tiến Nông trên các nền tảng."
   },
   "form": {
-    "title": "Gửi yêu cầu",
-    "intro": "Chọn nhu cầu để yêu cầu được chuyển đến đúng bộ phận.",
+    "title": "Gửi lời nhắn cho Tiến Nông",
+    "intro": "Chọn chủ đề, để lại nội dung và cách liên lạc. Yêu cầu được chuyển về hộp thư info@tiennong.vn và tới đúng bộ phận phụ trách.",
     "sent_label": "ĐÃ GỬI",
-    "sent_title": "Cảm ơn Quý khách đã liên hệ Tiến Nông.",
-    "sent_before": "Bộ phận",
-    "sent_after": "sẽ phản hồi qua thông tin Quý khách cung cấp.",
+    "sent_title": "Cảm ơn bạn đã liên hệ Tiến Nông.",
+    "sent_before": "Yêu cầu đã được chuyển tới",
+    "sent_after": "Chúng tôi sẽ phản hồi qua số điện thoại hoặc email bạn để lại.",
     "again": "Gửi yêu cầu khác",
-    "need_label": "Nhu cầu *",
     "name_label": "Họ và tên *",
     "name_ph": "Nguyễn Văn A",
     "phone_label": "Số điện thoại *",
@@ -166,23 +165,67 @@
     "email_ph": "ten@email.com",
     "province_label": "Tỉnh / thành phố",
     "province_ph": "VD: Thanh Hóa",
-    "message_label": "Nội dung",
+    "message_label": "Nội dung *",
     "message_ph": "Mô tả ngắn gọn nhu cầu",
     "consent": "Tôi đồng ý để Tiến Nông xử lý dữ liệu cá nhân theo Chính sách bảo mật.",
     "submit": "Gửi yêu cầu",
-    "needs": [
-      "Tư vấn kỹ thuật",
-      "Mua hàng / tìm đại lý",
-      "Đăng ký làm đại lý",
-      "Giải pháp cho dự án",
-      "Hợp tác xuất khẩu",
-      "Báo chí – truyền thông",
-      "Phản ánh chất lượng sản phẩm",
-      "Đăng ký tham quan nhà máy",
-      "Khác"
+    "eyebrow": "GỬI YÊU CẦU",
+    "email": "info@tiennong.vn",
+    "topic_label": "Bạn cần hỗ trợ về",
+    "route_label": "Chuyển tới",
+    "quick_title": "Liên hệ nhanh",
+    "hours": "Thứ Hai – Thứ Bảy, 7:30 – 17:00",
+    "topics": [
+      {
+        "label": "Tư vấn kỹ thuật",
+        "team": "Kỹ sư nông học",
+        "hint": "Cây trồng, diện tích, giai đoạn sinh trưởng và vấn đề đang gặp…"
+      },
+      {
+        "label": "Mua hàng / tìm đại lý",
+        "team": "Kinh doanh khu vực",
+        "hint": "Sản phẩm cần mua, số lượng và địa chỉ của bạn…"
+      },
+      {
+        "label": "Đăng ký làm đại lý",
+        "team": "Phát triển hệ thống phân phối",
+        "hint": "Địa điểm cửa hàng, kinh nghiệm kinh doanh vật tư nông nghiệp…"
+      },
+      {
+        "label": "Giải pháp cho dự án",
+        "team": "Chuyên gia dự án",
+        "hint": "Loại dự án (sân golf, cảnh quan, trang trại…), diện tích, địa điểm…"
+      },
+      {
+        "label": "Hợp tác xuất khẩu",
+        "team": "Kinh doanh quốc tế",
+        "hint": "Quốc gia, sản phẩm quan tâm và quy mô dự kiến…"
+      },
+      {
+        "label": "Báo chí – truyền thông",
+        "team": "Phòng Truyền thông",
+        "hint": "Tên cơ quan báo chí, chủ đề và thời gian mong muốn…"
+      },
+      {
+        "label": "Phản ánh chất lượng sản phẩm",
+        "team": "Kiểm soát chất lượng",
+        "hint": "Tên sản phẩm, nơi mua, ngày sản xuất in trên bao và vấn đề gặp phải…"
+      },
+      {
+        "label": "Đăng ký tham quan nhà máy",
+        "team": "Hành chính – Truyền thông",
+        "hint": "Đơn vị, số người, ngày dự kiến tham quan…"
+      },
+      {
+        "label": "Tuyển dụng",
+        "team": "Hành chính Nhân sự",
+        "hint": "Vị trí quan tâm và kinh nghiệm của bạn…"
+      },
+      {
+        "label": "Khác",
+        "team": "Văn phòng Tiến Nông",
+        "hint": "Nội dung bạn muốn gửi…"
+      }
     ]
-  },
-  "legal": {
-    "title": "Thông tin doanh nghiệp"
   }
 }
