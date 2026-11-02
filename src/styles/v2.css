@@ -107,3 +107,13 @@ html:not(.pe-on) [data-needs-photos] { display: none !important; }
 .yt__play--big::after { margin: -14px 0 0 -8px; border-width: 14px 0 14px 24px; border-color: transparent transparent transparent #fff; }
 .yt:hover .yt__play, a:hover .yt__play { transform: scale(1.08); }
 @media (max-width: 767.98px) { .yt__play--big { width: 64px; height: 64px; margin: -32px 0 0 -32px; } }
+
+/* 1-2-3-4-5 reveal ([data-seq], src/scripts/scrolly.ts). */
+.seq-ready > * { opacity: 0; transform: translateY(14px); transition: opacity .55s var(--ease-out), transform .55s var(--ease-out); transition-delay: calc(var(--seq, 0) * 160ms); }
+.seq-ready.seq-in > * { opacity: 1; transform: none; }
+
+/* Pinned scroll-driven sections ([data-scrolly]): the content stays on screen while scrolling moves through the items. */
+.scrolly.is-pinned { padding-block: 0 !important; }
+.scrolly.is-pinned .scrolly__pin { position: sticky; top: var(--hdr-h, 72px); min-height: calc(100vh - var(--hdr-h, 72px)); display: flex; align-items: center; padding-block: clamp(28px, 4vh, 56px); box-sizing: border-box; }
+.scrolly.is-pinned .scrolly__pin > * { width: 100%; }
+.scrolly__progress { display: none; }

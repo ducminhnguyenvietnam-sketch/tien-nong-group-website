@@ -1557,8 +1557,8 @@ content:
         label: Dòng chữ nhỏ
         type: string
       - name: title
-        label: Tiêu đề lớn
-        type: string
+        label: Tiêu đề lớn (xuống dòng ở đâu thì trang hiện xuống dòng ở đó)
+        type: text
       - name: intro
         label: Đoạn giới thiệu
         type: text

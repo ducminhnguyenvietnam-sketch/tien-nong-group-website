@@ -34,7 +34,6 @@ const connect = [
 {has(co.email) && <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg><a href={`mailto:${co.email}`}>{co.email}</a></li>}
 {has(phone) && <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16.4v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.1 3.6 2 2 0 0 1 3.1 1.5h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L7 9.4a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><a href={`tel:${phone.replace(/[^\d+]/g, '')}`}>{phone}</a></li>}
 {has(co.address) && <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>{co.address}</span></li>}
-{has(co.tax_code) && <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>{co.tax_code_label} {co.tax_code}</span></li>}
 </ul>
 </div>
 <nav class="ftr-col" aria-label={f.explore_title}><strong>{f.explore_title}</strong>{explore.map(([label, href]) => <a href={href}>{label}</a>)}</nav>
@@ -76,11 +75,11 @@ const connect = [
   .site-footer a { color: var(--text-primary); text-decoration: none; transition: color var(--motion-fast); }
   .site-footer a:hover { color: var(--brand-bright); }
   .ftr-container { max-width: 1280px; margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
-  .ftr-top { padding-block: 64px 56px; display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr); gap: 36px 40px; }
-  .ftr-brand { display: flex; flex-direction: column; gap: 14px; max-width: 460px; }
+  .ftr-top { padding-block: 64px 56px; display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr); gap: 36px 40px; }
+  .ftr-brand { display: flex; flex-direction: column; gap: 14px; }
   .ftr-logo { display: block; align-self: flex-start; }
   .ftr-logo img { height: 76px; width: auto; display: block; }
-  .ftr-name { color: var(--brand-bright); font-weight: 600; font-size: 15px; letter-spacing: .02em; text-transform: uppercase; line-height: 1.45; }
+  .ftr-name { color: var(--brand-bright); font-weight: 600; font-size: clamp(13px, 1vw, 15px); letter-spacing: .01em; text-transform: uppercase; line-height: 1.45; white-space: nowrap; }
   .ftr-contact { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
   .ftr-contact li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; align-items: start; color: var(--text-primary); }
   .ftr-contact svg { width: 18px; height: 18px; margin-top: 2px; fill: none; stroke: var(--text-secondary); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
@@ -119,6 +118,7 @@ const connect = [
     .ftr-top { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; padding-block: 48px 40px; }
     .ftr-follow { grid-column: 1 / -1; }
     .ftr-logo img { height: 60px; }
+    .ftr-name { white-space: normal; font-size: 13px; }
     .ftr-bottom { padding-bottom: 72px; }
   }
   @media (max-width: 767.98px) {

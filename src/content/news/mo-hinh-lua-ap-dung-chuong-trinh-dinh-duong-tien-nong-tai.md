@@ -1,5 +1,5 @@
 ---
-title: "Hội thảo đầu bờ: Bộ sản phẩm VNDV trên cây lúa tại Thiệu Hóa"
+title: "Hội thảo đầu bờ: Bộ sản phẩm “Vì nông dân Việt” trên cây lúa tại Thiệu Hóa"
 category: nd
 date: 2026-10-23
 author: Phòng Truyền thông
