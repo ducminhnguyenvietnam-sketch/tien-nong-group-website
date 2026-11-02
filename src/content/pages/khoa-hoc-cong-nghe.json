@@ -144,9 +144,10 @@
     "t3": "Tiến Nông chào đón các nhà khoa học, viện nghiên cứu và trường đại học cùng hợp tác nghiên cứu, thử nghiệm và đào tạo.",
     "t4": "Đề xuất hợp tác",
     "img_part_1_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Logo"
+      "alt": "Logo",
+      "src": "/uploads/part-1-mvyz7gkn.png"
     },
     "t5": "Viện Thổ nhưỡng Nông hóa",
     "img_part_2_1": {
