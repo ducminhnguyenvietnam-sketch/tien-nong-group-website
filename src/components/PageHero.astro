@@ -56,7 +56,7 @@ const leadW = leadWidth ? leadWidth : lead ? (oneLine <= 760 ? oneLine : Math.mi
   .page-hero__scrim { position: absolute; inset: 0; pointer-events: none;
     background: linear-gradient(90deg, rgba(2, 53, 26, .82) 0%, rgba(2, 53, 26, .5) 48%, rgba(2, 53, 26, .05) 82%),
                 linear-gradient(0deg, rgba(2, 53, 26, .45) 0%, rgba(2, 53, 26, 0) 40%); }
-  .page-hero__inner { position: relative; width: 100%; max-width: 1280px; margin: 0 auto; padding: 28px clamp(20px, 4vw, 56px) clamp(56px, 7vw, 96px);
+  .page-hero__inner { position: relative; width: 100%; max-width: var(--wrap, 1280px); margin: 0 auto; padding: 28px clamp(20px, 4vw, 56px) clamp(56px, 7vw, 96px);
     display: flex; flex-direction: column; justify-content: space-between; gap: 48px; pointer-events: none; }
   .page-hero__crumbs { display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; color: var(--green-100); pointer-events: auto; }
   .page-hero__crumbs a { color: var(--green-100); }

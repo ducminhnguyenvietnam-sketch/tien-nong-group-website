@@ -106,7 +106,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
 </div></section>
 
 <section id="lanh-dao" style="scroll-margin-top:160px">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
+<div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
 <div style="display:flex;flex-direction:column;gap:14px;max-width:640px">
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s05_lanh_dao.t1}</span>
 <h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em">{c.s05_lanh_dao.t2}</h2>
@@ -200,7 +200,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
 <style>
   /* Shared section frame on this page */
   .ceo__wrap, .mission__inner, .hist__inner, .fame__inner, .cap__inner, .partners__inner, .about-stats__row {
-    max-width: 1280px; margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
+    max-width: var(--wrap, 1280px); margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
   .eyebrow-tag { display: block; font: var(--type-eyebrow); letter-spacing: .08em; text-transform: uppercase; color: var(--green-700); }
   section h2 { margin: 10px 0 0; font: var(--type-h2); letter-spacing: -.01em; text-wrap: balance; }
 
@@ -222,7 +222,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
   .ceo__sign span { font-size: 13.5px; font-weight: 500; color: rgba(255, 255, 255, .85); }
   .ceo__sign strong { font: 700 clamp(22px, 2vw, 28px)/1.25 var(--font-display); color: #fff; }
   .ceo__band { position: relative; background: var(--green-900); }
-  .ceo__badge { max-width: 1280px; margin: 0 auto; padding: 22px clamp(20px, 4vw, 56px); display: flex; align-items: center; justify-content: center; gap: 20px; }
+  .ceo__badge { max-width: var(--wrap, 1280px); margin: 0 auto; padding: 22px clamp(20px, 4vw, 56px); display: flex; align-items: center; justify-content: center; gap: 20px; }
   .ceo__mark { flex: none; height: 40px; width: auto; display: block; }
   .ceo__rule { flex: none; width: 1px; height: 32px; background: rgba(245, 196, 78, .5); }
   .ceo__slogan { margin: 0; font: 600 clamp(18px, 1.75vw, 25px)/1.25 var(--font-display); color: #fff; text-align: start; }
@@ -253,14 +253,14 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
   .mission__statement { margin: 0; font: 600 clamp(17px, 1.35vw, 19px)/1.4 var(--font-display); color: var(--green-800); text-wrap: balance; text-align: start; }
   .mission__values { display: flex; flex-direction: column; align-items: center; gap: 20px; }
   .core { list-style: none; margin: 0; padding: 0; width: 100%; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
-  .core__item { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 20px 20px 22px; border-radius: var(--radius-lg); background: var(--surface-card);
+  .core__item { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 20px 18px 22px; border-radius: var(--radius-lg); background: var(--surface-card);
     border: 1px solid var(--border-default); transition: transform var(--motion-base) var(--ease-out), box-shadow var(--motion-base), border-color var(--motion-base); }
   .core__item::after { content: ''; position: absolute; left: 20px; right: 20px; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: var(--brand-bright); transform: scaleX(.25); transform-origin: left; transition: transform var(--motion-slow) var(--ease-out); }
   .core__item:hover { transform: translateY(-3px); border-color: var(--green-200); box-shadow: 0 12px 28px rgba(0, 71, 35, .1); }
   .core__item:hover::after { transform: scaleX(1); }
   .core__icon { width: 40px; height: 40px; }
   .core__num { position: absolute; right: 18px; top: 20px; font: 600 13px/1 var(--font-display); color: var(--brand-highlight); }
-  .core__title { font: 600 16.5px/1.35 var(--font-display); color: var(--text-primary); white-space: nowrap; }
+  .core__title { font: 600 clamp(15px, 1.15vw, 16.5px)/1.35 var(--font-display); color: var(--text-primary); text-wrap: balance; }
   .core__text { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--text-secondary); }
   @media (max-width: 1199.98px) { .core { grid-template-columns: repeat(3, minmax(0, 1fr)); } .core__title { white-space: normal; } }
   @media (max-width: 899.98px) {

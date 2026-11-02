@@ -150,7 +150,7 @@ const sections = [
 </Layout>
 
 <style>
-  .pd-wrap { max-width: 1280px; margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
+  .pd-wrap { max-width: var(--wrap, 1280px); margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
   .pd-top { background: var(--surface-card); }
   .pd-top .pd-wrap { padding-block: 24px clamp(40px, 5vw, 64px); display: flex; flex-direction: column; gap: 24px; }
   .pd-crumbs { font-size: 13px; color: var(--text-tertiary); }

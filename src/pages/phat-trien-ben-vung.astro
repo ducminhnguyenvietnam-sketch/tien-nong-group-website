@@ -68,7 +68,7 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 
 <section id="nha-may-xanh" style="scroll-margin-top:160px;position:relative;min-height:560px;background:var(--gray-800);display:flex">
 <div style="position:absolute;inset:0"><ImageSlot style={fill} id="esg-plant" shape="rect" placeholder="Flycam khuôn viên nhà máy với cây xanh" image={c.plant.image} cms={`${F}#plant.image`} sizes="100vw" /></div>
-<div style="position:relative;max-width:1280px;width:100%;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,56px);display:flex;align-items:flex-end;justify-content:flex-end;pointer-events:none">
+<div style="position:relative;max-width:var(--wrap, 1280px);width:100%;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,56px);display:flex;align-items:flex-end;justify-content:flex-end;pointer-events:none">
 <div style="background:var(--surface-card);border-radius:var(--radius-xl);padding:clamp(28px,3vw,40px);max-width:600px;display:flex;flex-direction:column;gap:16px;pointer-events:auto;box-shadow:var(--shadow-lg)">
 <span class="st-eyebrow">{c.plant.eyebrow}</span>
 <h2 class="st-h2">{c.plant.title}</h2>
@@ -200,7 +200,7 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
   .ts-teaser__photo :global(.img-slot__img) { transition: scale 1.2s var(--ease-out); }
   .ts-teaser__link:hover .ts-teaser__photo :global(.img-slot__img) { scale: 1.03; }
   .ts-teaser__scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2, 53, 26, .9) 0%, rgba(2, 53, 26, .6) 45%, rgba(2, 53, 26, .05) 85%); }
-  .ts-teaser__copy { position: relative; max-width: 1280px; margin: 0 auto; min-height: inherit; padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; }
+  .ts-teaser__copy { position: relative; max-width: var(--wrap, 1280px); margin: 0 auto; min-height: inherit; padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; }
   .ts-teaser__eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; color: var(--green-100); }
   .ts-teaser__title { font: var(--type-h2); }
   .ts-teaser__text { max-width: 34em; color: var(--green-50); font-size: var(--fs-lead); line-height: 1.55; text-align: start; }

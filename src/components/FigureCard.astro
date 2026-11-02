@@ -27,7 +27,7 @@ const parts = (v: string) => { const m = String(v).match(/^(.*?)(\+?)$/); return
 
 <style>
   .figs { position: relative; z-index: 2; background: var(--surface-page); }
-  .figs__wrap { max-width: 1280px; margin: 0 auto; padding: clamp(28px, 4vw, 44px) clamp(20px, 4vw, 56px) 0; }
+  .figs__wrap { max-width: var(--wrap, 1280px); margin: 0 auto; padding: clamp(28px, 4vw, 44px) clamp(20px, 4vw, 56px) 0; }
   .figs--overlap .figs__wrap { padding-top: 0; }
   .figs--overlap .figs__card { margin-top: -56px; }
   .figs__card { list-style: none; margin: 0; padding: 8px; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr));

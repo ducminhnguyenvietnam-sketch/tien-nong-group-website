@@ -117,3 +117,14 @@ html:not(.pe-on) [data-needs-photos] { display: none !important; }
 .scrolly.is-pinned .scrolly__pin { position: sticky; top: var(--hdr-h, 72px); min-height: calc(100vh - var(--hdr-h, 72px)); display: flex; align-items: center; padding-block: clamp(28px, 4vh, 56px); box-sizing: border-box; }
 .scrolly.is-pinned .scrolly__pin > * { width: 100%; }
 .scrolly__progress { display: none; }
+
+/* Content width by screen class: laptops and MacBooks (≤1679px) keep the 1280px column of the design;
+   Full HD and larger screens get a wider column and a slightly larger menu so the page doesn't float
+   in empty margins. */
+:root { --wrap: 1280px; }
+@media (min-width: 1680px) {
+  :root { --wrap: 1400px; }
+  .hdr-container { max-width: 1600px !important; }
+  .hdr-nav { font-size: 15px !important; }
+  .hdr-cta { font-size: 15px !important; min-height: 44px !important; }
+}

@@ -143,7 +143,7 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 </Layout>
 
 <style>
-  .ts-wrap { max-width: 1280px; margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
+  .ts-wrap { max-width: var(--wrap, 1280px); margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
   .ts-eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; color: var(--green-600); }
   .ts-eyebrow--light { color: var(--green-100); }
   .ts-head { display: flex; flex-direction: column; gap: 12px; margin-bottom: clamp(28px, 4vw, 44px); }

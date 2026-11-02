@@ -166,7 +166,7 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
     background: radial-gradient(90% 120% at 82% 60%, #0b5a30 0%, var(--green-800) 55%, #003a1c 100%); }
   .sp-hero::after { content: ''; position: absolute; right: 8%; bottom: 46px; width: 520px; height: 60px; border-radius: 50%;
     background: radial-gradient(closest-side, rgba(0, 0, 0, .35), rgba(0, 0, 0, 0)); pointer-events: none; }
-  .sp-hero__row { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 56px);
+  .sp-hero__row { position: relative; z-index: 1; max-width: var(--wrap, 1280px); margin: 0 auto; padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 56px);
     display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 32px; align-items: center; min-height: clamp(380px, 32vw, 460px); }
   .sp-hero__copy { display: flex; flex-direction: column; gap: 18px; max-width: 600px; }
   .sp-hero__eyebrow { display: flex; align-items: center; gap: 14px; font: var(--type-eyebrow); letter-spacing: .1em; color: var(--green-50); }
@@ -191,7 +191,7 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
   .sp-hero__bag--3 { height: 90%; margin-left: -2%; transform: rotate(3deg); transform-origin: bottom center; }
 
   .sp-list { background: var(--surface-page); }
-  .sp-list__wrap { max-width: 1280px; margin: 0 auto; padding: 24px clamp(20px, 4vw, 56px) clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 24px; }
+  .sp-list__wrap { max-width: var(--wrap, 1280px); margin: 0 auto; padding: 24px clamp(20px, 4vw, 56px) clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 24px; }
   .sp-crumbs { font-size: 13px; color: var(--text-tertiary); display: flex; gap: 6px; }
   .sp-crumbs a { color: var(--text-tertiary); }
   .sp-crumbs [aria-current] { color: var(--green-600); }
