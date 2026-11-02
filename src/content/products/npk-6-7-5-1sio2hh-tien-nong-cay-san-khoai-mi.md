@@ -83,6 +83,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 6-7-5+1SiO₂hh Tiến Nông (Cây Sắn, Khoai Mì) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/dinh-duong-cho-cay-san/

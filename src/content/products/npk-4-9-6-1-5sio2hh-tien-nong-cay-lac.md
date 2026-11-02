@@ -70,6 +70,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 4-9-6+1,5SiO₂hh Tiến Nông (Cây Lạc) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/dinh-duong-cay-lac/

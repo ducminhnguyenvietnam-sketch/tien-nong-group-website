@@ -80,6 +80,7 @@ field:
   focus: center
   zoom: '100'
   alt: Đạm Vàng – Tiến Nông bổ sung vi lượng – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/dam-vang-tien-nong/

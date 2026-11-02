@@ -76,6 +76,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 20-5-5 Tiến Nông – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/npk-20-5-5-tien-nong/

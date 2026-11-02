@@ -80,6 +80,7 @@ field:
   focus: center
   zoom: '100'
   alt: Hữu cơ-humic Tiến Nông – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/phan-bon-huu-co-sinh-hoc-huu-co-humic-tien-nong/

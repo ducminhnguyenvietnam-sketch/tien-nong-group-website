@@ -67,6 +67,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK HAOSITE 15-5-20 (S) (Mía 2) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/mia-2/

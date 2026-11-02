@@ -80,6 +80,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 10-4-6 Tiến Nông – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/npk-10-4-6-tien-nong/

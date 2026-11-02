@@ -82,6 +82,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 12-3-12 Tiến Nông – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/npk-12-3-12-tien-nong/

@@ -73,6 +73,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 8-6-4+1,5SiO₂hh Tiến Nông (Lúa 1) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/lua-1-chuyen-lot/

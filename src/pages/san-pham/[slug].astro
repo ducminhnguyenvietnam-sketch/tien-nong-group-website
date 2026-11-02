@@ -2,8 +2,8 @@
 /**
  * Product page (/san-pham/<slug>/), one per file in src/content/products. The content follows the product's
  * conformity certificate (chứng nhận hợp quy) and bag print: composition with test methods, uses,
- * directions, safety, and the legal information. Four photo slots — front, back, granules, in the field —
- * are filled in the CMS or on the site (?sua-anh); empty ones stay hidden from visitors.
+ * directions, safety, and the legal information. Photo slots — front, back, granules and up to three field
+ * photos ("Ứng dụng") — are filled in the CMS or on the site (?sua-anh); empty ones stay hidden from visitors.
  */
 import raw from '../../content/pages/chi-tiet-san-pham.json';
 import { isFilled, withDefaults } from '../../lib/content';
@@ -26,11 +26,18 @@ const views = [
   { key: 'front', label: 'Mặt trước', image: p.front },
   { key: 'back', label: 'Mặt sau', image: p.back },
   { key: 'granule', label: 'Hạt phân', image: p.granule },
-  { key: 'field', label: 'Ứng dụng thực tế', image: p.field },
 ] as const;
+// "Ứng dụng": up to three field photos shown together (one large, two stacked).
+const fieldPhotos = ([['field', p.field], ['field2', p.field2], ['field3', p.field3]] as const)
+  .map(([key, image]) => ({ key, image })).filter((f, i) => i === 0 || isFilled(f.image.src));
+const fieldCount = fieldPhotos.filter((f) => isFilled(f.image.src)).length;
 const line = lineLabel(p.line);
-// With only the front photo there is nothing to switch between, so the photo buttons stay hidden.
-const hasMore = views.slice(1).some((v) => isFilled(v.image.src));
+// With only the front photo there is nothing to switch between, so the thumbnail strip stays hidden.
+const hasMore = views.slice(1).some((v) => isFilled(v.image.src)) || fieldCount > 0;
+const shown = (v: { image: { src?: string } }, k: number) => (k === 0 ? hasMore : isFilled(v.image.src));
+// Safety and storage: the bag's own lines; products without them use the shared text set in the CMS.
+const sentences = (t: string) => (t || '').split(/(?<=\.)\s+/).map((x) => x.trim()).filter(isFilled);
+const safety = p.safety.length ? p.safety : [...sentences(c.s05_an_toan.t2), ...sentences(c.s05_an_toan.t4)];
 const facts = [
   ['Mã số phân bón', p.code], ['Loại phân bón', p.type], ['Phương thức sử dụng', p.method], ['Quy cách', p.pack], ['Tiêu chuẩn', p.standards],
 ].filter(([, v]) => isFilled(v));
@@ -45,20 +52,27 @@ const usage = p.usage.filter((u) => isFilled(u.rate) || isFilled(u.timing) || is
 const related = [...all.filter((e) => e.id !== entry.id && e.data.line === p.line), ...all.filter((e) => e.id !== entry.id && e.data.line !== p.line)].slice(0, 4);
 const sections = [
   ['thanh-phan', 'Thành phần', p.composition.length > 0], ['tac-dung', 'Tác dụng', p.benefits.length > 0],
-  ['huong-dan', 'Hướng dẫn sử dụng', usage.length > 0], ['an-toan', 'An toàn & bảo quản', p.safety.length > 0], ['phap-ly', 'Thông tin pháp lý', legal.length > 0],
+  ['huong-dan', 'Hướng dẫn sử dụng', usage.length > 0], ['an-toan', 'An toàn & bảo quản', safety.length > 0], ['phap-ly', 'Thông tin pháp lý', legal.length > 0 || isFilled(p.tccs_pdf)],
 ].filter(([, , on]) => on) as [string, string, boolean][];
 ---
 <Layout title={p.name} description={p.summary || `${p.name} – ${line} của Tiến Nông.`} active="Sản phẩm">
 <section class="pd-top">
 <div class="pd-wrap">
-<nav class="pd-crumbs" aria-label="Đường dẫn"><a href={url('trang-chu')}>Trang chủ</a> / <a href={url('san-pham')}>Sản phẩm</a>{line && <> / {line}</>}</nav>
+<nav class="pd-crumbs" aria-label="Đường dẫn"><a href={url('trang-chu')}>Trang chủ</a> / <a href={url('san-pham')}>Sản phẩm</a>{line && <> / {line}</>} / <span aria-current="page">{p.name}</span></nav>
 <div class="pd-grid">
 <div class="pd-gallery" data-picker>
 <div class="pd-stage">
-{views.map((v, k) => <div role="tabpanel" class="pd-stage__panel" data-pick-panel={k} hidden={k !== 0}><ImageSlot style={fill} id={`pd-${entry.id}-${v.key}`} shape="rect" fit={v.key === 'front' || v.key === 'back' ? 'contain' : 'cover'} placeholder={v.image.alt || v.label} image={v.image} cms={`${entry.filePath}#${v.key}`} priority={k === 0} sizes="(max-width: 899px) 92vw, 560px" /></div>)}
+{views.map((v, k) => <div role="tabpanel" class="pd-stage__panel" data-pick-panel={k} hidden={k !== 0}><ImageSlot style={fill} id={`pd-${entry.id}-${v.key}`} shape={v.key === 'granule' ? 'rounded' : 'rect'} radius={20} fit={v.key === 'granule' ? 'cover' : 'contain'} placeholder={v.image.alt || v.label} image={v.image} cms={`${entry.filePath}#${v.key}`} priority={k === 0} sizes="(max-width: 899px) 92vw, 560px" /></div>)}
+<div role="tabpanel" class="pd-stage__panel pd-field" data-pick-panel={views.length} data-n={Math.max(1, fieldCount)} hidden>
+{fieldPhotos.map((f) => <div class="pd-field__cell"><ImageSlot style={fill} id={`pd-${entry.id}-${f.key}`} shape="rounded" radius={16} placeholder="Ảnh ứng dụng trên đồng ruộng" image={f.image} cms={`${entry.filePath}#${f.key}`} sizes="(max-width: 899px) 92vw, 560px" /></div>)}
+{fieldCount > 0 && fieldCount < 3 && <div class="pd-field__cell" data-needs-photos><ImageSlot style={fill} id={`pd-${entry.id}-field${fieldCount + 1}`} shape="rounded" radius={16} placeholder="Thêm ảnh ứng dụng" image={{ src: '' }} cms={`${entry.filePath}#field${fieldCount + 1}`} /></div>}
 </div>
-<div class="pd-thumbs" role="tablist" aria-label="Ảnh sản phẩm">
-{views.map((v, k) => <button type="button" role="tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'} data-needs-photos={(k > 0 ? !isFilled(v.image.src) : !hasMore) ? '' : undefined}>{v.label}</button>)}
+</div>
+<div class="pd-thumbs" role="tablist" aria-label="Ảnh sản phẩm" data-needs-photos={hasMore ? undefined : ''}>
+{views.map((v, k) => <button type="button" role="tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'} data-needs-photos={shown(v, k) ? undefined : ''}>
+<span class="pd-thumb__img"><ImageSlot style={fill} id={`pdt-${entry.id}-${v.key}`} shape="rect" fit={v.key === 'granule' ? 'cover' : 'contain'} placeholder="" image={v.image} sizes="72px" /></span>{v.label}</button>)}
+<button type="button" role="tab" data-pick={views.length} aria-selected="false" data-needs-photos={fieldCount > 0 ? undefined : ''}>
+<span class="pd-thumb__img"><ImageSlot style={fill} id={`pdt-${entry.id}-field`} shape="rect" placeholder="" image={fieldPhotos[0].image} sizes="72px" />{fieldCount > 1 && <i class="pd-thumb__n">{fieldCount}</i>}</span>Ứng dụng</button>
 </div>
 </div>
 <div class="pd-info">
@@ -73,7 +87,6 @@ const sections = [
 <a href={url('lien-he', 'dai-ly')} class="pd-btn"><Button as="span" size="lg">{c.s01_san_pham.t23 || 'Tìm đại lý gần nhất'}</Button></a>
 <a href={url('lien-he', 'lien-he-form')} class="pd-btn"><Button as="span" size="lg" variant="secondary">{c.s01_san_pham.t24 || 'Gọi kỹ sư tư vấn'}</Button></a>
 </div>
-{isFilled(p.certificate) && <a class="pd-cert" href={link(p.certificate)} target="_blank" rel="noopener">Xem chứng nhận hợp quy (PDF) ↗</a>}
 </div>
 </div></div></section>
 
@@ -92,7 +105,7 @@ const sections = [
 {p.benefits.length > 0 && <section id="tac-dung">
 <h2>Tác dụng</h2>
 {lead && <p class="pd-lead">{lead}</p>}
-<ul class="pd-points">{points.map((b) => <li>{b}</li>)}</ul>
+<ul class="pd-points">{points.map((b) => <li class="jx-left">{b}</li>)}</ul>
 </section>}
 
 {usage.length > 0 && <section id="huong-dan">
@@ -111,14 +124,18 @@ const sections = [
 <p class="pd-note">Liều lượng có thể điều chỉnh theo chân đất, giống và mục tiêu năng suất. Liên hệ kỹ sư Tiến Nông để được hướng dẫn cụ thể.</p>
 </section>}
 
-{p.safety.length > 0 && <section id="an-toan" class="pd-safety">
+{safety.length > 0 && <section id="an-toan" class="pd-safety">
 <h2>Cảnh báo an toàn, bảo quản</h2>
-<ul>{p.safety.map((s) => <li>{s}</li>)}</ul>
+<ul>{safety.map((s) => <li>{s}</li>)}</ul>
 </section>}
 
-{legal.length > 0 && <section id="phap-ly">
+{(legal.length > 0 || isFilled(p.tccs_pdf)) && <section id="phap-ly">
 <h2>Thông tin pháp lý</h2>
-<dl class="pd-legal">{legal.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
+{legal.length > 0 && <dl class="pd-legal">{legal.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>}
+{(isFilled(p.tccs_pdf) || isFilled(p.certificate)) && <div class="pd-docs">
+{isFilled(p.tccs_pdf) && <a class="pd-doc" href={link(p.tccs_pdf)} target="_blank" rel="noopener" download><span class="pd-doc__ic" aria-hidden="true">PDF</span><span><strong>Tiêu chuẩn cơ sở{isFilled(p.tccs) && ` ${p.tccs}`}</strong><small>Tải tệp PDF</small></span><span class="pd-doc__dl" aria-hidden="true">↓</span></a>}
+{isFilled(p.certificate) && <a class="pd-doc" href={link(p.certificate)} target="_blank" rel="noopener"><span class="pd-doc__ic" aria-hidden="true">PDF</span><span><strong>Chứng nhận hợp quy</strong><small>Xem tệp PDF</small></span><span class="pd-doc__dl" aria-hidden="true">↗</span></a>}
+</div>}
 </section>}
 </div>
 
@@ -138,15 +155,30 @@ const sections = [
   .pd-top .pd-wrap { padding-block: 24px clamp(40px, 5vw, 64px); display: flex; flex-direction: column; gap: 24px; }
   .pd-crumbs { font-size: 13px; color: var(--text-tertiary); }
   .pd-crumbs a { color: var(--text-tertiary); }
+  .pd-crumbs [aria-current] { color: var(--green-600); }
   .pd-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px clamp(32px, 5vw, 72px); align-items: start; }
   .pd-gallery { display: flex; flex-direction: column; gap: 12px; }
   .pd-stage { position: relative; height: clamp(340px, 40vw, 520px); }
   .pd-stage__panel { position: absolute; inset: 0; }
   .pd-stage__panel[hidden] { display: none; }
   .pd-stage :global(.img-slot__frame) { background: transparent !important; }
-  .pd-thumbs { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
-  .pd-thumbs button { min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--border-default); background: var(--surface-card); font: 600 14px var(--font-body); color: var(--text-secondary); cursor: pointer; }
-  .pd-thumbs button[aria-selected='true'] { border-color: var(--green-500); background: var(--green-50); color: var(--green-800); }
+  /* Thumbnail strip: a small photo with its name underneath; the selected one gets a green frame. */
+  .pd-thumbs { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .pd-thumbs button { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 0; border: 0; background: none; font: 600 13px var(--font-body); color: var(--text-secondary); cursor: pointer; }
+  .pd-thumb__img { position: relative; display: block; width: 76px; height: 76px; border-radius: 14px; border: 1.5px solid var(--border-default); background: var(--surface-page); overflow: hidden; padding: 6px; transition: border-color var(--motion-fast), box-shadow var(--motion-fast); }
+  .pd-thumb__img > :global(.img-slot) { inset: 6px !important; width: auto !important; height: auto !important; }
+  .pd-thumb__img :global(.img-slot__frame) { background: transparent !important; border-radius: 8px !important; }
+  .pd-thumb__n { position: absolute; right: 4px; bottom: 4px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 999px; background: var(--green-700); color: #fff; font: 700 11px/20px var(--font-display); font-style: normal; }
+  .pd-thumbs button:hover .pd-thumb__img { border-color: var(--green-300); }
+  .pd-thumbs button[aria-selected='true'] { color: var(--green-800); }
+  .pd-thumbs button[aria-selected='true'] .pd-thumb__img { border-color: var(--brand-bright); box-shadow: 0 0 0 3px rgba(12, 166, 78, .15); }
+  /* "Ứng dụng": one field photo fills the stage; two sit side by side; three are one large + two stacked. */
+  .pd-field { display: grid; gap: 10px; }
+  .pd-field[hidden] { display: none; }
+  .pd-field[data-n='2'] { grid-template-columns: 1fr 1fr; }
+  .pd-field[data-n='3'] { grid-template-columns: 1.6fr 1fr; grid-template-rows: 1fr 1fr; }
+  .pd-field[data-n='3'] .pd-field__cell:first-child { grid-row: span 2; }
+  .pd-field__cell { position: relative; min-height: 0; }
   .pd-info { display: flex; flex-direction: column; gap: 20px; }
   .pd-head { display: flex; flex-direction: column; gap: 10px; }
   .pd-eyebrow { font: var(--type-eyebrow); letter-spacing: .06em; text-transform: uppercase; color: var(--green-600); }
@@ -163,7 +195,6 @@ const sections = [
   .pd-facts dd { margin: 0; font-weight: 700; text-align: right; }
   .pd-actions { display: flex; gap: 12px; flex-wrap: wrap; }
   .pd-btn { display: inline-flex; text-decoration: none; }
-  .pd-cert { font-weight: 600; font-size: 15px; }
   .pd-subnav { position: sticky; top: var(--hdr-h, 72px); z-index: 20; background: var(--surface-page); border-top: 1px solid var(--border-default); border-bottom: 1px solid var(--border-default); }
   .pd-subnav .pd-wrap { display: flex; gap: 28px; overflow-x: auto; white-space: nowrap; font-size: 14px; font-weight: 600; scrollbar-width: none; }
   .pd-subnav a { padding: 14px 0; color: var(--text-secondary); }
@@ -178,17 +209,28 @@ const sections = [
   .pd-table td:nth-child(3) { color: var(--text-secondary); }
   .pd-note { margin: 0; font-size: 13px; color: var(--text-tertiary); }
   .pd-lead { margin: 0; font-weight: 600; }
-  .pd-points { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px; }
+  .pd-points { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .pd-points li { position: relative; padding: 16px 18px 16px 44px; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); line-height: 1.55; }
   .pd-points li::before { content: '✓'; position: absolute; left: 16px; top: 15px; width: 20px; height: 20px; border-radius: 50%; background: var(--green-500); color: #fff; font: 700 12px/20px var(--font-body); text-align: center; }
   .pd-usage { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px; }
-  .pd-usage article { display: flex; flex-direction: column; gap: 10px; padding: 20px; background: var(--surface-card); border: 1px solid var(--border-default); border-left: 3px solid var(--green-500); border-radius: var(--radius-lg); }
+  .pd-usage article { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px; background: var(--surface-card); border: 1px solid var(--green-400); border-radius: var(--radius-lg); }
   .pd-usage h3 { margin: 0; font: 700 17px/1.35 var(--font-display); color: var(--green-800); }
   .pd-usage dl { margin: 0; display: flex; flex-direction: column; gap: 8px; }
-  .pd-usage dt { font: var(--type-eyebrow); letter-spacing: .05em; text-transform: uppercase; color: var(--green-600); }
+  .pd-usage dt { font: 600 14px/1.4 var(--font-display); color: var(--green-600); }
   .pd-usage dd { margin: 2px 0 0; line-height: 1.55; }
   .pd-usage p { margin: 0; color: var(--text-secondary); font-size: 15px; }
-  .pd-safety ul { margin: 0; padding: 18px 20px 18px 38px; background: var(--amber-100); border-radius: var(--radius-lg); display: flex; flex-direction: column; gap: 6px; }
+  /* Safety and storage: dark brand green box, yellow bullets. */
+  .pd-safety ul { list-style: none; margin: 0; padding: 22px 26px; background: var(--green-800); color: var(--green-50); border-radius: var(--radius-lg); display: flex; flex-direction: column; gap: 8px; }
+  .pd-safety li { position: relative; padding-left: 20px; line-height: 1.55; }
+  .pd-safety li::before { content: ''; position: absolute; left: 2px; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--brand-highlight); }
+  .pd-docs { display: flex; gap: 12px; flex-wrap: wrap; }
+  .pd-doc { display: inline-flex; align-items: center; gap: 14px; padding: 12px 16px; border: 1px solid var(--border-default); border-radius: var(--radius-lg); background: var(--surface-card); color: var(--text-primary); text-decoration: none; transition: border-color var(--motion-fast), box-shadow var(--motion-fast); }
+  .pd-doc:hover { border-color: var(--green-400); box-shadow: var(--shadow-sm); text-decoration: none; color: var(--text-primary); }
+  .pd-doc__ic { display: grid; place-items: center; width: 40px; height: 44px; border-radius: 8px; background: #fdecea; color: #c62828; font: 800 11px var(--font-display); letter-spacing: .04em; }
+  .pd-doc > span:nth-child(2) { display: flex; flex-direction: column; gap: 2px; }
+  .pd-doc strong { font-size: 15px; }
+  .pd-doc small { font-size: 13px; color: var(--text-tertiary); }
+  .pd-doc__dl { margin-left: 8px; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--green-50); color: var(--green-700); font-weight: 700; }
   .pd-legal { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 0 32px; font-size: 15px; }
   .pd-legal div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border-default); }
   .pd-legal dt { color: var(--text-secondary); }
@@ -210,6 +252,9 @@ const sections = [
     .pd-stage { height: clamp(280px, 80vw, 420px); }
   }
   @media (max-width: 599.98px) {
+    .pd-points { grid-template-columns: minmax(0, 1fr); }
+    .pd-thumbs { gap: 8px; }
+    .pd-thumb__img { width: 64px; height: 64px; }
     .pd-related__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
     .pd-rel { padding: 10px; }
     .pd-rel__img { height: 140px; }

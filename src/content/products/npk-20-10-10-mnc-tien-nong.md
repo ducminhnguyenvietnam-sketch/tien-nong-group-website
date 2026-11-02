@@ -79,6 +79,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 20-10-10+MNC Tiến Nông – ứng dụng thực tế
+tccs_pdf: '/uploads/TCCS 07-2018.NPK 20-10-10+MNC_compressed.pdf'
 certificate: ''
 featured: false
 old_url: /product/npk-20-10-10mnc-tien-nong/

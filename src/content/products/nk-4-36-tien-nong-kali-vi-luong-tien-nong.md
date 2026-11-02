@@ -90,6 +90,7 @@ field:
   focus: center
   zoom: '100'
   alt: NK 4-36 Tiến Nông (Kali vi lượng Tiến Nông) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/phan-bon-nk-vi-luong/

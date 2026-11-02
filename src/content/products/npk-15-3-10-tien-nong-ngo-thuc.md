@@ -74,6 +74,7 @@ field:
   focus: center
   zoom: '100'
   alt: NPK 15-3-10 Tiến Nông (Ngô Thúc) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/cay-ngo-chuyen-thuc/

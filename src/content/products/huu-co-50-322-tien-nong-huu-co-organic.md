@@ -87,6 +87,7 @@ field:
   focus: center
   zoom: '100'
   alt: Hữu cơ 50-322 Tiến Nông (Hữu cơ Organic) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/phan-bon-huu-co-organic-50-322-tien-nong/

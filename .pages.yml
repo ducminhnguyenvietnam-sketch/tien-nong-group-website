@@ -194,7 +194,14 @@ content:
     label: "Ảnh: Hạt phân"
     component: photo
   - name: field
-    label: "Ảnh: Ứng dụng thực tế"
+    label: "Ảnh: Ứng dụng thực tế 1 (ảnh đồng ruộng)"
+    component: photo
+    description: "Mục \"Ứng dụng\" trên trang sản phẩm hiện tối đa 3 ảnh đồng ruộng hoặc thực tế. Ảnh ngang, rộng ít nhất 1200 px."
+  - name: field2
+    label: "Ảnh: Ứng dụng thực tế 2"
+    component: photo
+  - name: field3
+    label: "Ảnh: Ứng dụng thực tế 3"
     component: photo
   - name: type
     label: "Loại phân bón (theo chứng nhận hợp quy)"
@@ -276,6 +283,10 @@ content:
   - name: certificate
     label: "Tệp chứng nhận hợp quy (PDF)"
     type: file
+  - name: tccs_pdf
+    label: "Tệp Tiêu chuẩn cơ sở – TCCS (PDF)"
+    type: file
+    description: "Hiện nút \"Tải Tiêu chuẩn cơ sở (PDF)\" ở mục Thông tin pháp lý. Để trống nếu chưa có."
   - name: old_url
     label: "Đường dẫn trên web cũ"
     type: string
@@ -2283,30 +2294,20 @@ content:
       - name: description
         label: Mô tả ngắn cho Google
         type: text
-    - name: poster
-      label: Poster đầu trang
+    - name: hero
+      label: Ảnh bao sản phẩm đầu trang
       type: object
+      description: Ba bao sản phẩm đứng cạnh nhau bên phải đầu trang (bao giữa to nhất). Dùng ảnh PNG nền trong suốt, đã cắt sát mép bao.
       fields:
-      - name: eyebrow
-        label: "Chữ nhỏ trên banner (để trống nếu ảnh banner đã có chữ)"
-        type: string
-      - name: title
-        label: "Tiêu đề trên banner (để trống nếu ảnh banner đã có chữ)"
-        type: string
-      - name: text
-        label: "Dòng mô tả trên banner"
-        type: text
-      - name: button
-        label: "Chữ trên nút (cần điền thêm Đường dẫn)"
-        type: string
-      - name: image
-        label: Ảnh poster
+      - name: bag1
+        label: Bao bên trái
         component: photo
-        description: Ảnh thiết kế sẵn, khổ lớn tràn ngang như ảnh đầu trang chủ (nên dùng khoảng 2400×1200 px). Trên điện thoại hai bên ảnh bị cắt bớt, nên đặt chữ và sản phẩm ở giữa ảnh. Để trống sẽ hiện khung chờ ảnh.
-      - name: link
-        label: Bấm vào poster thì mở
-        type: string
-        description: Đường dẫn trong website (ví dụ /san-pham/) hoặc địa chỉ đầy đủ https://… Để trống nếu không cần.
+      - name: bag2
+        label: Bao ở giữa (nổi bật)
+        component: photo
+      - name: bag3
+        label: Bao bên phải
+        component: photo
     - name: s01_tieu_de
       label: 01 · Tiêu đề
       type: object
@@ -2321,7 +2322,7 @@ content:
         label: 'Nhãn in hoa: SẢN PHẨM'
         type: string
       - name: t4
-        label: 'Tiêu đề chính: Dinh dưỡng chuẩn xác cho từng loại cây trồng'
+        label: 'Tiêu đề chính: Dinh dưỡng lý tưởng cho từng loại cây trồng'
         type: string
       - name: t5
         label: 'Đoạn văn: Mọi sản phẩm đều có mã số phân bón, được sản x…'
@@ -2334,7 +2335,10 @@ content:
         label: 'Liên kết: Tải catalogue sản phẩm (PDF) →'
         type: string
       - name: t7
-        label: 'Liên kết: Tìm đại lý gần nhất →'
+        label: 'Nút: Tìm đại lý gần nhất'
+        type: string
+      - name: t8
+        label: 'Nút: Trở thành đối tác'
         type: string
     - name: s02_danh_sach
       label: 02 · Danh sách
@@ -2366,6 +2370,21 @@ content:
         type: string
       - name: t6
         label: 'Chữ: để được tư vấn.'
+        type: string
+      - name: t7
+        label: 'Chữ: Trang (phân trang)'
+        type: string
+      - name: t8
+        label: 'Thẻ sản phẩm khi rê chuột – nút: Xem chi tiết sản phẩm'
+        type: string
+      - name: t9
+        label: 'Thẻ sản phẩm khi rê chuột – nhãn: Thành phần'
+        type: string
+      - name: t10
+        label: 'Thẻ sản phẩm khi rê chuột – nhãn: Công dụng nổi bật'
+        type: string
+      - name: t11
+        label: 'Thẻ sản phẩm khi rê chuột – nhãn: Cây trồng phù hợp'
         type: string
     - name: s03_tu_van
       label: 03 · Tư vấn

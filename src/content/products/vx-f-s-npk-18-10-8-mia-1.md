@@ -67,6 +67,7 @@ field:
   focus: center
   zoom: '100'
   alt: VX-F&S NPK 18-10-8 (Mía 1) – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/mia-1/

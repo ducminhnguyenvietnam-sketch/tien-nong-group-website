@@ -80,6 +80,7 @@ field:
   focus: center
   zoom: '100'
   alt: NK 16-9+2SiO₂hh Tiến Nông – ứng dụng thực tế
+tccs_pdf: ''
 certificate: ''
 featured: false
 old_url: /product/nk-16-92-sio2hh-tien-nong/

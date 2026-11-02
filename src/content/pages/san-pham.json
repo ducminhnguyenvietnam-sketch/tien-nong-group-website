@@ -2,27 +2,35 @@
   "seo": {
     "title": "Sản phẩm"
   },
-  "poster": {
-    "image": {
-      "src": "/uploads/SX4.jpg",
+  "hero": {
+    "bag1": {
+      "src": "/uploads/sp-hero-bao-1.png",
       "focus": "center",
       "zoom": "100",
-      "alt": "Sản phẩm Tiến Nông xuất xưởng từ nhà máy"
+      "alt": "Bao NPK 12-3-10+2SiO₂hh Tiến Nông (Lúa 2)"
     },
-    "link": "",
-    "eyebrow": "SẢN PHẨM TIẾN NÔNG",
-    "title": "Dinh dưỡng chuẩn khoa học cho mọi mùa vụ",
-    "text": "Hơn 50 sản phẩm phân bón chuyên dùng, đa dụng, hữu cơ và công nghệ cao, sản xuất theo ISO 9001:2015 và ISO 14001:2015.",
-    "button": ""
+    "bag2": {
+      "src": "/uploads/sp-hero-bao-2.png",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Bao NPK 15-15-15+1SiO₂hh Tiến Nông"
+    },
+    "bag3": {
+      "src": "/uploads/sp-hero-bao-3.png",
+      "focus": "center",
+      "zoom": "100",
+      "alt": "Bao Điều hoà pH đất 1 – Tiến Nông"
+    }
   },
   "s01_tieu_de": {
     "t1": "Trang chủ",
     "t2": "/ Sản phẩm",
-    "t3": "SẢN PHẨM",
+    "t3": "SẢN PHẨM TIẾN NÔNG",
     "t4": "Dinh dưỡng lý tưởng cho từng loại cây trồng",
     "t5": "Các sản phẩm đều có mã số phân bón, được sản xuất theo ISO 9001:2015 & ISO 14001:2015 và kiểm nghiệm chất lượng tại phòng thí nghiệm đạt chuẩn VILAS 1519 & VALAS 262.",
-    "t6": "Tải catalogue sản phẩm (PDF) →",
-    "t7": "Tìm đại lý gần nhất →"
+    "t6": "Tải catalogue sản phẩm (PDF)",
+    "t7": "Tìm đại lý gần nhất",
+    "t8": "Trở thành đối tác"
   },
   "s02_danh_sach": {
     "t1": "Tìm sản phẩm",
@@ -33,7 +41,12 @@
     "t3": "Xóa bộ lọc",
     "t4": "Không tìm thấy sản phẩm phù hợp. Hãy thử bỏ bớt bộ lọc hoặc",
     "t5": "liên hệ kỹ sư Tiến Nông",
-    "t6": "để được tư vấn."
+    "t6": "để được tư vấn.",
+    "t7": "Trang",
+    "t8": "Xem chi tiết sản phẩm",
+    "t9": "Thành phần",
+    "t10": "Công dụng nổi bật",
+    "t11": "Cây trồng phù hợp"
   },
   "s03_tu_van": {
     "t1": "Cần tư vấn lựa chọn sản phẩm phù hợp?",
