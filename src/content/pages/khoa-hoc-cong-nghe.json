@@ -12,7 +12,9 @@
     "t1": "Trang chủ / Khoa học & Công nghệ",
     "t2": "KHOA HỌC & CÔNG NGHỆ",
     "t3": "Khoa học phụng sự nông nghiệp",
-    "t4": "Mỗi giải pháp của Tiến Nông đều bắt nguồn từ nghiên cứu về môi trường, về cây và được kiểm chứng trên đồng ruộng trước khi đến tay nhà nông."
+    "t4": "Mỗi giải pháp của Tiến Nông đều bắt nguồn từ nghiên cứu về môi trường, về cây và được kiểm chứng trên đồng ruộng trước khi đến tay nhà nông.",
+    "t5": "Khám phá năng lực",
+    "t6": "Quy trình nghiên cứu"
   },
   "s02_dinh_vi": {
     "t1": "Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam",
@@ -33,7 +35,7 @@
     "img_lab_1_1": {
       "src": "/uploads/lab-1-mvc6dnef.jpg",
       "focus": "10.7% 68.4%",
-      "zoom": "117",
+      "zoom": "100",
       "alt": "Phòng Kiểm nghiệm chất lượng"
     },
     "t4": "Phòng Phân tích & Kiểm nghiệm",
@@ -41,7 +43,7 @@
     "img_lab_2_1": {
       "src": "/uploads/lab-2-mvc6k7pa.jpg",
       "focus": "50.6% 74.2%",
-      "zoom": "142",
+      "zoom": "100",
       "alt": "Phòng Công nghệ Sinh học"
     },
     "t6": "Phòng Công nghệ Sinh học",
@@ -49,7 +51,7 @@
     "img_lab_3_1": {
       "src": "/uploads/lab-3-mvc6lu8i.jpg",
       "focus": "91.5% 65.4%",
-      "zoom": "162",
+      "zoom": "100",
       "alt": "Phòng Sức khỏe đất & Cây trồng"
     },
     "t8": "Phòng Sức khỏe đất & cây trồng",
@@ -102,9 +104,9 @@
     "t7": "Hàm lượng dinh dưỡng, độ ẩm",
     "t8": "Nguyên liệu đầu vào",
     "t9": "Kiểm soát trước khi sản xuất",
-    "t10": "Phân tích mô lá",
-    "t11": "[Cần xác nhận phạm vi]",
-    "t12": "Yêu cầu phân tích đất →"
+    "t10": "Phân tích vi sinh",
+    "t11": "Mật độ vi sinh vật có ích trong phân bón",
+    "t12": "Yêu cầu phân tích đất"
   },
   "s07_thanh_qua": {
     "t1": "KẾT QUẢ NGHIÊN CỨU",
@@ -143,33 +145,35 @@
     "t2": "Kết nối cùng viện nghiên cứu và trường đại học",
     "t3": "Tiến Nông chào đón các nhà khoa học, viện nghiên cứu và trường đại học cùng hợp tác nghiên cứu, thử nghiệm và đào tạo.",
     "t4": "Đề xuất hợp tác",
-    "img_part_1_1": {
-      "focus": "50% 50%",
-      "zoom": "100",
-      "alt": "Logo",
-      "src": "/uploads/part-1-mvyz7gkn.png"
-    },
-    "t5": "Viện Đổi mới sáng tạo Quốc Gia",
-    "img_part_2_1": {
-      "focus": "50% 50%",
-      "zoom": "100",
-      "alt": "Logo",
-      "src": "/uploads/part-2-mvz06xlg.jpg"
-    },
-    "t6": "Viện Vi Sinh vật và Công nghệ Sinh học - Đại học Quốc Gia Hà Nội",
-    "img_part_3_1": {
-      "focus": "50% 50%",
-      "zoom": "100",
-      "alt": "Logo",
-      "src": "/uploads/part-3-mvz0emhg.png"
-    },
-    "t7": "Viện Thổ nhưỡng Nông hóa",
-    "img_part_4_1": {
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Logo"
-    },
-    "t8": "[Viện / trường đối tác]"
+    "partners": [
+      {
+        "name": "Viện Đổi mới sáng tạo Quốc Gia",
+        "logo": {
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Logo",
+          "src": "/uploads/part-1-mvyz7gkn.png"
+        }
+      },
+      {
+        "name": "Viện Vi Sinh vật và Công nghệ Sinh học - Đại học Quốc Gia Hà Nội",
+        "logo": {
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Logo",
+          "src": "/uploads/part-2-mvz06xlg.jpg"
+        }
+      },
+      {
+        "name": "Viện Thổ nhưỡng Nông hóa",
+        "logo": {
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Logo",
+          "src": "/uploads/part-3-mvz0emhg.png"
+        }
+      }
+    ]
   },
   "domains_topics_label": "HƯỚNG NGHIÊN CỨU TRỌNG TÂM",
   "domains": [
@@ -250,5 +254,11 @@
         "alt": "Kỹ sư sử dụng thiết bị đo tại đồng ruộng"
       }
     }
-  ]
+  ],
+  "s09_cta": {
+    "t1": "Cần phân tích đất cho ruộng vườn của bạn?",
+    "t2": "Gửi yêu cầu, kỹ sư Tiến Nông sẽ hướng dẫn lấy mẫu và tư vấn chương trình bón phân theo kết quả phân tích.",
+    "t3": "Yêu cầu phân tích đất",
+    "t4": "Giải pháp theo cây trồng"
+  }
 }

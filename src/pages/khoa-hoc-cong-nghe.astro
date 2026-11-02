@@ -4,9 +4,12 @@ import { isFilled, withDefaults } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
+import CtaBand from '../components/CtaBand.astro';
 import { url } from '../lib/routes';
 
 const c = withDefaults(raw, 'src/content/pages/khoa-hoc-cong-nghe.json');
+const lab = c.s03_trung_tam_r_d as Record<string, any>;
+const labs = [1, 2, 3, 4].map((n) => ({ n, img: lab[`img_lab_${n}_1`], name: lab[`t${2 + n * 2}`], text: lab[`t${3 + n * 2}`] }));
 const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && !d.topics.some((t) => !isFilled(t)));
 
 ---
@@ -20,6 +23,7 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-100)">{c.s01_hero.t2}</span>
 <h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero.t3}</h1>
 <p style="margin:0;font-size:var(--fs-lead);line-height:1.55;color:var(--green-50);text-wrap:pretty">{c.s01_hero.t4}</p>
+<div class="kh-hbtns"><a href="#nang-luc" class="kh-hbtn kh-hbtn--solid">{c.s01_hero.t5}<span aria-hidden="true">↗</span></a><a href="#quy-trinh" class="kh-hbtn">{c.s01_hero.t6}<span aria-hidden="true">↗</span></a></div>
 </div></div></section>
 
 <section style="background:var(--surface-card);border-bottom:1px solid var(--border-default)">
@@ -37,20 +41,22 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
 <div style="display:flex;flex-direction:column;padding-top:14px;border-top:2px solid var(--green-500)"><span style="font:var(--type-stat);color:var(--amber-600);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s02_dinh_vi.t9}</span><span style="font:600 13px/1.45 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-top:6px">{c.s02_dinh_vi.t10}</span></div>
 </div></div></section>
 
-<section style="background:var(--surface-page)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
+<section id="nang-luc" style="background:var(--surface-page);scroll-margin-top:90px">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(40px,4vw,56px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:24px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px 64px;align-items:end">
 <div style="display:flex;flex-direction:column;gap:14px">
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s03_trung_tam_r_d.t1}</span>
 <h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s03_trung_tam_r_d.t2}</h2>
 </div>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.s03_trung_tam_r_d.t3}</p>
+<p class="jx-justify" style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);line-height:1.6">{c.s03_trung_tam_r_d.t3}</p>
 </div>
-<div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 60px)/4),calc((1100px - 100%)*999),calc((100% - 20px)/2)),1fr));gap:20px">
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-1" shape="rect" placeholder="Phòng Thí nghiệm chất lượng" image={c.s03_trung_tam_r_d.img_lab_1_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s03_trung_tam_r_d.img_lab_1_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">{c.s03_trung_tam_r_d.t4}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_trung_tam_r_d.t5}</span></div></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-2" shape="rect" placeholder="Phòng Công nghệ sinh học" image={c.s03_trung_tam_r_d.img_lab_2_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s03_trung_tam_r_d.img_lab_2_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">{c.s03_trung_tam_r_d.t6}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_trung_tam_r_d.t7}</span></div></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-3" shape="rect" placeholder="Phòng Sức khỏe đất & cây trồng" image={c.s03_trung_tam_r_d.img_lab_3_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s03_trung_tam_r_d.img_lab_3_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">{c.s03_trung_tam_r_d.t8}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_trung_tam_r_d.t9}</span></div></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;height:200px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="lab-4" shape="rect" placeholder="Phòng Công nghệ sản xuất" image={c.s03_trung_tam_r_d.img_lab_4_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s03_trung_tam_r_d.img_lab_4_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:6px"><strong style="font-size:18px">{c.s03_trung_tam_r_d.t10}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s03_trung_tam_r_d.t11}</span></div></div>
+<div class="kh-labs">
+{labs.map(({ n, img, name, text }) => (
+<article class="kh-lab">
+<div class="kh-lab__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`lab-${n}`} shape="rect" placeholder={img?.alt} image={img} cms={`src/content/pages/khoa-hoc-cong-nghe.json#s03_trung_tam_r_d.img_lab_${n}_1`} sizes="(max-width: 767px) 92vw, 600px" /></div>
+<div class="kh-lab__text"><span class="kh-lab__n">{String(n).padStart(2, '0')}</span><h3>{name}</h3><p>{text}</p></div>
+</article>
+))}
 </div></div></section>
 
 <section style="background:var(--surface-card)">
@@ -76,7 +82,7 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
 ))}
 </div></div></section>
 
-<section style="background:var(--green-800);color:#fff">
+<section id="quy-trinh" style="background:var(--green-800);color:#fff;scroll-margin-top:90px">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:48px">
 <div style="display:flex;flex-direction:column;gap:14px;max-width:700px">
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s05_quy_trinh.t1}</span>
@@ -103,7 +109,7 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">{c.s06_vilas_1519.t8}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s06_vilas_1519.t9}</span></div>
 {isFilled(c.s06_vilas_1519.t11) && <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px"><strong style="display:block">{c.s06_vilas_1519.t10}</strong><span style="font-size:14px;color:var(--text-secondary)">{c.s06_vilas_1519.t11}</span></div>}
 </div>
-<div style="display:flex;gap:12px;flex-wrap:wrap"><a href={url('lien-he', 'lien-he-form')} style="text-decoration:none;display:inline-flex"><Button as="span" >{c.s06_vilas_1519.t12}</Button></a></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap"><a href={url('lien-he', 'lien-he-form')} style="text-decoration:none;display:inline-flex"><Button as="span" >{c.s06_vilas_1519.t12} ↗</Button></a></div>
 </div></div></section>
 
 <section style="background:var(--surface-card)">
@@ -121,23 +127,55 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
 <div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="res-3" shape="rounded" radius="16" placeholder="Phân bón hữu cơ, phân bón lỏng" image={c.s07_thanh_qua.img_res_3_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s07_thanh_qua.img_res_3_1" /></div><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s07_thanh_qua.t10}</span><strong style="font-size:19px;line-height:1.35">{c.s07_thanh_qua.t11}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s07_thanh_qua.t12}</span></div>
 </div></div></section>
 
-<section style="background:var(--surface-page);border-top:1px solid var(--border-default)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px 64px;align-items:center">
-<div style="display:flex;flex-direction:column;gap:14px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s08_doi_tac_nghien_cuu.t1}</span>
-<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s08_doi_tac_nghien_cuu.t2}</h2>
-<p style="margin:0;color:var(--text-secondary);text-wrap:pretty">{c.s08_doi_tac_nghien_cuu.t3}</p>
-<div><a href={url('lien-he', 'lien-he-form')} style="text-decoration:none;display:inline-flex"><Button as="span" variant="secondary">{c.s08_doi_tac_nghien_cuu.t4}</Button></a></div>
+<section class="kh-partners">
+<div class="kh-partners__wrap">
+<div class="kh-partners__head">
+<div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s08_doi_tac_nghien_cuu.t1}</span>
+<h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s08_doi_tac_nghien_cuu.t2}</h2></div>
+<div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start"><p class="jx-justify" style="margin:0;color:var(--text-secondary);line-height:1.6">{c.s08_doi_tac_nghien_cuu.t3}</p>
+<a href={url('lien-he', 'lien-he-form')} class="kh-link">{c.s08_doi_tac_nghien_cuu.t4} <span aria-hidden="true">→</span></a></div>
 </div>
-<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-1" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_doi_tac_nghien_cuu.img_part_1_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s08_doi_tac_nghien_cuu.img_part_1_1" /></div><span style="font-weight:600;font-size:15px">{c.s08_doi_tac_nghien_cuu.t5}</span></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-2" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_doi_tac_nghien_cuu.img_part_2_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s08_doi_tac_nghien_cuu.img_part_2_1" /></div><span style="font-weight:600;font-size:15px">{c.s08_doi_tac_nghien_cuu.t6}</span></div>
-<div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-3" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_doi_tac_nghien_cuu.img_part_3_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s08_doi_tac_nghien_cuu.img_part_3_1" /></div><span style="font-weight:600;font-size:15px">{c.s08_doi_tac_nghien_cuu.t7}</span></div>
-{isFilled(c.s08_doi_tac_nghien_cuu.t8) && <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:10px"><div style="position:relative;height:72px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="part-4" shape="rounded" radius="8" fit="contain" placeholder="Logo" image={c.s08_doi_tac_nghien_cuu.img_part_4_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s08_doi_tac_nghien_cuu.img_part_4_1" /></div><span style="font-weight:600;font-size:15px">{c.s08_doi_tac_nghien_cuu.t8}</span></div>}
-</div></div></section>
+<ul class="kh-logos">
+{c.s08_doi_tac_nghien_cuu.partners.filter((pt) => isFilled(pt.name)).map((pt, k) => <li><div class="kh-logos__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`part-${k + 1}`} shape="rect" fit="contain" placeholder="Logo" image={pt.logo} cms={`src/content/pages/khoa-hoc-cong-nghe.json#s08_doi_tac_nghien_cuu.partners.${k}.logo`} sizes="200px" /></div><span>{pt.name}</span></li>)}
+</ul>
+</div></section>
+
+<CtaBand title={c.s09_cta.t1} text={c.s09_cta.t2} primary={{ label: c.s09_cta.t3, href: url('lien-he', 'lien-he-form') }} secondary={{ label: c.s09_cta.t4, href: url('giai-phap') }} />
 </Layout>
 
 <style>
+  .kh-hbtns { display: flex; gap: 12px; flex-wrap: wrap; pointer-events: auto; margin-top: 4px; }
+  .kh-hbtn { display: inline-flex; align-items: center; gap: 14px; min-height: 48px; padding: 0 22px; border-radius: var(--radius-btn); background: #fff; color: var(--green-700); font-weight: 700; text-decoration: none; }
+  .kh-hbtn:hover { background: var(--green-50); color: var(--green-800); text-decoration: none; }
+  .kh-hbtn--solid { background: var(--brand-bright); color: #fff; }
+  .kh-hbtn--solid:hover { background: var(--green-500); color: #fff; }
+  .kh-hbtn span { font-size: 14px; }
+  /* Four labs: 2 × 2 large photos, number, name and the full description over a green fade. */
+  .kh-labs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .kh-lab { position: relative; height: clamp(250px, 20vw, 285px); border-radius: var(--radius-lg); overflow: hidden; color: #fff; isolation: isolate; background: var(--green-800); }
+  .kh-lab__img { position: absolute; inset: 0; transition: transform .6s var(--ease-out); }
+  .kh-lab:hover .kh-lab__img { transform: scale(1.04); }
+  .kh-lab::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(0deg, rgba(2, 53, 26, .94) 0%, rgba(2, 53, 26, .78) 32%, rgba(2, 53, 26, .2) 62%, rgba(2, 53, 26, 0) 80%); }
+  .kh-lab__text { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 22px 26px; display: flex; flex-direction: column; gap: 6px; pointer-events: none; }
+  .kh-lab__n { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, .7); font: 600 13px/1 var(--font-display); margin-bottom: 4px; }
+  .kh-lab h3 { margin: 0; font: 700 21px/1.3 var(--font-display); color: #fff; }
+  .kh-lab p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--green-50); max-width: 560px; }
+  /* Research partners: logos four to a row, room for eight or more. */
+  .kh-partners { background: var(--surface-card); border-top: 1px solid var(--border-default); }
+  .kh-partners__wrap { max-width: 1280px; margin: 0 auto; padding: clamp(56px, 7vw, 96px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; gap: 36px; }
+  .kh-partners__head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 64px; align-items: end; }
+  .kh-link { font-weight: 600; color: var(--brand-bright); }
+  .kh-logos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .kh-logos li { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 22px 18px; border: 1px solid var(--border-default); border-radius: var(--radius-lg); background: var(--surface-page); text-align: center; }
+  .kh-logos__img { position: relative; width: 100%; height: 76px; }
+  .kh-logos__img :global(.img-slot__frame) { background: transparent !important; }
+  .kh-logos span { font-weight: 600; font-size: 14.5px; line-height: 1.4; text-align: center; text-align-last: center; }
+  @media (max-width: 899.98px) {
+    .kh-labs { grid-template-columns: minmax(0, 1fr); }
+    .kh-partners__head { grid-template-columns: minmax(0, 1fr); }
+    .kh-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
   .dom-tab[aria-selected='true'] { border-left-color: var(--green-500) !important; background: var(--green-50) !important; font-weight: 700 !important; color: var(--green-800) !important; }
   .dom-tab[aria-selected='true'] span { color: var(--green-600) !important; }
 </style>

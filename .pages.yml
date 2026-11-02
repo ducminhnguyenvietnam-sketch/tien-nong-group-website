@@ -1960,6 +1960,12 @@ content:
       - name: t4
         label: 'Đoạn văn: Mỗi giải pháp của Tiến Nông đều bắt nguồn từ n…'
         type: text
+      - name: t5
+        label: 'Nút 1: Khám phá năng lực'
+        type: string
+      - name: t6
+        label: 'Nút 2: Quy trình nghiên cứu'
+        type: string
     - name: s02_dinh_vi
       label: 02 · Định vị
       type: object
@@ -2224,33 +2230,35 @@ content:
       - name: t4
         label: 'Nút: Đề xuất hợp tác'
         type: string
-      - name: img_part_1_1
-        label: 'Ảnh: Logo'
-        component: photo
-        description: Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px.
-      - name: t5
-        label: 'Chữ: [Viện / trường đối tác]'
+      - name: partners
+        label: Viện, trường đối tác (logo xếp 4 ô một hàng)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.name}'
+        fields:
+        - name: name
+          label: Tên viện / trường
+          type: string
+        - name: logo
+          label: Logo (PNG nền trong suốt nếu có)
+          component: photo
+    - name: s09_cta
+      label: Dải kêu gọi cuối trang
+      type: object
+      fields:
+      - name: t1
+        label: Tiêu đề
         type: string
-      - name: img_part_2_1
-        label: 'Ảnh: Logo'
-        component: photo
-        description: Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px.
-      - name: t6
-        label: 'Chữ: [Viện / trường đối tác]'
+      - name: t2
+        label: Dòng mô tả
+        type: text
+      - name: t3
+        label: Nút chính (mở form liên hệ)
         type: string
-      - name: img_part_3_1
-        label: 'Ảnh: Logo'
-        component: photo
-        description: Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px.
-      - name: t7
-        label: 'Chữ: [Viện / trường đối tác]'
-        type: string
-      - name: img_part_4_1
-        label: 'Ảnh: Logo'
-        component: photo
-        description: Khung ảnh khoảng 226×72 px trên máy tính — nên dùng ảnh rộng ít nhất 452 px.
-      - name: t8
-        label: 'Chữ: [Viện / trường đối tác]'
+      - name: t4
+        label: Nút phụ (sang trang Giải pháp)
         type: string
     - name: domains_topics_label
       label: Lĩnh vực nghiên cứu – nhãn danh sách hướng nghiên cứu
@@ -2843,78 +2851,33 @@ content:
         label: 'Liên kết: Giải pháp cho dự án'
         type: string
     - name: s02_cay_trong
-      label: 02 · Cây trồng
+      label: Cây trồng
       type: object
       fields:
       - name: t1
-        label: 'Nhãn in hoa: 01 · THEO CÂY TRỒNG'
+        label: 'Nhãn in hoa: THEO CÂY TRỒNG'
         type: string
       - name: t2
-        label: 'Tiêu đề: Mỗi nhóm cây trồng, một chương trình dinh dưỡn…'
+        label: 'Tiêu đề'
         type: string
       - name: t3
-        label: 'Đoạn văn: Chương trình được thiết kế theo từng giai đoạn…'
+        label: 'Đoạn văn bên phải tiêu đề'
         type: text
-      - name: img_cg_1_1
-        label: 'Ảnh: Lúa, ngô'
-        component: photo
-        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
-      - name: t4
-        label: 'Chữ đậm: Cây lương thực'
-        type: string
-      - name: t5
-        label: 'Chữ: Lúa · Ngô · Khoai · Sắn'
-        type: string
-      - name: img_cg_2_1
-        label: 'Ảnh: Rau màu'
-        component: photo
-        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
-      - name: t6
-        label: 'Chữ đậm: Rau màu & cây thực phẩm'
-        type: string
-      - name: t7
-        label: 'Chữ: Rau ăn lá · Rau ăn quả · Củ'
-        type: string
-      - name: img_cg_3_1
-        label: 'Ảnh: Cây ăn quả'
-        component: photo
-        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
-      - name: t8
-        label: 'Chữ đậm: Cây ăn quả'
-        type: string
-      - name: t9
-        label: 'Chữ: Cam · Bưởi · Sầu riêng · Thanh long'
-        type: string
-      - name: img_cg_4_1
-        label: 'Ảnh: Cà phê, chè'
-        component: photo
-        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
-      - name: t10
-        label: 'Chữ đậm: Cây công nghiệp'
-        type: string
-      - name: t11
-        label: 'Chữ: Cà phê · Chè · Hồ tiêu · Mía'
-        type: string
-      - name: img_cg_5_1
-        label: 'Ảnh: Hoa, cây cảnh'
-        component: photo
-        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
-      - name: t12
-        label: 'Chữ đậm: Hoa, cây cảnh & cảnh quan'
-        type: string
-      - name: t13
-        label: 'Chữ: Hoa · Cây cảnh · Thảm cỏ'
-        type: string
-      - name: img_cg_6_1
-        label: 'Ảnh: Cây dược liệu'
-        component: photo
-        description: Khung ảnh khoảng 376×300 px trên máy tính — nên dùng ảnh rộng ít nhất 752 px.
-      - name: t14
-        label: 'Chữ đậm: Cây dược liệu'
-        type: string
-      - name: t15
-        label: 'Chữ: Sâm · Đinh lăng · Nghệ'
-        type: string
+      - name: tiles
+        label: Ô cây trồng (nên đủ 8 ô, 2 hàng × 4)
+        description: Bấm vào ô sẽ chuyển xuống phần "Tìm giải pháp" và chọn sẵn cây trồng cùng tên. Ô chưa có ảnh hiện nền xanh có hoạ tiết lá.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.name}'
+        fields:
+        - name: name
+          label: Tên cây trồng
+          type: string
+        - name: image
+          label: Ảnh (ngang, rộng ít nhất 800 px)
+          component: photo
     - name: s03_theo_van_de
       label: 03 · Theo vấn đề
       type: object
@@ -2956,9 +2919,21 @@ content:
         label: "Hỏi đáp – đoạn giới thiệu"
         type: text
       - name: faq_image
-        label: 'Ảnh minh họa phần Câu hỏi thường gặp'
+        label: 'Ảnh minh họa phần Hỏi đáp'
         component: photo
-        description: Hiện dưới đoạn giới thiệu của phần hỏi đáp.
+        description: Hiện dưới danh sách nhóm câu hỏi.
+      - name: faq_search_label
+        label: "Hỏi đáp – nhãn ô tìm kiếm"
+        type: string
+      - name: faq_search_placeholder
+        label: "Hỏi đáp – gợi ý trong ô tìm kiếm"
+        type: string
+      - name: faq_all
+        label: "Hỏi đáp – nút xem tất cả"
+        type: string
+      - name: faq_empty
+        label: "Hỏi đáp – chữ khi không tìm thấy câu hỏi"
+        type: text
     - name: issues
       label: '03 · Theo vấn đề – các vấn đề (vấn đề → vì sao → giải pháp)'
       description: 'Mỗi vấn đề là một nút trên trang; bấm vào sẽ hiện 3 bước. Kéo để đổi thứ tự.'
@@ -3196,6 +3171,9 @@ content:
       - name: title
         label: Câu hỏi
         type: string
+      - name: category
+        label: Nhóm câu hỏi (đúng tên trong "Hỏi đáp – các nhóm câu hỏi")
+        type: string
       - name: cause
         label: Nguyên nhân
         type: text
@@ -3203,6 +3181,10 @@ content:
       - name: fix
         label: Hướng xử lý
         type: text
+    - name: faq_categories
+      label: Hỏi đáp – các nhóm câu hỏi
+      type: string
+      list: true
     - name: finder_crops
       label: Tìm giải pháp – danh sách cây trồng
       type: string
