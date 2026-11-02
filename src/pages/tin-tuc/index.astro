@@ -16,7 +16,7 @@ const news = await getNews();
 const own = news.filter((n) => !isPress(n));
 const [feat, ...rest] = own;
 const press = await getPress(Infinity);
-const PRESS_SHOWN = 3;
+const PRESS_SHOWN = 4;
 const side = rest.slice(0, 4);
 const years = [...new Set(own.map((n) => n.data.date?.getFullYear()).filter((y): y is number => !!y))].sort((a, b) => b - a);
 const pages = Math.max(1, Math.ceil(own.length / PER_PAGE));
@@ -25,13 +25,13 @@ const catPages = Object.fromEntries(Object.keys(CATEGORY_SLUGS).map((k) => [k, l
 ---
 <Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Tin tức">
 <PageHero id="news-hero" image={c.hero.background} cms="src/content/pages/tin-tuc.json#hero.background" placeholder="Ảnh đầu trang Tin tức"
-  crumbs={[{ label: c.s01_tin_noi_bat.t1, href: url('trang-chu') }, { label: c.hero.title || 'Tin tức' }]}
+  crumbs={[{ label: c.s01_tin_noi_bat.t1, href: url('trang-chu') }, { label: c.s01_tin_noi_bat.t3 || 'Tin tức' }]}
   eyebrow={c.hero.eyebrow} title={c.hero.title || c.s01_tin_noi_bat.t3} lead={c.hero.lead} />
 <section style="background:var(--surface-card)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:24px">
-<span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">TIN NỔI BẬT</span>
+<h2 style="margin:0;font:var(--type-h2)">{c.s01_tin_noi_bat.t4 || 'Tin nổi bật'}</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:32px 48px">
-{feat && <a href={newsUrl(feat)} style="display:flex;flex-direction:column;gap:16px;color:var(--text-primary)"><div style="position:relative;height:clamp(240px,26vw,360px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${feat.id}`} shape="rounded" radius="16" placeholder={feat.data.cover.alt || "Ảnh bài nổi bật"} image={feat.data.cover} cms={`${feat.filePath}#cover`} /></div><span style="font-size:14px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{CATEGORIES[feat.data.category]}</strong>{feat.data.date && ` · ${formatDate(feat.data.date)}`}</span><strong style="font:var(--type-h3);text-wrap:balance">{feat.data.title}</strong>{isFilled(feat.data.summary) && <span style="color:var(--text-secondary)">{feat.data.summary}</span>}</a>}
+{feat && <a href={newsUrl(feat)} style="display:flex;flex-direction:column;gap:16px;color:var(--text-primary)"><div style="position:relative;height:clamp(240px,26vw,360px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${feat.id}`} shape="rounded" radius="16" placeholder={feat.data.cover.alt || "Ảnh bài nổi bật"} image={feat.data.cover} cms={`${feat.filePath}#cover`} /></div><span style="display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{CATEGORIES[feat.data.category]}</strong>{feat.data.date && <time style="flex:none">{formatDate(feat.data.date)}</time>}</span><strong style="font:var(--type-h3);text-wrap:balance">{feat.data.title}</strong>{isFilled(feat.data.summary) && <span style="color:var(--text-secondary)">{feat.data.summary}</span>}</a>}
 <div style="display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
 {side.map((n) => <a href={newsUrl(n)} style="display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--border-default);color:var(--text-primary)"><div style="position:relative;height:96px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${n.id}`} shape="rounded" radius="10" placeholder="Ảnh" image={n.data.cover} cms={`${n.filePath}#cover`} /></div><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:var(--green-600);font-weight:600">{CATEGORIES[n.data.category]}</span><strong style="line-height:1.4">{n.data.title}</strong></div></a>)}
 </div></div></div></section>
@@ -43,11 +43,16 @@ const catPages = Object.fromEntries(Object.keys(CATEGORY_SLUGS).map((k) => [k, l
 
 {press.length > 0 && <section id="bao-chi" style="background:var(--surface-card);border-top:1px solid var(--border-default)">
 <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap"><h2 style="margin:0;font:var(--type-h2)">{c.s03_bao_chi.t1}</h2>{press.length > PRESS_SHOWN && <button type="button" id="press-more" style="background:none;border:0;padding:0;cursor:pointer;font:600 16px var(--font-body);color:var(--text-link)">{c.s03_bao_chi.t2}</button>}</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:32px 24px">
-{press.map((p, k) => <a href={newsUrl(p)} {...newsLinkAttrs(p)} data-press-extra={k >= PRESS_SHOWN ? '' : undefined} hidden={k >= PRESS_SHOWN} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:210px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`press-${p.id}`} shape="rounded" radius="12" placeholder="Ảnh bài báo" image={p.data.cover} cms={`${p.filePath}#cover`} /></div><span style="font-size:13px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{p.data.source || CATEGORIES[p.data.category]}</strong>{p.data.date && ` · ${formatDate(p.data.date)}`}</span><strong style="font-size:18px;line-height:1.4">{p.data.title}</strong><span style="font-size:14px;font-weight:600;color:var(--text-link)">{c.s03_bao_chi.t3}</span></a>)}
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap"><h2 style="margin:0;font:var(--type-h2)">{c.s03_bao_chi.t1}</h2><a href={listUrl('bc')} class="tt-pill">{c.s03_bao_chi.t2} <span aria-hidden="true">↗</span></a></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:32px 24px">
+{press.map((p, k) => <a href={newsUrl(p)} {...newsLinkAttrs(p)} data-press-extra={k >= PRESS_SHOWN ? '' : undefined} hidden={k >= PRESS_SHOWN} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:210px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`press-${p.id}`} shape="rounded" radius="12" placeholder="Ảnh bài báo" image={p.data.cover} cms={`${p.filePath}#cover`} /></div><span style="display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{p.data.source || CATEGORIES[p.data.category]}</strong>{p.data.date && <time style="flex:none">{formatDate(p.data.date)}</time>}</span><strong class="jx-justify" style="font-size:18px;line-height:1.4">{p.data.title}</strong><span style="font-size:14px;font-weight:600;color:var(--text-link)">{c.s03_bao_chi.t3}</span></a>)}
 </div></div></section>}
 </Layout>
+
+<style>
+  .tt-pill { display: inline-flex; align-items: center; gap: 10px; min-height: 42px; padding: 0 20px; border-radius: 999px; border: 1.5px solid var(--brand-bright); color: var(--green-700); font-weight: 700; font-size: 15px; text-decoration: none; transition: background var(--motion-fast), color var(--motion-fast); }
+  .tt-pill:hover { background: var(--brand-bright); color: #fff; text-decoration: none; }
+</style>
 
 <script define:vars={{ catPages }}>
   const h = decodeURIComponent(location.hash.slice(1));

@@ -54,6 +54,8 @@ export const CATEGORY_SLUGS: Record<string, string> = {
   kt: 'kien-thuc-nong-nghiep',
   nd: 'nong-dan-mo-hinh-hieu-qua',
   cd: 'vi-cong-dong-esg',
+  // Press coverage: no chip in the category bar, but its own list ("Tất cả bài báo").
+  bc: 'bao-chi',
 };
 
 /** List page address: all articles ('all') or one category, page n (page 1 has no /trang/1/). */

@@ -5142,6 +5142,9 @@ content:
       - name: t3
         label: 'Tiêu đề chính: Tin tức'
         type: string
+      - name: t4
+        label: 'Tiêu đề khối: Tin nổi bật'
+        type: string
     - name: s02_danh_sach
       label: 02 · Danh sách
       type: object
@@ -5211,6 +5214,9 @@ content:
         type: string
       - name: related_all
         label: Liên kết tất cả tin tức
+        type: string
+      - name: categories_title
+        label: 'Bài viết – tiêu đề khung Danh mục'
         type: string
   - name: lien_he
     label: Liên hệ & Đại lý

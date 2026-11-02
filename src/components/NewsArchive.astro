@@ -9,13 +9,13 @@
 import raw from '../content/pages/tin-tuc.json';
 import { withDefaults } from '../lib/content';
 import ImageSlot from './ImageSlot.astro';
-import { CATEGORIES, CATEGORY_SLUGS, formatDate, listUrl, newsUrl, pageList, type NewsEntry } from '../lib/news';
+import { CATEGORIES, CATEGORY_SLUGS, formatDate, isPress, listUrl, newsLinkAttrs, newsUrl, pageList, type NewsEntry } from '../lib/news';
 import { url } from '../lib/routes';
 
 interface Props { items: NewsEntry[]; page: number; pages: number; cat: string; years: number[]; total: number }
 const { items, page, pages, cat, years, total } = Astro.props;
 const c = withDefaults(raw, 'src/content/pages/tin-tuc.json');
-const tabs = [['all', c.all_categories || 'Tất cả'], ...Object.entries(CATEGORIES).filter(([k]) => k in CATEGORY_SLUGS)];
+const tabs = [['all', c.all_categories || 'Tất cả'], ...Object.entries(CATEGORIES).filter(([k]) => k in CATEGORY_SLUGS && k !== 'bc')];
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <div class="na" data-news-archive data-cat={cat} data-index={`${url('tin-tuc')}tim-kiem.json`} data-base={base}>
@@ -35,10 +35,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <p class="na__count">{total} bài viết{pages > 1 && ` · trang ${page}/${pages}`}</p>
 <div class="na__grid">
 {items.map((n) => (
-<a class="na__card" href={newsUrl(n)}>
+<a class="na__card" href={newsUrl(n)} {...newsLinkAttrs(n)}>
 <div class="na__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${n.id}`} shape="rounded" radius="12" placeholder="Ảnh bài viết" image={n.data.cover} cms={`${n.filePath}#cover`} sizes="(max-width: 767px) 92vw, 400px" /></div>
-<span class="na__meta"><strong>{CATEGORIES[n.data.category]}</strong>{n.data.date && ` · ${formatDate(n.data.date)}`}</span>
-<strong class="na__title">{n.data.title}</strong>
+<span class="na__meta"><strong>{isPress(n) && n.data.source ? n.data.source : CATEGORIES[n.data.category]}</strong>{n.data.date && <time>{formatDate(n.data.date)}</time>}</span>
+<strong class="na__title jx-justify">{n.data.title}</strong>
 </a>
 ))}
 </div>
@@ -55,10 +55,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .na { display: flex; flex-direction: column; gap: 24px; }
   .na__bar { display: flex; flex-direction: column; gap: 14px; padding-bottom: 20px; border-bottom: 1px solid var(--border-default); }
   /* Category chips wrap onto a second line instead of scrolling, so every name stays readable. */
-  .na__tabs { display: flex; flex-wrap: wrap; gap: 8px; }
-  .na__tabs a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--surface-card); color: var(--text-secondary); font-weight: 600; font-size: 15px; text-decoration: none; }
+  /* Category chips on one row (Figma); on narrow screens the row scrolls sideways. */
+  .na__tabs { display: flex; flex-wrap: nowrap; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+  .na__tabs::-webkit-scrollbar { display: none; }
+  .na__tabs a { flex: none; display: inline-flex; align-items: center; min-height: 38px; padding: 0 13px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--surface-card); color: var(--text-secondary); font-weight: 600; font-size: 13.5px; white-space: nowrap; text-decoration: none; }
   .na__tabs a:hover { color: var(--green-700); border-color: var(--green-300); text-decoration: none; }
-  .na__tabs a[aria-current='page'] { color: #fff; background: var(--green-500); border-color: var(--green-500); }
+  .na__tabs a[aria-current='page'] { color: #fff; background: var(--brand-bright); border-color: var(--brand-bright); }
   .na__filters { display: flex; gap: 8px; max-width: 520px; }
   .na__filters input, .na__filters select { min-height: 44px; padding: 0 12px; border-radius: var(--radius-md); border: 1px solid var(--border-default); font: 16px var(--font-body); background: var(--surface-card); color: var(--text-primary); outline-color: var(--green-500); }
   .na__filters input { flex: 1; min-width: 0; }
@@ -70,9 +72,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .na__card:hover { text-decoration: none; }
   .na__card:hover .na__title { color: var(--green-700); }
   .na__img { position: relative; height: 210px; }
-  .na__meta { font-size: 13px; color: var(--text-tertiary); }
+  .na__meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 13px; color: var(--text-tertiary); }
+  .na__meta time { flex: none; font-variant-numeric: tabular-nums; }
   .na__meta strong { color: var(--green-600); }
-  .na__title { font-size: 18px; line-height: 1.4; text-wrap: balance; transition: color var(--motion-fast); }
+  .na__title { font-size: 17px; line-height: 1.4; transition: color var(--motion-fast); }
   .na__empty { padding: 40px; text-align: center; border: 1px dashed var(--border-strong); border-radius: var(--radius-lg); color: var(--text-secondary); }
   .na__pager { display: flex; justify-content: center; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 12px; }
   .na__pager > * { min-width: 44px; height: 44px; padding: 0 12px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-md); font-weight: 600; }
@@ -92,6 +95,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   @media (max-width: 599.98px) {
     .na__filters { max-width: none; }
     .na__tabs a { min-height: 36px; padding: 0 12px; font-size: 14px; }
+    .na__tabs { margin-inline: calc(-1 * clamp(20px, 4vw, 56px)); padding-inline: clamp(20px, 4vw, 56px); }
     .na__results :global(a) { grid-template-columns: minmax(0, 1fr); }
     .na__pager > * { min-width: 40px; height: 40px; padding: 0 10px; }
   }
