@@ -91,29 +91,24 @@
     ]
   },
   "principles": {
-    "eyebrow": "NĂM ĐIỀU TÂM NIỆM",
-    "title": "Năm điều tâm niệm của người Tiến Nông",
-    "intro": "Năm điều tâm niệm là nền tảng văn hóa, định hướng cách mỗi người Tiến Nông làm việc và ứng xử với đồng nghiệp, khách hàng, bà con nông dân. Năm điều đã được phổ nhạc; bức “Tâm niệm” được trao tặng và treo tại nhà nhiều nhà phân phối gắn bó lâu năm.",
+    "eyebrow": "TÂM NIỆM TIẾN NÔNG",
+    "title": "5 điều Tâm Niệm",
+    "intro": "5 điều Tâm Niệm là nền tảng văn hóa, định hướng mỗi người Tiến Nông trong công việc và cuộc sống. Đó không chỉ là những lời nhắc nhở mà còn là giá trị được gìn giữ, lan tỏa trong đại gia đình Tiến Nông, tạo nên bản sắc riêng và vun đắp những mối quan hệ bền chặt với đồng nghiệp, đối tác và bà con nông dân.",
     "items": [
       {
-        "title": "Được làm việc phải tận tâm",
-        "body": "Coi công việc được giao là cơ hội để phụng sự: làm đến nơi đến chốn, như làm cho chính gia đình mình."
+        "title": "Được làm việc phải tận tâm"
       },
       {
-        "title": "Được quan tâm phải chân thành",
-        "body": "Đáp lại sự quan tâm của đồng nghiệp, khách hàng và bà con bằng sự thật lòng: nói thật, làm thật, giữ chữ tín."
+        "title": "Được quan tâm phải chân thành"
       },
       {
-        "title": "Được cống hiến phải đam mê",
-        "body": "Tìm niềm vui trong việc mình làm, không ngừng học hỏi để đóng góp nhiều hơn cho đồng ruộng."
+        "title": "Được cống hiến phải đam mê"
       },
       {
-        "title": "Được tôn vinh phải khiêm tốn",
-        "body": "Thành tích là của tập thể. Càng được ghi nhận, càng phải lắng nghe và cầu thị."
+        "title": "Được tôn vinh phải khiêm tốn"
       },
       {
-        "title": "Được hưởng thụ phải sẻ chia",
-        "body": "Thành quả có được là để chia lại cho đồng nghiệp, gia đình và cộng đồng — từ tâm niệm này mà có chương trình “Ông bố Tiến Nông” đỡ đầu trẻ mồ côi từ năm 1998."
+        "title": "Được hưởng thụ phải sẻ chia"
       }
     ],
     "image": {
@@ -121,7 +116,8 @@
       "focus": "50% 40%",
       "zoom": "100",
       "alt": "Năm điều tâm niệm tại lễ kỷ niệm 30 năm thành lập Tiến Nông"
-    }
+    },
+    "youtube": "https://www.youtube.com/watch?v=MdqpwKYEWM4"
   },
   "values": {
     "eyebrow": "THÔNG ĐIỆP TIẾN NÔNG",
@@ -245,8 +241,9 @@
       {
         "youtube": "https://www.youtube.com/watch?v=MdqpwKYEWM4",
         "title": "Năm điều tâm niệm",
-        "note": "Ca khúc của gia đình Tiến Nông",
-        "label": "BÀI HÁT"
+        "note": "",
+        "label": "BÀI HÁT TIẾN NÔNG",
+        "duration": ""
       }
     ],
     "intro": "",
@@ -277,40 +274,40 @@
     "title": "Khoảnh khắc gia đình Tiến Nông",
     "photos": [
       {
-        "src": "/uploads/tin-cu/2025/7177.webp",
-        "focus": "50% 45%",
-        "zoom": "100",
-        "alt": "Cắt bánh mừng 30 năm thành lập Tiến Nông"
-      },
-      {
-        "src": "/uploads/tin-cu/2025/7177-11.webp",
+        "src": "/uploads/people-2-mvejk8m9.jpg",
         "focus": "center",
         "zoom": "100",
-        "alt": "Vinh danh cán bộ, công nhân viên năm 2024"
+        "alt": "Tập thể cán bộ, nhân viên Tiến Nông trong chuyến tham quan nước ngoài"
       },
       {
-        "src": "/uploads/tin-cu/2025/7177-8.webp",
+        "src": "/uploads/tin-cu/2024/tien-nong-ron-rang-khi-the-ra-quan-dau-xuan-giap-thin-2024-6.webp",
         "focus": "center",
         "zoom": "100",
-        "alt": "Vinh danh tập thể hoàn thành xuất sắc nhiệm vụ năm 2024"
+        "alt": "Tập thể Tiến Nông trong lễ ra quân đầu xuân Giáp Thìn 2024"
       },
       {
-        "src": "/uploads/tin-cu/2026/tien-nong-to-chuc-dao-tao-nen-tang-kien-thuc-ve-dat-phan-bon-va-cong-nghe-cho-3.webp",
+        "src": "/uploads/tin-cu/2024/tien-nong-ron-rang-khi-the-ra-quan-dau-xuan-giap-thin-2024-2.webp",
         "focus": "center",
         "zoom": "100",
-        "alt": "Lớp đào tạo kiến thức về đất và phân bón"
+        "alt": "Cán bộ, công nhân nhà máy Tiến Nông trong lễ ra quân đầu xuân 2024"
       },
       {
-        "src": "/uploads/tin-cu/2023/mung-nam-moi-don-niem-vui-toi-cung-bao-binh-tien-nong-3.webp",
+        "src": "/uploads/tin-cu/2022/tien-nong-to-chuc-hoi-thao-the-duc-the-thao-tien-nong-lan-thu-iii.webp",
         "focus": "center",
         "zoom": "100",
-        "alt": "Trao Bảo Bình Tiến Nông dịp năm mới"
+        "alt": "Hội thao thể dục thể thao Tiến Nông lần thứ III"
       },
       {
-        "src": "/uploads/tin-cu/2025/tien-nong-30-nam-dong-hanh-cung-nong-dan-viet-nam-1.webp",
+        "src": "/uploads/tin-cu/2024/gia-dinh-tien-nong-29-nam-don-mua-xuan-moi-10.webp",
         "focus": "center",
         "zoom": "100",
-        "alt": "Toàn cảnh Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn"
+        "alt": "Nữ cán bộ Tiến Nông trong lễ kỷ niệm 29 năm thành lập"
+      },
+      {
+        "src": "/uploads/tin-cu/2024/tien-nong-tham-gia-hoi-thao-cong-nhan-vien-chuc-lao-dong-thanh-pho-thanh-hoa-5.webp",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Đội Tiến Nông tại Hội thao công nhân, viên chức, lao động thành phố Thanh Hóa"
       }
     ]
   },
@@ -319,5 +316,36 @@
     "button_jobs": "Cơ hội nghề nghiệp →",
     "button_about": "Về Tiến Nông",
     "text": ""
+  },
+  "family": {
+    "eyebrow": "VĂN HÓA GIA ĐÌNH",
+    "title": "Những gia đình nhỏ trong gia đình Tiến Nông",
+    "intro": "Nhiều cặp vợ chồng cùng làm việc và gắn bó lâu dài tại Tiến Nông, từ thế hệ đi trước đến lớp cán bộ trẻ.",
+    "stories": [
+      {
+        "tag": "THẾ HỆ GẮN BÓ LÂU NĂM",
+        "names": "Anh Lê Phú Hòa – chị Nguyễn Thị Quý",
+        "text": "Anh Hòa gắn bó gần 10 năm tại Tiến Nông Kỳ Viên; từ năm 2020, chị Quý phụ trách bữa trưa tại văn phòng công ty. Gia đình anh chị có bốn thế hệ cùng chung sống.",
+        "image": {
+          "src": "/uploads/tin-cu/2025/tien-nong-noi-vun-dap-gia-tri-gia-dinh-noi-lan-toa-yeu-thuong-3.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Gia đình anh Lê Phú Hòa và chị Nguyễn Thị Quý"
+        }
+      },
+      {
+        "tag": "THẾ HỆ TRẺ",
+        "names": "Anh Vũ Trung Kiên – chị Lê Thị Phương Anh",
+        "text": "Cùng vào Tiến Nông năm 2021: anh Kiên ở Nhà máy Tiến Nông Bỉm Sơn, chị Phương Anh ở Trung tâm Nghiên cứu Phát triển KH&CN. Hai anh chị nên duyên vợ chồng năm 2022.",
+        "image": {
+          "src": "/uploads/tin-cu/2025/tien-nong-noi-vun-dap-gia-tri-gia-dinh-noi-lan-toa-yeu-thuong-8.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Gia đình anh Vũ Trung Kiên và chị Lê Thị Phương Anh"
+        }
+      }
+    ],
+    "link": "/tin-tuc/tien-nong-noi-vun-dap-gia-tri-gia-dinh-noi-lan-toa-yeu-thuong/",
+    "link_label": "Đọc câu chuyện đầy đủ"
   }
 }

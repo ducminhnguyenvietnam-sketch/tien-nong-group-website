@@ -1636,8 +1636,11 @@ content:
       - name: intro
         label: Đoạn giới thiệu
         type: text
+      - name: youtube
+        label: Video bên trái (đường dẫn YouTube)
+        type: string
       - name: image
-        label: Ảnh bên trái (ví dụ bức Tâm niệm)
+        label: Ảnh bên trái (dùng khi không có video)
         component: photo
       - name: items
         label: Các điều tâm niệm
@@ -1650,9 +1653,6 @@ content:
         - name: title
           label: Điều tâm niệm
           type: string
-        - name: body
-          label: Diễn giải
-          type: text
     - name: values
       label: 06 · Giá trị cốt lõi
       type: object
@@ -1794,6 +1794,9 @@ content:
         - name: note
           label: Sáng tác / trình bày
           type: string
+        - name: duration
+          label: Thời lượng (ví dụ 03:24)
+          type: string
         - name: youtube
           label: Đường dẫn YouTube
           description: Dán link video YouTube (ví dụ https://www.youtube.com/watch?v=…). Ưu tiên dùng YouTube.
@@ -1836,6 +1839,45 @@ content:
         - name: place
           label: Địa phương · năm
           type: string
+    - name: family
+      label: Văn hóa gia đình (các cặp đôi Tiến Nông)
+      type: object
+      fields:
+      - name: eyebrow
+        label: Dòng chữ nhỏ
+        type: string
+      - name: title
+        label: Tiêu đề
+        type: string
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: stories
+        label: Các câu chuyện
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.names}'
+        fields:
+        - name: tag
+          label: Nhãn nhỏ (ví dụ THẾ HỆ TRẺ)
+          type: string
+        - name: names
+          label: Tên (ví dụ Anh … – chị …)
+          type: string
+        - name: text
+          label: Mô tả ngắn (2–3 dòng)
+          type: text
+        - name: image
+          label: Ảnh
+          component: photo
+      - name: link
+        label: Đường dẫn bài viết
+        type: string
+      - name: link_label
+        label: Chữ trên liên kết
+        type: string
     - name: gallery
       label: 11 · Khoảnh khắc (album ảnh)
       type: object
