@@ -8,7 +8,20 @@
  *
  * Without an endpoint the form cannot deliver anything, so it is replaced by call/Zalo buttons
  * (rendered by the page inside [data-form-fallback]) instead of pretending to send.
+ *
+ * A form with data-mailto="name@domain" (Liên hệ) is also forwarded to that mailbox through FormSubmit
+ * (formsubmit.co), so it works with or without PUBLIC_FORM_ENDPOINT. FormSubmit asks the mailbox owner to
+ * confirm once, on the first message it receives. data-subject sets the email subject prefix.
  */
+/** Field names as they read in the forwarded email (Vietnamese labels, consent box left out). */
+const EMAIL_LABELS: Record<string, string> = {
+  need: 'Chủ đề', name: 'Họ và tên', phone: 'Điện thoại', email: 'Email', province: 'Tỉnh / thành phố',
+  message: 'Nội dung', company: 'Đơn vị', page: 'Gửi từ trang', sentAt: 'Thời gian gửi',
+};
+const forEmail = (d: Record<string, string>) => Object.fromEntries(Object.entries(d)
+  .filter(([k, v]) => k !== 'consent' && k !== 'form' && v !== '')
+  .map(([k, v]) => [EMAIL_LABELS[k] ?? k, k === 'sentAt' ? new Date(v).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' }) : v]));
+
 const ENDPOINT: string = (import.meta.env.PUBLIC_FORM_ENDPOINT ?? '').trim();
 
 document.querySelectorAll<HTMLFormElement>('form[data-lead-form]').forEach((form) => {
@@ -17,7 +30,8 @@ document.querySelectorAll<HTMLFormElement>('form[data-lead-form]').forEach((form
   const sent = form.dataset.sent ? document.getElementById(form.dataset.sent) : null;
   const fallback = form.parentElement?.querySelector<HTMLElement>('[data-form-fallback]');
 
-  if (!ENDPOINT) {
+  const mailto = (form.dataset.mailto ?? '').trim();
+  if (!ENDPOINT && !mailto) {
     if (fallback) { form.hidden = true; fallback.hidden = false; }
     return;
   }
@@ -56,12 +70,29 @@ document.querySelectorAll<HTMLFormElement>('form[data-lead-form]').forEach((form
     const label = submit?.textContent ?? '';
     if (submit) { submit.disabled = true; submit.textContent = 'Đang gửi…'; }
     try {
-      const res = await fetch(ENDPOINT, {
+      const payload = { form: form.dataset.leadForm || form.dataset.sent || 'form', page: location.href, sentAt: new Date().toISOString(), ...data };
+      const jobs: Promise<Response>[] = [];
+      if (ENDPOINT) jobs.push(fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain;charset=utf-8', Accept: 'application/json' },
-        body: JSON.stringify({ form: form.dataset.leadForm || form.dataset.sent || 'form', page: location.href, sentAt: new Date().toISOString(), ...data }),
-      });
-      if (!res.ok) throw new Error(String(res.status));
+        body: JSON.stringify(payload),
+      }));
+      if (mailto) {
+        const topic = data.need || data.chu_de || '';
+        const who = data.name || data.ho_ten || '';
+        jobs.push(fetch(`https://formsubmit.co/ajax/${encodeURIComponent(mailto)}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            _subject: [form.dataset.subject || 'Website Tiến Nông', topic, who].filter(Boolean).join(' – '),
+            _template: 'table', _captcha: 'false', ...(data.email ? { _replyto: data.email } : {}),
+            ...forEmail(payload),
+          }),
+        }));
+      }
+      // Sent when at least one destination accepted it.
+      const results = await Promise.allSettled(jobs);
+      if (!results.some((r) => r.status === 'fulfilled' && r.value.ok)) throw new Error('not sent');
       form.dispatchEvent(new CustomEvent('lead:sent', { detail: data, bubbles: true }));
       if (sent) { form.hidden = true; sent.hidden = false; sent.focus?.(); }
     } catch {

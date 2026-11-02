@@ -21,7 +21,7 @@ const title = `${heading}${page > 1 ? ` – Trang ${page}` : ''}`;
   crumbs={[{ label: 'Trang chủ', href: url('trang-chu') }, { label: 'Tin tức', href: url('tin-tuc') }, ...(cat !== 'all' ? [{ label: CATEGORIES[cat] }] : []), ...(page > 1 ? [{ label: `Trang ${page}` }] : [])]}
   eyebrow={cat === 'all' ? c.hero.eyebrow : 'CHUYÊN MỤC'} title={heading} />
 <section style="background:var(--surface-page)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(36px,4vw,56px) clamp(20px,4vw,56px) clamp(56px,7vw,88px);display:flex;flex-direction:column;gap:24px">
+<div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(36px,4vw,56px) clamp(20px,4vw,56px) clamp(56px,7vw,88px);display:flex;flex-direction:column;gap:24px">
 <NewsArchive items={all.slice((page - 1) * PER_PAGE, page * PER_PAGE)} page={page} pages={pages} cat={cat} years={years} total={all.length} />
 </div></section>
 </Layout>

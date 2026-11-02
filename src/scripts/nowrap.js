@@ -35,7 +35,7 @@
     var tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), n, nodes = [], last = new Map(), blk = new Map();
     while ((n = tw.nextNode())) {
       var pe = n.parentElement;
-      if (!pe || SKIP.test(pe.tagName) || pe.isContentEditable || !n.nodeValue.trim()) continue;
+      if (!pe || SKIP.test(pe.tagName) || pe.isContentEditable || !n.nodeValue.trim() || pe.closest('[data-unglued]')) continue; // justify.ts gave these back normal spaces
       var b = pe, d;
       while (b && b !== root) {
         d = blk.get(b);

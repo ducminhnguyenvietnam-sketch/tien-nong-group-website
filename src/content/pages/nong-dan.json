@@ -172,32 +172,6 @@
     },
     "timeline_title": "Chặng đường phân bón trả chậm"
   },
-  "center": {
-    "eyebrow": "",
-    "title": "Đồng ruộng là một phần của nhà máy",
-    "text": "Ra mắt ngày 05/08/2020 với sự chứng kiến của Trung ương Hội Nông dân Việt Nam và Hội Nông dân tỉnh Thanh Hóa, Trung tâm là lực lượng của Tiến Nông chuyên chăm sóc, phục vụ nhà nông — với hàng trăm cán bộ và mạng lưới hàng nghìn đại diện trên cả nước. Trung tâm ra đời từ một xác định xuyên suốt của Tiến Nông: đồng ruộng là một phần của nhà máy, nông dân là bạn đồng hành đáng tin cậy của doanh nghiệp.",
-    "items": [
-      {
-        "title": "Tư vấn kỹ thuật",
-        "text": "Qua hotline, Zalo và tại ruộng."
-      },
-      {
-        "title": "Hội thảo đầu bờ",
-        "text": "Xem mô hình, so sánh kết quả ngay trên đồng."
-      },
-      {
-        "title": "Theo dõi sau bán hàng",
-        "text": "Tiếp nhận phản ánh, cùng bà con xử lý."
-      }
-    ],
-    "image": {
-      "src": "/uploads/tin-cu/2020/le-ra-mat-trung-tam-cham-soc-phuc-vu-nong-dan-viet-nam-1.webp",
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Lễ ra mắt Trung tâm Chăm sóc Phục vụ Nông dân Việt Nam"
-    },
-    "link": "/tin-tuc/le-ra-mat-trung-tam-cham-soc-phuc-vu-nong-dan-viet-nam/"
-  },
   "results": {
     "eyebrow": "CÂU CHUYỆN NHÀ NÔNG",
     "title": "Những câu chuyện thật, những mùa vàng thật",

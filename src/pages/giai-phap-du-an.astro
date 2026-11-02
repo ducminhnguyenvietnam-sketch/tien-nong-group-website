@@ -21,7 +21,7 @@ const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
 <a href="#tu-van" class="page-hero__btn page-hero__btn--solid">{c.s01_hero.t7}</a><a href="#quy-trinh" class="page-hero__btn">{c.s01_hero.t8}</a>
 </PageHero>
 <section style="background:var(--surface-page)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
+<div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
 <div style="display:flex;flex-direction:column;gap:14px;max-width:680px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s02_nhom_khach_hang.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s02_nhom_khach_hang.t2}</h2></div>
 <div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 60px)/4),calc((2140px - 100%)*999),calc((100% - 20px)/2)),1fr));gap:20px">
 <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;min-height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="seg-1" shape="rect" placeholder="Sân golf" image={c.s02_nhom_khach_hang.img_seg_1_1} cms="src/content/pages/giai-phap-du-an.json#s02_nhom_khach_hang.img_seg_1_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px"><strong style="font-size:20px">{c.s02_nhom_khach_hang.t3}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s02_nhom_khach_hang.t4}</span><span style="font-size:14px;color:var(--text-tertiary)">{c.s02_nhom_khach_hang.t5}</span></div></div>
@@ -31,7 +31,7 @@ const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
 </div></div></section>
 
 <section id="quy-trinh" style="background:var(--green-800);color:#fff;scroll-margin-top:120px">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:48px">
+<div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:48px">
 <div style="display:flex;flex-direction:column;gap:14px;max-width:700px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s03_quy_trinh.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s03_quy_trinh.t2}</h2></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 64px)/5),calc((1000px - 100%)*999),100%),1fr));gap:16px">
 <div style="background:var(--green-700);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:var(--type-stat);color:var(--amber-400);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s03_quy_trinh.t3}</span><strong style="font-size:18px">{c.s03_quy_trinh.t4}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_quy_trinh.t5}</span></div>
@@ -42,7 +42,7 @@ const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
 </div></div></section>
 
 <section style="background:var(--surface-card)">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 72px;align-items:center">
+<div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 72px;align-items:center">
 <div style="display:flex;flex-direction:column;gap:16px">
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s04_nang_luc.t1}</span>
 <h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s04_nang_luc.t2}</h2>
@@ -56,7 +56,7 @@ const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
 </div></div></section>
 
 <section id="tu-van" class="pj-talk" style="scroll-margin-top:120px">
-<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 64px;align-items:start">
+<div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 64px;align-items:start">
 <div style="display:flex;flex-direction:column;gap:20px">
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--brand-highlight)">{c.s05_yeu_cau_tu_van.t1}</span>
 <h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance;color:#fff">{c.s05_yeu_cau_tu_van.t2}</h2>

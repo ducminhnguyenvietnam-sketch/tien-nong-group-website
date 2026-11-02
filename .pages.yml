@@ -1557,8 +1557,8 @@ content:
         label: Dòng chữ nhỏ
         type: string
       - name: title
-        label: Tiêu đề lớn
-        type: string
+        label: Tiêu đề lớn (xuống dòng ở đâu thì trang hiện xuống dòng ở đó)
+        type: text
       - name: intro
         label: Đoạn giới thiệu
         type: text
@@ -3875,22 +3875,6 @@ content:
         - name: link
           label: Đường dẫn (link)
           type: string
-    - name: workers
-      label: 10 · Người lao động
-      type: object
-      fields:
-      - name: eyebrow
-        label: Dòng chữ nhỏ
-        type: string
-      - name: title
-        label: Tiêu đề
-        type: string
-      - name: text
-        label: Nội dung
-        type: text
-      - name: button
-        label: Nút
-        type: string
     - name: roadmap
       label: 12 · Lộ trình
       type: object
@@ -4452,39 +4436,6 @@ content:
       - name: image
         label: Ảnh
         component: photo
-    - name: center
-      label: 06 · Trung tâm Chăm sóc Phục vụ Nông dân
-      type: object
-      fields:
-      - name: eyebrow
-        label: Dòng chữ nhỏ
-        type: string
-      - name: title
-        label: Tiêu đề
-        type: string
-      - name: text
-        label: Nội dung
-        type: text
-      - name: items
-        label: Các dịch vụ
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{fields.title}'
-        fields:
-        - name: title
-          label: Tiêu đề
-          type: string
-        - name: text
-          label: Nội dung
-          type: text
-      - name: image
-        label: Ảnh
-        component: photo
-      - name: link
-        label: Đường dẫn (link)
-        type: string
     - name: results
       label: 07 · Kết quả trên đồng ruộng
       type: object
@@ -5294,80 +5245,102 @@ content:
         label: Đoạn giới thiệu
         type: text
     - name: form
-      label: 07 · Biểu mẫu gửi yêu cầu
+      label: Biểu mẫu gửi yêu cầu (cuối trang)
       type: object
       fields:
+      - name: eyebrow
+        label: 'Dòng chữ nhỏ'
+        type: string
       - name: title
-        label: Tiêu đề
+        label: 'Tiêu đề'
         type: string
       - name: intro
-        label: Đoạn giới thiệu
+        label: 'Đoạn giới thiệu'
         type: text
-      - name: sent_label
-        label: Sent label
+      - name: email
+        label: 'Hộp thư nhận yêu cầu'
+        description: 'Mỗi yêu cầu gửi từ biểu mẫu được chuyển về hộp thư này (qua dịch vụ FormSubmit). Lần đầu nhận thư, hộp thư cần bấm xác nhận một lần.'
         type: string
-      - name: sent_title
-        label: Sent title
+      - name: topic_label
+        label: 'Nhãn chọn chủ đề'
         type: string
-      - name: sent_before
-        label: Sent before
+      - name: route_label
+        label: 'Chữ "Chuyển tới"'
         type: string
-      - name: sent_after
-        label: Sent after
+      - name: quick_title
+        label: 'Tiêu đề khung liên hệ nhanh'
         type: string
-      - name: again
-        label: Again
-        type: string
-      - name: need_label
-        label: Need label
+      - name: hours
+        label: 'Giờ làm việc'
         type: string
       - name: name_label
-        label: Name label
+        label: 'Nhãn họ tên'
         type: string
       - name: name_ph
-        label: Name ph
+        label: 'Gợi ý họ tên'
         type: string
       - name: phone_label
-        label: Phone label
+        label: 'Nhãn điện thoại'
         type: string
       - name: phone_ph
-        label: Phone ph
+        label: 'Gợi ý điện thoại'
         type: string
       - name: email_label
-        label: Email label
+        label: 'Nhãn email'
         type: string
       - name: email_ph
-        label: Email ph
+        label: 'Gợi ý email'
         type: string
       - name: province_label
-        label: Province label
+        label: 'Nhãn tỉnh/thành'
         type: string
       - name: province_ph
-        label: Province ph
+        label: 'Gợi ý tỉnh/thành'
         type: string
       - name: message_label
-        label: Message label
+        label: 'Nhãn nội dung'
         type: string
       - name: message_ph
-        label: Message ph
+        label: 'Gợi ý nội dung (khi chưa chọn chủ đề)'
         type: string
       - name: consent
-        label: Consent
+        label: 'Ô đồng ý'
         type: string
       - name: submit
-        label: Submit
+        label: 'Nút gửi'
         type: string
-      - name: needs
-        label: Danh sách nhu cầu
+      - name: sent_label
+        label: 'Đã gửi – chữ nhỏ'
         type: string
-        list: true
-    - name: legal
-      label: 08 · Thông tin doanh nghiệp (lấy từ Cài đặt chung)
-      type: object
-      fields:
-      - name: title
-        label: Tiêu đề
+      - name: sent_title
+        label: 'Đã gửi – tiêu đề'
         type: string
+      - name: sent_before
+        label: 'Đã gửi – chữ trước tên bộ phận'
+        type: string
+      - name: sent_after
+        label: 'Đã gửi – chữ sau'
+        type: string
+      - name: again
+        label: 'Nút gửi yêu cầu khác'
+        type: string
+      - name: topics
+        label: Các chủ đề
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.label}'
+        fields:
+        - name: label
+          label: Tên chủ đề
+          type: string
+        - name: team
+          label: Bộ phận nhận
+          type: string
+        - name: hint
+          label: Gợi ý trong ô nội dung
+          type: text
   - name: tro_thanh_doi_tac
     label: Trở thành đối tác (nút xanh trên menu)
     type: file

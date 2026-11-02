@@ -35,8 +35,23 @@ function run() {
     if (short || fs >= 22 || perLine < MIN_CHARS || /uppercase/.test(cs.textTransform)) el.classList.add('jx-left');
   }
 }
+/** A block whose kept-together words (non-breaking spaces) no longer fit its box on a narrow screen gets
+ *  ordinary spaces back, so the line can wrap instead of running past the edge. */
+function unglue() {
+  for (const el of textBlocks()) {
+    if (el.scrollWidth <= el.clientWidth + 1) continue;
+    const cs = getComputedStyle(el);
+    if (cs.whiteSpace === 'nowrap' || cs.overflowX !== 'visible') continue;
+    el.setAttribute('data-unglued', '');
+    const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    for (let n = walk.nextNode(); n; n = walk.nextNode()) {
+      if (n.textContent && n.textContent.includes('\u00A0')) n.textContent = n.textContent.replace(/\u00A0/g, ' ');
+    }
+  }
+}
 let t = 0;
-const later = () => { clearTimeout(t); t = window.setTimeout(run, 120); };
+const later = () => { clearTimeout(t); t = window.setTimeout(() => { unglue(); run(); }, 120); };
+unglue();
 run();
 addEventListener('resize', later);
 document.fonts?.ready.then(later);

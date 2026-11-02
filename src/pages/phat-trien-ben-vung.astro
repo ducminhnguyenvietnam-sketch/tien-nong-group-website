@@ -2,7 +2,7 @@
 /**
  * Phát triển bền vững. Flow: hero → key figures → why (four illustrated pillars) → 1 Đất khỏe →
  * 2 Nhà máy xanh → 3 Sinh kế nhà nông → 4 Cộng đồng: "Ông bố Tiến Nông" (photo, figures, year
- * tabs, the first child's story) and the other programmes → Xanh hoá Trường Sa teaser → people → ESG roadmap.
+ * tabs, the first child's story) and the other programmes → Xanh hoá Trường Sa teaser → ESG roadmap.
  */
 import raw from '../content/pages/phat-trien-ben-vung.json';
 import { isFilled, withDefaults } from '../lib/content';
@@ -46,7 +46,7 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 </div>
 <div class="pv-pillars">
 {c.why.pillars.map((p, k) => <a class="pv-pillar" href={`#${p.anchor}`}>
-<div class="pv-pillar__img"><ImageSlot style={fill} id={`pillar-${k}`} shape="rect" placeholder={p.title} image={p.image} cms={`${F}#why.pillars.${k}.image`} sizes="(max-width: 767px) 92vw, 300px" /><span class="pv-pillar__n">{String(k + 1).padStart(2, '0')}</span></div>
+<div class="pv-pillar__img"><ImageSlot style={fill} id={`pillar-${k}`} shape="rect" placeholder={p.title} image={p.image} cms={`${F}#why.pillars.${k}.image`} sizes="(max-width: 767px) 92vw, 300px" /></div>
 <div class="pv-pillar__body"><span class="pv-pillar__tag">Trụ cột {k + 1}</span><strong>{p.title}</strong><span class="jx-start">{p.text}</span><span class="pv-pillar__go" aria-hidden="true">↓</span></div>
 </a>)}
 </div>
@@ -68,7 +68,7 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 
 <section id="nha-may-xanh" style="scroll-margin-top:160px;position:relative;min-height:560px;background:var(--gray-800);display:flex">
 <div style="position:absolute;inset:0"><ImageSlot style={fill} id="esg-plant" shape="rect" placeholder="Flycam khuôn viên nhà máy với cây xanh" image={c.plant.image} cms={`${F}#plant.image`} sizes="100vw" /></div>
-<div style="position:relative;max-width:1280px;width:100%;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,56px);display:flex;align-items:flex-end;justify-content:flex-end;pointer-events:none">
+<div style="position:relative;max-width:var(--wrap, 1280px);width:100%;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,56px);display:flex;align-items:flex-end;justify-content:flex-end;pointer-events:none">
 <div style="background:var(--surface-card);border-radius:var(--radius-xl);padding:clamp(28px,3vw,40px);max-width:600px;display:flex;flex-direction:column;gap:16px;pointer-events:auto;box-shadow:var(--shadow-lg)">
 <span class="st-eyebrow">{c.plant.eyebrow}</span>
 <h2 class="st-h2">{c.plant.title}</h2>
@@ -140,12 +140,6 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 </a>
 </section>
 
-<section class="st-sec st-sec--card">
-<div class="st-wrap st-wrap--s" style="flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
-<Head eyebrow={c.workers.eyebrow} title={c.workers.title} intro={c.workers.text} />
-<a href={url('tuyen-dung')} class="st-btn st-btn--solid">{c.workers.button}</a>
-</div></section>
-
 <section id="lo-trinh" class="st-sec st-sec--card">
 <div class="st-wrap">
 <Head eyebrow={c.roadmap.eyebrow} title={c.roadmap.title} intro={c.roadmap.intro} />
@@ -161,8 +155,6 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
   .pv-pillar { position: relative; display: flex; flex-direction: column; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; color: var(--text-primary); text-decoration: none; transition: transform var(--motion-base), box-shadow var(--motion-base); }
   .pv-pillar:hover { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(0, 71, 35, .12); text-decoration: none; color: var(--text-primary); }
   .pv-pillar__img { position: relative; aspect-ratio: 4 / 3; }
-  .pv-pillar__img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(2, 53, 26, .7), rgba(2, 53, 26, 0) 55%); pointer-events: none; }
-  .pv-pillar__n { position: absolute; left: 18px; bottom: 12px; z-index: 1; font: 800 44px/1 var(--font-display); color: #fff; text-shadow: 0 2px 10px rgba(0, 0, 0, .3); }
   .pv-pillar__body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
   .pv-pillar__tag { font: 700 11.5px/1.3 var(--font-display); letter-spacing: .1em; text-transform: uppercase; color: var(--green-600); }
   .pv-pillar__body strong { font: 700 20px/1.3 var(--font-display); }
@@ -208,7 +200,7 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
   .ts-teaser__photo :global(.img-slot__img) { transition: scale 1.2s var(--ease-out); }
   .ts-teaser__link:hover .ts-teaser__photo :global(.img-slot__img) { scale: 1.03; }
   .ts-teaser__scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2, 53, 26, .9) 0%, rgba(2, 53, 26, .6) 45%, rgba(2, 53, 26, .05) 85%); }
-  .ts-teaser__copy { position: relative; max-width: 1280px; margin: 0 auto; min-height: inherit; padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; }
+  .ts-teaser__copy { position: relative; max-width: var(--wrap, 1280px); margin: 0 auto; min-height: inherit; padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; }
   .ts-teaser__eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; color: var(--green-100); }
   .ts-teaser__title { font: var(--type-h2); }
   .ts-teaser__text { max-width: 34em; color: var(--green-50); font-size: var(--fs-lead); line-height: 1.55; text-align: start; }

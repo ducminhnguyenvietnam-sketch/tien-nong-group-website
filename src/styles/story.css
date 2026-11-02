@@ -11,7 +11,7 @@
 .st-sec--dark { background: var(--green-800); color: #fff; }
 .st-sec--deep { background: var(--green-900); color: #fff; }
 .st-sec--line { border-top: 1px solid var(--border-default); }
-.st-wrap { max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; gap: clamp(32px, 4vw, 48px); }
+.st-wrap { max-width: var(--wrap, 1280px); margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; gap: clamp(32px, 4vw, 48px); }
 .st-wrap--s { padding-block: clamp(44px, 5vw, 64px); }
 .st-wrap--narrow { max-width: 1040px; }
 
@@ -152,7 +152,7 @@ a.st-card:hover { border-color: var(--green-400); color: var(--text-primary); }
 
 /* Sticky in-page navigation */
 .st-subnav { position: sticky; top: var(--hdr-h, 108px); z-index: 20; background: var(--surface-page); border-top: 1px solid var(--border-default); border-bottom: 1px solid var(--border-default); }
-.st-subnav > div { max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); display: flex; gap: 28px; overflow-x: auto; white-space: nowrap; font-size: 14px; font-weight: 600; }
+.st-subnav > div { max-width: var(--wrap, 1280px); margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); display: flex; gap: 28px; overflow-x: auto; white-space: nowrap; font-size: 14px; font-weight: 600; }
 .st-subnav a { color: var(--text-secondary); padding: 14px 0; }
 .st-subnav a:hover { color: var(--green-700); }
 

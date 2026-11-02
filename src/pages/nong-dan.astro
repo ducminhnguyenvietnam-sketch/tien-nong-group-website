@@ -1,8 +1,7 @@
 ---
 /**
  * Nông dân Tiến Nông. Flow: hero → key figures → four commitments → a season with Tiến Nông →
- * phân bón trả chậm (how it works, milestones as year tabs, how to join) → Trung tâm Chăm sóc Phục vụ
- * Nông dân → farmer stories and demonstration plots → when a season goes wrong → engineers in the
+ * phân bón trả chậm (how it works, milestones as year tabs, how to join) → farmer stories and demonstration plots → when a season goes wrong → engineers in the
  * field (latest articles) → closing call-to-action band.
  */
 import raw from '../content/pages/nong-dan.json';
@@ -44,7 +43,7 @@ const hardship = await Promise.all(c.hardship.items.map(async (h) => {
 <section style="position:relative;min-height:min(72vh,620px);background:var(--green-900);display:flex">
 <div style="position:absolute;inset:0"><ImageSlot style={fill} id="farmer-hero" shape="rect" placeholder="Nông dân và kỹ sư Tiến Nông trên cánh đồng" image={c.hero.image} cms={`${F}#hero.image`} /></div>
 <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,53,26,.82) 0%,rgba(2,53,26,.45) 50%,rgba(2,53,26,0) 82%)"></div>
-<div style="position:relative;max-width:1280px;width:100%;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(56px,7vw,96px);display:flex;flex-direction:column;justify-content:space-between;gap:48px;pointer-events:none;color:#fff">
+<div style="position:relative;max-width:var(--wrap, 1280px);width:100%;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(56px,7vw,96px);display:flex;flex-direction:column;justify-content:space-between;gap:48px;pointer-events:none;color:#fff">
 <span style="font-size:13px;color:var(--green-100)">{c.hero.breadcrumb}</span>
 <div class="hero-copy" style="max-width:760px;display:flex;flex-direction:column;gap:20px">
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-100)">{c.hero.eyebrow}</span>
@@ -89,18 +88,6 @@ const hardship = await Promise.all(c.hardship.items.map(async (h) => {
 <div class="nd-join">
 <div><strong>{c.deferred.join_title}</strong><p class="jx-justify">{c.deferred.join_text}</p></div>
 <div class="nd-join__actions"><a href="#dang-ky" class="nd-hbtn nd-hbtn--solid">{c.hero.button1}<span aria-hidden="true">↗</span></a>{isFilled(hotline) && <a href={tel(hotline)} class="nd-hbtn">☎ {hotline}</a>}</div>
-</div>
-</div></section>
-
-<section id="trung-tam" class="st-sec">
-<div class="st-wrap">
-<div class="st-split">
-<div class="st-split__media st-hide-empty" style="--ratio:4/3"><ImageSlot style={fill} id="farmer-center" shape="rounded" radius="24" placeholder={c.center.image.alt || 'Trung tâm Chăm sóc Phục vụ Nông dân'} image={c.center.image} cms={`${F}#center.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
-<div>
-<Head eyebrow={c.center.eyebrow} title={c.center.title} intro={c.center.text} />
-<div class="st-ruled" style="--min:150px">{c.center.items.map((it) => <div><strong>{it.title}</strong><span>{it.text}</span></div>)}</div>
-{isFilled(c.center.link) && <a href={link(c.center.link)} style="font-weight:600">Đọc tin lễ ra mắt →</a>}
-</div>
 </div>
 </div></section>
 
