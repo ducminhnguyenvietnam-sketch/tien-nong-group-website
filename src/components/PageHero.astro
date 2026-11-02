@@ -23,6 +23,8 @@ interface Props {
 }
 const { id, image, cms, placeholder = '', crumbs = [], eyebrow, title, lead } = Astro.props;
 const hasSlot = Astro.slots.has('default');
+// The lead is justified and sized to run about three lines (≈ 10.4px per character at the lead size).
+const leadW = lead ? Math.min(860, Math.max(560, Math.round((lead.length / 3) * 10.4 + 24))) : 640;
 ---
 <section class="page-hero">
 <div class="page-hero__photo"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={id} shape="rect" placeholder={placeholder} image={image} cms={cms} priority sizes="100vw" /></div>
@@ -31,10 +33,10 @@ const hasSlot = Astro.slots.has('default');
 {crumbs.length > 0 && <nav class="page-hero__crumbs" aria-label="Đường dẫn">
 {crumbs.map((c, i) => <>{i > 0 && <span aria-hidden="true">/</span>}{c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</>)}
 </nav>}
-<div class="page-hero__copy hero-copy">
+<div class="page-hero__copy hero-copy" style={`max-width:${Math.max(760, leadW)}px`}>
 {eyebrow && <span class="page-hero__eyebrow">{eyebrow}</span>}
 <h1>{title}</h1>
-{lead && <p>{lead}</p>}
+{lead && <p class="jx-justify" style={`max-width:${leadW}px`}>{lead}</p>}
 {hasSlot && <div class="page-hero__actions"><slot /></div>}
 </div>
 </div>

@@ -439,7 +439,12 @@
           {
             "value": "10.000",
             "label": "Điểm bán",
-            "sub": "10+ quốc gia xuất khẩu"
+            "sub": ""
+          },
+          {
+            "value": "10+",
+            "label": "Quốc gia",
+            "sub": "xuất khẩu"
           }
         ],
         "chips_title": "Đồng hành cùng",

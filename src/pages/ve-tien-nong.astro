@@ -21,6 +21,14 @@ const t = c.s02_thu_ngo;
 const m = c.s03_su_menh_gia_tri;
 /** "Phụng sự nhà nông – Kiến tạo tương lai": the part after the dash is set in the accent yellow. */
 const slogan = String(t.slogan || '').split(/\s+[–-]\s+/);
+/** Mission, vision, goal and the five core values, each with a light line icon (no photos). */
+const ICON = {'target': '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg>', 'eye': '<svg viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>', 'flag': '<svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>', 'heart': '<svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>', 'flame': '<svg viewBox="0 0 24 24"><path d="M12 21c-3.9 0-6.5-2.6-6.5-6 0-3.6 2.8-5.4 3.5-9 2.4 1.4 3.6 3.4 3.8 5.3.8-.7 1.3-1.8 1.4-3 2.2 1.7 4.3 4.1 4.3 6.7 0 3.4-2.6 6-6.5 6z"/></svg>', 'bulb': '<svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg>', 'hands': '<svg viewBox="0 0 24 24"><path d="M3 12l4-4 4 3 3-2 7 5-4 4-3-2-3 2-4-3-4 1z"/><path d="M11 11l3 3"/></svg>', 'leaf': '<svg viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14z"/><path d="M5 19l8-8"/></svg>'};
+const statements = [[m.t1, m.t2, ICON.target], [m.t3, m.t4, ICON.eye], [m.t5, m.t6, ICON.flag]]
+  .filter(([, t]) => isFilled(t)).map(([label, text, icon]) => ({ label, text, icon }));
+const coreValues = [[m.t8, m.t9, m.t10, ICON.heart], [m.t11, m.t12, m.t13, ICON.flame], [m.t14, m.t15, m.t16, ICON.bulb],
+  [m.t17, m.t18, m.t19, ICON.hands], [m.t20, m.t21, m.t22, ICON.leaf]].filter(([, t]) => isFilled(t))
+  .map(([num, title, text, icon]) => ({ num, title, text, icon }));
+
 const awards = [...c.s06_thanh_tuu.featured_awards.map((w, k) => ({ ...w, big: true, path: `s06_thanh_tuu.featured_awards.${k}.image` })),
   ...c.s06_thanh_tuu.awards.map((w, k) => ({ ...w, big: false, path: `s06_thanh_tuu.awards.${k}.image` }))].filter((w) => isFilled(w.title));
 const caps = c.s07_nang_luc.capabilities.filter((x) => isFilled(x.title));
@@ -55,23 +63,24 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
 </section>
 
 <section id="su-menh" class="mission">
-<div class="mission__photo"><ImageSlot style={fill} id="mission-bg" shape="rect" placeholder="Ảnh nền sứ mệnh" image={m.background} cms={`${F}#s03_su_menh_gia_tri.background`} sizes="100vw" /></div>
-<div class="mission__scrim" aria-hidden="true"></div>
 <div class="mission__inner">
-<div class="mission__cols">
-<div><span class="mission__eyebrow">{m.t1}</span><span class="mission__statement">{m.t2}</span></div>
-<div><span class="mission__eyebrow">{m.t3}</span><span class="mission__statement">{m.t4}</span></div>
-<div><span class="mission__eyebrow">{m.t5}</span><span class="mission__statement">{m.t6}</span></div>
-</div>
+<ul class="mission__cols">
+{statements.map((st) => <li class="mission__col">
+<span class="mission__icon" aria-hidden="true" set:html={st.icon}></span>
+<span class="mission__eyebrow">{st.label}</span>
+<p class="mission__statement">{st.text}</p>
+</li>)}
+</ul>
 <div class="mission__values">
-<span class="mission__eyebrow">{m.t7}</span>
-<div class="values-grid">
-<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t8}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t9}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t10}</span></div>
-<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t11}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t12}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t13}</span></div>
-<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t14}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t15}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t16}</span></div>
-<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t17}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t18}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t19}</span></div>
-{c.s03_su_menh_gia_tri.t21 && <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:700 14px var(--font-mono);color:var(--amber-400)">{c.s03_su_menh_gia_tri.t20}</span><strong style="font-size:20px">{c.s03_su_menh_gia_tri.t21}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_su_menh_gia_tri.t22}</span></div>}
-</div>
+<span class="mission__eyebrow mission__eyebrow--center">{m.t7}</span>
+<ul class="core">
+{coreValues.map((v) => <li class="core__item">
+<span class="core__icon" aria-hidden="true" set:html={v.icon}></span>
+<span class="core__num">{v.num}</span>
+<strong class="core__title">{v.title}</strong>
+<p class="core__text jx-justify">{v.text}</p>
+</li>)}
+</ul>
 </div></div></section>
 
 <section id="lich-su" class="hist">
@@ -154,16 +163,16 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
 <div class="cap__body">
 <h3 class="cap__title">{x.title}</h3>
 {isFilled(x.subtitle) && <p class="cap__subtitle">{x.subtitle}</p>}
-{isFilled(x.text) && <p class="cap__text">{x.text}</p>}
+{isFilled(x.text) && <p class="cap__text jx-justify">{x.text}</p>}
 {x.stats.length > 0 && <div class="cap__stats">
-{x.stats.filter((s) => isFilled(s.value)).map((s) => <div class="cap__stat"><span class="cap__stat-value">{s.value}</span><span class="cap__stat-label">{s.label}</span>{isFilled(s.sub) && <span class="cap__stat-sub">{s.sub}</span>}</div>)}
+{x.stats.filter((s) => isFilled(s.value)).map((s) => <div class="cap__stat"><span class="cap__stat-value">{s.value}</span><span class="cap__stat-label">{s.label}{isFilled(s.sub) && ` ${s.sub}`}</span></div>)}
 </div>}
 {x.chips.length > 0 && <div class="cap__chips-wrap">
 {isFilled(x.chips_title) && <span class="cap__chips-title">{x.chips_title}</span>}
 <ul class="cap__chips">{x.chips.filter(isFilled).map((ch) => <li>{ch}</li>)}</ul>
 </div>}
-{isFilled(x.note) && <p class="cap__text">{x.note}</p>}
-{isFilled(x.link) && <a class="cap__more" href={link(x.link)}>{x.link_label || 'Xem thêm'} →</a>}
+{isFilled(x.note) && <p class="cap__text jx-justify">{x.note}</p>}
+{isFilled(x.link) && <a class="cap__more" href={link(x.link)}>{x.link_label || 'Xem thêm'} <span aria-hidden="true">↗</span></a>}
 </div>
 </div>
 ))}
@@ -242,17 +251,37 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
     .ceo__quote--close { display: none; }
   }
 
-  /* Mission on a full-bleed photo */
-  .mission { position: relative; color: #fff; background: var(--green-900); overflow: hidden; scroll-margin-top: 120px; }
-  .mission__photo { position: absolute; inset: 0; }
-  .mission__scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(2, 53, 26, .78) 0%, rgba(2, 53, 26, .86) 55%, rgba(2, 53, 26, .94) 100%); }
-  .mission__inner { position: relative; padding-block: clamp(72px, 9vw, 128px); display: flex; flex-direction: column; gap: 56px; }
-  .mission__cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
-  .mission__cols > div { display: flex; flex-direction: column; gap: 12px; padding-top: 18px; border-top: 2px solid var(--amber-400); }
-  .mission__eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; text-transform: uppercase; color: var(--green-100); }
-  .mission__statement { font: var(--type-h3); text-wrap: balance; }
-  .mission__values { display: flex; flex-direction: column; gap: 24px; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, .16); }
-  @media (max-width: 899.98px) { .mission__cols { grid-template-columns: minmax(0, 1fr); } }
+  /* Mission, vision, goal + core values: no photo; thin line icons, soft green tints. */
+  .mission { position: relative; background: var(--surface-page); scroll-margin-top: 120px; overflow: hidden; }
+  .mission__inner { position: relative; padding-block: clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: clamp(48px, 6vw, 72px); }
+  .mission__cols { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+    background: var(--surface-card); border-radius: var(--radius-xl); box-shadow: 0 14px 34px rgba(0, 71, 35, .08); border: 1px solid var(--border-default); }
+  .mission__col { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: clamp(26px, 3vw, 38px); }
+  .mission__col + .mission__col::before { content: ''; position: absolute; left: 0; top: 32px; bottom: 32px; width: 1px; background: var(--border-default); }
+  .mission__icon, .core__icon { display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--brand-bright); background: var(--green-50); }
+  .mission__icon { width: 48px; height: 48px; }
+  .mission__icon :global(svg), .core__icon :global(svg) { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .mission__eyebrow { font: 600 13px/1.4 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--brand-bright); }
+  .mission__eyebrow--center { text-align: center; }
+  .mission__statement { margin: 0; font: 600 clamp(18px, 1.45vw, 21px)/1.4 var(--font-display); color: var(--green-800); text-wrap: balance; text-align: start; }
+  .mission__values { display: flex; flex-direction: column; align-items: center; gap: 28px; }
+  .core { list-style: none; margin: 0; padding: 0; width: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; }
+  .core__item { position: relative; flex: 0 0 calc((100% - 36px) / 3); display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: center; gap: 12px 16px; padding: 24px 26px 26px; border-radius: var(--radius-lg); background: var(--surface-card);
+    border: 1px solid var(--border-default); transition: transform var(--motion-base) var(--ease-out), box-shadow var(--motion-base), border-color var(--motion-base); }
+  .core__item::after { content: ''; position: absolute; left: 22px; right: 22px; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: var(--brand-bright); transform: scaleX(.25); transform-origin: left; transition: transform var(--motion-slow) var(--ease-out); }
+  .core__item:hover { transform: translateY(-3px); border-color: var(--green-200); box-shadow: 0 12px 28px rgba(0, 71, 35, .1); }
+  .core__item:hover::after { transform: scaleX(1); }
+  .core__icon { width: 44px; height: 44px; }
+  .core__num { position: absolute; right: 20px; top: 22px; font: 600 14px/1 var(--font-display); color: var(--brand-highlight); }
+  .core__title { padding-right: 28px; font: 600 19px/1.35 var(--font-display); color: var(--text-primary); }
+  .core__text { grid-column: 1 / -1; }
+  .core__text { margin: 0; font-size: 15px; line-height: 1.6; color: var(--text-secondary); }
+  @media (max-width: 1023.98px) { .core__item { flex-basis: calc((100% - 18px) / 2); } }
+  @media (max-width: 899.98px) {
+    .mission__cols { grid-template-columns: minmax(0, 1fr); }
+    .mission__col + .mission__col::before { left: 28px; right: 28px; top: 0; bottom: auto; width: auto; height: 1px; }
+  }
+  @media (max-width: 599.98px) { .core__item { flex-basis: 100%; } }
 
   /* History — content on top, a timeline rail below that advances every 6 s (reference: dotted milestone rail) */
   .hist { background: var(--surface-card); scroll-margin-top: 120px; }
@@ -324,42 +353,47 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
     .fame__img { height: 150px; }
   }
 
-  /* Capabilities — tabs, photo mosaic + key facts (reference: "Năng lực sản xuất") */
+  /* Capabilities (Figma): photo mosaic left; big green uppercase title, solid green figure boxes, green chips right. */
   .cap { background: var(--surface-page); border-top: 1px solid var(--border-default); scroll-margin-top: 120px; }
-  .cap__inner { padding-block: clamp(56px, 6vw, 88px); display: flex; flex-direction: column; gap: 28px; }
+  .cap__inner { padding-block: clamp(56px, 6vw, 88px); display: flex; flex-direction: column; gap: 36px; }
   .cap__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px 32px; flex-wrap: wrap; }
-  .cap__head h2 { max-width: 640px; }
-  .cap__tabs { display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--surface-card); border: 1px solid var(--border-default); overflow-x: auto; max-width: 100%; }
-  .cap__tabs button { flex: none; min-height: 40px; padding: 0 18px; border: 0; border-radius: 999px; background: transparent; font: 600 15px var(--font-body); color: var(--text-secondary); cursor: pointer;
+  .cap__head h2 { max-width: 800px; }
+  .cap__tabs { display: inline-flex; gap: 4px; padding: 6px; border-radius: 999px; background: var(--surface-card); box-shadow: 0 6px 18px rgba(0, 71, 35, .08); overflow-x: auto; max-width: 100%; }
+  .cap__tabs button { flex: none; min-height: 42px; padding: 0 20px; border: 0; border-radius: 999px; background: transparent; font: 500 15px var(--font-body); color: var(--text-secondary); cursor: pointer;
     transition: background var(--motion-base) var(--ease-out), color var(--motion-base); }
-  .cap__tabs button[aria-selected='true'] { background: var(--green-500); color: #fff; }
-  .cap__panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px clamp(28px, 3.5vw, 48px); align-items: center; }
+  .cap__tabs button:hover { color: var(--green-700); }
+  .cap__tabs button[aria-selected='true'] { background: var(--brand-bright); color: #fff; }
+  .cap__panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px clamp(32px, 4vw, 56px); align-items: center; }
   .cap__panel:not([hidden]) { animation: hist-in 450ms var(--ease-out) both; }
-  .cap__mosaic { display: grid; grid-template-columns: 1.55fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; height: clamp(320px, 30vw, 420px); }
+  .cap__mosaic { display: grid; grid-template-columns: 1.5fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; height: clamp(340px, 34vw, 500px); }
   .cap__mosaic[data-count='1'] .cap__tile { grid-column: 1 / -1; grid-row: 1 / -1; }
   .cap__mosaic[data-count='2'] .cap__tile { grid-row: 1 / -1; }
   .cap__mosaic[data-count='3'] .cap__tile:first-child { grid-row: 1 / -1; }
+  .cap__mosaic[data-count='4'] { grid-template-columns: 1.5fr .4fr 1.1fr; }
+  .cap__mosaic[data-count='4'] .cap__tile:nth-child(1) { grid-column: 1 / 3; }
+  .cap__mosaic[data-count='4'] .cap__tile:nth-child(2) { grid-column: 3; }
   .cap__mosaic[data-count='4'] .cap__tile:nth-child(3) { grid-column: 1; }
+  .cap__mosaic[data-count='4'] .cap__tile:nth-child(4) { grid-column: 2 / 4; }
   .cap__tile { position: relative; min-height: 0; }
-  .cap__body { display: flex; flex-direction: column; gap: 14px; }
-  .cap__title { margin: 0; font: var(--type-h3); color: var(--text-primary); text-wrap: balance; }
-  .cap__subtitle { margin: 0; font: 600 16px/1.5 var(--font-body); color: var(--green-700); }
-  .cap__text { margin: 0; color: var(--text-secondary); font-size: 16px; line-height: 1.65; }
-  .cap__stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
-  .cap__stat { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; border-radius: var(--radius-lg); background: var(--surface-card); border: 1px solid var(--border-default); }
-  .cap__stat-value { font: 800 clamp(24px, 2.2vw, 32px)/1.1 var(--font-display); color: var(--green-700); letter-spacing: -.01em; white-space: nowrap; }
-  .cap__stat-label { font: 600 13px/1.4 var(--font-body); letter-spacing: .04em; text-transform: uppercase; color: var(--text-secondary); margin-top: 4px; }
-  .cap__stat-sub { font-size: 13px; color: var(--text-tertiary); }
-  .cap__chips-wrap { display: flex; flex-direction: column; gap: 10px; }
-  .cap__chips-title { font: var(--type-eyebrow); letter-spacing: .06em; text-transform: uppercase; color: var(--green-700); }
-  .cap__chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-  .cap__chips li { padding: 6px 14px; border-radius: 999px; background: var(--green-50); border: 1px solid var(--green-100); color: var(--green-800); font-weight: 600; font-size: 14px; white-space: nowrap; }
-  .cap__more { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 22px; border: 1.5px solid var(--green-500); border-radius: 999px;
-    color: var(--green-700); font-weight: 700; transition: background var(--motion-base), color var(--motion-base); }
-  .cap__more:hover { background: var(--green-500); color: #fff; text-decoration: none; }
+  .cap__body { display: flex; flex-direction: column; gap: 16px; }
+  .cap__title { margin: 0; font: 700 clamp(28px, 2.8vw, 40px)/1.15 var(--font-display); color: var(--green-700); text-transform: uppercase; letter-spacing: .01em; text-wrap: balance; }
+  .cap__subtitle { margin: -4px 0 0; font: 600 17px/1.5 var(--font-body); color: var(--green-800); }
+  .cap__text { margin: 0; color: var(--text-secondary); font-size: 16px; line-height: 1.7; }
+  .cap__stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+  .cap__stat { display: flex; flex-direction: column; gap: 6px; padding: 20px 22px; border-radius: var(--radius-lg); background: var(--brand-bright); color: #fff; }
+  .cap__stat-value { font: 700 clamp(30px, 2.8vw, 42px)/1.05 var(--font-display); color: #fff; letter-spacing: -.01em; white-space: nowrap; }
+  .cap__stat-label { font: 600 14px/1.35 var(--font-body); letter-spacing: .03em; text-transform: uppercase; color: #fff; }
+  .cap__stat-sub { display: none; }
+  .cap__chips-wrap { display: flex; flex-direction: column; gap: 12px; }
+  .cap__chips-title { font: 700 14px/1.4 var(--font-body); letter-spacing: .05em; text-transform: uppercase; color: var(--green-800); }
+  .cap__chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .cap__chips li { padding: 8px 16px; border-radius: 999px; background: var(--brand-bright); color: #fff; font-weight: 500; font-size: 15px; white-space: nowrap; }
+  .cap__more { align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 24px; border-radius: 999px; background: var(--brand-bright);
+    color: #fff; font-weight: 600; transition: background var(--motion-base); }
+  .cap__more:hover { background: var(--green-600); color: #fff; text-decoration: none; }
   @media (max-width: 899.98px) {
     .cap__panel { grid-template-columns: minmax(0, 1fr); }
-    .cap__mosaic { height: clamp(240px, 64vw, 380px); }
+    .cap__mosaic { height: clamp(260px, 70vw, 420px); }
     .cap__tabs { width: 100%; }
     .cap__tabs button { flex: 1 0 auto; }
   }
