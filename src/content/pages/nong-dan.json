@@ -6,9 +6,9 @@
   "hero": {
     "breadcrumb": "Trang chủ / Nông dân Tiến Nông",
     "eyebrow": "NÔNG DÂN TIẾN NÔNG",
-    "title": "Bà con được mùa, Tiến Nông mới được mùa",
+    "title": "Đồng hành cùng nhà nông trên mọi miền đất nước",
     "intro": "Hơn 300.000 hộ nông dân trên khắp cả nước đang canh tác cùng Tiến Nông. Chúng tôi đi cùng bà con từ lúc chọn phân, bón phân đến khi thu hoạch — và cả những khi mùa vụ gặp khó.",
-    "button1": "Đăng ký tư vấn →",
+    "button1": "Đăng ký tư vấn",
     "button2": "Phân bón trả chậm",
     "hotline_label": "Hotline kỹ sư",
     "hotline": "[số hotline kỹ sư]",
@@ -71,15 +71,33 @@
     "steps": [
       {
         "title": "Trước vụ",
-        "text": "Tìm hiểu đất và giống, lấy mẫu phân tích ở vùng sản xuất tập trung, gợi ý công thức bón lót phù hợp từng cây trồng."
+        "text": "Tìm hiểu đất và giống, lấy mẫu phân tích ở vùng sản xuất tập trung, gợi ý công thức bón lót phù hợp từng cây trồng.",
+        "image": {
+          "src": "/uploads/tin-cu/2026/sau-ngap-ung-o-yen-phu-tien-nong-xuong-dong-tim-loi-giai-tu-dat-va-cay-4.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Kỹ sư Tiến Nông lấy mẫu trên ruộng dứa"
+        }
       },
       {
         "title": "Trong vụ",
-        "text": "Hướng dẫn bón thúc theo giai đoạn sinh trưởng, thăm đồng, tổ chức hội thảo đầu bờ để bà con cùng xem kết quả."
+        "text": "Hướng dẫn bón thúc theo giai đoạn sinh trưởng, thăm đồng, tổ chức hội thảo đầu bờ để bà con cùng xem kết quả.",
+        "image": {
+          "src": "/uploads/tin-cu/2026/tien-nong-dong-hanh-kien-tao-nhung-canh-dong-lua-xanh-va-ben-vung-5.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Kỹ sư Tiến Nông thăm ruộng lúa"
+        }
       },
       {
         "title": "Sau vụ",
-        "text": "Cùng tổng kết năng suất, chi phí; hỗ trợ kỹ thuật phục hồi đất và kết nối đầu ra khi thị trường khó khăn."
+        "text": "Cùng tổng kết năng suất, chi phí; hỗ trợ kỹ thuật phục hồi đất và kết nối đầu ra khi thị trường khó khăn.",
+        "image": {
+          "src": "/uploads/tin-cu/2025/hoi-nghi-dau-bo-danh-gia-hieu-qua-mo-hinh-phan-bon-npk-huu-co-vi-sinh-gieo-mam-4.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Bà con thu hoạch ngô trên ruộng mô hình"
+        }
       }
     ]
   },
@@ -151,10 +169,11 @@
       "focus": "center",
       "zoom": "100",
       "alt": "Hội nghị triển khai chương trình phân bón trả chậm cùng Hội Nông dân"
-    }
+    },
+    "timeline_title": "Chặng đường phân bón trả chậm"
   },
   "center": {
-    "eyebrow": "TRUNG TÂM CHĂM SÓC PHỤC VỤ NÔNG DÂN VIỆT NAM",
+    "eyebrow": "",
     "title": "Đồng ruộng là một phần của nhà máy",
     "text": "Ra mắt ngày 05/08/2020 với sự chứng kiến của Trung ương Hội Nông dân Việt Nam và Hội Nông dân tỉnh Thanh Hóa, Trung tâm là lực lượng của Tiến Nông chuyên chăm sóc, phục vụ nhà nông — với hàng trăm cán bộ và mạng lưới hàng nghìn đại diện trên cả nước. Trung tâm ra đời từ một xác định xuyên suốt của Tiến Nông: đồng ruộng là một phần của nhà máy, nông dân là bạn đồng hành đáng tin cậy của doanh nghiệp.",
     "items": [
@@ -289,111 +308,62 @@
         "when": "02/2020",
         "title": "Giải cứu 30 tấn dưa hấu mùa dịch",
         "text": "Khi dưa hấu Gia Lai không xuất khẩu được vì dịch Covid-19, Tiến Nông mua 30 tấn dưa của bà con Krông Pa, phát miễn phí cho người lao động và người dân.",
-        "link": "/tin-tuc/gia-dinh-tien-nong-giai-cuu-30-tan-dua-hau-ho-tro-nong-dan-trong-dua-trong-mua/"
+        "link": "/tin-tuc/gia-dinh-tien-nong-giai-cuu-30-tan-dua-hau-ho-tro-nong-dan-trong-dua-trong-mua/",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Giải cứu 30 tấn dưa hấu mùa dịch"
+        }
       },
       {
         "when": "06/2021",
         "title": "Cùng Bắc Giang tiêu thụ vải thiều",
         "text": "Đồng hành cùng nhà vườn Lục Ngạn tiêu thụ vải thiều trong mùa dịch.",
-        "link": "/tin-tuc/tien-nong-tiep-tuc-lan-toa-tinh-than-se-chia-dong-hanh-cung-nong-dan-bac-giang/"
+        "link": "/tin-tuc/tien-nong-tiep-tuc-lan-toa-tinh-than-se-chia-dong-hanh-cung-nong-dan-bac-giang/",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Cùng Bắc Giang tiêu thụ vải thiều"
+        }
       },
       {
         "when": "11/2024",
         "title": "Phân bón cho bà con sau bão lũ",
         "text": "Trao tặng hơn 100 tấn phân bón hữu cơ sinh học humic, kèm hướng dẫn chăm sóc đất và cây sau ngập.",
-        "link": "/tin-tuc/cong-ty-tien-nong-trao-tang-hon-100-tan-phan-bon-huu-co-sinh-hoc-humic-tien/"
+        "link": "/tin-tuc/cong-ty-tien-nong-trao-tang-hon-100-tan-phan-bon-huu-co-sinh-hoc-humic-tien/",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Phân bón cho bà con sau bão lũ"
+        }
       },
       {
         "when": "09/2026",
         "title": "Xuống đồng sau ngập úng ở Yên Phú",
         "text": "Kỹ sư lấy mẫu đất, mẫu cây trên vùng dứa bị ngập để tìm cách phục hồi.",
-        "link": "/tin-tuc/sau-ngap-ung-o-yen-phu-tien-nong-xuong-dong-tim-loi-giai-tu-dat-va-cay/"
+        "link": "/tin-tuc/sau-ngap-ung-o-yen-phu-tien-nong-xuong-dong-tim-loi-giai-tu-dat-va-cay/",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Xuống đồng sau ngập úng ở Yên Phú"
+        }
       }
     ]
-  },
-  "club": {
-    "eyebrow": "CÂU LẠC BỘ GẮN KẾT TIẾN NÔNG",
-    "title": "Nơi những nông dân sản xuất lớn học hỏi lẫn nhau",
-    "text": "Câu lạc bộ “Gắn kết Tiến Nông” ra mắt ngày 09/06/2020 tại Nhà máy Tiến Nông Bỉm Sơn, quy tụ hàng trăm nông dân có diện tích canh tác lớn — để chia sẻ kinh nghiệm, cập nhật kỹ thuật và cùng Tiến Nông thử nghiệm những giải pháp dinh dưỡng mới.",
-    "image": {
-      "src": "/uploads/tin-cu/2020/ra-mat-cac-thanh-vien-clb-gan-ket-tien-nong-la-nong-dan-co-dien-tich-lon-tai-1.webp",
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Lễ ra mắt CLB Gắn kết Tiến Nông"
-    },
-    "link": "/tin-tuc/ra-mat-cac-thanh-vien-clb-gan-ket-tien-nong-la-nong-dan-co-dien-tich-lon-tai/"
   },
   "workshops": {
-    "eyebrow": "CHƯƠNG TRÌNH TẬP HUẤN",
+    "eyebrow": "KỸ SƯ ĐỒNG HÀNH",
     "title": "Kỹ sư Tiến Nông đồng hành tại địa phương",
     "intro": "Hình ảnh và chia sẻ từ các buổi tập huấn, hội nghị, hội thảo đầu bờ do kỹ sư Tiến Nông tổ chức cùng bà con tại địa phương.",
-    "all": "Xem tất cả bài hội thảo →",
+    "all": "Xem thêm bài viết",
     "empty": "Bài hội thảo đầu bờ sẽ được cập nhật tại đây."
   },
-  "faq": {
-    "eyebrow": "NHÀ NÔNG HỎI · TIẾN NÔNG TRẢ LỜI",
-    "title": "Giải đáp những thắc mắc thường gặp",
-    "intro": "Chưa tìm thấy câu trả lời? Gọi hotline kỹ sư hoặc gửi câu hỏi qua Zalo OA Tiến Nông.",
-    "items": [
-      {
-        "q": "Phân bón trả chậm là gì, ai được tham gia?",
-        "a": "Là hình thức bà con nhận phân bón Tiến Nông trước, thanh toán sau khi thu hoạch. Chương trình triển khai qua Hội Nông dân: hội viên đăng ký với Hội Nông dân xã, Hội đứng ra tín chấp và nhận hàng. Hãy hỏi Hội Nông dân xã hoặc để lại thông tin để biết địa phương mình đã có chương trình chưa."
-      },
-      {
-        "q": "Nên bón phân Tiến Nông vào thời điểm nào là tốt nhất?",
-        "a": "Mỗi cây trồng có các giai đoạn bón khác nhau (lót, thúc, nuôi quả). Hướng dẫn chi tiết được in trên bao bì và trang thông tin từng sản phẩm. Kỹ sư Tiến Nông có thể tư vấn lịch bón theo giống và mùa vụ tại địa phương."
-      },
-      {
-        "q": "Làm thế nào để cải tạo đất bạc màu, kém dinh dưỡng?",
-        "a": "Nên phân tích đất để xác định nguyên nhân, sau đó kết hợp điều hòa pH, bổ sung phân hữu cơ – vi sinh và bón NPK cân đối theo nhu cầu cây trồng."
-      },
-      {
-        "q": "Có thể kết hợp phân Tiến Nông với phân hữu cơ không?",
-        "a": "Có. Kết hợp phân hữu cơ giúp cải thiện cấu trúc đất và tăng hiệu quả hấp thu dinh dưỡng của phân NPK."
-      },
-      {
-        "q": "Tiến Nông có hỗ trợ tư vấn kỹ thuật tại địa phương không?",
-        "a": "Có. Đội ngũ kỹ sư nông học của Tiến Nông thường xuyên tổ chức hội thảo đầu bờ và tư vấn trực tiếp. Đăng ký thành viên hoặc gọi hotline để được hỗ trợ."
-      },
-      {
-        "q": "Làm sao để phân biệt sản phẩm Tiến Nông chính hãng?",
-        "a": "Mỗi bao sản phẩm Tiến Nông có mã QR truy xuất nguồn gốc. Quét mã bằng điện thoại để xem nguồn gốc, thành phần và hướng dẫn sử dụng. Nếu không quét được hoặc thông tin không khớp, vui lòng gọi 02373.729.729 để được hỗ trợ."
-      }
-    ]
-  },
-  "register": {
-    "eyebrow": "ĐĂNG KÝ TƯ VẤN",
-    "title": "Để kỹ sư Tiến Nông liên hệ với bà con",
-    "intro": "Dành cho nông dân, chủ trang trại, hợp tác xã và tổ hợp tác muốn được hỗ trợ kỹ thuật và kết nối với cộng đồng canh tác hiệu quả.",
-    "perks": [
-      "Cập nhật kiến thức và mô hình canh tác hiệu quả",
-      "Được kỹ sư nông học tư vấn miễn phí",
-      "Ưu tiên tham gia hội thảo đầu bờ, chương trình thực tế",
-      "Được hướng dẫn tham gia chương trình phân bón trả chậm tại địa phương"
-    ],
-    "sent_label": "ĐÃ GỬI ĐĂNG KÝ",
-    "sent_title": "Cảm ơn bà con đã đăng ký!",
-    "sent_text": "Kỹ sư Tiến Nông phụ trách khu vực sẽ liên hệ qua số điện thoại đã đăng ký.",
-    "again": "Đăng ký thêm thành viên",
-    "name_label": "Họ và tên *",
-    "name_ph": "Nguyễn Văn A",
-    "phone_label": "Số điện thoại / Zalo *",
-    "phone_ph": "09xx xxx xxx",
-    "province_label": "Tỉnh / thành phố *",
-    "province_ph": "VD: Thanh Hóa",
-    "crop_label": "Cây trồng chính *",
-    "consent": "Tôi đồng ý để Tiến Nông xử lý dữ liệu cá nhân theo Chính sách bảo mật.",
-    "submit": "Gửi đăng ký",
-    "alt_text": "Hoặc nhắn Zalo OA Tiến Nông để đăng ký nhanh.",
-    "crops": [
-      "Lúa",
-      "Ngô",
-      "Rau màu",
-      "Cây ăn quả",
-      "Cà phê",
-      "Chè",
-      "Mía",
-      "Khác"
-    ]
+  "cta": {
+    "title": "Cần kỹ sư tư vấn cho ruộng vườn?",
+    "text": "Gọi hotline hoặc để lại thông tin, kỹ sư Tiến Nông phụ trách khu vực sẽ liên hệ với bà con.",
+    "contact": "Để lại thông tin"
   }
 }
