@@ -151,9 +151,10 @@
     },
     "t5": "Viện Đổi mới sáng tạo Quốc Gia",
     "img_part_2_1": {
-      "focus": "center",
+      "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Logo"
+      "alt": "Logo",
+      "src": "/uploads/part-2-mvz06xlg.jpg"
     },
     "t6": "Học viện Nông nghiệp Việt Nam",
     "img_part_3_1": {
