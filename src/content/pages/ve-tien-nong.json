@@ -344,6 +344,24 @@
         "label": "CHẤT LƯỢNG & THƯƠNG HIỆU",
         "title": "Nhãn hiệu Cạnh tranh Việt Nam",
         "detail": "2018"
+      },
+      {
+        "image": {
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "label": "CHẤT LƯỢNG & THƯƠNG HIỆU",
+        "title": "Sản phẩm Nông nghiệp tiêu biểu",
+        "detail": "2018"
+      },
+      {
+        "image": {
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "label": "KHOA HỌC & CÔNG NGHỆ",
+        "title": "Nhà Khoa học của Nhà nông",
+        "detail": "2018"
       }
     ],
     "t27": "Hệ thống quản lý:",
