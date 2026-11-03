@@ -362,6 +362,15 @@
         "label": "KHOA HỌC & CÔNG NGHỆ",
         "title": "Nhà Khoa học của Nhà nông",
         "detail": "2018"
+      },
+      {
+        "image": {
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "label": "KHOA HỌC & CÔNG NGHỆ",
+        "title": "Bằng Lao động Sáng tạo",
+        "detail": "2022"
       }
     ],
     "t27": "Hệ thống quản lý:",
