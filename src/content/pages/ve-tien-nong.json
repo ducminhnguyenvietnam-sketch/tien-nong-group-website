@@ -383,7 +383,9 @@
       {
         "image": {
           "focus": "50% 50%",
-          "zoom": "100"
+          "zoom": "100",
+          "src": "/uploads/fame-18-mw0e5pmb.jpg",
+          "alt": "Ảnh giải thưởng"
         },
         "label": "KHOA HỌC & CÔNG NGHỆ",
         "title": "Vinh danh \"Doanh nghiệp Khoa học & Công nghệ tiêu biểu\"",
