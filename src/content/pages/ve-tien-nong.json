@@ -382,6 +382,15 @@
         "label": "KHOA HỌC & CÔNG NGHỆ",
         "title": "Vinh danh \"Doanh nghiệp Khoa học & Công nghệ tiêu biểu\"",
         "detail": "2025"
+      },
+      {
+        "image": {
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "label": "NHÀ NƯỚC",
+        "title": "Bằng khen Bộ trưởng Bộ NN&PTNT",
+        "detail": "2022"
       }
     ],
     "t27": "Hệ thống quản lý:",
