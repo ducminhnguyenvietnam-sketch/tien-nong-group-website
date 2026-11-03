@@ -455,7 +455,13 @@
         "date": "",
         "title": "Tiến Nông trao tặng 230 tấn phân bón, chung tay xanh hóa Trường Sa",
         "summary": "",
-        "url": "https://nongnghiepmoitruong.vn/tien-nong-trao-tang-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa-d816262.html"
+        "url": "https://nongnghiepmoitruong.vn/tien-nong-trao-tang-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa-d816262.html",
+        "logo": {
+          "focus": "50% 50%",
+          "zoom": "100",
+          "src": "/uploads/ts-press-6-mw0m4q3m.png",
+          "alt": "Logo Báo Nông nghiệp và Môi trường"
+        }
       }
     ]
   }
