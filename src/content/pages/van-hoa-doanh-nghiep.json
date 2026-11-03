@@ -47,13 +47,11 @@
     },
     {
       "value": "10 năm",
-      "label": "thâm niên bình quân",
-      "sub": ""
+      "label": "thâm niên bình quân"
     },
     {
       "value": "40+",
-      "label": "người gắn bó trên 20 năm",
-      "sub": ""
+      "label": "người gắn bó trên 20 năm"
     }
   ],
   "mottos": [
@@ -122,37 +120,56 @@
   "values": {
     "eyebrow": "THÔNG ĐIỆP TIẾN NÔNG",
     "title": "Năm giá trị cốt lõi",
-    "intro": "",
     "items": [
       {
         "title": "Đam mê chân chính",
         "body": "Tận tâm với nông nghiệp và khoa học, bền bỉ theo đuổi những giá trị thực cho nhà nông.",
         "proof": "Kỹ sư Tiến Nông lấy mẫu đất, mẫu cây trên ruộng dứa Yên Phú (Thanh Hóa) sau ngập úng, 09/2026",
-        "link": "/tin-tuc/sau-ngap-ung-o-yen-phu-tien-nong-xuong-dong-tim-loi-giai-tu-dat-va-cay/"
+        "link": "/tin-tuc/sau-ngap-ung-o-yen-phu-tien-nong-xuong-dong-tim-loi-giai-tu-dat-va-cay/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       },
       {
         "title": "Khát vọng cháy bỏng",
         "body": "Không ngừng vươn lên, cống hiến trọn vẹn trong lĩnh vực mình đã chọn.",
         "proof": "Tiến Nông nhận Giải thưởng Sao Vàng Đất Việt lần thứ sáu, năm 2024",
-        "link": "/tin-tuc/cong-ty-tien-nong-lan-thu-6-nhan-giai-thuong-sao-vang-dat-viet-2024/"
+        "link": "/tin-tuc/cong-ty-tien-nong-lan-thu-6-nhan-giai-thuong-sao-vang-dat-viet-2024/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       },
       {
         "title": "Sáng tạo không ngừng",
         "body": "Đổi mới để giữ vị thế dẫn đầu về dinh dưỡng cây trồng tại Việt Nam và vươn ra thế giới.",
         "proof": "Hội nghị đầu bờ mô hình NPK hữu cơ vi sinh tại Hoằng Xuân, Thanh Hóa, 06/2025",
-        "link": "/tin-tuc/hoi-nghi-dau-bo-danh-gia-hieu-qua-mo-hinh-phan-bon-npk-huu-co-vi-sinh-gieo-mam/"
+        "link": "/tin-tuc/hoi-nghi-dau-bo-danh-gia-hieu-qua-mo-hinh-phan-bon-npk-huu-co-vi-sinh-gieo-mam/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       },
       {
         "title": "Sẻ chia lợi ích",
         "body": "Lợi ích của nhà nông luôn được đặt lên trên hết trong mọi quyết định.",
         "proof": "Triển khai chương trình phân bón trả chậm cùng Hội Nông dân tại Bắc Ninh, 07/2025",
-        "link": "/tin-tuc/hoi-nghi-trien-khai-chuong-trinh-cung-ung-phan-bon-tien-nong-tra-cham-cho-nong/"
+        "link": "/tin-tuc/hoi-nghi-trien-khai-chuong-trinh-cung-ung-phan-bon-tien-nong-tra-cham-cho-nong/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       },
       {
         "title": "Trách nhiệm cộng đồng",
         "body": "Trách nhiệm với xã hội, bảo vệ môi trường, đồng hành cùng cộng đồng.",
         "proof": "Tháng hành động vì trẻ em 2025: 208 trẻ mồ côi ở Thanh Hóa, Nghệ An, Hà Tĩnh được Tiến Nông chăm lo",
-        "link": "/tin-tuc/thang-hanh-dong-vi-tre-em-2025-tien-nong-tiep-tuc-hanh-trinh-trao-yeu-thuong/"
+        "link": "/tin-tuc/thang-hanh-dong-vi-tre-em-2025-tien-nong-tiep-tuc-hanh-trinh-trao-yeu-thuong/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       }
     ]
   },
@@ -209,22 +226,22 @@
     "intro": "Tiến Nông đào tạo, tập huấn định kỳ cho cán bộ, công nhân viên về đất, phân bón, công nghệ và kỹ năng nghiệp vụ, để kiến thức mới được đưa vào công việc phục vụ bà con.",
     "items": [
       {
+        "label": "ĐÀO TẠO NỘI BỘ · 04/2026",
         "title": "Nền tảng về đất, phân bón và công nghệ",
         "text": "Khóa đào tạo toàn hệ thống do Trung tâm Nghiên cứu Phát triển KH&CN Tiến Nông tổ chức, chuẩn hóa kiến thức cho đội ngũ kinh doanh, kỹ thuật và quản lý.",
-        "link": "/tin-tuc/tien-nong-to-chuc-dao-tao-nen-tang-kien-thuc-ve-dat-phan-bon-va-cong-nghe-cho/",
-        "label": "ĐÀO TẠO NỘI BỘ · 04/2026"
+        "link": "/tin-tuc/tien-nong-to-chuc-dao-tao-nen-tang-kien-thuc-ve-dat-phan-bon-va-cong-nghe-cho/"
       },
       {
+        "label": "CHỨNG CHỈ NGHIỆP VỤ · 03/2026",
         "title": "Lấy mẫu phân bón cấp chứng chỉ",
         "text": "Phối hợp tổ chức đào tạo lấy mẫu phân bón có cấp chứng chỉ, góp phần nâng chuẩn kiểm soát chất lượng.",
-        "link": "/tin-tuc/tien-nong-chu-dong-phoi-hop-to-chuc-dao-tao-lay-mau-phan-bon-cap-chung-chi-gop/",
-        "label": "CHỨNG CHỈ NGHIỆP VỤ · 03/2026"
+        "link": "/tin-tuc/tien-nong-chu-dong-phoi-hop-to-chuc-dao-tao-lay-mau-phan-bon-cap-chung-chi-gop/"
       },
       {
+        "label": "HỌC TẬP QUỐC TẾ · 06/2026",
         "title": "Học từ thế giới",
         "text": "Đoàn cán bộ cập nhật xu hướng AI, robot và nhà máy thông minh tại Thâm Quyến, Trung Quốc.",
-        "link": "/tin-tuc/tien-nong-cap-nhat-xu-huong-ai-robot-va-nha-may-thong-minh-tai-tham-quyen/",
-        "label": "HỌC TẬP QUỐC TẾ · 06/2026"
+        "link": "/tin-tuc/tien-nong-cap-nhat-xu-huong-ai-robot-va-nha-may-thong-minh-tai-tham-quyen/"
       }
     ],
     "image": {
@@ -239,14 +256,22 @@
     "empty_note": "Video sẽ hiển thị khi dán đường dẫn YouTube hoặc tải tệp video lên trong trang quản trị.",
     "videos": [
       {
-        "youtube": "https://www.youtube.com/watch?v=MdqpwKYEWM4",
         "title": "Năm điều tâm niệm",
-        "note": "",
         "label": "BÀI HÁT TIẾN NÔNG",
-        "duration": ""
+        "youtube": "https://www.youtube.com/watch?v=MdqpwKYEWM4"
+      },
+      {
+        "title": "Tiến Nông niềm tự hào",
+        "label": "BÀI HÁT TIẾN NÔNG",
+        "youtube": "https://youtu.be/YL8ohMBjLT0?si=qy9-mKPDPc5X4G2T"
+      },
+      {
+        "title": "Tiến Nông xanh",
+        "label": "BÀI HÁT TIẾN NÔNG",
+        "note": "Nguyễn Hồng Phong",
+        "youtube": "https://youtu.be/kcJUZOH2-lY?si=hNKG8RNjKszfz6K3"
       }
     ],
-    "intro": "",
     "title": "Tiến Nông qua từng lời hát",
     "highlight": "qua từng lời hát"
   },
@@ -314,8 +339,7 @@
   "cta": {
     "title": "Trở thành một phần của gia đình Tiến Nông",
     "button_jobs": "Cơ hội nghề nghiệp →",
-    "button_about": "Về Tiến Nông",
-    "text": ""
+    "button_about": "Về Tiến Nông"
   },
   "family": {
     "eyebrow": "VĂN HÓA GIA ĐÌNH",
