@@ -351,9 +351,10 @@
       "title": "Đất bạc màu, suy giảm độ phì",
       "symptoms": "Đất chai cứng, màu nhạt, khô nhanh và giữ phân kém. Năng suất giảm dần qua từng vụ dù lượng phân bón mỗi năm một tăng.",
       "image": {
-        "focus": "center",
+        "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Đất bạc màu, chai cứng, nứt nẻ"
+        "alt": "Đất bạc màu, chai cứng, nứt nẻ",
+        "src": "/uploads/issue-2-problem-mw07mz63.jpg"
       },
       "why": "Canh tác liên tục, chủ yếu bón phân hóa học và ít trả lại chất hữu cơ khiến mùn trong đất cạn dần.\nThiếu mùn, đất mất cấu trúc tơi xốp, khả năng giữ nước và giữ dinh dưỡng (CEC) giảm nên phân bón dễ bị rửa trôi.\nĐất cũng nghèo vi sinh vật có ích và cạn kiệt trung – vi lượng sau nhiều năm cây trồng lấy đi mà không được bù lại.",
       "solution_name": "Bộ giải pháp phục hồi đất Tiến Nông",
