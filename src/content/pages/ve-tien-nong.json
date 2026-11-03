@@ -280,6 +280,15 @@
         "label": "KHU VỰC ASEAN",
         "title": "Top 10 Thương hiệu mạnh ASEAN",
         "detail": "2024"
+      },
+      {
+        "image": {
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "label": "ASEAN",
+        "title": "abcde",
+        "detail": "2025"
       }
     ],
     "t27": "Hệ thống quản lý:",
@@ -412,10 +421,10 @@
             "alt": "Nhà máy Tiến Nông Bỉm Sơn"
           },
           {
+            "src": "/uploads/cap-1-2-mw03eeq3.jpg",
             "focus": "53.4% 100%",
             "zoom": "119",
-            "alt": "Dây chuyền đóng bao và xe nâng tại nhà máy Bỉm Sơn",
-            "src": "/uploads/cap-1-2-mw03eeq3.jpg"
+            "alt": "Dây chuyền đóng bao và xe nâng tại nhà máy Bỉm Sơn"
           },
           {
             "src": "/uploads/cap-1-3-mw03nmys.jpg",
@@ -592,10 +601,9 @@
       "title": "Thành lập xí nghiệp sản xuất phân bón Tiến Nông số 2",
       "body": "Địa chỉ tại 274B Bà Triệu, phường Hàm Rồng, tỉnh Thanh Hóa. Nay là trụ sở của công ty",
       "image": {
-        "focus": "46.8% 84.7%",
-        "zoom": "143",
         "src": "/uploads/ms-1-mw04hus9.jpg",
-        "alt": ""
+        "focus": "46.8% 84.7%",
+        "zoom": "143"
       }
     },
     {
@@ -616,8 +624,7 @@
       "image": {
         "src": "/uploads/ms-3-mvhwhk4s.jpg",
         "focus": "16.5% 100%",
-        "zoom": "107",
-        "alt": ""
+        "zoom": "107"
       }
     },
     {
