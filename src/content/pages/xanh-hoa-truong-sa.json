@@ -442,7 +442,13 @@
         "date": "14/06/2026",
         "title": "Tiến Nông trao tặng 230 tấn phân bón, chung tay xanh hóa Trường Sa",
         "summary": "Khoảng 230 tấn phân bón, phần lớn là hữu cơ vi sinh, được trao để trồng cây xanh trên quần đảo Trường Sa, cùng chiến dịch quy đổi lời chúc thành phân bón.",
-        "url": "https://congthuong.vn/tien-nong-trao-tang-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa-461204.html"
+        "url": "https://congthuong.vn/tien-nong-trao-tang-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa-461204.html",
+        "logo": {
+          "focus": "50% 50%",
+          "zoom": "100",
+          "src": "/uploads/ts-press-5-mw0m3gdj.png",
+          "alt": "Logo Báo Công Thương"
+        }
       },
       {
         "source": "Báo Nông nghiệp và Môi trường",
