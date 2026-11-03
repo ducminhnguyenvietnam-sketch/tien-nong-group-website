@@ -306,9 +306,10 @@
         "Vinafer Tiến Nông"
       ],
       "pack_image": {
-        "focus": "center",
+        "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Bao bì sản phẩm Vinafer Tiến Nông"
+        "alt": "Bao bì sản phẩm Vinafer Tiến Nông",
+        "src": "/uploads/issue-0-pack-mw064opr.png"
       },
       "result_image": {
         "focus": "center",
