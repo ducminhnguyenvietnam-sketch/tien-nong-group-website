@@ -734,6 +734,15 @@
           "zoom": "100"
         },
         "featured": false
+      },
+      {
+        "name": "Forbon",
+        "logo": {
+          "src": "/uploads/3.png",
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "featured": false
       }
     ]
   },
