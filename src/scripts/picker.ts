@@ -3,10 +3,14 @@
  * button marks it aria-selected and shows the matching [data-pick-panel=k].
  * Optional [data-pick-step=±1] buttons move to the previous/next item (wrapping).
  *
+ * Several panels may share one key (two milestones in the same year): the button shows them one
+ * after another. Step buttons and autoplay go through them in turn before moving to the next key.
+ *
  * [data-pick-autoplay="ms"] on the root advances to the next item every ms (see below); a CSS
  * progress line on the selected button can run alongside (the root gets .is-paused while waiting
- * and .pick-reset for a moment whenever the count restarts). Buttons before the selected one get
- * .is-past.
+ * and .pick-reset for a moment whenever the count restarts). A button whose key holds n panels gets
+ * --pick-n: n, and the root gets --pick-sub (the panel being shown), so its progress line can run
+ * for n periods. Buttons before the selected one get .is-past.
  */
 document.querySelectorAll<HTMLElement>('[data-picker]').forEach((root) => {
   // Only this picker's own buttons/panels (a picker may sit inside another one).
@@ -15,15 +19,26 @@ document.querySelectorAll<HTMLElement>('[data-picker]').forEach((root) => {
   const buttons = own<HTMLElement>('[data-pick]');
   const panels = own<HTMLElement>('[data-pick-panel]');
   if (!buttons.length) return;
+  const group = (k: number) => panels.filter((p) => p.dataset.pickPanel === buttons[k].dataset.pick);
+  buttons.forEach((b, i) => { const n = group(i).length; if (n > 1) b.style.setProperty('--pick-n', String(n)); });
   let current = Math.max(0, buttons.findIndex((b) => b.getAttribute('aria-selected') === 'true'));
-  const show = (k: number, user = false) => {
+  let sub = 0;
+  const showPanel = () => {
+    const shown = group(current)[sub];
+    panels.forEach((p) => { p.hidden = p !== shown; });
+  };
+  // Only set when the progress line restarts: changing it mid-run would make the line jump.
+  const markSub = () => root.style.setProperty('--pick-sub', String(sub));
+  const show = (k: number, user = false, at = 0) => {
     current = (k + buttons.length) % buttons.length;
+    sub = Math.max(0, Math.min(at < 0 ? group(current).length - 1 : at, group(current).length - 1));
     const key = buttons[current].dataset.pick;
     buttons.forEach((b, i) => {
       b.setAttribute('aria-selected', String(i === current));
       b.classList.toggle('is-past', i < current);
     });
-    panels.forEach((p) => { p.hidden = p.dataset.pickPanel !== key; });
+    showPanel();
+    markSub();
     // Keep the selected stop visible in a horizontally scrolling rail, without moving the page.
     const rail = buttons[current].parentElement;
     rail?.classList.toggle('is-scrollable', !!rail && rail.scrollWidth > rail.clientWidth + 2);
@@ -33,9 +48,14 @@ document.querySelectorAll<HTMLElement>('[data-picker]').forEach((root) => {
     }
     root.dispatchEvent(new CustomEvent('picker:change', { detail: key, bubbles: true }));
   };
+  /** One step forward/back: through the panels of the current key first, then on to the next key. */
+  const step = (d: number) => {
+    const n = group(current).length;
+    if (sub + d >= 0 && sub + d < n) { sub += d; showPanel(); root.dispatchEvent(new CustomEvent('picker:sub', { detail: sub })); return; }
+    show(current + d, true, d < 0 ? -1 : 0);
+  };
   buttons.forEach((b, i) => b.addEventListener('click', () => show(i, true)));
-  own<HTMLElement>('[data-pick-step]').forEach((b) =>
-    b.addEventListener('click', () => show(current + Number(b.dataset.pickStep), true)));
+  own<HTMLElement>('[data-pick-step]').forEach((b) => b.addEventListener('click', () => step(Number(b.dataset.pickStep))));
   show(current);
 
   if (!root.hasAttribute('data-pick-autoplay')) return;
@@ -44,14 +64,16 @@ document.querySelectorAll<HTMLElement>('[data-picker]').forEach((root) => {
   // or keyboard focus is inside it; any change (click, arrow, autoplay) starts the count again.
   const every = Number(root.dataset.pickAutoplay) || 5000;
   let timer = 0, focus = false, offscreen = true;
-  const restartBar = () => { root.classList.add('pick-reset'); void root.offsetWidth; root.classList.remove('pick-reset'); };
+  const restartBar = () => { markSub(); root.classList.add('pick-reset'); void root.offsetWidth; root.classList.remove('pick-reset'); };
   const arm = () => {
     clearTimeout(timer);
     const paused = focus || offscreen || document.hidden;
     root.classList.toggle('is-paused', paused);
-    if (!paused) timer = window.setTimeout(() => show(current + 1), every);
+    if (!paused) timer = window.setTimeout(() => step(1), every);
   };
   root.addEventListener('picker:change', () => { restartBar(); arm(); });
+  // Moving to the next panel of the same key keeps the progress line running, only the timer restarts.
+  root.addEventListener('picker:sub', () => arm());
   root.addEventListener('focusin', (e) => { if ((e.target as HTMLElement).matches(':focus-visible')) { focus = true; arm(); } });
   root.addEventListener('focusout', (e) => { if (!root.contains(e.relatedTarget as Node)) { focus = false; restartBar(); arm(); } });
   document.addEventListener('visibilitychange', () => { restartBar(); arm(); });

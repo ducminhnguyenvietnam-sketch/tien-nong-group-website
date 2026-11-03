@@ -3,23 +3,11 @@
     "title": "Sản phẩm"
   },
   "hero": {
-    "bag1": {
-      "src": "/uploads/sp-hero-bao-1.png",
+    "image": {
+      "src": "/uploads/sp-hero-bo-san-pham.png",
       "focus": "center",
       "zoom": "100",
-      "alt": "Bao NPK 12-3-10+2SiO₂hh Tiến Nông (Lúa 2)"
-    },
-    "bag2": {
-      "src": "/uploads/sp-hero-bao-2.png",
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Bao NPK 15-15-15+1SiO₂hh Tiến Nông"
-    },
-    "bag3": {
-      "src": "/uploads/sp-hero-bao-3.png",
-      "focus": "center",
-      "zoom": "100",
-      "alt": "Bao Điều hoà pH đất 1 – Tiến Nông"
+      "alt": "Bộ sản phẩm phân bón Tiến Nông: Lúa 2, NPK 15-15-15+1SiO₂hh và Điều hoà pH đất"
     }
   },
   "s01_tieu_de": {

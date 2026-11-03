@@ -28,11 +28,11 @@ const journey = c.journey.items.filter((j) => isFilled(j.title));
 const wishes = c.wishes.items.filter((w) => isFilled(w.text));
 const photos = c.gallery.photos.map((ph, k) => ({ ph, k })).filter(({ ph }) => isFilled(ph.src));
 // Press coverage: articles about the programme on other newspapers' sites (set in the CMS).
-const press = (c.press?.items ?? []).filter((p) => isFilled(p.title) && isFilled(p.url));
+const press = (c.press?.items ?? []).map((p, k) => ({ ...p, k }) as typeof p & { k: number }).filter((p) => isFilled(p.title) && isFilled(p.url));
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h : link(h));
 ---
-<Layout title={c.seo.title || 'Xanh hoá Trường Sa'} description={c.seo.description || undefined} active="Phát triển bền vững">
+<Layout align={c.can_le} title={c.seo.title || 'Xanh hoá Trường Sa'} description={c.seo.description || undefined} active="Phát triển bền vững">
 <PageHero id="ts-hero" image={c.hero.background} cms={`${F}#hero.background`} placeholder="Ảnh chương trình Xanh hoá Trường Sa"
   crumbs={[{ label: c.hero.breadcrumb_home, href: url('trang-chu') }, { label: c.hero.breadcrumb_parent, href: url('phat-trien-ben-vung') }, { label: c.hero.breadcrumb_self }]}
   eyebrow={c.hero.eyebrow} title={c.hero.title} lead={c.hero.intro}>
@@ -45,11 +45,13 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 <div class="ts-campaign__copy">
 <span class="ts-eyebrow">{c.campaign.eyebrow}</span>
 <h2>{c.campaign.title}</h2>
-<p class="ts-lead">{c.campaign.text}</p>
 {isFilled(c.campaign.commitment) && <div class="ts-commit"><span aria-hidden="true">🌱</span><strong>{c.campaign.commitment}</strong></div>}
 {steps.length > 0 && <ol class="ts-steps">{steps.map((s, i) => <li><span class="ts-steps__n">{i + 1}</span><div><strong>{s.title}</strong><p>{s.text}</p></div></li>)}</ol>}
 </div>
+<div class="ts-campaign__side">
+{isFilled(c.campaign.text) && <p class="ts-lead">{c.campaign.text}</p>}
 <div class="ts-campaign__visual"><ImageSlot style={fill} id="ts-kv" shape="rounded" radius="20" fit="cover" placeholder="Key visual chiến dịch" image={c.campaign.image} cms={`${F}#campaign.image`} sizes="(max-width: 899px) 92vw, 640px" /></div>
+</div>
 </div></section>
 
 {isFilled(c.challenge.title) && <section class="st-sec st-sec--card" id="vi-sao"><div class="st-wrap">
@@ -119,19 +121,21 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 {wishes.length > 4 && <button type="button" class="ts-more" id="wish-more" data-count={wishes.length}>{c.wishes.more}</button>}
 </div></section>}
 
-{photos.length > 0 && <section class="ts-gallery"><div class="ts-wrap">
+{photos.length > 0 && <section id="hinh-anh" class="ts-gallery"><div class="ts-wrap">
 <div class="ts-head"><span class="ts-eyebrow">{c.gallery.eyebrow}</span><h2>{c.gallery.title}</h2></div>
 <div class="ts-gallery__grid" data-count={Math.min(photos.length, 6)}>
 {photos.slice(0, 6).map(({ ph, k }) => <figure><ImageSlot style={fill} id={`ts-g-${k}`} shape="rect" placeholder={ph.alt || 'Ảnh'} image={ph} cms={`${F}#gallery.photos.${k}`} sizes="(max-width: 767px) 92vw, 33vw" />{isFilled(ph.alt) && <figcaption>{ph.alt}</figcaption>}</figure>)}
 </div>
 </div></section>}
 
-{press.length > 0 && <section class="ts-press"><div class="ts-wrap">
+{press.length > 0 && <section id="bao-chi" class="ts-press"><div class="ts-wrap">
 <div class="ts-head"><span class="ts-eyebrow">{c.press.eyebrow}</span><h2>{c.press.title}</h2></div>
 <ul class="ts-press__grid">
 {press.map((p) => <li><a href={p.url} target="_blank" rel="noopener" class="ts-press__card">
-<span class="ts-press__src">{p.source}</span>
-{isFilled(p.date) && <span class="ts-press__date">{p.date}</span>}
+<span class="ts-press__top">
+<span class="ts-press__who"><span class="ts-press__src">{p.source}</span>{isFilled(p.date) && <span class="ts-press__date">{p.date}</span>}</span>
+<span class="ts-press__logo" data-needs-photos={isFilled(p.logo?.src) ? undefined : ''}><ImageSlot style={fill} id={`ts-press-${p.k}`} shape="rect" fit="contain" placeholder={`Logo ${p.source}`} image={p.logo} cms={`${F}#press.items.${p.k}.logo`} sizes="140px" /></span>
+</span>
 <strong>{p.title}</strong>
 {isFilled(p.summary) && <span class="ts-press__sum jx-start">{p.summary}</span>}
 <span class="ts-press__more">{c.press.read || 'Đọc trên'} {p.source} <span aria-hidden="true">↗</span></span>
@@ -163,7 +167,9 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
   @media (max-width: 399.98px) { .ts-stat__value { font-size: 24px; } }
 
   .ts-campaign { background: var(--surface-page); padding-block: clamp(64px, 8vw, 112px); }
-  .ts-campaign__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px 64px; align-items: center; }
+  /* Reference layout: title, commitment and steps on the left; the description above the key visual on the right. */
+  .ts-campaign__grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 40px clamp(40px, 5vw, 72px); align-items: start; }
+  .ts-campaign__side { display: flex; flex-direction: column; gap: 20px; padding-top: clamp(0px, 3.2vw, 44px); }
   .ts-campaign__copy { display: flex; flex-direction: column; gap: 18px; }
   .ts-lead { margin: 0; color: var(--text-secondary); font-size: var(--fs-body); }
   .ts-commit { display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 999px; background: var(--green-50); border: 1px solid var(--green-100); }
@@ -173,7 +179,7 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
   .ts-steps__n { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--green-500); color: #fff; font-weight: 700; }
   .ts-steps p { margin: 2px 0 0; color: var(--text-secondary); font-size: 15px; }
   .ts-campaign__visual { position: relative; aspect-ratio: 1920 / 900; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); }
-  @media (max-width: 899.98px) { .ts-campaign__grid { grid-template-columns: minmax(0, 1fr); } .ts-campaign__visual { order: -1; } }
+  @media (max-width: 899.98px) { .ts-campaign__grid { grid-template-columns: minmax(0, 1fr); } .ts-campaign__side { padding-top: 0; } }
 
   .ts-journey { background: var(--surface-page); padding-block: clamp(64px, 8vw, 112px); }
   .ts-timeline { list-style: none; margin: 0; padding: 24px 0 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; border-top: 2px solid var(--green-500); position: relative; }
@@ -251,8 +257,13 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
   .ts-press__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
   .ts-press__card { height: 100%; display: flex; flex-direction: column; gap: 10px; padding: 22px 20px 20px; border: 1px solid var(--border-default); border-top: 3px solid var(--brand-bright); border-radius: var(--radius-lg); background: var(--surface-page); color: var(--text-primary); text-decoration: none; transition: box-shadow var(--motion-fast), transform var(--motion-fast); }
   .ts-press__card:hover { text-decoration: none; color: var(--text-primary); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0, 71, 35, .1); }
+  .ts-press__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; min-height: 44px; }
+  .ts-press__who { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
   .ts-press__src { font: 800 17px/1.2 var(--font-display); color: var(--green-800); letter-spacing: -.005em; }
-  .ts-press__date { font-size: 13px; color: var(--text-tertiary); margin-top: -4px; }
+  .ts-press__date { font-size: 13px; color: var(--text-tertiary); }
+  /* The paper's own logo, top right (uploaded in the CMS / photo editor). */
+  .ts-press__logo { position: relative; flex: none; width: 104px; height: 44px; }
+  .ts-press__logo :global(.img-slot__frame) { background: transparent !important; }
   .ts-press__card strong { font: 700 16.5px/1.4 var(--font-display); }
   .ts-press__sum { font-size: 14.5px; line-height: 1.55; color: var(--text-secondary); }
   .ts-press__more { margin-top: auto; padding-top: 6px; font-size: 14px; font-weight: 600; color: var(--brand-bright); }

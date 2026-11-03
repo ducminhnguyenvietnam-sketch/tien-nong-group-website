@@ -91,6 +91,13 @@ Mỗi dòng chữ trên trang là một ô riêng, tên ô ghi loại chữ và 
 - Ô có chữ **Tệp/đường dẫn** (catalogue, hồ sơ năng lực…): tải PDF lên trực tiếp.
 - Danh sách (sản phẩm, vị trí tuyển dụng, đại lý, hỏi đáp, các mốc lịch sử…): bấm **Add** để thêm,
   kéo biểu tượng ⋮⋮ để đổi thứ tự, biểu tượng thùng rác để xoá.
+- **Căn lề chữ**: cuối mỗi trang trong CMS có nhóm *Căn lề chữ (tuỳ chọn)*.
+  - *Cả trang*: kiểu căn cho mọi đoạn văn của trang (mặc định *Đều 2 bên*).
+  - *Căn riêng từng mục*: bấm **Add**, chọn **Mục** (ví dụ *Lời chào của Tổng Giám đốc*) và **Kiểu căn lề**
+    (giữa / trái / phải / đều). Căn giữa, trái, phải áp dụng cho cả tiêu đề lẫn đoạn văn của mục đó.
+  - Muốn trở lại như cũ thì xoá dòng đó đi rồi Save.
+- **Các mốc lịch sử cùng một năm** (ví dụ hai mốc 2014) chỉ hiện một năm trên dòng thời gian; khi đến năm
+  đó, hai nội dung lần lượt hiện ra (có ghi 1/2, 2/2).
 
 ## 5. Đăng bài tin tức
 

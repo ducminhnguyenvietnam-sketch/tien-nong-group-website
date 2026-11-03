@@ -31,6 +31,8 @@ interface Props {
   type?: 'website' | 'article';
   /** Extra JSON-LD objects for this page (an article, a product…). */
   schema?: Record<string, unknown>[];
+  /** Text alignment chosen in the CMS ("Căn lề chữ"): one setting for the whole page and/or per section (by its id). */
+  align?: { mac_dinh?: string; muc?: { muc?: string; kieu?: string }[] };
 }
 const DEFAULT_DESCRIPTION = 'Tiến Nông Group — hơn 30 năm khoa học phụng sự nhà nông. Doanh nghiệp Khoa học & Công nghệ đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam.';
 const {
@@ -41,7 +43,26 @@ const {
   noindex = false,
   type = 'website',
   schema = [],
+  align,
 } = Astro.props;
+/* CMS text alignment → a few CSS rules. Running text is justified by default (v2.css); "left", "center"
+   and "right" apply to every text element in the chosen area (headings included), "justify" to paragraphs. */
+const ALIGNS = ['justify', 'left', 'center', 'right'];
+const alignCss = (() => {
+  const TEXT = ':is(p, li, dd, blockquote, figcaption, .jx-start, .jx-left, .jx-justify)';
+  const ALL = ':is(p, li, dd, dt, blockquote, figcaption, h1, h2, h3, h4, h5, h6, strong, b, span, div, label, .jx-start, .jx-left, .jx-justify)';
+  const rule = (scope: string, k: string) => k === 'justify'
+    ? `${scope} ${TEXT}{text-align:justify!important;text-align-last:start!important}`
+    : `${scope}, ${scope} ${ALL}{text-align:${k}!important;text-align-last:auto!important}`;
+  const out: string[] = [];
+  const page = align?.mac_dinh;
+  if (page && page !== 'justify' && ALIGNS.includes(page)) out.push(`main ${TEXT}{text-align:${page}!important;text-align-last:auto!important}`);
+  for (const m of align?.muc ?? []) {
+    if (!m?.muc || !/^[a-z0-9-]+$/.test(m.muc) || !ALIGNS.includes(m.kieu || '')) continue;
+    out.push(rule(`main #${m.muc}`, m.kieu!));
+  }
+  return out.join('\n');
+})();
 const desc = (description || DEFAULT_DESCRIPTION).replace(/\s+/g, ' ').trim().slice(0, 300);
 const fullTitle = title ? `${title} · Tiến Nông Group` : 'Tiến Nông Group';
 const site = siteRaw as any;
@@ -88,6 +109,7 @@ const org = {
   document.documentElement.classList.add('js');
 </script>
 <script type="application/ld+json" set:html={JSON.stringify([org, ...schema])} />
+{alignCss && <style is:inline set:html={alignCss} />}
 </head>
 <body>
 <a class="skip-link" href="#noi-dung">Bỏ qua đến nội dung</a>

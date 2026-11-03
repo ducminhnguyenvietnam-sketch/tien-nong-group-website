@@ -952,6 +952,66 @@ content:
       - name: link
         label: Đường dẫn khi bấm (ví dụ /san-pham/)
         type: string
+    - name: can_le
+      label: Căn lề chữ (tuỳ chọn)
+      description: Mặc định đoạn văn căn đều 2 bên. Chọn kiểu khác cho cả trang, hoặc thêm từng mục để căn riêng mục đó (căn giữa / trái / phải / đều).
+      type: object
+      fields:
+      - name: mac_dinh
+        label: Cả trang
+        type: select
+        default: justify
+        options:
+          values:
+          - value: justify
+            label: Đều 2 bên (mặc định)
+          - value: left
+            label: Căn trái
+          - value: center
+            label: Căn giữa
+          - value: right
+            label: Căn phải
+      - name: muc
+        label: Căn riêng từng mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.muc} – {fields.kieu}'
+        fields:
+        - name: muc
+          label: Mục
+          type: select
+          options:
+            values:
+            - value: khoa-hoc
+              label: 'Khoa học & Công nghệ'
+            - value: doi-tuong
+              label: 'Giải pháp'
+            - value: san-pham
+              label: 'Sản phẩm'
+            - value: nha-may
+              label: 'Sản xuất xanh'
+            - value: ben-vung
+              label: 'Phát triển bền vững'
+            - value: con-nguoi
+              label: 'Con người'
+            - value: tin-tuc
+              label: 'Tin tức'
+        - name: kieu
+          label: Kiểu căn lề
+          type: select
+          default: center
+          options:
+            values:
+            - value: justify
+              label: Đều 2 bên
+            - value: left
+              label: Căn trái
+            - value: center
+              label: Căn giữa
+            - value: right
+              label: Căn phải
   - name: ve_tien_nong
     label: Về Tiến Nông
     type: file
@@ -1524,6 +1584,66 @@ content:
         label: Ảnh
         component: photo
         description: Khung ảnh khoảng 556×360 px trên máy tính — nên dùng ảnh rộng ít nhất 1112 px.
+    - name: can_le
+      label: Căn lề chữ (tuỳ chọn)
+      description: Mặc định đoạn văn căn đều 2 bên. Chọn kiểu khác cho cả trang, hoặc thêm từng mục để căn riêng mục đó (căn giữa / trái / phải / đều).
+      type: object
+      fields:
+      - name: mac_dinh
+        label: Cả trang
+        type: select
+        default: justify
+        options:
+          values:
+          - value: justify
+            label: Đều 2 bên (mặc định)
+          - value: left
+            label: Căn trái
+          - value: center
+            label: Căn giữa
+          - value: right
+            label: Căn phải
+      - name: muc
+        label: Căn riêng từng mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.muc} – {fields.kieu}'
+        fields:
+        - name: muc
+          label: Mục
+          type: select
+          options:
+            values:
+            - value: thu-ngo
+              label: 'Lời chào của Tổng Giám đốc'
+            - value: su-menh
+              label: 'Sứ mệnh, tầm nhìn, giá trị cốt lõi'
+            - value: lich-su
+              label: 'Lịch sử phát triển'
+            - value: lanh-dao
+              label: 'Hội đồng Quản trị'
+            - value: thanh-tuu
+              label: 'Thành tựu & ghi nhận'
+            - value: nang-luc
+              label: 'Năng lực'
+            - value: doi-tac
+              label: 'Đối tác'
+        - name: kieu
+          label: Kiểu căn lề
+          type: select
+          default: center
+          options:
+            values:
+            - value: justify
+              label: Đều 2 bên
+            - value: left
+              label: Căn trái
+            - value: center
+              label: Căn giữa
+            - value: right
+              label: Căn phải
   - name: van_hoa_doanh_nghiep
     label: Văn hóa doanh nghiệp (trang con của Về Tiến Nông)
     type: file
@@ -1869,6 +1989,7 @@ content:
         type: text
       - name: stories
         label: Các câu chuyện
+        description: Bấm “Thêm” để thêm câu chuyện của gia đình khác. Trang hiển thị tối đa 3 câu chuyện mỗi hàng, tự xuống hàng khi nhiều hơn.
         type: object
         list:
           collapsible:
@@ -1887,6 +2008,12 @@ content:
         - name: image
           label: Ảnh
           component: photo
+        - name: link
+          label: Đường dẫn bài viết riêng của câu chuyện (có thể để trống)
+          type: string
+        - name: link_label
+          label: Chữ trên liên kết (mặc định "Đọc câu chuyện")
+          type: string
       - name: link
         label: Đường dẫn bài viết
         type: string
@@ -1905,6 +2032,7 @@ content:
         type: string
       - name: photos
         label: Ảnh (ảnh đầu tiên hiển thị lớn)
+        description: Ô "Mô tả ảnh" của mỗi ảnh hiện thành tiêu đề trên ảnh.
         component: photo
         list: true
     - name: cta
@@ -1923,6 +2051,72 @@ content:
       - name: button_about
         label: Nút về Tiến Nông
         type: string
+    - name: can_le
+      label: Căn lề chữ (tuỳ chọn)
+      description: Mặc định đoạn văn căn đều 2 bên. Chọn kiểu khác cho cả trang, hoặc thêm từng mục để căn riêng mục đó (căn giữa / trái / phải / đều).
+      type: object
+      fields:
+      - name: mac_dinh
+        label: Cả trang
+        type: select
+        default: justify
+        options:
+          values:
+          - value: justify
+            label: Đều 2 bên (mặc định)
+          - value: left
+            label: Căn trái
+          - value: center
+            label: Căn giữa
+          - value: right
+            label: Căn phải
+      - name: muc
+        label: Căn riêng từng mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.muc} – {fields.kieu}'
+        fields:
+        - name: muc
+          label: Mục
+          type: select
+          options:
+            values:
+            - value: thong-diep
+              label: 'Khẩu hiệu'
+            - value: khoi-nguon
+              label: 'Khởi nguồn'
+            - value: tam-niem
+              label: '5 điều tâm niệm'
+            - value: gia-tri
+              label: 'Giá trị cốt lõi'
+            - value: nghi-thuc
+              label: 'Truyền thống'
+            - value: gia-dinh
+              label: 'Văn hóa gia đình'
+            - value: hoc-tap
+              label: 'Đào tạo – tập huấn'
+            - value: bai-hat
+              label: 'Bài hát Tiến Nông'
+            - value: tho
+              label: 'Thơ'
+            - value: khoanh-khac
+              label: 'Khoảnh khắc'
+        - name: kieu
+          label: Kiểu căn lề
+          type: select
+          default: center
+          options:
+            values:
+            - value: justify
+              label: Đều 2 bên
+            - value: left
+              label: Căn trái
+            - value: center
+              label: Căn giữa
+            - value: right
+              label: Căn phải
   - name: khoa_hoc_cong_nghe
     label: Khoa học & Công nghệ
     type: file
@@ -2119,13 +2313,15 @@ content:
         label: 'Chữ: Sản xuất theo ISO 9001, kiểm nghiệm chất lượng t…'
         type: string
     - name: s06_vilas_1519
-      label: 06 · VILAS 1519
+      label: 06 · Năng lực phân tích (VILAS 1519)
       type: object
       fields:
-      - name: img_vilas_1
-        label: 'Ảnh: Thiết bị phân tích hiện đại trong phòng thí nghiệm'
+      - name: slides
+        label: Ảnh trình chiếu (tối đa 4 ảnh, tự chuyển)
+        description: Khung ảnh khoảng 600×460 px trên máy tính — nên dùng ảnh ngang rộng ít nhất 1200 px. Có thể thay từng ảnh ngay trên website (?sua-anh), dùng mũi tên để chuyển sang ô ảnh trống.
         component: photo
-        description: Khung ảnh khoảng 548×460 px trên máy tính — nên dùng ảnh rộng ít nhất 1096 px.
+        list:
+          max: 4
       - name: t1
         label: 'Nhãn in hoa: 04 · PHÒNG THÍ NGHIỆM VILAS 1519'
         type: string
@@ -2285,6 +2481,66 @@ content:
         label: Ảnh
         component: photo
         description: Khung ảnh khoảng 410×380 px trên máy tính — nên dùng ảnh rộng ít nhất 820 px.
+    - name: can_le
+      label: Căn lề chữ (tuỳ chọn)
+      description: Mặc định đoạn văn căn đều 2 bên. Chọn kiểu khác cho cả trang, hoặc thêm từng mục để căn riêng mục đó (căn giữa / trái / phải / đều).
+      type: object
+      fields:
+      - name: mac_dinh
+        label: Cả trang
+        type: select
+        default: justify
+        options:
+          values:
+          - value: justify
+            label: Đều 2 bên (mặc định)
+          - value: left
+            label: Căn trái
+          - value: center
+            label: Căn giữa
+          - value: right
+            label: Căn phải
+      - name: muc
+        label: Căn riêng từng mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.muc} – {fields.kieu}'
+        fields:
+        - name: muc
+          label: Mục
+          type: select
+          options:
+            values:
+            - value: gioi-thieu
+              label: 'Doanh nghiệp KH&CN'
+            - value: nang-luc
+              label: 'Bốn phòng chuyên môn'
+            - value: nen-tang
+              label: 'Nền tảng khoa học'
+            - value: quy-trinh
+              label: 'Quy trình năm bước'
+            - value: phan-tich
+              label: 'Năng lực phân tích'
+            - value: ung-dung
+              label: 'Ứng dụng'
+            - value: doi-tac
+              label: 'Đối tác nghiên cứu'
+        - name: kieu
+          label: Kiểu căn lề
+          type: select
+          default: center
+          options:
+            values:
+            - value: justify
+              label: Đều 2 bên
+            - value: left
+              label: Căn trái
+            - value: center
+              label: Căn giữa
+            - value: right
+              label: Căn phải
   - name: san_pham
     label: Sản phẩm
     type: file
@@ -2303,18 +2559,12 @@ content:
         label: Mô tả ngắn cho Google
         type: text
     - name: hero
-      label: Ảnh bao sản phẩm đầu trang
+      label: Ảnh lớn đầu trang
       type: object
-      description: Ba bao sản phẩm đứng cạnh nhau bên phải đầu trang (bao giữa to nhất). Dùng ảnh PNG nền trong suốt, đã cắt sát mép bao.
+      description: Một ảnh lớn bên phải đầu trang (do thiết kế dựng sẵn, ví dụ bộ bao sản phẩm). Nên dùng ảnh PNG nền trong suốt, ngang khoảng 1200 px. Có thể thay ngay trên website (?sua-anh).
       fields:
-      - name: bag1
-        label: Bao bên trái
-        component: photo
-      - name: bag2
-        label: Bao ở giữa (nổi bật)
-        component: photo
-      - name: bag3
-        label: Bao bên phải
+      - name: image
+        label: Ảnh lớn đầu trang
         component: photo
     - name: s01_tieu_de
       label: 01 · Tiêu đề
@@ -2441,6 +2691,54 @@ content:
       label: Sắp xếp – "theo tên"
       type: string
 
+    - name: can_le
+      label: Căn lề chữ (tuỳ chọn)
+      description: Mặc định đoạn văn căn đều 2 bên. Chọn kiểu khác cho cả trang, hoặc thêm từng mục để căn riêng mục đó (căn giữa / trái / phải / đều).
+      type: object
+      fields:
+      - name: mac_dinh
+        label: Cả trang
+        type: select
+        default: justify
+        options:
+          values:
+          - value: justify
+            label: Đều 2 bên (mặc định)
+          - value: left
+            label: Căn trái
+          - value: center
+            label: Căn giữa
+          - value: right
+            label: Căn phải
+      - name: muc
+        label: Căn riêng từng mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.muc} – {fields.kieu}'
+        fields:
+        - name: muc
+          label: Mục
+          type: select
+          options:
+            values:
+            - value: danh-sach
+              label: 'Danh sách sản phẩm'
+        - name: kieu
+          label: Kiểu căn lề
+          type: select
+          default: center
+          options:
+            values:
+            - value: justify
+              label: Đều 2 bên
+            - value: left
+              label: Căn trái
+            - value: center
+              label: Căn giữa
+            - value: right
+              label: Căn phải
   - name: chi_tiet_san_pham
     label: Chi tiết sản phẩm (mẫu)
     type: file
@@ -3205,6 +3503,64 @@ content:
         type: string
         list: true
       description: Khi mở trang, mục cuối cùng được chọn sẵn.
+    - name: can_le
+      label: Căn lề chữ (tuỳ chọn)
+      description: Mặc định đoạn văn căn đều 2 bên. Chọn kiểu khác cho cả trang, hoặc thêm từng mục để căn riêng mục đó (căn giữa / trái / phải / đều).
+      type: object
+      fields:
+      - name: mac_dinh
+        label: Cả trang
+        type: select
+        default: justify
+        options:
+          values:
+          - value: justify
+            label: Đều 2 bên (mặc định)
+          - value: left
+            label: Căn trái
+          - value: center
+            label: Căn giữa
+          - value: right
+            label: Căn phải
+      - name: muc
+        label: Căn riêng từng mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.muc} – {fields.kieu}'
+        fields:
+        - name: muc
+          label: Mục
+          type: select
+          options:
+            values:
+            - value: cay-trong
+              label: 'Theo cây trồng'
+            - value: quy-trinh
+              label: 'Đất là nền tảng'
+            - value: mo-hinh
+              label: 'Mô hình kiểm chứng'
+            - value: theo-van-de
+              label: 'Vấn đề thường gặp'
+            - value: tim-giai-phap
+              label: 'Tìm giải pháp'
+            - value: hoi-dap
+              label: 'Hỏi đáp kỹ thuật'
+        - name: kieu
+          label: Kiểu căn lề
+          type: select
+          default: center
+          options:
+            values:
+            - value: justify
+              label: Đều 2 bên
+            - value: left
+              label: Căn trái
+            - value: center
+              label: Căn giữa
+            - value: right
+              label: Căn phải
   - name: giai_phap_du_an
     label: Giải pháp cho dự án
     type: file
@@ -3255,67 +3611,37 @@ content:
         component: photo
         description: Khung ảnh khoảng 552×480 px trên máy tính — nên dùng ảnh rộng ít nhất 1104 px.
     - name: s02_nhom_khach_hang
-      label: 02 · Nhóm khách hàng
+      label: 02 · Lĩnh vực phục vụ
       type: object
       fields:
       - name: t1
-        label: 'Nhãn in hoa: 01 · LĨNH VỰC PHỤC VỤ'
+        label: 'Nhãn in hoa: LĨNH VỰC PHỤC VỤ'
         type: string
       - name: t2
-        label: 'Tiêu đề: Giải pháp chuyên biệt cho từng loại hình dự án'
+        label: 'Tiêu đề: Giải pháp chuyên biệt cho từng dự án'
         type: string
-      - name: img_seg_1_1
-        label: 'Ảnh: Sân golf'
-        component: photo
-        description: Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px.
-      - name: t3
-        label: 'Chữ đậm: Sân golf'
-        type: string
-      - name: t4
-        label: 'Chữ: Giữ thảm cỏ xanh đều, chịu được tần suất sử dụ…'
-        type: text
-      - name: t5
-        label: 'Chữ: Fairway · Green · Tee'
-        type: string
-      - name: img_seg_2_1
-        label: 'Ảnh: Cảnh quan khu đô thị'
-        component: photo
-        description: Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px.
-      - name: t6
-        label: 'Chữ đậm: Cảnh quan đô thị & bất động sản'
-        type: string
-      - name: t7
-        label: 'Chữ: Duy trì cây xanh, thảm cỏ và hoa cảnh luôn đẹp…'
-        type: string
-      - name: t8
-        label: 'Chữ: Khu đô thị · Resort · Công viên'
-        type: string
-      - name: img_seg_3_1
-        label: 'Ảnh: Cây xanh khu công nghiệp'
-        component: photo
-        description: Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px.
-      - name: t9
-        label: 'Chữ đậm: Khu công nghiệp & nhà máy'
-        type: string
-      - name: t10
-        label: 'Chữ: Phát triển hệ thống cây xanh trên nền đất san …'
-        type: text
-      - name: t11
-        label: 'Chữ: KCN · Nhà máy · Kho vận'
-        type: string
-      - name: img_seg_4_1
-        label: 'Ảnh: Nhà kính công nghệ cao'
-        component: photo
-        description: Khung ảnh khoảng 260×240 px trên máy tính — nên dùng ảnh rộng ít nhất 520 px.
-      - name: t12
-        label: 'Chữ đậm: Nông nghiệp công nghệ cao'
-        type: string
-      - name: t13
-        label: 'Chữ: Chương trình dinh dưỡng chính xác cho nhà kính…'
-        type: text
-      - name: t14
-        label: 'Chữ: Nhà kính · Trang trại · Vùng nguyên liệu'
-        type: string
+      - name: fields
+        label: Các lĩnh vực
+        description: Bấm “Thêm” để thêm lĩnh vực mới. Trang xếp 2 lĩnh vực mỗi hàng, tự xuống hàng.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: title
+          label: Tên lĩnh vực (ví dụ Sân golf)
+          type: string
+        - name: text
+          label: Mô tả ngắn
+          type: text
+        - name: tags
+          label: 'Dòng nhỏ cuối thẻ (ví dụ Fairway · Green · Tee)'
+          type: string
+        - name: image
+          label: Ảnh
+          component: photo
+          description: Ảnh dọc hoặc vuông, rộng ít nhất 600 px.
     - name: s03_quy_trinh
       label: 03 · Quy trình
       type: object
@@ -3491,6 +3817,60 @@ content:
       label: Form – các loại dự án
       type: string
       list: true
+    - name: can_le
+      label: Căn lề chữ (tuỳ chọn)
+      description: Mặc định đoạn văn căn đều 2 bên. Chọn kiểu khác cho cả trang, hoặc thêm từng mục để căn riêng mục đó (căn giữa / trái / phải / đều).
+      type: object
+      fields:
+      - name: mac_dinh
+        label: Cả trang
+        type: select
+        default: justify
+        options:
+          values:
+          - value: justify
+            label: Đều 2 bên (mặc định)
+          - value: left
+            label: Căn trái
+          - value: center
+            label: Căn giữa
+          - value: right
+            label: Căn phải
+      - name: muc
+        label: Căn riêng từng mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.muc} – {fields.kieu}'
+        fields:
+        - name: muc
+          label: Mục
+          type: select
+          options:
+            values:
+            - value: linh-vuc
+              label: 'Lĩnh vực phục vụ'
+            - value: quy-trinh
+              label: 'Quy trình triển khai'
+            - value: nang-luc
+              label: 'Năng lực bảo đảm'
+            - value: tu-van
+              label: 'Yêu cầu tư vấn'
+        - name: kieu
+          label: Kiểu căn lề
+          type: select
+          default: center
+          options:
+            values:
+            - value: justify
+              label: Đều 2 bên
+            - value: left
+              label: Căn trái
+            - value: center
+              label: Căn giữa
+            - value: right
+              label: Căn phải
   - name: phat_trien_ben_vung
     label: Phát triển bền vững
     type: file
@@ -3789,9 +4169,6 @@ content:
       - name: story
         label: Câu chuyện
         type: text
-      - name: story_image
-        label: Ảnh nhỏ cho câu chuyện (nên là ảnh em Ngô Hùng Hà)
-        component: photo
       - name: story_link
         label: Đường dẫn bài viết về câu chuyện
         type: string
@@ -3803,9 +4180,6 @@ content:
         type: string
       - name: timeline_title
         label: Tiêu đề phần các mốc
-        type: string
-      - name: timeline_hint
-        label: Gợi ý nhỏ bên phải tiêu đề các mốc
         type: string
       - name: timeline
         label: Các mốc
@@ -3905,6 +4279,66 @@ content:
         - name: text
           label: Nội dung
           type: text
+    - name: can_le
+      label: Căn lề chữ (tuỳ chọn)
+      description: Mặc định đoạn văn căn đều 2 bên. Chọn kiểu khác cho cả trang, hoặc thêm từng mục để căn riêng mục đó (căn giữa / trái / phải / đều).
+      type: object
+      fields:
+      - name: mac_dinh
+        label: Cả trang
+        type: select
+        default: justify
+        options:
+          values:
+          - value: justify
+            label: Đều 2 bên (mặc định)
+          - value: left
+            label: Căn trái
+          - value: center
+            label: Căn giữa
+          - value: right
+            label: Căn phải
+      - name: muc
+        label: Căn riêng từng mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.muc} – {fields.kieu}'
+        fields:
+        - name: muc
+          label: Mục
+          type: select
+          options:
+            values:
+            - value: vi-sao
+              label: 'Vì sao'
+            - value: dat-khoe
+              label: 'Trụ cột 1 · Đất khỏe'
+            - value: nha-may-xanh
+              label: 'Trụ cột 2 · Nhà máy xanh'
+            - value: nha-nong
+              label: 'Trụ cột 3 · Sinh kế nhà nông'
+            - value: cong-dong
+              label: 'Trụ cột 4 · Cộng đồng'
+            - value: chuong-trinh
+              label: 'Những chương trình khác'
+            - value: lo-trinh
+              label: 'Lộ trình ESG'
+        - name: kieu
+          label: Kiểu căn lề
+          type: select
+          default: center
+          options:
+            values:
+            - value: justify
+              label: Đều 2 bên
+            - value: left
+              label: Căn trái
+            - value: center
+              label: Căn giữa
+            - value: right
+              label: Căn phải
   - name: xanh_hoa_truong_sa
     label: "Xanh hoá Trường Sa (trang con của Phát triển bền vững)"
     type: file
@@ -4214,7 +4648,7 @@ content:
         label: 'Chữ trên liên kết (VD: Đọc trên)'
         type: string
       - name: items
-        label: Các bài báo (nên 4 bài, xếp một hàng)
+        label: Các bài báo (4 bài mỗi hàng)
         type: object
         list:
           collapsible:
@@ -4224,6 +4658,10 @@ content:
         - name: source
           label: Tên báo
           type: string
+        - name: logo
+          label: Logo của báo (hiện ở góc trên bên phải thẻ)
+          description: Nên dùng logo chính thức, ảnh PNG/SVG nền trong suốt, ngang khoảng 300 px. Có thể tải lên ngay trên website (?sua-anh).
+          component: photo
         - name: date
           label: Ngày đăng (dd/mm/yyyy)
           type: string
@@ -4249,6 +4687,68 @@ content:
       - name: button_back
         label: 'Nút: Phát triển bền vững'
         type: string
+    - name: can_le
+      label: Căn lề chữ (tuỳ chọn)
+      description: Mặc định đoạn văn căn đều 2 bên. Chọn kiểu khác cho cả trang, hoặc thêm từng mục để căn riêng mục đó (căn giữa / trái / phải / đều).
+      type: object
+      fields:
+      - name: mac_dinh
+        label: Cả trang
+        type: select
+        default: justify
+        options:
+          values:
+          - value: justify
+            label: Đều 2 bên (mặc định)
+          - value: left
+            label: Căn trái
+          - value: center
+            label: Căn giữa
+          - value: right
+            label: Căn phải
+      - name: muc
+        label: Căn riêng từng mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.muc} – {fields.kieu}'
+        fields:
+        - name: muc
+          label: Mục
+          type: select
+          options:
+            values:
+            - value: chien-dich
+              label: 'Triệu lời chúc'
+            - value: vi-sao
+              label: 'Vì sao là phân bón'
+            - value: hanh-trinh
+              label: 'Hành trình'
+            - value: la-thu
+              label: 'Lá thư gửi chiến sĩ'
+            - value: gui-loi-chuc
+              label: 'Gửi lời chúc'
+            - value: loi-chuc
+              label: 'Những lời yêu thương'
+            - value: hinh-anh
+              label: 'Hình ảnh'
+            - value: bao-chi
+              label: 'Báo chí'
+        - name: kieu
+          label: Kiểu căn lề
+          type: select
+          default: center
+          options:
+            values:
+            - value: justify
+              label: Đều 2 bên
+            - value: left
+              label: Căn trái
+            - value: center
+              label: Căn giữa
+            - value: right
+              label: Căn phải
   - name: nong_dan
     label: Nông dân Tiến Nông
     type: file
@@ -4583,6 +5083,66 @@ content:
       - name: contact
         label: Nút phụ (mở form liên hệ)
         type: string
+    - name: can_le
+      label: Căn lề chữ (tuỳ chọn)
+      description: Mặc định đoạn văn căn đều 2 bên. Chọn kiểu khác cho cả trang, hoặc thêm từng mục để căn riêng mục đó (căn giữa / trái / phải / đều).
+      type: object
+      fields:
+      - name: mac_dinh
+        label: Cả trang
+        type: select
+        default: justify
+        options:
+          values:
+          - value: justify
+            label: Đều 2 bên (mặc định)
+          - value: left
+            label: Căn trái
+          - value: center
+            label: Căn giữa
+          - value: right
+            label: Căn phải
+      - name: muc
+        label: Căn riêng từng mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.muc} – {fields.kieu}'
+        fields:
+        - name: muc
+          label: Mục
+          type: select
+          options:
+            values:
+            - value: cam-ket
+              label: 'Cam kết với bà con'
+            - value: mua-vu
+              label: 'Đồng hành trọn mùa vụ'
+            - value: tra-cham
+              label: 'Phân bón trả chậm'
+            - value: ket-qua
+              label: 'Câu chuyện nhà nông'
+            - value: mua-kho
+              label: 'Khi mùa vụ gặp khó'
+            - value: hoi-thao
+              label: 'Kỹ sư đồng hành'
+            - value: dang-ky
+              label: 'Đăng ký tư vấn'
+        - name: kieu
+          label: Kiểu căn lề
+          type: select
+          default: center
+          options:
+            values:
+            - value: justify
+              label: Đều 2 bên
+            - value: left
+              label: Căn trái
+            - value: center
+              label: Căn giữa
+            - value: right
+              label: Căn phải
   - name: tuyen_dung
     label: Tuyển dụng
     type: file
@@ -4939,6 +5499,64 @@ content:
       - name: apply
         label: Nút gửi hồ sơ (mở email)
         type: string
+    - name: can_le
+      label: Căn lề chữ (tuỳ chọn)
+      description: Mặc định đoạn văn căn đều 2 bên. Chọn kiểu khác cho cả trang, hoặc thêm từng mục để căn riêng mục đó (căn giữa / trái / phải / đều).
+      type: object
+      fields:
+      - name: mac_dinh
+        label: Cả trang
+        type: select
+        default: justify
+        options:
+          values:
+          - value: justify
+            label: Đều 2 bên (mặc định)
+          - value: left
+            label: Căn trái
+          - value: center
+            label: Căn giữa
+          - value: right
+            label: Căn phải
+      - name: muc
+        label: Căn riêng từng mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.muc} – {fields.kieu}'
+        fields:
+        - name: muc
+          label: Mục
+          type: select
+          options:
+            values:
+            - value: vi-sao
+              label: 'Vì sao chọn Tiến Nông'
+            - value: dao-tao
+              label: 'Đào tạo'
+            - value: lo-trinh
+              label: 'Lộ trình phát triển'
+            - value: dai-ngo
+              label: 'Đãi ngộ & ghi nhận'
+            - value: khoi-nghe
+              label: 'Các khối chuyên môn'
+            - value: vi-tri
+              label: 'Vị trí đang tuyển'
+        - name: kieu
+          label: Kiểu căn lề
+          type: select
+          default: center
+          options:
+            values:
+            - value: justify
+              label: Đều 2 bên
+            - value: left
+              label: Căn trái
+            - value: center
+              label: Căn giữa
+            - value: right
+              label: Căn phải
   - name: tin_tuc
     label: Tin tức (khung trang)
     type: file
@@ -5341,6 +5959,64 @@ content:
         - name: hint
           label: Gợi ý trong ô nội dung
           type: text
+    - name: can_le
+      label: Căn lề chữ (tuỳ chọn)
+      description: Mặc định đoạn văn căn đều 2 bên. Chọn kiểu khác cho cả trang, hoặc thêm từng mục để căn riêng mục đó (căn giữa / trái / phải / đều).
+      type: object
+      fields:
+      - name: mac_dinh
+        label: Cả trang
+        type: select
+        default: justify
+        options:
+          values:
+          - value: justify
+            label: Đều 2 bên (mặc định)
+          - value: left
+            label: Căn trái
+          - value: center
+            label: Căn giữa
+          - value: right
+            label: Căn phải
+      - name: muc
+        label: Căn riêng từng mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.muc} – {fields.kieu}'
+        fields:
+        - name: muc
+          label: Mục
+          type: select
+          options:
+            values:
+            - value: dau-moi
+              label: 'Đầu mối liên hệ'
+            - value: chinh-hang
+              label: 'Hàng chính hãng'
+            - value: dai-ly
+              label: 'Tìm đại lý'
+            - value: nha-may
+              label: 'Trụ sở & nhà máy'
+            - value: lien-he-form
+              label: 'Gửi yêu cầu'
+            - value: theo-doi
+              label: 'Theo dõi Tiến Nông'
+        - name: kieu
+          label: Kiểu căn lề
+          type: select
+          default: center
+          options:
+            values:
+            - value: justify
+              label: Đều 2 bên
+            - value: left
+              label: Căn trái
+            - value: center
+              label: Căn giữa
+            - value: right
+              label: Căn phải
   - name: tro_thanh_doi_tac
     label: Trở thành đối tác (nút xanh trên menu)
     type: file
@@ -5591,7 +6267,7 @@ content:
           label: Mô tả
           type: text
       - name: note
-        label: Ô ghi chú màu xanh
+        label: Nút xanh dưới danh sách điều kiện (bấm vào sẽ xuống mục Liên hệ khu vực)
         type: text
       - name: image
         label: Ảnh minh hoạ điều kiện
@@ -5693,6 +6369,66 @@ content:
         label: Tỉnh/thành phụ trách
         type: string
         list: true
+    - name: can_le
+      label: Căn lề chữ (tuỳ chọn)
+      description: Mặc định đoạn văn căn đều 2 bên. Chọn kiểu khác cho cả trang, hoặc thêm từng mục để căn riêng mục đó (căn giữa / trái / phải / đều).
+      type: object
+      fields:
+      - name: mac_dinh
+        label: Cả trang
+        type: select
+        default: justify
+        options:
+          values:
+          - value: justify
+            label: Đều 2 bên (mặc định)
+          - value: left
+            label: Căn trái
+          - value: center
+            label: Căn giữa
+          - value: right
+            label: Căn phải
+      - name: muc
+        label: Căn riêng từng mục
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.muc} – {fields.kieu}'
+        fields:
+        - name: muc
+          label: Mục
+          type: select
+          options:
+            values:
+            - value: hinh-thuc
+              label: 'Hình thức hợp tác'
+            - value: quyen-loi
+              label: 'Quyền lợi'
+            - value: cau-chuyen
+              label: 'Câu chuyện đối tác'
+            - value: quy-trinh
+              label: 'Quy trình'
+            - value: dieu-kien
+              label: 'Điều kiện'
+            - value: hoi-dap
+              label: 'Hỏi đáp'
+            - value: lien-he-khu-vuc
+              label: 'Liên hệ khu vực'
+        - name: kieu
+          label: Kiểu căn lề
+          type: select
+          default: center
+          options:
+            values:
+            - value: justify
+              label: Đều 2 bên
+            - value: left
+              label: Căn trái
+            - value: center
+              label: Căn giữa
+            - value: right
+              label: Căn phải
 - name: site
   label: Thông tin chung (công ty, menu, chân trang, mạng xã hội)
   type: file

@@ -32,8 +32,12 @@ const training = await Promise.all(c.training.items.map(async (t) => {
   const n = await newsByLink(t.link);
   return { ...t, img: n?.data.cover?.src ? { ...n.data.cover, alt: n.data.cover.alt || t.title } : t.image };
 }));
+/** Career story: "Giám đốc Phòng Kinh doanh 1 · Gắn bó từ 2006" → the post (on the photo) and the years with the company (under the quote). */
+const [roleMain, ...roleRest] = String(c.growth.role || '').split(/\s*·\s*/);
+const roleSince = roleRest.join(' · ').replace(/^Gắn bó từ/i, 'Gắn bó cùng Tiến Nông từ');
+const quote = String(c.growth.quote || '').replace(/^[“"]\s*|\s*[”"]$/g, '');
 ---
-<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
+<Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
 <section style="background:var(--surface-card)">
 <div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:32px">
 <span style="font-size:13px;color:var(--text-tertiary)"><a href={url('trang-chu')} style="color:var(--text-tertiary)">{c.hero.t1}</a> {c.hero.t2}</span>
@@ -72,18 +76,19 @@ const training = await Promise.all(c.training.items.map(async (t) => {
 </div>
 </div></section>
 
-<section id="lo-trinh" class="st-sec">
+<section id="lo-trinh" class="st-sec td-career">
 <div class="st-wrap">
-<div class="st-split">
-<div class="st-split__media" style="--ratio:4/5;max-height:620px"><ImageSlot style={fill} id="hr-story" shape="rounded" radius="24" placeholder="Chân dung người lao động gắn bó 20+ năm tại nơi làm việc" image={c.growth.image} cms={`${F}#growth.image`} sizes="(max-width: 899px) 92vw, 560px" /></div>
-<div>
+<div class="td-career__top">
+<div class="td-career__photo"><ImageSlot style={fill} id="hr-story" shape="rounded" radius="24" placeholder="Chân dung người lao động gắn bó 20+ năm tại nơi làm việc" image={c.growth.image} cms={`${F}#growth.image`} sizes="(max-width: 899px) 92vw, 600px" />
+{isFilled(c.growth.person) && <div class="td-career__cap"><strong>{c.growth.person}</strong>{isFilled(roleMain) && <span>{roleMain}</span>}</div>}</div>
+<div class="td-career__copy">
 <Head eyebrow={c.growth.eyebrow} title={c.growth.title} />
-<blockquote class="st-quote td-quote"><p class="jx-start">{c.growth.quote}</p><footer><strong>{c.growth.person}</strong>{c.growth.role}</footer></blockquote>
-<ol class="st-timeline">
-{c.growth.timeline.map((t) => <li><span class="st-timeline__when">{t.when}</span><div class="st-timeline__what"><strong>{t.title}</strong><span>{t.text}</span></div></li>)}
+<blockquote class="td-career__quote"><span class="td-career__qm" aria-hidden="true">“</span><p class="jx-start">{quote}</p><footer><strong>{c.growth.person}</strong>{isFilled(roleSince) && <span>{roleSince}</span>}</footer></blockquote>
+</div>
+</div>
+<ol class="td-career__tl" style={`--n:${c.growth.timeline.length}`}>
+{c.growth.timeline.map((t, i) => <li class:list={{ 'is-now': i === c.growth.timeline.length - 1 }}><span class="td-career__when">{t.when}</span><span class="td-career__dot" aria-hidden="true"></span><strong>{t.title}</strong><span class="td-career__text jx-start">{t.text}</span></li>)}
 </ol>
-</div>
-</div>
 </div></section>
 
 <section id="dai-ngo" class="st-sec st-sec--card">
@@ -151,8 +156,37 @@ const training = await Promise.all(c.training.items.map(async (t) => {
   .td-job__body { padding: 0 24px 26px; display: flex; flex-direction: column; gap: 18px; }
   .td-job__cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 18px 32px; }
   .td-job__cols ul { margin: 8px 0 0; padding-left: 1.2em; color: var(--text-secondary); line-height: 1.65; display: flex; flex-direction: column; gap: 6px; }
-  .td-quote { padding: 18px 20px; max-width: 92%; }
-  .td-quote p { font-size: clamp(16px, 1.3vw, 18px) !important; line-height: 1.55; }
+  /* Career story (reference layout): photo with name on the left, title + quote on the right, the
+     path as a horizontal timeline underneath — sized to fit one laptop screen. */
+  .td-career .st-wrap { display: flex; flex-direction: column; gap: clamp(32px, 4vh, 48px); }
+  .td-career__top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+  .td-career__photo { position: relative; height: clamp(320px, calc(100vh - 440px), 500px); border-radius: 24px; overflow: hidden; }
+  .td-career__cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 72px 28px 24px; display: flex; flex-direction: column; gap: 4px; pointer-events: none;
+    background: linear-gradient(0deg, rgba(2, 53, 26, .85) 0%, rgba(2, 53, 26, .45) 60%, rgba(2, 53, 26, 0) 100%); color: #fff; }
+  .td-career__cap strong { font: 700 clamp(20px, 1.8vw, 26px)/1.25 var(--font-display); }
+  .td-career__cap span { font-size: 14px; color: rgba(255, 255, 255, .85); }
+  .td-career__copy { display: flex; flex-direction: column; gap: clamp(20px, 3vh, 32px); }
+  .td-career__quote { position: relative; margin: 0; padding: 4px 0 4px 28px; border-left: 2px solid var(--brand-highlight); display: flex; flex-direction: column; gap: 18px; }
+  .td-career__qm { font: 800 64px/.6 var(--font-display); color: var(--brand-bright); height: 30px; }
+  .td-career__quote p { margin: 0; font: 400 clamp(16px, 1.35vw, 19px)/1.75 var(--font-body); color: var(--text-primary); }
+  .td-career__quote footer { display: flex; flex-direction: column; gap: 4px; }
+  .td-career__quote footer strong { font: 700 16px/1.3 var(--font-display); }
+  .td-career__quote footer span { font-size: 14px; color: var(--text-tertiary); }
+  .td-career__tl { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); gap: 0 clamp(20px, 2.5vw, 36px); }
+  .td-career__tl li { display: grid; grid-template-rows: auto auto auto 1fr; gap: 8px; }
+  .td-career__when { font: 700 clamp(22px, 2vw, 28px)/1.2 var(--font-display); color: var(--green-800); }
+  .td-career__dot { position: relative; height: 14px; margin: 4px 0 8px; }
+  .td-career__dot::before { content: ''; position: absolute; left: 0; top: 2px; width: 10px; height: 10px; border-radius: 50%; background: var(--brand-bright); box-shadow: 0 0 0 3px var(--green-100); }
+  .td-career__dot::after { content: ''; position: absolute; left: 22px; right: 0; top: 6px; height: 2px; background: var(--border-default); }
+  .td-career__tl li.is-now .td-career__dot::before { background: var(--brand-highlight); box-shadow: 0 0 0 3px rgba(245, 196, 78, .25); }
+  .td-career__tl strong { font: 700 16px/1.4 var(--font-display); color: var(--text-primary); }
+  .td-career__text { font-size: 14px; line-height: 1.6; color: var(--text-secondary); }
+  @media (max-width: 899.98px) {
+    .td-career__top { grid-template-columns: minmax(0, 1fr); }
+    .td-career__photo { height: auto; aspect-ratio: 4 / 3.4; }
+    .td-career__tl { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+  }
+  @media (max-width: 479.98px) { .td-career__tl { grid-template-columns: minmax(0, 1fr); } }
   /* Departments: one row each — number, name, short text, where. */
   .td-paths { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border-default); }
   .td-paths li { display: grid; grid-template-columns: 48px minmax(0, 240px) minmax(0, 1fr) auto; gap: 8px 24px; align-items: center; padding: 18px 4px; border-bottom: 1px solid var(--border-default); transition: background var(--motion-fast); }
@@ -175,7 +209,6 @@ const training = await Promise.all(c.training.items.map(async (t) => {
     .td-paths li { grid-template-columns: 36px minmax(0, 1fr); }
     .td-paths__text, .td-paths__where { grid-column: 2; justify-self: start; }
     .td-train { grid-template-columns: minmax(0, 1fr); }
-    .td-quote { max-width: none; }
   }
 </style>
 

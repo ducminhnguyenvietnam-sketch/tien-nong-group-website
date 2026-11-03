@@ -21,42 +21,52 @@
   "s02_nhom_khach_hang": {
     "t1": "LĨNH VỰC PHỤC VỤ",
     "t2": "Giải pháp chuyên biệt cho từng dự án",
-    "img_seg_1_1": {
-      "src": "/uploads/seg-1-mvge68kr.jpg",
-      "focus": "82.9% 100%",
-      "zoom": "120",
-      "alt": "Sân golf"
-    },
-    "t3": "Sân golf",
-    "t4": "Giữ thảm cỏ xanh đều, chịu được tần suất sử dụng cao, phục hồi nhanh và tối ưu chi phí bảo dưỡng.",
-    "t5": "Fairway · Green · Tee",
-    "img_seg_2_1": {
-      "src": "/uploads/seg-2-mvm2wdvt.jpg",
-      "focus": "55% 100%",
-      "zoom": "103",
-      "alt": "Cảnh quan khu đô thị"
-    },
-    "t6": "Cảnh quan đô thị & bất động sản",
-    "t7": "Duy trì cây xanh, thảm cỏ và hoa cảnh luôn đẹp quanh năm, góp phần nâng cao giá trị dự án.",
-    "t8": "Khu đô thị · Resort · Công viên",
-    "img_seg_3_1": {
-      "src": "/uploads/seg-3-mvgefcd6.jpg",
-      "focus": "50% 50%",
-      "zoom": "100",
-      "alt": "Cây xanh khu công nghiệp"
-    },
-    "t9": "Khu công nghiệp & nhà máy",
-    "t10": "Phát triển hệ thống cây xanh trên nền đất san lấp, đáp ứng tiêu chuẩn tỷ lệ cây xanh và môi trường.",
-    "t11": "KCN · Nhà máy · Kho vận",
-    "img_seg_4_1": {
-      "src": "/uploads/seg-4-mvge7ddb.jpg",
-      "focus": "37.7% 50%",
-      "zoom": "100",
-      "alt": "Nhà kính công nghệ cao"
-    },
-    "t12": "Nông nghiệp công nghệ cao",
-    "t13": "Chương trình dinh dưỡng chính xác cho nhà kính, nhà màng, tưới nhỏ giọt và trang trại quy mô lớn.",
-    "t14": "Nhà kính · Trang trại · Vùng nguyên liệu"
+    "fields": [
+      {
+        "title": "Sân golf",
+        "text": "Giữ thảm cỏ xanh đều, chịu được tần suất sử dụng cao, phục hồi nhanh và tối ưu chi phí bảo dưỡng.",
+        "tags": "Fairway · Green · Tee",
+        "image": {
+          "src": "/uploads/seg-1-mvge68kr.jpg",
+          "focus": "82.9% 100%",
+          "zoom": "120",
+          "alt": "Sân golf"
+        }
+      },
+      {
+        "title": "Cảnh quan đô thị & bất động sản",
+        "text": "Duy trì cây xanh, thảm cỏ và hoa cảnh luôn đẹp quanh năm, góp phần nâng cao giá trị dự án.",
+        "tags": "Khu đô thị · Resort · Công viên",
+        "image": {
+          "src": "/uploads/seg-2-mvm2wdvt.jpg",
+          "focus": "55% 100%",
+          "zoom": "103",
+          "alt": "Cảnh quan khu đô thị"
+        }
+      },
+      {
+        "title": "Khu công nghiệp & nhà máy",
+        "text": "Phát triển hệ thống cây xanh trên nền đất san lấp, đáp ứng tiêu chuẩn tỷ lệ cây xanh và môi trường.",
+        "tags": "KCN · Nhà máy · Kho vận",
+        "image": {
+          "src": "/uploads/seg-3-mvgefcd6.jpg",
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Cây xanh khu công nghiệp"
+        }
+      },
+      {
+        "title": "Nông nghiệp công nghệ cao",
+        "text": "Chương trình dinh dưỡng chính xác cho nhà kính, nhà màng, tưới nhỏ giọt và trang trại quy mô lớn.",
+        "tags": "Nhà kính · Trang trại · Vùng nguyên liệu",
+        "image": {
+          "src": "/uploads/seg-4-mvge7ddb.jpg",
+          "focus": "37.7% 50%",
+          "zoom": "100",
+          "alt": "Nhà kính công nghệ cao"
+        }
+      }
+    ]
   },
   "s03_quy_trinh": {
     "t1": "QUY TRÌNH TRIỂN KHAI",

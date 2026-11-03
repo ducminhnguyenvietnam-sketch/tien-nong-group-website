@@ -32,12 +32,21 @@ const coreValues = [[m.t8, m.t9, m.t10, ICON.heart], [m.t11, m.t12, m.t13, ICON.
   .map(([num, title, text, icon]) => ({ num, title, text, icon }));
 
 const awards = [...c.s06_thanh_tuu.featured_awards.map((w, k) => ({ ...w, big: true, path: `s06_thanh_tuu.featured_awards.${k}.image` })),
-  ...c.s06_thanh_tuu.awards.map((w, k) => ({ ...w, big: false, path: `s06_thanh_tuu.awards.${k}.image` }))].filter((w) => isFilled(w.title));
+  ...c.s06_thanh_tuu.awards.map((w, k) => ({ ...w, big: false, path: `s06_thanh_tuu.awards.${k}.image` }))].filter((w) => isFilled(w.title)).map((w, k) => ({ ...w, k }));
+/** The two highest honours stay on top; the other awards are shown 8 to a page (1, 2, 3 …). */
+const bigAwards = awards.filter((w) => w.big);
+const PER_PAGE = 8;
+const rest = awards.filter((w) => !w.big);
+const awardPages = Array.from({ length: Math.ceil(rest.length / PER_PAGE) }, (_, p) => rest.slice(p * PER_PAGE, (p + 1) * PER_PAGE));
+/** Milestones of the same year share one stop on the timeline; their stories play one after the other. */
+const years = [...new Set(c.milestones.map((ms) => String(ms.year).trim()))];
+const yearOf = (ms: { year: string }) => years.indexOf(String(ms.year).trim());
+const countIn = (ms: { year: string }) => c.milestones.filter((x) => yearOf(x) === yearOf(ms));
 const caps = c.s07_nang_luc.capabilities.filter((x) => isFilled(x.title));
 const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter((p) => isFilled(p.name))
   .sort((a, b) => Number(!!b.featured) - Number(!!a.featured));
 ---
-<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Về Tiến Nông">
+<Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Về Tiến Nông">
 <PageHero id="about-hero" image={c.s01_hero.img_about_hero_1} cms={`${F}#s01_hero.img_about_hero_1`} placeholder="Ảnh tập thể cán bộ, nhân viên trước trụ sở Tiến Nông"
   crumbs={[{ label: c.s01_hero.t1, href: url('trang-chu') }, { label: c.s01_hero.t2.replace(/^\s*\/\s*/, '') }]}
   eyebrow={c.s01_hero.t3} title={c.s01_hero.t4} lead={c.s01_hero.t5} />
@@ -45,7 +54,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
 <FigureCard overlap items={stats.map(([value, label]) => ({ value, label }))} />
 
 <section id="thu-ngo" class="ceo">
-<img class="ceo__watermark" src={asset('assets/logo-la-trang.png')} alt="" aria-hidden="true" width="640" height="462" loading="lazy" />
+<img class="ceo__watermark" src={asset('assets/logo-la-chi.png')} alt="" aria-hidden="true" width="485" height="271" loading="lazy" />
 <div class="ceo__wrap">
 <div class="ceo__photo"><ImageSlot style={fill} id="ceo-portrait" shape="rect" fit="contain" placeholder="Chân dung Tổng Giám đốc Nguyễn Hồng Phong" image={t.img_ceo_portrait_1} cms={`${F}#s02_thu_ngo.img_ceo_portrait_1`} sizes="(max-width: 767px) 70vw, 420px" /></div>
 <div class="ceo__text">
@@ -61,7 +70,8 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
 </div>
 </section>
 
-<section id="su-menh" class="mission">
+<section id="su-menh" class:list={['mission', { 'mission--photo': isFilled(m.background?.src) }]}>
+<div class="mission__bg" data-needs-photos={isFilled(m.background?.src) ? undefined : ''}><ImageSlot style={fill} id="mission-bg" shape="rect" placeholder="Ảnh nền mục Sứ mệnh – Giá trị cốt lõi (ảnh ngang khổ lớn)" image={m.background} cms={`${F}#s03_su_menh_gia_tri.background`} sizes="100vw" /></div>
 <div class="mission__inner">
 <ul class="mission__cols">
 {statements.map((st) => <li class="mission__col">
@@ -75,7 +85,6 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
 <ul class="core">
 {coreValues.map((v) => <li class="core__item">
 <span class="core__icon" aria-hidden="true" set:html={v.icon}></span>
-<span class="core__num">{v.num}</span>
 <strong class="core__title">{v.title}</strong>
 <p class="core__text">{v.text}</p>
 </li>)}
@@ -86,14 +95,14 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
 <div class="hist__inner" data-picker data-pick-autoplay="5000">
 <div class="hist__head">
 <div class="hist__title"><span class="eyebrow-tag">{c.s04_lich_su.t1}</span><h2>{c.s04_lich_su.t2}</h2></div>
-<div class="hist__arrows"><button type="button" data-pick-step="-1" aria-label="Mốc trước">←</button><button type="button" data-pick-step="1" aria-label="Mốc sau">→</button></div>
+<div class="hist__arrows"><button type="button" data-pick-step="-1" aria-label="Mốc trước"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" data-pick-step="1" aria-label="Mốc sau"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
 </div>
 <div class="hist__stage">
 {c.milestones.map((ms, k) => (
-<div role="tabpanel" class="hist__panel" data-pick-panel={k} hidden={k !== 0} aria-label={ms.year}>
+<div role="tabpanel" class="hist__panel" data-pick-panel={yearOf(ms)} hidden={k !== 0} aria-label={ms.year}>
 <div class="hist__photo"><ImageSlot style={fill} id={`ms-${k}`} shape="rounded" radius="20" placeholder={ms.image.alt} image={ms.image} cms={`${F}#milestones.${k}.image`} sizes="(max-width: 767px) 92vw, 600px" /></div>
 <div class="hist__text">
-<span class="hist__year" aria-hidden="true">{ms.year}</span>
+<span class="hist__year" aria-hidden="true">{ms.year}{countIn(ms).length > 1 && <span class="hist__part">{countIn(ms).indexOf(ms) + 1}/{countIn(ms).length}</span>}</span>
 <h3>{ms.title}</h3>
 <p>{ms.body}</p>
 </div>
@@ -101,7 +110,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
 ))}
 </div>
 <div class="hist__rail" role="tablist" aria-label="Các mốc lịch sử">
-{c.milestones.map((ms, k) => <button type="button" role="tab" class="hist__stop" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'}><span class="hist__dot" aria-hidden="true"></span><span class="hist__label">{ms.year}</span></button>)}
+{years.map((y, k) => <button type="button" role="tab" class="hist__stop" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'}><span class="hist__dot" aria-hidden="true"></span><span class="hist__label">{y}</span></button>)}
 </div>
 </div></section>
 
@@ -133,16 +142,33 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
 <h2>{c.s06_thanh_tuu.t2}</h2>
 {isFilled(c.s06_thanh_tuu.t3) && <p>{c.s06_thanh_tuu.t3}</p>}
 </div>
-<ul class="fame__wall">
-{awards.map((w, k) => (
+{bigAwards.length > 0 && <ul class="fame__wall">
+{bigAwards.map((w, k) => (
 <li class:list={['fame__item', { 'fame__item--big': w.big }]}>
-<div class="fame__img"><ImageSlot style={fill} id={`fame-${k}`} shape="rect" fit="contain" placeholder="Ảnh giải thưởng" image={w.image} cms={`${F}#${w.path}`} sizes={w.big ? '(max-width: 767px) 80vw, 420px' : '(max-width: 767px) 45vw, 240px'} /></div>
+<div class="fame__img"><ImageSlot style={fill} id={`fame-${w.k}`} shape="rect" fit="contain" placeholder="Ảnh giải thưởng" image={w.image} cms={`${F}#${w.path}`} sizes={w.big ? '(max-width: 767px) 80vw, 420px' : '(max-width: 767px) 45vw, 240px'} /></div>
 {isFilled(stripPlaceholders(w.label)) && <span class="fame__label">{stripPlaceholders(w.label)}</span>}
 <strong class="fame__title">{w.title}</strong>
 {isFilled(w.detail) && <span class="fame__detail">{w.detail}</span>}
 </li>
 ))}
-</ul>
+</ul>}
+{awardPages.length > 0 && <div class="fame__more" data-picker>
+{awardPages.map((pg, p) => <ul class="fame__wall" data-pick-panel={p} hidden={p !== 0} aria-label={`Trang ${p + 1}`}>
+{pg.map((w) => (
+<li class:list={['fame__item', { 'fame__item--big': w.big }]}>
+<div class="fame__img"><ImageSlot style={fill} id={`fame-${w.k}`} shape="rect" fit="contain" placeholder="Ảnh giải thưởng" image={w.image} cms={`${F}#${w.path}`} sizes={w.big ? '(max-width: 767px) 80vw, 420px' : '(max-width: 767px) 45vw, 240px'} /></div>
+{isFilled(stripPlaceholders(w.label)) && <span class="fame__label">{stripPlaceholders(w.label)}</span>}
+<strong class="fame__title">{w.title}</strong>
+{isFilled(w.detail) && <span class="fame__detail">{w.detail}</span>}
+</li>
+))}
+</ul>)}
+{awardPages.length > 1 && <nav class="fame__pages" aria-label="Các trang giải thưởng">
+<button type="button" class="fame__step" data-pick-step="-1" aria-label="Trang trước"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+{awardPages.map((_, p) => <button type="button" data-pick={p} aria-selected={p === 0 ? 'true' : 'false'} aria-label={`Trang ${p + 1}`}>{p + 1}</button>)}
+<button type="button" class="fame__step" data-pick-step="1" aria-label="Trang sau"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+</nav>}
+</div>}
 {isFilled(c.s06_thanh_tuu.profile_pdf) && <div class="fame__cta"><a href={link(c.s06_thanh_tuu.profile_pdf)} target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex"><Button as="span" variant="secondary">{c.s06_thanh_tuu.t29}</Button></a></div>}
 </div></section>
 
@@ -207,7 +233,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
   /* CEO letter (Figma): brand green with the Tiến Nông mark as a large watermark, cut-out portrait standing on the bottom edge. */
   .ceo { position: relative; overflow: hidden; scroll-margin-top: 120px; color: #fff;
     background: radial-gradient(120% 120% at 20% 0%, #3c9a55 0%, #2e8548 45%, #246d3a 100%); }
-  .ceo__watermark { position: absolute; left: 50%; top: 50%; width: min(1500px, 120%); height: auto; transform: translate(-50%, -54%); opacity: .07; pointer-events: none; }
+  .ceo__watermark { position: absolute; left: 50%; top: 50%; width: min(960px, 78%); height: auto; transform: translate(-50%, -50%); opacity: .08; pointer-events: none; }
   .ceo__wrap { position: relative; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); column-gap: clamp(32px, 4vw, 64px); align-items: end; }
   .ceo__photo { position: relative; align-self: end; aspect-ratio: 640 / 801; width: 100%; max-width: 400px; justify-self: center; margin-top: 48px; }
   .ceo__photo :global(.img-slot__frame) { background: transparent !important; }
@@ -239,6 +265,12 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
 
   /* Mission, vision, goal + core values: no photo; thin line icons, soft green tints. */
   .mission { position: relative; background: var(--surface-page); scroll-margin-top: 120px; overflow: hidden; }
+  .mission__bg { position: absolute; inset: 0; }
+  .mission--photo .mission__bg::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 60, 30, .72) 0%, rgba(0, 71, 35, .62) 50%, rgba(0, 50, 25, .78) 100%); }
+  .mission--photo .mission__inner { pointer-events: none; }
+  .mission--photo .mission__cols, .mission--photo .core { pointer-events: auto; }
+  .mission--photo .mission__eyebrow--center { color: var(--brand-highlight); }
   .mission__inner { position: relative; padding-block: clamp(48px, 5.5vw, 72px); display: flex; flex-direction: column; gap: clamp(32px, 3.5vw, 44px); }
   .mission__cols { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
     background: var(--surface-card); border-radius: var(--radius-xl); box-shadow: 0 14px 34px rgba(0, 71, 35, .08); border: 1px solid var(--border-default); }
@@ -253,14 +285,14 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
   .mission__statement { margin: 0; font: 600 clamp(17px, 1.35vw, 19px)/1.4 var(--font-display); color: var(--green-800); text-wrap: balance; text-align: start; }
   .mission__values { display: flex; flex-direction: column; align-items: center; gap: 20px; }
   .core { list-style: none; margin: 0; padding: 0; width: 100%; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
-  .core__item { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 20px 18px 22px; border-radius: var(--radius-lg); background: var(--surface-card);
+  .core__item { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: 20px 18px 22px; border-radius: var(--radius-lg); background: var(--surface-card);
     border: 1px solid var(--border-default); transition: transform var(--motion-base) var(--ease-out), box-shadow var(--motion-base), border-color var(--motion-base); }
-  .core__item::after { content: ''; position: absolute; left: 20px; right: 20px; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: var(--brand-bright); transform: scaleX(.25); transform-origin: left; transition: transform var(--motion-slow) var(--ease-out); }
+  .core__item::after { content: ''; position: absolute; left: 20px; right: 20px; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: var(--brand-bright); transform: scaleX(.25); transform-origin: center; transition: transform var(--motion-slow) var(--ease-out); }
   .core__item:hover { transform: translateY(-3px); border-color: var(--green-200); box-shadow: 0 12px 28px rgba(0, 71, 35, .1); }
   .core__item:hover::after { transform: scaleX(1); }
   .core__icon { width: 40px; height: 40px; }
-  .core__num { position: absolute; right: 18px; top: 20px; font: 600 13px/1 var(--font-display); color: var(--brand-highlight); }
   .core__title { font: 600 clamp(15px, 1.15vw, 16.5px)/1.35 var(--font-display); color: var(--text-primary); text-wrap: balance; }
+  :global(main) .core__title, :global(main) .core__text { text-align: center !important; text-align-last: center !important; }
   .core__text { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--text-secondary); }
   @media (max-width: 1199.98px) { .core { grid-template-columns: repeat(3, minmax(0, 1fr)); } .core__title { white-space: normal; } }
   @media (max-width: 899.98px) {
@@ -275,7 +307,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
   .hist__inner { padding-block: clamp(64px, 8vw, 112px); display: flex; flex-direction: column; gap: 40px; --hist-ms: 5000ms; }
   .hist__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
   .hist__arrows { display: flex; gap: 8px; }
-  .hist__arrows button { width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--surface-card); font-size: 18px; cursor: pointer;
+  .hist__arrows button { width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--surface-card); color: var(--text-primary); display: inline-flex; align-items: center; justify-content: center; padding: 0; cursor: pointer;
     transition: background var(--motion-fast), border-color var(--motion-fast); }
   .hist__arrows button:hover { background: var(--green-50); border-color: var(--green-300); }
   .hist__stage { position: relative; min-height: 380px; }
@@ -286,6 +318,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
   .hist__photo { position: relative; aspect-ratio: 16 / 10; }
   .hist__text { position: relative; display: flex; flex-direction: column; gap: 14px; }
   .hist__year { font: 800 clamp(64px, 8vw, 112px)/1 var(--font-display); color: var(--green-600); letter-spacing: -.02em; }
+  .hist__part { display: inline-block; margin-left: 14px; padding: 4px 10px; vertical-align: middle; border-radius: 999px; background: var(--green-50); color: var(--green-700); font: 600 13px/1 var(--font-body); letter-spacing: .04em; }
   .hist__text h3 { margin: 0; font: var(--type-h3); text-wrap: balance; }
   .hist__text p { margin: 0; color: var(--text-secondary); font-size: var(--fs-body); line-height: 1.75; }
   .hist__rail { position: relative; display: flex; overflow-x: auto; scrollbar-width: none; padding: 8px 0 4px; scroll-snap-type: x proximity; }
@@ -298,7 +331,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
   .hist__stop::after { border-top: 2px solid var(--green-500); transform: scaleX(0); transform-origin: left center; }
   .hist__stop:last-child::before, .hist__stop:last-child::after { width: 0; }
   .hist__stop.is-past::after { transform: scaleX(1); }
-  .hist__stop[aria-selected='true']::after { animation: hist-progress var(--hist-ms) linear forwards; }
+  .hist__stop[aria-selected='true']::after { animation: hist-progress calc(var(--hist-ms) * var(--pick-n, 1)) linear forwards; animation-delay: calc(-1 * var(--hist-ms) * var(--pick-sub, 0)); }
   .hist__inner.is-paused .hist__stop[aria-selected='true']::after { animation-play-state: paused; }
   @keyframes hist-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
   .hist__dot { position: relative; z-index: 1; width: 10px; height: 10px; margin: 7px 0; border-radius: 50%; background: var(--gray-700); transition: all var(--motion-base) var(--ease-out); }
@@ -334,6 +367,15 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
   .fame__item--big .fame__title { font: var(--type-h3); }
   .fame__detail { font-size: 14px; color: var(--text-tertiary); }
   .fame__cta { display: flex; justify-content: center; }
+  .fame__more { display: flex; flex-direction: column; gap: clamp(32px, 4vw, 48px); }
+  .fame__more .fame__wall:not([hidden]) { animation: hist-in 400ms var(--ease-out) both; }
+  .fame__pages { display: flex; justify-content: center; align-items: center; gap: 8px; }
+  .fame__pages button { min-width: 40px; height: 40px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--border-default); background: var(--surface-card);
+    display: inline-flex; align-items: center; justify-content: center; font: 600 15px/1 var(--font-display); color: var(--text-secondary); cursor: pointer;
+    transition: background var(--motion-fast), border-color var(--motion-fast), color var(--motion-fast); }
+  .fame__pages button:hover { border-color: var(--green-300); color: var(--green-700); }
+  .fame__pages button[aria-selected='true'] { background: var(--brand-bright); border-color: var(--brand-bright); color: #fff; }
+  .fame__pages .fame__step { padding: 0; color: var(--text-primary); }
   @media (max-width: 899.98px) {
     .fame__item { flex-basis: calc((100% - var(--fg)) / 2); }
     .fame__item--big { flex-basis: 100%; }

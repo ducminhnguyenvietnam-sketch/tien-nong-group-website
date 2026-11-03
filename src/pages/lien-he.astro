@@ -56,7 +56,7 @@ const prettyPhone = (phone: string) => {
 const mapsFor = (address: string, custom?: string | null) =>
   custom?.trim() || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address.replace(/ /g, ' '))}`;
 ---
-<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
+<Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
 <section class="lh-hero">
 <div class="lh-hero__wrap">
 <nav class="lh-hero__crumbs" aria-label="Đường dẫn"><a href={url('trang-chu')}>{c.hero.t1}</a> <span aria-hidden="true">/</span> <span aria-current="page">{c.hero.t2.replace(/^\s*\/\s*/, '')}</span></nav>
@@ -84,14 +84,14 @@ const mapsFor = (address: string, custom?: string | null) =>
 
 <section class="st-sec" id="chinh-hang">
 <div class="st-wrap">
-<div class="st-split st-split--top">
-<div>
+<div class="lh-genuine">
+<div class="lh-genuine__main">
 <Head eyebrow={c.genuine.eyebrow} title={c.genuine.title} intro={c.genuine.intro} />
-<ol class="st-steps" style="--min:140px">{c.genuine.steps.map((s) => <li><strong>{s.title}</strong><span>{s.text}</span></li>)}</ol>
+<ol class="st-steps lh-genuine__steps">{c.genuine.steps.map((s) => <li><strong>{s.title}</strong><span>{s.text}</span></li>)}</ol>
 </div>
-<div style="background:var(--green-800);color:#fff;border-radius:var(--radius-xl);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px">
+<div class="lh-genuine__report">
 <strong style="font:var(--type-h3)">{c.genuine.report_title}</strong>
-<p style="margin:0;color:var(--green-100);line-height:1.65">{c.genuine.report_text}</p>
+<p class="jx-start" style="margin:0;color:var(--green-100);line-height:1.65">{c.genuine.report_text}</p>
 <div class="st-actions">{isFilled(c.genuine.report_phone) && <a href={contactHref(c.genuine.report_phone)} class="st-btn" style="background:#fff;border-color:#fff;color:var(--green-700)">☎ {c.genuine.report_phone}</a>}<a href="#lien-he-form" data-topic="Phản ánh chất lượng sản phẩm" class="st-btn" style="border-color:rgba(255,255,255,.5);color:#fff">Gửi phản ánh</a></div>
 </div>
 </div>
@@ -131,7 +131,7 @@ const mapsFor = (address: string, custom?: string | null) =>
 {isFilled(c.sites.visit_text) && <p class="st-note" style="margin:0">{c.sites.visit_text}</p>}
 </div></section>
 
-<section id="lien-he-form" class="lh-form" style={`--leaf:url(${asset('assets/logo-la-trang.png')})`}>
+<section id="lien-he-form" class="lh-form" style={`--leaf:url(${asset('assets/logo-la-chi.png')})`}>
 <div class="lh-form__wrap">
 <div class="lh-form__aside">
 <span class="lh-form__eyebrow">{c.form.eyebrow}</span>
@@ -174,7 +174,7 @@ const mapsFor = (address: string, custom?: string | null) =>
 </div>
 </section>
 
-{social.length > 0 && <section class="lh-social" aria-label={c.social.title}>
+{social.length > 0 && <section id="theo-doi" class="lh-social" aria-label={c.social.title}>
 <div class="lh-social__wrap">
 <div class="lh-social__head"><h2>{c.social.title}</h2><p>{c.social.intro}</p></div>
 <ul class="lh-social__list">
@@ -285,6 +285,14 @@ const mapsFor = (address: string, custom?: string | null) =>
   .lh-route__note { color: var(--text-secondary); font-size: 15px; line-height: 1.55; }
   .lh-route__link { margin-top: auto; padding-top: 4px; font-weight: 600; font-size: 15px; color: var(--brand-bright); }
   #chinh-hang { padding-top: clamp(56px, 6vw, 88px); }
+  /* Genuine-product check: the three steps get the wider column so their text runs in full lines;
+     the report card on the right matches their height. */
+  .lh-genuine { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(28px, 3.5vw, 48px); align-items: stretch; }
+  .lh-genuine__main { display: flex; flex-direction: column; gap: 24px; }
+  .lh-genuine__steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lh-genuine__report { background: var(--green-800); color: #fff; border-radius: var(--radius-xl); padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+  @media (max-width: 1023.98px) { .lh-genuine { grid-template-columns: minmax(0, 1fr); } }
+  @media (max-width: 599.98px) { .lh-genuine__steps { grid-template-columns: minmax(0, 1fr); } }
   /* Sales directors: photo, region, name, a call button and the provinces they look after. */
   .lh-tint { background: linear-gradient(180deg, var(--green-50) 0%, #f3faf5 100%); }
   .lh-tint .lh-dir { background: var(--surface-card); }

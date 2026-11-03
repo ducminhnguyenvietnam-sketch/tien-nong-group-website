@@ -89,12 +89,14 @@
     "t17": "Sản xuất theo ISO 9001, kiểm nghiệm chất lượng theo từng lô."
   },
   "s06_vilas_1519": {
-    "img_vilas_1": {
-      "focus": "50.7% 50%",
-      "zoom": "100",
-      "alt": "Thiết bị phân tích hiện đại trong phòng thí nghiệm",
-      "src": "/uploads/vilas-mvhvkkg5.jpg"
-    },
+    "slides": [
+      {
+        "focus": "50.7% 50%",
+        "zoom": "100",
+        "alt": "Thiết bị phân tích hiện đại trong phòng thí nghiệm",
+        "src": "/uploads/vilas-mvhvkkg5.jpg"
+      }
+    ],
     "t1": "NĂNG LỰC PHÂN TÍCH",
     "t2": "Kết quả phân tích đạt chuẩn quốc tế",
     "t3": "Phòng thí nghiệm của Tiến Nông được công nhận phù hợp theo tiêu chuẩn ISO/IEC 17025:2017, bảo đảm năng lực kỹ thuật và độ tin cậy của kết quả phân tích. Kết quả thử nghiệm thuộc phạm vi công nhận được thừa nhận quốc tế theo nguyên tắc “Thử nghiệm một lần – Được chấp nhận ở mọi nơi”",

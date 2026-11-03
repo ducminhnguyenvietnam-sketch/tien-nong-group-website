@@ -11,8 +11,9 @@ import { newsByLink } from '../../lib/news';
 
 interface Img { src?: string; focus?: string; zoom?: string | number; alt?: string }
 interface Item { when: string; title: string; text?: string; link?: string; image?: Img }
-interface Props { items: Item[]; tone?: 'dark' | 'light'; linkLabel?: string; cms?: string; id?: string; photos?: boolean; title?: string; hint?: string }
-const { tone = 'light', linkLabel = 'Đọc câu chuyện', cms, id = 'years', photos = true, title, hint } = Astro.props;
+/** `autoplay` (ms): move to the next year on its own (e.g. 6000); it waits while off screen or focused. */
+interface Props { items: Item[]; tone?: 'dark' | 'light'; linkLabel?: string; cms?: string; id?: string; photos?: boolean; title?: string; hint?: string; autoplay?: number }
+const { tone = 'light', linkLabel = 'Đọc câu chuyện', cms, id = 'years', photos = true, title, hint, autoplay } = Astro.props;
 // Optional content beside the year panels (slot "aside"), e.g. a story card.
 const hasAside = Astro.slots.has('aside');
 const items = await Promise.all((Astro.props.items ?? []).filter((t) => isFilled(t.title)).map(async (t) => {
@@ -22,7 +23,7 @@ const items = await Promise.all((Astro.props.items ?? []).filter((t) => isFilled
 }));
 const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
 ---
-{items.length > 0 && <div class:list={['yt-tl', `yt-tl--${tone}`, { 'yt-tl--text': !photos }]} data-picker>
+{items.length > 0 && <div class:list={['yt-tl', `yt-tl--${tone}`, { 'yt-tl--text': !photos }]} data-picker data-pick-autoplay={autoplay || undefined}>
 {(title || hint) && <div class="yt-tl__head">{title && <h3>{title}</h3>}{hint && <span>{hint}</span>}</div>}
 <div class="yt-tl__rail" role="tablist" aria-label="Các mốc">
 {items.map((t, k) => <button type="button" role="tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'}><span class="yt-tl__dot" aria-hidden="true"></span><span class="yt-tl__when">{t.when}</span></button>)}
@@ -47,9 +48,11 @@ const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto
 
 <style>
   .yt-tl { display: flex; flex-direction: column; gap: 28px; }
-  .yt-tl__rail { position: relative; display: flex; justify-content: space-between; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-top: 4px; }
+  /* The rail scrolls sideways on narrow screens; the padding keeps the enlarged first/last dot and its halo from being clipped. */
+  .yt-tl__rail { position: relative; display: flex; justify-content: space-between; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 10px 10px 4px; margin-inline: -10px; }
   .yt-tl__rail::-webkit-scrollbar { display: none; }
-  .yt-tl__rail::before { content: ''; position: absolute; left: 0; right: 0; top: 13px; height: 2px; background: var(--yt-line); }
+  .yt-tl__rail::before { content: ''; position: absolute; left: 10px; right: 10px; top: 19px; height: 2px; background: var(--yt-line); }
+  .yt-tl__dot { position: relative; z-index: 1; }
   .yt-tl__rail button { position: relative; flex: 1 0 auto; min-width: 96px; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 0 6px 4px; border: 0; background: none; cursor: pointer; color: var(--yt-muted); font: 600 15px/1.2 var(--font-display); white-space: nowrap; transition: color var(--motion-fast); }
   .yt-tl__rail button:first-child { align-items: flex-start; padding-left: 0; }
   .yt-tl__rail button:last-child { align-items: flex-end; padding-right: 0; }

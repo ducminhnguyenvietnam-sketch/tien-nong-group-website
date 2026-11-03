@@ -16,21 +16,28 @@ interface Props {
   interval?: number;
   radius?: number;
   sizes?: string;
+  /** Fixed number of photo slots (e.g. 4): empty slots stay hidden on the site but show in the photo
+   *  editor (?sua-anh), so each photo can be added or replaced there. */
+  slots?: number;
 }
-const { id, slides, cms, label = 'Ảnh', interval = 5000, radius = 16, sizes = '(max-width: 767px) 92vw, 600px' } = Astro.props;
+const { id, slides, cms, label = 'Ảnh', interval = 5000, radius = 16, sizes = '(max-width: 767px) 92vw, 600px', slots } = Astro.props;
 const shown = slides.filter((s) => s?.src);
-const list = shown.length ? slides.map((s, k) => ({ s, k })).filter(({ s }) => s?.src) : slides.slice(0, 1).map((s, k) => ({ s, k }));
+const list = slots
+  ? Array.from({ length: Math.max(slots, slides.length) }, (_, k) => ({ s: slides[k] ?? {}, k })).slice(0, Math.max(slots, 1))
+  : shown.length ? slides.map((s, k) => ({ s, k })).filter(({ s }) => s?.src) : slides.slice(0, 1).map((s, k) => ({ s, k }));
+// The first slide on screen: the first filled one (an empty slot is hidden outside the photo editor).
+const first = Math.max(0, list.findIndex(({ s }) => s?.src));
 ---
 <div class="slideshow" data-slideshow data-interval={interval} role="region" aria-roledescription="carousel" aria-label={label} style={`--ss-r:${radius}px`}>
 {list.map(({ s, k }, i) => (
-  <div class:list={['slideshow__slide', { 'is-active': i === 0 }]} aria-hidden={i === 0 ? 'false' : 'true'}>
+  <div class:list={['slideshow__slide', { 'is-active': i === first }]} aria-hidden={i === first ? 'false' : 'true'} data-empty-slide={s?.src ? undefined : ''}>
     <ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`${id}-${k}`} shape="rounded" radius={radius} placeholder={s.alt || label} image={s} cms={`${cms}.${k}`} sizes={sizes} />
   </div>
 ))}
 {list.length > 1 && <>
-  <button type="button" class="slideshow__arrow slideshow__arrow--prev" data-ss-step="-1" aria-label="Ảnh trước">‹</button>
-  <button type="button" class="slideshow__arrow slideshow__arrow--next" data-ss-step="1" aria-label="Ảnh sau">›</button>
-  <div class="slideshow__dots">{list.map((_x, i) => <button type="button" data-ss-to={i} aria-label={`Ảnh ${i + 1}`} aria-current={i === 0 ? 'true' : undefined}></button>)}</div>
+  <button type="button" class="slideshow__arrow slideshow__arrow--prev" data-ss-step="-1" aria-label="Ảnh trước"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <button type="button" class="slideshow__arrow slideshow__arrow--next" data-ss-step="1" aria-label="Ảnh sau"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+  <div class="slideshow__dots">{list.map(({ s }, i) => <button type="button" data-ss-to={i} aria-label={`Ảnh ${i + 1}`} aria-current={i === first ? 'true' : undefined} data-empty-slide={s?.src ? undefined : ''}></button>)}</div>
 </>}
 </div>
 
@@ -39,23 +46,28 @@ const list = shown.length ? slides.map((s, k) => ({ s, k })).filter(({ s }) => s
   .slideshow__slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity 800ms var(--ease-out), visibility 800ms; }
   .slideshow__slide.is-active { opacity: 1; visibility: visible; }
   .slideshow__arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 40px; height: 40px; border-radius: 50%; border: 0;
-    background: rgba(0, 0, 0, .32); color: #fff; font: 400 26px/1 var(--font-body); padding-bottom: 3px; cursor: pointer; opacity: 0; transition: opacity var(--motion-base), background var(--motion-fast); }
+    background: rgba(0, 0, 0, .32); color: #fff; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer; opacity: 0; transition: opacity var(--motion-base), background var(--motion-fast); }
   .slideshow:hover .slideshow__arrow, .slideshow:focus-within .slideshow__arrow { opacity: 1; }
   .slideshow__arrow:hover { background: rgba(0, 0, 0, .55); }
   .slideshow__arrow--prev { left: 12px; } .slideshow__arrow--next { right: 12px; }
   .slideshow__dots { position: absolute; left: 0; right: 0; bottom: 14px; z-index: 2; display: flex; justify-content: center; gap: 8px; }
   .slideshow__dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: rgba(255, 255, 255, .6); cursor: pointer; transition: width var(--motion-base), background var(--motion-base); }
   .slideshow__dots button[aria-current='true'] { width: 24px; background: #fff; }
+  :global(html:not(.pe-on)) [data-empty-slide] { display: none !important; }
   @media (hover: none) { .slideshow__arrow { display: none; } }
 </style>
 
 <script>
   document.querySelectorAll<HTMLElement>('[data-slideshow]').forEach((root) => {
-    const slides = [...root.querySelectorAll<HTMLElement>('.slideshow__slide')];
-    const dots = [...root.querySelectorAll<HTMLElement>('[data-ss-to]')];
-    if (slides.length < 2) return;
-    let cur = 0, timer = 0, paused = false, visible = false;
-    const editing = document.documentElement.classList.contains('pe-on');
+    // Same switch as the layout uses to load the photo editor (it adds .pe-on to <html> a moment later).
+    let editing = document.documentElement.classList.contains('pe-on') || new URLSearchParams(location.search).has('sua-anh');
+    try { editing ||= localStorage.getItem('tn-edit-photos') === '1'; } catch { /* storage blocked */ }
+    // Outside the photo editor, empty photo slots are left out of the rotation (and their dots hidden).
+    const keep = (el: HTMLElement) => editing || !el.hasAttribute('data-empty-slide');
+    const slides = [...root.querySelectorAll<HTMLElement>('.slideshow__slide')].filter(keep);
+    const dots = [...root.querySelectorAll<HTMLElement>('[data-ss-to]')].filter(keep);
+    if (slides.length < 2) { root.querySelectorAll<HTMLElement>('.slideshow__arrow, .slideshow__dots').forEach((e) => { e.hidden = true; }); return; }
+    let cur = Math.max(0, slides.findIndex((s) => s.classList.contains('is-active'))), timer = 0, paused = false, visible = false;
     const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const show = (k: number) => {
       cur = (k + slides.length) % slides.length;

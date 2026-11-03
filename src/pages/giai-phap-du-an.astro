@@ -14,20 +14,20 @@ import { url } from '../lib/routes';
 const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
 
 ---
-<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Giải pháp">
+<Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Giải pháp">
 <PageHero id="proj-hero" image={c.s01_hero.img_proj_hero_1} cms="src/content/pages/giai-phap-du-an.json#s01_hero.img_proj_hero_1" placeholder="Thảm cỏ sân golf giữa núi đồi"
   crumbs={[{ label: c.s01_hero.t1, href: url('trang-chu') }, { label: c.s01_hero.t2, href: url('giai-phap') }, { label: c.s01_hero.t3.replace(/^\/\s*/, '') }]}
   eyebrow={c.s01_hero.t4} title={c.s01_hero.t5} lead={c.s01_hero.t6}>
 <a href="#tu-van" class="page-hero__btn page-hero__btn--solid">{c.s01_hero.t7}</a><a href="#quy-trinh" class="page-hero__btn">{c.s01_hero.t8}</a>
 </PageHero>
-<section style="background:var(--surface-page)">
+<section id="linh-vuc" style="background:var(--surface-page)">
 <div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
 <div style="display:flex;flex-direction:column;gap:14px;max-width:680px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s02_nhom_khach_hang.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s02_nhom_khach_hang.t2}</h2></div>
-<div class="g-stack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 60px)/4),calc((2140px - 100%)*999),calc((100% - 20px)/2)),1fr));gap:20px">
-<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;min-height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="seg-1" shape="rect" placeholder="Sân golf" image={c.s02_nhom_khach_hang.img_seg_1_1} cms="src/content/pages/giai-phap-du-an.json#s02_nhom_khach_hang.img_seg_1_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px"><strong style="font-size:20px">{c.s02_nhom_khach_hang.t3}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s02_nhom_khach_hang.t4}</span><span style="font-size:14px;color:var(--text-tertiary)">{c.s02_nhom_khach_hang.t5}</span></div></div>
-<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;min-height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="seg-2" shape="rect" placeholder="Cảnh quan khu đô thị" image={c.s02_nhom_khach_hang.img_seg_2_1} cms="src/content/pages/giai-phap-du-an.json#s02_nhom_khach_hang.img_seg_2_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px"><strong style="font-size:20px">{c.s02_nhom_khach_hang.t6}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s02_nhom_khach_hang.t7}</span><span style="font-size:14px;color:var(--text-tertiary)">{c.s02_nhom_khach_hang.t8}</span></div></div>
-<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;min-height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="seg-3" shape="rect" placeholder="Cây xanh khu công nghiệp" image={c.s02_nhom_khach_hang.img_seg_3_1} cms="src/content/pages/giai-phap-du-an.json#s02_nhom_khach_hang.img_seg_3_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px"><strong style="font-size:20px">{c.s02_nhom_khach_hang.t9}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s02_nhom_khach_hang.t10}</span><span style="font-size:14px;color:var(--text-tertiary)">{c.s02_nhom_khach_hang.t11}</span></div></div>
-<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;min-height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="seg-4" shape="rect" placeholder="Nhà kính công nghệ cao" image={c.s02_nhom_khach_hang.img_seg_4_1} cms="src/content/pages/giai-phap-du-an.json#s02_nhom_khach_hang.img_seg_4_1" /></div><div style="padding:24px;display:flex;flex-direction:column;gap:10px"><strong style="font-size:20px">{c.s02_nhom_khach_hang.t12}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s02_nhom_khach_hang.t13}</span><span style="font-size:14px;color:var(--text-tertiary)">{c.s02_nhom_khach_hang.t14}</span></div></div>
+<div class="pj-fields">
+{c.s02_nhom_khach_hang.fields.map((f, k) => ({ f, k })).filter(({ f }) => isFilled(f.title)).map(({ f, k }) => <article class="pj-field">
+<div class="pj-field__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`seg-${k + 1}`} shape="rect" placeholder={f.title} image={f.image} cms={`src/content/pages/giai-phap-du-an.json#s02_nhom_khach_hang.fields.${k}.image`} sizes="(max-width: 767px) 92vw, 300px" /></div>
+<div class="pj-field__body"><strong>{f.title}</strong>{isFilled(f.text) && <span class="pj-field__text">{f.text}</span>}{isFilled(f.tags) && <span class="pj-field__tags">{f.tags}</span>}</div>
+</article>)}
 </div></div></section>
 
 <section id="quy-trinh" style="background:var(--green-800);color:#fff;scroll-margin-top:120px">
@@ -41,7 +41,7 @@ const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
 <div style="background:var(--green-700);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font:var(--type-stat);color:var(--amber-400);overflow-wrap:normal;font-variant-numeric:tabular-nums">{c.s03_quy_trinh.t15}</span><strong style="font-size:18px">{c.s03_quy_trinh.t16}</strong><span style="color:var(--green-100);font-size:15px">{c.s03_quy_trinh.t17}</span></div>
 </div></div></section>
 
-<section style="background:var(--surface-card)">
+<section id="nang-luc" style="background:var(--surface-card)">
 <div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 72px;align-items:center">
 <div style="display:flex;flex-direction:column;gap:16px">
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s04_nang_luc.t1}</span>
@@ -83,6 +83,16 @@ const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
 </Layout>
 
 <style>
+  /* Fields served: two cards to a row (photo left, text right); editors can add more in the CMS. */
+  .pj-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .pj-field { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
+  .pj-field__img { position: relative; min-height: 240px; }
+  .pj-field__body { padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+  .pj-field__body strong { font-size: 20px; }
+  .pj-field__text { color: var(--text-secondary); font-size: 15px; }
+  .pj-field__tags { font-size: 14px; color: var(--text-tertiary); }
+  @media (max-width: 1023.98px) { .pj-fields { grid-template-columns: minmax(0, 1fr); } }
+  @media (max-width: 479.98px) { .pj-field { grid-template-columns: minmax(0, 1fr); } .pj-field__img { min-height: 200px; } }
   .pj-talk { position: relative; overflow: hidden; background: var(--green-800); color: #fff; }
   .pj-talk::before { content: ''; position: absolute; left: -160px; bottom: -200px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(245, 196, 78, .14), rgba(245, 196, 78, 0) 70%); pointer-events: none; }
   .pj-talk > div { position: relative; }

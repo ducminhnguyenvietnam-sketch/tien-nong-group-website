@@ -31,7 +31,7 @@ if (!still && !editing && 'IntersectionObserver' in window) {
 }
 
 /* Pinned, scroll-driven pickers */
-const STEP = 0.55; // viewport heights of scrolling per item
+const STEP = 0.4; // viewport heights of scrolling per item
 const wide = matchMedia('(min-width: 900px) and (min-height: 620px)');
 document.querySelectorAll<HTMLElement>('[data-scrolly]').forEach((sec) => {
   const pin = sec.querySelector<HTMLElement>('.scrolly__pin');
@@ -40,6 +40,9 @@ document.querySelectorAll<HTMLElement>('[data-scrolly]').forEach((sec) => {
   const buttons = [...picker.querySelectorAll<HTMLElement>('[data-pick]')].filter((b) => b.closest('[data-picker]') === picker);
   const n = buttons.length;
   if (n < 2) return;
+  // Photos of the items not yet shown are fetched now, so each one is ready the moment it is reached
+  // (lazy photos in hidden panels would only start loading then, which reads as a delay).
+  pin.querySelectorAll<HTMLImageElement>('img[loading="lazy"]').forEach((img) => { img.loading = 'eager'; });
   const hdr = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hdr-h')) || 72;
   let on = false, current = -1, auto = false;
 
