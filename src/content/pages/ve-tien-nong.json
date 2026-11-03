@@ -673,9 +673,10 @@
       {
         "name": "Nông nghiệp Hiện đại Tiến Nông",
         "logo": {
-          "focus": "center",
+          "focus": "50% 50%",
           "zoom": "100",
-          "alt": "Logo Nông nghiệp Hiện đại Tiến Nông"
+          "alt": "Logo Nông nghiệp Hiện đại Tiến Nông",
+          "src": "/uploads/partner-2-mw0f206f.png"
         },
         "featured": false
       },
