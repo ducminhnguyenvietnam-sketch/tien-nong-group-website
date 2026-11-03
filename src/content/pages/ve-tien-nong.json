@@ -709,7 +709,9 @@
         "featured": false
       },
       {
+        "name": "Zoomline",
         "logo": {
+          "src": "/uploads/Logo-3-300ppi.png",
           "focus": "center",
           "zoom": "100"
         },
