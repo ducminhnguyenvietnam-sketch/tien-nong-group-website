@@ -371,9 +371,10 @@
         "alt": "Bộ sản phẩm phục hồi đất Tiến Nông"
       },
       "result_image": {
-        "focus": "center",
+        "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Vườn cây sau phục hồi đất, đất tơi xốp, cây xanh tốt"
+        "alt": "Vườn cây sau phục hồi đất, đất tơi xốp, cây xanh tốt",
+        "src": "/uploads/issue-2-result-mw0ioh8w.jpg"
       },
       "result_caption": "[Địa điểm, thời gian mô hình]"
     },
