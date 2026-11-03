@@ -671,17 +671,15 @@
         "featured": false
       },
       {
-        "name": "Nông nghiệp Hiện đại Tiến Nông",
         "logo": {
+          "src": "/uploads/partner-2-mw0i23c1.png",
           "focus": "50% 50%",
           "zoom": "100",
-          "alt": "Logo Nông nghiệp Hiện đại Tiến Nông",
-          "src": "/uploads/partner-2-mw0i23c1.png"
+          "alt": "Logo Nông nghiệp Hiện đại Tiến Nông"
         },
         "featured": false
       },
       {
-        "name": "Đầu tư và Phát triển Nông nghiệp Tiến Nông",
         "logo": {
           "focus": "center",
           "zoom": "100",
@@ -690,7 +688,6 @@
         "featured": false
       },
       {
-        "name": "Tiến Nông Gia Lai",
         "logo": {
           "focus": "center",
           "zoom": "100",
