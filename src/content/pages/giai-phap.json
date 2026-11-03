@@ -341,9 +341,10 @@
         "src": "/uploads/issue-1-pack-mw07dcyc.png"
       },
       "result_image": {
-        "focus": "center",
+        "focus": "50% 62.4%",
         "zoom": "100",
-        "alt": "Ruộng đất phèn sau cải tạo, lúa sinh trưởng khỏe"
+        "alt": "Ruộng đất phèn sau cải tạo, lúa sinh trưởng khỏe",
+        "src": "/uploads/issue-1-result-mw0jfyqr.jpg"
       },
       "result_caption": "[Địa điểm, thời gian mô hình]"
     },
