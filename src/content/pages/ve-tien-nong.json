@@ -350,7 +350,9 @@
       {
         "image": {
           "focus": "50% 50%",
-          "zoom": "100"
+          "zoom": "100",
+          "src": "/uploads/fame-15-mw0dwsf7.jpg",
+          "alt": "Ảnh giải thưởng"
         },
         "label": "CHẤT LƯỢNG & THƯƠNG HIỆU",
         "title": "Sản phẩm Nông nghiệp tiêu biểu",
