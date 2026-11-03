@@ -147,7 +147,13 @@
         "when": "2019",
         "title": "Phủ khắp 183 xã ở Bắc Giang",
         "text": "Các cấp Hội Nông dân tỉnh Bắc Giang cung ứng phân bón trả chậm cho hội viên ở 183 xã, thị trấn thuộc 10 huyện, thành phố.",
-        "link": ""
+        "link": "",
+        "image": {
+          "focus": "50% 57.5%",
+          "zoom": "100",
+          "src": "/uploads/deferred-year-3-mw0k7vug.jpg",
+          "alt": "Phủ khắp 183 xã ở Bắc Giang"
+        }
       },
       {
         "when": "03/2024",
