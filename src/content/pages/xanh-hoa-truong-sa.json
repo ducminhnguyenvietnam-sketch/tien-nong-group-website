@@ -390,7 +390,13 @@
         "date": "10/06/2026",
         "title": "Cùng gửi lời chúc để ươm mầm “Xanh hoá Trường Sa”",
         "summary": "Người dân gửi lời chúc qua website Tiến Nông; mỗi lời chúc hợp lệ góp 1 kg phân bón cho cây xanh Trường Sa.",
-        "url": "https://tienphong.vn/cung-gui-loi-chuc-de-uom-mam-xanh-hoa-truong-sa-post1850384.tpo"
+        "url": "https://tienphong.vn/cung-gui-loi-chuc-de-uom-mam-xanh-hoa-truong-sa-post1850384.tpo",
+        "logo": {
+          "focus": "50% 50%",
+          "zoom": "100",
+          "src": "/uploads/ts-press-1-mw0lw1wf.png",
+          "alt": "Logo Báo Tiền Phong"
+        }
       },
       {
         "source": "Tạp chí Diễn đàn Doanh nghiệp",
