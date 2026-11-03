@@ -178,9 +178,10 @@
       {
         "name": "Viện Bảo vệ Thực vật",
         "logo": {
-          "src": "/uploads/999logo(1).png",
+          "src": "/uploads/part-4-mw0lnpvw.png",
           "focus": "50% 50%",
-          "zoom": "100"
+          "zoom": "100",
+          "alt": "Logo"
         }
       }
     ]
