@@ -1,0 +1,16 @@
+# Weekly pull requests that keep the build tools and the GitHub Actions up to date (security fixes
+# included). Nothing changes until such a pull request is reviewed and merged.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
+    groups:
+      astro:
+        patterns: ['astro', '@astrojs/*']
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

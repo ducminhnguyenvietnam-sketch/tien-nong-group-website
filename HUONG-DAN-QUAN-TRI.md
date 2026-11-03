@@ -45,13 +45,15 @@ Người được mời đăng nhập bằng email, không cần tài khoản Gi
 ### Mã GitHub (làm một lần trên mỗi máy/điện thoại)
 
 1. Mở https://github.com/settings/personal-access-tokens/new (đăng nhập GitHub nếu được hỏi).
-2. **Token name**: `Sửa ảnh website`. **Expiration**: chọn thời hạn, ví dụ 1 năm.
+2. **Token name**: `Sửa ảnh website`. **Expiration**: 90 ngày (hết hạn thì tạo mã mới).
 3. **Repository access** → **Only select repositories** → chọn `tien-nong-group-website`.
 4. **Permissions → Repository permissions**: **Contents** = *Read and write*; **Actions** = *Read-only*.
 5. Bấm **Generate token**, sao chép mã (bắt đầu bằng `github_pat_`) và dán vào ô trên website.
 
-Mã chỉ lưu trong trình duyệt của máy đó. Không gửi mã cho người khác; khi đổi máy hoặc mã hết hạn
-thì tạo mã mới. Muốn gỡ mã khỏi máy: bấm **Đã kết nối GitHub ✓ → Ngắt kết nối**.
+Mã chỉ lưu trong trình duyệt và **tự xoá khi đóng trình duyệt**. Trên máy riêng của mình có thể tích
+**Ghi nhớ trên máy này** để không phải dán lại; không tích ô này trên máy dùng chung. Không gửi mã cho
+người khác. Muốn gỡ mã: bấm **Đã kết nối GitHub ✓ → Ngắt kết nối**. Nếu nghi lộ mã, xoá mã đó ngay
+ở https://github.com/settings/personal-access-tokens.
 
 Vẫn có thể tải ảnh trong trang quản trị (ô **Ảnh** trong từng mục), nhưng khi đó không căn chỉnh
 trực quan được.
@@ -142,6 +144,23 @@ Không có cơ sở dữ liệu hay trang đăng nhập trên hosting.
   thay đổi trên nhánh `main`, kể cả mỗi lần lưu trong Pages CMS. Bước dựng hoặc kiểm tra lỗi thì không tải gì lên.
 - Thông tin FTP nằm ở **Settings → Secrets and variables → Actions → Secrets**: `FTP_SERVER`, `FTP_USERNAME`,
   `FTP_PASSWORD`. Dùng một tài khoản FTP riêng chỉ vào được thư mục web; không ghi mật khẩu vào tệp nào.
-- Tuỳ chọn (tab **Variables**): `SITE_URL` (mặc định `https://tiennong.com`), `FTP_DIR` (mặc định `public_html/`).
-- Tệp `public/.htaccess` ép https, bỏ `www`, đặt các lớp bảo vệ trình duyệt và trang 404.
+- Tuỳ chọn (tab **Variables**): `SITE_URL` (mặc định `https://tiennong.com`), `FTP_DIR` (mặc định `public_html/`),
+  `FTP_SECURITY` (mặc định `strict`: kiểm tra chứng chỉ máy chủ FTP để mật khẩu chỉ đi đến đúng máy chủ.
+  Nếu lần chạy báo lỗi chứng chỉ, ưu tiên đổi `FTP_SERVER` sang tên máy chủ Mắt Bão ghi trong chứng chỉ;
+  chỉ đặt `loose` khi không còn cách khác).
+- **Trước lần đăng đầu tiên**: sao lưu thư mục `public_html` cũ rồi xoá hết tệp cũ trong đó (đặc biệt
+  `index.php`, WordPress cũ). Website mới không chạy mã PHP nào; `.htaccess` chặn mọi tệp mã máy chủ.
+- Tệp `public/.htaccess` ép https, bỏ `www`, chặn tệp ẩn và tệp mã máy chủ, đặt các lớp bảo vệ trình duyệt
+  (CSP, HSTS, chống nhúng trang) và trang 404.
 - Bản xem thử trên GitHub Pages chỉ chạy khi repo để public; repo private thì bỏ qua bước đó.
+
+## Bảo mật — việc định kỳ
+
+- **Tài khoản**: bật xác thực 2 lớp (2FA) cho GitHub, Mắt Bão và hộp thư info@; mỗi người dùng tài khoản riêng.
+- **Cập nhật tự động**: Dependabot mở pull request cập nhật thư viện (hằng tuần) và GitHub Actions (hằng tháng).
+  Chỉ merge khi bước kiểm tra của pull request báo xanh.
+- **Các bước đăng web** chỉ dùng phiên bản cố định của từng công cụ (ghi rõ mã commit), bản thay thế đến qua
+  Dependabot nên không ai đổi được công cụ ở giữa chừng.
+- **Biểu mẫu Liên hệ**: sau khi hộp thư bấm xác nhận FormSubmit lần đầu, dán chuỗi bí danh trong thư
+  xác nhận vào *Các trang → Liên hệ → Biểu mẫu → Mã bí danh FormSubmit*.
+- **Mã sửa ảnh GitHub**: đặt hạn 90 ngày, xoá mã của người đã nghỉ việc ở trang quản lý mã của GitHub.

@@ -2,6 +2,7 @@
 # (GitHub Pages ignores this file.)
 
 Options -Indexes
+DirectoryIndex index.html
 ErrorDocument 404 /404.html
 AddDefaultCharset utf-8
 
@@ -14,6 +15,8 @@ AddDefaultCharset utf-8
   RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
   # Hidden files (.htaccess, the deploy state file …) are never served.
   RewriteRule (^|/)\. - [F]
+  # The site is plain HTML: no server code may ever run from this folder, even if a file were slipped in.
+  RewriteRule \.(php[0-9]?|phtml|phar|cgi|pl|py|sh|asp|aspx|jsp)$ - [F,NC]
 </IfModule>
 
 <IfModule mod_headers.c>
@@ -25,6 +28,11 @@ AddDefaultCharset utf-8
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
   Header always set Strict-Transport-Security "max-age=31536000" env=HTTPS
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  # An SVG opened on its own (e.g. /uploads/logo.svg) cannot run scripts.
+  <FilesMatch "\.svg$">
+    Header always set Content-Security-Policy "default-src 'none'; style-src 'unsafe-inline'; img-src data:; sandbox"
+  </FilesMatch>
   Header unset X-Powered-By
 
   # Files with a content hash in their name never change: cache for a year. Pages are re-checked each visit.

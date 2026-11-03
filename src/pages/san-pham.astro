@@ -32,7 +32,8 @@ function highlights(benefits: string[], summary: string) {
 const breakName = (n: string) => n.replace(/\+/g, '+​');
 ---
 <Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Sản phẩm">
-<section class="sp-hero">
+<section class:list={['sp-hero', { 'sp-hero--photo': isFilled(c.hero.background?.src), 'sp-hero--tint': c.hero.background_overlay !== false }]}>
+<div class="sp-hero__bg" data-needs-photos={isFilled(c.hero.background?.src) ? undefined : ''}><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="product-hero-bg" shape="rect" priority placeholder="Ảnh nền toàn khung đầu trang (ảnh ngang khoảng 1920×640)" image={c.hero.background} cms="src/content/pages/san-pham.json#hero.background" sizes="100vw" /></div>
 <div class="sp-hero__row">
 <div class="sp-hero__copy">
 <span class="sp-hero__eyebrow">{c.s01_tieu_de.t3}</span>
@@ -44,7 +45,7 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
 </div>
 {isFilled(c.s01_tieu_de.link1) && <a class="sp-hero__catalogue" href={link(c.s01_tieu_de.link1)} target="_blank" rel="noopener">{c.s01_tieu_de.t6} →</a>}
 </div>
-<div class="sp-hero__visual"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="product-hero" shape="rect" fit="contain" priority placeholder="Ảnh lớn đầu trang (PNG nền trong suốt, ví dụ bộ bao sản phẩm)" image={c.hero.image} cms="src/content/pages/san-pham.json#hero.image" sizes="(max-width: 899px) 92vw, 620px" /></div>
+<div class="sp-hero__visual" data-needs-photos={isFilled(c.hero.image?.src) ? undefined : ''}><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="product-hero" shape="rect" fit="contain" priority placeholder="Ảnh lớn đầu trang (PNG nền trong suốt, ví dụ bộ bao sản phẩm)" image={c.hero.image} cms="src/content/pages/san-pham.json#hero.image" sizes="(max-width: 899px) 92vw, 620px" /></div>
 </div>
 </section>
 
@@ -179,6 +180,13 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
   .sp-hero__catalogue { color: var(--green-100); font-weight: 600; font-size: 15px; }
   .sp-hero__catalogue:hover { color: #fff; }
   /* One large picture on the right (the designer's composition, e.g. the product bags), replaceable in the CMS or with ?sua-anh. */
+  /* Full-width background photo (CMS / ?sua-anh). Clicks between the text and the product photo reach it. */
+  .sp-hero__bg { position: absolute; inset: 0; }
+  .sp-hero--photo.sp-hero--tint .sp-hero__bg::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(90deg, rgba(0, 58, 28, .82) 0%, rgba(0, 58, 28, .55) 45%, rgba(0, 58, 28, 0) 75%); }
+  @media (max-width: 899.98px) { .sp-hero--photo.sp-hero--tint .sp-hero__bg::after { background: rgba(0, 58, 28, .62); } }
+  .sp-hero__row { pointer-events: none; }
+  .sp-hero__copy, .sp-hero__visual { pointer-events: auto; }
   .sp-hero__visual { position: relative; align-self: stretch; min-height: clamp(280px, 30vw, 420px); }
   .sp-hero__visual :global(.img-slot__frame) { background: transparent !important; }
 
