@@ -327,14 +327,23 @@
       },
       {
         "image": {
+          "src": "/uploads/fame-13-mw0c5nnl.jpg",
           "focus": "50% 50%",
           "zoom": "100",
-          "src": "/uploads/fame-13-mw0c5nnl.jpg",
           "alt": "Ảnh giải thưởng"
         },
         "label": "KHOA HỌC & CÔNG NGHỆ",
         "title": "Giải thưởng KOVA",
         "detail": "2013"
+      },
+      {
+        "image": {
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "label": "CHẤT LƯỢNG & THƯƠNG HIỆU",
+        "title": "Nhãn hiệu Cạnh tranh Việt Nam",
+        "detail": "2018"
       }
     ],
     "t27": "Hệ thống quản lý:",
