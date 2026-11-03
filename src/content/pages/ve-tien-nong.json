@@ -405,7 +405,9 @@
       {
         "image": {
           "focus": "50% 50%",
-          "zoom": "100"
+          "zoom": "100",
+          "src": "/uploads/fame-20-mw0e9yuk.jpg",
+          "alt": "Ảnh giải thưởng"
         },
         "label": "NHÀ NƯỚC",
         "title": "Bằng khen Chấp hành tốt chính sách, pháp luật thuế",
