@@ -310,6 +310,24 @@
         },
         "label": "KHOA HỌC & CÔNG NGHỆ",
         "title": "Đạt tiêu chuẩn VILAS 1519"
+      },
+      {
+        "image": {
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "label": "KHOA HỌC & CÔNG NGHỆ",
+        "title": "Đạt tiêu chuẩn VALAS 262",
+        "detail": "2026"
+      },
+      {
+        "image": {
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "label": "KHOA HỌC & CÔNG NGHỆ",
+        "title": "Giải thưởng KOVA",
+        "detail": "2013"
       }
     ],
     "t27": "Hệ thống quản lý:",
