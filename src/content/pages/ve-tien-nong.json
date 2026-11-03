@@ -680,6 +680,7 @@
         "featured": false
       },
       {
+        "name": "VEDAN",
         "logo": {
           "src": "/uploads/logo-vedan.png",
           "focus": "50% 50%",
@@ -689,6 +690,7 @@
         "featured": false
       },
       {
+        "name": "DDC",
         "logo": {
           "focus": "center",
           "zoom": "100",
