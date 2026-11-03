@@ -294,9 +294,10 @@
       "title": "Ngộ độc hữu cơ trên lúa",
       "symptoms": "Sau cấy, sạ 15–25 ngày lúa chậm phát triển, lá vàng, ít đẻ nhánh. Nhổ lên thấy rễ thâm đen, ít rễ trắng, có mùi hôi; mặt ruộng sủi bọt khí.",
       "image": {
-        "focus": "center",
+        "focus": "37.5% 50%",
         "zoom": "100",
-        "alt": "Ruộng lúa bị ngộ độc hữu cơ: lá vàng, rễ thâm đen"
+        "alt": "Ruộng lúa bị ngộ độc hữu cơ: lá vàng, rễ thâm đen",
+        "src": "/uploads/issue-0-problem-mw0634j8.jpg"
       },
       "why": "Rơm rạ, gốc rạ và phân hữu cơ chưa hoai bị vùi xuống ruộng ngập nước, phân hủy trong điều kiện thiếu oxy (yếm khí).\nQuá trình này sinh ra khí độc H₂S, CH₄ và các axit hữu cơ, đồng thời làm sắt hòa tan (Fe²⁺) tích tụ quá mức.\nRễ lúa bị đầu độc, thâm đen và thối, không hút được dinh dưỡng nên cây vàng lá dù đã bón đủ phân. Trời nắng nóng làm quá trình này diễn ra nhanh và nặng hơn.",
       "solution_name": "Vinafer Tiến Nông",
