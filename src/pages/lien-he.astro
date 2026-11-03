@@ -68,7 +68,7 @@ const mapsFor = (address: string, custom?: string | null) =>
 <section class="lh-routes" id="dau-moi" aria-label={c.routes.eyebrow}>
 <div class="lh-routes__grid">
 {c.routes.items.map((r, k) => {
-  const v = value(r.value);
+  const v = value(r.value ?? '');
   return (
     <div class="lh-route">
       <span class="lh-route__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={ROUTE_ICONS[k % ROUTE_ICONS.length]} /></span>
@@ -150,7 +150,7 @@ const mapsFor = (address: string, custom?: string | null) =>
 <div class="lh-form__card">
 <div id="contact-sent" hidden tabindex="-1" class="lh-sent"><span class="lh-sent__ic" aria-hidden="true">✓</span><span class="lh-sent__label">{c.form.sent_label}</span><strong>{c.form.sent_title}</strong><span>{c.form.sent_before} <b id="need-label">{topics[0]?.team}</b>. {c.form.sent_after}</span><button type="button" data-form-again>{c.form.again}</button></div>
 <FormFallback />
-<form id="contact-form" data-lead-form="lien-he" data-sent="contact-sent" data-mailto={mailbox} data-subject="Liên hệ từ website Tiến Nông" class="lh-f">
+<form id="contact-form" data-lead-form="lien-he" data-sent="contact-sent" data-mailto={(c.form.formsubmit_alias || '').trim() || mailbox} data-subject="Liên hệ từ website Tiến Nông" class="lh-f">
 <fieldset class="lh-f__topics">
 <legend>{c.form.topic_label}</legend>
 <div class="lh-f__chips">

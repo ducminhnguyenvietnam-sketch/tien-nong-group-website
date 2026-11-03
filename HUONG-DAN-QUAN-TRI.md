@@ -1,7 +1,8 @@
 # Hướng dẫn cập nhật website Tiến Nông
 
 Website được quản trị bằng **Pages CMS** — trang quản trị miễn phí, đăng nhập bằng tài khoản GitHub.
-Mỗi lần bấm **Save**, website tự cập nhật sau khoảng **2 phút**.
+Mỗi lần bấm **Save**, website tự cập nhật sau khoảng **3–5 phút**. Nếu lần sửa đó làm web dựng lỗi,
+web đang chạy giữ nguyên bản cũ (xem tab **Actions** của repo để biết lỗi).
 
 ## 1. Đăng nhập lần đầu
 
@@ -27,7 +28,7 @@ Người được mời đăng nhập bằng email, không cần tài khoản Gi
 Ảnh được thay và căn chỉnh **ngay trên trang web thật**, thấy kết quả tức thì:
 
 1. Mở website kèm chữ `?sua-anh` ở cuối địa chỉ:
-   **https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/?sua-anh**
+   **https://tiennong.com/?sua-anh** (trước khi chuyển tên miền: https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/?sua-anh)
    Góc dưới màn hình hiện thanh **Chế độ sửa ảnh**; mọi ảnh có viền đứt và nút **✎ Thay / căn ảnh**
    (ô chưa có ảnh: **＋ Thêm ảnh**). Chế độ này vẫn bật khi chuyển sang trang khác.
 2. Bấm vào ảnh cần sửa:
@@ -44,13 +45,15 @@ Người được mời đăng nhập bằng email, không cần tài khoản Gi
 ### Mã GitHub (làm một lần trên mỗi máy/điện thoại)
 
 1. Mở https://github.com/settings/personal-access-tokens/new (đăng nhập GitHub nếu được hỏi).
-2. **Token name**: `Sửa ảnh website`. **Expiration**: chọn thời hạn, ví dụ 1 năm.
+2. **Token name**: `Sửa ảnh website`. **Expiration**: 90 ngày (hết hạn thì tạo mã mới).
 3. **Repository access** → **Only select repositories** → chọn `tien-nong-group-website`.
 4. **Permissions → Repository permissions**: **Contents** = *Read and write*; **Actions** = *Read-only*.
 5. Bấm **Generate token**, sao chép mã (bắt đầu bằng `github_pat_`) và dán vào ô trên website.
 
-Mã chỉ lưu trong trình duyệt của máy đó. Không gửi mã cho người khác; khi đổi máy hoặc mã hết hạn
-thì tạo mã mới. Muốn gỡ mã khỏi máy: bấm **Đã kết nối GitHub ✓ → Ngắt kết nối**.
+Mã chỉ lưu trong trình duyệt và **tự xoá khi đóng trình duyệt**. Trên máy riêng của mình có thể tích
+**Ghi nhớ trên máy này** để không phải dán lại; không tích ô này trên máy dùng chung. Không gửi mã cho
+người khác. Muốn gỡ mã: bấm **Đã kết nối GitHub ✓ → Ngắt kết nối**. Nếu nghi lộ mã, xoá mã đó ngay
+ở https://github.com/settings/personal-access-tokens.
 
 Vẫn có thể tải ảnh trong trang quản trị (ô **Ảnh** trong từng mục), nhưng khi đó không căn chỉnh
 trực quan được.
@@ -131,3 +134,33 @@ Mọi lần lưu đều được ghi lại trong lịch sử GitHub, nên có th
   (biến `FORM_ENDPOINT` của repo). Khi chưa có, trang hiện nút Gọi / Zalo / Email thay cho biểu mẫu.
 - **Kiểm tra nội dung còn thiếu:** mỗi lần đăng, mục *Actions* của GitHub liệt kê các ô còn nội dung mẫu,
   ảnh còn trống và bài viết chưa có ngày (bước "check:content").
+
+## Đăng web lên tiennong.com (hosting Mắt Bão)
+
+Website là trang tĩnh: GitHub dựng sẵn các tệp HTML và ảnh rồi tải lên hosting qua FTPS (FTP có mã hoá).
+Không có cơ sở dữ liệu hay trang đăng nhập trên hosting.
+
+- Quy trình **Deploy to tiennong.com (Mắt Bão)** (`.github/workflows/deploy-mat-bao.yml`) chạy sau mỗi
+  thay đổi trên nhánh `main`, kể cả mỗi lần lưu trong Pages CMS. Bước dựng hoặc kiểm tra lỗi thì không tải gì lên.
+- Thông tin FTP nằm ở **Settings → Secrets and variables → Actions → Secrets**: `FTP_SERVER`, `FTP_USERNAME`,
+  `FTP_PASSWORD`. Dùng một tài khoản FTP riêng chỉ vào được thư mục web; không ghi mật khẩu vào tệp nào.
+- Tuỳ chọn (tab **Variables**): `SITE_URL` (mặc định `https://tiennong.com`), `FTP_DIR` (mặc định `public_html/`),
+  `FTP_SECURITY` (mặc định `strict`: kiểm tra chứng chỉ máy chủ FTP để mật khẩu chỉ đi đến đúng máy chủ.
+  Nếu lần chạy báo lỗi chứng chỉ, ưu tiên đổi `FTP_SERVER` sang tên máy chủ Mắt Bão ghi trong chứng chỉ;
+  chỉ đặt `loose` khi không còn cách khác).
+- **Trước lần đăng đầu tiên**: sao lưu thư mục `public_html` cũ rồi xoá hết tệp cũ trong đó (đặc biệt
+  `index.php`, WordPress cũ). Website mới không chạy mã PHP nào; `.htaccess` chặn mọi tệp mã máy chủ.
+- Tệp `public/.htaccess` ép https, bỏ `www`, chặn tệp ẩn và tệp mã máy chủ, đặt các lớp bảo vệ trình duyệt
+  (CSP, HSTS, chống nhúng trang) và trang 404.
+- Bản xem thử trên GitHub Pages chỉ chạy khi repo để public; repo private thì bỏ qua bước đó.
+
+## Bảo mật — việc định kỳ
+
+- **Tài khoản**: bật xác thực 2 lớp (2FA) cho GitHub, Mắt Bão và hộp thư info@; mỗi người dùng tài khoản riêng.
+- **Cập nhật tự động**: Dependabot mở pull request cập nhật thư viện (hằng tuần) và GitHub Actions (hằng tháng).
+  Chỉ merge khi bước kiểm tra của pull request báo xanh.
+- **Các bước đăng web** chỉ dùng phiên bản cố định của từng công cụ (ghi rõ mã commit), bản thay thế đến qua
+  Dependabot nên không ai đổi được công cụ ở giữa chừng.
+- **Biểu mẫu Liên hệ**: sau khi hộp thư bấm xác nhận FormSubmit lần đầu, dán chuỗi bí danh trong thư
+  xác nhận vào *Các trang → Liên hệ → Biểu mẫu → Mã bí danh FormSubmit*.
+- **Mã sửa ảnh GitHub**: đặt hạn 90 ngày, xoá mã của người đã nghỉ việc ở trang quản lý mã của GitHub.

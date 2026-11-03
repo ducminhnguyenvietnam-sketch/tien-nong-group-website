@@ -43,7 +43,7 @@ const years = [...new Set(c.milestones.map((ms) => String(ms.year).trim()))];
 const yearOf = (ms: { year: string }) => years.indexOf(String(ms.year).trim());
 const countIn = (ms: { year: string }) => c.milestones.filter((x) => yearOf(x) === yearOf(ms));
 const caps = c.s07_nang_luc.capabilities.filter((x) => isFilled(x.title));
-const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter((p) => isFilled(p.name))
+const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k }) as typeof p & { k: number }).filter((p) => isFilled(p.name))
   .sort((a, b) => Number(!!b.featured) - Number(!!a.featured));
 ---
 <Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Về Tiến Nông">
@@ -53,8 +53,9 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
 
 <FigureCard overlap items={stats.map(([value, label]) => ({ value, label }))} />
 
-<section id="thu-ngo" class="ceo">
-<img class="ceo__watermark" src={asset('assets/logo-la-chi.png')} alt="" aria-hidden="true" width="485" height="271" loading="lazy" />
+<section id="thu-ngo" class:list={['ceo', { 'ceo--photo': isFilled(t.background?.src), 'ceo--tint': t.background_overlay !== false }]}>
+<div class="ceo__bg" data-needs-photos={isFilled(t.background?.src) ? undefined : ''}><ImageSlot style={fill} id="ceo-bg" shape="rect" placeholder="Ảnh nền lời chào (ảnh ngang tông xanh đậm, khoảng 1920×1000)" image={t.background} cms={`${F}#s02_thu_ngo.background`} sizes="100vw" /></div>
+{!isFilled(t.background?.src) && <img class="ceo__watermark" src={asset('assets/logo-la-chi.png')} alt="" aria-hidden="true" width="485" height="271" loading="lazy" />}
 <div class="ceo__wrap">
 <div class="ceo__photo"><ImageSlot style={fill} id="ceo-portrait" shape="rect" fit="contain" placeholder="Chân dung Tổng Giám đốc Nguyễn Hồng Phong" image={t.img_ceo_portrait_1} cms={`${F}#s02_thu_ngo.img_ceo_portrait_1`} sizes="(max-width: 767px) 70vw, 420px" /></div>
 <div class="ceo__text">
@@ -233,6 +234,14 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k })).filter
   /* CEO letter (Figma): brand green with the Tiến Nông mark as a large watermark, cut-out portrait standing on the bottom edge. */
   .ceo { position: relative; overflow: hidden; scroll-margin-top: 120px; color: #fff;
     background: radial-gradient(120% 120% at 20% 0%, #3c9a55 0%, #2e8548 45%, #246d3a 100%); }
+  /* Background photo (CMS / ?sua-anh) replaces the green gradient and the leaf; the text and portrait stay on top
+     and clicks fall through to the photo between them (so it can be replaced in the photo editor). */
+  .ceo__bg { position: absolute; inset: 0; }
+  .ceo--photo.ceo--tint .ceo__bg::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(90deg, rgba(20, 80, 40, .25) 0%, rgba(20, 80, 40, .55) 45%, rgba(20, 80, 40, .7) 100%); }
+  @media (max-width: 899.98px) { .ceo--photo.ceo--tint .ceo__bg::after { background: rgba(20, 80, 40, .62); } }
+  .ceo__wrap { pointer-events: none; }
+  .ceo__photo, .ceo__text { pointer-events: auto; }
   .ceo__watermark { position: absolute; left: 50%; top: 50%; width: min(960px, 78%); height: auto; transform: translate(-50%, -50%); opacity: .08; pointer-events: none; }
   .ceo__wrap { position: relative; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); column-gap: clamp(32px, 4vw, 64px); align-items: end; }
   .ceo__photo { position: relative; align-self: end; aspect-ratio: 640 / 801; width: 100%; max-width: 400px; justify-self: center; margin-top: 48px; }

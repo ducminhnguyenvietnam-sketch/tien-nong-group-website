@@ -1,4 +1,5 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 
 /** Photo as stored by the CMS: uploaded file, focus point, zoom and alt text. */
@@ -7,7 +8,7 @@ const image = z.object({
   focus: z.string().default('center'),
   zoom: z.coerce.string().default('100'),
   alt: z.string().default(''),
-}).default({});
+}).prefault({}); // a missing photo still gets the field defaults above
 
 const news = defineCollection({
   // Articles imported from the old site live in year folders (news/2015/…); the address is the file

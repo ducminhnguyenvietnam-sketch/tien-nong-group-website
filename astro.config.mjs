@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { unified } from '@astrojs/markdown-remark';
 import oldLinks from './scripts/old-links.mjs';
 import keepWords from './scripts/keep-words.mjs';
 
@@ -59,7 +60,7 @@ export default defineConfig({
   // Sitemap only when the public URL is known (CI); internal tools stay out of it.
   integrations: [...(process.env.SITE_URL ? [sitemap({ filter: (page) => !/\/(quan-tri|admin)\//.test(page) })] : []), oldLinks({ base }), keepWords()],
   base,
-  markdown: { rehypePlugins: [rehypeBasePath, rehypeDropPlaceholders] },
+  markdown: { processor: unified({ rehypePlugins: [rehypeBasePath, rehypeDropPlaceholders] }) },
   // Pages are emitted as /slug/index.html so links stay clean (/ve-tien-nong/).
   trailingSlash: 'always',
   build: { format: 'directory' },

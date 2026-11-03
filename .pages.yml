@@ -13,7 +13,7 @@ components:
     - name: src
       label: Ảnh
       type: image
-      description: 'Cách dễ nhất: thay và căn ảnh ngay trên website — mở https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/?sua-anh
+      description: 'Cách dễ nhất: thay và căn ảnh ngay trên website — mở trang web kèm ?sua-anh ở cuối địa chỉ (ví dụ https://tiennong.com/?sua-anh)
         rồi bấm vào ảnh. Hoặc tải ảnh lên tại đây.'
     - name: focus
       label: Điểm căn ảnh
@@ -1113,6 +1113,15 @@ content:
       label: 02 · Thư ngỏ
       type: object
       fields:
+      - name: background
+        label: Ảnh nền khung xanh lời chào (thay cả nền và logo lá)
+        description: Ảnh ngang khoảng 1920×1000 px, tông xanh đậm để chữ trắng dễ đọc; ảnh chân dung Tổng Giám đốc vẫn nằm phía trên. Thay nhanh nhất ngay trên website (?sua-anh) — bấm vào khoảng nền xanh bên trái/trên ảnh chân dung. Để trống thì dùng nền xanh có logo lá như hiện tại.
+        component: photo
+      - name: background_overlay
+        label: Phủ lớp xanh mờ lên ảnh nền để chữ dễ đọc
+        description: Tắt nếu ảnh nền đã được thiết kế sẵn tông đậm.
+        type: boolean
+        default: true
       - name: img_ceo_portrait_1
         label: 'Ảnh: Chân dung Tổng Giám đốc Nguyễn Hồng Phong'
         component: photo
@@ -2559,12 +2568,22 @@ content:
         label: Mô tả ngắn cho Google
         type: text
     - name: hero
-      label: Ảnh lớn đầu trang
+      label: Ảnh đầu trang
       type: object
-      description: Một ảnh lớn bên phải đầu trang (do thiết kế dựng sẵn, ví dụ bộ bao sản phẩm). Nên dùng ảnh PNG nền trong suốt, ngang khoảng 1200 px. Có thể thay ngay trên website (?sua-anh).
+      description: Hai ô ảnh, đều thay được ngay trên website (?sua-anh) hoặc tại đây. Chữ và nút luôn nằm bên trái.
       fields:
+      - name: background
+        label: Ảnh nền toàn khung đầu trang
+        description: Ảnh ngang khổ lớn khoảng 1920×640 px (có thể là key visual đã có sẵn bao sản phẩm). Để trống thì dùng nền xanh của trang. Trên website, bấm vào khoảng nền phía trên hoặc dưới chữ để thay.
+        component: photo
+      - name: background_overlay
+        label: Phủ lớp xanh mờ phía bên chữ để chữ dễ đọc
+        description: Tắt nếu ảnh nền đã thiết kế sẵn khoảng trống tông đậm cho chữ.
+        type: boolean
+        default: true
       - name: image
-        label: Ảnh lớn đầu trang
+        label: Ảnh sản phẩm bên phải (PNG nền trong suốt, có thể để trống)
+        description: Nếu ảnh nền đã có sẵn bao sản phẩm thì xoá ảnh này đi để không bị trùng.
         component: photo
     - name: s01_tieu_de
       label: 01 · Tiêu đề
@@ -5878,6 +5897,10 @@ content:
       - name: email
         label: 'Hộp thư nhận yêu cầu'
         description: 'Mỗi yêu cầu gửi từ biểu mẫu được chuyển về hộp thư này (qua dịch vụ FormSubmit). Lần đầu nhận thư, hộp thư cần bấm xác nhận một lần.'
+        type: string
+      - name: formsubmit_alias
+        label: 'Mã bí danh FormSubmit (nên điền sau khi đã xác nhận)'
+        description: 'Thư xác nhận của FormSubmit có một chuỗi ký tự ngẫu nhiên thay cho địa chỉ email. Dán chuỗi đó vào đây: biểu mẫu sẽ gửi qua chuỗi này, địa chỉ hộp thư không còn nằm trong mã trang để kẻ xấu lợi dụng gửi thư rác. Để trống thì dùng hộp thư ở trên.'
         type: string
       - name: topic_label
         label: 'Nhãn chọn chủ đề'

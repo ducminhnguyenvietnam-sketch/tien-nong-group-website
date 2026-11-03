@@ -36,6 +36,17 @@ const store = {
   get: (k: string) => { try { return localStorage.getItem(k); } catch { return null; } },
   set: (k: string, v: string | null) => { try { if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch { /* private mode */ } },
 };
+/** The GitHub key lives only in this tab (sessionStorage, gone when the browser closes) unless the editor
+ *  ticks "Ghi nhớ trên máy này" — then it is kept in localStorage. */
+const ghKey = {
+  get: () => { try { return sessionStorage.getItem(TOKEN_KEY) ?? localStorage.getItem(TOKEN_KEY); } catch { return null; } },
+  set: (v: string | null, remember = false) => {
+    try {
+      sessionStorage.removeItem(TOKEN_KEY); localStorage.removeItem(TOKEN_KEY);
+      if (v !== null) (remember ? localStorage : sessionStorage).setItem(TOKEN_KEY, v);
+    } catch { /* storage blocked */ }
+  },
+};
 
 // ---------------------------------------------------------------- styles + chrome
 const css = `
@@ -95,7 +106,7 @@ function start() {
 }
 
 function renderBar() {
-  const token = store.get(TOKEN_KEY);
+  const token = ghKey.get();
   bar.replaceChildren(
     el('span', {}, '✎ Chế độ sửa ảnh — bấm vào ảnh để thay hoặc căn lại'),
     el('button', { className: 'pe-ghost', onclick: () => login() }, token ? 'Đã kết nối GitHub ✓' : 'Kết nối GitHub'),
@@ -234,7 +245,7 @@ document.addEventListener('pointercancel', endDrag);
 
 // ---------------------------------------------------------------- GitHub
 async function gh<T = any>(path: string, init: RequestInit = {}): Promise<T> { // eslint-disable-line @typescript-eslint/no-explicit-any
-  const token = store.get(TOKEN_KEY);
+  const token = ghKey.get();
   const res = await fetch(`${API}${path}`, {
     ...init,
     headers: { Accept: 'application/vnd.github+json', Authorization: `Bearer ${token}`, 'X-GitHub-Api-Version': '2022-11-28', ...(init.body ? { 'Content-Type': 'application/json' } : {}) },
@@ -249,34 +260,37 @@ async function gh<T = any>(path: string, init: RequestInit = {}): Promise<T> { /
 function login(): Promise<boolean> {
   return new Promise((resolve) => {
     const input = el('input', { type: 'password', placeholder: 'github_pat_…', autocomplete: 'off' });
+    const remember = el('input', { type: 'checkbox' });
     const msg = el('span', { className: 'pe-muted' });
     const close = (ok: boolean) => { dlg.remove(); renderBar(); resolve(ok); };
     const ok = el('button', { className: 'pe-primary', textContent: 'Kết nối' });
     ok.onclick = async () => {
       const t = input.value.trim();
       if (!t) return;
-      store.set(TOKEN_KEY, t); msg.textContent = 'Đang kiểm tra…'; ok.disabled = true;
+      ghKey.set(t, remember.checked); msg.textContent = 'Đang kiểm tra…'; ok.disabled = true;
       try {
         const repo = await gh<{ permissions?: { push?: boolean } }>(`/repos/${REPO}`);
         if (!repo.permissions?.push) throw Object.assign(new Error(), { status: 403 });
         close(true);
       } catch (e) {
-        store.set(TOKEN_KEY, null); ok.disabled = false;
+        ghKey.set(null); ok.disabled = false;
         msg.textContent = (e as { status?: number }).status === 401 ? 'Mã không đúng hoặc đã hết hạn.' : 'Mã chưa có quyền ghi vào kho website (Contents: Read and write).';
       }
     };
     const dlg = el('div', { className: 'pe-dialog' }, el('div', {},
       el('strong', { style: 'font-size:18px' }, 'Kết nối GitHub (làm một lần trên mỗi máy)'),
-      el('span', {}, 'Để lưu ảnh lên website, trình duyệt cần một mã truy cập GitHub. Mã chỉ lưu trên máy này.'),
+      el('span', {}, 'Để lưu ảnh lên website, trình duyệt cần một mã truy cập GitHub. Mã chỉ lưu trong trình duyệt này, tự xoá khi đóng trình duyệt (trừ khi chọn ghi nhớ).'),
       el('ol', {},
         el('li', {}, 'Mở ', el('a', { href: 'https://github.com/settings/personal-access-tokens/new', target: '_blank', rel: 'noopener', textContent: 'trang tạo mã của GitHub' }), ' (đăng nhập GitHub nếu được hỏi).'),
-        el('li', {}, 'Token name: "Sửa ảnh website". Expiration: chọn thời hạn (ví dụ 1 năm).'),
+        el('li', {}, 'Token name: "Sửa ảnh website". Expiration: 90 ngày (hết hạn thì tạo mã mới).'),
         el('li', {}, `Repository access: Only select repositories → ${REPO.split('/')[1]}.`),
         el('li', {}, 'Permissions → Repository permissions: Contents = Read and write; Actions = Read-only.'),
         el('li', {}, 'Bấm Generate token, sao chép mã và dán vào ô dưới đây.')),
-      input, msg,
-      el('div', { className: 'pe-row' }, ok, el('button', { className: 'pe-secondary', onclick: () => close(!!store.get(TOKEN_KEY)) }, 'Để sau'),
-        ...(store.get(TOKEN_KEY) ? [el('button', { className: 'pe-secondary', onclick: () => { store.set(TOKEN_KEY, null); close(false); } }, 'Ngắt kết nối')] : [])),
+      input,
+      el('label', { style: 'display:flex;gap:8px;align-items:center;font-size:14px' }, remember, 'Ghi nhớ trên máy này (chỉ chọn trên máy riêng của bạn)'),
+      msg,
+      el('div', { className: 'pe-row' }, ok, el('button', { className: 'pe-secondary', onclick: () => close(!!ghKey.get()) }, 'Để sau'),
+        ...(ghKey.get() ? [el('button', { className: 'pe-secondary', onclick: () => { ghKey.set(null); close(false); } }, 'Ngắt kết nối')] : [])),
     ));
     document.body.append(dlg);
     input.focus();
@@ -323,7 +337,7 @@ function updateContent(file: string, text: string, path: string, value: Record<s
 
 async function saveActive(button: HTMLButtonElement, status: HTMLElement) {
   const s = active!;
-  if (!store.get(TOKEN_KEY) && !(await login())) return;
+  if (!ghKey.get() && !(await login())) return;
   const [file, path] = s.slot.dataset.cms!.split('#');
   button.disabled = true; status.textContent = 'Đang lưu…';
   try {
@@ -369,7 +383,7 @@ async function saveActive(button: HTMLButtonElement, status: HTMLElement) {
     button.disabled = false;
     const st = (e as { status?: number }).status;
     status.textContent = st === 401 ? 'Mã GitHub hết hạn — bấm "Kết nối GitHub" để nhập mã mới.' : st === 403 || st === 404 ? 'Mã GitHub chưa có quyền ghi vào kho website.' : 'Lưu không thành công, vui lòng thử lại.';
-    if (st === 401) store.set(TOKEN_KEY, null), renderBar();
+    if (st === 401) ghKey.set(null), renderBar();
   }
 }
 
@@ -377,10 +391,12 @@ async function watchDeploy(sha: string, status: HTMLElement) {
   for (let i = 0; i < 40; i++) {
     await new Promise((r) => setTimeout(r, 15000));
     try {
+      // Two deploy workflows may run (GitHub Pages preview, Mắt Bão); wait until all of them have finished.
       const runs = await gh<{ workflow_runs: { status: string; conclusion: string | null }[] }>(`/repos/${REPO}/actions/runs?head_sha=${sha}`);
-      const run = runs.workflow_runs[0];
-      if (run?.status === 'completed') {
-        status.textContent = run.conclusion === 'success' ? 'Website đã cập nhật ✓' : 'Cập nhật website bị lỗi — báo cho người phụ trách kỹ thuật.';
+      const all = runs.workflow_runs;
+      if (all.length && all.every((r) => r.status === 'completed')) {
+        const ok = all.every((r) => r.conclusion === 'success' || r.conclusion === 'skipped');
+        status.textContent = ok ? 'Website đã cập nhật ✓' : 'Cập nhật website bị lỗi — báo cho người phụ trách kỹ thuật.';
         return;
       }
     } catch { return; /* token without Actions permission: keep the generic message */ }
