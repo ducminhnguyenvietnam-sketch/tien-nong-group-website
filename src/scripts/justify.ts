@@ -49,8 +49,19 @@ function unglue() {
     }
   }
 }
+/** Blocks marked data-unglued in the markup (news card titles) are justified with ordinary spaces from
+ *  the start: kept-together word pairs would leave wide gaps in such short lines. */
+function ungluedFromMarkup() {
+  for (const el of document.querySelectorAll<HTMLElement>('main [data-unglued]')) {
+    const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    for (let n = walk.nextNode(); n; n = walk.nextNode()) {
+      if (n.textContent && n.textContent.includes('\u00A0')) n.textContent = n.textContent.replace(/\u00A0/g, ' ');
+    }
+  }
+}
 let t = 0;
 const later = () => { clearTimeout(t); t = window.setTimeout(() => { unglue(); run(); }, 120); };
+ungluedFromMarkup();
 unglue();
 run();
 addEventListener('resize', later);

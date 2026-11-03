@@ -25,14 +25,14 @@ const tags = [...new Set(programs.map((p) => p.tag).filter(isFilled))];
 const sentence = (t: string) => t.charAt(0) + t.slice(1).toLowerCase();
 const facts = c.plant.facts.filter((f) => isFilled(f.value));
 ---
-<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Phát triển bền vững">
+<Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Phát triển bền vững">
 <PageHero id="esg-hero" image={c.hero.image} cms={`${F}#hero.image`} placeholder="Hoạt động cộng đồng hoặc khuôn viên nhà máy xanh"
   crumbs={[{ label: c.hero.breadcrumb_home, href: url('trang-chu') }, { label: c.hero.breadcrumb_self }]}
   eyebrow={c.hero.eyebrow} title={c.hero.title} lead={c.hero.intro}>
 <a href="#vi-sao" class="page-hero__btn page-hero__btn--solid">{c.hero.button1}</a><a href="#ong-bo" class="page-hero__btn">{c.hero.button2}</a>
 </PageHero>
 
-<section class="st-sec st-sec--card"><div class="st-wrap st-wrap--s"><Stats items={c.stats} /></div></section>
+<section id="so-lieu" class="st-sec st-sec--card"><div class="st-wrap st-wrap--s"><Stats items={c.stats} /></div></section>
 
 <nav class="st-subnav" aria-label="Các phần của trang"><div>
 <a href="#vi-sao">{c.nav.why}</a><a href="#dat-khoe">{c.nav.soil}</a><a href="#nha-may-xanh">{c.nav.plant}</a><a href="#nha-nong">{c.nav.farmers}</a><a href="#cong-dong">{c.nav.community}</a><a href="#lo-trinh">{c.nav.roadmap}</a>
@@ -95,16 +95,15 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 </div>
 </div></section>
 
-<section id="cong-dong" class="st-sec st-sec--dark pv-community" style={`--leaf:url(${asset('assets/logo-la-trang.png')})`}>
+<section id="cong-dong" class="st-sec st-sec--dark pv-community" style={`--leaf:url(${asset('assets/logo-la-chi.png')})`}>
 <div class="st-wrap" id="ong-bo">
 <div class="pv-c-top">
 <Head eyebrow={c.orphans.eyebrow} title={c.orphans.title} intro={c.orphans.intro} />
 <figure class="pv-c-photo"><ImageSlot style={fill} id="esg-orphans" shape="rounded" radius="20" placeholder={c.orphans.image.alt || 'Ông bố Tiến Nông'} image={c.orphans.image} cms={`${F}#orphans.image`} sizes="(max-width: 899px) 92vw, 600px" />{isFilled(c.orphans.photo_caption) && <figcaption>{c.orphans.photo_caption}</figcaption>}</figure>
 </div>
 <ul class="pv-c-stats">{c.orphans.stats.filter((st) => isFilled(st.value)).map((st) => <li><b>{st.value}{isFilled(st.unit) && <small>{st.unit}</small>}</b><span>{st.label}</span></li>)}</ul>
-<YearTabs items={c.orphans.timeline} tone="dark" photos={false} title={c.orphans.timeline_title} hint={c.orphans.timeline_hint} cms={`${F}#orphans.timeline`} id="orphan-year">
+<YearTabs items={c.orphans.timeline} tone="dark" photos={false} title={c.orphans.timeline_title} autoplay={6000} cms={`${F}#orphans.timeline`} id="orphan-year">
 <article slot="aside" class="pv-c-story">
-<div class="pv-c-story__img"><ImageSlot style={fill} id="orphan-story" shape="rounded" radius="12" placeholder="Ảnh em Ngô Hùng Hà" image={c.orphans.story_image} cms={`${F}#orphans.story_image`} sizes="200px" /></div>
 <div class="pv-c-story__text">
 {isFilled(c.orphans.story_eyebrow) && <span class="pv-c-story__eyebrow">{c.orphans.story_eyebrow}</span>}
 <strong>{c.orphans.story_title}</strong>
@@ -116,7 +115,7 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 {isFilled(c.orphans.partners) && <p class="st-lead" style="font-size:15px">{c.orphans.partners}</p>}
 </div></section>
 
-<section class="st-sec">
+<section id="chuong-trinh" class="st-sec">
 <div class="st-wrap">
 <Head eyebrow={c.programs.eyebrow} title={c.programs.title} intro={c.programs.intro} split />
 {tags.length > 1 && <div data-filter-group="prog" style="display:flex;gap:8px;flex-wrap:wrap">{['*', ...tags].map((t, k) => <button type="button" class="chip" data-filter={t} aria-pressed={k === 0 ? 'true' : 'false'} style="padding:8px 16px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);color:var(--text-primary);font:600 15px var(--font-body);cursor:pointer">{t === '*' ? c.programs.all_label : sentence(t)}</button>)}</div>}
@@ -124,7 +123,7 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 {programs.map((p, k) => {
   const inner = <>
     <div class="st-card__img"><ImageSlot style={fill} id={`prog-${k}`} shape="rect" placeholder={p.image.alt} image={p.image} cms={`${F}#programs.items.${k}.image`} sizes="(max-width: 767px) 92vw, 400px" /></div>
-    <div class="st-card__body"><span class="st-card__tag">{p.tag} · {p.year}</span><strong class="st-card__title">{p.title}</strong><span class="st-card__text">{p.body}</span>{isFilled(p.link) && <span class="st-card__link">Xem thêm →</span>}</div>
+    <div class="st-card__body"><span class="st-card__tag">{p.tag} · {p.year}</span><strong class="st-card__title pv-programs__title jx-justify" data-unglued>{p.title}</strong><span class="st-card__text">{p.body}</span>{isFilled(p.link) && <span class="st-card__link">Xem thêm →</span>}</div>
   </>;
   return isFilled(p.link)
     ? <a class="st-card" data-filter-item="prog" data-tags={p.tag} href={link(p.link)}>{inner}</a>
@@ -132,7 +131,7 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 })}
 </div></div></section>
 
-<section class="ts-teaser" aria-label={ts.hero.title}>
+<section id="truong-sa" class="ts-teaser" aria-label={ts.hero.title}>
 <a href={url('phat-trien-ben-vung/xanh-hoa-truong-sa')} class="ts-teaser__link">
 <div class="ts-teaser__photo"><ImageSlot style={fill} id="ts-teaser" shape="rect" placeholder="Ảnh Xanh hoá Trường Sa" image={ts.hero.background} cms="src/content/pages/xanh-hoa-truong-sa.json#hero.background" sizes="100vw" /></div>
 <div class="ts-teaser__scrim" aria-hidden="true"></div>
@@ -173,14 +172,15 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
   .pv-c-stats b { font: 700 clamp(34px, 3.4vw, 46px)/1 var(--font-display); color: var(--brand-highlight); }
   .pv-c-stats small { margin-left: 8px; font-size: 18px; font-weight: 600; }
   .pv-c-stats span { font-size: 14px; color: var(--green-100); }
-  .pv-c-story { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 18px; padding: 22px; border-radius: var(--radius-lg); background: rgba(255, 255, 255, .06); border: 1px solid rgba(245, 196, 78, .35); }
-  .pv-c-story__img { position: relative; aspect-ratio: 3 / 4; }
+  .pv-c-story { display: block; padding: clamp(22px, 2.4vw, 30px); border-radius: var(--radius-lg); background: rgba(255, 255, 255, .06); border: 1px solid rgba(245, 196, 78, .35); }
   .pv-c-story__text { display: flex; flex-direction: column; gap: 8px; }
   .pv-c-story__eyebrow { font: 700 11px/1.3 var(--font-display); letter-spacing: .1em; color: var(--brand-highlight); }
   .pv-c-story strong { font: 700 20px/1.3 var(--font-display); color: #fff; }
   .pv-c-story p { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--green-50); }
   .pv-c-story a { align-self: flex-start; font-weight: 600; font-size: 14px; color: var(--brand-highlight); }
   .pv-programs { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  /* Other programmes: smaller titles, justified (ordinary spaces, so words may wrap freely) — fewer lines per card. */
+  .pv-programs__title { font-size: 16px !important; line-height: 1.4 !important; text-wrap: wrap !important; }
   @media (max-width: 1099.98px) {
     .pv-pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .pv-programs { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
@@ -191,7 +191,7 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
   @media (max-width: 599.98px) {
     .pv-pillars, .pv-programs { grid-template-columns: minmax(0, 1fr) !important; }
     .pv-c-stats { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-    .pv-c-story { grid-template-columns: 88px minmax(0, 1fr); padding: 16px; }
+    .pv-c-story { padding: 18px; }
   }
   .ts-teaser { background: var(--green-900); }
   .ts-teaser__link { position: relative; display: block; min-height: clamp(300px, 34vw, 460px); color: #fff; text-decoration: none; overflow: hidden; }

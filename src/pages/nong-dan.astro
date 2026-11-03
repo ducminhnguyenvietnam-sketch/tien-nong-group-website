@@ -39,7 +39,7 @@ const hardship = await Promise.all(c.hardship.items.map(async (h) => {
   return { ...h, img: n?.data.cover?.src ? { ...n.data.cover, alt: n.data.cover.alt || h.title } : h.image };
 }));
 ---
-<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Nông dân Tiến Nông">
+<Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Nông dân Tiến Nông">
 <section style="position:relative;min-height:min(72vh,620px);background:var(--green-900);display:flex">
 <div style="position:absolute;inset:0"><ImageSlot style={fill} id="farmer-hero" shape="rect" placeholder="Nông dân và kỹ sư Tiến Nông trên cánh đồng" image={c.hero.image} cms={`${F}#hero.image`} /></div>
 <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,53,26,.82) 0%,rgba(2,53,26,.45) 50%,rgba(2,53,26,0) 82%)"></div>
@@ -84,7 +84,7 @@ const hardship = await Promise.all(c.hardship.items.map(async (h) => {
 <h3 class="st-h3">{c.deferred.how_title}</h3>
 <ol class="st-steps" style="--min:220px">{c.deferred.how.map((s) => <li><strong>{s.title}</strong><span>{s.text}</span></li>)}</ol>
 {isFilled(c.deferred.timeline_title) && <h3 class="st-h3">{c.deferred.timeline_title}</h3>}
-<YearTabs items={c.deferred.timeline} tone="dark" linkLabel="Xem thêm" cms={`${F}#deferred.timeline`} id="deferred-year" />
+<YearTabs items={c.deferred.timeline} tone="dark" linkLabel="Xem thêm" autoplay={6000} cms={`${F}#deferred.timeline`} id="deferred-year" />
 <div class="nd-join">
 <div><strong>{c.deferred.join_title}</strong><p class="jx-justify">{c.deferred.join_text}</p></div>
 <div class="nd-join__actions"><a href="#dang-ky" class="nd-hbtn nd-hbtn--solid">{c.hero.button1}<span aria-hidden="true">↗</span></a>{isFilled(hotline) && <a href={tel(hotline)} class="nd-hbtn">☎ {hotline}</a>}</div>

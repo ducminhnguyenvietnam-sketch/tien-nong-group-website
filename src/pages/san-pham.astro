@@ -16,7 +16,6 @@ const PER_PAGE = 16;
 const products = await getProducts();
 const lines = c.lines;
 const lineLabel = (key: string) => (lines.find((l) => l.key === key)?.label ?? '').replace('Phân bón ', '');
-const bags = (['bag1', 'bag2', 'bag3'] as const).map((k) => ({ key: k, image: c.hero?.[k] }));
 
 /** Composition boxes on the hover card: the bag's headline nutrients, value as a percentage. */
 const pct = (v: string) => (/%$/.test(v.trim()) ? v.trim() : `${v.trim()}%`);
@@ -32,7 +31,7 @@ function highlights(benefits: string[], summary: string) {
 }
 const breakName = (n: string) => n.replace(/\+/g, '+​');
 ---
-<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Sản phẩm">
+<Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Sản phẩm">
 <section class="sp-hero">
 <div class="sp-hero__row">
 <div class="sp-hero__copy">
@@ -45,13 +44,11 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
 </div>
 {isFilled(c.s01_tieu_de.link1) && <a class="sp-hero__catalogue" href={link(c.s01_tieu_de.link1)} target="_blank" rel="noopener">{c.s01_tieu_de.t6} →</a>}
 </div>
-<div class="sp-hero__bags" aria-hidden="true">
-{bags.map((b, i) => <div class={`sp-hero__bag sp-hero__bag--${i + 1}`}><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`product-hero-${b.key}`} shape="rect" fit="contain" priority placeholder="Ảnh bao sản phẩm nền trong suốt" image={b.image} cms={`src/content/pages/san-pham.json#hero.${b.key}`} sizes="240px" /></div>)}
-</div>
+<div class="sp-hero__visual"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="product-hero" shape="rect" fit="contain" priority placeholder="Ảnh lớn đầu trang (PNG nền trong suốt, ví dụ bộ bao sản phẩm)" image={c.hero.image} cms="src/content/pages/san-pham.json#hero.image" sizes="(max-width: 899px) 92vw, 620px" /></div>
 </div>
 </section>
 
-<section class="sp-list">
+<section id="danh-sach" class="sp-list">
 <div class="sp-list__wrap">
 <nav class="sp-crumbs" aria-label="Đường dẫn"><a href={url('trang-chu')}>{c.s01_tieu_de.t1}</a> <span aria-current="page">{c.s01_tieu_de.t2}</span></nav>
 <div class="sp-tabs"><Tabs id="line-tabs" label="Dòng sản phẩm" items={[{ value: 'all', label: c.lines_all_label }, ...lines.map((l) => ({ value: l.key, label: l.label }))]} value="all" /></div>
@@ -164,8 +161,6 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
   /* Hero: brand green, title and two buttons on the left, three product bags standing on the right. */
   .sp-hero { position: relative; overflow: hidden; color: #fff;
     background: radial-gradient(90% 120% at 82% 60%, #0b5a30 0%, var(--green-800) 55%, #003a1c 100%); }
-  .sp-hero::after { content: ''; position: absolute; right: 8%; bottom: 46px; width: 520px; height: 60px; border-radius: 50%;
-    background: radial-gradient(closest-side, rgba(0, 0, 0, .35), rgba(0, 0, 0, 0)); pointer-events: none; }
   .sp-hero__row { position: relative; z-index: 1; max-width: var(--wrap, 1280px); margin: 0 auto; padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 56px);
     display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 32px; align-items: center; min-height: clamp(380px, 32vw, 460px); }
   .sp-hero__copy { display: flex; flex-direction: column; gap: 18px; max-width: 600px; }
@@ -183,12 +178,9 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
   .sp-btn--light:hover { background: var(--green-50); color: var(--green-800); text-decoration: none; }
   .sp-hero__catalogue { color: var(--green-100); font-weight: 600; font-size: 15px; }
   .sp-hero__catalogue:hover { color: #fff; }
-  .sp-hero__bags { position: relative; display: flex; justify-content: center; align-items: flex-end; height: clamp(260px, 25vw, 340px); }
-  .sp-hero__bag { position: relative; aspect-ratio: 1 / 1.96; filter: drop-shadow(0 18px 22px rgba(0, 0, 0, .35)); }
-  .sp-hero__bag :global(.img-slot__frame) { background: transparent !important; }
-  .sp-hero__bag--1 { height: 74%; margin-right: -4%; transform: rotate(-4deg); transform-origin: bottom center; }
-  .sp-hero__bag--2 { height: 100%; z-index: 2; }
-  .sp-hero__bag--3 { height: 90%; margin-left: -2%; transform: rotate(3deg); transform-origin: bottom center; }
+  /* One large picture on the right (the designer's composition, e.g. the product bags), replaceable in the CMS or with ?sua-anh. */
+  .sp-hero__visual { position: relative; align-self: stretch; min-height: clamp(280px, 30vw, 420px); }
+  .sp-hero__visual :global(.img-slot__frame) { background: transparent !important; }
 
   .sp-list { background: var(--surface-page); }
   .sp-list__wrap { max-width: var(--wrap, 1280px); margin: 0 auto; padding: 24px clamp(20px, 4vw, 56px) clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 24px; }
@@ -258,8 +250,7 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
   }
   @media (max-width: 899.98px) {
     .sp-hero__row { grid-template-columns: 1fr; }
-    .sp-hero__bags { height: 240px; }
-    .sp-hero::after { right: 50%; transform: translateX(50%); width: 360px; }
+    .sp-hero__visual { min-height: 260px; }
   }
   @media (max-width: 599.98px) {
     .prod-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
@@ -267,6 +258,6 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
     .prod-card__img { height: 170px; margin: 12px 12px 0; }
     .prod-card__body { padding: 12px 12px 14px; gap: 6px; }
     .prod-card__name { font-size: 14.5px; }
-    .sp-hero__bags { height: 200px; }
+    .sp-hero__visual { min-height: 220px; }
   }
 </style>

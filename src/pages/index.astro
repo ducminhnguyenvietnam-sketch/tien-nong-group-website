@@ -55,7 +55,7 @@ const banner = c.product_banner;
 const hasBanner = isFilled(banner?.image?.src);
 const bannerText = isFilled(banner?.title);
 ---
-<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Trang chủ">
+<Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Trang chủ">
 <section class="hero-slider" data-slider aria-roledescription="carousel" aria-label="Giới thiệu Tiến Nông">
 {c.hero_slides.map((s, n) => (
 <div class:list={['hero-slide', { 'is-active': n === 0 }]} data-slide={n} data-empty-slide={n > 0 && !s.image?.src ? '' : undefined} role="group" aria-roledescription="slide" aria-label={`${n + 1} / ${c.hero_slides.length}`} aria-hidden={n === 0 ? 'false' : 'true'}>
@@ -76,8 +76,8 @@ const bannerText = isFilled(banner?.title);
 </div>
 ))}
 {c.hero_slides.length > 1 && <>
-<button type="button" class="hero-arrow" data-slide-step="-1" aria-label="Slide trước" style="left:clamp(8px,2vw,24px)">‹</button>
-<button type="button" class="hero-arrow" data-slide-step="1" aria-label="Slide sau" style="right:clamp(8px,2vw,24px)">›</button>
+<button type="button" class="hero-arrow" data-slide-step="-1" aria-label="Slide trước" style="left:clamp(8px,2vw,24px)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+<button type="button" class="hero-arrow" data-slide-step="1" aria-label="Slide sau" style="right:clamp(8px,2vw,24px)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
 <div class="hero-dots" role="tablist" aria-label="Chọn slide">
 {c.hero_slides.map((_s, n) => <button type="button" role="tab" data-slide-to={n} aria-selected={n === 0 ? 'true' : 'false'} aria-label={`Slide ${n + 1}`}></button>)}
 </div>
@@ -227,7 +227,7 @@ const bannerText = isFilled(banner?.title);
   const inner = <>
     <span class="ncard__img"><ImageSlot style={FILL} id={`csr-${n}`} shape="rect" placeholder={ph} image={img} cms={`${F}#s08_vi_cong_dong.img_csr_${n}_1`} sizes="(max-width: 767px) 80vw, 300px" /></span>
     {isFilled(tag) && <span class="ncard__meta"><span class="h-chip">{tag}</span></span>}
-    <strong class="ncard__title jx-justify">{title}</strong>
+    <strong class="ncard__title jx-justify" data-unglued>{title}</strong>
   </>;
   return isFilled(href) ? <a href={link(href)} class="ncard">{inner}</a> : <div class="ncard">{inner}</div>;
 })}
@@ -265,7 +265,7 @@ const bannerText = isFilled(banner?.title);
 {latest.map((n) => <a href={newsUrl(n)} class="ncard">
 <span class="ncard__img"><ImageSlot style={FILL} id={`news-${n.id}`} shape="rect" placeholder="Ảnh bài viết" image={n.data.cover} cms={`${n.filePath}#cover`} sizes="(max-width: 767px) 80vw, 300px" /></span>
 <span class="ncard__meta"><span class="h-chip">{CATEGORIES[n.data.category]}</span>{n.data.date && <time datetime={n.data.date.toISOString().slice(0, 10)}>{formatDate(n.data.date)}</time>}</span>
-<strong class="ncard__title jx-justify">{n.data.title}</strong>
+<strong class="ncard__title jx-justify" data-unglued>{n.data.title}</strong>
 </a>)}
 </div></div></section>
 </Layout>
@@ -320,7 +320,7 @@ const bannerText = isFilled(banner?.title);
   .hero-title { margin: 0; font: var(--type-display); letter-spacing: -.015em; text-wrap: balance; }
   .hero-text { margin: 0; font-size: var(--fs-lead); line-height: 1.6; color: var(--green-50); max-width: 610px; }
   .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; pointer-events: auto; }
-  .hero-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(0,0,0,.28); color: #fff; font: 400 30px/1 var(--font-body); cursor: pointer; display: flex; align-items: center; justify-content: center; padding-bottom: 4px; }
+  .hero-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(0,0,0,.28); color: #fff; font: 400 30px/1 var(--font-body); cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; }
   .hero-arrow:hover { background: rgba(0,0,0,.5); }
   .hero-dots { position: absolute; left: 0; right: 0; bottom: 20px; z-index: 3; display: flex; justify-content: center; gap: 10px; }
   .hero-dots button { width: 10px; height: 10px; padding: 0; border-radius: 999px; border: 0; background: rgba(255,255,255,.55); cursor: pointer; transition: width .3s, background .3s; }
@@ -455,7 +455,7 @@ const bannerText = isFilled(banner?.title);
   .plant { position: relative; display: flex; min-height: 720px; background: var(--gray-800); }
   .plant__photo { position: absolute; inset: 0; }
   .plant__wrap { position: relative; width: 100%; padding-block: 56px; display: flex; align-items: flex-start; pointer-events: none; }
-  .plant__card { width: min(100%, 575px); pointer-events: auto; display: flex; flex-direction: column; gap: 16px; padding: clamp(26px, 3vw, 34px);
+  .plant__card { width: min(100%, 660px); pointer-events: auto; display: flex; flex-direction: column; gap: 16px; padding: clamp(26px, 3vw, 34px);
     background: rgba(255, 255, 255, .96); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); backdrop-filter: blur(6px); }
   .plant__title { margin: 0; font: var(--type-h3); font-size: clamp(24px, 2.2vw, 30px); color: var(--green-800); text-wrap: balance; }
   .plant__text { margin: 0; color: var(--text-secondary); }

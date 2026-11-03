@@ -53,9 +53,9 @@ const titleParts = (() => {
 })();
 const two = (n: number) => String(n + 1).padStart(2, '0');
 const tnVideo = youtubeId(c.principles.youtube);
-const stories = c.family.stories.map((st, k) => ({ ...st, k })).filter((st) => isFilled(st.names));
+const stories = c.family.stories.map((st, k) => ({ ...st, k }) as typeof st & { k: number }).filter((st) => isFilled(st.names));
 ---
-<Layout title={c.seo.title || undefined} description={c.seo.description || undefined} active="Về Tiến Nông">
+<Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Về Tiến Nông">
 <PageHero id="vh-hero" image={c.hero.background} cms={`${F}#hero.background`} placeholder={c.hero.background?.alt || 'Tập thể cán bộ, nhân viên Tiến Nông'}
   crumbs={[{ label: c.hero.breadcrumb_home, href: url('trang-chu') }, { label: c.hero.breadcrumb_parent, href: url('ve-tien-nong') }, { label: c.hero.breadcrumb_self }]}
   eyebrow={c.hero.eyebrow} title={c.hero.title} lead={c.hero.intro} leadWidth={775}>
@@ -64,7 +64,7 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k })).filter((st) => i
 
 <FigureCard overlap items={c.stats} />
 
-{slogan && <section class="vh-slogan">
+{slogan && <section id="thong-diep" class="vh-slogan">
 <div class="vh-slogan__wrap">
 <span class="vh-slogan__label">{slogan.label}</span>
 <p class="vh-slogan__text">{sloganParts.length > 1 ? <><span>{sloganParts[0]}</span><span class="vh-slogan__dash"> – </span><span class="vh-slogan__gold">{sloganParts.slice(1).join(' – ')}</span></> : slogan.text}</p>
@@ -139,13 +139,14 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k })).filter((st) => i
 <div class="vh-fam__head">
 <Head eyebrow={c.family.eyebrow} title={c.family.title} intro={c.family.intro} split />
 </div>
-<div class="vh-fam">
+<div class="vh-fam" data-count={Math.min(stories.length, 3)}>
 {stories.map((st) => <article class="vh-fam__card">
 <div class="vh-fam__img"><ImageSlot style={fill} id={`vh-family-${st.k}`} shape="rect" placeholder={st.names} image={st.image} cms={`${F}#family.stories.${st.k}.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
 <div class="vh-fam__body">
 {isFilled(st.tag) && <span class="vh-fam__tag">{st.tag}</span>}
 <h3>{st.names}</h3>
 <p class="jx-justify">{st.text}</p>
+{isFilled(st.link) && <a href={link(st.link)} class="vh-link vh-fam__read">{st.link_label || 'Đọc câu chuyện'} →</a>}
 </div>
 </article>)}
 </div>
@@ -203,18 +204,18 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k })).filter((st) => i
 </div>
 </div></section>}
 
-{poems.length > 0 && <section class="st-sec st-sec--card">
+{poems.length > 0 && <section id="tho" class="st-sec st-sec--card">
 <div class="st-wrap">
 <Head eyebrow={c.poems.eyebrow} title={c.poems.title} intro={c.poems.intro} split />
 <div class="st-grid" style="--min:340px">
 {poems.map((p) => <figure style="margin:0;display:flex;flex-direction:column;gap:16px;padding:clamp(24px,3vw,36px);background:var(--surface-page);border-left:4px solid var(--amber-400);border-radius:var(--radius-lg)"><strong style="font:var(--type-num)">{p.title}</strong><blockquote style="margin:0;white-space:pre-line;font:500 17px/1.8 var(--font-display);color:var(--text-primary)">{p.text}</blockquote><figcaption style="display:flex;flex-direction:column;padding-top:12px;border-top:1px solid var(--border-default)"><strong>{p.author}</strong><span style="font-size:14px;color:var(--text-secondary)">{p.place}</span></figcaption></figure>)}
 </div></div></section>}
 
-<section class="st-sec" data-needs-photos={hasGallery ? undefined : ''}>
+<section id="khoanh-khac" class="st-sec" data-needs-photos={hasGallery ? undefined : ''}>
 <div class="st-wrap">
 <Head eyebrow={c.gallery.eyebrow} title={c.gallery.title} />
 <div class="vh-gallery">
-{c.gallery.photos.map((ph, k) => <div style="position:relative;min-height:200px"><ImageSlot style={fill} id={`vh-gallery-${k}`} shape="rounded" radius="16" placeholder={ph.alt} image={ph} cms={`${F}#gallery.photos.${k}`} /></div>)}
+{c.gallery.photos.map((ph, k) => <figure class="vh-gallery__item"><ImageSlot style={fill} id={`vh-gallery-${k}`} shape="rounded" radius="16" placeholder={ph.alt} image={ph} cms={`${F}#gallery.photos.${k}`} />{isFilled(ph.alt) && <figcaption>{ph.alt}</figcaption>}</figure>)}
 </div></div></section>
 
 <CtaBand title={c.cta.title} text={c.cta.text} primary={{ label: c.cta.button_jobs, href: url('tuyen-dung', 'vi-tri') }} secondary={{ label: c.cta.button_about, href: url('ve-tien-nong') }} />
@@ -262,8 +263,12 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k })).filter((st) => i
   .vh-tn__list strong { font: 600 clamp(19px, 1.75vw, 24px)/1.35 var(--font-display); color: #fff; text-align: start; }
 
 
-  /* Family: two couples, photo + short story. */
-  .vh-fam { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  /* Family: couples' stories, photo + short text; up to three to a row. */
+  .vh-fam { display: grid; grid-template-columns: repeat(var(--fam-cols, 3), minmax(0, 1fr)); gap: 24px; }
+  .vh-fam[data-count='1'] { --fam-cols: 1; max-width: 760px; }
+  .vh-fam[data-count='2'] { --fam-cols: 2; }
+  .vh-fam__read { margin-top: auto; align-self: flex-start; }
+  .vh-fam__body { flex: 1; }
   .vh-fam__card { display: flex; flex-direction: column; background: var(--surface-page); border: 1px solid var(--border-default); border-radius: var(--radius-xl); overflow: hidden; }
   .vh-fam__img { position: relative; aspect-ratio: 16 / 9; }
   .vh-fam__body { display: flex; flex-direction: column; gap: 10px; padding: clamp(20px, 2.4vw, 30px); }
@@ -288,7 +293,7 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k })).filter((st) => i
   .vh-values__list button[aria-selected='true'] .vh-values__txt span { color: var(--green-100); }
   .vh-values__stage { position: sticky; top: calc(var(--hdr-h, 72px) + 24px); }
   .vh-values__panel { margin: 0; display: flex; flex-direction: column; gap: 14px; }
-  .vh-values__panel:not([hidden]) { animation: vh-in 450ms var(--ease-out) both; }
+  .vh-values__panel:not([hidden]) { animation: vh-in 260ms var(--ease-out) both; }
   .vh-values__img { position: relative; aspect-ratio: 4 / 3; border-radius: var(--radius-xl); overflow: hidden; background: var(--surface-sunken); }
   .vh-values__panel figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 20px; flex-wrap: wrap; padding: 0 4px; }
   .vh-values__panel figcaption span { flex: 1 1 320px; font: 500 16px/1.5 var(--font-display); color: var(--text-primary); text-align: start; }
@@ -321,7 +326,7 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k })).filter((st) => i
   .vh-trad__body p { margin: 0; color: var(--green-50); font-size: 16px; line-height: 1.65; }
   .vh-trad__stage { position: relative; }
   .vh-trad__img { position: relative; aspect-ratio: 3 / 2; }
-  .vh-trad__img:not([hidden]) { animation: vh-in 450ms var(--ease-out) both; }
+  .vh-trad__img:not([hidden]) { animation: vh-in 260ms var(--ease-out) both; }
 
   /* Training: short intro, then three news cards. */
   .vh-learn__copy { display: flex; flex-direction: column; gap: 20px; }
@@ -374,14 +379,20 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k })).filter((st) => i
   /* Gallery mosaic: first photo large, the rest fill a 3-column grid. */
   .vh-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 220px; gap: 12px; }
   .vh-gallery > :first-child { grid-column: span 2; grid-row: span 2; }
+  .vh-gallery__item { position: relative; min-height: 200px; margin: 0; border-radius: 16px; overflow: hidden; }
+  .vh-gallery__item figcaption { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 44px 16px 14px; pointer-events: none; text-align: start;
+    background: linear-gradient(0deg, rgba(2, 53, 26, .9) 0%, rgba(2, 53, 26, .55) 55%, rgba(2, 53, 26, 0) 100%); color: #fff; font: 600 14px/1.4 var(--font-display); }
+  .vh-gallery__item:first-child figcaption { font-size: 17px; padding: 60px 22px 20px; }
 
   @media (max-width: 1023.98px) {
-    .vh-origin, .vh-tn, .vh-values, .vh-trad, .vh-song, .vh-fam { grid-template-columns: minmax(0, 1fr); }
+    .vh-origin, .vh-tn, .vh-values, .vh-trad, .vh-song { grid-template-columns: minmax(0, 1fr); }
+    .vh-fam[data-count='3'] { --fam-cols: 2; }
     .vh-measure__list { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
     .vh-values__stage { position: static; order: -1; }
     .vh-trad__stage { order: -1; }
     .vh-learn__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
+  @media (max-width: 699.98px) { .vh-fam { --fam-cols: 1 !important; } }
   @media (max-width: 899.98px) { .vh-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 180px; } }
   @media (max-width: 599.98px) {
     .vh-slogan__more { grid-template-columns: minmax(0, 1fr); }
