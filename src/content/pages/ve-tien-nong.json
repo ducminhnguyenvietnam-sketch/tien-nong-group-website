@@ -743,6 +743,15 @@
           "zoom": "100"
         },
         "featured": false
+      },
+      {
+        "name": "Zoom VN",
+        "logo": {
+          "src": "/uploads/4.png",
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "featured": false
       }
     ]
   },
