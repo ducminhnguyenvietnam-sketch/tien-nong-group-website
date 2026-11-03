@@ -372,7 +372,9 @@
       {
         "image": {
           "focus": "50% 50%",
-          "zoom": "100"
+          "zoom": "100",
+          "src": "/uploads/fame-17-mw0e1q2e.jpg",
+          "alt": "Ảnh giải thưởng"
         },
         "label": "KHOA HỌC & CÔNG NGHỆ",
         "title": "Bằng Lao động Sáng tạo",
