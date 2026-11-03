@@ -217,14 +217,14 @@
       },
       {
         "image": {
-          "src": "/uploads/award-kh2-mvj7oi4n.png",
+          "src": "/uploads/award-cl2-mvj87k4q.png",
           "focus": "50% 50%",
           "zoom": "100",
-          "alt": "Ảnh Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam"
+          "alt": "Ảnh Giải thưởng Chất lượng Việt Nam"
         },
-        "label": "KHOA HỌC & CÔNG NGHỆ",
-        "title": "Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam",
-        "detail": "2014"
+        "label": "CHẤT LƯỢNG & THƯƠNG HIỆU",
+        "title": "Giải thưởng Chất lượng Việt Nam",
+        "detail": "2002"
       },
       {
         "image": {
@@ -239,14 +239,25 @@
       },
       {
         "image": {
-          "src": "/uploads/award-cl2-mvj87k4q.png",
+          "src": "/uploads/fame-10-mw0bw4nw.png",
           "focus": "50% 50%",
           "zoom": "100",
-          "alt": "Ảnh Giải thưởng Chất lượng Việt Nam"
+          "alt": "Ảnh giải thưởng"
         },
         "label": "CHẤT LƯỢNG & THƯƠNG HIỆU",
-        "title": "Giải thưởng Chất lượng Việt Nam",
-        "detail": "2002"
+        "title": "Giải thưởng Sao Đỏ",
+        "detail": "2001"
+      },
+      {
+        "image": {
+          "src": "/uploads/award-kh2-mvj7oi4n.png",
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Ảnh Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam"
+        },
+        "label": "KHOA HỌC & CÔNG NGHỆ",
+        "title": "Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam",
+        "detail": "2014"
       },
       {
         "image": {
@@ -291,17 +302,6 @@
         "label": "CHÂU Á",
         "title": "Nhà Doanh nghiệp xuất sắc châu Á",
         "detail": "2015"
-      },
-      {
-        "image": {
-          "src": "/uploads/fame-10-mw0bw4nw.png",
-          "focus": "50% 50%",
-          "zoom": "100",
-          "alt": "Ảnh giải thưởng"
-        },
-        "label": "CHẤT LƯỢNG & THƯƠNG HIỆU",
-        "title": "Giải thưởng Sao Đỏ",
-        "detail": "2001"
       },
       {
         "image": {
