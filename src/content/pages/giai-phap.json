@@ -366,9 +366,10 @@
         "Vinafer Tiến Nông"
       ],
       "pack_image": {
-        "focus": "center",
+        "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Bộ sản phẩm phục hồi đất Tiến Nông"
+        "alt": "Bộ sản phẩm phục hồi đất Tiến Nông",
+        "src": "/uploads/issue-2-pack-mw0j0e8j.jpg"
       },
       "result_image": {
         "focus": "50% 50%",
