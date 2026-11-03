@@ -323,9 +323,10 @@
       "title": "Đất chua, đất phèn",
       "symptoms": "Cây còi cọc, rễ ngắn và ít, lá vàng hoặc đỏ tía; ruộng phèn có nước trong, váng vàng gạch, đất có mùi chua. Bón nhiều phân lân nhưng cây vẫn thiếu lân.",
       "image": {
-        "focus": "center",
+        "focus": "50% 0%",
         "zoom": "100",
-        "alt": "Ruộng đất phèn với váng vàng gạch trên mặt nước"
+        "alt": "Ruộng đất phèn với váng vàng gạch trên mặt nước",
+        "src": "/uploads/issue-1-problem-mw07ilzs.jpg"
       },
       "why": "Đất chua (pH dưới 5,5) chứa nhiều ion H⁺ và nhôm (Al³⁺) hòa tan gây độc, làm rễ ngắn và chết đầu rễ.\nNhôm, sắt trong đất chua giữ chặt lân, khiến phần lớn lượng lân bón vào cây không hút được.\nỞ đất phèn, khoáng pyrit (FeS₂) gặp không khí bị oxy hóa tạo axit sunfuric, đẩy pH xuống rất thấp. Vi sinh vật có ích cũng kém hoạt động trong môi trường chua.",
       "solution_name": "Điều hòa pH đất Tiến Nông",
