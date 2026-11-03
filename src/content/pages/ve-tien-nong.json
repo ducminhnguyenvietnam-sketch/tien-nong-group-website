@@ -356,9 +356,9 @@
       },
       {
         "image": {
+          "src": "/uploads/fame-16-mw0d8nl7.png",
           "focus": "50% 50%",
           "zoom": "100",
-          "src": "/uploads/fame-16-mw0d8nl7.png",
           "alt": "Ảnh giải thưởng"
         },
         "label": "KHOA HỌC & CÔNG NGHỆ",
@@ -373,6 +373,15 @@
         "label": "KHOA HỌC & CÔNG NGHỆ",
         "title": "Bằng Lao động Sáng tạo",
         "detail": "2014"
+      },
+      {
+        "image": {
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "label": "KHOA HỌC & CÔNG NGHỆ",
+        "title": "Vinh danh \"Doanh nghiệp Khoa học & Công nghệ tiêu biểu\"",
+        "detail": "2025"
       }
     ],
     "t27": "Hệ thống quản lý:",
