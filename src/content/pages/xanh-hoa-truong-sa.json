@@ -397,7 +397,13 @@
         "date": "11/06/2026",
         "title": "Tiến Nông đồng hành cùng Chương trình “Xanh hóa Trường Sa”",
         "summary": "Tiến Nông hỗ trợ phân bón cho cây xanh trên đảo; mỗi lời chúc hợp lệ gửi qua chiến dịch trực tuyến được quy đổi thành 1 kg phân bón.",
-        "url": "https://diendandoanhnghiep.vn/tien-nong-dong-hanh-cung-chuong-trinh-xanh-hoa-truong-sa-10180260.html"
+        "url": "https://diendandoanhnghiep.vn/tien-nong-dong-hanh-cung-chuong-trinh-xanh-hoa-truong-sa-10180260.html",
+        "logo": {
+          "focus": "50% 50%",
+          "zoom": "100",
+          "src": "/uploads/ts-press-2-mw0lsghj.png",
+          "alt": "Logo Tạp chí Diễn đàn Doanh nghiệp"
+        }
       },
       {
         "source": "Báo Nhân Dân",
