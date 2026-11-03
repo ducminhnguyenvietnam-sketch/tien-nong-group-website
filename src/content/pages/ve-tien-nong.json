@@ -718,7 +718,9 @@
         "featured": false
       },
       {
+        "name": "AN THANH PHAT",
         "logo": {
+          "src": "/uploads/logo-anthanhphat-2.png",
           "focus": "center",
           "zoom": "100"
         },
