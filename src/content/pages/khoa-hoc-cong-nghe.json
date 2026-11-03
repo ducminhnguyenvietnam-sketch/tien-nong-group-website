@@ -151,28 +151,35 @@
       {
         "name": "Viện Đổi mới sáng tạo Quốc Gia",
         "logo": {
+          "src": "/uploads/part-1-mvyz7gkn.png",
           "focus": "50% 50%",
           "zoom": "100",
-          "alt": "Logo",
-          "src": "/uploads/part-1-mvyz7gkn.png"
+          "alt": "Logo"
         }
       },
       {
         "name": "Viện Vi Sinh vật và Công nghệ Sinh học - Đại học Quốc Gia Hà Nội",
         "logo": {
+          "src": "/uploads/part-2-mw0ld79x.png",
           "focus": "50% 50%",
           "zoom": "100",
-          "alt": "Logo",
-          "src": "/uploads/part-2-mw0ld79x.png"
+          "alt": "Logo"
         }
       },
       {
         "name": "Viện Thổ nhưỡng Nông hóa",
         "logo": {
+          "src": "/uploads/part-3-mw0lell6.png",
           "focus": "50% 50%",
           "zoom": "100",
-          "alt": "Logo",
-          "src": "/uploads/part-3-mw0lell6.png"
+          "alt": "Logo"
+        }
+      },
+      {
+        "name": "Viện Bảo vệ Thực vật",
+        "logo": {
+          "focus": "center",
+          "zoom": "100"
         }
       }
     ]
