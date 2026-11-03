@@ -328,7 +328,9 @@
       {
         "image": {
           "focus": "50% 50%",
-          "zoom": "100"
+          "zoom": "100",
+          "src": "/uploads/fame-13-mw0c5nnl.jpg",
+          "alt": "Ảnh giải thưởng"
         },
         "label": "KHOA HỌC & CÔNG NGHỆ",
         "title": "Giải thưởng KOVA",
