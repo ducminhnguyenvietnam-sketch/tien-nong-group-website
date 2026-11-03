@@ -416,7 +416,13 @@
         "date": "13/06/2026",
         "title": "Vùng 4 Hải quân tiếp nhận vật tư, cây giống hưởng ứng “Xanh hóa Trường Sa”",
         "summary": "Trong lễ tiếp nhận tại Khánh Hòa, Tiến Nông trao 200 tấn phân bón vi sinh và 30 tấn NPK.",
-        "url": "https://nhandan.vn/vung-4-hai-quan-tiep-nhan-vat-tu-cay-giong-huong-ung-chuong-trinh-xanh-hoa-truong-sa-post969000.html"
+        "url": "https://nhandan.vn/vung-4-hai-quan-tiep-nhan-vat-tu-cay-giong-huong-ung-chuong-trinh-xanh-hoa-truong-sa-post969000.html",
+        "logo": {
+          "focus": "50% 50%",
+          "zoom": "100",
+          "src": "/uploads/ts-press-3-mw0lyqzq.png",
+          "alt": "Logo Báo Nhân Dân"
+        }
       },
       {
         "source": "Báo Tiền Phong",
