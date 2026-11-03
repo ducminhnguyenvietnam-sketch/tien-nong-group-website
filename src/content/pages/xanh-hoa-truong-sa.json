@@ -429,7 +429,13 @@
         "date": "14/06/2026",
         "title": "Tiến Nông trao tặng 230 tấn phân bón, chung tay xanh hóa Trường Sa",
         "summary": "Khoảng 230 tấn phân bón, trị giá gần 1,26 tỷ đồng, được trao cho Bộ Tư lệnh Vùng 4 Hải quân.",
-        "url": "https://tienphong.vn/tien-nong-trao-tang-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa-post1851270.tpo"
+        "url": "https://tienphong.vn/tien-nong-trao-tang-230-tan-phan-bon-chung-tay-xanh-hoa-truong-sa-post1851270.tpo",
+        "logo": {
+          "focus": "50% 50%",
+          "zoom": "100",
+          "src": "/uploads/ts-press-4-mw0m1sru.png",
+          "alt": "Logo Báo Tiền Phong"
+        }
       },
       {
         "source": "Báo Công Thương",
