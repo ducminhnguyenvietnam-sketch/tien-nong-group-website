@@ -692,6 +692,7 @@
       {
         "name": "DDC",
         "logo": {
+          "src": "/uploads/logo-DDC-1.png",
           "focus": "center",
           "zoom": "100",
           "alt": "Logo Tiến Nông Gia Lai"
@@ -699,7 +700,9 @@
         "featured": false
       },
       {
+        "name": "ETEK",
         "logo": {
+          "src": "/uploads/etek-logo.png",
           "focus": "center",
           "zoom": "100"
         },
