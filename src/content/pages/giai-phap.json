@@ -69,8 +69,8 @@
       {
         "name": "Chè",
         "image": {
-          "src": "",
-          "focus": "center",
+          "src": "/uploads/gp-tile-5-mw05whte.jpg",
+          "focus": "50% 50%",
           "zoom": "100",
           "alt": "Nương chè xanh"
         }
