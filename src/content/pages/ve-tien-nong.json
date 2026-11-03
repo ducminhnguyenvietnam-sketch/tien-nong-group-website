@@ -302,6 +302,14 @@
         "label": "CHẤT LƯỢNG & THƯƠNG HIỆU",
         "title": "Giải thưởng Sao Đỏ",
         "detail": "2001"
+      },
+      {
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        },
+        "label": "KHOA HỌC & CÔNG NGHỆ",
+        "title": "Đạt tiêu chuẩn VILAS 1519"
       }
     ],
     "t27": "Hệ thống quản lý:",
