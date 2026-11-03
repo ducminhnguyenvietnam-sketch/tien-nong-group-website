@@ -681,7 +681,8 @@
       },
       {
         "logo": {
-          "focus": "center",
+          "src": "/uploads/logo-vedan.png",
+          "focus": "50% 50%",
           "zoom": "100",
           "alt": "Logo Đầu tư và Phát triển Nông nghiệp Tiến Nông"
         },
