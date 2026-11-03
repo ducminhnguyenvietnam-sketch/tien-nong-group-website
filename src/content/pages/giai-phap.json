@@ -312,9 +312,10 @@
         "src": "/uploads/issue-0-pack-mw064opr.png"
       },
       "result_image": {
-        "focus": "center",
-        "zoom": "100",
-        "alt": "Ruộng lúa xanh tốt trở lại sau khi xử lý bằng Vinafer"
+        "focus": "0% 100%",
+        "zoom": "139",
+        "alt": "Ruộng lúa xanh tốt trở lại sau khi xử lý bằng Vinafer",
+        "src": "/uploads/issue-0-result-mw0698ti.jpg"
       },
       "result_caption": "[Địa điểm, thời gian mô hình]"
     },
