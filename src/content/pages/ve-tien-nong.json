@@ -693,7 +693,7 @@
         "name": "DDC",
         "logo": {
           "src": "/uploads/logo-DDC-1.png",
-          "focus": "center",
+          "focus": "50% 50%",
           "zoom": "100",
           "alt": "Logo Tiến Nông Gia Lai"
         },
@@ -703,7 +703,7 @@
         "name": "ETEK",
         "logo": {
           "src": "/uploads/etek-logo.png",
-          "focus": "center",
+          "focus": "50% 50%",
           "zoom": "100"
         },
         "featured": false
@@ -712,7 +712,7 @@
         "name": "Zoomline",
         "logo": {
           "src": "/uploads/Logo-3-300ppi.png",
-          "focus": "center",
+          "focus": "50% 50%",
           "zoom": "100"
         },
         "featured": false
@@ -721,7 +721,7 @@
         "name": "AN THANH PHAT",
         "logo": {
           "src": "/uploads/logo-anthanhphat-2.png",
-          "focus": "center",
+          "focus": "50% 50%",
           "zoom": "100"
         },
         "featured": false
