@@ -305,19 +305,20 @@
       },
       {
         "image": {
+          "src": "/uploads/fame-11-mw0bxjro.png",
           "focus": "50% 50%",
           "zoom": "100",
-          "src": "/uploads/fame-11-mw0bxjro.png",
           "alt": "Ảnh giải thưởng"
         },
         "label": "KHOA HỌC & CÔNG NGHỆ",
-        "title": "Đạt tiêu chuẩn VILAS 1519"
+        "title": "Đạt tiêu chuẩn VILAS 1519",
+        "detail": "2023"
       },
       {
         "image": {
+          "src": "/uploads/fame-12-mw0c2fte.png",
           "focus": "50% 50%",
           "zoom": "100",
-          "src": "/uploads/fame-12-mw0c2fte.png",
           "alt": "Ảnh giải thưởng"
         },
         "label": "KHOA HỌC & CÔNG NGHỆ",
