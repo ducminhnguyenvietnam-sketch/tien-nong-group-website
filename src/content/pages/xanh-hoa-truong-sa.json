@@ -377,7 +377,13 @@
         "date": "10/06/2026",
         "title": "Tiến Nông đồng hành cùng chương trình “Xanh hóa Trường Sa”",
         "summary": "Tiến Nông hỗ trợ phân bón trồng cây trên đảo và kêu gọi cộng đồng gửi lời chúc, mỗi lời chúc quy đổi thành 1 kg phân bón.",
-        "url": "https://nhandan.vn/tien-nong-dong-hanh-cung-chuong-trinh-xanh-hoa-truong-sa-post968306.html"
+        "url": "https://nhandan.vn/tien-nong-dong-hanh-cung-chuong-trinh-xanh-hoa-truong-sa-post968306.html",
+        "logo": {
+          "focus": "50% 50%",
+          "zoom": "100",
+          "src": "/uploads/ts-press-0-mw0loz57.png",
+          "alt": "Logo Báo Nhân Dân"
+        }
       },
       {
         "source": "Báo Tiền Phong",
