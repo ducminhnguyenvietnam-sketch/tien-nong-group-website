@@ -395,9 +395,10 @@
         "NPK cây dứa Tiến Nông"
       ],
       "pack_image": {
-        "focus": "center",
+        "focus": "50% 50%",
         "zoom": "100",
-        "alt": "Bao bì Vinafer đặc biệt Tiến Nông"
+        "alt": "Bao bì Vinafer đặc biệt Tiến Nông",
+        "src": "/uploads/issue-3-pack-mw0j2bw1.jpg"
       },
       "result_image": {
         "focus": "center",
