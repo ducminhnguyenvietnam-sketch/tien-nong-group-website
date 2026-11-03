@@ -13,7 +13,7 @@ components:
     - name: src
       label: Ảnh
       type: image
-      description: 'Cách dễ nhất: thay và căn ảnh ngay trên website — mở https://ducminhnguyenvietnam-sketch.github.io/tien-nong-group-website/?sua-anh
+      description: 'Cách dễ nhất: thay và căn ảnh ngay trên website — mở trang web kèm ?sua-anh ở cuối địa chỉ (ví dụ https://tiennong.com/?sua-anh)
         rồi bấm vào ảnh. Hoặc tải ảnh lên tại đây.'
     - name: focus
       label: Điểm căn ảnh

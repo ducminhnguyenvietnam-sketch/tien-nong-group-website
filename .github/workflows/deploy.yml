@@ -1,5 +1,9 @@
 name: Deploy to GitHub Pages
 
+# Preview copy on GitHub Pages (…github.io/tien-nong-group-website/). Free GitHub Pages only works while the
+# repository is public, so both jobs skip themselves once it is private; the live site is then
+# published to Mắt Bão by deploy-mat-bao.yml.
+
 on:
   push:
     branches: [main]
@@ -16,6 +20,7 @@ concurrency:
 
 jobs:
   build:
+    if: ${{ !github.event.repository.private }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

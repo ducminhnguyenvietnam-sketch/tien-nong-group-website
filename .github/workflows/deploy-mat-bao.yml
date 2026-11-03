@@ -1,0 +1,75 @@
+name: Deploy to tiennong.com (Mắt Bão)
+
+# Builds the site for https://tiennong.com and uploads it to the Mắt Bão hosting over FTPS (encrypted FTP).
+# Runs after every change on main — including each save in Pages CMS — and can be started by hand
+# (Actions → "Deploy to tiennong.com (Mắt Bão)" → Run workflow).
+#
+# Nothing is uploaded unless the build and the content check pass, so a broken change never reaches the
+# live site: it keeps the last good version.
+#
+# Settings → Secrets and variables → Actions:
+#   Secrets   FTP_SERVER    FTP host given by Mắt Bão (e.g. ftp.tiennong.com)
+#             FTP_USERNAME  a separate FTP account that can only reach the web folder
+#             FTP_PASSWORD  its password
+#   Variables SITE_URL      https://tiennong.com            (optional, this is the default)
+#             FTP_DIR       public_html/                     (optional, the folder the site lives in)
+#             FORM_ENDPOINT                                  (optional, as in deploy.yml)
+# While FTP_SERVER is empty the workflow builds nothing and just says so.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mat-bao
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      HAS_FTP: ${{ secrets.FTP_SERVER != '' && secrets.FTP_USERNAME != '' && secrets.FTP_PASSWORD != '' }}
+    steps:
+      - if: env.HAS_FTP != 'true'
+        run: echo "::notice::Chưa khai báo FTP_SERVER / FTP_USERNAME / FTP_PASSWORD nên chưa đăng lên Mắt Bão."
+      - if: env.HAS_FTP == 'true'
+        uses: actions/checkout@v4
+      - if: env.HAS_FTP == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - if: env.HAS_FTP == 'true'
+        run: npm ci
+      - if: env.HAS_FTP == 'true'
+        uses: actions/cache@v4
+        with:
+          path: public/_img
+          key: img-${{ hashFiles('public/uploads/**', 'public/images/**', 'scripts/optimize-images.mjs') }}
+          restore-keys: img-
+      - if: env.HAS_FTP == 'true'
+        run: npm run check:content
+      - if: env.HAS_FTP == 'true'
+        run: npm run build
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://tiennong.com' }}
+          BASE_PATH: /
+          PUBLIC_GITHUB_REPO: ${{ github.repository }}
+          PUBLIC_FORM_ENDPOINT: ${{ vars.FORM_ENDPOINT }}
+      # Only changed files are sent (the action keeps a small state file on the server, hidden by .htaccess).
+      - if: env.HAS_FTP == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./dist/
+          server-dir: ${{ vars.FTP_DIR || 'public_html/' }}
+          exclude: |
+            **/.git*
+            **/.git*/**

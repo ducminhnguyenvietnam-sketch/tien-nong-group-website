@@ -377,10 +377,12 @@ async function watchDeploy(sha: string, status: HTMLElement) {
   for (let i = 0; i < 40; i++) {
     await new Promise((r) => setTimeout(r, 15000));
     try {
+      // Two deploy workflows may run (GitHub Pages preview, Mắt Bão); wait until all of them have finished.
       const runs = await gh<{ workflow_runs: { status: string; conclusion: string | null }[] }>(`/repos/${REPO}/actions/runs?head_sha=${sha}`);
-      const run = runs.workflow_runs[0];
-      if (run?.status === 'completed') {
-        status.textContent = run.conclusion === 'success' ? 'Website đã cập nhật ✓' : 'Cập nhật website bị lỗi — báo cho người phụ trách kỹ thuật.';
+      const all = runs.workflow_runs;
+      if (all.length && all.every((r) => r.status === 'completed')) {
+        const ok = all.every((r) => r.conclusion === 'success' || r.conclusion === 'skipped');
+        status.textContent = ok ? 'Website đã cập nhật ✓' : 'Cập nhật website bị lỗi — báo cho người phụ trách kỹ thuật.';
         return;
       }
     } catch { return; /* token without Actions permission: keep the generic message */ }
