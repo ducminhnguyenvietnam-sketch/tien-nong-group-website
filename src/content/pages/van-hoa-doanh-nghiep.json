@@ -41,7 +41,7 @@
       "sub": "Ngày truyền thống 04/01"
     },
     {
-      "value": "500+",
+      "value": "400+",
       "label": "cán bộ, nhân viên",
       "sub": "Trụ sở, TTNC và 3 nhà máy"
     },
@@ -371,5 +371,8 @@
     ],
     "link": "/tin-tuc/tien-nong-noi-vun-dap-gia-tri-gia-dinh-noi-lan-toa-yeu-thuong/",
     "link_label": "Đọc câu chuyện đầy đủ"
+  },
+  "can_le": {
+    "mac_dinh": "justify"
   }
 }
