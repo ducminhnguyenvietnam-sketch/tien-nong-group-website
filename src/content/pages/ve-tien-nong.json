@@ -333,6 +333,15 @@
       },
       {
         "image": {
+          "focus": "center",
+          "zoom": "100"
+        },
+        "label": "KHOA HỌC & CÔNG NGHỆ",
+        "title": "Đạt tiêu chuẩn VILAS 849",
+        "detail": "2025"
+      },
+      {
+        "image": {
           "src": "/uploads/fame-13-mw0c5nnl.jpg",
           "focus": "50% 50%",
           "zoom": "100",
@@ -418,15 +427,6 @@
         "label": "NHÀ NƯỚC",
         "title": "Bằng khen Chấp hành tốt chính sách, pháp luật thuế",
         "detail": "Chủ tịch UBND tỉnh Thanh Hóa trao tặng · 2024"
-      },
-      {
-        "image": {
-          "focus": "center",
-          "zoom": "100"
-        },
-        "label": "KHOA HỌC & CÔNG NGHỆ",
-        "title": "Đạt tiêu chuẩn VILAS 849",
-        "detail": "2025"
       }
     ],
     "t27": "Hệ thống quản lý:",
