@@ -796,8 +796,7 @@
       "image": {
         "src": "/uploads/ms-1-mw1glvkd.jpg",
         "focus": "28.6% 29.5%",
-        "zoom": "110",
-        "alt": ""
+        "zoom": "110"
       }
     },
     {
@@ -866,12 +865,11 @@
     {
       "year": "2015",
       "title": "Chứng chỉ công nhận VILAS 849",
-      "body": "Phòng Phân tích Kiểm nghiệm thuộc Trung tâm Nghiên cứu và Phát triển Khoa học Công nghệ Tiến Nông được công nhận đạt tiêu chuẩn ISO/IEC 17025:2005",
+      "body": "Phòng Phân tích và Kiểm nghiệm thuộc Trung tâm Nghiên cứu và Phát triển Khoa học Công nghệ Tiến Nông được công nhận đạt tiêu chuẩn ISO/IEC 17025:2005",
       "image": {
-        "focus": "50% 50%",
-        "zoom": "100",
         "src": "/uploads/ms-8-mw1gnvtu.jpg",
-        "alt": ""
+        "focus": "50% 50%",
+        "zoom": "100"
       }
     },
     {
