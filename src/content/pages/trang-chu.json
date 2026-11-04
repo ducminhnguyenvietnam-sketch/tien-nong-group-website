@@ -59,7 +59,7 @@
     "t9": "Huân chương Lao động",
     "t10": "Chủ tịch nước trao tặng năm 2009",
     "t11": "Bằng khen Thủ tướng Chính phủ",
-    "t12": "Trao tặng năm 2001 · 2014 · 2022",
+    "t12": "Trao tặng năm 2001 · 2005 · 2014 · 2022",
     "t13": "Doanh nghiệp KH&CN đầu tiên",
     "t14": "Trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam",
     "t15": "6 lần Sao Vàng Đất Việt",
@@ -430,5 +430,8 @@
       "alt": "Giải pháp dinh dưỡng toàn diện cho cây trồng – các dòng phân bón Tiến Nông"
     },
     "link": "/san-pham/"
+  },
+  "can_le": {
+    "mac_dinh": "justify"
   }
 }
