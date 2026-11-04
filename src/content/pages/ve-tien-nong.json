@@ -868,8 +868,10 @@
       "title": "Chứng chỉ công nhận VILAS 849",
       "body": "Phòng Phân tích Kiểm nghiệm thuộc Trung tâm Nghiên cứu và Phát triển Khoa học Công nghệ Tiến Nông được công nhận đạt tiêu chuẩn ISO/IEC 17025:2005",
       "image": {
-        "focus": "center",
-        "zoom": "100"
+        "focus": "50% 50%",
+        "zoom": "100",
+        "src": "/uploads/ms-8-mw1gnvtu.jpg",
+        "alt": ""
       }
     },
     {
