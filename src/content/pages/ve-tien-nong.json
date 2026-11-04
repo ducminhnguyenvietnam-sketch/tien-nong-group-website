@@ -50,8 +50,10 @@
     "heading": "Tổng Giám đốc",
     "slogan": "Phụng sự nhà nông – Kiến tạo tương lai",
     "background": {
-      "focus": "center",
-      "zoom": "100"
+      "focus": "50% 100%",
+      "zoom": "100",
+      "src": "/uploads/ceo-bg-mw1gt88k.jpg",
+      "alt": "Ảnh nền lời chào (ảnh ngang tông xanh đậm, khoảng 1920×1000)"
     },
     "background_overlay": true
   },
