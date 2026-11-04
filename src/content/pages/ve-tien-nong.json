@@ -38,7 +38,8 @@
     "img_ceo_portrait_1": {
       "focus": "Right",
       "zoom": "100",
-      "alt": "Chân dung Tổng Giám đốc Nguyễn Hồng Phong"
+      "alt": "Chân dung Tổng Giám đốc Nguyễn Hồng Phong",
+      "src": "/uploads/TGĐ.png"
     },
     "background": {
       "focus": "50% 100%",
