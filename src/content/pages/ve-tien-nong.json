@@ -333,8 +333,10 @@
       },
       {
         "image": {
-          "focus": "center",
-          "zoom": "100"
+          "focus": "50% 50%",
+          "zoom": "100",
+          "src": "/uploads/fame-13-mw1g2odo.jpg",
+          "alt": "Ảnh giải thưởng"
         },
         "label": "KHOA HỌC & CÔNG NGHỆ",
         "title": "Đạt tiêu chuẩn VILAS 849",
