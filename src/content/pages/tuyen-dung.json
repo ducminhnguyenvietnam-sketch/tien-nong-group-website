@@ -32,7 +32,7 @@
   },
   "stats": [
     {
-      "value": "500+",
+      "value": "400+",
       "label": "cán bộ, nhân viên"
     },
     {
@@ -143,7 +143,6 @@
         "text": "Khóa đào tạo toàn hệ thống cho đội ngũ kinh doanh, kỹ thuật và quản lý (04/2026).",
         "link": "/tin-tuc/tien-nong-to-chuc-dao-tao-nen-tang-kien-thuc-ve-dat-phan-bon-va-cong-nghe-cho/",
         "image": {
-          "src": "",
           "focus": "center",
           "zoom": "100",
           "alt": "Nền tảng về đất, phân bón và công nghệ"
@@ -154,7 +153,6 @@
         "text": "Đào tạo có cấp chứng chỉ, nâng chuẩn kiểm soát chất lượng (03/2026).",
         "link": "/tin-tuc/tien-nong-chu-dong-phoi-hop-to-chuc-dao-tao-lay-mau-phan-bon-cap-chung-chi-gop/",
         "image": {
-          "src": "",
           "focus": "center",
           "zoom": "100",
           "alt": "Chứng chỉ lấy mẫu phân bón"
@@ -165,7 +163,6 @@
         "text": "Đào tạo cán bộ, công nhân về vận hành và an toàn tại Nhà máy Bỉm Sơn (05/2025).",
         "link": "/tin-tuc/nha-may-dinh-duong-cay-trong-tien-nong-bim-son-to-chuc-lop-tap-huan-dao-tao-can/",
         "image": {
-          "src": "",
           "focus": "center",
           "zoom": "100",
           "alt": "Tập huấn tại nhà máy"
@@ -176,7 +173,6 @@
         "text": "Cập nhật xu hướng AI, robot và nhà máy thông minh tại Thâm Quyến, Trung Quốc (06/2026).",
         "link": "/tin-tuc/tien-nong-cap-nhat-xu-huong-ai-robot-va-nha-may-thong-minh-tai-tham-quyen/",
         "image": {
-          "src": "",
           "focus": "center",
           "zoom": "100",
           "alt": "Học hỏi quốc tế"
@@ -368,5 +364,8 @@
     "title": "Sẵn sàng đi đường dài cùng Tiến Nông?",
     "text": "Gửi hồ sơ qua email hoặc liên hệ phòng Hành chính Nhân sự để được tư vấn vị trí phù hợp.",
     "apply": "Gửi hồ sơ ứng tuyển"
+  },
+  "can_le": {
+    "mac_dinh": "justify"
   }
 }
