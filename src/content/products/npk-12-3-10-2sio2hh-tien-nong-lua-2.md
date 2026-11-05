@@ -1,7 +1,7 @@
 ---
 name: NPK 12-3-10+2SiO₂hh Tiến Nông (Lúa 2)
 line: cd
-order: 1
+order: 2
 crops:
   - Lúa
 summary: Cung cấp đầy đủ, cân đối thành phần dinh dưỡng cho cây lúa giúp đẻ
