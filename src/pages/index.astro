@@ -7,8 +7,11 @@ import Tabs from '../components/Tabs.astro';
 import Slideshow from '../components/Slideshow.astro';
 import { link, url, youtubeId } from '../lib/routes';
 import { CATEGORIES, formatDate, getNews, isPress, newsUrl } from '../lib/news';
+import { excluded, localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/trang-chu.json');
+const c = withDefaults(raw, 'src/content/pages/trang-chu.json', L);
 const F = 'src/content/pages/trang-chu.json';
 const FILL = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
 
@@ -49,7 +52,9 @@ const [capacity, ...certs] = nm.highlights.filter((h) => isFilled(h.value));
 const csr = [
   [bv.t5, bv.t6, bv.img_csr_1_1, bv.link_1, 1, 'Đỡ đầu trẻ em mồ côi'], [bv.t7, bv.t8, bv.img_csr_2_1, bv.link_2, 2, 'Lễ trao học bổng khuyến học Thanh Hóa'],
   [bv.t9, bv.t10, bv.img_csr_3_1, bv.link_3, 3, 'Chương trình Xanh hoá Trường Sa'], [bv.t12, bv.t13, bv.img_csr_4_1, bv.link_4, 4, 'Hoạt động vì cộng đồng'],
-].filter(([, title]) => isFilled(title)) as [string, string, any, string, number, string][];
+].filter(([, title]) => isFilled(title))
+  // Chinese site: the Trường Sa card is left out (src/lib/i18n.ts, ZH_EXCLUDED); checked on the Vietnamese text.
+  .filter(([, , , , n]) => { const v = (raw as any).s08_vi_cong_dong ?? {}; const k = ({ 1: [5, 6], 2: [7, 8], 3: [9, 10], 4: [12, 13] } as Record<number, number[]>)[n as number] ?? []; return !excluded(L, ...k.map((i) => v[`t${i}`]), v[`link_${n}`]); }) as [string, string, any, string, number, string][];
 const people = [[cn.t4, cn.t5], [cn.t6, cn.t7], [cn.t8, cn.t9], [cn.t10, cn.t11]].filter(([t]) => isFilled(t));
 const banner = c.product_banner;
 const hasBanner = isFilled(banner?.image?.src);
@@ -257,8 +262,8 @@ const bannerText = isFilled(banner?.title);
 </div>
 </div></div></section>
 
-<!-- Tin tức -->
-<section id="tin-tuc" class="h-sec h-sec--page h-sec--line">
+<!-- Tin tức (news exist only in Vietnamese: not shown on the English / Chinese home page) -->
+{L === 'vi' && <section id="tin-tuc" class="h-sec h-sec--page h-sec--line">
 <div class="h-wrap h-stack">
 <div class="h-head h-head--row">
 <h2 class="h-h2">{c.s09_tin_tuc.t1}</h2>
@@ -270,7 +275,7 @@ const bannerText = isFilled(banner?.title);
 <span class="ncard__meta"><span class="h-chip">{CATEGORIES[n.data.category]}</span>{n.data.date && <time datetime={n.data.date.toISOString().slice(0, 10)}>{formatDate(n.data.date)}</time>}</span>
 <strong class="ncard__title jx-justify" data-unglued>{n.data.title}</strong>
 </a>)}
-</div></div></section>
+</div></div></section>}
 </Layout>
 
 <style>

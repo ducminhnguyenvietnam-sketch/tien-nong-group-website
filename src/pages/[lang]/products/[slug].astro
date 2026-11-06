@@ -1,0 +1,10 @@
+---
+// English (/en/products/<id>/) and Chinese (/zh/products/<id>/) copy of src/pages/san-pham/[slug].astro.
+import Page from '../../san-pham/[slug].astro';
+import { getProducts } from '../../../lib/products';
+export async function getStaticPaths() {
+  const all = await getProducts();
+  return ['en', 'zh'].flatMap((lang) => all.map((entry) => ({ params: { lang, slug: entry.id }, props: { entry, all } })));
+}
+---
+<Page {...Astro.props} />

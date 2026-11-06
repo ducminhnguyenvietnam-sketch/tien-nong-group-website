@@ -54,6 +54,25 @@ upload (≤ 2400 px, JPEG) and makes one commit via the GitHub API with the file
 `public/uploads/` and `{ src, focus: "X% Y%", zoom }` in the content file, using a fine-grained
 token (Contents: write, Actions: read) stored in the browser. It is only loaded in edit mode.
 
+## English and Chinese versions
+
+Vietnamese stays at the root; British English is under `/en/` and Simplified Chinese under `/zh/`, with English
+addresses (`/en/about/`, `/zh/products/<id>/`). `src/pages/[lang]/` holds thin copies of each page that render the
+Vietnamese template; the language comes from the address (`localeOf()` in `src/lib/i18n.ts`).
+
+- **Phrase banks** — `src/content/i18n/<en|zh>/<page>.json`, `{ items: [{ vi, text }] }`, edited in Pages CMS under
+  "Bản tiếng Anh & tiếng Trung". Content is translated field by field when read (`withDefaults(raw, path, L)`);
+  text written in the templates and links to Vietnamese pages are translated in the rendered HTML by
+  `src/middleware.ts`, which also writes numbers the English way (10.000 → 10,000). Untranslated text falls back to
+  Vietnamese. `npm run i18n` adds new CMS text to the banks and lists what is missing; `npm run i18n -- --ui` (after a
+  build) also collects Vietnamese left in `dist/en`.
+- **Not translated** — news (the archive and articles stay Vietnamese; the English/Chinese menus and home page leave
+  them out).
+- **Chinese site** — leaves out the Xanh hoá Trường Sa page and anything about the Hoàng Sa / Trường Sa archipelagos
+  (`ZH_EXCLUDED` in `src/lib/i18n.ts`: list items whose heading or link mentions them are dropped, and the
+  partner-page map hides the islands). Chinese uses the reader's system CJK font after the brand typeface.
+- **SEO** — `<html lang>`, `og:locale` and `hreflang` alternates per page; the English site is set ragged-right.
+
 ## Design system (giao diện v2)
 
 - **Type scale** — tokens in `src/styles/tokens.css` (`--type-display`, `--type-h1/h2/h3`, `--type-stat`,

@@ -7,8 +7,11 @@ import ImageSlot from '../components/ImageSlot.astro';
 import Slideshow from '../components/Slideshow.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { url } from '../lib/routes';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/khoa-hoc-cong-nghe.json');
+const c = withDefaults(raw, 'src/content/pages/khoa-hoc-cong-nghe.json', L);
 const lab = c.s03_trung_tam_r_d as Record<string, any>;
 const labs = [1, 2, 3, 4].map((n) => ({ n, img: lab[`img_lab_${n}_1`], name: lab[`t${2 + n * 2}`], text: lab[`t${3 + n * 2}`] }));
 const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && !d.topics.some((t) => !isFilled(t)));

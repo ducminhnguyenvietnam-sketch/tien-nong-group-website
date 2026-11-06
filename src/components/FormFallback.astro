@@ -7,8 +7,11 @@
 import siteRaw from '../content/site.json';
 import { withDefaults } from '../lib/content';
 import { link } from '../lib/routes';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const site = withDefaults(siteRaw, 'src/content/site.json');
+const site = withDefaults(siteRaw, 'src/content/site.json', L);
 const co = site.company as Record<string, string>;
 const phone = co.hotline || co.phone || '';
 const tel = phone.replace(/[^\d+]/g, '');

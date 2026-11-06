@@ -7,6 +7,7 @@
  */
 import { parse } from 'yaml';
 import cmsConfig from '../../.pages.yml?raw';
+import { localize, type Locale } from './i18n';
 
 interface Field {
   name: string;
@@ -64,10 +65,11 @@ function findEntry(entries: Entry[], path: string): Entry | undefined {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Loose<T> = T extends (infer E)[] ? Loose<E>[] : T extends object ? { [K in keyof T]: Loose<T[K]> } & Record<string, any> : T;
 
-export function withDefaults<T>(raw: T, path: string): Loose<T> {
+export function withDefaults<T>(raw: T, path: string, L: Locale = 'vi'): Loose<T> {
   const entry = findEntry(config.content, path);
   if (!entry?.fields) throw new Error(`.pages.yml has no file entry for ${path}`);
-  return fillObject(raw, entry.fields) as Loose<T>;
+  // English / Chinese pages: the same content with each text replaced from the phrase banks (src/lib/i18n.ts).
+  return localize(fillObject(raw, entry.fields), L) as Loose<T>;
 }
 
 /** Placeholder text left from the design ("[Họ và tên]", "[x]", "[dd/mm]"…). */

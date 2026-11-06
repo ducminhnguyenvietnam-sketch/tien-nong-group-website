@@ -9,14 +9,17 @@ import ImageSlot from '../components/ImageSlot.astro';
 import { asset, url } from '../lib/routes';
 import { listUrl } from '../lib/news';
 import { findProduct, getProducts, productUrl } from '../lib/products';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/giai-phap.json');
-const site = withDefaults(siteRaw, 'src/content/site.json');
+const c = withDefaults(raw, 'src/content/pages/giai-phap.json', L);
+const site = withDefaults(siteRaw, 'src/content/site.json', L);
 const callNumber = (((site.company as Record<string, string>).hotline) || site.company.phone || '').replace(/[^\d+]/g, '');
 const v = c.s03_theo_van_de;
 /** "Đất khỏe. Cây khỏe. Nông nghiệp hiệu quả hơn." → the two short sentences stay on one line, the rest below. */
 const heroTitle = (() => { const m = String(c.s01_hero.t3 || '').match(/^([^.]+\.\s*[^.]+\.)\s+(.+)$/); return m ? [m[1], m[2]] : [c.s01_hero.t3, '']; })();
-const allProducts = await getProducts();
+const allProducts = await getProducts(L);
 // Product names in the issue cards link to that product's page when it can be found.
 const productHref = (name: string) => { const p = findProduct(allProducts, name); return p ? productUrl(p) : url('san-pham'); };
 
@@ -61,7 +64,7 @@ const defaultIssue = c.finder_issues.length - 1;
 
 <section id="mo-hinh" style="background:var(--surface-page);scroll-margin-top:120px">
 <div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:36px">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap"><div style="display:flex;flex-direction:column;gap:14px;max-width:640px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s06_mo_hinh_thuc_te.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s06_mo_hinh_thuc_te.t2}</h2></div><a href={listUrl('nd')} style="font-weight:600">{c.s06_mo_hinh_thuc_te.t3}</a></div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap"><div style="display:flex;flex-direction:column;gap:14px;max-width:640px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s06_mo_hinh_thuc_te.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s06_mo_hinh_thuc_te.t2}</h2></div>{L === 'vi' && <a href={listUrl('nd')} style="font-weight:600">{c.s06_mo_hinh_thuc_te.t3}</a>}</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/3),calc((1068px - 100%)*999),100%),1fr));gap:24px">
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="model-1" shape="rect" placeholder="Mô hình lúa" image={c.s06_mo_hinh_thuc_te.img_model_1_1} cms="src/content/pages/giai-phap.json#s06_mo_hinh_thuc_te.img_model_1_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:10px"><span style="font:600 12px var(--font-mono);color:var(--green-600)">{c.s06_mo_hinh_thuc_te.t4}</span><strong style="font-size:19px;line-height:1.35">{c.s06_mo_hinh_thuc_te.t5}</strong><div style="display:flex;gap:28px;padding-top:10px;border-top:1px solid var(--border-default)"><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t6}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t7}</span></div><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t8}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t9}</span></div></div></div></div>
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="model-2" shape="rect" placeholder="Mô hình cà phê" image={c.s06_mo_hinh_thuc_te.img_model_2_1} cms="src/content/pages/giai-phap.json#s06_mo_hinh_thuc_te.img_model_2_1" /></div><div style="padding:22px;display:flex;flex-direction:column;gap:10px"><span style="font:600 12px var(--font-mono);color:var(--green-600)">{c.s06_mo_hinh_thuc_te.t10}</span><strong style="font-size:19px;line-height:1.35">{c.s06_mo_hinh_thuc_te.t11}</strong><div style="display:flex;gap:28px;padding-top:10px;border-top:1px solid var(--border-default)"><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t12}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t13}</span></div><div><div style="font:var(--type-num);color:var(--amber-600)">{c.s06_mo_hinh_thuc_te.t14}</div><span style="font:600 12px/1.4 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">{c.s06_mo_hinh_thuc_te.t15}</span></div></div></div></div>

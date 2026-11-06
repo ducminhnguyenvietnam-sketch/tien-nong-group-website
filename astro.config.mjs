@@ -11,11 +11,13 @@ import keepWords from './scripts/keep-words.mjs';
 const base = process.env.BASE_PATH || '/';
 
 /** Resized copies made by scripts/optimize-images.mjs (src/generated/images.json), read when articles render. */
+/** @type {Record<string, { w: number, h: number, variants: { w: number, path: string }[] }> | null} */
 let manifest = null;
+/** @returns {Record<string, { w: number, h: number, variants: { w: number, path: string }[] }>} */
 const sized = () => {
   if (manifest) return manifest;
   try { manifest = JSON.parse(readFileSync('src/generated/images.json', 'utf8')); } catch { manifest = {}; }
-  return manifest;
+  return manifest ?? {};
 };
 
 /**

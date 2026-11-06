@@ -143,6 +143,17 @@ GitHub: dấu ✗ đỏ nghĩa là lần cập nhật bị lỗi — liên hệ 
 
 Mọi lần lưu đều được ghi lại trong lịch sử GitHub, nên có thể khôi phục bản cũ nếu sửa nhầm.
 
+## 7. Bản tiếng Anh và tiếng Trung
+
+Website có ba thứ tiếng: tiếng Việt (địa chỉ gốc, ví dụ `/ve-tien-nong/`), tiếng Anh (`/en/about/`) và tiếng Trung giản thể (`/zh/about/`). Nút **Tiếng Việt · English · 中文** trên đầu trang chuyển sang đúng trang đó ở thứ tiếng kia.
+
+- **Ảnh, đường dẫn, bố cục dùng chung**: thay ảnh ở bản tiếng Việt thì bản tiếng Anh và tiếng Trung đổi theo, không phải làm lại.
+- **Chữ dịch nằm trong mục "Bản tiếng Anh & tiếng Trung"** ở menu trái. Mỗi trang có một danh sách hai cột: câu tiếng Việt (giữ nguyên) và bản dịch. Muốn sửa câu tiếng Anh/tiếng Trung thì sửa cột bản dịch rồi bấm Save.
+- **Khi sửa một câu tiếng Việt**, bản tiếng Anh/tiếng Trung của câu đó sẽ hiện tiếng Việt cho đến khi có bản dịch mới. Vào đúng danh sách, bấm "Add an entry", dán câu tiếng Việt mới vào cột 1 và bản dịch vào cột 2. (Kỹ thuật viên có thể chạy `npm run i18n` để máy tự liệt kê các câu còn thiếu.)
+- **Tin tức chỉ có tiếng Việt**: bản tiếng Anh/tiếng Trung không có mục Tin tức trên menu, không hiện khối tin mới ở trang chủ.
+- **Nguyên tắc riêng cho bản tiếng Trung (chốt 6/11/2026)**: không có trang "Xanh hoá Trường Sa" và không hiện bất kỳ nội dung nào nhắc tới Hoàng Sa, Trường Sa (thẻ, chương trình, nhãn trên bản đồ). Website tự lọc theo chữ tiếng Việt, nên bài/thẻ mới có nhắc tới hai quần đảo cũng tự ẩn ở bản tiếng Trung.
+- **Tên người, địa danh**: giữ nguyên tiếng Việt có dấu ở cả hai bản (ví dụ Nguyễn Hồng Phong, Thanh Hóa); tên thương hiệu luôn là **Tiến Nông**.
+
 ## Thay đổi từ bản giao diện mới (10/2026)
 
 - **Nội dung chưa nhập không còn lộ ra ngoài.** Ô nào còn chữ trong ngoặc vuông (ví dụ `[Họ và tên]`, `[x]`)

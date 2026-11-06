@@ -15,6 +15,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import siteRaw from '../content/site.json';
 import homeRaw from '../content/pages/trang-chu.json';
 import { asset } from "../lib/routes";
+import { LOCALE_META, alternates, localeOf, tr } from '../lib/i18n';
 
 interface Props {
   title?: string;
@@ -59,11 +60,18 @@ const alignCss = (() => {
   if (page && page !== 'justify' && ALIGNS.includes(page)) out.push(`main ${TEXT}{text-align:${page}!important;text-align-last:auto!important}`);
   for (const m of align?.muc ?? []) {
     if (!m?.muc || !/^[a-z0-9-]+$/.test(m.muc) || !ALIGNS.includes(m.kieu || '')) continue;
+    // English pages are set ragged-right (global.css): a section justified in the CMS stays left-aligned there.
+    if (m.kieu === 'justify' && localeOf(Astro.url) === 'en') continue;
     out.push(rule(`main #${m.muc}`, m.kieu!));
   }
   return out.join('\n');
 })();
-const desc = (description || DEFAULT_DESCRIPTION).replace(/\s+/g, ' ').trim().slice(0, 300);
+/** Language of this page: /en/… English (UK), /zh/… Simplified Chinese, otherwise Vietnamese. */
+const L = localeOf(Astro.url);
+const meta = LOCALE_META[L];
+/** hreflang links: the same page in each language (news articles exist only in Vietnamese). */
+const alts = alternates(Astro.url).filter((a) => a.exists);
+const desc = (description || tr(DEFAULT_DESCRIPTION, L)).replace(/\s+/g, ' ').trim().slice(0, 300);
 const fullTitle = title ? `${title} · Tiến Nông Group` : 'Tiến Nông Group';
 const site = siteRaw as any;
 const homeHero = (homeRaw as any).hero_slides?.find((s: any) => s?.image?.src)?.image?.src as string | undefined;
@@ -74,7 +82,7 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
 const org = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: site.company?.name || 'Công ty Cổ phần Công Nông nghiệp Tiến Nông',
+  name: tr(site.company?.name || 'Công ty Cổ phần Công Nông nghiệp Tiến Nông', L),
   alternateName: 'Tiến Nông Group',
   url: origin ? `${origin}${asset('/')}` : undefined,
   logo: abs('/assets/logo-mark.png'),
@@ -86,7 +94,7 @@ const org = {
 };
 ---
 <!doctype html>
-<html lang="vi" data-hotline={(site.company?.hotline || site.company?.phone || undefined)}>
+<html lang={meta.html} data-hotline={(site.company?.hotline || site.company?.phone || undefined)}>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -96,7 +104,10 @@ const org = {
 {noindex && <meta name="robots" content="noindex, nofollow" />}
 {canonical && <link rel="canonical" href={canonical} />}
 <meta property="og:site_name" content="Tiến Nông Group" />
-<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale" content={meta.og} />
+{alts.map((a) => a.locale !== L && <meta property="og:locale:alternate" content={LOCALE_META[a.locale].og} />)}
+{Astro.site && !noindex && alts.length > 1 && alts.map((a) => <link rel="alternate" hreflang={LOCALE_META[a.locale].hreflang} href={new URL(a.href, Astro.site).href} />)}
+{Astro.site && !noindex && alts.length > 1 && <link rel="alternate" hreflang="x-default" href={new URL(alts[0].href, Astro.site).href} />}
 <meta property="og:type" content={type} />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={desc} />

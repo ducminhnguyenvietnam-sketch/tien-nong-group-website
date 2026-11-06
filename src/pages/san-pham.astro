@@ -8,12 +8,15 @@ import Select from '../components/Select.astro';
 import Tabs from '../components/Tabs.astro';
 import { url, link } from '../lib/routes';
 import { getProducts, productUrl } from '../lib/products';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/san-pham.json');
+const c = withDefaults(raw, 'src/content/pages/san-pham.json', L);
 const s = c.s02_danh_sach;
 const PER_PAGE = 16;
 
-const products = await getProducts();
+const products = await getProducts(L);
 const lines = c.lines;
 const lineLabel = (key: string) => (lines.find((l) => l.key === key)?.label ?? '').replace('Phân bón ', '');
 
@@ -142,9 +145,9 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
         b.addEventListener('click', () => { page = to; render(true); });
         pager.appendChild(b);
       };
-      btn('←', page - 1, { cls: 'sp-pages__step', aria: 'Trang trước' });
+      btn('←', page - 1, { cls: 'sp-pages__step', aria: ({ en: 'Previous page', zh: '上一页' } as Record<string, string>)[document.documentElement.lang.slice(0, 2)] ?? 'Trang trước' });
       for (let i = 1; i <= pages; i++) btn(String(i), i);
-      btn('→', page + 1, { cls: 'sp-pages__step', aria: 'Trang sau' });
+      btn('→', page + 1, { cls: 'sp-pages__step', aria: ({ en: 'Next page', zh: '下一页' } as Record<string, string>)[document.documentElement.lang.slice(0, 2)] ?? 'Trang sau' });
     }
     if (scroll) document.querySelector('.sp-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }

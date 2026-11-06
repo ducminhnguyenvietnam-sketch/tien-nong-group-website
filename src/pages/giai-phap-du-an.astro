@@ -10,8 +10,11 @@ import PageHero from '../components/PageHero.astro';
 import Input from '../components/Input.astro';
 import Select from '../components/Select.astro';
 import { url } from '../lib/routes';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
+const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json', L);
 
 ---
 <Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Giải pháp">

@@ -2,8 +2,11 @@
 import siteRaw from '../content/site.json';
 import { withDefaults } from '../lib/content';
 import { asset, link, url } from '../lib/routes';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const site = withDefaults(siteRaw, 'src/content/site.json');
+const site = withDefaults(siteRaw, 'src/content/site.json', L);
 
 const { company: co, social, legal, footer: f } = site;
 const has = (v?: string | null) => typeof v === 'string' && v.trim() !== '' && !/^\[.*\]$/.test(v.trim());
@@ -21,7 +24,7 @@ const explore = [
   [f.link_science, url('khoa-hoc-cong-nghe')], [f.link_sustainability, url('phat-trien-ben-vung')], [f.link_farmers, url('nong-dan')],
 ].filter(([label]) => has(label));
 const connect = [
-  [f.link_news, url('tin-tuc')], [f.link_partner, url('tro-thanh-doi-tac')], [f.link_dealers, url('lien-he', 'dai-ly')],
+  ...(L === 'vi' ? [[f.link_news, url('tin-tuc')]] : []), [f.link_partner, url('tro-thanh-doi-tac')], [f.link_dealers, url('lien-he', 'dai-ly')],
   [f.link_jobs, url('tuyen-dung')], [f.link_contact, url('lien-he')],
 ].filter(([label]) => has(label));
 ---

@@ -1,0 +1,328 @@
+{
+  "items": [
+    {
+      "vi": "NPK 12-3-10+2SiO₂hh Tiến Nông (Lúa 2)",
+      "text": "Tiến Nông NPK 12-3-10+2SiO₂hh（水稻 2 号）"
+    },
+    {
+      "vi": "Trang chủ",
+      "text": "首页"
+    },
+    {
+      "vi": "Sản phẩm",
+      "text": "产品"
+    },
+    {
+      "vi": "PHÂN BÓN CHUYÊN DỤNG · CÂY LÚA",
+      "text": "专用肥 · 水稻"
+    },
+    {
+      "vi": "Phân bón hỗn hợp NPK bổ sung Silic hữu hiệu, chuyên dùng bón thúc cho lúa giai đoạn đẻ nhánh và làm đòng.",
+      "text": "含有效硅的复混 NPK 肥料，专用于水稻分蘖期和拔节孕穗期追肥。"
+    },
+    {
+      "vi": "Đạm (N)",
+      "text": "氮（N）"
+    },
+    {
+      "vi": "Lân (P₂O₅hh)",
+      "text": "有效磷（P₂O₅）"
+    },
+    {
+      "vi": "Kali (K₂Ohh)",
+      "text": "有效钾（K₂O）"
+    },
+    {
+      "vi": "Silic (SiO₂hh)",
+      "text": "有效硅（SiO₂）"
+    },
+    {
+      "vi": "Mã số phân bón",
+      "text": "肥料登记编号"
+    },
+    {
+      "vi": "Quy cách",
+      "text": "规格"
+    },
+    {
+      "vi": "25 kg",
+      "text": "25 公斤"
+    },
+    {
+      "vi": "Phương thức sử dụng",
+      "text": "使用方式"
+    },
+    {
+      "vi": "Bón rễ",
+      "text": "根部施用"
+    },
+    {
+      "vi": "Tiêu chuẩn",
+      "text": "标准"
+    },
+    {
+      "vi": "ISO 9001:2015 · ISO 14001:2015",
+      "text": "ISO 9001:2015 · ISO 14001:2015"
+    },
+    {
+      "vi": "Tìm đại lý gần nhất",
+      "text": "查找最近的经销商"
+    },
+    {
+      "vi": "Gọi kỹ sư tư vấn",
+      "text": "致电农艺师"
+    },
+    {
+      "vi": "Tải tài liệu kỹ thuật (PDF)",
+      "text": "下载技术资料（PDF）"
+    },
+    {
+      "vi": "Thành phần",
+      "text": "成分"
+    },
+    {
+      "vi": "Công dụng",
+      "text": "功效"
+    },
+    {
+      "vi": "Hướng dẫn sử dụng",
+      "text": "使用说明"
+    },
+    {
+      "vi": "An toàn & bảo quản",
+      "text": "安全与储存"
+    },
+    {
+      "vi": "Thông tin pháp lý",
+      "text": "法规信息"
+    },
+    {
+      "vi": "Thành phần định lượng",
+      "text": "成分含量"
+    },
+    {
+      "vi": "CHỈ TIÊU",
+      "text": "指标"
+    },
+    {
+      "vi": "HÀM LƯỢNG",
+      "text": "含量"
+    },
+    {
+      "vi": "PHƯƠNG PHÁP THỬ",
+      "text": "检测方法"
+    },
+    {
+      "vi": "Đạm tổng số (Nts)",
+      "text": "总氮（Nts）"
+    },
+    {
+      "vi": "TCVN 5815:2018",
+      "text": "TCVN 5815:2018"
+    },
+    {
+      "vi": "Lân hữu hiệu (P₂O₅hh)",
+      "text": "有效磷（P₂O₅hh）"
+    },
+    {
+      "vi": "Kali hữu hiệu (K₂Ohh)",
+      "text": "有效钾（K₂Ohh）"
+    },
+    {
+      "vi": "TCVN 8560:2018",
+      "text": "TCVN 8560:2018"
+    },
+    {
+      "vi": "Silic hữu hiệu (SiO₂hh)",
+      "text": "有效硅（SiO₂hh）"
+    },
+    {
+      "vi": "Độ ẩm",
+      "text": "水分"
+    },
+    {
+      "vi": "Kết quả kiểm nghiệm tại phòng thí nghiệm đạt chuẩn VILAS 1519.",
+      "text": "检测结果出自通过 VILAS 1519 认可的实验室。"
+    },
+    {
+      "vi": "ĐẺ NHÁNH",
+      "text": "分蘖"
+    },
+    {
+      "vi": "Lúa đẻ nhánh khỏe, đẻ tập trung...",
+      "text": "分蘖健壮、整齐…"
+    },
+    {
+      "vi": "LÀM ĐÒNG",
+      "text": "孕穗"
+    },
+    {
+      "vi": "Đòng to, dài; lúa trổ thoát...",
+      "text": "穗大、穗长，抽穗整齐…"
+    },
+    {
+      "vi": "NĂNG SUẤT",
+      "text": "产量"
+    },
+    {
+      "vi": "Bông to, nhiều hạt, hạt chắc mẩy...",
+      "text": "穗大粒多，籽粒饱满…"
+    },
+    {
+      "vi": "CHỐNG CHỊU",
+      "text": "抗逆"
+    },
+    {
+      "vi": "Cứng cây, đứng lá, chống đổ ngã, hạn chế sâu bệnh...",
+      "text": "茎秆硬、叶片挺，抗倒伏，减少病虫害…"
+    },
+    {
+      "vi": "THÚC ĐẺ NHÁNH",
+      "text": "分蘖追肥"
+    },
+    {
+      "vi": "300–350 kg/ha",
+      "text": "300–350 公斤/公顷"
+    },
+    {
+      "vi": "Bón khi lúa chuẩn bị đẻ nhánh",
+      "text": "在水稻即将分蘖时施用"
+    },
+    {
+      "vi": "THÚC ĐÒNG",
+      "text": "孕穗追肥"
+    },
+    {
+      "vi": "Bón khi lúa phân hóa đòng",
+      "text": "在水稻幼穗分化时施用"
+    },
+    {
+      "vi": "Cách bón:",
+      "text": "施用方法："
+    },
+    {
+      "vi": "bón rải đều trên mặt ruộng khi ruộng còn ẩm hoặc có lớp nước nông, kết hợp làm cỏ, sục bùn. Liều lượng có thể điều chỉnh theo chân đất và giống lúa. Hãy liên hệ kỹ sư Tiến Nông để được hướng dẫn cụ thể.",
+      "text": "在田土湿润或有浅水层时均匀撒施，结合除草、搅泥。用量可根据土壤和水稻品种调整。请联系 Tiến Nông 农艺师获取具体指导。"
+    },
+    {
+      "vi": "Cảnh báo an toàn",
+      "text": "安全警示"
+    },
+    {
+      "vi": "Không nguy hiểm khi tiếp xúc trực tiếp. Không độc hại cho người và gia súc. Rửa tay sạch sau khi sử dụng.",
+      "text": "直接接触无危险。对人畜无毒。使用后请彻底洗手。"
+    },
+    {
+      "vi": "Bảo quản",
+      "text": "储存"
+    },
+    {
+      "vi": "Bảo quản nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp. Buộc kín miệng bao sau khi sử dụng.",
+      "text": "存放于干燥、阴凉、通风处，避免阳光直射。使用后扎紧袋口。"
+    },
+    {
+      "vi": "Loại phân bón",
+      "text": "肥料类型"
+    },
+    {
+      "vi": "Phân bón hỗn hợp NPK",
+      "text": "复混 NPK 肥料"
+    },
+    {
+      "vi": "Tiêu chuẩn cơ sở",
+      "text": "企业标准"
+    },
+    {
+      "vi": "Hạn sử dụng",
+      "text": "保质期"
+    },
+    {
+      "vi": "36 tháng kể từ NSX",
+      "text": "自生产日期起 36 个月"
+    },
+    {
+      "vi": "Ngày sản xuất",
+      "text": "生产日期"
+    },
+    {
+      "vi": "In trên bao bì",
+      "text": "见包装"
+    },
+    {
+      "vi": "Nơi sản xuất",
+      "text": "生产地"
+    },
+    {
+      "vi": "Các sản phẩm khác",
+      "text": "其他产品"
+    },
+    {
+      "vi": "Tất cả sản phẩm →",
+      "text": "全部产品 →"
+    },
+    {
+      "vi": "Bao bì",
+      "text": "包装"
+    },
+    {
+      "vi": "CHUYÊN DỤNG",
+      "text": "专用肥"
+    },
+    {
+      "vi": "NPK 8-6-4+1,5SiO₂hh Tiến Nông (Lúa 1)",
+      "text": "Tiến Nông NPK 8-6-4+1.5SiO₂hh（水稻 1 号）"
+    },
+    {
+      "vi": "ĐA DỤNG",
+      "text": "通用肥"
+    },
+    {
+      "vi": "NPK 15-15-15+1SiO₂hh Tiến Nông",
+      "text": "Tiến Nông NPK 15-15-15+1SiO₂hh"
+    },
+    {
+      "vi": "TRUNG VI LƯỢNG",
+      "text": "中微量元素"
+    },
+    {
+      "vi": "Điều hòa pH đất 1 Tiến Nông",
+      "text": "Tiến Nông 土壤 pH 调理剂 1 号"
+    },
+    {
+      "vi": "Đạm vàng Tiến Nông bổ sung vi lượng",
+      "text": "Tiến Nông 金氮（含微量元素）"
+    },
+    {
+      "vi": "Mặt trước",
+      "text": "正面"
+    },
+    {
+      "vi": "Bao bì mặt trước",
+      "text": "包装正面"
+    },
+    {
+      "vi": "Mặt sau",
+      "text": "背面"
+    },
+    {
+      "vi": "Bao bì mặt sau (thông tin kỹ thuật)",
+      "text": "包装背面（技术信息）"
+    },
+    {
+      "vi": "Hạt phân",
+      "text": "肥料颗粒"
+    },
+    {
+      "vi": "Cận cảnh hạt phân",
+      "text": "肥料颗粒特写"
+    },
+    {
+      "vi": "Trên ruộng",
+      "text": "田间"
+    },
+    {
+      "vi": "Sản phẩm trên ruộng lúa",
+      "text": "产品在稻田中的应用"
+    }
+  ]
+}

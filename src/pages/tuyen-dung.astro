@@ -14,9 +14,12 @@ import CtaBand from '../components/CtaBand.astro';
 import { url, link } from '../lib/routes';
 import { newsByLink } from '../lib/news';
 import siteRaw from '../content/site.json';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/tuyen-dung.json');
-const site = withDefaults(siteRaw, 'src/content/site.json');
+const c = withDefaults(raw, 'src/content/pages/tuyen-dung.json', L);
+const site = withDefaults(siteRaw, 'src/content/site.json', L);
 const F = 'src/content/pages/tuyen-dung.json';
 const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
 const jobsEmail = isFilled(c.contact.email) ? c.contact.email : site.company.email;

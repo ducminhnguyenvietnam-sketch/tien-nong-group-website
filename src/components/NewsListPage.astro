@@ -7,10 +7,13 @@ import NewsArchive from './NewsArchive.astro';
 import PageHero from './PageHero.astro';
 import { CATEGORIES, PER_PAGE, listUrl, type NewsEntry } from '../lib/news';
 import { url } from '../lib/routes';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
 interface Props { all: NewsEntry[]; cat: string; page: number }
 const { all, cat, page } = Astro.props;
-const c = withDefaults(raw, 'src/content/pages/tin-tuc.json');
+const c = withDefaults(raw, 'src/content/pages/tin-tuc.json', L);
 const pages = Math.max(1, Math.ceil(all.length / PER_PAGE));
 const years = [...new Set(all.map((n) => n.data.date?.getFullYear()).filter((y): y is number => !!y))].sort((a, b) => b - a);
 const heading = cat === 'all' ? (c.s01_tin_noi_bat.t3 || 'Tin tức') : CATEGORIES[cat];

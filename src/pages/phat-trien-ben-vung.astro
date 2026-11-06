@@ -14,11 +14,14 @@ import Stats from '../components/story/Stats.astro';
 import YearTabs from '../components/story/YearTabs.astro';
 import tsRaw from '../content/pages/xanh-hoa-truong-sa.json';
 import { asset, link, url } from '../lib/routes';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/phat-trien-ben-vung.json');
+const c = withDefaults(raw, 'src/content/pages/phat-trien-ben-vung.json', L);
 const F = 'src/content/pages/phat-trien-ben-vung.json';
 // Teaser for the sub-page Xanh hoá Trường Sa (its title, intro and photo come from that page's content).
-const ts = withDefaults(tsRaw, 'src/content/pages/xanh-hoa-truong-sa.json');
+const ts = withDefaults(tsRaw, 'src/content/pages/xanh-hoa-truong-sa.json', L);
 const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
 const programs = c.programs.items.filter((p) => isFilled(p.title));
 const tags = [...new Set(programs.map((p) => p.tag).filter(isFilled))];
@@ -131,13 +134,13 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 })}
 </div></div></section>
 
-<section id="truong-sa" class="ts-teaser" aria-label={ts.hero.title}>
+{L !== 'zh' && <section id="truong-sa" class="ts-teaser" aria-label={ts.hero.title}>
 <a href={url('phat-trien-ben-vung/xanh-hoa-truong-sa')} class="ts-teaser__link">
 <div class="ts-teaser__photo"><ImageSlot style={fill} id="ts-teaser" shape="rect" placeholder="Ảnh Xanh hoá Trường Sa" image={ts.hero.background} cms="src/content/pages/xanh-hoa-truong-sa.json#hero.background" sizes="100vw" /></div>
 <div class="ts-teaser__scrim" aria-hidden="true"></div>
 <div class="ts-teaser__copy"><span class="ts-teaser__eyebrow">{ts.hero.eyebrow}</span><strong class="ts-teaser__title">{ts.hero.title}</strong><span class="ts-teaser__text">{ts.hero.intro}</span><span class="ts-teaser__btn">Xem chương trình →</span></div>
 </a>
-</section>
+</section>}
 
 <section id="lo-trinh" class="st-sec st-sec--card">
 <div class="st-wrap">

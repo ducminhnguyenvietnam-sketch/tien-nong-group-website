@@ -11,10 +11,13 @@ import { withDefaults } from '../lib/content';
 import ImageSlot from './ImageSlot.astro';
 import { CATEGORIES, CATEGORY_SLUGS, formatDate, isPress, listUrl, newsLinkAttrs, newsUrl, pageList, type NewsEntry } from '../lib/news';
 import { url } from '../lib/routes';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
 interface Props { items: NewsEntry[]; page: number; pages: number; cat: string; years: number[]; total: number }
 const { items, page, pages, cat, years, total } = Astro.props;
-const c = withDefaults(raw, 'src/content/pages/tin-tuc.json');
+const c = withDefaults(raw, 'src/content/pages/tin-tuc.json', L);
 const tabs = [['all', c.all_categories || 'Tất cả'], ...Object.entries(CATEGORIES).filter(([k]) => k in CATEGORY_SLUGS && k !== 'bc')];
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---

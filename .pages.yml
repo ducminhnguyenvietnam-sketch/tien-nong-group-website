@@ -6638,14 +6638,6 @@ content:
     - name: lang_zh
       label: Thanh trên – chữ 中文 (tiếng Trung)
       type: string
-    - name: english_url
-      label: Đường dẫn bản tiếng Anh
-      type: string
-      description: 'Dán đường dẫn bản tiếng Anh khi có. Để trống: nút English mở bản dịch tự động của Google cho trang đang xem.'
-    - name: chinese_url
-      label: Đường dẫn bản tiếng Trung
-      type: string
-      description: 'Dán đường dẫn bản tiếng Trung khi có. Để trống: nút 中文 mở bản dịch tự động của Google cho trang đang xem.'
     - name: cta
       label: Nút xanh bên phải (dẫn tới trang Trở thành đối tác)
       type: string
@@ -6754,3 +6746,637 @@ content:
     - name: floating_button
       label: Nút Liên hệ trên thanh dưới cùng (điện thoại)
       type: string
+- name: ban-dich
+  label: "Bản tiếng Anh & tiếng Trung"
+  type: group
+  items:
+  - name: en-trang-chu
+    label: "Tiếng Anh – Trang chủ"
+    type: file
+    path: src/content/i18n/en/trang-chu.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-ve-tien-nong
+    label: "Tiếng Anh – Về Tiến Nông"
+    type: file
+    path: src/content/i18n/en/ve-tien-nong.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-van-hoa-doanh-nghiep
+    label: "Tiếng Anh – Văn hóa doanh nghiệp"
+    type: file
+    path: src/content/i18n/en/van-hoa-doanh-nghiep.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-khoa-hoc-cong-nghe
+    label: "Tiếng Anh – Khoa học & Công nghệ"
+    type: file
+    path: src/content/i18n/en/khoa-hoc-cong-nghe.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-san-pham
+    label: "Tiếng Anh – Sản phẩm (trang danh sách)"
+    type: file
+    path: src/content/i18n/en/san-pham.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-chi-tiet-san-pham
+    label: "Tiếng Anh – Chi tiết sản phẩm (khung chung)"
+    type: file
+    path: src/content/i18n/en/chi-tiet-san-pham.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-san-pham-danh-muc
+    label: "Tiếng Anh – Nội dung 52 sản phẩm"
+    type: file
+    path: src/content/i18n/en/san-pham-danh-muc.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-giai-phap
+    label: "Tiếng Anh – Giải pháp cho cây trồng"
+    type: file
+    path: src/content/i18n/en/giai-phap.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-giai-phap-du-an
+    label: "Tiếng Anh – Giải pháp cho dự án"
+    type: file
+    path: src/content/i18n/en/giai-phap-du-an.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-phat-trien-ben-vung
+    label: "Tiếng Anh – Phát triển bền vững"
+    type: file
+    path: src/content/i18n/en/phat-trien-ben-vung.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-xanh-hoa-truong-sa
+    label: "Tiếng Anh – Xanh hoá Trường Sa (chỉ bản tiếng Anh)"
+    type: file
+    path: src/content/i18n/en/xanh-hoa-truong-sa.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-nong-dan
+    label: "Tiếng Anh – Nông dân Tiến Nông"
+    type: file
+    path: src/content/i18n/en/nong-dan.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-tuyen-dung
+    label: "Tiếng Anh – Tuyển dụng"
+    type: file
+    path: src/content/i18n/en/tuyen-dung.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-lien-he
+    label: "Tiếng Anh – Liên hệ"
+    type: file
+    path: src/content/i18n/en/lien-he.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-tro-thanh-doi-tac
+    label: "Tiếng Anh – Trở thành đối tác"
+    type: file
+    path: src/content/i18n/en/tro-thanh-doi-tac.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-tin-tuc
+    label: "Tiếng Anh – Tin tức (nhãn chung)"
+    type: file
+    path: src/content/i18n/en/tin-tuc.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-site
+    label: "Tiếng Anh – Menu, chân trang, thông tin công ty"
+    type: file
+    path: src/content/i18n/en/site.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: en-giao-dien
+    label: "Tiếng Anh – Chữ cố định trong giao diện (nút, nhãn, mô tả ảnh)"
+    type: file
+    path: src/content/i18n/en/giao-dien.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Anh"
+        type: text
+  - name: zh-trang-chu
+    label: "Tiếng Trung – Trang chủ"
+    type: file
+    path: src/content/i18n/zh/trang-chu.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-ve-tien-nong
+    label: "Tiếng Trung – Về Tiến Nông"
+    type: file
+    path: src/content/i18n/zh/ve-tien-nong.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-van-hoa-doanh-nghiep
+    label: "Tiếng Trung – Văn hóa doanh nghiệp"
+    type: file
+    path: src/content/i18n/zh/van-hoa-doanh-nghiep.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-khoa-hoc-cong-nghe
+    label: "Tiếng Trung – Khoa học & Công nghệ"
+    type: file
+    path: src/content/i18n/zh/khoa-hoc-cong-nghe.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-san-pham
+    label: "Tiếng Trung – Sản phẩm (trang danh sách)"
+    type: file
+    path: src/content/i18n/zh/san-pham.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-chi-tiet-san-pham
+    label: "Tiếng Trung – Chi tiết sản phẩm (khung chung)"
+    type: file
+    path: src/content/i18n/zh/chi-tiet-san-pham.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-san-pham-danh-muc
+    label: "Tiếng Trung – Nội dung 52 sản phẩm"
+    type: file
+    path: src/content/i18n/zh/san-pham-danh-muc.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-giai-phap
+    label: "Tiếng Trung – Giải pháp cho cây trồng"
+    type: file
+    path: src/content/i18n/zh/giai-phap.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-giai-phap-du-an
+    label: "Tiếng Trung – Giải pháp cho dự án"
+    type: file
+    path: src/content/i18n/zh/giai-phap-du-an.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-phat-trien-ben-vung
+    label: "Tiếng Trung – Phát triển bền vững"
+    type: file
+    path: src/content/i18n/zh/phat-trien-ben-vung.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-nong-dan
+    label: "Tiếng Trung – Nông dân Tiến Nông"
+    type: file
+    path: src/content/i18n/zh/nong-dan.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-tuyen-dung
+    label: "Tiếng Trung – Tuyển dụng"
+    type: file
+    path: src/content/i18n/zh/tuyen-dung.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-lien-he
+    label: "Tiếng Trung – Liên hệ"
+    type: file
+    path: src/content/i18n/zh/lien-he.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-tro-thanh-doi-tac
+    label: "Tiếng Trung – Trở thành đối tác"
+    type: file
+    path: src/content/i18n/zh/tro-thanh-doi-tac.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-tin-tuc
+    label: "Tiếng Trung – Tin tức (nhãn chung)"
+    type: file
+    path: src/content/i18n/zh/tin-tuc.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-site
+    label: "Tiếng Trung – Menu, chân trang, thông tin công ty"
+    type: file
+    path: src/content/i18n/zh/site.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text
+  - name: zh-giao-dien
+    label: "Tiếng Trung – Chữ cố định trong giao diện (nút, nhãn, mô tả ảnh)"
+    type: file
+    path: src/content/i18n/zh/giao-dien.json
+    format: json
+    fields:
+    - name: items
+      label: "Câu tiếng Việt và bản dịch"
+      description: "Mỗi dòng: câu tiếng Việt đúng như trên web (cột 1) và bản dịch (cột 2). Sửa bản dịch rồi bấm Save. Không sửa cột tiếng Việt. Câu chưa có bản dịch sẽ hiện tiếng Việt trên trang."
+      type: object
+      list: true
+      fields:
+      - name: vi
+        label: Tiếng Việt
+        type: text
+      - name: text
+        label: "Tiếng Trung"
+        type: text

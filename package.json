@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "check:content": "node scripts/check-content.mjs"
+    "check:content": "node scripts/check-content.mjs",
+    "i18n": "node scripts/i18n.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.3.5",

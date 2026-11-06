@@ -15,9 +15,12 @@ import Head from '../../components/story/Head.astro';
 import siteRaw from '../../content/site.json';
 import { link, url, youtubeId } from '../../lib/routes';
 import { newsByLink } from '../../lib/news';
+import { localeOf } from '../../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/van-hoa-doanh-nghiep.json');
-const site = withDefaults(siteRaw, 'src/content/site.json');
+const c = withDefaults(raw, 'src/content/pages/van-hoa-doanh-nghiep.json', L);
+const site = withDefaults(siteRaw, 'src/content/site.json', L);
 const F = 'src/content/pages/van-hoa-doanh-nghiep.json';
 const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
 
@@ -267,7 +270,7 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k }) as typeof st & { 
     };
     const paint = (btn: HTMLElement, v: Clip) => {
       btn.dataset.clip = JSON.stringify(v);
-      btn.setAttribute('aria-label', `Phát video ${v.title}`);
+      btn.setAttribute('aria-label', `${({ en: 'Play video:', zh: '播放视频：' } as Record<string, string>)[document.documentElement.lang.slice(0, 2)] ?? 'Phát video'} ${v.title}`);
       const thumb = btn.querySelector('.vh-song__thumb');
       if (thumb) thumb.innerHTML = (v.yt ? `<img src="https://i.ytimg.com/vi/${v.yt}/mqdefault.jpg" alt="" width="320" height="180">` : '')
         + '<span class="yt__play" aria-hidden="true"></span>' + (v.dur ? `<span class="vh-song__dur vh-song__dur--sm">${esc(v.dur)}</span>` : '');

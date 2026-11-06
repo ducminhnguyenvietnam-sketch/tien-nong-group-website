@@ -9,11 +9,14 @@ import PageHero from '../components/PageHero.astro';
 import FigureCard from '../components/FigureCard.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { asset, link, url } from '../lib/routes';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
 // Board titles: "Chủ tịch HĐQT · Người sáng lập" shows each title on its own line.
 const roles = (t: string) => String(t ?? '').split(/\s*·\s*/).filter(Boolean);
-const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json');
-const site = withDefaults(siteRaw, 'src/content/site.json');
+const c = withDefaults(raw, 'src/content/pages/ve-tien-nong.json', L);
+const site = withDefaults(siteRaw, 'src/content/site.json', L);
 const F = 'src/content/pages/ve-tien-nong.json';
 const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
 
@@ -69,7 +72,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k }) as type
 {isFilled(t.t2) && <p class="ceo__lead">{t.t2.replace(/^[“"]\s*|\s*[”"]$/g, '')}</p>}
 <p class="ceo__body jx-justify">{t.t3}</p>
 </div>
-<div class="ceo__sign"><span>{t.t5} {site.company.name}</span><strong>{t.t4}</strong>{ceoRoles.length > 0 && <ul class="ceo__roles">{ceoRoles.map((r) => <li>{r}</li>)}</ul>}</div>
+<div class="ceo__sign"><span>{L === 'en' ? `${t.t5}, ${site.company.name}` : L === 'zh' ? `${site.company.name}${t.t5}` : `${t.t5} ${site.company.name}`}</span><strong>{t.t4}</strong>{ceoRoles.length > 0 && <ul class="ceo__roles">{ceoRoles.map((r) => <li>{r}</li>)}</ul>}</div>
 </div>
 <div class="ceo__band">
 <div class="ceo__badge"><img class="ceo__mark" src={asset('assets/logo-mark-vang.png')} alt="Tiến Nông" width="277" height="200" /><span class="ceo__rule" aria-hidden="true"></span><p class="ceo__slogan">{slogan.length > 1 ? <><span>{slogan[0]}</span><span class="ceo__dash"> – </span><span class="ceo__gold">{slogan.slice(1).join(' – ')}</span></> : t.slogan}</p></div>

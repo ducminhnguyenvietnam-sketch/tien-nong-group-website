@@ -15,9 +15,12 @@ import PageHero from '../../components/PageHero.astro';
 import FigureCard from '../../components/FigureCard.astro';
 import Head from '../../components/story/Head.astro';
 import { link, url } from '../../lib/routes';
+import { localeOf } from '../../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/xanh-hoa-truong-sa.json');
-const site = withDefaults(siteRaw, 'src/content/site.json');
+const c = withDefaults(raw, 'src/content/pages/xanh-hoa-truong-sa.json', L);
+const site = withDefaults(siteRaw, 'src/content/site.json', L);
 const F = 'src/content/pages/xanh-hoa-truong-sa.json';
 const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
 const co = site.company as Record<string, string>;
