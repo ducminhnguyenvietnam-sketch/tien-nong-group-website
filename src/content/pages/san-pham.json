@@ -14,7 +14,7 @@
       "alt": "Ảnh nền toàn khung đầu trang (ảnh ngang khoảng 1920×640)",
       "src": "/uploads/product-hero-bg-mw4d1rls.jpg"
     },
-    "background_overlay": true
+    "background_overlay": false
   },
   "s01_tieu_de": {
     "t1": "Trang chủ",
