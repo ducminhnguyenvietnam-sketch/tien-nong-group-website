@@ -118,17 +118,19 @@ Mỗi dòng chữ trên trang là một ô riêng, tên ô ghi loại chữ và 
 
 ### Ảnh cho bài viết — kích thước và dung lượng
 
-Pages CMS **không nhận tệp lớn hơn khoảng 3 MB** (báo lỗi *Failed to upload file: 413*). Ảnh chụp điện thoại
-thường 4–10 MB nên phải thu nhỏ trước khi tải:
+Pages CMS **chỉ nhận tệp tối đa khoảng 3 MB** (lớn hơn sẽ báo lỗi *Failed to upload file: 413*) — giới hạn
+này nằm ở máy chủ của Pages CMS, website không nâng được. Dưới mức đó cứ tải ảnh gốc lên: **website tự nén
+và thu nhỏ** cả ảnh đại diện lẫn ảnh trong bài (bản rộng tối đa 1600–2000 px, khoảng 200–400 KB), nên trang
+vẫn tải nhanh.
 
-| Ảnh | Kích thước nên dùng | Dung lượng |
+| Ảnh | Nên dùng | Tối đa |
 | --- | --- | --- |
-| Ảnh đại diện | ngang 2080 × 1120 px (tỉ lệ khoảng 16:9) | dưới 1 MB |
-| Ảnh trong bài | rộng 1600 px | dưới 800 KB |
+| Ảnh đại diện | ảnh ngang, rộng từ 2080 px (tỉ lệ khoảng 16:9) | dưới 3 MB |
+| Ảnh trong bài | rộng từ 1600 px | dưới 3 MB |
 
-Cách thu nhỏ nhanh: mở <https://squoosh.app>, kéo ảnh vào, ở **Resize** gõ chiều rộng (2080 hoặc 1600),
-chọn **MozJPEG**, chất lượng 80 → **Download**. Hoặc trên Windows: chuột phải ảnh → **Mở bằng Photos** →
-**…** → **Đổi kích cỡ ảnh**.
+Ảnh lớn hơn 3 MB (thường là ảnh chụp điện thoại đời mới, 4–10 MB): mở <https://squoosh.app>, kéo ảnh vào,
+ở **Resize** gõ chiều rộng 2400, chọn **MozJPEG**, chất lượng 85 → **Download** (thường còn 1–2 MB, nhìn
+không khác ảnh gốc). Hoặc trên Windows: chuột phải ảnh → **Mở bằng Photos** → **…** → **Đổi kích cỡ ảnh**.
 
 **Cách không cần thu nhỏ (ảnh đại diện và album):** sau khi lưu bài lần đầu và web đã cập nhật (~2 phút),
 mở bài trên web kèm `?sua-anh` ở cuối địa chỉ, bấm vào ảnh đại diện để tải ảnh lên — website tự thu nhỏ và
