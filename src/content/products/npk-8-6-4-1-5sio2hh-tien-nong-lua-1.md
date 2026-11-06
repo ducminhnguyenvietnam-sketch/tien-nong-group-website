@@ -15,13 +15,13 @@ shelf_life: 36 tháng kể từ ngày sản xuất
 production: In trên bao bì
 standards: ISO 9001:2015 · ISO 14001:2015
 npk:
-  - value: "8"
+  - value: 8%
     unit: N
-  - value: "6"
+  - value: 6%
     unit: P₂O₅
-  - value: "4"
+  - value: 4%
     unit: K₂O
-  - value: 1,5
+  - value: 1,5%
     unit: SiO₂
 composition:
   - name: Hàm lượng Đạm tổng số (Nts)
