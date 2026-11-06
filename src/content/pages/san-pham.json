@@ -4,11 +4,15 @@
   },
   "hero": {
     "image": {
-      "src": "/uploads/sp-hero-bo-san-pham.png",
       "focus": "center",
       "zoom": "100",
       "alt": "Bộ sản phẩm phân bón Tiến Nông: Lúa 2, NPK 15-15-15+1SiO₂hh và Điều hoà pH đất"
-    }
+    },
+    "background": {
+      "focus": "center",
+      "zoom": "100"
+    },
+    "background_overlay": true
   },
   "s01_tieu_de": {
     "t1": "Trang chủ",
@@ -76,5 +80,8 @@
     "Lạc"
   ],
   "sort_popular_label": "Bán nhiều nhất",
-  "sort_name_label": "Tên A–Z"
+  "sort_name_label": "Tên A–Z",
+  "can_le": {
+    "mac_dinh": "justify"
+  }
 }
