@@ -145,9 +145,9 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
         b.addEventListener('click', () => { page = to; render(true); });
         pager.appendChild(b);
       };
-      btn('←', page - 1, { cls: 'sp-pages__step', aria: ({ en: 'Previous page', zh: '上一页' } as Record<string, string>)[document.documentElement.lang.slice(0, 2)] ?? 'Trang trước' });
+      btn('←', page - 1, { cls: 'sp-pages__step', aria: ({ en: 'Previous page', zh: '上一页' })[document.documentElement.lang.slice(0, 2)] ?? 'Trang trước' });
       for (let i = 1; i <= pages; i++) btn(String(i), i);
-      btn('→', page + 1, { cls: 'sp-pages__step', aria: ({ en: 'Next page', zh: '下一页' } as Record<string, string>)[document.documentElement.lang.slice(0, 2)] ?? 'Trang sau' });
+      btn('→', page + 1, { cls: 'sp-pages__step', aria: ({ en: 'Next page', zh: '下一页' })[document.documentElement.lang.slice(0, 2)] ?? 'Trang sau' });
     }
     if (scroll) document.querySelector('.sp-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }

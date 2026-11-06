@@ -10,7 +10,7 @@ import { isFilled, withDefaults } from '../../lib/content';
 import Layout from '../../layouts/Layout.astro';
 import Button from '../../components/Button.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
-import { link, url } from '../../lib/routes';
+import { asset, link, url } from '../../lib/routes';
 import { getProducts, lineLabel, productUrl, type Product } from '../../lib/products';
 import { localeOf, localize } from '../../lib/i18n';
 /** Language of this page (vi / en / zh): content is read in that language. */
@@ -60,8 +60,22 @@ const sections = [
   ['thanh-phan', 'Thành phần', p.composition.length > 0], ['tac-dung', 'Tác dụng', p.benefits.length > 0],
   ['huong-dan', 'Hướng dẫn sử dụng', usage.length > 0], ['an-toan', 'An toàn & bảo quản', safety.length > 0], ['phap-ly', 'Thông tin pháp lý', legal.length > 0 || isFilled(p.tccs_pdf)],
 ].filter(([, , on]) => on) as [string, string, boolean][];
+/** Google: the product (brand, maker, category, photo) and where it sits in the site (breadcrumb). */
+const siteOrigin = Astro.site?.origin ?? '';
+const absUrl = (path: string) => (siteOrigin ? new URL(path, Astro.site).href : undefined);
+const schema = siteOrigin ? [
+  { '@context': 'https://schema.org', '@type': 'Product', name: p.name, description: p.summary || undefined, category: line || undefined,
+    image: isFilled(p.front.src) ? absUrl(asset(p.front.src)) : undefined, url: absUrl(productUrl(entry)), sku: isFilled(p.code) ? p.code : undefined,
+    brand: { '@type': 'Brand', name: 'Tiến Nông' },
+    manufacturer: { '@type': 'Organization', name: 'Công ty Cổ phần Công Nông nghiệp Tiến Nông' } },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Tiến Nông', item: absUrl(url('trang-chu')) },
+    { '@type': 'ListItem', position: 2, name: ({ vi: 'Sản phẩm', en: 'Products', zh: '产品' } as Record<string, string>)[L], item: absUrl(url('san-pham')) },
+    { '@type': 'ListItem', position: 3, name: p.name, item: absUrl(productUrl(entry)) },
+  ] },
+] : [];
 ---
-<Layout title={p.name} description={p.summary || `${p.name} – ${line} của Tiến Nông.`} active="Sản phẩm">
+<Layout title={p.name} description={p.summary || `${p.name} – ${line} của Tiến Nông.`} image={isFilled(p.front.src) ? p.front.src : undefined} schema={schema} active="Sản phẩm">
 <section class="pd-top">
 <div class="pd-wrap">
 <nav class="pd-crumbs" aria-label="Đường dẫn"><a href={url('trang-chu')}>Trang chủ</a> / <a href={url('san-pham')}>Sản phẩm</a>{line && <> / {line}</>} / <span aria-current="page">{p.name}</span></nav>

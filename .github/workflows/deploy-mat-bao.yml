@@ -15,6 +15,9 @@ name: Deploy to tiennong.com (Mắt Bão)
 #             FTP_DIR       public_html/                     (optional, the folder the site lives in)
 #             FORM_ENDPOINT                                  (optional, as in deploy.yml)
 #             FTP_SECURITY  strict                           (optional; "loose" only if the certificate check fails)
+#             GTM_ID        GTM-XXXXXXX                      (optional: Google Tag Manager — GA4, Google Ads, pixels)
+#             GSC_VERIFY                                     (optional: Google Search Console HTML-tag code)
+#             NOINDEX       1                                (optional: live but hidden from Google, e.g. soft launch)
 #
 # Every action below is pinned to an exact commit (the version is in the comment), so a hijacked
 # release tag of a third-party action cannot run code that sees the FTP password. Dependabot
@@ -67,6 +70,11 @@ jobs:
           BASE_PATH: /
           PUBLIC_GITHUB_REPO: ${{ github.repository }}
           PUBLIC_FORM_ENDPOINT: ${{ vars.FORM_ENDPOINT }}
+          # Google Tag Manager container (GA4, Google Ads, Meta / TikTok pixels) and Search Console tag.
+          PUBLIC_GTM_ID: ${{ vars.GTM_ID }}
+          PUBLIC_GSC_VERIFY: ${{ vars.GSC_VERIFY }}
+          # NOINDEX = 1: the site is live but kept out of Google (soft launch on a temporary domain).
+          PUBLIC_PREVIEW: ${{ vars.NOINDEX }}
       # Only changed files are sent (the action keeps a small state file on the server, hidden by .htaccess).
       - if: env.HAS_FTP == 'true'
         uses: SamKirkland/FTP-Deploy-Action@a51268f67f6605236975928ae28b0f7e9971d50a # v4.3.6
