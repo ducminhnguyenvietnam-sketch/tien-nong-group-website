@@ -1,0 +1,8 @@
+---
+// English (/en/) and Chinese (/zh/) copy of src/pages/giai-phap.astro: same template, text from the phrase banks (src/lib/i18n.ts).
+import Page from '../giai-phap.astro';
+export function getStaticPaths() {
+  return [{ params: { lang: 'en' } }, { params: { lang: 'zh' } }];
+}
+---
+<Page />

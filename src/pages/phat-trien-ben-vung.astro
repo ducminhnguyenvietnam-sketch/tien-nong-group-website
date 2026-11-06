@@ -14,11 +14,14 @@ import Stats from '../components/story/Stats.astro';
 import YearTabs from '../components/story/YearTabs.astro';
 import tsRaw from '../content/pages/xanh-hoa-truong-sa.json';
 import { asset, link, url } from '../lib/routes';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/phat-trien-ben-vung.json');
+const c = withDefaults(raw, 'src/content/pages/phat-trien-ben-vung.json', L);
 const F = 'src/content/pages/phat-trien-ben-vung.json';
 // Teaser for the sub-page Xanh hoá Trường Sa (its title, intro and photo come from that page's content).
-const ts = withDefaults(tsRaw, 'src/content/pages/xanh-hoa-truong-sa.json');
+const ts = withDefaults(tsRaw, 'src/content/pages/xanh-hoa-truong-sa.json', L);
 const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
 const programs = c.programs.items.filter((p) => isFilled(p.title));
 const tags = [...new Set(programs.map((p) => p.tag).filter(isFilled))];
@@ -66,17 +69,17 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 </div>
 </div></section>
 
-<section id="nha-may-xanh" style="scroll-margin-top:160px;position:relative;min-height:560px;background:var(--gray-800);display:flex">
-<div style="position:absolute;inset:0"><ImageSlot style={fill} id="esg-plant" shape="rect" placeholder="Flycam khuôn viên nhà máy với cây xanh" image={c.plant.image} cms={`${F}#plant.image`} sizes="100vw" /></div>
-<div style="position:relative;max-width:var(--wrap, 1280px);width:100%;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,56px);display:flex;align-items:flex-end;justify-content:flex-end;pointer-events:none">
-<div style="background:var(--surface-card);border-radius:var(--radius-xl);padding:clamp(28px,3vw,40px);max-width:600px;display:flex;flex-direction:column;gap:16px;pointer-events:auto;box-shadow:var(--shadow-lg)">
+<section id="nha-may-xanh" class="pv-plant" style="scroll-margin-top:160px;position:relative;min-height:560px;background:var(--gray-800);display:flex">
+<div class="pv-plant__photo" style="position:absolute;inset:0"><ImageSlot style={fill} id="esg-plant" shape="rect" placeholder="Flycam khuôn viên nhà máy với cây xanh" image={c.plant.image} cms={`${F}#plant.image`} sizes="100vw" /></div>
+<div class="pv-plant__wrap" style="position:relative;max-width:var(--wrap, 1280px);width:100%;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,56px);display:flex;align-items:flex-end;justify-content:flex-end;pointer-events:none">
+<div class="pv-plant__card" style="background:var(--surface-card);border-radius:var(--radius-xl);padding:clamp(28px,3vw,40px);max-width:600px;display:flex;flex-direction:column;gap:16px;pointer-events:auto;box-shadow:var(--shadow-lg)">
 <span class="st-eyebrow">{c.plant.eyebrow}</span>
 <h2 class="st-h2">{c.plant.title}</h2>
 <p class="st-lead">{c.plant.text}</p>
-{facts.length > 0 && <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:12px;border-top:1px solid var(--border-default);font-size:15px">
-{facts.map((f) => <div><strong style="display:block">{f.value}</strong><span style="color:var(--text-secondary)">{f.label}</span></div>)}
+{facts.length > 0 && <div class="pv-plant__facts" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:12px;border-top:1px solid var(--border-default);font-size:15px">
+{facts.map((f) => <div class="pv-plant__fact"><strong style="display:block">{f.value}</strong><span style="color:var(--text-secondary)">{f.label}</span></div>)}
 </div>}
-{c.plant.extras.map((x) => <div style="padding-top:12px;border-top:1px solid var(--border-default);display:flex;flex-direction:column;gap:2px"><strong>{x.title}</strong><span style="color:var(--text-secondary);font-size:15px">{x.text}</span></div>)}
+{c.plant.extras.map((x) => <div class="pv-plant__extra" style="padding-top:12px;border-top:1px solid var(--border-default);display:flex;flex-direction:column;gap:2px"><strong>{x.title}</strong><span style="color:var(--text-secondary);font-size:15px">{x.text}</span></div>)}
 </div></div></section>
 
 <section id="nha-nong" class="st-sec">
@@ -102,7 +105,7 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 <figure class="pv-c-photo"><ImageSlot style={fill} id="esg-orphans" shape="rounded" radius="20" placeholder={c.orphans.image.alt || 'Ông bố Tiến Nông'} image={c.orphans.image} cms={`${F}#orphans.image`} sizes="(max-width: 899px) 92vw, 600px" />{isFilled(c.orphans.photo_caption) && <figcaption>{c.orphans.photo_caption}</figcaption>}</figure>
 </div>
 <ul class="pv-c-stats">{c.orphans.stats.filter((st) => isFilled(st.value)).map((st) => <li><b>{st.value}{isFilled(st.unit) && <small>{st.unit}</small>}</b><span>{st.label}</span></li>)}</ul>
-<YearTabs items={c.orphans.timeline} tone="dark" photos={false} title={c.orphans.timeline_title} autoplay={6000} cms={`${F}#orphans.timeline`} id="orphan-year">
+<YearTabs items={c.orphans.timeline} tone="dark" photos={true} title={c.orphans.timeline_title} autoplay={6000} cms={`${F}#orphans.timeline`} id="orphan-year">
 <article slot="aside" class="pv-c-story">
 <div class="pv-c-story__text">
 {isFilled(c.orphans.story_eyebrow) && <span class="pv-c-story__eyebrow">{c.orphans.story_eyebrow}</span>}
@@ -131,13 +134,13 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 })}
 </div></div></section>
 
-<section id="truong-sa" class="ts-teaser" aria-label={ts.hero.title}>
+{L !== 'zh' && <section id="truong-sa" class="ts-teaser" aria-label={ts.hero.title}>
 <a href={url('phat-trien-ben-vung/xanh-hoa-truong-sa')} class="ts-teaser__link">
 <div class="ts-teaser__photo"><ImageSlot style={fill} id="ts-teaser" shape="rect" placeholder="Ảnh Xanh hoá Trường Sa" image={ts.hero.background} cms="src/content/pages/xanh-hoa-truong-sa.json#hero.background" sizes="100vw" /></div>
 <div class="ts-teaser__scrim" aria-hidden="true"></div>
 <div class="ts-teaser__copy"><span class="ts-teaser__eyebrow">{ts.hero.eyebrow}</span><strong class="ts-teaser__title">{ts.hero.title}</strong><span class="ts-teaser__text">{ts.hero.intro}</span><span class="ts-teaser__btn">Xem chương trình →</span></div>
 </a>
-</section>
+</section>}
 
 <section id="lo-trinh" class="st-sec st-sec--card">
 <div class="st-wrap">
@@ -188,8 +191,31 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
   @media (max-width: 899.98px) {
     .pv-c-top { grid-template-columns: minmax(0, 1fr); }
   }
+  @media (max-width: 767.98px) {
+    /* Pillars on phones: four photo tiles (2 × 2) with the pillar name on the photo; the text is in each section below. */
+    .pv-pillars { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px; }
+    .pv-pillar { aspect-ratio: 4 / 5; border: 0; color: #fff; }
+    .pv-pillar__img { position: absolute; inset: 0; aspect-ratio: auto; }
+    .pv-pillar::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, rgba(2, 53, 26, .92) 0%, rgba(2, 53, 26, .55) 45%, rgba(2, 53, 26, 0) 75%); }
+    .pv-pillar__body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 14px; gap: 4px; }
+    .pv-pillar__tag { color: var(--brand-highlight); font-size: 10.5px; }
+    .pv-pillar__body strong { font-size: 16.5px; line-height: 1.25; color: #fff; }
+    .pv-pillar__body > span:not(.pv-pillar__tag):not(.pv-pillar__go) { display: none; }
+    .pv-pillar__go { position: absolute; right: 12px; top: -26px; width: 28px; height: 28px; padding: 0; display: grid; place-items: center; border-radius: 50%; background: rgba(255, 255, 255, .92); color: var(--green-700); font-size: 14px; }
+    /* Green factory on phones: the whole photo on top, the card below it on the light page, facts as tiles. */
+    .pv-plant { flex-direction: column; min-height: 0 !important; background: var(--surface-card) !important; }
+    .pv-plant__photo { position: relative !important; aspect-ratio: 16 / 10; }
+    .pv-plant__wrap { padding: 0 16px 40px !important; margin-top: -48px; }
+    .pv-plant__card { padding: 22px 20px !important; gap: 12px !important; box-shadow: 0 14px 36px rgba(0, 71, 35, .14) !important; }
+    .pv-plant__card .st-lead { font-size: 15.5px; text-align: start !important; text-align-last: auto !important; }
+    .pv-plant__facts { border-top: 0 !important; padding-top: 0 !important; gap: 8px !important; }
+    .pv-plant__fact { padding: 12px; border-radius: var(--radius-md); background: var(--green-50); }
+    .pv-plant__fact strong { color: var(--green-800); font-size: 15px; }
+    .pv-plant__fact span { font-size: 13.5px; }
+    .pv-plant__extra span { font-size: 14.5px !important; }
+  }
   @media (max-width: 599.98px) {
-    .pv-pillars, .pv-programs { grid-template-columns: minmax(0, 1fr) !important; }
+    .pv-programs { grid-template-columns: minmax(0, 1fr) !important; }
     .pv-c-stats { grid-template-columns: minmax(0, 1fr); gap: 14px; }
     .pv-c-story { padding: 18px; }
   }

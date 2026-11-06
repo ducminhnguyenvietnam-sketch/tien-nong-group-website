@@ -10,8 +10,11 @@ import PageHero from '../components/PageHero.astro';
 import Input from '../components/Input.astro';
 import Select from '../components/Select.astro';
 import { url } from '../lib/routes';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
+const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json', L);
 
 ---
 <Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Giải pháp">
@@ -50,7 +53,7 @@ const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
 </div>
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
 <div style="border-top:2px solid var(--green-500);padding-top:14px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{c.s04_nang_luc.t4}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s04_nang_luc.t5}</span></div>
-<div style="border-top:2px solid var(--green-500);padding-top:14px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{c.s04_nang_luc.t6}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s04_nang_luc.t7}</span></div>
+<div style="border-top:2px solid var(--green-500);padding-top:14px;display:flex;flex-direction:column;gap:4px"><strong class="pj-cap" style="font-size:18px">{(() => { const [a, ...b] = String(c.s04_nang_luc.t6).split(/(?=Khoa học & Công nghệ)/); return b.length ? <>{a}<span style="white-space:nowrap">{b.join("")}</span></> : c.s04_nang_luc.t6; })()}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s04_nang_luc.t7}</span></div>
 <div style="border-top:2px solid var(--green-500);padding-top:14px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{c.s04_nang_luc.t8}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s04_nang_luc.t9}</span></div>
 <div style="border-top:2px solid var(--green-500);padding-top:14px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px">{c.s04_nang_luc.t10}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s04_nang_luc.t11}</span></div>
 </div></div></section>
@@ -83,6 +86,7 @@ const c = withDefaults(raw, 'src/content/pages/giai-phap-du-an.json');
 </Layout>
 
 <style>
+  @media (max-width: 479.98px) { .pj-cap { font-size: 16.5px !important; } }
   /* Fields served: two cards to a row (photo left, text right); editors can add more in the CMS. */
   .pj-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
   .pj-field { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }

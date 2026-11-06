@@ -12,15 +12,21 @@ import Button from '../../components/Button.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
 import { link, url } from '../../lib/routes';
 import { getProducts, lineLabel, productUrl, type Product } from '../../lib/products';
+import { localeOf, localize } from '../../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
 export async function getStaticPaths() {
   const all = await getProducts();
   return all.map((entry) => ({ params: { slug: entry.id }, props: { entry, all } }));
 }
 interface Props { entry: Product; all: Product[] }
-const { entry, all } = Astro.props;
+// English / Chinese copies (src/pages/[lang]/products/[slug].astro) show the same product in their language.
+const tl = (e: Product): Product => (L === 'vi' ? e : { ...e, viName: e.data.name, data: localize(e.data, L) });
+const entry = tl(Astro.props.entry);
+const all = Astro.props.all.map(tl);
 const p = entry.data;
-const c = withDefaults(raw, 'src/content/pages/chi-tiet-san-pham.json');
+const c = withDefaults(raw, 'src/content/pages/chi-tiet-san-pham.json', L);
 const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
 const views = [
   { key: 'front', label: 'Mặt trước', image: p.front },
@@ -31,7 +37,7 @@ const views = [
 const fieldPhotos = ([['field', p.field], ['field2', p.field2], ['field3', p.field3]] as const)
   .map(([key, image]) => ({ key, image })).filter((f, i) => i === 0 || isFilled(f.image.src));
 const fieldCount = fieldPhotos.filter((f) => isFilled(f.image.src)).length;
-const line = lineLabel(p.line);
+const line = lineLabel(p.line, L);
 // With only the front photo there is nothing to switch between, so the thumbnail strip stays hidden.
 const hasMore = views.slice(1).some((v) => isFilled(v.image.src)) || fieldCount > 0;
 const shown = (v: { image: { src?: string } }, k: number) => (k === 0 ? hasMore : isFilled(v.image.src));
@@ -144,7 +150,7 @@ const sections = [
 <div class="pd-related__grid">
 {related.map((r) => <a href={productUrl(r)} class="pd-rel">
 <div class="pd-rel__img"><ImageSlot style={fill} id={`rel-${r.id}`} shape="rect" fit="contain" placeholder={r.data.name} image={r.data.front} cms={`${r.filePath}#front`} sizes="220px" /></div>
-<span class="pd-rel__line">{lineLabel(r.data.line)}</span><strong>{r.data.name}</strong>
+<span class="pd-rel__line">{lineLabel(r.data.line, L)}</span><strong>{r.data.name}</strong>
 </a>)}
 </div></div></section>}
 </Layout>

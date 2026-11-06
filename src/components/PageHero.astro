@@ -22,8 +22,14 @@ interface Props {
   lead?: string;
   /** Fixed width for the lead (px) when the automatic three-line width doesn't break where it should. */
   leadWidth?: number;
+  /** Dark layer behind the text: how far across the photo it reaches (% of the width, 30–100) and how dark it is (0–100). */
+  scrimWidth?: number | string;
+  scrimStrength?: number | string;
 }
-const { id, image, cms, placeholder = '', crumbs = [], eyebrow, title, lead, leadWidth } = Astro.props;
+const { id, image, cms, placeholder = '', crumbs = [], eyebrow, title, lead, leadWidth, scrimWidth, scrimStrength } = Astro.props;
+const clampN = (v: unknown, lo: number, hi: number) => { const n = Number(v); return Number.isFinite(n) && String(v).trim() !== '' ? Math.min(hi, Math.max(lo, n)) : undefined; };
+const sw = clampN(scrimWidth, 30, 100), sa = clampN(scrimStrength, 0, 100);
+const scrimStyle = [sw !== undefined && `--scrim-w:${sw}%`, sa !== undefined && `--scrim-a:${sa / 100}`].filter(Boolean).join(';') || undefined;
 // A line break typed in the title (CMS) is kept: "Một gia đình lớn,\nMột lòng…" shows on two lines.
 const titleLines = String(title ?? '').split(/\s*\n\s*/).filter(Boolean);
 const hasSlot = Astro.slots.has('default');
@@ -34,7 +40,7 @@ const leadW = leadWidth ? leadWidth : lead ? (oneLine <= 760 ? oneLine : Math.mi
 ---
 <section class="page-hero">
 <div class="page-hero__photo"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={id} shape="rect" placeholder={placeholder} image={image} cms={cms} priority sizes="100vw" /></div>
-<div class="page-hero__scrim" aria-hidden="true"></div>
+<div class="page-hero__scrim" aria-hidden="true" style={scrimStyle}></div>
 <div class="page-hero__inner">
 {crumbs.length > 0 && <nav class="page-hero__crumbs" aria-label="Đường dẫn">
 {crumbs.map((c, i) => <>{i > 0 && <span aria-hidden="true">/</span>}{c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</>)}
@@ -53,8 +59,8 @@ const leadW = leadWidth ? leadWidth : lead ? (oneLine <= 760 ? oneLine : Math.mi
   .page-hero__photo { position: absolute; inset: 0; }
   .page-hero__photo :global(.img-slot[data-empty] .img-slot__frame) { background: linear-gradient(135deg, var(--green-800), var(--green-600)) !important; }
   .page-hero__photo :global(.img-slot[data-empty] .img-slot__frame::after) { opacity: .12 !important; }
-  .page-hero__scrim { position: absolute; inset: 0; pointer-events: none;
-    background: linear-gradient(90deg, rgba(2, 53, 26, .82) 0%, rgba(2, 53, 26, .5) 48%, rgba(2, 53, 26, .05) 82%),
+  .page-hero__scrim { --scrim-w: 82%; --scrim-a: .82; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(90deg, rgb(2 53 26 / var(--scrim-a)) 0%, rgb(2 53 26 / calc(var(--scrim-a) * .61)) calc(var(--scrim-w) * .585), rgb(2 53 26 / calc(var(--scrim-a) * .06)) var(--scrim-w), rgb(2 53 26 / 0) 100%),
                 linear-gradient(0deg, rgba(2, 53, 26, .45) 0%, rgba(2, 53, 26, 0) 40%); }
   .page-hero__inner { position: relative; width: 100%; max-width: var(--wrap, 1280px); margin: 0 auto; padding: 28px clamp(20px, 4vw, 56px) clamp(56px, 7vw, 96px);
     display: flex; flex-direction: column; justify-content: space-between; gap: 48px; pointer-events: none; }

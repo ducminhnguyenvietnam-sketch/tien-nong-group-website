@@ -13,10 +13,13 @@ import FormFallback from '../components/FormFallback.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Head from '../components/story/Head.astro';
 import { asset, url, link } from '../lib/routes';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/lien-he.json');
-const partner = withDefaults(partnerRaw, 'src/content/pages/tro-thanh-doi-tac.json');
-const site = withDefaults(siteRaw, 'src/content/site.json');
+const c = withDefaults(raw, 'src/content/pages/lien-he.json', L);
+const partner = withDefaults(partnerRaw, 'src/content/pages/tro-thanh-doi-tac.json', L);
+const site = withDefaults(siteRaw, 'src/content/site.json', L);
 const F = 'src/content/pages/lien-he.json';
 const co = site.company as Record<string, string>;
 const social = Object.entries(site.social as Record<string, string>).filter(([k, v]) => isFilled(v) && k in { facebook: 1, youtube: 1, tiktok: 1, linkedin: 1, zalo: 1 }).sort(([a], [b]) => ['facebook', 'youtube', 'tiktok', 'linkedin', 'zalo'].indexOf(a) - ['facebook', 'youtube', 'tiktok', 'linkedin', 'zalo'].indexOf(b));

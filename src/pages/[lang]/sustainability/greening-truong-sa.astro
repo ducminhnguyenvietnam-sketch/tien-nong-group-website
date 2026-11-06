@@ -1,0 +1,9 @@
+---
+// English (/en/) copy only: the Chinese site leaves out the Trường Sa page (see ZH_EXCLUDED in src/lib/i18n.ts).
+// English (/en/) and Chinese (/zh/) copy of src/pages/phat-trien-ben-vung/xanh-hoa-truong-sa.astro: same template, text from the phrase banks (src/lib/i18n.ts).
+import Page from '../../phat-trien-ben-vung/xanh-hoa-truong-sa.astro';
+export function getStaticPaths() {
+  return [{ params: { lang: 'en' } }];
+}
+---
+<Page />

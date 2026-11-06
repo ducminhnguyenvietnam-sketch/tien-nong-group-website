@@ -7,8 +7,11 @@ import ImageSlot from '../components/ImageSlot.astro';
 import Slideshow from '../components/Slideshow.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { url } from '../lib/routes';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/khoa-hoc-cong-nghe.json');
+const c = withDefaults(raw, 'src/content/pages/khoa-hoc-cong-nghe.json', L);
 const lab = c.s03_trung_tam_r_d as Record<string, any>;
 const labs = [1, 2, 3, 4].map((n) => ({ n, img: lab[`img_lab_${n}_1`], name: lab[`t${2 + n * 2}`], text: lab[`t${3 + n * 2}`] }));
 const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && !d.topics.some((t) => !isFilled(t)));
@@ -17,13 +20,13 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
 <Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Khoa học & Công nghệ">
 <section style="position:relative;min-height:min(72vh,640px);background:var(--green-900);display:flex">
 <div style="position:absolute;inset:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="khcn-hero" shape="rect" placeholder="Nhà khoa học thao tác trong phòng thí nghiệm VILAS 1519" image={c.s01_hero.img_khcn_hero_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s01_hero.img_khcn_hero_1" /></div>
-<div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,53,26,.82) 0%,rgba(2,53,26,.5) 50%,rgba(2,53,26,0) 80%)"></div>
+<div class="kh-hero__scrim" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,53,26,.82) 0%,rgba(2,53,26,.5) 50%,rgba(2,53,26,0) 80%)"></div>
 <div style="position:relative;max-width:var(--wrap, 1280px);width:100%;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(56px,7vw,96px);display:flex;flex-direction:column;justify-content:space-between;gap:48px;pointer-events:none;color:#fff">
 <span style="font-size:13px;color:var(--green-100)">{c.s01_hero.t1}</span>
 <div class="hero-copy" style="max-width:760px;display:flex;flex-direction:column;gap:20px">
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-100)">{c.s01_hero.t2}</span>
 <h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero.t3}</h1>
-<p style="margin:0;font-size:var(--fs-lead);line-height:1.55;color:var(--green-50);text-wrap:pretty">{c.s01_hero.t4}</p>
+<p class="jx-justify kh-hero__lead" style="margin:0;font-size:var(--fs-lead);line-height:1.55;color:var(--green-50)">{c.s01_hero.t4}</p>
 <div class="kh-hbtns"><a href="#nang-luc" class="kh-hbtn kh-hbtn--solid">{c.s01_hero.t5}<span aria-hidden="true">↗</span></a><a href="#quy-trinh" class="kh-hbtn">{c.s01_hero.t6}<span aria-hidden="true">↗</span></a></div>
 </div></div></section>
 
@@ -51,11 +54,12 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
 </div>
 <p class="jx-justify" style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);line-height:1.6">{c.s03_trung_tam_r_d.t3}</p>
 </div>
-<div class="kh-labs">
+<span class="rvl-hint">Chạm vào từng phòng để xem chức năng</span>
+<div class="kh-labs" data-reveal-group>
 {labs.map(({ n, img, name, text }) => (
-<article class="kh-lab">
+<article class="kh-lab" data-reveal>
 <div class="kh-lab__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`lab-${n}`} shape="rect" placeholder={img?.alt} image={img} cms={`src/content/pages/khoa-hoc-cong-nghe.json#s03_trung_tam_r_d.img_lab_${n}_1`} sizes="(max-width: 767px) 92vw, 600px" /></div>
-<div class="kh-lab__text"><span class="kh-lab__n">{String(n).padStart(2, '0')}</span><h3>{name}</h3><p>{text}</p></div>
+<div class="kh-lab__text"><button type="button" class="kh-lab__head" data-reveal-btn aria-expanded="false"><span class="kh-lab__n">{String(n).padStart(2, '0')}</span><h3>{name}</h3><span class="rvl__sign" aria-hidden="true"></span></button><div class="rvl__more"><div><p>{text}</p></div></div></div>
 </article>
 ))}
 </div></div></section>
@@ -66,13 +70,13 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.s04_linh_vuc_nghien_cuu.t1}</span>
 <h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s04_linh_vuc_nghien_cuu.t2}</h2>
 </div>
-<div data-picker style="display:flex;flex-wrap:wrap;gap:32px 48px;align-items:flex-start">
-<div role="tablist" aria-orientation="vertical" aria-label="Lĩnh vực nghiên cứu" style="flex:1 1 260px;max-width:340px;display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
+<div data-picker data-pick-swipe class="kh-dom" style="display:flex;flex-wrap:wrap;gap:32px 48px;align-items:flex-start">
+<div class="kh-dom__tabs" role="tablist" aria-orientation="vertical" aria-label="Lĩnh vực nghiên cứu" style="flex:1 1 260px;max-width:340px;display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
 {domains.map((d, k) => <button type="button" role="tab" class="dom-tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'} style="display:flex;gap:14px;align-items:baseline;text-align:left;padding:18px 0 18px 16px;border:0;border-bottom:1px solid var(--border-default);border-left:3px solid transparent;background:none;font:600 17px var(--font-body);color:var(--text-secondary);cursor:pointer"><span style="font:600 13px var(--font-mono);color:var(--text-tertiary)">{String(k + 1).padStart(2, '0')}</span>{d.name}</button>)}
 </div>
 {domains.map((d, k) => (
-<div role="tabpanel" data-pick-panel={k} hidden={k !== 0} style="flex:999 1 520px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px 40px">
-<div style="position:relative;height:380px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`dom-${k}`} shape="rounded" radius="16" placeholder={d.image.alt} image={d.image} cms={`src/content/pages/khoa-hoc-cong-nghe.json#domains.${k}.image`} /></div>
+<div role="tabpanel" class="kh-dom__panel" data-pick-panel={k} hidden={k !== 0} style="flex:999 1 520px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px 40px">
+<div class="kh-dom__img" style="position:relative;height:380px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`dom-${k}`} shape="rounded" radius="16" placeholder={d.image.alt} image={d.image} cms={`src/content/pages/khoa-hoc-cong-nghe.json#domains.${k}.image`} /></div>
 <div style="display:flex;flex-direction:column;gap:16px">
 <h3 style="margin:0;font:var(--type-num)">{d.name}</h3>
 <p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{d.body}</p>
@@ -179,4 +183,25 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
   }
   .dom-tab[aria-selected='true'] { border-left-color: var(--green-500) !important; background: var(--green-50) !important; font-weight: 700 !important; color: var(--green-800) !important; }
   .dom-tab[aria-selected='true'] span { color: var(--green-600) !important; }
+  .kh-lab__head { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; pointer-events: none; }
+  @media (max-width: 899.98px) {
+    /* Hero: a vertical scrim so the text stays readable over any photo. */
+    .kh-hero__scrim { background: linear-gradient(0deg, rgba(2, 53, 26, .94) 0%, rgba(2, 53, 26, .78) 55%, rgba(2, 53, 26, .35) 100%) !important; }
+    /* Labs: photo with name only; tap to unfold what the lab does. */
+    .kh-lab { height: auto; min-height: 150px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .kh-lab__text { position: relative; padding: 70px 18px 16px; pointer-events: auto; }
+    .kh-lab__head { flex-direction: row; align-items: center; gap: 12px; width: 100%; pointer-events: auto; cursor: pointer; }
+    .kh-lab__head h3 { flex: 1; font-size: 19px; }
+    .kh-lab__n { margin: 0; flex: none; }
+    .kh-lab p { padding-top: 8px; }
+    .kh-lab.is-open::after { background: linear-gradient(0deg, rgba(2, 53, 26, .96) 0%, rgba(2, 53, 26, .85) 55%, rgba(2, 53, 26, .3) 100%); }
+    /* Research fields: four choices as a 2 × 2 grid, then a short photo and the text, all in one screen. */
+    .kh-dom { gap: 16px !important; }
+    .kh-dom__tabs { flex: 1 1 100% !important; max-width: none !important; display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; border-top: 0 !important; }
+    .kh-dom__tabs .dom-tab { align-items: center !important; padding: 10px 12px !important; border: 1.5px solid var(--border-strong) !important; border-radius: var(--radius-md); font-size: 14.5px !important; line-height: 1.3; background: var(--surface-page) !important; }
+    .kh-dom__tabs .dom-tab[aria-selected='true'] { border-color: var(--green-500) !important; }
+    .kh-dom__panel { flex-basis: 100% !important; gap: 14px !important; }
+    .kh-dom__img { height: auto !important; aspect-ratio: 16 / 9; }
+    .kh-dom__panel h3 { display: none; }
+  }
 </style>

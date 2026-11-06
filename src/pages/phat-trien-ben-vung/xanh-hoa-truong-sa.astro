@@ -15,9 +15,12 @@ import PageHero from '../../components/PageHero.astro';
 import FigureCard from '../../components/FigureCard.astro';
 import Head from '../../components/story/Head.astro';
 import { link, url } from '../../lib/routes';
+import { localeOf } from '../../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/xanh-hoa-truong-sa.json');
-const site = withDefaults(siteRaw, 'src/content/site.json');
+const c = withDefaults(raw, 'src/content/pages/xanh-hoa-truong-sa.json', L);
+const site = withDefaults(siteRaw, 'src/content/site.json', L);
 const F = 'src/content/pages/xanh-hoa-truong-sa.json';
 const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block';
 const co = site.company as Record<string, string>;
@@ -64,11 +67,12 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 
 {journey.length > 0 && <section class="ts-journey" id="hanh-trinh"><div class="ts-wrap">
 <div class="ts-head"><span class="ts-eyebrow">{c.journey.eyebrow}</span><h2>{c.journey.title}</h2></div>
-<ol class="ts-timeline">
+{journey.length > 1 && <div class="ts-jnav" data-for="ts-timeline"><span class="ts-jnav__hint">Vuốt để xem {journey.length} mốc <span aria-hidden="true">→</span></span><span class="ts-jnav__btns"><button type="button" data-dir="-1" aria-label="Mốc trước"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><span class="ts-jnav__count"><b>1</b>/{journey.length}</span><button type="button" data-dir="1" aria-label="Mốc sau"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></span></div>}
+<ol class="ts-timeline" id="ts-timeline">
 {journey.map((j, k) => {
   const body = <>
-    <div class="ts-timeline__img"><ImageSlot style={fill} id={`ts-j-${k}`} shape="rounded" radius="14" placeholder={j.title} image={j.image} cms={`${F}#journey.items.${k}.image`} sizes="(max-width: 767px) 92vw, 300px" /></div>
     <span class="ts-timeline__date">{j.date}</span>
+    <div class="ts-timeline__img"><ImageSlot style={fill} id={`ts-j-${k}`} shape="rounded" radius="14" placeholder={j.title} image={j.image} cms={`${F}#journey.items.${k}.image`} sizes="(max-width: 767px) 92vw, 300px" /></div>
     <strong class="ts-timeline__title">{j.title}</strong>
     <span class="ts-timeline__text">{j.text}</span>
     {isFilled(j.link) && <span class="ts-timeline__more">Đọc tin →</span>}
@@ -188,6 +192,18 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
   .ts-timeline a, .ts-timeline li > div { display: flex; flex-direction: column; gap: 8px; color: var(--text-primary); text-decoration: none; }
   .ts-timeline a:hover .ts-timeline__title { color: var(--green-700); }
   .ts-timeline__img { position: relative; aspect-ratio: 4 / 3; margin-bottom: 6px; }
+  .ts-timeline__date { margin-bottom: 2px; }
+  .ts-jnav { display: none; }
+  @media (max-width: 1099.98px) {
+    /* Phones/tablets: the milestones scroll sideways — a hint, arrows and "1/5" show there are more. */
+    .ts-jnav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .ts-jnav__hint { font-size: 14px; color: var(--text-secondary); }
+    .ts-jnav__btns { display: inline-flex; align-items: center; gap: 10px; }
+    .ts-jnav button { width: 36px; height: 36px; display: grid; place-items: center; padding: 0; border-radius: 50%; border: 1px solid var(--border-strong); background: var(--surface-card); color: var(--text-primary); cursor: pointer; }
+    .ts-jnav button:disabled { opacity: .35; cursor: default; }
+    .ts-jnav__count { font: 600 14px var(--font-display); color: var(--text-tertiary); min-width: 34px; text-align: center; }
+    .ts-jnav__count b { color: var(--green-700); }
+  }
   .ts-timeline__date { font: 700 13px/1.3 var(--font-mono); color: var(--green-700); }
   .ts-timeline__title { font: 700 17px/1.35 var(--font-display); text-wrap: balance; }
   .ts-timeline__text { font-size: 14px; line-height: 1.5; color: var(--text-secondary); }
@@ -292,6 +308,28 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
   .ts-btn--solid { background: var(--green-500); border-color: var(--green-500); color: #fff; }
   .ts-btn:hover { text-decoration: none; }
 </style>
+
+<script>
+  // Journey arrows (phones): scroll one milestone at a time and keep "n / total" in step with the swipe.
+  document.querySelectorAll<HTMLElement>('.ts-jnav').forEach((nav) => {
+    const list = document.getElementById(nav.dataset.for || '');
+    if (!list) return;
+    const items = [...list.children] as HTMLElement[];
+    const count = nav.querySelector('.ts-jnav__count b');
+    const [prev, next] = [...nav.querySelectorAll<HTMLButtonElement>('button')];
+    const at = () => { const x = list.scrollLeft + 4; let i = 0; items.forEach((it, k) => { if (it.offsetLeft - items[0].offsetLeft <= x) i = k; }); return i; };
+    const sync = () => {
+      const i = list.scrollLeft + list.clientWidth >= list.scrollWidth - 4 ? items.length - 1 : at();
+      if (count) count.textContent = String(i + 1);
+      prev.disabled = list.scrollLeft < 4; next.disabled = list.scrollLeft + list.clientWidth >= list.scrollWidth - 4;
+    };
+    const go = (d: number) => { const t = items[Math.max(0, Math.min(items.length - 1, at() + d))]; list.scrollTo({ left: t.offsetLeft - items[0].offsetLeft, behavior: 'smooth' }); };
+    prev.addEventListener('click', () => go(-1)); next.addEventListener('click', () => go(1));
+    list.addEventListener('scroll', () => requestAnimationFrame(sync), { passive: true });
+    sync();
+  });
+</script>
+
 
 <script>
   document.getElementById('wish-more')?.addEventListener('click', (e) => {

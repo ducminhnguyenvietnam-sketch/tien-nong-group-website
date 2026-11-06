@@ -117,3 +117,19 @@ a:hover { color: var(--text-link-hover); }
 .nav-dd__menu a { padding: 10px 12px; border-radius: var(--radius-sm); color: var(--text-primary); font-weight: 500; text-transform: none; letter-spacing: 0; text-decoration: none; }
 .nav-dd:hover > .hdr-link { color: var(--brand-bright); border-bottom-color: var(--brand-bright); }
 .nav-dd__menu a:hover, .nav-dd__menu a[aria-current='page'] { background: var(--green-50); color: var(--green-700); }
+
+/* Chinese version (/zh/): Latin letters and numbers stay in the brand typeface; Chinese characters use the
+   reader's system font (PingFang / Microsoft YaHei / Noto Sans SC). Chinese text is never justified or
+   letter-spaced, and lines may break between any two characters. */
+:root:lang(zh-Hans) {
+  --font-display: 'TN So', 'Alexandria', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', 'Noto Sans CJK SC', sans-serif;
+  --font-body: 'TN So', 'Alexandria', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', 'Noto Sans CJK SC', sans-serif;
+}
+:root:lang(zh-Hans) main :is(p, li, dd, blockquote, figcaption, .jx-start, .jx-left, .jx-justify) { text-align-last: auto; }
+:root:lang(zh-Hans) :is(h1, h2, h3, h4) { letter-spacing: 0 !important; }
+:root:lang(zh-Hans) body { line-break: strict; word-break: normal; }
+/* English site: running text is left-aligned (ragged right), as English body copy is usually set; justified English
+   in narrow columns opens wide gaps between words. Centred or right-aligned blocks chosen in the CMS stay as they are. */
+:root:lang(en-GB) main { text-align: start; }
+:root:lang(en-GB) main .jx-justify { text-align: start !important; }
+:root:lang(en-GB) :is(h1, h2, h3) { hyphens: manual; }

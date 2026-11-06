@@ -31,6 +31,7 @@ for (const f of fs.readdirSync(newsDir).filter((f) => f.endsWith('.md'))) {
   const [, fm = '', body = ''] = src.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/) || [];
   if (!/^date:\s*\S/m.test(fm)) note(`news/${f}`, 'date', 'chưa có ngày đăng');
   if (PH.test(body.replace(/\[[^\]]*\]\([^)]*\)/g, ''))) note(`news/${f}`, 'body', 'thân bài còn nội dung mẫu');
+  if (/\]\(file:/i.test(body)) note(`news/${f}`, 'body', 'có ảnh dán từ Word (file:/…) — không hiện trên web, cần tải lại ảnh');
   if (PH.test(fm.match(/^summary:.*$/m)?.[0] ?? '')) note(`news/${f}`, 'summary', 'tóm tắt còn nội dung mẫu');
 }
 

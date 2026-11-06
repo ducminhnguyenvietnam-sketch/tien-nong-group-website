@@ -8,12 +8,15 @@ import Select from '../components/Select.astro';
 import Tabs from '../components/Tabs.astro';
 import { url, link } from '../lib/routes';
 import { getProducts, productUrl } from '../lib/products';
+import { localeOf } from '../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
 
-const c = withDefaults(raw, 'src/content/pages/san-pham.json');
+const c = withDefaults(raw, 'src/content/pages/san-pham.json', L);
 const s = c.s02_danh_sach;
 const PER_PAGE = 16;
 
-const products = await getProducts();
+const products = await getProducts(L);
 const lines = c.lines;
 const lineLabel = (key: string) => (lines.find((l) => l.key === key)?.label ?? '').replace('Phân bón ', '');
 
@@ -53,8 +56,9 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
 <div class="sp-list__wrap">
 <nav class="sp-crumbs" aria-label="Đường dẫn"><a href={url('trang-chu')}>{c.s01_tieu_de.t1}</a> <span aria-current="page">{c.s01_tieu_de.t2}</span></nav>
 <div class="sp-tabs"><Tabs id="line-tabs" label="Dòng sản phẩm" items={[{ value: 'all', label: c.lines_all_label }, ...lines.map((l) => ({ value: l.key, label: l.label }))]} value="all" /></div>
-<div class="sp-filters">
+<div class="sp-filters" id="sp-filters">
 <label class="sp-filters__q"><span>{s.t1}</span><input id="prod-q" type="search" placeholder={s.f1} /></label>
+<button type="button" class="sp-filters__toggle" aria-expanded="false" aria-controls="sp-filters" aria-label={`${s.f2} · ${s.f3}`}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><span class="sp-filters__dot" hidden></span></button>
 <div class="sp-filters__sel"><Select id="prod-crop" label={s.f2} options={[{ value: 'all', label: c.crops_all_label }, ...c.crops.map((v) => ({ value: v, label: v }))]} value="all" /></div>
 <div class="sp-filters__sel"><Select id="prod-sort" label={s.f3} options={[{ value: 'pop', label: c.sort_popular_label }, { value: 'name', label: c.sort_name_label }]} value="pop" /></div>
 </div>
@@ -86,6 +90,16 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
 <CtaBand title={c.s03_tu_van.t1} text={c.s03_tu_van.t2} primary={{ label: c.s03_tu_van.t3, href: url('giai-phap') }} secondary={{ label: c.s03_tu_van.t4, href: url('lien-he') }} />
 </Layout>
 
+<script>
+  // Phones: the filter button opens the crop / sort pickers; a dot shows when a filter is in use.
+  const spBox = document.getElementById('sp-filters');
+  const spTog = spBox?.querySelector<HTMLButtonElement>('.sp-filters__toggle');
+  spTog?.addEventListener('click', () => { const open = !spBox!.classList.contains('is-open'); spBox!.classList.toggle('is-open', open); spTog.setAttribute('aria-expanded', String(open)); });
+  const spDot = spBox?.querySelector<HTMLElement>('.sp-filters__dot');
+  const spMark = () => { if (spDot) spDot.hidden = (document.getElementById('prod-crop') as HTMLSelectElement)?.value === 'all' && (document.getElementById('prod-sort') as HTMLSelectElement)?.value === 'pop'; };
+  spBox?.addEventListener('change', spMark);
+  document.getElementById('prod-reset')?.addEventListener('click', () => setTimeout(spMark));
+</script>
 <script define:vars={{ PER_PAGE, pageWord: s.t7 }}>
   const grid = document.getElementById('prod-grid');
   const cards = [...grid.children];
@@ -131,9 +145,9 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
         b.addEventListener('click', () => { page = to; render(true); });
         pager.appendChild(b);
       };
-      btn('←', page - 1, { cls: 'sp-pages__step', aria: 'Trang trước' });
+      btn('←', page - 1, { cls: 'sp-pages__step', aria: ({ en: 'Previous page', zh: '上一页' } as Record<string, string>)[document.documentElement.lang.slice(0, 2)] ?? 'Trang trước' });
       for (let i = 1; i <= pages; i++) btn(String(i), i);
-      btn('→', page + 1, { cls: 'sp-pages__step', aria: 'Trang sau' });
+      btn('→', page + 1, { cls: 'sp-pages__step', aria: ({ en: 'Next page', zh: '下一页' } as Record<string, string>)[document.documentElement.lang.slice(0, 2)] ?? 'Trang sau' });
     }
     if (scroll) document.querySelector('.sp-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
@@ -202,6 +216,19 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
   .sp-filters__q input { padding: 10px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-default); font: 16px var(--font-body);
     background: var(--surface-card); color: var(--text-primary); outline-color: var(--green-500); }
   .sp-filters__sel { flex: 1 1 200px; min-width: 0; }
+  .sp-filters__toggle { display: none; }
+  @media (max-width: 767.98px) {
+    /* Phones: just the search box and a small filter button; the crop / sort pickers open under it. */
+    .sp-filters { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; }
+    .sp-filters__q span { display: none; }
+    .sp-filters__q input { padding-left: 38px; background: var(--surface-card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23727b72' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") no-repeat 12px center; }
+    .sp-filters__toggle { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: var(--radius-md); border: 1px solid var(--border-default); background: var(--surface-card); color: var(--text-primary); cursor: pointer; }
+    .sp-filters.is-open .sp-filters__toggle { background: var(--green-50); border-color: var(--green-300); color: var(--green-700); }
+    .sp-filters__dot { position: absolute; top: 8px; right: 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--brand-bright); }
+    .sp-filters__sel { display: none; grid-column: 1 / -1; }
+    .sp-filters.is-open .sp-filters__sel { display: block; animation: sp-drop 220ms var(--ease-out) both; }
+    @keyframes sp-drop { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+  }
   .sp-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 15px; color: var(--text-secondary); margin-top: -4px; }
   .sp-meta strong { color: var(--text-primary); }
   #prod-reset { background: none; border: 0; color: var(--green-700); font: 600 15px var(--font-body); cursor: pointer; }

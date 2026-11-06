@@ -13,6 +13,13 @@
  * (formsubmit.co), so it works with or without PUBLIC_FORM_ENDPOINT. FormSubmit asks the mailbox owner to
  * confirm once, on the first message it receives. data-subject sets the email subject prefix.
  */
+/** Messages shown to the visitor, in the page's language (English / Chinese sites under /en/, /zh/). */
+const LANG = document.documentElement.lang.slice(0, 2);
+const MSG = LANG === 'en'
+  ? { sending: 'Sending…', failed: (phone: string) => `Your request could not be sent. Please try again${phone ? ` or call ${phone}` : ''}.` }
+  : LANG === 'zh'
+    ? { sending: '正在发送…', failed: (phone: string) => `请求未能发送，请重试${phone ? `或致电 ${phone}` : ''}。` }
+    : { sending: 'Đang gửi…', failed: (phone: string) => `Chưa gửi được yêu cầu. Vui lòng thử lại${phone ? ` hoặc gọi ${phone}` : ''}.` };
 /** Field names as they read in the forwarded email (Vietnamese labels, consent box left out). */
 const EMAIL_LABELS: Record<string, string> = {
   need: 'Chủ đề', name: 'Họ và tên', phone: 'Điện thoại', email: 'Email', province: 'Tỉnh / thành phố',
@@ -68,7 +75,7 @@ document.querySelectorAll<HTMLFormElement>('form[data-lead-form]').forEach((form
       if (el.value) data[label] = el.value;
     });
     const label = submit?.textContent ?? '';
-    if (submit) { submit.disabled = true; submit.textContent = 'Đang gửi…'; }
+    if (submit) { submit.disabled = true; submit.textContent = MSG.sending; }
     try {
       const payload = { form: form.dataset.leadForm || form.dataset.sent || 'form', page: location.href, sentAt: new Date().toISOString(), ...data };
       const jobs: Promise<Response>[] = [];
@@ -97,7 +104,7 @@ document.querySelectorAll<HTMLFormElement>('form[data-lead-form]').forEach((form
       if (sent) { form.hidden = true; sent.hidden = false; sent.focus?.(); }
     } catch {
       const phone = document.documentElement.dataset.hotline;
-      error.textContent = `Chưa gửi được yêu cầu. Vui lòng thử lại${phone ? ` hoặc gọi ${phone}` : ''}.`;
+      error.textContent = MSG.failed(phone);
       error.hidden = false;
     } finally {
       if (submit) { submit.textContent = label; sync(); }

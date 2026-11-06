@@ -106,12 +106,35 @@ Mỗi dòng chữ trên trang là một ô riêng, tên ô ghi loại chữ và 
 
 1. **Tin tức – bài viết → Add an entry**.
 2. Điền **Tiêu đề**, chọn **Chuyên mục**, **Ngày đăng**, viết **Tóm tắt** (1–2 câu).
-3. Tải **Ảnh đại diện**.
-4. Viết **Nội dung bài viết**: dùng thanh công cụ để tạo tiêu đề phụ, in đậm, trích dẫn, chèn ảnh.
+3. Tải **Ảnh đại diện** (xem kích thước ở mục *Ảnh cho bài viết* bên dưới).
+4. Viết **Nội dung bài viết**. Chèn ảnh: đặt con trỏ ở chỗ cần chèn, gõ **/** rồi chọn **Image** (Ảnh) → **Upload**
+   ảnh từ máy. Không dán ảnh trực tiếp từ Word: ảnh dán từ Word chỉ là đường dẫn trong máy người viết
+   (`file:/C:/…`), lên web sẽ không hiện.
 5. Bật **Ghim làm tin nổi bật** nếu muốn bài hiện ô lớn đầu trang Tin tức (chỉ nên ghim 1 bài).
 6. Bấm **Save**.
 
-Địa chỉ bài viết được tạo từ tiêu đề lúc lưu lần đầu.
+Địa chỉ bài viết được tạo từ tiêu đề lúc lưu lần đầu. Bài còn để nguyên dòng mẫu **[Nội dung bài viết]**
+được coi là bản nháp: chưa hiện trên web cho tới khi viết nội dung thật.
+
+### Ảnh cho bài viết — kích thước và dung lượng
+
+Pages CMS **chỉ nhận tệp tối đa khoảng 3 MB** (lớn hơn sẽ báo lỗi *Failed to upload file: 413*) — giới hạn
+này nằm ở máy chủ của Pages CMS, website không nâng được. Dưới mức đó cứ tải ảnh gốc lên: **website tự nén
+và thu nhỏ** cả ảnh đại diện lẫn ảnh trong bài (bản rộng tối đa 1600–2000 px, khoảng 200–400 KB), nên trang
+vẫn tải nhanh.
+
+| Ảnh | Nên dùng | Tối đa |
+| --- | --- | --- |
+| Ảnh đại diện | ảnh ngang, rộng từ 2080 px (tỉ lệ khoảng 16:9) | dưới 3 MB |
+| Ảnh trong bài | rộng từ 1600 px | dưới 3 MB |
+
+Ảnh lớn hơn 3 MB (thường là ảnh chụp điện thoại đời mới, 4–10 MB): mở <https://squoosh.app>, kéo ảnh vào,
+ở **Resize** gõ chiều rộng 2400, chọn **MozJPEG**, chất lượng 85 → **Download** (thường còn 1–2 MB, nhìn
+không khác ảnh gốc). Hoặc trên Windows: chuột phải ảnh → **Mở bằng Photos** → **…** → **Đổi kích cỡ ảnh**.
+
+**Cách không cần thu nhỏ (ảnh đại diện và album):** sau khi lưu bài lần đầu và web đã cập nhật (~2 phút),
+mở bài trên web kèm `?sua-anh` ở cuối địa chỉ, bấm vào ảnh đại diện để tải ảnh lên — website tự thu nhỏ và
+nén ảnh, không giới hạn dung lượng (xem mục 3).
 
 ## 6. Sau khi bấm Save
 
@@ -119,6 +142,17 @@ Website cập nhật sau khoảng 2 phút. Nếu sau 5 phút chưa thấy thay �
 GitHub: dấu ✗ đỏ nghĩa là lần cập nhật bị lỗi — liên hệ người phụ trách kỹ thuật.
 
 Mọi lần lưu đều được ghi lại trong lịch sử GitHub, nên có thể khôi phục bản cũ nếu sửa nhầm.
+
+## 7. Bản tiếng Anh và tiếng Trung
+
+Website có ba thứ tiếng: tiếng Việt (địa chỉ gốc, ví dụ `/ve-tien-nong/`), tiếng Anh (`/en/about/`) và tiếng Trung giản thể (`/zh/about/`). Nút **Tiếng Việt · English · 中文** trên đầu trang chuyển sang đúng trang đó ở thứ tiếng kia.
+
+- **Ảnh, đường dẫn, bố cục dùng chung**: thay ảnh ở bản tiếng Việt thì bản tiếng Anh và tiếng Trung đổi theo, không phải làm lại.
+- **Chữ dịch nằm trong mục "Bản tiếng Anh & tiếng Trung"** ở menu trái. Mỗi trang có một danh sách hai cột: câu tiếng Việt (giữ nguyên) và bản dịch. Muốn sửa câu tiếng Anh/tiếng Trung thì sửa cột bản dịch rồi bấm Save.
+- **Khi sửa một câu tiếng Việt**, bản tiếng Anh/tiếng Trung của câu đó sẽ hiện tiếng Việt cho đến khi có bản dịch mới. Vào đúng danh sách, bấm "Add an entry", dán câu tiếng Việt mới vào cột 1 và bản dịch vào cột 2. (Kỹ thuật viên có thể chạy `npm run i18n` để máy tự liệt kê các câu còn thiếu.)
+- **Tin tức chỉ có tiếng Việt**: bản tiếng Anh/tiếng Trung không có mục Tin tức trên menu, không hiện khối tin mới ở trang chủ.
+- **Nguyên tắc riêng cho bản tiếng Trung (chốt 6/11/2026)**: không có trang "Xanh hoá Trường Sa" và không hiện bất kỳ nội dung nào nhắc tới Hoàng Sa, Trường Sa (thẻ, chương trình, nhãn trên bản đồ). Website tự lọc theo chữ tiếng Việt, nên bài/thẻ mới có nhắc tới hai quần đảo cũng tự ẩn ở bản tiếng Trung.
+- **Tên người, địa danh**: giữ nguyên tiếng Việt có dấu ở cả hai bản (ví dụ Nguyễn Hồng Phong, Thanh Hóa); tên thương hiệu luôn là **Tiến Nông**.
 
 ## Thay đổi từ bản giao diện mới (10/2026)
 

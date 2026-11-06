@@ -1,0 +1,512 @@
+{
+  "items": [
+    {
+      "vi": "Nông dân Tiến Nông",
+      "text": "Tiến Nông 农户"
+    },
+    {
+      "vi": "Hơn 300.000 hộ nông dân canh tác cùng Tiến Nông: phân bón trả chậm qua Hội Nông dân, kỹ sư đồng hành trọn mùa vụ, mô hình trình diễn và tư vấn kỹ thuật miễn phí.",
+      "text": "超过 300,000 户农民与 Tiến Nông 一起种植：通过农民协会提供肥料延期付款、农艺师全季陪伴、示范田与免费技术咨询。"
+    },
+    {
+      "vi": "Trang chủ / Nông dân Tiến Nông",
+      "text": "首页 / Tiến Nông 农户"
+    },
+    {
+      "vi": "NÔNG DÂN TIẾN NÔNG",
+      "text": "TIẾN NÔNG 农户"
+    },
+    {
+      "vi": "Đồng hành cùng nhà nông trên mọi miền đất nước",
+      "text": "与全国各地的农民同行"
+    },
+    {
+      "vi": "Hơn 300.000 hộ nông dân trên khắp cả nước đang canh tác cùng Tiến Nông. Chúng tôi đi cùng bà con từ lúc chọn phân, bón phân đến khi thu hoạch — và cả những khi mùa vụ gặp khó.",
+      "text": "全国超过 300,000 户农民正在与 Tiến Nông 一起种植。从选肥、施肥到收获，我们一路陪伴——在季节艰难时也不例外。"
+    },
+    {
+      "vi": "Đăng ký tư vấn",
+      "text": "申请咨询"
+    },
+    {
+      "vi": "Phân bón trả chậm",
+      "text": "肥料延期付款"
+    },
+    {
+      "vi": "Hotline kỹ sư",
+      "text": "农艺师热线"
+    },
+    {
+      "vi": "Nông dân và kỹ sư Tiến Nông trên cánh đồng",
+      "text": "农民与 Tiến Nông 工程师在田间"
+    },
+    {
+      "vi": "300.000+",
+      "text": "300,000+"
+    },
+    {
+      "vi": "hộ nông dân",
+      "text": "农户"
+    },
+    {
+      "vi": "Canh tác cùng Tiến Nông",
+      "text": "与 Tiến Nông 一起种植"
+    },
+    {
+      "vi": "Từ 2014",
+      "text": "自 2014 年"
+    },
+    {
+      "vi": "phân bón trả chậm",
+      "text": "肥料延期付款"
+    },
+    {
+      "vi": "Qua Hội Nông dân các tỉnh",
+      "text": "通过各省农民协会"
+    },
+    {
+      "vi": "10.000+",
+      "text": "10,000+"
+    },
+    {
+      "vi": "điểm bán lẻ",
+      "text": "个零售网点"
+    },
+    {
+      "vi": "Gần ruộng của bà con",
+      "text": "靠近农民的田地"
+    },
+    {
+      "vi": "tỉnh, thành",
+      "text": "个省市"
+    },
+    {
+      "vi": "Có hệ thống phân phối Tiến Nông",
+      "text": "设有 Tiến Nông 分销网络"
+    },
+    {
+      "vi": "CAM KẾT VỚI BÀ CON",
+      "text": "对农民的承诺"
+    },
+    {
+      "vi": "Bốn điều Tiến Nông giữ với nhà nông",
+      "text": "Tiến Nông 对农民坚守的四项承诺"
+    },
+    {
+      "vi": "Hàng thật, quét là biết",
+      "text": "正品货真，一扫便知"
+    },
+    {
+      "vi": "Mỗi bao phân bón Tiến Nông có mã QR truy xuất nguồn gốc: quét bằng điện thoại để xem thành phần và hướng dẫn sử dụng.",
+      "text": "每袋 Tiến Nông 肥料都有溯源二维码：用手机扫码即可查看成分与使用说明。"
+    },
+    {
+      "vi": "Kỹ sư xuống tận ruộng",
+      "text": "工程师下到田头"
+    },
+    {
+      "vi": "Kỹ sư nông học tư vấn miễn phí, tổ chức hội thảo đầu bờ và mô hình trình diễn ngay tại địa phương.",
+      "text": "农艺师免费提供咨询，在当地组织田间观摩会和示范田。"
+    },
+    {
+      "vi": "Mua trước, trả sau",
+      "text": "先用肥，后付款"
+    },
+    {
+      "vi": "Phân bón trả chậm qua Hội Nông dân: bà con có phân đúng thời vụ, thanh toán sau khi thu hoạch.",
+      "text": "通过农民协会提供肥料延期付款：农民按时节拿到肥料，收获后再付款。"
+    },
+    {
+      "vi": "Mùa khó, cùng gánh",
+      "text": "难时共担"
+    },
+    {
+      "vi": "Khi dịch bệnh, bão lũ ảnh hưởng mùa vụ, Tiến Nông cùng bà con tìm đầu ra, hỗ trợ phân bón và kỹ thuật phục hồi.",
+      "text": "当疫情、风灾水灾影响生产时，Tiến Nông 与农民一起寻找销路，提供肥料和恢复技术支持。"
+    },
+    {
+      "vi": "ĐỒNG HÀNH TRỌN MÙA VỤ",
+      "text": "全季陪伴"
+    },
+    {
+      "vi": "Từ trước khi gieo đến sau khi gặt",
+      "text": "从播种前到收获后"
+    },
+    {
+      "vi": "Kỹ sư Tiến Nông không chỉ bán phân bón mà theo cây trồng của bà con qua từng giai đoạn.",
+      "text": "Tiến Nông 工程师不只是卖肥料，而是陪伴农民的作物走过每一个阶段。"
+    },
+    {
+      "vi": "Trước vụ",
+      "text": "种植前"
+    },
+    {
+      "vi": "Tìm hiểu đất và giống, lấy mẫu phân tích ở vùng sản xuất tập trung, gợi ý công thức bón lót phù hợp từng cây trồng.",
+      "text": "了解土壤与品种，在集中产区取样分析，为每种作物推荐合适的基肥配方。"
+    },
+    {
+      "vi": "Kỹ sư Tiến Nông lấy mẫu trên ruộng dứa",
+      "text": "Tiến Nông 工程师在菠萝田取样"
+    },
+    {
+      "vi": "Trong vụ",
+      "text": "种植中"
+    },
+    {
+      "vi": "Hướng dẫn bón thúc theo giai đoạn sinh trưởng, thăm đồng, tổ chức hội thảo đầu bờ để bà con cùng xem kết quả.",
+      "text": "按生长阶段指导追肥，下田巡查，组织田间观摩会让农民共同查看效果。"
+    },
+    {
+      "vi": "Kỹ sư Tiến Nông thăm ruộng lúa",
+      "text": "Tiến Nông 工程师巡查稻田"
+    },
+    {
+      "vi": "Sau vụ",
+      "text": "收获后"
+    },
+    {
+      "vi": "Cùng tổng kết năng suất, chi phí; hỗ trợ kỹ thuật phục hồi đất và kết nối đầu ra khi thị trường khó khăn.",
+      "text": "一起总结产量与成本；在市场困难时提供土壤恢复技术支持并对接销路。"
+    },
+    {
+      "vi": "Bà con thu hoạch ngô trên ruộng mô hình",
+      "text": "农民在示范田收获玉米"
+    },
+    {
+      "vi": "PHÂN BÓN TRẢ CHẬM",
+      "text": "肥料延期付款"
+    },
+    {
+      "vi": "Có phân đúng vụ, trả tiền sau thu hoạch",
+      "text": "按时节用肥，收获后付款"
+    },
+    {
+      "vi": "Từ năm 2014, Tiến Nông phối hợp với Hội Nông dân các cấp cung ứng phân bón trả chậm cho hội viên: bà con nhận phân bón trước, thanh toán sau khi thu hoạch. Nhờ đó bà con được dùng vật tư bảo đảm chất lượng, giảm gánh nặng vốn đầu vụ để tập trung sản xuất — và Hội Nông dân gắn kết hội viên với tổ chức.",
+      "text": "自 2014 年起，Tiến Nông 与各级农民协会合作，为会员提供肥料延期付款：农民先领取肥料，收获后再付款。由此，农民能用上质量有保障的农资，减轻季初资金压力，专心生产——农民协会也加强了与会员的联系。"
+    },
+    {
+      "vi": "Cách chương trình vận hành",
+      "text": "计划运行方式"
+    },
+    {
+      "vi": "Đăng ký với Hội Nông dân xã",
+      "text": "向乡农民协会登记"
+    },
+    {
+      "vi": "Hội viên đăng ký nhu cầu phân bón cho vụ sản xuất với chi hội, Hội Nông dân xã.",
+      "text": "会员向分会、乡农民协会登记本季的肥料需求。"
+    },
+    {
+      "vi": "Hội tín chấp, nhận hàng",
+      "text": "协会担保，接收货物"
+    },
+    {
+      "vi": "Hội Nông dân xã đứng ra tín chấp, ký hợp đồng trách nhiệm với Tiến Nông, nhận phân bón và cung ứng cho hội viên.",
+      "text": "乡农民协会出面担保，与 Tiến Nông 签订责任合同，接收肥料并供应给会员。"
+    },
+    {
+      "vi": "Bón đúng thời vụ",
+      "text": "适时施肥"
+    },
+    {
+      "vi": "Bà con có phân bón đúng lúc cây cần, được kỹ sư Tiến Nông hướng dẫn cách bón.",
+      "text": "农民在作物需要时就有肥料可用，并得到 Tiến Nông 工程师的施肥指导。"
+    },
+    {
+      "vi": "Thanh toán sau thu hoạch",
+      "text": "收获后付款"
+    },
+    {
+      "vi": "Cuối vụ, Hội Nông dân xã thu tiền và thanh toán cho Tiến Nông.",
+      "text": "季末，乡农民协会收款并向 Tiến Nông 付款。"
+    },
+    {
+      "vi": "Bắt đầu tại Hoằng Hóa",
+      "text": "始于弘化"
+    },
+    {
+      "vi": "Hội nghị triển khai đầu tiên cùng Hội Nông dân huyện Hoằng Hóa (Thanh Hóa), với lãnh đạo Hội của 43 xã.",
+      "text": "与弘化县（清化省）农民协会召开首次推行会议，43 个乡的协会领导出席。"
+    },
+    {
+      "vi": "Mở rộng ra nhiều tỉnh",
+      "text": "推广至多个省份"
+    },
+    {
+      "vi": "Theo chỉ đạo của Trung ương Hội Nông dân Việt Nam, Hội Nông dân tỉnh Bắc Giang trực tiếp ký kết với Tiến Nông; chương trình đến với Hòa Bình và nhiều huyện của Thanh Hóa.",
+      "text": "在越南农民协会中央委员会的指导下，北江省农民协会直接与 Tiến Nông 签约；计划推广到和平省及清化省多个县。"
+    },
+    {
+      "vi": "Sản phẩm mang logo Hội Nông dân",
+      "text": "印有农民协会标志的产品"
+    },
+    {
+      "vi": "Phân bón N.P.K.Si “Vì nông dân Việt” được Trung ương Hội Nông dân Việt Nam thẩm định và cho in logo của Hội lên bao bì.",
+      "text": "“为了越南农民”N.P.K.Si 肥料经越南农民协会中央委员会审定，获准在包装上印制协会标志。"
+    },
+    {
+      "vi": "Phủ khắp 183 xã ở Bắc Giang",
+      "text": "覆盖北江省 183 个乡"
+    },
+    {
+      "vi": "Các cấp Hội Nông dân tỉnh Bắc Giang cung ứng phân bón trả chậm cho hội viên ở 183 xã, thị trấn thuộc 10 huyện, thành phố.",
+      "text": "北江省各级农民协会为 10 个县市 183 个乡镇的会员供应延期付款肥料。"
+    },
+    {
+      "vi": "Tổng kết 5 năm cùng Hội Nông dân Thanh Hóa",
+      "text": "与清化省农民协会合作五年总结"
+    },
+    {
+      "vi": "Tổng kết chương trình phối hợp giai đoạn 2019–2023 và ký kết giai đoạn mới.",
+      "text": "总结 2019–2023 年合作计划并签署新阶段协议。"
+    },
+    {
+      "vi": "Triển khai tại Bắc Ninh",
+      "text": "在北宁推行"
+    },
+    {
+      "vi": "Tiếp tục chương trình tại tỉnh Bắc Ninh sau khi sáp nhập với Bắc Giang.",
+      "text": "北宁省与北江省合并后，计划在北宁省继续实施。"
+    },
+    {
+      "vi": "Bà con muốn tham gia?",
+      "text": "想参加吗？"
+    },
+    {
+      "vi": "Liên hệ Hội Nông dân xã nơi mình sinh sống, hoặc để lại thông tin ở cuối trang — kỹ sư Tiến Nông phụ trách khu vực sẽ hướng dẫn chương trình đang triển khai tại địa phương.",
+      "text": "请联系您所在乡的农民协会，或在页面底部留下信息——负责该区域的 Tiến Nông 工程师将为您介绍当地正在实施的计划。"
+    },
+    {
+      "vi": "Hội nghị triển khai chương trình phân bón trả chậm cùng Hội Nông dân",
+      "text": "与农民协会召开肥料延期付款计划推行会议"
+    },
+    {
+      "vi": "Chặng đường phân bón trả chậm",
+      "text": "肥料延期付款历程"
+    },
+    {
+      "vi": "CÂU CHUYỆN NHÀ NÔNG",
+      "text": "农民故事"
+    },
+    {
+      "vi": "Những câu chuyện thật, những mùa vàng thật",
+      "text": "真实的故事，真实的丰收"
+    },
+    {
+      "vi": "Hành trình thay đổi trên chính đồng ruộng của những người nông dân đồng hành cùng Tiến Nông.",
+      "text": "与 Tiến Nông 同行的农民在自己田地上的改变历程。"
+    },
+    {
+      "vi": "NHÃN · XÃ HUỔI MỘT, TỈNH SƠN LA",
+      "text": "龙眼 · 山罗省 Huổi Một 乡"
+    },
+    {
+      "vi": "“Từ khi dùng phân bón Tiến Nông, vừa tiết kiệm được chi phí chăm bón, vừa nâng được năng suất, nên bà con chúng tôi yên tâm làm lâu dài”",
+      "text": "“自从用了 Tiến Nông 的肥料，既节省了施肥成本，又提高了产量，我们才能安心长期种下去。”"
+    },
+    {
+      "vi": "+ 700 triệu",
+      "text": "+ 7 亿越南盾"
+    },
+    {
+      "vi": "Lợi nhuận năm",
+      "text": "年利润"
+    },
+    {
+      "vi": "5 năm",
+      "text": "5 年"
+    },
+    {
+      "vi": "đồng hành",
+      "text": "同行"
+    },
+    {
+      "vi": "Ông Quàng Văn Pành · 3 ha nhãn",
+      "text": "Quàng Văn Pành 先生 · 3 公顷龙眼"
+    },
+    {
+      "vi": "Chân dung nông dân trên ruộng",
+      "text": "田间农民肖像"
+    },
+    {
+      "vi": "DỨA · XÃ NGỌC TRẠO, TỈNH THANH HÓA",
+      "text": "菠萝 · 清化省玉棹乡"
+    },
+    {
+      "vi": "“Bón theo từng giai đoạn giúp mình biết lúc nào cây cần gì, bón bao nhiêu”",
+      "text": "“分阶段施肥让我知道作物什么时候需要什么、该施多少。”"
+    },
+    {
+      "vi": "- 200 nghìn/ tấn phân bón",
+      "text": "- 每吨肥料 20 万越南盾"
+    },
+    {
+      "vi": "Chi phí",
+      "text": "成本"
+    },
+    {
+      "vi": "Ông Quách Văn Tấn · 1.5 ha dứa",
+      "text": "Quách Văn Tấn 先生 · 1.5 公顷菠萝"
+    },
+    {
+      "vi": "Ông Quách Văn Tấn trên ruộng dứa ở Ngọc Trạo",
+      "text": "Quách Văn Tấn 先生在玉棹的菠萝田"
+    },
+    {
+      "vi": "Mô hình trình diễn gần đây",
+      "text": "近期示范田"
+    },
+    {
+      "vi": "LÚA · THIỆU TIẾN, THANH HÓA · 2026",
+      "text": "水稻 · 清化绍进 · 2026"
+    },
+    {
+      "vi": "Canh tác lúa thân thiện môi trường",
+      "text": "环境友好型水稻种植"
+    },
+    {
+      "vi": "năng suất, đạt 277,5 kg/sào",
+      "text": "产量，达到 277.5 公斤/sào"
+    },
+    {
+      "vi": "Mô hình lúa thân thiện môi trường tại Thiệu Tiến",
+      "text": "绍进环境友好型水稻示范"
+    },
+    {
+      "vi": "MÍA · 6 XÃ VÙNG NGUYÊN LIỆU THANH HÓA · 2026",
+      "text": "甘蔗 · 清化原料区 6 个乡 · 2026"
+    },
+    {
+      "vi": "NPK hữu cơ vi sinh bón theo phân tích đất",
+      "text": "按土壤分析结果施用生物有机 NPK"
+    },
+    {
+      "vi": "15,3 ha",
+      "text": "15.3 公顷"
+    },
+    {
+      "vi": "mía trình diễn cùng 6 hộ dân",
+      "text": "与 6 户农民共建的甘蔗示范田"
+    },
+    {
+      "vi": "Mô hình trình diễn trên cây mía",
+      "text": "甘蔗示范田"
+    },
+    {
+      "vi": "LÚA · HOẰNG XUÂN, PHÚ LỘC · 2025",
+      "text": "水稻 · 弘春、富禄 · 2025"
+    },
+    {
+      "vi": "Mô hình NPK hữu cơ vi sinh dạng hạt",
+      "text": "颗粒状生物有机 NPK 示范"
+    },
+    {
+      "vi": "7–8 tấn/ha",
+      "text": "7–8 吨/公顷"
+    },
+    {
+      "vi": "năng suất lúa mô hình tại Hậu Lộc",
+      "text": "后禄示范田水稻产量"
+    },
+    {
+      "vi": "Hội nghị đầu bờ mô hình NPK hữu cơ vi sinh",
+      "text": "生物有机 NPK 示范田观摩会"
+    },
+    {
+      "vi": "VẢI THIỀU · LỤC NGẠN, BẮC GIANG",
+      "text": "荔枝 · 北江陆岸"
+    },
+    {
+      "vi": "Vải thiều đạt chuẩn VietGAP",
+      "text": "达到 VietGAP 标准的荔枝"
+    },
+    {
+      "vi": "VietGAP",
+      "text": "VietGAP"
+    },
+    {
+      "vi": "dùng đồng bộ dinh dưỡng Tiến Nông",
+      "text": "全程使用 Tiến Nông 营养方案"
+    },
+    {
+      "vi": "Vườn vải thiều Lục Ngạn",
+      "text": "陆岸荔枝园"
+    },
+    {
+      "vi": "Xem thêm câu chuyện →",
+      "text": "更多故事 →"
+    },
+    {
+      "vi": "KHI MÙA VỤ GẶP KHÓ",
+      "text": "当季节遭遇困难"
+    },
+    {
+      "vi": "Không để bà con đứng một mình",
+      "text": "不让农民独自面对"
+    },
+    {
+      "vi": "Giải cứu 30 tấn dưa hấu mùa dịch",
+      "text": "疫情期间收购 30 吨西瓜"
+    },
+    {
+      "vi": "Khi dưa hấu Gia Lai không xuất khẩu được vì dịch Covid-19, Tiến Nông mua 30 tấn dưa của bà con Krông Pa, phát miễn phí cho người lao động và người dân.",
+      "text": "新冠疫情导致嘉莱西瓜无法出口时，Tiến Nông 从 Krông Pa 农民手中收购 30 吨西瓜，免费分发给工人和当地居民。"
+    },
+    {
+      "vi": "Cùng Bắc Giang tiêu thụ vải thiều",
+      "text": "帮助北江销售荔枝"
+    },
+    {
+      "vi": "Đồng hành cùng nhà vườn Lục Ngạn tiêu thụ vải thiều trong mùa dịch.",
+      "text": "疫情期间帮助陆岸果农销售荔枝。"
+    },
+    {
+      "vi": "Phân bón cho bà con sau bão lũ",
+      "text": "风灾水灾后为农民提供肥料"
+    },
+    {
+      "vi": "Trao tặng hơn 100 tấn phân bón hữu cơ sinh học humic, kèm hướng dẫn chăm sóc đất và cây sau ngập.",
+      "text": "捐赠 100 多吨腐殖酸生物有机肥，并指导淹水后土壤与作物管护。"
+    },
+    {
+      "vi": "Xuống đồng sau ngập úng ở Yên Phú",
+      "text": "安富涝灾后下田"
+    },
+    {
+      "vi": "Kỹ sư lấy mẫu đất, mẫu cây trên vùng dứa bị ngập để tìm cách phục hồi.",
+      "text": "工程师在被淹菠萝产区采集土样和植株样品，寻找恢复办法。"
+    },
+    {
+      "vi": "KỸ SƯ ĐỒNG HÀNH",
+      "text": "农艺师陪伴"
+    },
+    {
+      "vi": "Kỹ sư Tiến Nông đồng hành tại địa phương",
+      "text": "Tiến Nông 农艺师在当地服务"
+    },
+    {
+      "vi": "Hình ảnh và chia sẻ từ các buổi tập huấn, hội nghị, hội thảo đầu bờ do kỹ sư Tiến Nông tổ chức cùng bà con tại địa phương.",
+      "text": "Tiến Nông 工程师与当地农民一起举办培训、会议和田间观摩会的照片与分享。"
+    },
+    {
+      "vi": "Xem thêm bài viết",
+      "text": "更多文章"
+    },
+    {
+      "vi": "Bài hội thảo đầu bờ sẽ được cập nhật tại đây.",
+      "text": "田间观摩会文章将在此更新。"
+    },
+    {
+      "vi": "Cần kỹ sư tư vấn cho ruộng vườn?",
+      "text": "需要农艺师为您的田地提供建议？"
+    },
+    {
+      "vi": "Gọi hotline hoặc để lại thông tin, kỹ sư Tiến Nông phụ trách khu vực sẽ liên hệ với bà con.",
+      "text": "拨打热线或留下信息，负责该区域的 Tiến Nông 工程师将与您联系。"
+    },
+    {
+      "vi": "Để lại thông tin",
+      "text": "留下信息"
+    }
+  ]
+}

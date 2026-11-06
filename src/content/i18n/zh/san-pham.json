@@ -1,0 +1,192 @@
+{
+  "items": [
+    {
+      "vi": "Sản phẩm",
+      "text": "产品"
+    },
+    {
+      "vi": "Bộ sản phẩm phân bón Tiến Nông: Lúa 2, NPK 15-15-15+1SiO₂hh và Điều hoà pH đất",
+      "text": "Tiến Nông 肥料系列：Lúa 2、NPK 15-15-15+1SiO₂hh 及土壤 pH 调理剂"
+    },
+    {
+      "vi": "Ảnh nền toàn khung đầu trang (ảnh ngang khoảng 1920×640)",
+      "text": "页首全幅背景图（横幅照片，约 1920×640）"
+    },
+    {
+      "vi": "Trang chủ",
+      "text": "首页"
+    },
+    {
+      "vi": "SẢN PHẨM TIẾN NÔNG",
+      "text": "TIẾN NÔNG 产品"
+    },
+    {
+      "vi": "Dinh dưỡng lý tưởng cho từng loại cây trồng",
+      "text": "为每一种作物提供理想营养"
+    },
+    {
+      "vi": "Các sản phẩm đều có mã số phân bón, được sản xuất theo ISO 9001:2015 & ISO 14001:2015 và kiểm nghiệm chất lượng tại phòng thí nghiệm đạt chuẩn VILAS 1519 & VALAS 262.",
+      "text": "所有产品均持有肥料登记编号，按照 ISO 9001:2015 与 ISO 14001:2015 体系生产，并在通过 VILAS 1519 与 VALAS 262 认可的实验室进行质量检测。"
+    },
+    {
+      "vi": "Tải catalogue sản phẩm (PDF)",
+      "text": "下载产品目录（PDF）"
+    },
+    {
+      "vi": "Tìm đại lý gần nhất",
+      "text": "查找最近的经销商"
+    },
+    {
+      "vi": "Trở thành đối tác",
+      "text": "成为合作伙伴"
+    },
+    {
+      "vi": "Tìm sản phẩm",
+      "text": "查找产品"
+    },
+    {
+      "vi": "Tên sản phẩm, công thức NPK…",
+      "text": "产品名称、NPK 配方…"
+    },
+    {
+      "vi": "Cây trồng",
+      "text": "作物"
+    },
+    {
+      "vi": "Sắp xếp",
+      "text": "排序"
+    },
+    {
+      "vi": "sản phẩm",
+      "text": "款产品"
+    },
+    {
+      "vi": "Xóa bộ lọc",
+      "text": "清除筛选"
+    },
+    {
+      "vi": "Không tìm thấy sản phẩm phù hợp. Hãy thử bỏ bớt bộ lọc hoặc",
+      "text": "未找到相关产品。请尝试减少筛选条件，或"
+    },
+    {
+      "vi": "liên hệ kỹ sư Tiến Nông",
+      "text": "联系 Tiến Nông 农艺师"
+    },
+    {
+      "vi": "để được tư vấn.",
+      "text": "获取建议。"
+    },
+    {
+      "vi": "Trang",
+      "text": "第"
+    },
+    {
+      "vi": "Xem chi tiết sản phẩm",
+      "text": "查看产品详情"
+    },
+    {
+      "vi": "Thành phần",
+      "text": "成分"
+    },
+    {
+      "vi": "Công dụng nổi bật",
+      "text": "主要功效"
+    },
+    {
+      "vi": "Cây trồng phù hợp",
+      "text": "适用作物"
+    },
+    {
+      "vi": "Cần tư vấn lựa chọn sản phẩm phù hợp?",
+      "text": "需要帮助选择合适的产品？"
+    },
+    {
+      "vi": "Kỹ sư nông học của Tiến Nông sẽ tư vấn chương trình dinh dưỡng phù hợp với từng loại cây trồng và điều kiện canh tác.",
+      "text": "Tiến Nông 农艺师将根据作物种类与种植条件，为您推荐合适的营养方案。"
+    },
+    {
+      "vi": "Giải pháp theo cây trồng",
+      "text": "作物解决方案"
+    },
+    {
+      "vi": "Gọi kỹ sư tư vấn",
+      "text": "致电农艺师"
+    },
+    {
+      "vi": "Tất cả",
+      "text": "全部"
+    },
+    {
+      "vi": "Phân bón chuyên dùng",
+      "text": "专用肥"
+    },
+    {
+      "vi": "Phân bón đa dụng",
+      "text": "通用肥"
+    },
+    {
+      "vi": "Phân bón hữu cơ",
+      "text": "有机肥"
+    },
+    {
+      "vi": "Phân bón công nghệ cao",
+      "text": "高科技肥料"
+    },
+    {
+      "vi": "Tất cả cây trồng",
+      "text": "全部作物"
+    },
+    {
+      "vi": "Lúa",
+      "text": "水稻"
+    },
+    {
+      "vi": "Ngô",
+      "text": "玉米"
+    },
+    {
+      "vi": "Cà phê",
+      "text": "咖啡"
+    },
+    {
+      "vi": "Cây ăn quả",
+      "text": "果树"
+    },
+    {
+      "vi": "Cây công nghiệp",
+      "text": "经济作物"
+    },
+    {
+      "vi": "Cây lâm nghiệp",
+      "text": "林木"
+    },
+    {
+      "vi": "Rau màu",
+      "text": "蔬菜"
+    },
+    {
+      "vi": "Chè",
+      "text": "茶"
+    },
+    {
+      "vi": "Mía",
+      "text": "甘蔗"
+    },
+    {
+      "vi": "Sắn",
+      "text": "木薯"
+    },
+    {
+      "vi": "Lạc",
+      "text": "花生"
+    },
+    {
+      "vi": "Bán nhiều nhất",
+      "text": "最畅销"
+    },
+    {
+      "vi": "Tên A–Z",
+      "text": "名称 A–Z"
+    }
+  ]
+}

@@ -2,12 +2,48 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { unified } from '@astrojs/markdown-remark';
+import { readFileSync } from 'node:fs';
 import oldLinks from './scripts/old-links.mjs';
 import keepWords from './scripts/keep-words.mjs';
 
 // SITE_URL / BASE_PATH are set by the deploy workflow (e.g. GitHub Pages serves
 // the site under /<repo>/). Locally the site lives at the root.
 const base = process.env.BASE_PATH || '/';
+
+/** Resized copies made by scripts/optimize-images.mjs (src/generated/images.json), read when articles render. */
+/** @type {Record<string, { w: number, h: number, variants: { w: number, path: string }[] }> | null} */
+let manifest = null;
+/** @returns {Record<string, { w: number, h: number, variants: { w: number, path: string }[] }>} */
+const sized = () => {
+  if (manifest) return manifest;
+  try { manifest = JSON.parse(readFileSync('src/generated/images.json', 'utf8')); } catch { manifest = {}; }
+  return manifest ?? {};
+};
+
+/**
+ * A photo inserted in an article from the CMS (/uploads/x.jpg, often a 2–3 MB original) is served as its
+ * compressed WebP copy at most 1600 px wide, with smaller copies for phones (srcset), so editors can
+ * upload photos straight from the camera without slowing the page.
+ */
+function rehypeArticlePhotos() {
+  /** @param {any} node */
+  const walk = (node) => {
+    if (node.tagName === 'img' && typeof node.properties?.src === 'string') {
+      const m = sized()[node.properties.src];
+      if (m?.variants?.length) {
+        const best = [...m.variants].filter((v) => v.w <= 1600).pop() || m.variants[0];
+        node.properties.src = best.path;
+        const pre = base.replace(/\/$/, '');
+        node.properties.srcSet = m.variants.filter((v) => v.w <= 1600).map((v) => `${pre}${v.path} ${v.w}w`).join(', ') || undefined;
+        node.properties.sizes = '(max-width: 767px) 92vw, 780px';
+        node.properties.width = best.w;
+        node.properties.height = Math.round((m.h / m.w) * best.w);
+      }
+    }
+    node.children?.forEach(walk);
+  };
+  return walk;
+}
 
 /** Prefix root-relative image/link URLs written by the CMS (/uploads/…) with the deploy base path. */
 function rehypeBasePath() {
@@ -60,7 +96,7 @@ export default defineConfig({
   // Sitemap only when the public URL is known (CI); internal tools stay out of it.
   integrations: [...(process.env.SITE_URL ? [sitemap({ filter: (page) => !/\/(quan-tri|admin)\//.test(page) })] : []), oldLinks({ base }), keepWords()],
   base,
-  markdown: { processor: unified({ rehypePlugins: [rehypeBasePath, rehypeDropPlaceholders] }) },
+  markdown: { processor: unified({ rehypePlugins: [rehypeArticlePhotos, rehypeBasePath, rehypeDropPlaceholders] }) },
   // Pages are emitted as /slug/index.html so links stay clean (/ve-tien-nong/).
   trailingSlash: 'always',
   build: { format: 'directory' },

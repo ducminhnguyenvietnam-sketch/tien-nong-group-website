@@ -25,8 +25,11 @@ const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto
 ---
 {items.length > 0 && <div class:list={['yt-tl', `yt-tl--${tone}`, { 'yt-tl--text': !photos }]} data-picker data-pick-autoplay={autoplay || undefined}>
 {(title || hint) && <div class="yt-tl__head">{title && <h3>{title}</h3>}{hint && <span>{hint}</span>}</div>}
+<div class="yt-tl__railbox">
 <div class="yt-tl__rail" role="tablist" aria-label="Các mốc">
 {items.map((t, k) => <button type="button" role="tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'}><span class="yt-tl__dot" aria-hidden="true"></span><span class="yt-tl__when">{t.when}</span></button>)}
+</div>
+{items.length > 1 && <div class="yt-tl__nav"><button type="button" data-pick-step="-1" aria-label="Mốc trước"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><span class="yt-tl__count" aria-hidden="true"><b data-yt-n>1</b>/{items.length}</span><button type="button" data-pick-step="1" aria-label="Mốc sau"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div>}
 </div>
 <div class:list={['yt-tl__stage', { 'yt-tl__stage--aside': hasAside }]}>
 <div class="yt-tl__panels">
@@ -45,6 +48,15 @@ const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto
 {hasAside && <div class="yt-tl__aside"><slot name="aside" /></div>}
 </div>
 </div>}
+
+<script>
+  // "2/7" counter beside the arrows follows the selected year.
+  document.querySelectorAll<HTMLElement>('.yt-tl').forEach((tl) => tl.addEventListener('picker:change', () => {
+    const btns = [...tl.querySelectorAll('.yt-tl__rail [data-pick]')];
+    const n = tl.querySelector('[data-yt-n]');
+    if (n) n.textContent = String(btns.findIndex((b) => b.getAttribute('aria-selected') === 'true') + 1);
+  }));
+</script>
 
 <style>
   .yt-tl { display: flex; flex-direction: column; gap: 28px; }
@@ -78,7 +90,18 @@ const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto
   .yt-tl__more:hover { transform: translateY(-1px); text-decoration: none; color: var(--yt-btn-fg); }
   .yt-tl--dark { --yt-bg: var(--green-800); --yt-line: rgba(255, 255, 255, .18); --yt-line-strong: rgba(255, 255, 255, .45); --yt-muted: var(--green-200); --yt-fg: #fff; --yt-body: var(--green-50); --yt-accent: var(--brand-highlight); --yt-halo: rgba(245, 196, 78, .2); --yt-btn-bg: #fff; --yt-btn-fg: var(--green-700); }
   .yt-tl--light { --yt-bg: var(--surface-card); --yt-line: var(--border-default); --yt-line-strong: var(--green-300); --yt-muted: var(--text-tertiary); --yt-fg: var(--text-primary); --yt-body: var(--text-secondary); --yt-accent: var(--brand-bright); --yt-halo: rgba(12, 166, 78, .15); --yt-btn-bg: var(--brand-bright); --yt-btn-fg: #fff; }
+  /* Beside a story card the photo sits above the text. */
+  .yt-tl__stage--aside .yt-tl__panel { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .yt-tl__stage--aside .yt-tl__img { aspect-ratio: 16 / 9; }
+  .yt-tl__railbox { display: flex; flex-direction: column; gap: 10px; }
+  .yt-tl__nav { display: none; }
   @media (max-width: 899.98px) {
+    /* Phones: more years hide off to the right — the rail fades out there, and arrows with "1/7" show there is more. */
+    .yt-tl__rail.is-scrollable { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 44px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 44px), transparent); }
+    .yt-tl__nav { display: flex; align-items: center; justify-content: flex-end; gap: 10px; color: var(--yt-fg); }
+    .yt-tl__nav button { width: 36px; height: 36px; display: grid; place-items: center; padding: 0; border-radius: 50%; border: 1px solid var(--yt-line-strong); background: none; color: var(--yt-fg); cursor: pointer; }
+    .yt-tl__count { font: 600 14px var(--font-display); color: var(--yt-muted); min-width: 34px; text-align: center; }
+    .yt-tl__count b { color: var(--yt-accent); }
     .yt-tl__panel, .yt-tl__stage--aside { grid-template-columns: minmax(0, 1fr); }
     .yt-tl__rail { justify-content: flex-start; }
     .yt-tl__rail button, .yt-tl__rail button:first-child, .yt-tl__rail button:last-child { flex: none; align-items: center; padding: 0 10px 4px; }

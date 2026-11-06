@@ -7,9 +7,12 @@ import ImageSlot from '../../components/ImageSlot.astro';
 import { render } from 'astro:content';
 import { url, link } from '../../lib/routes';
 import { CATEGORIES, CATEGORY_SLUGS, formatDate, getNews, isArticle, isPress, listUrl, newsUrl, readingTime, type NewsEntry } from '../../lib/news';
-const site = withDefaults(siteRaw, 'src/content/site.json');
+import { localeOf } from '../../lib/i18n';
+/** Language of this page (vi / en / zh): content is read in that language. */
+const L = localeOf(Astro.url);
+const site = withDefaults(siteRaw, 'src/content/site.json', L);
 
-const c = withDefaults(raw, 'src/content/pages/tin-tuc.json');
+const c = withDefaults(raw, 'src/content/pages/tin-tuc.json', L);
 
 export async function getStaticPaths() {
   // Press items that link to the newspaper's own page need no article page here.

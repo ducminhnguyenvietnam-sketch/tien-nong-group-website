@@ -54,20 +54,152 @@
       "label": "người gắn bó trên 20 năm"
     }
   ],
-  "mottos": [
-    {
-      "label": "TỪ NGÀY ĐẦU",
-      "text": "Tiến Nông – Tiến cùng nông dân Việt"
-    },
-    {
-      "label": "SỨ MỆNH",
-      "text": "Phụng sự để nông dân giàu có cùng Việt Nam thịnh vượng"
-    },
-    {
-      "label": "KHẨU HIỆU",
-      "text": "Phụng sự nhà nông – Kiến tạo tương lai"
-    }
-  ],
+  "party": {
+    "eyebrow": "Công tác Đảng",
+    "title": "Đảng bộ Tiến Nông – 24 năm đồng hành cùng doanh nghiệp",
+    "milestones": [
+      {
+        "year": "2002",
+        "tag": "Thành lập Chi bộ",
+        "key": false,
+        "title": "Chi bộ Xí nghiệp sản xuất phân bón Tiến Nông ra đời",
+        "body": "Thành lập theo Quyết định số 140-QĐ/TU của Đảng bộ thành phố Thanh Hóa với 6 đảng viên — một trong những tổ chức đảng đầu tiên trong khối doanh nghiệp ngoài quốc doanh của tỉnh, đặt viên gạch đầu tiên cho công tác xây dựng Đảng trong doanh nghiệp tư nhân.",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": ""
+        },
+        "fig": "",
+        "fig_label": "",
+        "link": "",
+        "doc_date": "09.05.2002",
+        "doc_label": "Ngày thành lập Chi bộ",
+        "doc_text": "Quyết định số 140-QĐ/TU\nĐảng bộ thành phố Thanh Hóa",
+        "doc_badge": "6 đảng viên đầu tiên"
+      },
+      {
+        "year": "2015",
+        "tag": "Đại hội Chi bộ",
+        "key": false,
+        "title": "Đại hội Chi bộ nhiệm kỳ 2015 – 2020",
+        "body": "Chi bộ xác định lấy sản xuất – kinh doanh làm nhiệm vụ trọng tâm, đẩy mạnh phát triển đảng viên mới. Đảng viên giữ hầu hết các vị trí nòng cốt trong quản lý và sản xuất.",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": ""
+        },
+        "fig": "100%",
+        "fig_label": "phiếu tín nhiệm bầu Bí thư Chi bộ",
+        "link": "/tin-tuc/dai-hoi-chi-bo-nhiem-ky-2015-2020-tai-cong-ty-co-phan-cong-nong-nghiep-tien-nong/",
+        "doc_date": "",
+        "doc_label": "",
+        "doc_text": "",
+        "doc_badge": ""
+      },
+      {
+        "year": "2020",
+        "tag": "Đại hội Chi bộ",
+        "key": false,
+        "title": "Đại hội Chi bộ nhiệm kỳ 2020 – 2025",
+        "body": "Chi bộ đặt mục tiêu trở thành Đảng bộ vào năm 2022. Tháng 10/2020, đồng chí Trần Thị Xuân của Chi bộ là đại biểu chính thức tại Đại hội Đảng bộ tỉnh Thanh Hóa lần thứ XIX.",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": ""
+        },
+        "fig": "45",
+        "fig_label": "đảng viên sinh hoạt tại Chi bộ",
+        "link": "/tin-tuc/dai-hoi-chi-bo-nhiem-ky-2020-2025-tai-cong-ty-co-phan-cong-nong-nghiep-tien-nong/",
+        "doc_date": "",
+        "doc_label": "",
+        "doc_text": "",
+        "doc_badge": ""
+      },
+      {
+        "year": "2021",
+        "tag": "Đảng viên mới",
+        "key": false,
+        "title": "Lớp đảng viên mới từ chính người lao động",
+        "body": "Lễ kết nạp được tổ chức đều đặn, đúng Điều lệ Đảng. Chi bộ Trung tâm Chăm sóc Phục vụ Nông dân Việt Nam ra đời, đưa công tác Đảng đến gần mạng lưới phục vụ bà con nông dân.",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": ""
+        },
+        "fig": "5–12",
+        "fig_label": "quần chúng ưu tú được kết nạp mỗi năm",
+        "link": "/tin-tuc/chi-bo-cong-ty-co-phan-cnn-tien-nong-to-chuc-le-ket-nap-dang-vien-moi/",
+        "doc_date": "",
+        "doc_label": "",
+        "doc_text": "",
+        "doc_badge": ""
+      },
+      {
+        "year": "2022",
+        "tag": "Trở thành Đảng bộ",
+        "key": true,
+        "title": "Sau 20 năm, Chi bộ trở thành Đảng bộ",
+        "body": "Ngày 05/5/2022, Thành ủy thành phố Thanh Hóa ban hành Quyết định số 429/QĐ-TU nâng cấp Chi bộ thành Đảng bộ Công ty Cổ phần Công Nông nghiệp Tiến Nông, công bố tại Lễ kỷ niệm 20 năm thành lập Chi bộ ngày 09/5/2022.",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": ""
+        },
+        "fig": "20",
+        "fig_label": "năm hoạt động của Chi bộ",
+        "link": "/tin-tuc/le-ky-niem-20-nam-thanh-lap-chi-bo-va-cong-bo-quyet-dinh-thanh-lap-dang-bo-cong/",
+        "doc_date": "",
+        "doc_label": "",
+        "doc_text": "",
+        "doc_badge": ""
+      },
+      {
+        "year": "2025",
+        "tag": "Đại hội các chi bộ",
+        "key": false,
+        "title": "Đại hội các chi bộ trực thuộc, nhiệm kỳ 2025 – 2027",
+        "body": "Mở đầu bằng Đại hội điểm Chi bộ Khối Sản xuất ngày 21/02/2025, các chi bộ lần lượt bầu cấp ủy khóa mới trong không khí dân chủ, đoàn kết.",
+        "image": {
+          "src": "",
+          "focus": "center",
+          "zoom": "100",
+          "alt": ""
+        },
+        "fig": "4",
+        "fig_label": "đại hội chi bộ từ 21/02 đến 01/03/2025",
+        "link": "/tin-tuc/dai-hoi-cac-chi-bo-thuoc-dang-bo-cong-ty-co-phan-cong-nong-nghiep-tien-nong/",
+        "doc_date": "",
+        "doc_label": "",
+        "doc_text": "",
+        "doc_badge": ""
+      },
+      {
+        "year": "2026",
+        "tag": "Hôm nay",
+        "key": false,
+        "title": "Đảng bộ vững mạnh trong giai đoạn mới",
+        "body": "Đảng bộ tiếp tục nâng cao chất lượng sinh hoạt chi bộ, phát huy vai trò tiên phong của đảng viên và đồng hành cùng doanh nghiệp thực hiện sứ mệnh \"Phụng sự để nông dân giàu có cùng Việt Nam thịnh vượng\".",
+        "image": {
+          "src": "/uploads/tin-cu/2024/le-ket-nap-dang-vien-moi-tai-chi-bo-trung-tam-cham-soc-phuc-vu-nong-dan-viet-nam.webp",
+          "focus": "center",
+          "zoom": "100",
+          "alt": "Đảng viên các chi bộ thuộc Đảng bộ Công ty Tiến Nông"
+        },
+        "fig": "77",
+        "fig_label": "đảng viên trong 5 chi bộ trực thuộc",
+        "link": "",
+        "doc_date": "",
+        "doc_label": "",
+        "doc_text": "",
+        "doc_badge": ""
+      }
+    ]
+  },
   "origin": {
     "eyebrow": "KHỞI NGUỒN",
     "title": "Văn hóa bắt đầu từ hành trình vượt khó và khát vọng phụng sự",

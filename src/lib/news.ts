@@ -20,8 +20,12 @@ export const isPress = (e: NewsEntry) => e.data.category === PRESS;
 export const isArticle = (e: NewsEntry) => !(isPress(e) && e.data.external_url.trim());
 
 /** All articles: featured first, then newest date first; undated articles last. */
+/** An article whose text is still the "[Nội dung bài viết]" placeholder (and that does not link to a
+ *  newspaper) is a draft: it gets no page and is not listed until its text is written in the CMS. */
+export const isDraft = (e: NewsEntry) => !e.data.external_url?.trim() && /^\s*(\[[^\]]{2,}\]\s*)+$/.test(e.body ?? '');
+
 export async function getNews(): Promise<NewsEntry[]> {
-  const all = await getCollection('news');
+  const all = (await getCollection('news')).filter((e) => !isDraft(e));
   const time = (e: NewsEntry) => e.data.date?.getTime() ?? -Infinity;
   return all.sort((a, b) => Number(b.data.featured) - Number(a.data.featured) || time(b) - time(a) || a.id.localeCompare(b.id));
 }
