@@ -343,18 +343,8 @@
         "Huế",
         "Đà Nẵng",
         "Quảng Ngãi",
-        "Gia Lai",
-        "Đắk Lắk",
         "Khánh Hòa",
-        "Lâm Đồng",
-        "Đồng Nai",
-        "TP. Hồ Chí Minh",
-        "Tây Ninh",
-        "Vĩnh Long",
-        "Đồng Tháp",
-        "An Giang",
-        "Cần Thơ",
-        "Cà Mau"
+        "Lâm Đồng"
       ]
     },
     {
@@ -363,7 +353,6 @@
       "region": "Vùng 3",
       "area": "Trung du & miền núi phía Bắc",
       "image": {
-        "src": "/uploads/tin-cu/2026/son-la-tu-nuong-ngo-nuong-san-den-nhung-vung-ca-phe-arabica-moi-4.webp",
         "focus": "0% 79.1%",
         "zoom": "108",
         "alt": "Đoàn Tiến Nông thăm nương cà phê cùng nhà phân phối ở Sơn La"
