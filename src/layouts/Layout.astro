@@ -72,7 +72,17 @@ const meta = LOCALE_META[L];
 /** hreflang links: the same page in each language (news articles exist only in Vietnamese). */
 const alts = alternates(Astro.url).filter((a) => a.exists);
 const desc = (description || tr(DEFAULT_DESCRIPTION, L)).replace(/\s+/g, ' ').trim().slice(0, 300);
-const fullTitle = title ? `${title} · Tiến Nông Group` : 'Tiến Nông Group';
+// Home page: the brand comes first ("Tiến Nông Group · …"); other pages lead with their own subject.
+const isHome = active === 'Trang chủ';
+const fullTitle = title ? (isHome ? `Tiến Nông Group · ${title}` : `${title} · Tiến Nông Group`) : 'Tiến Nông Group';
+/** Analytics / ads, set at build time (repo variables): one Google Tag Manager container carries GA4, Google Ads
+ *  conversions, Meta / TikTok pixels… so marketing can add or change them without touching the code.
+ *  GSC_VERIFY is the Google Search Console "HTML tag" code (not needed if the domain is verified by DNS). */
+/** The GitHub Pages preview copy is kept out of Google, so it never competes with the real domain. */
+const PREVIEW = import.meta.env.PUBLIC_PREVIEW === '1';
+const GTM_ID = (import.meta.env.PUBLIC_GTM_ID ?? '').trim();
+const GTM = /^GTM-[A-Z0-9]{4,12}$/.test(GTM_ID) && !noindex ? GTM_ID : '';
+const GSC_VERIFY = (import.meta.env.PUBLIC_GSC_VERIFY ?? '').trim().replace(/[^\w-]/g, '');
 const site = siteRaw as any;
 const homeHero = (homeRaw as any).hero_slides?.find((s: any) => s?.image?.src)?.image?.src as string | undefined;
 const shareImage = Astro.props.image || homeHero;
@@ -90,8 +100,16 @@ const org = {
   email: site.company?.email || undefined,
   telephone: site.company?.phone || undefined,
   address: site.company?.address ? { '@type': 'PostalAddress', streetAddress: site.company.address, addressCountry: 'VN' } : undefined,
-  sameAs: Object.values(site.social || {}).filter((v) => typeof v === 'string' && /^https?:/.test(v)),
+  sameAs: Object.values(site.social || {}).filter((v) => typeof v === 'string' && /^https?:/.test(v) && !/\/\/m\.me\//.test(v)),
+  legalName: 'Công ty Cổ phần Công Nông nghiệp Tiến Nông',
+  taxID: '2800142141',
+  slogan: tr('Khoa học phụng sự nhà nông', L),
+  knowsAbout: ['Phân bón', 'Dinh dưỡng cây trồng', 'Phân bón NPK', 'Phân bón hữu cơ', 'Phân tích đất'],
+  contactPoint: site.company?.phone ? [{ '@type': 'ContactPoint', telephone: site.company.phone, email: site.company?.email || undefined,
+    contactType: 'customer service', areaServed: 'VN', availableLanguage: ['vi'] }] : undefined,
 };
+/** Home page: the site itself (name shown in Google results). */
+const website = isHome ? [{ '@context': 'https://schema.org', '@type': 'WebSite', name: 'Tiến Nông Group', alternateName: 'Tiến Nông', url: org.url, inLanguage: meta.html }] : [];
 ---
 <!doctype html>
 <html lang={meta.html} data-hotline={(site.company?.hotline || site.company?.phone || undefined)}>
@@ -101,7 +119,7 @@ const org = {
 <title>{fullTitle}</title>
 <meta name="description" content={desc} />
 <meta name="theme-color" content="#00954f" />
-{noindex && <meta name="robots" content="noindex, nofollow" />}
+{(noindex || PREVIEW) && <meta name="robots" content="noindex, nofollow" />}
 {canonical && <link rel="canonical" href={canonical} />}
 <meta property="og:site_name" content="Tiến Nông Group" />
 <meta property="og:locale" content={meta.og} />
@@ -119,7 +137,13 @@ const org = {
   // "js" lets CSS hide elements that are about to animate in; without JS nothing is hidden.
   document.documentElement.classList.add('js');
 </script>
-<script type="application/ld+json" set:html={JSON.stringify([org, ...schema])} />
+<script type="application/ld+json" set:html={JSON.stringify([org, ...website, ...schema])} />
+{GSC_VERIFY && <meta name="google-site-verification" content={GSC_VERIFY} />}
+{GTM && <script is:inline define:vars={{ GTM }}>
+  window.dataLayer = window.dataLayer || [];
+  (function (w, d, s, l, i) { w[l].push({ 'gtm.start': Date.now(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s);
+    j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', GTM);
+</script>}
 {alignCss && <style is:inline set:html={alignCss} />}
 </head>
 <body>
@@ -138,6 +162,7 @@ const org = {
 <script src="../scripts/reveal.ts"></script>
 <script src="../scripts/subnav.ts"></script>
 <script src="../scripts/forms.ts"></script>
+<script src="../scripts/track.ts"></script>
 <script src="../scripts/motion.ts"></script>
 <script src="../scripts/justify.ts"></script>
 <script src="../scripts/yt.ts"></script>

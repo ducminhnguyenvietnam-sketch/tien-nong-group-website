@@ -66,15 +66,17 @@ const ATTRS = /(\s(?:aria-label|aria-roledescription|alt|title|placeholder|label
 
 export function translateHtml(html: string, L: Exclude<Locale, 'vi'>): string {
   const t = translator(L);
-  // Links: Vietnamese page addresses → the same page in this language.
-  html = html.replace(/(\shref=")([^"]*)"/g, (all, pre, value) => {
+  // Links: Vietnamese page addresses → the same page in this language. A tag that names its language
+  // (hreflang: the language switcher, <link rel="alternate">) already points where it should and is left alone,
+  // otherwise "Tiếng Việt" on /en/about/ would lead back to /en/about/.
+  html = html.replace(/<(?:a|link)\b[^>]*>/gi, (tag) => (/\shreflang="/i.test(tag) ? tag : tag.replace(/(\shref=")([^"]*)"/g, (all, pre, value) => {
     const v = decode(value);
     if (!v.startsWith(`${BASE}/`) || v.startsWith('//')) return all;
     const path = v.slice(BASE.length);
     if (/^\/(en|zh)(\/|$)/.test(path) || /\.[a-z0-9]{2,5}([?#]|$)/i.test(path.split('#')[0])) return all;
     const to = localizePath(path, L);
     return to ? `${pre}${escAttr(BASE + to)}"` : all;
-  });
+  })));
   // Text between tags, outside <script> and <style>.
   const parts = html.split(/(<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>)/i);
   for (let i = 0; i < parts.length; i += 2) {

@@ -5,7 +5,7 @@ import siteRaw from '../../content/site.json';
 import Layout from '../../layouts/Layout.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
 import { render } from 'astro:content';
-import { url, link } from '../../lib/routes';
+import { asset, url, link } from '../../lib/routes';
 import { CATEGORIES, CATEGORY_SLUGS, formatDate, getNews, isArticle, isPress, listUrl, newsUrl, readingTime, type NewsEntry } from '../../lib/news';
 import { localeOf } from '../../lib/i18n';
 /** Language of this page (vi / en / zh): content is read in that language. */
@@ -35,8 +35,16 @@ const bodyStart = fold((entry.body ?? '').replace(/!\[[^\]]*\]\([^)]*\)|<[^>]+>|
 const WEEKDAYS = ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy'];
 const formatDateLong = (dt: Date) => `${WEEKDAYS[dt.getDay()]}, ${formatDate(dt)}`;
 const showSummary = isFilled(d.summary) && !bodyStart.includes(fold(d.summary).slice(0, 60));
+/** Google: a news article with its date, photo and publisher (eligible for Top stories / Discover). */
+const coverSrc = isFilled(d.cover?.src) ? d.cover.src : undefined;
+const schema = Astro.site ? [{ '@context': 'https://schema.org', '@type': 'NewsArticle', headline: d.title.slice(0, 110),
+  description: isFilled(d.summary) ? d.summary : undefined, url: pageUrl, mainEntityOfPage: pageUrl, inLanguage: 'vi',
+  image: coverSrc ? new URL(asset(coverSrc), Astro.site).href : undefined,
+  datePublished: d.date ? d.date.toISOString() : undefined,
+  author: { '@type': 'Organization', name: 'Tiến Nông Group' },
+  publisher: { '@type': 'Organization', name: 'Tiến Nông Group', logo: { '@type': 'ImageObject', url: new URL(asset('/assets/logo-mark.png'), Astro.site).href } } }] : [];
 ---
-<Layout title={d.title} description={isFilled(d.summary) ? d.summary : undefined} active="Tin tức" background="var(--surface-card)">
+<Layout title={d.title} description={isFilled(d.summary) ? d.summary : undefined} image={coverSrc} type="article" schema={schema} active="Tin tức" background="var(--surface-card)">
 
 <div class="art">
 <aside class="art__share" aria-label="Chia sẻ">
