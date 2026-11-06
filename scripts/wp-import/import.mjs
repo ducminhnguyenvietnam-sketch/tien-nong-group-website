@@ -323,11 +323,14 @@ async function importOne(x) {
   let summary = plain(p.excerpt?.rendered).replace(/\s*\[…\]\s*$|\s*\[\.\.\.\]\s*$|\s*Đọc tiếp.*$/i, '').trim();
   // Most old posts open with a bold lead paragraph, which is also the start of the excerpt. Use the whole
   // lead as the summary (shown in bold above the article) and drop it from the body, so it is not repeated.
-  const lead = body.match(/^\*\*([^*\n][\s\S]*?)\*\*\s*(?:\n\n|$)/);
+  // Only a whole first paragraph in bold counts (an earlier pattern could run on to the end of the
+  // article and empty the body — fixed by scripts/wp-import/repair.mjs).
+  const first = body.split(/\n{2,}/)[0].trim();
+  const lead = first.match(/^\*\*([^*][\s\S]*?)\*\*$/);
   const norm = (t) => fold(t).replace(/[^a-z0-9]+/g, '');
-  if (lead && summary && norm(lead[1]).startsWith(norm(summary).slice(0, 60))) {
+  if (lead && !lead[1].includes('**') && summary && norm(lead[1]).startsWith(norm(summary).slice(0, 60))) {
     summary = lead[1].replace(/\s+/g, ' ').trim();
-    body = body.slice(lead[0].length).trimStart();
+    body = body.slice(body.indexOf(first) + first.length).trimStart();
   } else if (summary && !/[.!?…”"]$/.test(summary)) summary += '…';
   if (summary.length > 420) summary = summary.slice(0, 400).replace(/\s+\S*$/, '') + '…';
 

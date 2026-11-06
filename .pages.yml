@@ -91,16 +91,20 @@ content:
   - name: cover
     label: Ảnh đại diện
     component: photo
-    description: Bài báo cũng dùng ô này làm ảnh ở khối "Báo chí nói về Tiến Nông". Khung ảnh khoảng 1040×560 px trên máy tính — nên dùng ảnh
-      rộng ít nhất 2080 px.
+    description: 'Ảnh ngang khoảng 2080×1120 px, DƯỚI 1 MB (tệp trên ~3 MB sẽ báo lỗi "413"). Ảnh điện thoại cần thu nhỏ trước (squoosh.app),
+      hoặc lưu bài rồi mở bài trên web kèm ?sua-anh để tải ảnh gốc — web tự thu nhỏ. Bài báo cũng dùng ô này làm ảnh ở khối "Báo chí nói về Tiến Nông".' 
   - name: cover_caption
     label: Chú thích ảnh đại diện
     type: string
   - name: body
     label: Nội dung bài viết
     type: rich-text
+    description: 'Chèn ảnh: gõ / rồi chọn Image → Upload (ảnh rộng ~1600 px, dưới 800 KB). KHÔNG dán ảnh từ Word — ảnh dán từ Word không hiện trên
+      web. Bài còn dòng mẫu "[Nội dung bài viết]" là bản nháp, chưa hiện trên web.'
     options:
       format: markdown
+      categories:
+      - image
   - name: album
     label: Album ảnh cuối bài
     component: photo

@@ -4,7 +4,7 @@ category: tn
 date: 2024-08-06
 author: Tiến Nông
 featured: false
-summary: Hội Nông dân tỉnh Thanh Hóa luôn xác định hoạt động phối hợp với các doanh nghiệp là nhiệm vụ trọng tâm, vừa khẳng định được vai trò của Hội và là cầu nối để nông dân đến với doanh nghiệp được gần hơn.Cầu nối giữa nông dân với doanh nghiệp** Thực hiện chủ trương của tỉnh Thanh Hóa về thu hút doanh nghiệp đầu tư vào nông nghiệp, nông thôn, kết nối doanh nghiệp với hợp tác xã, nông dân; đẩy mạnh…
+summary: Hội Nông dân tỉnh Thanh Hóa luôn xác định hoạt động phối hợp với các doanh nghiệp là nhiệm vụ trọng tâm, vừa khẳng định được vai trò của Hội và là cầu nối để nông dân đến với doanh nghiệp được gần hơn. Cầu nối giữa nông dân với doanh nghiệp Thực hiện chủ…
 cover:
   src: /uploads/tin-cu/2024/hoi-nong-dan-tinh-thanh-hoa-phat-huy-vai-tro-cau-noi-giua-nong-dan-voi-doanh.webp
   focus: center
@@ -19,6 +19,25 @@ external_url: ""
 press_highlight: false
 old_url: /hoi-nong-dan-tinh-thanh-hoa-phat-huy-vai-tro-cau-noi-giua-nong-dan-voi-doanh-nghiep/
 ---
+
+**Hội Nông dân tỉnh Thanh Hóa luôn xác định hoạt động phối hợp với các doanh nghiệp là nhiệm vụ trọng tâm, vừa khẳng định được vai trò của Hội và là cầu nối để nông dân đến với doanh nghiệp được gần hơn.Cầu nối giữa nông dân với doanh nghiệp**
+Thực hiện chủ trương của tỉnh Thanh Hóa về thu hút doanh nghiệp đầu tư vào nông nghiệp, nông thôn, kết nối doanh nghiệp với hợp tác xã, nông dân; đẩy mạnh mối liên kết giữa sản xuất và tiêu thụ sản phẩm nông nghiệp, hàng năm, Hội Nông dân tỉnh Thanh Hóa đã ban hành Nghị quyết về nhiệm vụ công tác năm, trong đó có hoạt động phối hợp với các doanh nghiệp hỗ trợ nông dân như: Tín chấp, nhận ủy thác cho nông dân vay vốn; tín chấp mua vật tư nông nghiệp trả chậm; tập huấn chuyển giao tiến bộ khoa học kỹ thuật, đào tạo nghề, xuất khẩu lao động…
+
+![Hội Nông dân tỉnh Thanh Hóa: Phát huy vai trò cầu nối giữa nông dân với doanh nghiệp](/uploads/tin-cu/2024/hoi-nong-dan-tinh-thanh-hoa-phat-huy-vai-tro-cau-noi-giua-nong-dan-voi-doanh-1.webp)
+
+*Hội Nông dân tỉnh Thanh Hóa ký kết phối hợp với Liên hiệp các Hội Khoa học kỹ thuật tỉnh Thanh Hóa.*
+
+Hiện, Hội Nông dân tỉnh Thanh Hóa đã phối hợp triển khai có hiệu quả 40 chương trình phối hợp đã ký với các sở, ngành, doanh nghiệp, đơn vị liên quan để huy động sức mạnh tổng hợp toàn xã hội, tạo nguồn lực hỗ trợ nông dân; đồng thời, từ đó đưa doanh nghiệp về với nông dân, nông thôn.
+
+Để tạo thêm nguồn vốn cho nông dân, các cấp Hội Nông dân tỉnh Thanh Hóa đang tín chấp và ủy thác với các ngân hàng với tổng dư nợ trên 16.000 tỷ đồng cho 88.349 thành viên vay. Xây dựng, quản lý và sử dụng có hiệu quả nguồn Quỹ hỗ trợ nông dân toàn tỉnh với tổng dư nợ đạt 38,953 tỷ đồng của 78 dự án cho 649 hộ vay; các dự án đã và đang thực hiện xây dựng hàng trăm mô hình về trồng trọt, chăn nuôi, dịch vụ ngành nghề mang lại hiệu quả cao về kinh tế, xã hội và đảm bảo vệ sinh an toàn thực phẩm, bảo vệ môi trường.
+
+![Hội Nông dân tỉnh Thanh Hóa: Phát huy vai trò cầu nối giữa nông dân với doanh nghiệp](/uploads/tin-cu/2024/hoi-nong-dan-tinh-thanh-hoa-phat-huy-vai-tro-cau-noi-giua-nong-dan-voi-doanh-2.webp)
+
+*Hội Nông dân tỉnh Thanh Hóa hỗ trợ nông dân và con em Hội viên nông dân xuất khẩu lao động thông qua các công ty uy tín.*
+
+6 tháng đầu năm 2024, các cấp Hội đã phối hợp với nhiều công ty, doanh nghiệp trong và ngoài tỉnh cung ứng 14.693 tấn phân bón chậm trả; phối hợp cung cấp giống, phân bón qua lá, phân bón hữu cơ, chế phẩm sinh học… để chăm sóc cây trồng, xử lý đất, xử lý gốc rơm rạ sau thu hoạch. Tổ chức mở 1.023 lớp tập huấn, chuyển giao khoa học kỹ thuật cho 122.790 lượt người; hướng dẫn xây dựng được 32 mô hình sản xuất nông nghiệp ứng dụng công nghệ cao và theo hướng công nghiệp cao, gắn với xây dựng chuỗi giá trị … Qua đó, giúp nông dân nâng cao nhận thức, mạnh dạn đầu tư, ứng dụng các tiến bộ khoa học kỹ thuật, lựa chọn đưa các giống cây, con có năng suất, hiệu quả cao vào sản xuất.
+
+**Khẳng định vai trò**
 
 Nhiều nông dân mạnh dạn liên kết đầu tư theo nhóm hộ, tổ sản xuất và vươn lên hình thức kinh tế tập thể, kinh tế hợp tác cao hơn. 5 năm qua, các cấp Hội trong tỉnh đã tham gia vận động, hướng dẫn xây dựng được 89 sản phẩm OCOP; tổ chức đào tạo tập huấn sản xuất theo quy trình VietGAP cho 8 sản phẩm và thiết kế tem nhãn, truy xuất xuất xứ cho sản phẩm; thành lập 752 tổ hợp tác, 131 hợp tác xã và thành lập được 149 doanh nghiệp; phối hợp với bưu điện các huyện, thị, thành phố tổ chức được 26 lớp tập huấn cho gần 1.800 học viên về cách vận hành và đưa sản phẩm bán hàng trên sàn thương mại điện tử Postmart.vn, đến nay đã đưa 138 sản phẩm của hộ, HTX, tổ hợp tác và doanh nghiệp lên sàn giao dịch thương mại điện tử; xây dựng 175 cửa hàng cung ứng thực phẩm sạch, an toàn.
 

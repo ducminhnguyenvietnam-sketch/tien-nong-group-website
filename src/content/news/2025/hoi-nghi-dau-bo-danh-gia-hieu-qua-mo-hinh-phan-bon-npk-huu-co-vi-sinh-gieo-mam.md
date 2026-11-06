@@ -13,7 +13,8 @@ cover:
 cover_caption: ""
 album: []
 album_link: ""
-tags: []
+tags:
+  - hội thảo
 source: ""
 external_url: ""
 press_highlight: false

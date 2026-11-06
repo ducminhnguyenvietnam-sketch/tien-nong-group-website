@@ -147,3 +147,6 @@ html:not(.pe-on) [data-needs-photos] { display: none !important; }
 @media (min-width: 900px) { .rvl-hint { display: none; } }
 @keyframes rvl-nudge { 0%, 70%, 100% { transform: scale(1); } 80% { transform: scale(1.18); } 90% { transform: scale(.96); } }
 @media (prefers-reduced-motion: reduce) { .rvl__more { transition: none; } .rvl__sign { animation: none !important; } }
+
+/* Photos pasted from Word point at the writer's own computer (file:/C:/…): never show a broken image. */
+.article-body img[src^="file:"] { display: none; }

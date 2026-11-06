@@ -106,12 +106,33 @@ Mỗi dòng chữ trên trang là một ô riêng, tên ô ghi loại chữ và 
 
 1. **Tin tức – bài viết → Add an entry**.
 2. Điền **Tiêu đề**, chọn **Chuyên mục**, **Ngày đăng**, viết **Tóm tắt** (1–2 câu).
-3. Tải **Ảnh đại diện**.
-4. Viết **Nội dung bài viết**: dùng thanh công cụ để tạo tiêu đề phụ, in đậm, trích dẫn, chèn ảnh.
+3. Tải **Ảnh đại diện** (xem kích thước ở mục *Ảnh cho bài viết* bên dưới).
+4. Viết **Nội dung bài viết**. Chèn ảnh: đặt con trỏ ở chỗ cần chèn, gõ **/** rồi chọn **Image** (Ảnh) → **Upload**
+   ảnh từ máy. Không dán ảnh trực tiếp từ Word: ảnh dán từ Word chỉ là đường dẫn trong máy người viết
+   (`file:/C:/…`), lên web sẽ không hiện.
 5. Bật **Ghim làm tin nổi bật** nếu muốn bài hiện ô lớn đầu trang Tin tức (chỉ nên ghim 1 bài).
 6. Bấm **Save**.
 
-Địa chỉ bài viết được tạo từ tiêu đề lúc lưu lần đầu.
+Địa chỉ bài viết được tạo từ tiêu đề lúc lưu lần đầu. Bài còn để nguyên dòng mẫu **[Nội dung bài viết]**
+được coi là bản nháp: chưa hiện trên web cho tới khi viết nội dung thật.
+
+### Ảnh cho bài viết — kích thước và dung lượng
+
+Pages CMS **không nhận tệp lớn hơn khoảng 3 MB** (báo lỗi *Failed to upload file: 413*). Ảnh chụp điện thoại
+thường 4–10 MB nên phải thu nhỏ trước khi tải:
+
+| Ảnh | Kích thước nên dùng | Dung lượng |
+| --- | --- | --- |
+| Ảnh đại diện | ngang 2080 × 1120 px (tỉ lệ khoảng 16:9) | dưới 1 MB |
+| Ảnh trong bài | rộng 1600 px | dưới 800 KB |
+
+Cách thu nhỏ nhanh: mở <https://squoosh.app>, kéo ảnh vào, ở **Resize** gõ chiều rộng (2080 hoặc 1600),
+chọn **MozJPEG**, chất lượng 80 → **Download**. Hoặc trên Windows: chuột phải ảnh → **Mở bằng Photos** →
+**…** → **Đổi kích cỡ ảnh**.
+
+**Cách không cần thu nhỏ (ảnh đại diện và album):** sau khi lưu bài lần đầu và web đã cập nhật (~2 phút),
+mở bài trên web kèm `?sua-anh` ở cuối địa chỉ, bấm vào ảnh đại diện để tải ảnh lên — website tự thu nhỏ và
+nén ảnh, không giới hạn dung lượng (xem mục 3).
 
 ## 6. Sau khi bấm Save
 

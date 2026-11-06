@@ -4,7 +4,7 @@ category: kt
 date: 2017-10-27
 author: Tiến Nông
 featured: false
-summary: "TỔNG QUAN VỀ PHÂN BÓNI. Các khái niệm*Phân bón:*** là sản phẩm có chức năng cung cấp chất dinh dưỡng cho cây trồng hoặc có tác dụng cải tạo đất để tăng năng suất, chất lượng cây trồng. ***Nguyên tố dinh dưỡng trong phân bón:*** là các nguyên tố hóa học cần thiết cho sự sinh trưởng và phát triển của cây trồng, bao gồm: – Nguyên tố dinh dưỡng đa lượng là các nguyên tố: đạm (N), lân (P), kali (K) ở…"
+summary: "TỔNG QUAN VỀ PHÂN BÓN I. Các khái niệm Phân bón: là sản phẩm có chức năng cung cấp chất dinh dưỡng cho cây trồng hoặc có tác dụng cải tạo đất để tăng năng suất, chất lượng cây trồng. Nguyên tố dinh dưỡng trong phân bón: là các nguyên tố hóa học cần…"
 cover:
   src: /uploads/tin-cu/2017/tong-quan-ve-phan-bon.webp
   focus: center
@@ -19,6 +19,28 @@ external_url: ""
 press_highlight: false
 old_url: /tong-quan-ve-phan-bon/
 ---
+
+**TỔNG QUAN VỀ PHÂN BÓNI. Các khái niệm*Phân bón:*** là sản phẩm có chức năng cung cấp chất dinh dưỡng cho cây trồng hoặc có tác dụng cải tạo đất để tăng năng suất, chất lượng cây trồng.
+
+***Nguyên tố dinh dưỡng trong phân bón:*** là các nguyên tố hóa học cần thiết cho sự sinh trưởng và phát triển của cây trồng, bao gồm:
+
+– Nguyên tố dinh dưỡng đa lượng là các nguyên tố: đạm (N), lân (P), kali (K) ở dạng cây trồng có thể hấp thu được.
+
+– Nguyên tố dinh dưỡng trung lượng là các nguyên tố: canxi (Ca), magie (Mg), lưu huỳnh (S), silic (Si) ở dạng cây trồng có thể hấp thu được.
+
+– Nguyên tố dinh dưỡng vi lượng là các nguyên tố: bo (B), đồng (Cu), sắt (Fe), mangan (Mn), molipđen (Mo), kẽm (Zn) ở dạng cây trồng có thể hấp thu được.
+
+***Yếu tố hạn chế trong phân bón:*** là những yếu tố có nguy cơ gây độc hại, ảnh hưởng tới an toàn thực phẩm, ô nhiễm môi trường (không được bao gồm hoặc có ở mức độ cho phép theo quy định), gồm:
+
+– Các nguyên tố arsen (As), cadimi (Cd), chì (Pb) và thủy ngân (Hg)
+
+– Vi khuẩn E. coli, Salmonella và các vi sinh vật gây hại cây trồng, gây bệnh cho người, động vật được cơ quan quản lý nhà nước có thẩm quyền xác định.
+
+Chất lượng phân bón được kiểm soát bởi các thông số kỹ thuật về đặc tính, thành phần và hàm lượng các chất dinh dưỡng được quy định trong quy chuẩn kỹ thuật và tiêu chuẩn công bố áp dụng.
+
+Phân bón không bảo đảm chất lượng là phân bón có hàm lượng định lượng các chất dinh dưỡng hoặc có thành phần không phù hợp với tiêu chuẩn công bố áp dụng hoặc quy chuẩn kỹ thuật tương ứng hoặc quy định của cơ quan quản lý nhà nước có thẩm quyền.
+
+**II. Phân loại phân bón*2.1. Theo nguồn gốc nguyên liệu và quá trình sản xuất***
 
 – Phân bón hóa học (còn gọi là phân bón vô cơ): Là các loại phân bón được sản xuất từ nguyên liệu chính là các chất vô cơ hoặc hữu cơ tổng hợp, được xử lý qua quá trình hóa học hoặc chế biến khoáng sản.
 
