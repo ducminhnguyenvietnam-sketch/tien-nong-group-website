@@ -26,11 +26,6 @@ const poems = c.poems.items.filter((p) => isFilled(p.text));
 const measures = (c.origin.measures as string[]).filter(isFilled);
 const hasGallery = c.gallery.photos.some((ph) => isFilled(ph.src));
 
-// Slogan band: the "KHẨU HIỆU" line large, the other two lines beneath it.
-const mottos = c.mottos.filter((m) => isFilled(m.text));
-const slogan = mottos.find((m) => /khẩu hiệu/i.test(m.label)) ?? mottos.at(-1);
-const otherMottos = mottos.filter((m) => m !== slogan);
-const sloganParts = String(slogan?.text || '').split(/\s+[–-]\s+/);
 
 /** Photo for a card: its own CMS photo, otherwise the cover of the news story it links to. */
 const photoFor = async (img: any, href: string) => {
@@ -38,6 +33,9 @@ const photoFor = async (img: any, href: string) => {
   const n = await newsByLink(href);
   return { image: n?.data.cover, own: false };
 };
+// Đảng bộ: horizontal timeline; each stop shows its photo (or the cover of its news story) or a "document" card.
+const party = await Promise.all(c.party.milestones.map(async (m, k) => ({ ...m, k, ...(await photoFor(m.image, m.link)) })));
+const shownParty = party.filter((m) => isFilled(m.year) && isFilled(m.title));
 const values = await Promise.all(c.values.items.map(async (v, k) => ({ ...v, k, ...(await photoFor(v.image, v.link)) })));
 const shownValues = values.filter((v) => isFilled(v.title));
 const traditions = c.traditions.items.map((t, k) => ({ ...t, k })).filter((t) => isFilled(t.title));
@@ -46,6 +44,8 @@ const shownLearning = learning.filter((l) => isFilled(l.title));
 
 const videos = c.media.videos.filter((v) => isFilled(v.youtube) || isFilled(v.file));
 const [mainVideo, ...moreVideos] = videos;
+/** What the song player needs to know about a clip (the big box plays whichever clip was picked). */
+const clip = (v: (typeof videos)[number]) => ({ yt: youtubeId(v.youtube) || '', file: isFilled(v.file) ? link(v.file) : '', title: v.title || '', label: v.label || '', dur: v.duration || '' });
 const titleParts = (() => {
   const t = String(c.media.title || ''), h = String(c.media.highlight || '').trim();
   const i = h ? t.indexOf(h) : -1;
@@ -64,11 +64,38 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k }) as typeof st & { 
 
 <FigureCard overlap items={c.stats} />
 
-{slogan && <section id="thong-diep" class="vh-slogan">
-<div class="vh-slogan__wrap">
-<span class="vh-slogan__label">{slogan.label}</span>
-<p class="vh-slogan__text">{sloganParts.length > 1 ? <><span>{sloganParts[0]}</span><span class="vh-slogan__dash"> – </span><span class="vh-slogan__gold">{sloganParts.slice(1).join(' – ')}</span></> : slogan.text}</p>
-{otherMottos.length > 0 && <dl class="vh-slogan__more">{otherMottos.map((m) => <div><dt>{m.label}</dt><dd>{m.text}</dd></div>)}</dl>}
+{shownParty.length > 0 && <section id="dang-bo" class="st-sec dg">
+<div class="st-wrap" data-picker data-pick-autoplay="6000">
+<div class="dg__head">
+<div class="st-head"><span class="st-eyebrow">{c.party.eyebrow}</span><h2 class="st-h2">{c.party.title}</h2></div>
+<div class="dg__arrows"><button type="button" data-pick-step="-1" aria-label="Mốc trước"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" data-pick-step="1" aria-label="Mốc sau"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+</div>
+<div class="dg__stage">
+{shownParty.map((m, i) => { const doc = !isFilled(m.image?.src) && isFilled(m.doc_date); return (
+<div role="tabpanel" class="dg__panel" data-pick-panel={i} hidden={i !== 0} aria-label={m.year}>
+<div class="dg__media">
+{doc
+  ? <div class="dg__doc"><div class="dg__paper">
+      {isFilled(m.doc_label) && <span class="dg__paper-label">{m.doc_label}</span>}
+      <span class="dg__paper-date">{m.doc_date}</span>
+      <span class="dg__paper-rule" aria-hidden="true"></span>
+      {isFilled(m.doc_text) && <span class="dg__paper-text">{m.doc_text}</span>}
+      {isFilled(m.doc_badge) && <span class="dg__paper-badge">{m.doc_badge}</span>}
+    </div></div>
+  : <><ImageSlot style={fill} id={`vh-party-${m.k}`} shape="rect" placeholder={m.image?.alt || m.title} image={m.image} cms={m.own ? `${F}#party.milestones.${m.k}.image` : undefined} sizes="(max-width: 899px) 92vw, 640px" />
+    {isFilled(m.fig) && <span class="dg__badge"><strong>{m.fig}</strong><span>{m.fig_label}</span></span>}</>}
+</div>
+<div class="dg__text">
+<span class="dg__year" aria-hidden="true">{m.year}</span>
+<h3>{m.title}</h3>
+<p class="jx-justify">{m.body}</p>
+{isFilled(m.link) && <a href={link(m.link)} class="vh-link">Đọc bài →</a>}
+</div>
+</div>); })}
+</div>
+<div class="dg__rail" role="tablist" aria-label="Các dấu mốc của Đảng bộ Tiến Nông">
+{shownParty.map((m, i) => <button type="button" role="tab" class:list={['dg__stop', { 'dg__stop--key': m.key }]} data-pick={i} aria-selected={i === 0 ? 'true' : 'false'}><span class="dg__dot" aria-hidden="true"></span><span class="dg__label">{m.year}</span>{isFilled(m.tag) && <span class="dg__tag">{m.tag}</span>}</button>)}
+</div>
 </div></section>}
 
 <section id="khoi-nguon" class="st-sec">
@@ -125,7 +152,8 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k }) as typeof st & { 
 <div class="vh-trad__list">
 {traditions.map((t, i) => <div class="vh-trad__item">
 <button type="button" data-pick={i} aria-selected={i === 0 ? 'true' : 'false'} aria-controls={`vh-trad-${i}`}><span>{t.title}</span><span class="vh-trad__sign" aria-hidden="true"></span></button>
-<div id={`vh-trad-${i}`} class="vh-trad__body" data-pick-panel={i} hidden={i !== 0}><p>{stripPlaceholders(t.body)}</p></div>
+<div id={`vh-trad-${i}`} class="vh-trad__body" data-pick-panel={i} hidden={i !== 0}><p>{stripPlaceholders(t.body)}</p>
+{isFilled(t.image?.src) && <div class="vh-trad__thumb"><ImageSlot style={fill} id={`vh-tradition-m-${t.k}`} shape="rounded" radius="14" placeholder={t.image.alt || t.title} image={t.image} sizes="92vw" /></div>}</div>
 </div>)}
 </div>
 <div class="vh-trad__stage">
@@ -160,7 +188,7 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k }) as typeof st & { 
 <Head eyebrow={c.learning.eyebrow} title={c.learning.title} intro={c.learning.intro} />
 {isFilled(c.learning.motto) && <blockquote class="vh-learn__motto"><p>{c.learning.motto}</p></blockquote>}
 </div>
-<div class="st-split__media st-hide-empty" style="--ratio:3/2"><ImageSlot style={fill} id="vh-learning" shape="rounded" radius="20" placeholder={c.learning.image.alt || 'Ảnh đào tạo'} image={c.learning.image} cms={`${F}#learning.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
+<div class="st-split__media st-hide-empty vh-learn__photo" style="--ratio:3/2"><ImageSlot style={fill} id="vh-learning" shape="rounded" radius="20" placeholder={c.learning.image.alt || 'Ảnh đào tạo'} image={c.learning.image} cms={`${F}#learning.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
 </div>
 <div class="vh-learn__grid">
 {shownLearning.map((l) => <a href={link(l.link)} class="vh-learn__card">
@@ -180,22 +208,23 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k }) as typeof st & { 
 <div class="st-head"><span class="vh-song__eyebrow">{c.media.eyebrow}</span><h2 class="st-h2 vh-song__title">{titleParts[0]}{titleParts[1] && <span class="vh-gold">{titleParts[1]}</span>}{titleParts[2]}</h2>{isFilled(c.media.intro) && <p class="st-lead">{c.media.intro}</p>}</div>
 {isFilled(site.social.youtube) && <a href={link(site.social.youtube)} target="_blank" rel="noopener" class="vh-song__channel-link">Xem kênh YouTube <span aria-hidden="true">↗</span></a>}
 </div>
-<div class:list={['vh-song', { 'vh-song--solo': moreVideos.length === 0 }]}>
-{(() => { const id = youtubeId(mainVideo.youtube); return id
-  ? <button type="button" class="yt vh-song__main" data-yt={id} aria-label={`Phát video ${mainVideo.title || ''}`}>
-      <img src={`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`} alt="" loading="lazy" width="1280" height="720" />
-      <span class="vh-song__shade" aria-hidden="true"></span>
-      {isFilled(mainVideo.duration) && <span class="vh-song__dur">{mainVideo.duration}</span>}
-      <span class="yt__play yt__play--big" aria-hidden="true"></span>
-      <span class="vh-song__cap">{isFilled(mainVideo.label) && <span>{mainVideo.label}</span>}{isFilled(mainVideo.title) && <strong>{mainVideo.title}</strong>}</span>
-    </button>
-  : <div class="vh-song__main"><video src={link(mainVideo.file)} controls preload="metadata"></video></div>; })()}
+<div class:list={['vh-song', { 'vh-song--solo': moreVideos.length === 0 }]} data-song>
+{(() => { const m = clip(mainVideo); return (
+<div class="vh-song__main" data-song-main data-clip={JSON.stringify(m)}>
+  <button type="button" class="vh-song__poster" data-song-play aria-label={`Phát video ${m.title}`}>
+    {m.yt && <img src={`https://i.ytimg.com/vi/${m.yt}/maxresdefault.jpg`} alt="" loading="lazy" width="1280" height="720" />}
+    <span class="vh-song__shade" aria-hidden="true"></span>
+    {isFilled(m.dur) && <span class="vh-song__dur">{m.dur}</span>}
+    <span class="yt__play yt__play--big" aria-hidden="true"></span>
+    <span class="vh-song__cap">{isFilled(m.label) && <span>{m.label}</span>}{isFilled(m.title) && <strong>{m.title}</strong>}</span>
+  </button>
+</div>); })()}
 {moreVideos.length > 0 && <ul class="vh-song__list">
-{moreVideos.slice(0, 3).map((v) => { const id = youtubeId(v.youtube); return (
-  <li><a href={isFilled(v.youtube) ? link(v.youtube) : link(v.file)} target="_blank" rel="noopener" class="vh-song__item">
-    <span class="vh-song__thumb">{id && <img src={`https://i.ytimg.com/vi/${id}/mqdefault.jpg`} alt="" loading="lazy" width="320" height="180" />}<span class="yt__play" aria-hidden="true"></span>{isFilled(v.duration) && <span class="vh-song__dur vh-song__dur--sm">{v.duration}</span>}</span>
-    <span class="vh-song__meta">{isFilled(v.label) && <span>{v.label}</span>}<strong>{v.title}</strong></span>
-  </a></li>); })}
+{moreVideos.slice(0, 3).map((v) => { const m = clip(v); return (
+  <li><button type="button" class="vh-song__item" data-song-pick data-clip={JSON.stringify(m)} aria-label={`Phát video ${m.title}`}>
+    <span class="vh-song__thumb">{m.yt && <img src={`https://i.ytimg.com/vi/${m.yt}/mqdefault.jpg`} alt="" loading="lazy" width="320" height="180" />}<span class="yt__play" aria-hidden="true"></span>{isFilled(m.dur) && <span class="vh-song__dur vh-song__dur--sm">{m.dur}</span>}</span>
+    <span class="vh-song__meta">{isFilled(m.label) && <span>{m.label}</span>}<strong>{m.title}</strong></span>
+  </button></li>); })}
 {moreVideos.length < 3 && isFilled(site.social.youtube) && <li><a href={link(site.social.youtube)} target="_blank" rel="noopener" class="vh-song__item vh-song__item--channel">
   <span class="vh-song__thumb vh-song__thumb--channel"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4.5" width="22" height="15" rx="4.5" fill="#FF0000"/><path fill="#fff" d="m10 8.8 5.6 3.2-5.6 3.2z"/></svg></span>
   <span class="vh-song__meta"><span>KÊNH YOUTUBE</span><strong>Xem thêm video của Tiến Nông</strong></span>
@@ -221,7 +250,94 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k }) as typeof st & { 
 <CtaBand title={c.cta.title} text={c.cta.text} primary={{ label: c.cta.button_jobs, href: url('tuyen-dung', 'vi-tri') }} secondary={{ label: c.cta.button_about, href: url('ve-tien-nong') }} />
 </Layout>
 
+<script>
+  /* Song player: the big box plays the picked clip; the clip it was showing takes the picked one's place on the right. */
+  type Clip = { yt: string; file: string; title: string; label: string; dur: string };
+  document.querySelectorAll<HTMLElement>('[data-song]').forEach((root) => {
+    const main = root.querySelector<HTMLElement>('[data-song-main]');
+    if (!main) return;
+    let cur: Clip = JSON.parse(main.dataset.clip || '{}');
+    const esc = (t: string) => t.replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[ch]!);
+    const play = (v: Clip) => {
+      main.innerHTML = v.yt
+        ? `<iframe src="https://www.youtube-nocookie.com/embed/${v.yt}?autoplay=1&rel=0" title="${esc(v.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+        : `<video src="${esc(v.file)}" controls autoplay playsinline></video>`;
+      main.dataset.clip = JSON.stringify(v);
+      main.querySelector<HTMLElement>('iframe,video')?.focus();
+    };
+    const paint = (btn: HTMLElement, v: Clip) => {
+      btn.dataset.clip = JSON.stringify(v);
+      btn.setAttribute('aria-label', `Phát video ${v.title}`);
+      const thumb = btn.querySelector('.vh-song__thumb');
+      if (thumb) thumb.innerHTML = (v.yt ? `<img src="https://i.ytimg.com/vi/${v.yt}/mqdefault.jpg" alt="" width="320" height="180">` : '')
+        + '<span class="yt__play" aria-hidden="true"></span>' + (v.dur ? `<span class="vh-song__dur vh-song__dur--sm">${esc(v.dur)}</span>` : '');
+      const meta = btn.querySelector('.vh-song__meta');
+      if (meta) meta.innerHTML = (v.label ? `<span>${esc(v.label)}</span>` : '') + `<strong>${esc(v.title)}</strong>`;
+      // innerHTML loses the page's scoped-style attribute: copy it from the button onto the new children.
+      const cid = [...btn.attributes].find((a) => a.name.startsWith('data-astro-cid'));
+      if (cid) btn.querySelectorAll('*').forEach((el) => el.setAttribute(cid.name, ''));
+    };
+    main.querySelector('[data-song-play]')?.addEventListener('click', () => play(cur));
+    root.querySelectorAll<HTMLElement>('[data-song-pick]').forEach((btn) => btn.addEventListener('click', () => {
+      const next: Clip = JSON.parse(btn.dataset.clip || '{}');
+      paint(btn, cur);
+      cur = next;
+      play(next);
+      if (matchMedia('(max-width: 1023.98px)').matches) main.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }));
+  });
+</script>
+
 <style>
+  /* Đảng bộ (Claude Design "Đảng bộ Tiến Nông — section Văn hoá doanh nghiệp"): photo + story, year rail below. */
+  .dg .st-wrap { gap: clamp(24px, 3vw, 40px); }
+  .dg__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px 48px; flex-wrap: wrap; }
+  .dg__arrows { display: flex; gap: 8px; }
+  .dg__arrows button { width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--surface-card); color: var(--text-primary); display: inline-flex; align-items: center; justify-content: center; padding: 0; cursor: pointer; }
+  .dg__arrows button:hover { background: var(--green-50); border-color: var(--green-300); }
+  .dg__stage { position: relative; min-height: 420px; }
+  .dg__panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 28px clamp(32px, 5vw, 64px); align-items: center; }
+  .dg__panel:not([hidden]) { animation: vh-in 420ms var(--ease-out) both; }
+  .dg__media { order: 2; position: relative; aspect-ratio: 16 / 10; border-radius: var(--radius-xl); overflow: hidden; background: var(--surface-sunken); }
+  .dg__badge { position: absolute; left: 20px; bottom: 20px; z-index: 1; display: flex; align-items: baseline; gap: 10px; max-width: calc(100% - 40px); padding: 12px 18px; border-radius: 16px; background: rgba(2, 53, 26, .88); color: #fff; }
+  .dg__badge strong { font: 800 30px/1 var(--font-display); color: var(--brand-highlight); }
+  .dg__badge span { font-size: 14px; line-height: 1.35; color: var(--green-50); text-align: start; }
+  .dg__doc { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: radial-gradient(120% 140% at 50% 0%, var(--green-700) 0%, var(--green-800) 55%, var(--green-900) 100%); }
+  .dg__paper { width: min(78%, 420px); padding: clamp(22px, 3vw, 32px) clamp(20px, 3vw, 30px); border-radius: 6px; background: #fffdf6; color: var(--text-primary); box-shadow: 0 18px 40px rgba(0, 0, 0, .28); transform: rotate(-2.5deg); display: flex; flex-direction: column; gap: 12px; text-align: center; }
+  .dg__paper-label { font: 600 12px/1.4 var(--font-body); letter-spacing: .14em; text-transform: uppercase; color: var(--text-tertiary, #727b72); }
+  .dg__paper-date { font: 800 clamp(34px, 4vw, 52px)/1 var(--font-display); color: var(--green-700); letter-spacing: -.02em; }
+  .dg__paper-rule { height: 1px; background: var(--border-default); }
+  .dg__paper-text { white-space: pre-line; font-size: 15px; line-height: 1.5; color: var(--text-secondary); text-align: center !important; text-align-last: center !important; }
+  .dg__paper-badge { align-self: center; padding: 6px 14px; border-radius: 999px; background: #fbead0; color: #6b4309; font-size: 14px; font-weight: 600; }
+  .dg__text { display: flex; flex-direction: column; gap: 14px; }
+  .dg__year { font: 800 clamp(56px, 8vw, 112px)/1 var(--font-display); letter-spacing: -.02em; color: var(--green-600); }
+  .dg__text h3 { margin: 0; font: 700 clamp(21px, 2vw, 28px)/1.3 var(--font-display); text-wrap: balance; }
+  .dg__text p { margin: 0; font-size: var(--fs-body, 16px); line-height: 1.75; color: var(--text-secondary); }
+  .dg__text .vh-link { align-self: flex-start; }
+  .dg__rail { display: flex; overflow-x: auto; scrollbar-width: none; padding: 8px 0 4px; scroll-snap-type: x proximity; }
+  .dg__rail::-webkit-scrollbar { display: none; }
+  .dg__rail.is-scrollable { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 24px, #000 calc(100% - 48px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 24px, #000 calc(100% - 48px), transparent 100%); }
+  .dg__stop { position: relative; flex: 1 0 112px; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 0 4px; background: none; border: 0; cursor: pointer; font: inherit; color: inherit; scroll-snap-align: center; }
+  .dg__stop::before { content: ''; position: absolute; top: 11px; left: 50%; width: 100%; border-top: 2px dotted var(--gray-400); }
+  .dg__stop.is-past::before { border-top: 2px solid var(--green-500); }
+  .dg__stop:last-child::before { width: 0; }
+  .dg__dot { position: relative; z-index: 1; width: 10px; height: 10px; margin: 7px 0; border-radius: 50%; background: var(--gray-700); transition: all var(--motion-base) var(--ease-out); }
+  .dg__stop.is-past .dg__dot { background: var(--green-500); }
+  .dg__stop[aria-selected='true'] .dg__dot { width: 24px; height: 24px; margin: 0; background: var(--green-500); box-shadow: 0 0 0 6px var(--green-100); }
+  .dg__stop--key .dg__dot, .dg__stop--key[aria-selected='true'] .dg__dot { background: var(--brand-highlight); }
+  .dg__stop--key[aria-selected='true'] .dg__dot { box-shadow: 0 0 0 6px #fbead0; }
+  .dg__label { font: 700 clamp(17px, 1.6vw, 22px)/1.2 var(--font-display); color: var(--text-primary); }
+  .dg__stop[aria-selected='true'] .dg__label { color: var(--green-600); }
+  .dg__tag { font-size: 13px; line-height: 1.3; color: var(--text-secondary); text-align: center; }
+  @media (max-width: 899.98px) {
+    .dg__panel { grid-template-columns: minmax(0, 1fr); }
+    .dg__media { order: 0; }
+    .dg__stage { min-height: 0; }
+    .dg__stop { flex-basis: 92px; }
+    .dg__year { font-size: 48px; }
+    .dg__badge { left: 12px; bottom: 12px; padding: 9px 13px; } .dg__badge strong { font-size: 24px; } .dg__badge span { font-size: 13px; }
+  }
+
   /* Slogan band: one large line, two supporting lines (different from the figures card above). */
   .vh-slogan { position: relative; overflow: hidden; background: radial-gradient(120% 140% at 50% 0%, var(--green-700) 0%, var(--green-800) 55%, var(--green-900) 100%); color: #fff; margin-top: clamp(40px, 5vw, 64px); }
   .vh-slogan__wrap { max-width: var(--wrap, 1280px); margin: 0 auto; padding: clamp(56px, 7vw, 88px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; }
@@ -354,10 +470,15 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k }) as typeof st & { 
   .vh-song__channel-link { font-weight: 600; color: var(--green-300); white-space: nowrap; }
   .vh-song__channel-link:hover { color: #fff; }
   .vh-song { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); gap: 20px; align-items: stretch; }
-  .vh-song__main { position: relative; aspect-ratio: 16 / 9; text-align: left; }
+  .vh-song__main { position: relative; aspect-ratio: 16 / 9; text-align: left; border-radius: var(--radius-xl); overflow: hidden; background: var(--green-900); }
+  .vh-song__poster { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; background: none; cursor: pointer; color: inherit; font: inherit; text-align: left; }
+  .vh-song__poster img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: scale 600ms var(--ease-out); }
+  .vh-song__poster:hover img { scale: 1.03; }
+  .vh-song__poster:hover .yt__play { transform: scale(1.08); }
+  .vh-song__main :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .vh-song--solo { grid-template-columns: minmax(0, 1fr); }
   .vh-song--solo .vh-song__main { aspect-ratio: 21 / 9; }
-  .vh-song__main video { position: absolute; inset: 0; width: 100%; height: 100%; background: #000; border-radius: var(--radius-xl); }
+  .vh-song__main :global(video) { position: absolute; inset: 0; width: 100%; height: 100%; background: #000; }
   .vh-song__shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0, 40, 20, .78) 0%, rgba(0, 40, 20, .2) 45%, rgba(0, 40, 20, 0) 70%); }
   .vh-song__dur { position: absolute; right: 18px; top: 18px; padding: 4px 10px; border-radius: 8px; background: rgba(0, 0, 0, .65); color: #fff; font: 600 13px/1.3 var(--font-body); }
   .vh-song__dur--sm { right: 8px; top: auto; bottom: 8px; padding: 2px 7px; font-size: 11.5px; }
@@ -365,6 +486,7 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k }) as typeof st & { 
   .vh-song__cap span { font: 600 13px/1.4 var(--font-body); letter-spacing: .14em; text-transform: uppercase; }
   .vh-song__cap strong { font: 600 clamp(26px, 3vw, 44px)/1.15 var(--font-display); }
   .vh-song__list { list-style: none; margin: 0; padding: 0; display: grid; grid-auto-rows: 1fr; gap: 16px; }
+  button.vh-song__item { width: 100%; font: inherit; text-align: left; cursor: pointer; }
   .vh-song__item { height: 100%; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 16px; align-items: center; padding: 10px; border-radius: var(--radius-lg);
     border: 1px solid rgba(255, 255, 255, .14); background: rgba(255, 255, 255, .04); color: #fff; text-decoration: none; transition: background var(--motion-base), border-color var(--motion-base); }
   .vh-song__item:hover { background: rgba(255, 255, 255, .09); border-color: rgba(255, 255, 255, .26); color: #fff; text-decoration: none; }
@@ -387,12 +509,25 @@ const stories = c.family.stories.map((st, k) => ({ ...st, k }) as typeof st & { 
   @media (max-width: 1023.98px) {
     .vh-origin, .vh-tn, .vh-values, .vh-trad, .vh-song { grid-template-columns: minmax(0, 1fr); }
     .vh-fam[data-count='3'] { --fam-cols: 2; }
-    .vh-measure__list { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+    .vh-measure__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .vh-measure__list li:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 6px); }
+    .vh-measure__list li { white-space: normal; }
     .vh-values__stage { position: static; order: -1; }
     .vh-trad__stage { order: -1; }
     .vh-learn__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (max-width: 699.98px) { .vh-fam { --fam-cols: 1 !important; } }
+  .vh-trad__thumb { display: none; }
+  @media (max-width: 1023.98px) {
+    /* Traditions on phones: no big photo above the list; each open item shows its own photo under its text. */
+    .vh-trad__stage { display: none; }
+    .vh-trad__thumb { display: block; position: relative; aspect-ratio: 16 / 9; margin-top: 14px; border-radius: 14px; overflow: hidden; }
+    .vh-trad__body:not([hidden]) { animation: vh-in 260ms var(--ease-out) both; }
+  }
+  @media (max-width: 899.98px) {
+    .vh-learn__photo { display: none; }
+    .vh-gallery__item figcaption, .vh-gallery__item:first-child figcaption { padding: 28px 12px 9px; font-size: 12.5px; font-weight: 400; line-height: 1.4; background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)); }
+  }
   @media (max-width: 899.98px) { .vh-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 180px; } }
   @media (max-width: 599.98px) {
     .vh-slogan__more { grid-template-columns: minmax(0, 1fr); }

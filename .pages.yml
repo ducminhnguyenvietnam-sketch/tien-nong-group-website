@@ -141,13 +141,11 @@ content:
     fields:
     - name
     - line
-    - order
     primary: name
     sort:
-    - order
     - name
     default:
-      sort: order
+      sort: name
       order: asc
   fields:
   - name: name
@@ -169,9 +167,9 @@ content:
       - value: cnc
         label: Phân bón công nghệ cao
   - name: order
-    label: "Thứ tự hiển thị"
+    label: "Thứ tự hiển thị (dự phòng)"
     type: number
-    description: "Số nhỏ hiện trước (\"Bán nhiều nhất\" trên trang Sản phẩm)."
+    description: "Không cần sửa: thứ tự hiển thị được sắp bằng cách kéo thả ở mục \"Sản phẩm – sắp xếp thứ tự (kéo thả)\". Số này chỉ dùng cho sản phẩm chưa có trong danh sách kéo thả."
   - name: featured
     label: "Đưa lên đầu"
     type: boolean
@@ -291,6 +289,22 @@ content:
     label: "Đường dẫn trên web cũ"
     type: string
     description: "Tự điền khi chuyển từ web cũ, dùng để chuyển hướng link cũ. Không cần sửa."
+- name: product-order
+  label: "Sản phẩm – sắp xếp thứ tự (kéo thả)"
+  type: file
+  path: src/content/product-order.json
+  format: json
+  fields:
+  - name: items
+    label: "Thứ tự hiển thị sản phẩm"
+    description: "Giữ biểu tượng ⋮⋮ ở đầu mỗi dòng rồi kéo lên/xuống để đổi thứ tự (thứ tự \"Bán nhiều nhất\" trên trang Sản phẩm). Sản phẩm mới thêm chưa có trong danh sách sẽ hiện sau cùng — bấm \"Add an entry\" và chọn sản phẩm để xếp chỗ cho nó. Bấm Save để lưu."
+    type: reference
+    list: true
+    options:
+      collection: products
+      search: name
+      value: "{path}"
+      label: "{name}"
 - name: pages
   label: Các trang
   type: group
@@ -937,6 +951,10 @@ content:
         label: Ảnh banner
         component: photo
         description: Ảnh ngang khổ lớn (ít nhất 2400×900 px). Nếu ảnh đã có chữ thiết kế sẵn, hãy xóa Tiêu đề và Mô tả bên dưới.
+      - name: image_mobile
+        label: Ảnh banner cho điện thoại (tuỳ chọn, khổ 3:2 — ví dụ 1080×720 px)
+        description: Để trống thì điện thoại hiện trọn ảnh banner ngang ở trên (thu nhỏ vừa màn hình).
+        component: photo
       - name: eyebrow
         label: Nhãn in hoa
         type: string
@@ -1117,6 +1135,10 @@ content:
         label: Ảnh nền khung xanh lời chào (thay cả nền và logo lá)
         description: Ảnh ngang khoảng 1920×1000 px, tông xanh đậm để chữ trắng dễ đọc; ảnh chân dung Tổng Giám đốc vẫn nằm phía trên. Thay nhanh nhất ngay trên website (?sua-anh) — bấm vào khoảng nền xanh bên trái/trên ảnh chân dung. Để trống thì dùng nền xanh có logo lá như hiện tại.
         component: photo
+      - name: image_desktop
+        label: Ảnh lời chào ghép sẵn cho máy tính (1920×895 px)
+        description: Một ảnh đã ghép sẵn Tổng Giám đốc (đứng ở khoảng 40% bên trái, chân chạm đáy ảnh) với nền và logo — designer tự thiết kế rồi thay tại đây. Chữ lời chào nằm ở 60% bên phải. Trên điện thoại vẫn dùng ảnh chân dung tách nền bên dưới. Để trống thì dùng nền xanh + ảnh chân dung như cũ.
+        component: photo
       - name: background_overlay
         label: Phủ lớp xanh mờ lên ảnh nền để chữ dễ đọc
         description: Tắt nếu ảnh nền đã được thiết kế sẵn tông đậm.
@@ -1141,6 +1163,10 @@ content:
       - name: t5
         label: 'Chữ: Tổng Giám đốc'
         type: string
+      - name: roles
+        label: Các chức vụ khác dưới tên (mỗi dòng một chức vụ)
+        description: Hiện dưới tên Tổng Giám đốc. Để trống nếu không cần.
+        type: text
       - name: heading_small
         label: Dòng chữ nhỏ trên tiêu đề (ví dụ Lời chào từ)
         type: string
@@ -1727,20 +1753,63 @@ content:
       - name: sub
         label: Chú thích nhỏ
         type: string
-    - name: mottos
-      label: 03 · Dải khẩu hiệu (nền xanh)
+    - name: party
+      label: 03 · Đảng bộ Tiến Nông (dòng thời gian)
       type: object
-      list:
-        collapsible:
-          collapsed: true
-          summary: '{fields.label}'
       fields:
-      - name: label
-        label: Nhãn (ví dụ KHẨU HIỆU)
+      - name: eyebrow
+        label: Dòng chữ nhỏ
         type: string
-      - name: text
-        label: Nội dung
+      - name: title
+        label: Tiêu đề
         type: string
+      - name: milestones
+        label: Các dấu mốc (kéo để đổi thứ tự)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.year} · {fields.tag}'
+        fields:
+        - name: year
+          label: Năm
+          type: string
+        - name: tag
+          label: Nhãn ngắn dưới năm (ví dụ Thành lập Chi bộ)
+          type: string
+        - name: key
+          label: Mốc nổi bật (chấm vàng)
+          type: boolean
+        - name: title
+          label: Tiêu đề
+          type: string
+        - name: body
+          label: Nội dung
+          type: text
+        - name: image
+          label: Ảnh (để trống thì lấy ảnh bìa của bài viết liên kết)
+          component: photo
+        - name: fig
+          label: Con số trên ảnh (ví dụ 77)
+          type: string
+        - name: fig_label
+          label: Chú thích con số
+          type: string
+        - name: link
+          label: Bài viết liên quan (đường dẫn)
+          type: string
+        - name: doc_date
+          label: Thẻ văn bản – ngày (chỉ dùng khi mốc không có ảnh, ví dụ 09.05.2002)
+          type: string
+        - name: doc_label
+          label: Thẻ văn bản – dòng nhỏ phía trên
+          type: string
+        - name: doc_text
+          label: Thẻ văn bản – nội dung (xuống dòng được)
+          type: text
+        - name: doc_badge
+          label: Thẻ văn bản – nhãn dưới cùng
+          type: string
     - name: origin
       label: 04 · Khởi nguồn
       type: object
@@ -6084,6 +6153,16 @@ content:
       - name: image
         label: Ảnh nền đầu trang
         component: photo
+      - name: scrim_width
+        label: Lớp nền tối – độ rộng (% chiều ngang ảnh, 30–100)
+        description: Lớp xanh tối sau chữ, đậm ở mép trái và nhạt dần sang phải. Số càng nhỏ thì phần ảnh bên phải càng sáng, rõ. Mặc định 82.
+        type: number
+        default: 82
+      - name: scrim_strength
+        label: Lớp nền tối – độ đậm (0–100)
+        description: 0 = không có lớp tối, 100 = tối nhất. Mặc định 82.
+        type: number
+        default: 82
     - name: stats
       label: 02 · Con số nổi bật
       type: object

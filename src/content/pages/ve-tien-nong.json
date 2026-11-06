@@ -41,6 +41,12 @@
       "alt": "Chân dung Tổng Giám đốc Nguyễn Hồng Phong",
       "src": "/uploads/ceo-portrait-mw1iry3v.png"
     },
+    "image_desktop": {
+      "src": "/uploads/loi-chao-tgd-1920x895.jpg",
+      "focus": "0% 100%",
+      "zoom": "100",
+      "alt": "Tổng Giám đốc Nguyễn Hồng Phong"
+    },
     "background": {
       "focus": "50% 100%",
       "zoom": "100",
@@ -52,6 +58,7 @@
     "t3": "Hơn ba thập kỷ qua, Tiến Nông kiên định với một lựa chọn: lấy khoa học làm nền tảng và lấy lợi ích của nhà nông làm thước đo cho mọi quyết định. Chúng tôi tin khoa học nông nghiệp phải bắt đầu từ chính đất Việt: hiểu thổ nhưỡng, hiểu hệ vi sinh bản địa, thay vì sao chép công thức có sẵn. Tiến Nông không chỉ bán phân bón, mà mang đến giải pháp khoa học cho từng chân ruộng, dựa trên ba điểm tựa: nông dân là trung tâm, đất đai là nền tảng, khoa học công nghệ là động lực. Khi người nông dân canh tác hiệu quả hơn, mỗi vụ mùa sẽ góp phần vào sự thịnh vượng chung của đất nước.",
     "t4": "Nguyễn Hồng Phong",
     "t5": "Tổng Giám đốc",
+    "roles": "",
     "heading_small": "Lời chào từ",
     "heading": "Tổng Giám đốc",
     "slogan": "Phụng sự nhà nông – Kiến tạo tương lai"
@@ -906,6 +913,16 @@
     },
     {
       "year": "2026",
+      "title": "Chứng chỉ công nhận VALAS 262",
+      "body": "Thể hiện năng lực nghiên cứu vi sinh chuyên sâu. Nhằm mang đến những giải pháp DDCT đột phá và hiệu quả cho nền nông nghiệp xanh, bền vững",
+      "image": {
+        "src": "/uploads/ms-12-mvhxj3h5.jpg",
+        "focus": "50% 50%",
+        "zoom": "100"
+      }
+    },
+    {
+      "year": "2026",
       "title": "3 nhà máy, 650.000 tấn/năm, 10+ quốc gia",
       "body": "Tiến Nông phục vụ hơn 300.000 hộ nông dân, hướng tới mục tiêu 1 triệu hộ nông dân Việt Nam.",
       "image": {
@@ -913,16 +930,6 @@
         "focus": "50% 50%",
         "zoom": "100",
         "alt": "Ảnh flycam nhà máy hiện nay"
-      }
-    },
-    {
-      "year": "2026",
-      "title": "Chứng chỉ công nhận VALAS 262",
-      "body": "Thể hiện năng lực nghiên cứu vi sinh chuyên sâu. Nhằm mang đến những giải pháp DDCT đột phá và hiệu quả cho nền nông nghiệp xanh, bền vững",
-      "image": {
-        "src": "/uploads/ms-12-mvhxj3h5.jpg",
-        "focus": "50% 50%",
-        "zoom": "100"
       }
     }
   ],

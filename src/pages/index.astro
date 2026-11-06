@@ -53,6 +53,8 @@ const csr = [
 const people = [[cn.t4, cn.t5], [cn.t6, cn.t7], [cn.t8, cn.t9], [cn.t10, cn.t11]].filter(([t]) => isFilled(t));
 const banner = c.product_banner;
 const hasBanner = isFilled(banner?.image?.src);
+/** Optional separate banner for phones (any ratio, e.g. 1080×720); without it phones show the whole wide banner. */
+const hasMobileBanner = isFilled(banner?.image_mobile?.src);
 const bannerText = isFilled(banner?.title);
 ---
 <Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Trang chủ">
@@ -162,7 +164,8 @@ const bannerText = isFilled(banner?.title);
 
 {(hasBanner || bannerText) && <section class:list={['promo', { 'promo--image': !bannerText }]} aria-label={banner.title || banner.image?.alt || 'Sản phẩm Tiến Nông'}>
 <a href={link(banner.link || '/san-pham/')} class="promo__link">
-<div class="promo__photo" data-needs-photos={hasBanner ? undefined : ''}><ImageSlot style={FILL} id="promo-banner" shape="rect" placeholder="Banner giới thiệu sản phẩm" image={banner.image} cms={`${F}#product_banner.image`} sizes="100vw" /></div>
+<div class:list={['promo__photo', { 'promo__photo--desk': hasMobileBanner }]} data-needs-photos={hasBanner ? undefined : ''}><ImageSlot style={FILL} id="promo-banner" shape="rect" placeholder="Banner giới thiệu sản phẩm" image={banner.image} cms={`${F}#product_banner.image`} sizes="100vw" /></div>
+{hasMobileBanner && <div class="promo__photo promo__photo--phone"><ImageSlot style={FILL} id="promo-banner-m" shape="rect" placeholder="Banner cho điện thoại" image={banner.image_mobile} cms={`${F}#product_banner.image_mobile`} sizes="100vw" /></div>}
 {bannerText && <>
 <div class="promo__scrim" aria-hidden="true"></div>
 <div class="promo__copy">
@@ -238,14 +241,14 @@ const bannerText = isFilled(banner?.title);
 <!-- Con người -->
 <section id="con-nguoi" class="h-sec h-sec--page">
 <div class="h-wrap people">
+<div class="people__head"><span class="h-eyebrow">{cn.t1}</span>
+<h2 class="h-h2">{cn.t2}</h2></div>
 <div class="people__photos">
 <div class="people__photo people__photo--tall"><ImageSlot style={FILL} id="people-1" shape="rect" placeholder="Chân dung người lao động gắn bó 20+ năm" image={cn.img_people_1_1} cms={`${F}#s07_con_nguoi.img_people_1_1`} /></div>
 <div class="people__photo"><ImageSlot style={FILL} id="people-2" shape="rect" placeholder="Chuyến du lịch nước ngoài toàn công ty" image={cn.img_people_2_1} cms={`${F}#s07_con_nguoi.img_people_2_1`} /></div>
 <div class="people__photo"><ImageSlot style={FILL} id="people-3" shape="rect" placeholder="Lễ trao Bảo Bình tài lộc" image={cn.img_people_3_1} cms={`${F}#s07_con_nguoi.img_people_3_1`} /></div>
 </div>
 <div class="people__body">
-<span class="h-eyebrow">{cn.t1}</span>
-<h2 class="h-h2">{cn.t2}</h2>
 <p class="people__text">{cn.t3}</p>
 <dl class="people__points">{people.map(([t, d]) => <div><dt>{t}</dt><dd>{d}</dd></div>)}</dl>
 <div class="people__actions">
@@ -421,6 +424,12 @@ const bannerText = isFilled(banner?.title);
   .promo--image .promo__link { min-height: 0; aspect-ratio: 3200 / 802; }
   .promo__link:hover { text-decoration: none; color: #fff; }
   .promo__photo { position: absolute; inset: 0; }
+  .promo__photo--phone { display: none; }
+  @media (max-width: 767.98px) {
+    .promo__photo--desk { display: none; }
+    .promo__photo--phone { display: block; }
+    .promo--image:has(.promo__photo--phone) .promo__link { aspect-ratio: 3 / 2 !important; }
+  }
   .promo__photo :global(.img-slot__img) { transition: scale 1.2s var(--ease-out); }
   .promo__link:hover .promo__photo :global(.img-slot__img) { scale: 1.02; }
   .promo__scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2, 53, 26, .88) 0%, rgba(2, 53, 26, .55) 45%, rgba(2, 53, 26, 0) 80%); }
@@ -483,7 +492,10 @@ const bannerText = isFilled(banner?.title);
   .ncard__title { font: 500 16px/1.5 var(--font-display); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-wrap: pretty; }
 
   /* ── Con người ── */
-  .people { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 40px 48px; align-items: center; }
+  .people { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); grid-template-areas: 'photos head' 'photos body'; grid-template-rows: 1fr auto; gap: 18px 48px; }
+  .people__head { grid-area: head; align-self: end; display: flex; flex-direction: column; gap: 14px; }
+  .people__photos { grid-area: photos; align-self: center; }
+  .people__body { grid-area: body; align-self: start; }
   .people__photos { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: 236px 168px; gap: 12px; }
   .people__photo { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-width: 0; }
   .people__photo--tall { grid-row: span 2; }
@@ -501,6 +513,7 @@ const bannerText = isFilled(banner?.title);
     .h-head--split { grid-template-columns: minmax(0, 1fr); align-items: start; }
     .h-head--tabs { flex-direction: column; align-items: flex-start; }
     .intro-grid, .lab-grid, .people { grid-template-columns: minmax(0, 1fr); }
+    .people { grid-template-areas: 'head' 'photos' 'body'; grid-template-rows: auto; gap: 24px; }
     .intro-photo { min-height: 320px; }
     .lab-photo { min-height: 340px; }
     .h-awards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -521,9 +534,13 @@ const bannerText = isFilled(banner?.title);
     .pcard-grid--crops .pcard__body { padding: 12px 14px 14px; }
     .pcard-grid--crops .pcard__title { font-size: 16px; }
     .org__facts { grid-template-columns: minmax(0, 1fr); }
-    .plant { min-height: 0; flex-direction: column; }
-    .plant__photo { position: relative; height: 260px; }
-    .plant__wrap { padding-block: 0 40px; margin-top: -48px; }
+    .plant { min-height: 0; flex-direction: column; background: var(--surface-card); }
+    .plant__photo { position: relative; height: auto; aspect-ratio: 16 / 10; }
+    .plant__wrap { padding-block: 0 40px; margin-top: -56px; }
+    .plant__card { box-shadow: 0 14px 36px rgba(0, 71, 35, .14); }
+    /* Product banner: the whole wide banner, nothing cropped (or the phone banner from the CMS). */
+    .promo--image .promo__link { aspect-ratio: 1920 / 565; }
+    .promo--image .promo__photo :global(.img-slot__img) { object-position: center !important; }
     .factories strong, .factories__place { white-space: normal; }
     .people__photos { grid-template-rows: 200px 140px; }
     .intro-stats { gap: 0 18px; }

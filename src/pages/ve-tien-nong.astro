@@ -23,6 +23,10 @@ const t = c.s02_thu_ngo;
 const m = c.s03_su_menh_gia_tri;
 /** "Phụng sự nhà nông – Kiến tạo tương lai": the part after the dash is set in the accent yellow. */
 const slogan = String(t.slogan || '').split(/\s+[–-]\s+/);
+/** Desktop: one ready-made picture (CEO + background, 1920×895) when set; phones always use the cut-out portrait. */
+const hasArt = isFilled(t.image_desktop?.src);
+/** Extra titles under the CEO's name, one per line in the CMS. */
+const ceoRoles = String(t.roles || '').split(/\n+/).map((r) => r.trim()).filter(Boolean);
 /** Mission, vision, goal and the five core values, each with a light line icon (no photos). */
 const ICON = {'target': '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg>', 'eye': '<svg viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>', 'flag': '<svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>', 'heart': '<svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>', 'flame': '<svg viewBox="0 0 24 24"><path d="M12 21c-3.9 0-6.5-2.6-6.5-6 0-3.6 2.8-5.4 3.5-9 2.4 1.4 3.6 3.4 3.8 5.3.8-.7 1.3-1.8 1.4-3 2.2 1.7 4.3 4.1 4.3 6.7 0 3.4-2.6 6-6.5 6z"/></svg>', 'bulb': '<svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg>', 'hands': '<svg viewBox="0 0 24 24"><path d="M3 12l4-4 4 3 3-2 7 5-4 4-3-2-3 2-4-3-4 1z"/><path d="M11 11l3 3"/></svg>', 'leaf': '<svg viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14z"/><path d="M5 19l8-8"/></svg>'};
 const statements = [[m.t1, m.t2, ICON.target], [m.t3, m.t4, ICON.eye], [m.t5, m.t6, ICON.flag]]
@@ -53,18 +57,19 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k }) as type
 
 <FigureCard overlap items={stats.map(([value, label]) => ({ value, label }))} />
 
-<section id="thu-ngo" class:list={['ceo', { 'ceo--photo': isFilled(t.background?.src), 'ceo--tint': t.background_overlay !== false }]}>
+<section id="thu-ngo" class:list={['ceo', { 'ceo--photo': isFilled(t.background?.src), 'ceo--tint': t.background_overlay !== false, 'ceo--art': hasArt }]}>
 <div class="ceo__bg" data-needs-photos={isFilled(t.background?.src) ? undefined : ''}><ImageSlot style={fill} id="ceo-bg" shape="rect" placeholder="Ảnh nền lời chào (ảnh ngang tông xanh đậm, khoảng 1920×1000)" image={t.background} cms={`${F}#s02_thu_ngo.background`} sizes="100vw" /></div>
 {!isFilled(t.background?.src) && <img class="ceo__watermark" src={asset('assets/logo-la-chi.png')} alt="" aria-hidden="true" width="485" height="271" loading="lazy" />}
+<div class="ceo__art"><ImageSlot style={fill} id="ceo-art" shape="rect" placeholder="Ảnh lời chào ghép sẵn (1920×895: Tổng Giám đốc bên trái, nền, logo)" image={t.image_desktop} cms={`${F}#s02_thu_ngo.image_desktop`} sizes="100vw" /></div>
 <div class="ceo__wrap">
-<div class="ceo__photo"><ImageSlot style={fill} id="ceo-portrait" shape="rect" fit="contain" placeholder="Chân dung Tổng Giám đốc Nguyễn Hồng Phong" image={t.img_ceo_portrait_1} cms={`${F}#s02_thu_ngo.img_ceo_portrait_1`} sizes="(max-width: 767px) 70vw, 420px" /></div>
+<div class="ceo__photo"><ImageSlot style={fill} id="ceo-portrait" shape="rect" fit="contain" placeholder="Chân dung Tổng Giám đốc Nguyễn Hồng Phong" image={t.img_ceo_portrait_1} cms={`${F}#s02_thu_ngo.img_ceo_portrait_1`} sizes="(max-width: 899px) 45vw, 420px" /></div>
 <div class="ceo__text">
 <span class="ceo__qmark" aria-hidden="true">“</span>
 <h2 class="ceo__heading"><span>{t.heading_small || t.t1}</span>{t.heading}</h2>
 {isFilled(t.t2) && <p class="ceo__lead">{t.t2.replace(/^[“"]\s*|\s*[”"]$/g, '')}</p>}
 <p class="ceo__body jx-justify">{t.t3}</p>
-<div class="ceo__sign"><span>{t.t5} {site.company.name}</span><strong>{t.t4}</strong></div>
 </div>
+<div class="ceo__sign"><span>{t.t5} {site.company.name}</span><strong>{t.t4}</strong>{ceoRoles.length > 0 && <ul class="ceo__roles">{ceoRoles.map((r) => <li>{r}</li>)}</ul>}</div>
 </div>
 <div class="ceo__band">
 <div class="ceo__badge"><img class="ceo__mark" src={asset('assets/logo-mark-vang.png')} alt="Tiến Nông" width="277" height="200" /><span class="ceo__rule" aria-hidden="true"></span><p class="ceo__slogan">{slogan.length > 1 ? <><span>{slogan[0]}</span><span class="ceo__dash"> – </span><span class="ceo__gold">{slogan.slice(1).join(' – ')}</span></> : t.slogan}</p></div>
@@ -83,11 +88,15 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k }) as type
 </ul>
 <div class="mission__values">
 <span class="mission__eyebrow mission__eyebrow--center">{m.t7}</span>
-<ul class="core">
-{coreValues.map((v) => <li class="core__item">
+<span class="rvl-hint core__hint">Chạm vào từng giá trị để đọc nội dung</span>
+<ul class="core" data-reveal-group>
+{coreValues.map((v) => <li class="core__item" data-reveal>
+<button type="button" class="core__head" data-reveal-btn aria-expanded="false">
 <span class="core__icon" aria-hidden="true" set:html={v.icon}></span>
 <strong class="core__title">{v.title}</strong>
-<p class="core__text">{v.text}</p>
+<span class="rvl__sign" aria-hidden="true"></span>
+</button>
+<div class="rvl__more"><div><p class="core__text">{v.text}</p></div></div>
 </li>)}
 </ul>
 </div></div></section>
@@ -174,11 +183,11 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k }) as type
 </div></section>
 
 {caps.length > 0 && <section id="nang-luc" class="cap">
-<div class="cap__inner" data-picker>
+<div class="cap__inner" data-picker data-pick-swipe>
 <div class="cap__head">
 <div><span class="eyebrow-tag">{c.s07_nang_luc.t1}</span><h2>{(() => { const [a, ...b] = String(c.s07_nang_luc.t2).split(/,\s+/); return b.length ? <>{a},<br />{b.join(', ')}</> : a; })()}</h2></div>
 {caps.length > 1 && <div class="cap__tabs" role="tablist" aria-label="Năng lực">
-{caps.map((x, k) => <button type="button" role="tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'}>{x.tab || x.title}</button>)}
+{caps.map((x, k) => <button type="button" role="tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'}><span class="cap__tab-num" aria-hidden="true">{String(k + 1).padStart(2, '0')}</span>{x.tab || x.title}</button>)}
 </div>}
 </div>
 {caps.map((x, k) => (
@@ -199,6 +208,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k }) as type
 </div>}
 {isFilled(x.note) && <p class="cap__text jx-justify">{x.note}</p>}
 {isFilled(x.link) && <a class="cap__more" href={link(x.link)}>{x.link_label || 'Xem thêm'} →</a>}
+{caps.length > 1 && <button type="button" class="cap__next" data-pick-step="1">Tiếp theo: <strong>{(caps[(k + 1) % caps.length].tab || caps[(k + 1) % caps.length].title)}</strong> <span aria-hidden="true">→</span></button>}
 </div>
 </div>
 ))}
@@ -241,21 +251,45 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k }) as type
     background: linear-gradient(90deg, rgba(20, 80, 40, .25) 0%, rgba(20, 80, 40, .55) 45%, rgba(20, 80, 40, .7) 100%); }
   @media (max-width: 899.98px) { .ceo--photo.ceo--tint .ceo__bg::after { background: rgba(20, 80, 40, .62); } }
   .ceo__wrap { pointer-events: none; }
-  .ceo__photo, .ceo__text { pointer-events: auto; }
+  .ceo__photo, .ceo__text, .ceo__sign { pointer-events: auto; }
   .ceo__watermark { position: absolute; left: 50%; top: 50%; width: min(960px, 78%); height: auto; transform: translate(-50%, -50%); opacity: .08; pointer-events: none; }
-  .ceo__wrap { position: relative; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); column-gap: clamp(32px, 4vw, 64px); align-items: end; }
-  .ceo__photo { position: relative; align-self: end; aspect-ratio: 640 / 801; width: 100%; max-width: 400px; justify-self: center; margin-top: 48px; }
+  /* Portrait on the left spanning both rows; letter top right, signature under it. */
+  .ceo__wrap { position: relative; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); grid-template-areas: 'photo text' 'photo sign'; grid-template-rows: auto 1fr; column-gap: clamp(32px, 4vw, 64px); align-items: end; }
+  .ceo__photo { grid-area: photo; position: relative; align-self: end; aspect-ratio: 640 / 801; width: 100%; max-width: 400px; justify-self: center; margin-top: 48px; }
   .ceo__photo :global(.img-slot__frame) { background: transparent !important; }
-  .ceo__photo :global(.img-slot__img) { object-position: bottom center !important; }
-  .ceo__text { position: relative; display: flex; flex-direction: column; gap: 16px; padding-block: clamp(48px, 6vw, 80px); }
+  .ceo__photo :global(.img-slot__img) { object-position: bottom center !important; clip-path: inset(0 0 0 1.5%); }
+  .ceo__text { grid-area: text; position: relative; display: flex; flex-direction: column; gap: 16px; padding-top: clamp(48px, 6vw, 80px); }
   .ceo__qmark { position: absolute; right: 0; top: clamp(20px, 3vw, 40px); font: 700 clamp(120px, 12vw, 180px)/1 var(--font-display); color: rgba(245, 196, 78, .28); pointer-events: none; user-select: none; }
   .ceo__heading { margin: 0; font: 700 clamp(32px, 3.2vw, 44px)/1.15 var(--font-display); color: #fff; letter-spacing: -.01em; }
   .ceo__heading span { display: block; margin-bottom: 6px; font: 500 13px/1.4 var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .85); }
   .ceo__lead { margin: 0; padding-left: 18px; border-left: 3px solid var(--brand-highlight); font: 600 clamp(17px, 1.45vw, 20px)/1.5 var(--font-display); color: #fff; }
   .ceo__body { margin: 0; font-size: 15.5px; line-height: 1.7; color: rgba(255, 255, 255, .9); }
-  .ceo__sign { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, .28); }
+  .ceo__sign { grid-area: sign; align-self: start; display: flex; flex-direction: column; gap: 4px; margin-top: 20px; padding: 16px 0 clamp(48px, 6vw, 80px); border-top: 1px solid rgba(255, 255, 255, .28); }
   .ceo__sign span { font-size: 13.5px; font-weight: 500; color: rgba(255, 255, 255, .85); }
   .ceo__sign strong { font: 700 clamp(22px, 2vw, 28px)/1.25 var(--font-display); color: #fff; }
+  .ceo__roles { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+  .ceo__roles li { font-size: 13.5px; line-height: 1.45; color: rgba(255, 255, 255, .85); text-align: start; }
+  /* Ready-made 1920×895 picture (desktop): it fills the section; the left column stays empty for the CEO in the picture. */
+  .ceo__art { display: none; }
+  @media (min-width: 900px) {
+    .ceo--art .ceo__art { display: block; position: absolute; inset: 0 0 auto; height: calc(100% - var(--ceo-band, 84px)); }
+    .ceo--art .ceo__art :global(.img-slot__img) { object-position: left bottom; }
+    .ceo--art .ceo__bg, .ceo--art .ceo__watermark, .ceo--art .ceo__photo :global(img) { visibility: hidden; }
+    .ceo--art .ceo__wrap { max-width: none; min-height: calc(100vw * 895 / 1920); grid-template-columns: 41vw minmax(0, 1fr); column-gap: 0; padding-inline: 0 max(clamp(20px, 4vw, 56px), calc((100vw - var(--wrap, 1280px)) / 2 + 56px)); }
+    .ceo--art .ceo__photo { max-width: none; aspect-ratio: auto; height: 100%; margin: 0; }
+  }
+  @media (max-width: 899.98px) {
+    /* Phones: the letter first, then name and titles on the left with the portrait standing on the right. */
+    .ceo__wrap { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); grid-template-areas: 'text text' 'sign photo'; grid-template-rows: auto auto; column-gap: 12px; }
+    .ceo__text { padding-top: 48px; padding-bottom: 8px; }
+    .ceo__photo { max-width: 250px; margin-top: 16px; justify-self: end; }
+    .ceo__sign { align-self: end; margin: 0 0 24px; padding: 14px 0 0; }
+    .ceo__sign strong { font-size: 20px; white-space: nowrap; }
+    .ceo__sign span, .ceo__roles li { font-size: 12.5px; }
+    .ceo__badge { flex-direction: column; gap: 10px; text-align: center; }
+    .ceo__rule { display: none; }
+    .ceo__slogan { text-align: center; }
+  }
   .ceo__band { position: relative; background: var(--green-900); }
   .ceo__badge { max-width: var(--wrap, 1280px); margin: 0 auto; padding: 22px clamp(20px, 4vw, 56px); display: flex; align-items: center; justify-content: center; gap: 20px; }
   .ceo__mark { flex: none; height: 40px; width: auto; display: block; }
@@ -263,14 +297,7 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k }) as type
   .ceo__slogan { margin: 0; font: 600 clamp(18px, 1.75vw, 25px)/1.25 var(--font-display); color: #fff; text-align: start; }
   .ceo__dash { color: rgba(245, 196, 78, .8); }
   .ceo__gold { color: var(--brand-highlight); }
-  @media (max-width: 899.98px) {
-    .ceo__wrap { grid-template-columns: minmax(0, 1fr); }
-    .ceo__text { order: -1; padding-bottom: 8px; }
-    .ceo__photo { max-width: 260px; margin-top: 0; }
-    .ceo__badge { flex-direction: column; gap: 10px; text-align: center; }
-    .ceo__rule { display: none; }
-    .ceo__slogan { text-align: center; }
-  }
+
 
   /* Mission, vision, goal + core values: no photo; thin line icons, soft green tints. */
   .mission { position: relative; background: var(--surface-page); scroll-margin-top: 120px; overflow: hidden; }
@@ -309,7 +336,20 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k }) as type
     .mission__col + .mission__col::before { left: 28px; right: 28px; top: 0; bottom: auto; width: auto; height: 1px; }
     .core { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
-  @media (max-width: 599.98px) { .core { grid-template-columns: minmax(0, 1fr); } }
+  .core__head { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; padding: 0; border: 0; background: none; color: inherit; font: inherit; cursor: default; pointer-events: none; }
+  @media (max-width: 899.98px) {
+    /* Phones: five titles in one frame; tap a value to unfold its text. */
+    .core { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+    .core__item { padding: 0; align-items: stretch; text-align: start; }
+    .core__item::after { display: none; }
+    .core__item:hover { transform: none; box-shadow: none; }
+    .core__item.is-open { border-color: var(--green-300); box-shadow: 0 8px 22px rgba(0, 71, 35, .1); }
+    .core__head { flex-direction: row; gap: 14px; padding: 12px 16px; pointer-events: auto; cursor: pointer; color: var(--green-700); }
+    .core__icon { width: 36px; height: 36px; flex: none; }
+    :global(main) .core__head .core__title { flex: 1; text-align: start !important; text-align-last: auto !important; color: var(--text-primary); font-size: 16.5px; }
+    :global(main) .core__text { padding: 0 18px 16px 66px; text-align: start !important; text-align-last: auto !important; }
+    .core__hint { margin: -6px 0 2px; text-align: center; color: rgba(255, 255, 255, .8); }
+  }
 
   /* History — content on top, a timeline rail below that advances every 6 s (reference: dotted milestone rail) */
   .hist { background: var(--surface-card); scroll-margin-top: 120px; }
@@ -403,6 +443,19 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k }) as type
     transition: background var(--motion-base) var(--ease-out), color var(--motion-base); }
   .cap__tabs button:hover { color: var(--green-700); }
   .cap__tabs button[aria-selected='true'] { background: var(--brand-bright); color: #fff; }
+  .cap__tab-num { display: none; }
+  .cap__next { display: none; }
+  @media (max-width: 899.98px) {
+    /* Phones: three numbered steps that clearly read as buttons, a "next" button under each panel, swipe to move. */
+    .cap__head { flex-direction: column; align-items: stretch; }
+    .cap__tabs { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 6px; padding: 0; border-radius: 0; background: none; box-shadow: none; overflow: visible; }
+    .cap__tabs button { display: flex; flex-direction: column; align-items: center; gap: 2px; min-height: 0; padding: 10px 6px; border-radius: var(--radius-md); border: 1.5px solid var(--border-strong); background: var(--surface-card); font-weight: 600; color: var(--text-primary); }
+    .cap__tabs button[aria-selected='true'] { border-color: var(--brand-bright); }
+    .cap__tab-num { display: block; font: 700 12px/1.2 var(--font-display); color: var(--brand-bright); letter-spacing: .04em; }
+    .cap__tabs button[aria-selected='true'] .cap__tab-num { color: #fff; opacity: .85; }
+    .cap__next { display: inline-flex; align-self: flex-end; align-items: center; gap: 6px; margin-top: 6px; padding: 10px 16px; border-radius: 999px; border: 0; background: var(--green-50); color: var(--green-700); font: 500 15px var(--font-body); cursor: pointer; }
+    .cap__next strong { font-weight: 700; }
+  }
   .cap__panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px clamp(32px, 4vw, 56px); align-items: center; }
   .cap__panel:not([hidden]) { animation: hist-in 450ms var(--ease-out) both; }
   .cap__mosaic { display: grid; grid-template-columns: 1.5fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; height: clamp(320px, 31vw, 450px); }

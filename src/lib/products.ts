@@ -1,5 +1,6 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import raw from '../content/pages/san-pham.json';
+import orderRaw from '../content/product-order.json';
 import { url } from './routes';
 
 export type Product = CollectionEntry<'products'>;
@@ -8,10 +9,16 @@ export type Product = CollectionEntry<'products'>;
 export const LINES: { key: string; label: string }[] = (raw as { lines?: { key: string; label: string }[] }).lines ?? [];
 export const lineLabel = (key: string) => LINES.find((l) => l.key === key)?.label ?? '';
 
-/** All products, in the order set in the CMS ("Thứ tự"), featured ones first. */
+/** Drag-and-drop order from the CMS ("Sản phẩm – sắp xếp thứ tự"): file paths or ids, first = shown first. */
+const ORDER: string[] = ((orderRaw as { items?: unknown[] }).items ?? [])
+  .map((x) => String(typeof x === 'object' && x ? (x as any).path ?? (x as any).value ?? '' : x ?? ''))
+  .map((s) => s.replace(/^.*\//, '').replace(/\.md$/, '').trim()).filter(Boolean);
+const rank = (p: Product) => { const i = ORDER.indexOf(p.id); return i < 0 ? Infinity : i; };
+
+/** All products in the drag-and-drop order set in the CMS; products not in that list follow, by "Thứ tự" then name. */
 export async function getProducts(): Promise<Product[]> {
   const all = await getCollection('products');
-  return all.sort((a, b) => Number(b.data.featured) - Number(a.data.featured) || a.data.order - b.data.order || a.data.name.localeCompare(b.data.name, 'vi'));
+  return all.sort((a, b) => (rank(a) - rank(b)) || Number(b.data.featured) - Number(a.data.featured) || a.data.order - b.data.order || a.data.name.localeCompare(b.data.name, 'vi'));
 }
 
 export const productUrl = (p: Product) => `${url('san-pham')}${p.id}/`;

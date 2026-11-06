@@ -16,7 +16,9 @@
       "focus": "100% 6.2%",
       "zoom": "100",
       "alt": "Đại lý Tiến Nông cùng đội ngũ kinh doanh tại cửa hàng"
-    }
+    },
+    "scrim_width": 60,
+    "scrim_strength": 82
   },
   "stats": [
     {

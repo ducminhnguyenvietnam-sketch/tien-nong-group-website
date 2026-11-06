@@ -45,7 +45,7 @@ const [tsx, tsy] = project(11.75, 112.2);
 <Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
 <PageHero id="partner-hero" image={c.hero.image} cms={`${F}#hero.image`} placeholder="Ảnh đại lý Tiến Nông"
   crumbs={[{ label: c.hero.t1, href: url('trang-chu') }, { label: c.hero.t2.replace(/^\s*\/\s*/, '') }]}
-  eyebrow={c.hero.eyebrow} title={c.hero.title} lead={c.hero.intro}>
+  eyebrow={c.hero.eyebrow} title={c.hero.title} lead={c.hero.intro} scrimWidth={c.hero.scrim_width} scrimStrength={c.hero.scrim_strength}>
 <a href="#lien-he-khu-vuc" class="page-hero__btn page-hero__btn--solid">{c.hero.button1}</a><a href="#hinh-thuc" class="page-hero__btn">{c.hero.button2}</a>
 </PageHero>
 

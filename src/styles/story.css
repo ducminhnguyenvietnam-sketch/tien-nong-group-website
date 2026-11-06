@@ -155,6 +155,15 @@ a.st-card:hover { border-color: var(--green-400); color: var(--text-primary); }
 .st-subnav > div { max-width: var(--wrap, 1280px); margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); display: flex; gap: 28px; overflow-x: auto; white-space: nowrap; font-size: 14px; font-weight: 600; }
 .st-subnav a { color: var(--text-secondary); padding: 14px 0; }
 .st-subnav a:hover { color: var(--green-700); }
+.st-subnav a { position: relative; transition: color var(--motion-fast); }
+.st-subnav a.is-active { color: var(--green-700); }
+.st-subnav a.is-active::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; border-radius: 3px 3px 0 0; background: var(--brand-bright); }
+.st-subnav > div { scrollbar-width: none; }
+.st-subnav > div::-webkit-scrollbar { display: none; }
+@media (max-width: 899.98px) {
+  .st-subnav { box-shadow: 0 6px 14px -10px rgba(0, 0, 0, .25); }
+  .st-subnav > div { gap: 22px; -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 36px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 36px), transparent); }
+}
 
 /* Empty photo slots stay out of the public page (they show in the photo editor, ?sua-anh). */
 html:not(.pe-on) .st-hide-empty:has(.img-slot[data-empty]) { display: none; }

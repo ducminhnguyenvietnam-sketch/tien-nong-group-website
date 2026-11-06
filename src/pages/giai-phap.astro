@@ -14,6 +14,8 @@ const c = withDefaults(raw, 'src/content/pages/giai-phap.json');
 const site = withDefaults(siteRaw, 'src/content/site.json');
 const callNumber = (((site.company as Record<string, string>).hotline) || site.company.phone || '').replace(/[^\d+]/g, '');
 const v = c.s03_theo_van_de;
+/** "Đất khỏe. Cây khỏe. Nông nghiệp hiệu quả hơn." → the two short sentences stay on one line, the rest below. */
+const heroTitle = (() => { const m = String(c.s01_hero.t3 || '').match(/^([^.]+\.\s*[^.]+\.)\s+(.+)$/); return m ? [m[1], m[2]] : [c.s01_hero.t3, '']; })();
 const allProducts = await getProducts();
 // Product names in the issue cards link to that product's page when it can be found.
 const productHref = (name: string) => { const p = findProduct(allProducts, name); return p ? productUrl(p) : url('san-pham'); };
@@ -24,13 +26,13 @@ const defaultIssue = c.finder_issues.length - 1;
 <Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Giải pháp">
 <section style="position:relative;min-height:min(70vh,600px);background:var(--green-900);display:flex">
 <div style="position:absolute;inset:0"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="sol-hero" shape="rect" placeholder="Cận cảnh bông lúa chín trên cánh đồng" image={c.s01_hero.img_sol_hero_1} cms="src/content/pages/giai-phap.json#s01_hero.img_sol_hero_1" /></div>
-<div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,53,26,.8) 0%,rgba(2,53,26,.45) 50%,rgba(2,53,26,0) 80%)"></div>
+<div class="gp-hero__scrim" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,53,26,.8) 0%,rgba(2,53,26,.45) 50%,rgba(2,53,26,0) 80%)"></div>
 <div style="position:relative;max-width:var(--wrap, 1280px);width:100%;margin:0 auto;padding:28px clamp(20px,4vw,56px) clamp(56px,7vw,96px);display:flex;flex-direction:column;justify-content:space-between;gap:48px;pointer-events:none;color:#fff">
 <span style="font-size:13px;color:var(--green-100)">{c.s01_hero.t1}</span>
 <div class="hero-copy" style="max-width:760px;display:flex;flex-direction:column;gap:20px">
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-100)">{c.s01_hero.t2}</span>
-<h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.s01_hero.t3}</h1>
-<p style="margin:0;font-size:var(--fs-lead);line-height:1.55;color:var(--green-50);text-wrap:pretty">{c.s01_hero.t4}</p>
+<h1 class="gp-h1" style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{heroTitle[1] ? <><span class="gp-h1__first">{heroTitle[0]}</span><br />{heroTitle[1]}</> : c.s01_hero.t3}</h1>
+<p class="jx-justify" style="margin:0;font-size:var(--fs-lead);line-height:1.55;color:var(--green-50)">{c.s01_hero.t4}</p>
 <div style="display:flex;gap:12px;flex-wrap:wrap;pointer-events:auto"><a href="#tim-giai-phap" class="gp-hbtn gp-hbtn--solid">{c.s01_hero.t5}<span aria-hidden="true">↗</span></a><a href={url('giai-phap-du-an')} class="gp-hbtn">{c.s01_hero.t6}<span aria-hidden="true">↗</span></a></div>
 </div></div></section>
 
@@ -46,7 +48,7 @@ const defaultIssue = c.finder_issues.length - 1;
 
 <section id="quy-trinh" style="background:var(--green-800);color:#fff;scroll-margin-top:120px">
 <div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px 72px;align-items:center">
-<div style="position:relative;height:480px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="soil" shape="rounded" radius="20" placeholder="Bàn tay cầm nắm đất có cây con" image={c.s04_suc_khoe_dat.img_soil_1} cms="src/content/pages/giai-phap.json#s04_suc_khoe_dat.img_soil_1" /></div>
+<div class="gp-soil" style="position:relative;height:480px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="soil" shape="rounded" radius="20" placeholder="Bàn tay cầm nắm đất có cây con" image={c.s04_suc_khoe_dat.img_soil_1} cms="src/content/pages/giai-phap.json#s04_suc_khoe_dat.img_soil_1" /></div>
 <div style="display:flex;flex-direction:column;gap:24px">
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s04_suc_khoe_dat.t1}</span>
 <h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s04_suc_khoe_dat.t2}</h2>
@@ -72,7 +74,7 @@ const defaultIssue = c.finder_issues.length - 1;
 <div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{v.t1}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{v.t2}</h2></div>
 <p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{v.t3}</p>
 </div>
-<div role="tablist" aria-label={v.t2} style="display:flex;gap:8px;flex-wrap:wrap">
+<div role="tablist" aria-label={v.t2} class="issue-tabs" style="display:flex;gap:8px;flex-wrap:wrap">
 {c.issues.map((it, k) => <button type="button" role="tab" class="chip" id={`issue-tab-${k}`} aria-controls={`issue-${k}`} aria-selected={k === 0 ? 'true' : 'false'} aria-pressed={k === 0 ? 'true' : 'false'} data-issue-tab={k} style="padding:10px 18px;border-radius:var(--radius-full);border:1px solid var(--border-strong);background:var(--surface-card);color:var(--text-primary);font:600 15px var(--font-body);cursor:pointer">{it.title}</button>)}
 </div>
 {c.issues.map((it, k) => (
@@ -97,6 +99,7 @@ const defaultIssue = c.finder_issues.length - 1;
 {it.products.length > 0 && <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span style="font-size:14px;font-weight:600">{v.label_products}</span>{it.products.map((name) => <a href={productHref(name)} style="font-size:13px;font-weight:600;padding:4px 10px;border-radius:var(--radius-full);background:var(--green-50);color:var(--green-800);text-decoration:none">{name}</a>)}</div>}
 </div>
 </article>
+{c.issues.length > 1 && <button type="button" class="issue-next" data-issue-next={(k + 1) % c.issues.length}>Vấn đề tiếp theo: <strong>{c.issues[(k + 1) % c.issues.length].title}</strong> <span aria-hidden="true">→</span></button>}
 </div>
 ))}
 
@@ -223,9 +226,26 @@ const defaultIssue = c.finder_issues.length - 1;
   .issue-step__label b { width: 24px; height: 24px; border-radius: 50%; background: var(--green-500); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; }
   .issue-arrow { align-self: center; justify-self: center; font: 800 24px var(--font-body); color: var(--green-500); }
   .issue-cap { position: absolute; left: 8px; bottom: 8px; padding: 2px 8px; border-radius: var(--radius-full); background: rgba(2, 53, 26, .78); color: #fff; font-size: 12px; font-weight: 600; pointer-events: none; }
+  .issue-next { display: none; }
   @media (max-width: 980px) {
     .issue-flow { grid-template-columns: minmax(0, 1fr); }
     .issue-arrow { transform: rotate(90deg); }
+  }
+  @media (max-width: 899.98px) {
+    /* Hero: "Đất khỏe. Cây khỏe." on one line. */
+    .gp-h1__first { white-space: nowrap; }
+    .gp-hero__scrim { background: linear-gradient(0deg, rgba(2, 53, 26, .94) 0%, rgba(2, 53, 26, .78) 55%, rgba(2, 53, 26, .35) 100%) !important; }
+    .gp-h1 { font-size: min(36px, 8.6vw) !important; }
+    /* Soil process: a shorter photo. */
+    .gp-soil { height: auto !important; aspect-ratio: 16 / 10; }
+    /* Issues: the chips stay pinned under the header while reading, in one sideways-scrolling row,
+       and each panel ends with a button to the next issue. */
+    .issue-tabs { position: sticky; top: var(--hdr-h, 64px); z-index: 5; flex-wrap: nowrap !important; overflow-x: auto; scrollbar-width: none; margin-inline: calc(-1 * clamp(20px, 4vw, 56px)); padding: 10px clamp(20px, 4vw, 56px); background: var(--surface-card); box-shadow: 0 6px 12px -8px rgba(0, 0, 0, .18); }
+    .issue-tabs::-webkit-scrollbar { display: none; }
+    .issue-tabs .chip { flex: none; white-space: nowrap; padding: 8px 14px !important; font-size: 14px !important; }
+    .issue-arrow { font-size: 18px; margin: -4px 0; }
+    .issue-next { display: inline-flex; justify-self: end; align-items: center; gap: 6px; margin-top: 6px; padding: 10px 16px; border-radius: 999px; border: 0; background: var(--green-50); color: var(--green-700); font: 500 15px var(--font-body); text-align: left; cursor: pointer; }
+    .issue-next strong { font-weight: 700; }
   }
 </style>
 
@@ -263,9 +283,21 @@ const defaultIssue = c.finder_issues.length - 1;
 
   // "Theo vấn đề": one chip per issue, showing its problem → why → solution panel.
   const issueTabs = [...document.querySelectorAll<HTMLButtonElement>('[data-issue-tab]')];
-  issueTabs.forEach((tab) => tab.addEventListener('click', () => {
+  const pickIssue = (tab: HTMLButtonElement, jump = false) => {
     issueTabs.forEach((t) => { const on = t === tab; t.setAttribute('aria-selected', String(on)); t.setAttribute('aria-pressed', String(on)); });
     document.querySelectorAll<HTMLElement>('[data-issue]').forEach((p) => { p.hidden = p.dataset.issue !== tab.dataset.issueTab; });
+    const bar = tab.parentElement!;
+    if (bar.scrollWidth > bar.clientWidth) bar.scrollTo({ left: tab.offsetLeft - 20, behavior: 'smooth' });
+    // On phones the chip bar is pinned: bring the start of the new panel up under it.
+    if (jump || bar.getBoundingClientRect().top < 140) {
+      const panel = document.querySelector<HTMLElement>(`[data-issue="${tab.dataset.issueTab}"]`);
+      if (panel) window.scrollTo({ top: panel.getBoundingClientRect().top + scrollY - bar.offsetHeight - (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hdr-h')) || 64) - 12, behavior: 'smooth' });
+    }
+  };
+  issueTabs.forEach((tab) => tab.addEventListener('click', () => pickIssue(tab)));
+  document.querySelectorAll<HTMLButtonElement>('[data-issue-next]').forEach((b) => b.addEventListener('click', () => {
+    const tab = issueTabs.find((t) => t.dataset.issueTab === b.dataset.issueNext);
+    if (tab) pickIssue(tab, true);
   }));
 
   // Crop + issue chips drive the preliminary recommendation.

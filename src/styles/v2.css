@@ -128,3 +128,22 @@ html:not(.pe-on) [data-needs-photos] { display: none !important; }
   .hdr-nav { font-size: 15px !important; }
   .hdr-cta { font-size: 15px !important; min-height: 44px !important; }
 }
+
+/* Tap to reveal (src/scripts/reveal.ts). .rvl__more folds open with a soft height animation;
+   .rvl__sign is the "+" that turns into "−". Folding only happens below 900px. */
+.rvl__sign { display: none; }
+@media (max-width: 899.98px) {
+  .rvl__more { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 320ms var(--ease-out), opacity 240ms var(--ease-out); }
+  .rvl__more > * { min-height: 0; overflow: hidden; }
+  .is-open > .rvl__more, .is-open .rvl__more { grid-template-rows: 1fr; opacity: 1; }
+  .rvl__sign { position: relative; flex: none; display: inline-block; width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid currentColor; opacity: .85; }
+  .rvl__sign::before, .rvl__sign::after { content: ''; position: absolute; left: 50%; top: 50%; width: 11px; height: 1.5px; margin: -.75px 0 0 -5.5px; background: currentColor; transition: transform 260ms var(--ease-out); }
+  .rvl__sign::after { transform: rotate(90deg); }
+  .is-open .rvl__sign::after { transform: rotate(0deg); }
+  /* A gentle nudge on the first closed item, so it reads as something to tap. */
+  [data-reveal-group]:not(:has(.is-open)) [data-reveal]:first-child .rvl__sign { animation: rvl-nudge 2.4s ease-in-out 1s 3; }
+  .rvl-hint { display: block; font-size: 13.5px; color: var(--text-secondary); }
+}
+@media (min-width: 900px) { .rvl-hint { display: none; } }
+@keyframes rvl-nudge { 0%, 70%, 100% { transform: scale(1); } 80% { transform: scale(1.18); } 90% { transform: scale(.96); } }
+@media (prefers-reduced-motion: reduce) { .rvl__more { transition: none; } .rvl__sign { animation: none !important; } }
