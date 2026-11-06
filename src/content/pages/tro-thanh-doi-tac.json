@@ -304,14 +304,14 @@
   "managers": [
     {
       "name": "Nguyễn Trung Trụ",
-      "title": "Giám đốc Kinh doanh",
+      "title": "Giám đốc Kinh doanh Vùng 1",
       "region": "Vùng 1",
       "area": "Thanh Hóa & Đồng bằng sông Hồng",
       "image": {
         "src": "/uploads/dir-0-mw4vyhl7.jpg",
         "focus": "50% 50%",
-        "zoom": "100",
-        "alt": "Tiến Nông gặp mặt khách hàng tỉnh Bắc Ninh"
+        "zoom": "80",
+        "alt": "Nguyễn Trung Trụ"
       },
       "phone": "0982240955",
       "provinces": [
@@ -381,5 +381,8 @@
         "Phú Thọ"
       ]
     }
-  ]
+  ],
+  "can_le": {
+    "mac_dinh": "justify"
+  }
 }
