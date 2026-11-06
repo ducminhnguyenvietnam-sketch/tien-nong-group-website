@@ -5,16 +5,13 @@
     "phone": "02373.729.729",
     "email": "info@tiennong.vn",
     "tax_code_label": "Mã số doanh nghiệp:",
-    "tax_code": "2800142141",
     "copyright": "© 2026 Công ty Cổ phần Công Nông nghiệp Tiến Nông"
   },
   "social": {
     "facebook": "https://www.facebook.com/tiennong.vn",
     "messenger": "https://m.me/tiennong.vn",
     "youtube": "https://www.youtube.com/@tiennong",
-    "tiktok": "https://www.tiktok.com/@tiennong.vn",
-    "linkedin": "",
-    "zalo": ""
+    "tiktok": "https://www.tiktok.com/@tiennong.vn"
   },
   "legal": {
     "privacy_label": "Chính sách bảo mật",
@@ -27,8 +24,6 @@
     "lang_vi": "Tiếng Việt",
     "lang_en": "English",
     "lang_zh": "中文",
-    "english_url": "",
-    "chinese_url": "",
     "cta": "Trở thành đối tác",
     "menu_open": "☰ Menu",
     "menu_close": "✕ Đóng",
