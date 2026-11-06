@@ -1,5 +1,5 @@
 ---
-name: NPK 8-6-4+1,5SiO₂hh Tiến Nông (Lúa 1)
+name: Lúa 1 (NPK 8-6-4+1,5SiO₂hh Tiến Nông)
 line: cd
 order: 1
 crops:
