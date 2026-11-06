@@ -1,5 +1,5 @@
 ---
-name: NPK 12-3-10+2SiO₂hh Tiến Nông (Lúa 2)
+name: Lúa 2 (NPK 12-3-10+2SiO₂hh Tiến Nông)
 line: cd
 order: 2
 crops:
