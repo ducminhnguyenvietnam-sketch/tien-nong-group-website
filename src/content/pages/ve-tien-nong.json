@@ -46,9 +46,10 @@
       "alt": "Tổng Giám đốc Nguyễn Hồng Phong"
     },
     "background": {
-      "focus": "50% 100%",
+      "focus": "50% 62%",
       "zoom": "100",
-      "alt": "Ảnh nền lời chào (ảnh ngang tông xanh đậm, khoảng 1920×1000)"
+      "alt": "Ảnh nền lời chào (ảnh ngang tông xanh đậm, khoảng 1920×1000)",
+      "src": "/uploads/ceo-bg-mw5r8ruk.jpg"
     },
     "background_overlay": false
   },
