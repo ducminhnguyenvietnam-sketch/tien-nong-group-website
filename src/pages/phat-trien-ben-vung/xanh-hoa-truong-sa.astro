@@ -11,6 +11,7 @@ import { isFilled, withDefaults } from '../../lib/content';
 import Layout from '../../layouts/Layout.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
+import Icon from '../../components/Icon.astro';
 import PageHero from '../../components/PageHero.astro';
 import FigureCard from '../../components/FigureCard.astro';
 import Head from '../../components/story/Head.astro';
@@ -60,9 +61,9 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 {isFilled(c.challenge.title) && <section class="st-sec st-sec--card" id="vi-sao"><div class="st-wrap">
 <Head eyebrow={c.challenge.eyebrow} title={c.challenge.title} intro={c.challenge.intro} split />
 <div class="st-grid" style="--min:240px">
-{c.challenge.items.map((it, k) => <div class="st-card st-card--top"><div class="st-card__body"><span class="st-card__num">{String(k + 1).padStart(2, '0')}</span><strong class="st-card__title">{it.title}</strong><span class="st-card__text">{it.text}</span></div></div>)}
+{c.challenge.items.map((it, k) => <div class="st-card st-card--top ts-why"><div class="st-card__body"><div class="ts-why__top"><span class="ts-why__ico"><Icon name={it.icon || ['island', 'sun', 'ship'][k % 3]} size={30} /></span><span class="st-card__num">{String(k + 1).padStart(2, '0')}</span></div><strong class="st-card__title">{it.title}</strong><span class="st-card__text jx-justify" data-unglued>{it.text}</span></div></div>)}
 </div>
-{isFilled(c.challenge.solution) && <div class="ts-solution"><span aria-hidden="true">🌱</span><div><strong>{c.challenge.solution_title}</strong><p>{c.challenge.solution}</p></div></div>}
+{isFilled(c.challenge.solution) && <div class="ts-solution"><span class="ts-solution__ico"><Icon name="sprout" size={30} /></span><div><strong>{c.challenge.solution_title}</strong><p>{c.challenge.solution}</p></div></div>}
 </div></section>}
 
 {journey.length > 0 && <section class="ts-journey" id="hanh-trinh"><div class="ts-wrap">
@@ -151,6 +152,23 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
 </Layout>
 
 <style>
+  /* Alluvial soil ("đất phù sa") as a second colour beside the green: warm earth for the island's
+     challenges, eyebrows, dates and accents — soil carried out to sea. */
+  .ts-page-vars, #vi-sao, #hanh-trinh, #la-thu, #hinh-anh, #bao-chi, #chien-dich { --ps-700: #6f421d; --ps-600: #8f5a2b; --ps-500: #b07a43; --ps-200: #e8cfae; --ps-100: #f3e6d4; --ps-50: #faf4ec; }
+  #vi-sao { background: linear-gradient(180deg, var(--ps-50) 0%, #fdfaf5 100%) !important; }
+  #vi-sao :global(.st-eyebrow), #hanh-trinh .ts-eyebrow, #hinh-anh .ts-eyebrow, #bao-chi .ts-eyebrow, #chien-dich .ts-eyebrow { color: var(--ps-600); }
+  .ts-why { background: #fff !important; border-color: var(--ps-100) !important; border-top: 3px solid var(--ps-500) !important; }
+  .ts-why__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .ts-why__ico { display: inline-grid; place-items: center; width: 58px; height: 58px; border-radius: 18px; background: linear-gradient(145deg, var(--ps-100), #eef6ea); color: var(--ps-700); }
+  .ts-why .st-card__num { color: var(--ps-200); }
+  .ts-why:nth-child(2) .ts-why__ico { background: linear-gradient(145deg, #fdf0cf, var(--ps-100)); color: #9a6a0a; }
+  .ts-why:nth-child(3) .ts-why__ico { background: linear-gradient(145deg, #e3f0f6, #eef6ea); color: #1f5f86; }
+  .ts-timeline__date { color: var(--ps-600) !important; }
+  #la-thu { background: linear-gradient(180deg, #f2f8ef 0%, var(--ps-50) 100%) !important; }
+  #la-thu :global(.st-quote) { border-left-color: var(--ps-500); }
+  #hinh-anh { background: var(--ps-50) !important; }
+  .ts-press__card { border-top-color: var(--ps-500) !important; }
+
   .ts-wrap { max-width: var(--wrap, 1280px); margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
   .ts-eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; color: var(--green-600); }
   .ts-eyebrow--light { color: var(--green-100); }
@@ -203,6 +221,11 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
     .ts-jnav button:disabled { opacity: .35; cursor: default; }
     .ts-jnav__count { font: 600 14px var(--font-display); color: var(--text-tertiary); min-width: 34px; text-align: center; }
     .ts-jnav__count b { color: var(--green-700); }
+    /* Arrows under the milestones, on the left, where the thumb is. */
+    .ts-journey .ts-wrap { display: flex; flex-direction: column; }
+    .ts-jnav { order: 3; justify-content: flex-start; margin: 18px 0 0; }
+    .ts-jnav__btns { order: -1; }
+    .ts-jnav button { width: 44px; height: 44px; }
   }
   .ts-timeline__date { font: 700 13px/1.3 var(--font-mono); color: var(--green-700); }
   .ts-timeline__title { font: 700 17px/1.35 var(--font-display); text-wrap: balance; }
@@ -300,10 +323,11 @@ const href = (h: string) => (h.startsWith('/') && !h.startsWith('//') ? base + h
   .ts-cta__actions { display: flex; gap: 12px; flex-wrap: wrap; }
   .ts-cta__copy { display: flex; flex-direction: column; gap: 10px; max-width: 760px; }
   .ts-cta__copy p { margin: 0; color: var(--text-secondary); }
-  .ts-solution { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 16px; padding: 24px; border-radius: var(--radius-lg); background: var(--green-50); color: var(--green-900); }
-  .ts-solution > span { font-size: 30px; line-height: 1; }
-  .ts-solution strong { font: var(--type-num); }
-  .ts-solution p { margin: 6px 0 0; line-height: 1.65; }
+  .ts-solution { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 18px; align-items: start; padding: 26px 28px; border-radius: var(--radius-lg); background: linear-gradient(120deg, var(--green-800) 0%, #2d5a2a 60%, #6b4a24 130%); color: #fff; }
+  .ts-solution__ico { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 18px; background: rgba(255, 255, 255, .12); color: var(--brand-highlight); }
+  .ts-solution strong { font: var(--type-num); color: #fff; }
+  @media (max-width: 599.98px) { .ts-solution { grid-template-columns: minmax(0, 1fr); padding: 22px 20px; } .ts-solution p { text-align: justify; } }
+  .ts-solution p { margin: 6px 0 0; line-height: 1.65; color: var(--green-50); }
   .ts-btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: var(--radius-md); border: 1px solid var(--border-strong); font-weight: 700; color: var(--green-700); text-decoration: none; background: var(--surface-card); }
   .ts-btn--solid { background: var(--green-500); border-color: var(--green-500); color: #fff; }
   .ts-btn:hover { text-decoration: none; }

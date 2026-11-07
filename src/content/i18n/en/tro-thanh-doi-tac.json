@@ -81,6 +81,10 @@
       "text": "Contact your regional manager →"
     },
     {
+      "vi": "store",
+      "text": "store"
+    },
+    {
       "vi": "Nhà phân phối khu vực",
       "text": "Regional distributors"
     },
@@ -91,6 +95,10 @@
     {
       "vi": "Chính sách phân phối theo vùng, hỗ trợ phát triển đại lý, hội nghị khách hàng hằng năm.",
       "text": "Regional distribution policy, dealer development support and an annual customer conference."
+    },
+    {
+      "vi": "truck",
+      "text": "truck"
     },
     {
       "vi": "Dự án, trang trại, hợp tác xã",
@@ -109,6 +117,10 @@
       "text": "Solutions for projects →"
     },
     {
+      "vi": "sprout",
+      "text": "sprout"
+    },
+    {
       "vi": "Hội Nông dân, tổ chức đoàn thể",
       "text": "Farmers' Unions and mass organisations"
     },
@@ -123,6 +135,10 @@
     {
       "vi": "Về phân bón trả chậm →",
       "text": "About deferred-payment fertiliser →"
+    },
+    {
+      "vi": "users",
+      "text": "users"
     },
     {
       "vi": "Đối tượng",
@@ -153,12 +169,20 @@
       "text": "Products from three ISO 9001:2015 and ISO 14001:2015 certified factories, delivered on time all year round."
     },
     {
+      "vi": "box",
+      "text": "box"
+    },
+    {
       "vi": "Hàng chính hãng, có mã QR",
       "text": "Genuine products with QR codes"
     },
     {
       "vi": "Mỗi bao có mã QR truy xuất nguồn gốc: bà con nhận biết hàng thật, điểm bán giữ được uy tín.",
       "text": "Every bag carries a traceability QR code: farmers can recognise the genuine product and outlets protect their reputation."
+    },
+    {
+      "vi": "qr",
+      "text": "qr"
     },
     {
       "vi": "Chính sách minh bạch",
@@ -169,12 +193,20 @@
       "text": "Uniform regional pricing; volume discounts and seasonal sales bonuses."
     },
     {
+      "vi": "scale",
+      "text": "scale"
+    },
+    {
       "vi": "Kỹ sư hỗ trợ tận ruộng",
       "text": "Agronomists in the field"
     },
     {
       "vi": "Cùng đại lý tư vấn cho bà con, tổ chức hội thảo đầu bờ và mô hình trình diễn.",
       "text": "Advising farmers alongside dealers, running field days and demonstration plots."
+    },
+    {
+      "vi": "engineer",
+      "text": "engineer"
     },
     {
       "vi": "Hỗ trợ bán hàng, đào tạo",
@@ -185,12 +217,20 @@
       "text": "Signage, printed materials and seasonal promotions; product training and advisory skills."
     },
     {
+      "vi": "megaphone",
+      "text": "megaphone"
+    },
+    {
       "vi": "Tri ân đối tác",
       "text": "Partner appreciation"
     },
     {
       "vi": "Hội nghị khách hàng, tham quan, khen thưởng đại lý và nhà phân phối tiêu biểu hằng năm.",
       "text": "Annual customer conferences, study tours and awards for outstanding dealers and distributors."
+    },
+    {
+      "vi": "award",
+      "text": "award"
     },
     {
       "vi": "Đại lý Tiến Nông tư vấn sản phẩm cho bà con",
@@ -209,8 +249,8 @@
       "text": "From the 2026 series \"A journey of gratitude – connecting trust\", when Tiến Nông visited its long-standing distributors."
     },
     {
-      "vi": "TỪ NHỮNG NGÀY ĐẦU",
-      "text": "FROM THE VERY BEGINNING"
+      "vi": "HAI THẾ HỆ GIỮ CHỮ TÍN",
+      "text": "TWO GENERATIONS OF TRUST"
     },
     {
       "vi": "Công ty TNHH Thương mại Lựu Sướng",
@@ -249,8 +289,8 @@
       "text": "The Lựu Sướng distributor family with the Tiến Nông team"
     },
     {
-      "vi": "TỪ ĐƠN HÀNG ĐẦU TIÊN",
-      "text": "FROM THE FIRST ORDER"
+      "vi": "BỀN BỈ TỪ ĐƠN HÀNG ĐẦU",
+      "text": "PERSISTENT SINCE THE FIRST ORDER"
     },
     {
       "vi": "Công ty TNHH MTV Mạnh Mùi",
@@ -285,8 +325,8 @@
       "text": "Mạnh Mùi distributor signboard, Ninh Bình"
     },
     {
-      "vi": "GẦN 30 NĂM GẮN BÓ",
-      "text": "NEARLY 30 YEARS TOGETHER"
+      "vi": "HƠN CẢ MỘT MỐI LÀM ĂN",
+      "text": "MORE THAN A BUSINESS TIE"
     },
     {
       "vi": "Công ty TNHH Thiên Trang Cung Huề",
@@ -313,8 +353,8 @@
       "text": "The Five Guiding Principles plaque in the home of distributor Thiên Trang Cung Huề"
     },
     {
-      "vi": "ĐANG TĂNG TRƯỞNG",
-      "text": "GROWING FAST"
+      "vi": "CHỌN TIẾN NÔNG LÀM TRỌNG TÂM",
+      "text": "TIẾN NÔNG AT THE CORE"
     },
     {
       "vi": "Công ty TNHH VTNN Dũng Yến",
@@ -533,8 +573,8 @@
       "text": "Nguyễn Trung Trụ"
     },
     {
-      "vi": "Giám đốc Kinh doanh",
-      "text": "Sales Director"
+      "vi": "Giám đốc Kinh doanh Vùng 1",
+      "text": "Regional Sales Director, Region 1"
     },
     {
       "vi": "Vùng 1",
@@ -543,10 +583,6 @@
     {
       "vi": "Thanh Hóa & Đồng bằng sông Hồng",
       "text": "Thanh Hóa & the Red River Delta"
-    },
-    {
-      "vi": "Tiến Nông gặp mặt khách hàng tỉnh Bắc Ninh",
-      "text": "Tiến Nông meets customers in Bắc Ninh Province"
     },
     {
       "vi": "Thanh Hóa",
@@ -581,16 +617,16 @@
       "text": "Trần Mạnh Tiến"
     },
     {
+      "vi": "Giám đốc Kinh doanh Vùng 2",
+      "text": "Regional Sales Director, Region 2"
+    },
+    {
       "vi": "Vùng 2",
       "text": "Region 2"
     },
     {
       "vi": "Miền Trung, Tây Nguyên & Nam Bộ",
       "text": "Central Vietnam, the Central Highlands & the South"
-    },
-    {
-      "vi": "Hội nghị khách hàng Tiến Nông tại Yên Thành, Nghệ An",
-      "text": "Tiến Nông customer conference in Yên Thành, Nghệ An"
     },
     {
       "vi": "Nghệ An",
@@ -617,14 +653,6 @@
       "text": "Quảng Ngãi"
     },
     {
-      "vi": "Gia Lai",
-      "text": "Gia Lai"
-    },
-    {
-      "vi": "Đắk Lắk",
-      "text": "Đắk Lắk"
-    },
-    {
       "vi": "Khánh Hòa",
       "text": "Khánh Hòa"
     },
@@ -633,40 +661,12 @@
       "text": "Lâm Đồng"
     },
     {
-      "vi": "Đồng Nai",
-      "text": "Đồng Nai"
-    },
-    {
-      "vi": "TP. Hồ Chí Minh",
-      "text": "TP. Hồ Chí Minh"
-    },
-    {
-      "vi": "Tây Ninh",
-      "text": "Tây Ninh"
-    },
-    {
-      "vi": "Vĩnh Long",
-      "text": "Vĩnh Long"
-    },
-    {
-      "vi": "Đồng Tháp",
-      "text": "Đồng Tháp"
-    },
-    {
-      "vi": "An Giang",
-      "text": "An Giang"
-    },
-    {
-      "vi": "Cần Thơ",
-      "text": "Cần Thơ"
-    },
-    {
-      "vi": "Cà Mau",
-      "text": "Cà Mau"
-    },
-    {
       "vi": "Lê Viết Thiện",
       "text": "Lê Viết Thiện"
+    },
+    {
+      "vi": "Giám đốc Kinh doanh",
+      "text": "Sales Director"
     },
     {
       "vi": "Vùng 3",
@@ -675,10 +675,6 @@
     {
       "vi": "Trung du & miền núi phía Bắc",
       "text": "Northern midlands & mountains"
-    },
-    {
-      "vi": "Đoàn Tiến Nông thăm nương cà phê cùng nhà phân phối ở Sơn La",
-      "text": "The Tiến Nông team visits a coffee farm with a distributor in Sơn La"
     },
     {
       "vi": "Sơn La",
@@ -715,6 +711,74 @@
     {
       "vi": "Phú Thọ",
       "text": "Phú Thọ"
+    },
+    {
+      "vi": "TỪ NHỮNG NGÀY ĐẦU",
+      "text": "FROM THE VERY BEGINNING"
+    },
+    {
+      "vi": "TỪ ĐƠN HÀNG ĐẦU TIÊN",
+      "text": "FROM THE FIRST ORDER"
+    },
+    {
+      "vi": "GẦN 30 NĂM GẮN BÓ",
+      "text": "NEARLY 30 YEARS TOGETHER"
+    },
+    {
+      "vi": "ĐANG TĂNG TRƯỞNG",
+      "text": "GROWING FAST"
+    },
+    {
+      "vi": "Tiến Nông gặp mặt khách hàng tỉnh Bắc Ninh",
+      "text": "Tiến Nông meets customers in Bắc Ninh Province"
+    },
+    {
+      "vi": "Hội nghị khách hàng Tiến Nông tại Yên Thành, Nghệ An",
+      "text": "Tiến Nông customer conference in Yên Thành, Nghệ An"
+    },
+    {
+      "vi": "Gia Lai",
+      "text": "Gia Lai"
+    },
+    {
+      "vi": "Đắk Lắk",
+      "text": "Đắk Lắk"
+    },
+    {
+      "vi": "Đồng Nai",
+      "text": "Đồng Nai"
+    },
+    {
+      "vi": "TP. Hồ Chí Minh",
+      "text": "TP. Hồ Chí Minh"
+    },
+    {
+      "vi": "Tây Ninh",
+      "text": "Tây Ninh"
+    },
+    {
+      "vi": "Vĩnh Long",
+      "text": "Vĩnh Long"
+    },
+    {
+      "vi": "Đồng Tháp",
+      "text": "Đồng Tháp"
+    },
+    {
+      "vi": "An Giang",
+      "text": "An Giang"
+    },
+    {
+      "vi": "Cần Thơ",
+      "text": "Cần Thơ"
+    },
+    {
+      "vi": "Cà Mau",
+      "text": "Cà Mau"
+    },
+    {
+      "vi": "Đoàn Tiến Nông thăm nương cà phê cùng nhà phân phối ở Sơn La",
+      "text": "The Tiến Nông team visits a coffee farm with a distributor in Sơn La"
     }
   ]
 }

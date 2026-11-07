@@ -104,7 +104,7 @@ document.querySelectorAll<HTMLFormElement>('form[data-lead-form]').forEach((form
       if (sent) { form.hidden = true; sent.hidden = false; sent.focus?.(); }
     } catch {
       const phone = document.documentElement.dataset.hotline;
-      error.textContent = MSG.failed(phone);
+      error.textContent = MSG.failed(phone ?? "");
       error.hidden = false;
     } finally {
       if (submit) { submit.textContent = label; sync(); }

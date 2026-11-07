@@ -105,5 +105,19 @@ const fill = 'position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto
     .yt-tl__panel, .yt-tl__stage--aside { grid-template-columns: minmax(0, 1fr); }
     .yt-tl__rail { justify-content: flex-start; }
     .yt-tl__rail button, .yt-tl__rail button:first-child, .yt-tl__rail button:last-child { flex: none; align-items: center; padding: 0 10px 4px; }
+    /* The connecting line is drawn by each year (not across the visible box), so it runs unbroken to the last year
+       when the rail scrolls sideways. */
+    .yt-tl__rail::before { display: none; }
+    .yt-tl__rail button::before { content: ''; position: absolute; top: 9px; left: 0; right: -8px; height: 2px; background: var(--yt-line); }
+    .yt-tl__rail button:first-child::before { left: 50%; }
+    .yt-tl__rail button:last-child::before { right: 50%; }
+    .yt-tl__rail button:only-child::before { display: none; }
+    /* Arrows under the story, on the left, where the thumb is. */
+    .yt-tl__railbox { display: contents; }
+    /* Phone order: photo and story first, then the year rail, then the arrows. */
+    .yt-tl__stage { order: 1; }
+    .yt-tl__rail { order: 2; }
+    .yt-tl__nav { order: 3; justify-content: flex-start; margin-top: -12px; }
+    .yt-tl__nav button { width: 44px; height: 44px; }
   }
 </style>

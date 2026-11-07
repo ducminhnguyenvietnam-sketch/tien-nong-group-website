@@ -1,8 +1,12 @@
 {
   "items": [
     {
-      "vi": "Về Tiến Nông",
-      "text": "关于 Tiến Nông"
+      "vi": "Về Tiến Nông – hơn 30 năm phụng sự nhà nông",
+      "text": "关于 Tiến Nông——30余年服务农民"
+    },
+    {
+      "vi": "Thành lập năm 1995 tại Thanh Hóa, Tiến Nông là doanh nghiệp KH&CN đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam, được tặng Huân chương Lao động hạng Ba và 6 lần Sao Vàng Đất Việt.",
+      "text": "Tiến Nông 1995年成立于清化省，是越南植物营养领域首家科技企业，荣获三等劳动勋章及六次 Sao Vàng Đất Việt（越南金星）奖。"
     },
     {
       "vi": "Trang chủ",
@@ -99,34 +103,6 @@
     {
       "vi": "Ảnh nền lời chào (ảnh ngang tông xanh đậm, khoảng 1920×1000)",
       "text": "致辞背景图（深绿色调横幅照片，约 1920×1000）"
-    },
-    {
-      "vi": "THƯ NGỎ CỦA TỔNG GIÁM ĐỐC",
-      "text": "总经理致辞"
-    },
-    {
-      "vi": "“Mùa vụ không chỉ là những gì chúng tôi trồng trọt, mà là những cuộc đời chúng tôi cùng vun đắp và tương lai chúng tôi cùng kiến tạo.”",
-      "text": "“季节不只是我们播种的作物，更是我们共同培育的生命、共同创造的未来。”"
-    },
-    {
-      "vi": "Hơn ba thập kỷ qua, Tiến Nông kiên định với một lựa chọn: lấy khoa học làm nền tảng và lấy lợi ích của nhà nông làm thước đo cho mọi quyết định. Chúng tôi tin khoa học nông nghiệp phải bắt đầu từ chính đất Việt: hiểu thổ nhưỡng, hiểu hệ vi sinh bản địa, thay vì sao chép công thức có sẵn. Tiến Nông không chỉ bán phân bón, mà mang đến giải pháp khoa học cho từng chân ruộng, dựa trên ba điểm tựa: nông dân là trung tâm, đất đai là nền tảng, khoa học công nghệ là động lực. Khi người nông dân canh tác hiệu quả hơn, mỗi vụ mùa sẽ góp phần vào sự thịnh vượng chung của đất nước.",
-      "text": "三十多年来，Tiến Nông 始终坚守一个选择：以科学为基础，以农民的利益作为每一项决策的衡量标准。我们相信，农业科学必须从越南自己的土地出发——了解土壤、了解本土微生物体系，而不是照搬现成的配方。Tiến Nông 不只是销售肥料，而是为每一块田地带来科学的解决方案，立足于三个支点：农民为中心，土地为基础，科技为动力。当农民种植更有成效，每一季收成都将为国家的共同繁荣作出贡献。"
-    },
-    {
-      "vi": "Nguyễn Hồng Phong",
-      "text": "Nguyễn Hồng Phong"
-    },
-    {
-      "vi": "Tổng Giám đốc",
-      "text": "总经理"
-    },
-    {
-      "vi": "Lời chào từ",
-      "text": "致辞"
-    },
-    {
-      "vi": "Phụng sự nhà nông – Kiến tạo tương lai",
-      "text": "服务农民 – 创造未来"
     },
     {
       "vi": "SỨ MỆNH",
@@ -231,6 +207,10 @@
     {
       "vi": "Chân dung ông Nguyễn Hồng Phong",
       "text": "Nguyễn Hồng Phong 先生肖像"
+    },
+    {
+      "vi": "Nguyễn Hồng Phong",
+      "text": "Nguyễn Hồng Phong"
     },
     {
       "vi": "Phó Chủ tịch HĐQT · Tổng Giám đốc",
@@ -1057,12 +1037,32 @@
       "text": "当前工厂航拍照片"
     },
     {
-      "vi": "Về Tiến Nông – hơn 30 năm phụng sự nhà nông",
-      "text": "关于 Tiến Nông——30余年服务农民"
+      "vi": "Về Tiến Nông",
+      "text": "关于 Tiến Nông"
     },
     {
-      "vi": "Thành lập năm 1995 tại Thanh Hóa, Tiến Nông là doanh nghiệp KH&CN đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam, được tặng Huân chương Lao động hạng Ba và 6 lần Sao Vàng Đất Việt.",
-      "text": "Tiến Nông 1995年成立于清化省，是越南植物营养领域首家科技企业，荣获三等劳动勋章及六次 Sao Vàng Đất Việt（越南金星）奖。"
+      "vi": "THƯ NGỎ CỦA TỔNG GIÁM ĐỐC",
+      "text": "总经理致辞"
+    },
+    {
+      "vi": "“Mùa vụ không chỉ là những gì chúng tôi trồng trọt, mà là những cuộc đời chúng tôi cùng vun đắp và tương lai chúng tôi cùng kiến tạo.”",
+      "text": "“季节不只是我们播种的作物，更是我们共同培育的生命、共同创造的未来。”"
+    },
+    {
+      "vi": "Hơn ba thập kỷ qua, Tiến Nông kiên định với một lựa chọn: lấy khoa học làm nền tảng và lấy lợi ích của nhà nông làm thước đo cho mọi quyết định. Chúng tôi tin khoa học nông nghiệp phải bắt đầu từ chính đất Việt: hiểu thổ nhưỡng, hiểu hệ vi sinh bản địa, thay vì sao chép công thức có sẵn. Tiến Nông không chỉ bán phân bón, mà mang đến giải pháp khoa học cho từng chân ruộng, dựa trên ba điểm tựa: nông dân là trung tâm, đất đai là nền tảng, khoa học công nghệ là động lực. Khi người nông dân canh tác hiệu quả hơn, mỗi vụ mùa sẽ góp phần vào sự thịnh vượng chung của đất nước.",
+      "text": "三十多年来，Tiến Nông 始终坚守一个选择：以科学为基础，以农民的利益作为每一项决策的衡量标准。我们相信，农业科学必须从越南自己的土地出发——了解土壤、了解本土微生物体系，而不是照搬现成的配方。Tiến Nông 不只是销售肥料，而是为每一块田地带来科学的解决方案，立足于三个支点：农民为中心，土地为基础，科技为动力。当农民种植更有成效，每一季收成都将为国家的共同繁荣作出贡献。"
+    },
+    {
+      "vi": "Tổng Giám đốc",
+      "text": "总经理"
+    },
+    {
+      "vi": "Lời chào từ",
+      "text": "致辞"
+    },
+    {
+      "vi": "Phụng sự nhà nông – Kiến tạo tương lai",
+      "text": "服务农民 – 创造未来"
     }
   ]
 }

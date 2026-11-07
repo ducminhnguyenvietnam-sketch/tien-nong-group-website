@@ -4,7 +4,7 @@ category: bc
 date: 2023-12-28
 author: Nông nghiệp và Môi trường
 featured: false
-summary: Lãnh đạo Tiến Nông chia sẻ về việc phục vụ nông dân, định hướng phát triển và các hoạt động hỗ trợ sản xuất.
+summary: "Lãnh đạo Tiến Nông chia sẻ về việc phục vụ nông dân, định hướng phát triển và các hoạt động hỗ trợ sản xuất."
 cover:
   src: /uploads/press-bao-chi-tien-nong-la-gia-dinh-lon--mvk9xrof.jpg
   focus: 100% 44%

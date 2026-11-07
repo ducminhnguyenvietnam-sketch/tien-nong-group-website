@@ -1,8 +1,12 @@
 {
   "items": [
     {
-      "vi": "Giải pháp theo cây trồng",
-      "text": "作物解决方案"
+      "vi": "Giải pháp dinh dưỡng theo từng cây trồng",
+      "text": "按作物的营养解决方案"
+    },
+    {
+      "vi": "Quy trình bón phân Tiến Nông cho lúa, ngô, mía, cà phê, chè, rau màu và cây ăn quả, xây dựng từ phân tích đất và thử nghiệm đồng ruộng. Kỹ sư Tiến Nông đồng hành theo mùa vụ.",
+      "text": "Tiến Nông 针对水稻、玉米、甘蔗、咖啡、茶叶、蔬菜和果树的施肥方案，基于土壤分析和田间试验，农艺师全季陪伴农户。"
     },
     {
       "vi": "Cận cảnh bông lúa chín trên cánh đồng",
@@ -669,12 +673,8 @@
       "text": "原因："
     },
     {
-      "vi": "Giải pháp dinh dưỡng theo từng cây trồng",
-      "text": "按作物的营养解决方案"
-    },
-    {
-      "vi": "Quy trình bón phân Tiến Nông cho lúa, ngô, mía, cà phê, chè, rau màu và cây ăn quả, xây dựng từ phân tích đất và thử nghiệm đồng ruộng. Kỹ sư Tiến Nông đồng hành theo mùa vụ.",
-      "text": "Tiến Nông 针对水稻、玉米、甘蔗、咖啡、茶叶、蔬菜和果树的施肥方案，基于土壤分析和田间试验，农艺师全季陪伴农户。"
+      "vi": "Giải pháp theo cây trồng",
+      "text": "作物解决方案"
     }
   ]
 }

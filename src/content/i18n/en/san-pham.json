@@ -1,8 +1,12 @@
 {
   "items": [
     {
-      "vi": "Sản phẩm",
-      "text": "Products"
+      "vi": "Sản phẩm phân bón NPK, hữu cơ, chuyên dùng",
+      "text": "NPK, organic and crop-specific fertilisers"
+    },
+    {
+      "vi": "Danh mục phân bón Tiến Nông: chuyên dùng cho lúa, ngô, cà phê, mía, chè, rau màu, cây ăn quả; phân bón đa dụng, hữu cơ và công nghệ cao. Tra cứu theo cây trồng.",
+      "text": "Tiến Nông fertilisers: crop-specific ranges for rice, maize, coffee, sugarcane, tea, vegetables and fruit trees, plus multi-purpose, organic and high-tech fertilisers."
     },
     {
       "vi": "Bộ sản phẩm phân bón Tiến Nông: Lúa 2, NPK 15-15-15+1SiO₂hh và Điều hoà pH đất",
@@ -189,12 +193,8 @@
       "text": "Name A–Z"
     },
     {
-      "vi": "Sản phẩm phân bón NPK, hữu cơ, chuyên dùng",
-      "text": "NPK, organic and crop-specific fertilisers"
-    },
-    {
-      "vi": "Danh mục phân bón Tiến Nông: chuyên dùng cho lúa, ngô, cà phê, mía, chè, rau màu, cây ăn quả; phân bón đa dụng, hữu cơ và công nghệ cao. Tra cứu theo cây trồng.",
-      "text": "Tiến Nông fertilisers: crop-specific ranges for rice, maize, coffee, sugarcane, tea, vegetables and fruit trees, plus multi-purpose, organic and high-tech fertilisers."
+      "vi": "Sản phẩm",
+      "text": "Products"
     }
   ]
 }

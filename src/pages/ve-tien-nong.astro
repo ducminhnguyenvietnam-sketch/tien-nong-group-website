@@ -393,6 +393,10 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k }) as type
   .hist__stop[aria-selected='true'] .hist__label { color: var(--green-600); }
   .hist__stop:hover .hist__label { color: var(--green-700); }
   @media (max-width: 899.98px) {
+    /* Arrows under the year rail, on the left, where the thumb is. */
+    .hist__head { display: contents; }
+    .hist__arrows { order: 3; align-self: flex-start; margin-top: -12px; }
+    .hist__arrows button { width: 48px; height: 48px; }
     .hist__panel { grid-template-columns: minmax(0, 1fr); }
     .hist__photo { order: 0; }
     .hist__stage { min-height: 0; }
@@ -492,6 +496,12 @@ const partners = c.s08_he_sinh_thai.partners.map((p, k) => ({ ...p, k }) as type
     .cap__head { flex-direction: column; align-items: flex-start; }
     .cap__tabs { width: 100%; }
     .cap__tabs button { flex: 1 0 auto; }
+    /* Phone order: heading, photos, then the 1-2-3 buttons right above each capability's title. */
+    .cap__head, .cap__panel:not([hidden]) { display: contents; }
+    .cap__head > div:not(.cap__tabs) { order: 0; }
+    .cap__mosaic { order: 1; }
+    .cap__tabs { order: 2; margin-top: -8px; }
+    .cap__body { order: 3; margin-top: -8px; }
   }
 
   /* Partners — a logo wall without boxes; featured partners first and larger */

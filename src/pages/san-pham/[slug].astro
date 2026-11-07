@@ -74,6 +74,8 @@ const schema = siteOrigin ? [
     { '@type': 'ListItem', position: 3, name: p.name, item: absUrl(productUrl(entry)) },
   ] },
 ] : [];
+/** Nutrient badges always show their unit: "16" on the bag's formula reads as 16%. pH and ppm values keep their own unit. */
+const pct = (v: string) => { const t = v.trim(); return /%|ppm|cfu|pH/i.test(t) || !/^\d+([.,]\d+)?$/.test(t) ? t : `${t}%`; };
 ---
 <Layout title={p.name} description={p.summary || `${p.name} – ${line} của Tiến Nông.`} image={isFilled(p.front.src) ? p.front.src : undefined} schema={schema} active="Sản phẩm">
 <section class="pd-top">
@@ -101,7 +103,7 @@ const schema = siteOrigin ? [
 <h1>{p.name}</h1>
 {isFilled(p.summary) && <p class="pd-summary">{p.summary}</p>}
 </div>
-{p.npk.length > 0 && <div class="pd-npk">{p.npk.filter((n) => isFilled(n.value)).slice(0, 5).map((n) => <div><b>{n.value}</b><span>{n.unit}</span></div>)}</div>}
+{p.npk.length > 0 && <div class="pd-npk">{p.npk.filter((n) => isFilled(n.value)).slice(0, 5).map((n) => <div><b>{pct(String(n.value))}</b><span>{n.unit}</span></div>)}</div>}
 {facts.length > 0 && <dl class="pd-facts">{facts.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>}
 <div class="pd-actions">
 <a href={url('lien-he', 'dai-ly')} class="pd-btn"><Button as="span" size="lg">{c.s01_san_pham.t23 || 'Tìm đại lý gần nhất'}</Button></a>

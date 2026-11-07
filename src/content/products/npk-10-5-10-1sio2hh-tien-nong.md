@@ -29,20 +29,20 @@ npk:
 - value: '1'
   unit: SiO₂
 composition:
-- name: Đạm (N ts )
-  value: …………………………10%
+- name: Đạm (Nts)
+  value: 10%
   method: ''
-- name: Lân (P 2 O 5hh )
-  value: ………………………5%
+- name: Lân (P₂O₅hh)
+  value: 5%
   method: ''
-- name: Kali (K 2 O hh )
-  value: ………………………10%
+- name: Kali (K₂Ohh)
+  value: 10%
   method: ''
-- name: Silic (SiO 2hh )
-  value: ………………………1%
+- name: Silic (SiO₂hh)
+  value: 1%
   method: ''
 - name: Độ ẩm
-  value: ……………………………….5%
+  value: 5%
   method: ''
 benefits:
 - 'Đạm: Là thành phần cơ bản của protein và là thành phần chính của chất diệp lục. Đạm thúc đẩy sự nẩy chồi, ra lá, sự phát triển của quả, giúp tăng lượng sinh khối.'

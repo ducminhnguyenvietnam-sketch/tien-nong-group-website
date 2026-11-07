@@ -28,7 +28,19 @@ npk:
   unit: K₂O
 - value: '1'
   unit: SiO₂
-composition: []
+composition:
+- name: Đạm tổng số (Nts)
+  value: 6%
+  method: ''
+- name: Lân hữu hiệu (P₂O₅hh)
+  value: 9%
+  method: ''
+- name: Kali hữu hiệu (K₂Ohh)
+  value: 3%
+  method: ''
+- name: Silic hữu hiệu (SiO₂hh)
+  value: 1%
+  method: ''
 benefits:
 - Cung cấp đầy đủ, cân đối chất dinh dưỡng thiết yếu cho cây trồng.
 - Làm tăng năng suất và chất lượng nông sản.

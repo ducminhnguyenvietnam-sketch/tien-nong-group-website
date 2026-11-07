@@ -49,15 +49,18 @@
     "items": [
       {
         "title": "Nền cát san hô",
-        "text": "Đất trên đảo chủ yếu là cát san hô, gần như không có mùn, giữ nước và giữ dinh dưỡng rất kém."
+        "text": "Đất trên đảo chủ yếu là cát san hô, gần như không có mùn, giữ nước và giữ dinh dưỡng rất kém.",
+        "icon": "island"
       },
       {
         "title": "Nắng gió, hơi muối",
-        "text": "Nắng gắt và gió biển mang hơi muối quanh năm; nước ngọt quý nên mỗi lần tưới đều phải tính toán."
+        "text": "Nắng gắt và gió biển mang hơi muối quanh năm; nước ngọt quý nên mỗi lần tưới đều phải tính toán.",
+        "icon": "sun"
       },
       {
         "title": "Mọi thứ đi bằng tàu",
-        "text": "Phân bón, đất màu đều được vận chuyển từ đất liền, nên mỗi ki-lô-gam phải được dùng hiệu quả nhất."
+        "text": "Phân bón, đất màu đều được vận chuyển từ đất liền, nên mỗi ki-lô-gam phải được dùng hiệu quả nhất.",
+        "icon": "ship"
       }
     ],
     "solution_title": "200 tấn hữu cơ sinh học, 30 tấn NPK",

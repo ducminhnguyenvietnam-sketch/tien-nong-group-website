@@ -81,6 +81,10 @@
       "text": "联系区域负责人 →"
     },
     {
+      "vi": "store",
+      "text": "store"
+    },
+    {
       "vi": "Nhà phân phối khu vực",
       "text": "区域分销商"
     },
@@ -91,6 +95,10 @@
     {
       "vi": "Chính sách phân phối theo vùng, hỗ trợ phát triển đại lý, hội nghị khách hàng hằng năm.",
       "text": "区域分销政策、经销商发展支持、年度客户大会。"
+    },
+    {
+      "vi": "truck",
+      "text": "truck"
     },
     {
       "vi": "Dự án, trang trại, hợp tác xã",
@@ -109,6 +117,10 @@
       "text": "项目解决方案 →"
     },
     {
+      "vi": "sprout",
+      "text": "sprout"
+    },
+    {
       "vi": "Hội Nông dân, tổ chức đoàn thể",
       "text": "农民协会、群众团体"
     },
@@ -123,6 +135,10 @@
     {
       "vi": "Về phân bón trả chậm →",
       "text": "了解肥料延期付款 →"
+    },
+    {
+      "vi": "users",
+      "text": "users"
     },
     {
       "vi": "Đối tượng",
@@ -153,12 +169,20 @@
       "text": "产品来自三座通过 ISO 9001:2015 和 ISO 14001:2015 认证的工厂，全年按时供货。"
     },
     {
+      "vi": "box",
+      "text": "box"
+    },
+    {
       "vi": "Hàng chính hãng, có mã QR",
       "text": "正品带二维码"
     },
     {
       "vi": "Mỗi bao có mã QR truy xuất nguồn gốc: bà con nhận biết hàng thật, điểm bán giữ được uy tín.",
       "text": "每袋均有溯源二维码：农民能辨别真货，门店得以维护信誉。"
+    },
+    {
+      "vi": "qr",
+      "text": "qr"
     },
     {
       "vi": "Chính sách minh bạch",
@@ -169,12 +193,20 @@
       "text": "区域统一价格；按销量给予折扣，按季节奖励销售业绩。"
     },
     {
+      "vi": "scale",
+      "text": "scale"
+    },
+    {
       "vi": "Kỹ sư hỗ trợ tận ruộng",
       "text": "农艺师下田支持"
     },
     {
       "vi": "Cùng đại lý tư vấn cho bà con, tổ chức hội thảo đầu bờ và mô hình trình diễn.",
       "text": "与经销商一起为农民提供咨询，组织田间观摩会和示范田。"
+    },
+    {
+      "vi": "engineer",
+      "text": "engineer"
     },
     {
       "vi": "Hỗ trợ bán hàng, đào tạo",
@@ -185,12 +217,20 @@
       "text": "招牌、宣传品、季节性促销；产品培训与咨询技能培训。"
     },
     {
+      "vi": "megaphone",
+      "text": "megaphone"
+    },
+    {
       "vi": "Tri ân đối tác",
       "text": "感恩合作伙伴"
     },
     {
       "vi": "Hội nghị khách hàng, tham quan, khen thưởng đại lý và nhà phân phối tiêu biểu hằng năm.",
       "text": "每年举办客户大会、参观学习，并表彰优秀经销商和分销商。"
+    },
+    {
+      "vi": "award",
+      "text": "award"
     },
     {
       "vi": "Đại lý Tiến Nông tư vấn sản phẩm cho bà con",
@@ -209,8 +249,8 @@
       "text": "摘自 2026 年系列报道“感恩之旅——连接信任”，记录 Tiến Nông 走访长期合作分销商的经历。"
     },
     {
-      "vi": "TỪ NHỮNG NGÀY ĐẦU",
-      "text": "从最初开始"
+      "vi": "HAI THẾ HỆ GIỮ CHỮ TÍN",
+      "text": "两代人坚守诚信"
     },
     {
       "vi": "Công ty TNHH Thương mại Lựu Sướng",
@@ -249,8 +289,8 @@
       "text": "Lựu Sướng 分销商一家与 Tiến Nông 团队"
     },
     {
-      "vi": "TỪ ĐƠN HÀNG ĐẦU TIÊN",
-      "text": "从第一张订单开始"
+      "vi": "BỀN BỈ TỪ ĐƠN HÀNG ĐẦU",
+      "text": "从第一单起坚持不懈"
     },
     {
       "vi": "Công ty TNHH MTV Mạnh Mùi",
@@ -285,8 +325,8 @@
       "text": "宁平 Mạnh Mùi 分销商招牌"
     },
     {
-      "vi": "GẦN 30 NĂM GẮN BÓ",
-      "text": "近 30 年相伴"
+      "vi": "HƠN CẢ MỘT MỐI LÀM ĂN",
+      "text": "不只是生意往来"
     },
     {
       "vi": "Công ty TNHH Thiên Trang Cung Huề",
@@ -313,8 +353,8 @@
       "text": "挂在 Thiên Trang Cung Huề 分销商家中的五条心念匾额"
     },
     {
-      "vi": "ĐANG TĂNG TRƯỞNG",
-      "text": "快速成长"
+      "vi": "CHỌN TIẾN NÔNG LÀM TRỌNG TÂM",
+      "text": "以 Tiến Nông 为核心选择"
     },
     {
       "vi": "Công ty TNHH VTNN Dũng Yến",
@@ -533,8 +573,8 @@
       "text": "Nguyễn Trung Trụ"
     },
     {
-      "vi": "Giám đốc Kinh doanh",
-      "text": "销售总监"
+      "vi": "Giám đốc Kinh doanh Vùng 1",
+      "text": "第一区域销售总监"
     },
     {
       "vi": "Vùng 1",
@@ -543,10 +583,6 @@
     {
       "vi": "Thanh Hóa & Đồng bằng sông Hồng",
       "text": "清化及红河三角洲"
-    },
-    {
-      "vi": "Tiến Nông gặp mặt khách hàng tỉnh Bắc Ninh",
-      "text": "Tiến Nông 与北宁省客户见面"
     },
     {
       "vi": "Thanh Hóa",
@@ -581,16 +617,16 @@
       "text": "Trần Mạnh Tiến"
     },
     {
+      "vi": "Giám đốc Kinh doanh Vùng 2",
+      "text": "第二区域销售总监"
+    },
+    {
       "vi": "Vùng 2",
       "text": "第二区域"
     },
     {
       "vi": "Miền Trung, Tây Nguyên & Nam Bộ",
       "text": "中部、西原及南部"
-    },
-    {
-      "vi": "Hội nghị khách hàng Tiến Nông tại Yên Thành, Nghệ An",
-      "text": "Tiến Nông 在乂安省安城召开客户大会"
     },
     {
       "vi": "Nghệ An",
@@ -617,14 +653,6 @@
       "text": "Quảng Ngãi"
     },
     {
-      "vi": "Gia Lai",
-      "text": "Gia Lai"
-    },
-    {
-      "vi": "Đắk Lắk",
-      "text": "Đắk Lắk"
-    },
-    {
       "vi": "Khánh Hòa",
       "text": "Khánh Hòa"
     },
@@ -633,40 +661,12 @@
       "text": "Lâm Đồng"
     },
     {
-      "vi": "Đồng Nai",
-      "text": "Đồng Nai"
-    },
-    {
-      "vi": "TP. Hồ Chí Minh",
-      "text": "TP. Hồ Chí Minh"
-    },
-    {
-      "vi": "Tây Ninh",
-      "text": "Tây Ninh"
-    },
-    {
-      "vi": "Vĩnh Long",
-      "text": "Vĩnh Long"
-    },
-    {
-      "vi": "Đồng Tháp",
-      "text": "Đồng Tháp"
-    },
-    {
-      "vi": "An Giang",
-      "text": "An Giang"
-    },
-    {
-      "vi": "Cần Thơ",
-      "text": "Cần Thơ"
-    },
-    {
-      "vi": "Cà Mau",
-      "text": "Cà Mau"
-    },
-    {
       "vi": "Lê Viết Thiện",
       "text": "Lê Viết Thiện"
+    },
+    {
+      "vi": "Giám đốc Kinh doanh",
+      "text": "销售总监"
     },
     {
       "vi": "Vùng 3",
@@ -675,10 +675,6 @@
     {
       "vi": "Trung du & miền núi phía Bắc",
       "text": "北部中游及山区"
-    },
-    {
-      "vi": "Đoàn Tiến Nông thăm nương cà phê cùng nhà phân phối ở Sơn La",
-      "text": "Tiến Nông 团队与分销商一起参观山罗咖啡园"
     },
     {
       "vi": "Sơn La",
@@ -715,6 +711,74 @@
     {
       "vi": "Phú Thọ",
       "text": "Phú Thọ"
+    },
+    {
+      "vi": "TỪ NHỮNG NGÀY ĐẦU",
+      "text": "从最初开始"
+    },
+    {
+      "vi": "TỪ ĐƠN HÀNG ĐẦU TIÊN",
+      "text": "从第一张订单开始"
+    },
+    {
+      "vi": "GẦN 30 NĂM GẮN BÓ",
+      "text": "近 30 年相伴"
+    },
+    {
+      "vi": "ĐANG TĂNG TRƯỞNG",
+      "text": "快速成长"
+    },
+    {
+      "vi": "Tiến Nông gặp mặt khách hàng tỉnh Bắc Ninh",
+      "text": "Tiến Nông 与北宁省客户见面"
+    },
+    {
+      "vi": "Hội nghị khách hàng Tiến Nông tại Yên Thành, Nghệ An",
+      "text": "Tiến Nông 在乂安省安城召开客户大会"
+    },
+    {
+      "vi": "Gia Lai",
+      "text": "Gia Lai"
+    },
+    {
+      "vi": "Đắk Lắk",
+      "text": "Đắk Lắk"
+    },
+    {
+      "vi": "Đồng Nai",
+      "text": "Đồng Nai"
+    },
+    {
+      "vi": "TP. Hồ Chí Minh",
+      "text": "TP. Hồ Chí Minh"
+    },
+    {
+      "vi": "Tây Ninh",
+      "text": "Tây Ninh"
+    },
+    {
+      "vi": "Vĩnh Long",
+      "text": "Vĩnh Long"
+    },
+    {
+      "vi": "Đồng Tháp",
+      "text": "Đồng Tháp"
+    },
+    {
+      "vi": "An Giang",
+      "text": "An Giang"
+    },
+    {
+      "vi": "Cần Thơ",
+      "text": "Cần Thơ"
+    },
+    {
+      "vi": "Cà Mau",
+      "text": "Cà Mau"
+    },
+    {
+      "vi": "Đoàn Tiến Nông thăm nương cà phê cùng nhà phân phối ở Sơn La",
+      "text": "Tiến Nông 团队与分销商一起参观山罗咖啡园"
     }
   ]
 }

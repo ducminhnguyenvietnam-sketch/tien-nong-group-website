@@ -28,7 +28,16 @@ npk:
   unit: K₂O
 composition:
 - name: Đạm tổng số (Nts)
-  value: '20%; Lân hữu hiệu (P₂O₅hh): 5%; Kali hữu hiệu (K₂Ohh): 5%; Độ ẩm: 5%.'
+  value: 20%
+  method: ''
+- name: Lân hữu hiệu (P₂O₅hh)
+  value: 5%
+  method: ''
+- name: Kali hữu hiệu (K₂Ohh)
+  value: 5%
+  method: ''
+- name: Độ ẩm
+  value: 5%
   method: ''
 benefits:
 - Cung cấp đầy đủ, cân đối chất dinh dưỡng thiết yếu cho cây trồng.

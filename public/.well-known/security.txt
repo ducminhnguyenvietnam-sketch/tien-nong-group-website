@@ -1,0 +1,5 @@
+# Báo cáo lỗ hổng bảo mật của website Tiến Nông Group / Security contact for this website
+Contact: mailto:info@tiennong.vn
+Expires: 2027-11-30T00:00:00.000Z
+Preferred-Languages: vi, en
+Canonical: https://tiennong.com/.well-known/security.txt

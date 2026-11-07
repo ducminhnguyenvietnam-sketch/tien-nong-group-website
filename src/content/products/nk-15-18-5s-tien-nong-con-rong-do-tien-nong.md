@@ -28,14 +28,18 @@ npk:
   - value: "5"
     unit: S
 composition:
-  - name: Đạm tổng số (Nts)
-    value: 15%;
-  - name: Kali hữu hiệu (K₂Ohh)
-    value: 18%;
-  - name: Lưu huỳnh (S)
-    value: 5%;
-  - name: Độ ẩm
-    value: 5%.
+- name: Đạm tổng số (Nts)
+  value: 15%
+  method: ''
+- name: Kali hữu hiệu (K₂Ohh)
+  value: 18%
+  method: ''
+- name: Lưu huỳnh (S)
+  value: 5%
+  method: ''
+- name: Độ ẩm
+  value: 5%
+  method: ''
 benefits:
   - Phân bón NK 15-18+5S Tiến Nông là loại phân bón mới dạng viên nén đa yếu tố,
     đa tác dụng, cung cấp dinh dưỡng N, K và nguyên tố trung lượng nuôi dưỡng

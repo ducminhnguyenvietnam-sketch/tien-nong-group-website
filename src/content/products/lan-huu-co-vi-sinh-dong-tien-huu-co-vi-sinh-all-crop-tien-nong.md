@@ -41,7 +41,7 @@ composition:
 - name: Độ ẩm
   value: 30%
   method: ''
-- name: pHₕ₂ₒ
+- name: pH (H₂O)
   value: '5'
   method: ''
 benefits:

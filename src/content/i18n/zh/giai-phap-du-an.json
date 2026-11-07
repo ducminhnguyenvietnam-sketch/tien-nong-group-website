@@ -1,8 +1,12 @@
 {
   "items": [
     {
-      "vi": "Giải pháp cho dự án",
-      "text": "项目解决方案"
+      "vi": "Giải pháp dinh dưỡng cho dự án, trang trại lớn",
+      "text": "面向项目和大型农场的营养方案"
+    },
+    {
+      "vi": "Giải pháp dinh dưỡng trọn gói cho dự án, trang trại và vùng nguyên liệu: phân tích đất, quy trình bón riêng, cung ứng từ 3 nhà máy 650.000 tấn/năm. Gửi yêu cầu để kỹ sư liên hệ.",
+      "text": "为项目、大型农场和原料基地提供整体营养方案：土壤分析、定制施肥方案，由年产650,000吨的3座工厂供货。"
     },
     {
       "vi": "Trang chủ",
@@ -297,12 +301,8 @@
       "text": "其他"
     },
     {
-      "vi": "Giải pháp dinh dưỡng cho dự án, trang trại lớn",
-      "text": "面向项目和大型农场的营养方案"
-    },
-    {
-      "vi": "Giải pháp dinh dưỡng trọn gói cho dự án, trang trại và vùng nguyên liệu: phân tích đất, quy trình bón riêng, cung ứng từ 3 nhà máy 650.000 tấn/năm. Gửi yêu cầu để kỹ sư liên hệ.",
-      "text": "为项目、大型农场和原料基地提供整体营养方案：土壤分析、定制施肥方案，由年产650,000吨的3座工厂供货。"
+      "vi": "Giải pháp cho dự án",
+      "text": "项目解决方案"
     }
   ]
 }

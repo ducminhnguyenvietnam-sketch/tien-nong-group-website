@@ -24,19 +24,19 @@ npk:
   unit: Magie
 composition:
 - name: Đạm tổng số (Nts)
-  value: 25%;
+  value: 25%
   method: ''
 - name: Canxi (Ca)
-  value: 12%;
+  value: 12%
   method: ''
 - name: Magie (Mg)
-  value: 1,5%;
+  value: 1,5%
   method: ''
 - name: Lưu huỳnh (S)
-  value: 6,5%;
+  value: 6,5%
   method: ''
 - name: Độ ẩm
-  value: 5%.
+  value: 5%
   method: ''
 benefits:
 - Sản phẩm dùng bón lót, bón thúc cho các loại cây trồng nhằm cung cấp đạm và các trung lượng cần thiết cho cây sinh trưởng, phát triển tạo năng suất; đồng thời hạn chế sâu bệnh, hạn chế mất đạm do bay hơi, rửa trôi.

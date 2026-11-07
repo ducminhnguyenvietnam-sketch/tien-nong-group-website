@@ -1,12 +1,20 @@
 {
   "items": [
     {
-      "vi": "Tin tức",
-      "text": "News"
+      "vi": "Tin tức, kiến thức nông nghiệp",
+      "text": "News and farming knowledge"
+    },
+    {
+      "vi": "Tin hoạt động, kiến thức canh tác, khoa học công nghệ và trách nhiệm xã hội của Tiến Nông Group, cùng những bài báo chí viết về Tiến Nông.",
+      "text": "News, farming know-how, science and social responsibility at Tiến Nông Group."
     },
     {
       "vi": "Trang chủ",
       "text": "Home"
+    },
+    {
+      "vi": "Tin tức",
+      "text": "News"
     },
     {
       "vi": "Tin nổi bật",
@@ -99,14 +107,6 @@
     {
       "vi": "Toà nhà Tiến Nông – Tiến cùng nông nghiệp Việt Nam",
       "text": "Tiến Nông Building – advancing with Vietnamese agriculture"
-    },
-    {
-      "vi": "Tin tức, kiến thức nông nghiệp",
-      "text": "News and farming knowledge"
-    },
-    {
-      "vi": "Tin hoạt động, kiến thức canh tác, khoa học công nghệ và trách nhiệm xã hội của Tiến Nông Group, cùng những bài báo chí viết về Tiến Nông.",
-      "text": "News, farming know-how, science and social responsibility at Tiến Nông Group."
     }
   ]
 }

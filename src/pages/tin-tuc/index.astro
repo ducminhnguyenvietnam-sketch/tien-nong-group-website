@@ -1,11 +1,12 @@
 ---
+import { pressLogo } from '../../lib/press-logos';
 import raw from '../../content/pages/tin-tuc.json';
 import { isFilled, withDefaults } from '../../lib/content';
 import Layout from '../../layouts/Layout.astro';
 import ImageSlot from '../../components/ImageSlot.astro';
 import NewsArchive from '../../components/NewsArchive.astro';
 import PageHero from '../../components/PageHero.astro';
-import { link, url } from '../../lib/routes';
+import { asset, link, url } from '../../lib/routes';
 import { CATEGORIES, CATEGORY_SLUGS, PER_PAGE, formatDate, getNews, getPress, isPress, listUrl, newsLinkAttrs, newsUrl } from '../../lib/news';
 import { localeOf } from '../../lib/i18n';
 /** Language of this page (vi / en / zh): content is read in that language. */
@@ -34,9 +35,9 @@ const catPages = Object.fromEntries(Object.keys(CATEGORY_SLUGS).map((k) => [k, l
 <div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:24px">
 <h2 style="margin:0;font:var(--type-h2)">{c.s01_tin_noi_bat.t4 || 'Tin nổi bật'}</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:32px 48px">
-{feat && <a href={newsUrl(feat)} style="display:flex;flex-direction:column;gap:16px;color:var(--text-primary)"><div style="position:relative;height:clamp(240px,26vw,360px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${feat.id}`} shape="rounded" radius="16" placeholder={feat.data.cover.alt || "Ảnh bài nổi bật"} image={feat.data.cover} cms={`${feat.filePath}#cover`} /></div><span style="display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{CATEGORIES[feat.data.category]}</strong>{feat.data.date && <time style="flex:none">{formatDate(feat.data.date)}</time>}</span><strong style="font:var(--type-h3);text-wrap:balance">{feat.data.title}</strong>{isFilled(feat.data.summary) && <span style="color:var(--text-secondary)">{feat.data.summary}</span>}</a>}
+{feat && <a href={newsUrl(feat)} style="display:flex;flex-direction:column;gap:16px;color:var(--text-primary)"><div style="position:relative;height:clamp(240px,26vw,360px)"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${feat.id}`} shape="rounded" radius="16" placeholder={feat.data.cover.alt || "Ảnh bài nổi bật"} image={feat.data.cover} cms={`${feat.filePath}#cover`} /></div><span style="display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{CATEGORIES[feat.data.category]}</strong>{feat.data.date && <time style="flex:none">{formatDate(feat.data.date)}</time>}</span><strong class="jx-justify tt-title" data-unglued style="font:var(--type-h3)">{feat.data.title}</strong>{isFilled(feat.data.summary) && <span style="color:var(--text-secondary)">{feat.data.summary}</span>}</a>}
 <div style="display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
-{side.map((n) => <a href={newsUrl(n)} style="display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--border-default);color:var(--text-primary)"><div style="position:relative;height:96px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${n.id}`} shape="rounded" radius="10" placeholder="Ảnh" image={n.data.cover} cms={`${n.filePath}#cover`} /></div><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:var(--green-600);font-weight:600">{CATEGORIES[n.data.category]}</span><strong style="line-height:1.4">{n.data.title}</strong></div></a>)}
+{side.map((n) => <a href={newsUrl(n)} class="tt-side" style="display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--border-default);color:var(--text-primary)"><div style="position:relative;height:96px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`news-${n.id}`} shape="rounded" radius="10" placeholder="Ảnh" image={n.data.cover} cms={`${n.filePath}#cover`} /></div><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:var(--green-600);font-weight:600">{CATEGORIES[n.data.category]}</span><strong class="jx-justify tt-title" data-unglued style="line-height:1.4">{n.data.title}</strong></div></a>)}
 </div></div></div></section>
 
 <section style="background:var(--surface-page)">
@@ -48,11 +49,33 @@ const catPages = Object.fromEntries(Object.keys(CATEGORY_SLUGS).map((k) => [k, l
 <div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:28px">
 <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap"><h2 style="margin:0;font:var(--type-h2)">{c.s03_bao_chi.t1}</h2><a href={listUrl('bc')} class="tt-pill">{c.s03_bao_chi.t2} <span aria-hidden="true">↗</span></a></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:32px 24px">
-{press.map((p, k) => <a href={newsUrl(p)} {...newsLinkAttrs(p)} data-press-extra={k >= PRESS_SHOWN ? '' : undefined} hidden={k >= PRESS_SHOWN} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)"><div style="position:relative;height:210px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`press-${p.id}`} shape="rounded" radius="12" placeholder="Ảnh bài báo" image={p.data.cover} cms={`${p.filePath}#cover`} /></div><span style="display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{p.data.source || CATEGORIES[p.data.category]}</strong>{p.data.date && <time style="flex:none">{formatDate(p.data.date)}</time>}</span><strong class="jx-justify" style="font-size:18px;line-height:1.4">{p.data.title}</strong><span style="font-size:14px;font-weight:600;color:var(--text-link)">{c.s03_bao_chi.t3}</span></a>)}
+{press.map((p, k) => <a href={newsUrl(p)} {...newsLinkAttrs(p)} data-press-extra={k >= PRESS_SHOWN ? '' : undefined} hidden={k >= PRESS_SHOWN} style="display:flex;flex-direction:column;gap:12px;color:var(--text-primary)">{(() => { const logo = pressLogo(p.data.source, p.data.source_logo?.src); const hasCover = !!p.data.cover?.src; return (
+<div class:list={['tt-press__img', { 'tt-press__img--logo': !hasCover }]}>
+{hasCover && <ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`press-${p.id}`} shape="rounded" radius="12" placeholder="Ảnh bài báo" image={p.data.cover} cms={`${p.filePath}#cover`} />}
+{hasCover
+  ? (logo ? <span class="tt-press__badge"><img src={asset(logo)} alt={p.data.source} loading="lazy" /></span> : isFilled(p.data.source) && <span class="tt-press__badge tt-press__badge--text">{p.data.source}</span>)
+  : (logo ? <img class="tt-press__big" src={asset(logo)} alt={p.data.source} loading="lazy" /> : <span class="tt-press__name">{p.data.source}</span>)}
+</div>); })()}<span style="display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--text-tertiary)"><strong style="color:var(--green-600)">{p.data.source || CATEGORIES[p.data.category]}</strong>{p.data.date && <time style="flex:none">{formatDate(p.data.date)}</time>}</span><strong class="jx-justify tt-title" data-unglued style="font-size:18px;line-height:1.4">{p.data.title}</strong><span style="font-size:14px;font-weight:600;color:var(--text-link)">{c.s03_bao_chi.t3}</span></a>)}
 </div></div></section>}
 </Layout>
 
 <style>
+  /* News titles: justified like the other news lists, with ordinary spaces so the lines stay tight. */
+  .tt-title { text-wrap: wrap; hyphens: none; }
+  /* Press cards: the newspaper's logo on the photo, or large on a light card when there is no photo. */
+  .tt-press__img { position: relative; height: 210px; border-radius: 12px; overflow: hidden; }
+  .tt-press__img--logo { display: grid; place-items: center; padding: 28px; background: linear-gradient(145deg, #fbf8f0, #f1f7ee); border: 1px solid var(--border-default); }
+  .tt-press__big { max-width: 78%; max-height: 64px; object-fit: contain; }
+  .tt-press__name { font: 800 clamp(22px, 2vw, 28px)/1.2 var(--font-display); color: var(--green-800); text-align: center !important; text-align-last: center !important; }
+  .tt-press__badge { position: absolute; z-index: 2; left: 12px; top: 12px; display: inline-flex; align-items: center; height: 34px; padding: 6px 10px; border-radius: 8px; background: rgba(255, 255, 255, .95); box-shadow: 0 4px 14px rgba(0, 0, 0, .12); }
+  .tt-press__badge img { height: 100%; width: auto; max-width: 140px; object-fit: contain; }
+  .tt-press__badge--text { font: 700 12.5px/1 var(--font-display); color: var(--green-800); }
+  /* Phones: a smaller thumbnail gives the side titles a wider line, so justifying them leaves no wide gaps. */
+  @media (max-width: 599.98px) {
+    .tt-side { grid-template-columns: 92px minmax(0, 1fr) !important; gap: 12px !important; }
+    .tt-side > div:first-child { height: 72px !important; }
+    .tt-side .tt-title { font-size: 15px; line-height: 1.42 !important; }
+  }
   .tt-pill { display: inline-flex; align-items: center; gap: 10px; min-height: 42px; padding: 0 20px; border-radius: 999px; border: 1.5px solid var(--brand-bright); color: var(--green-700); font-weight: 700; font-size: 15px; text-decoration: none; transition: background var(--motion-fast), color var(--motion-fast); }
   .tt-pill:hover { background: var(--brand-bright); color: #fff; text-decoration: none; }
 </style>

@@ -313,16 +313,12 @@
       "text": "– 调节土壤 pH，为作物健壮生长发育创造有利环境。"
     },
     {
-      "vi": "20% ; Magie (Mg): 8%",
-      "text": "20%；镁（Mg）：8%"
-    },
-    {
       "vi": "Tương đương",
       "text": "相当于"
     },
     {
-      "vi": "CaO ≥ 28%; MgO ≥ 13,3%; Độ ẩm: 4%.",
-      "text": "CaO ≥ 28%；MgO ≥ 13.3%；水分：4%。"
+      "vi": "CaO ≥ 28%",
+      "text": "CaO ≥ 28%"
     },
     {
       "vi": "bón: Bón từ 300 – 1.500 kg/ha, căn cứ trị số pH đất.",
@@ -489,14 +485,6 @@
       "text": "腐殖酸（C）"
     },
     {
-      "vi": "Đạm tổng số (N ts )",
-      "text": "总氮（Nts）"
-    },
-    {
-      "vi": "pH H2O",
-      "text": "pH H₂O"
-    },
-    {
       "vi": "Là loại phân bón được sản xuất bởi các nguồn hữu cơ có nguồn gốc sinh học được xử lý bằng công nghệ tiên tiến nhằm gia tăng giá trị sử dụng cho cây trồng. Sản phẩm đáp ứng yêu cầu sản xuất nông nghiệp hữu cơ, hiện đại và bền vững dựa trên nền tảng:",
       "text": "以生物来源的有机原料为原料，采用先进工艺处理，提升对作物的使用价值。产品满足有机、现代、可持续农业生产的要求，其基础是："
     },
@@ -583,10 +571,6 @@
     {
       "vi": "1×10⁶ CFU/g",
       "text": "1×10⁶ CFU/g"
-    },
-    {
-      "vi": "pHₕ₂ₒ",
-      "text": "pH（H₂O）"
     },
     {
       "vi": "Vi sinh vật hữu ích còn là “chiến binh” trong lòng đất, giúp thẩm kim hãm, tiêu diệt các vi sinh vật gây hại, ngăn ngừa mầm mống sâu bệnh, giúp cây trồng được bảo vệ tốt hơn.",
@@ -1165,20 +1149,20 @@
       "text": "氮：蛋白质的基本组成部分，也是叶绿素的主要成分。氮促进发芽、长叶和果实发育，增加生物量。"
     },
     {
-      "vi": "Đạm (N ts )",
-      "text": "氮（Nts）"
+      "vi": "Đạm (Nts)",
+      "text": "氮 (Nts)"
     },
     {
-      "vi": "Lân (P 2 O 5hh )",
-      "text": "磷（P₂O₅hh）"
+      "vi": "Lân (P₂O₅hh)",
+      "text": "有效磷（P₂O₅）"
     },
     {
-      "vi": "Kali (K 2 O hh )",
-      "text": "钾（K₂Ohh）"
+      "vi": "Kali (K₂Ohh)",
+      "text": "有效钾（K₂O）"
     },
     {
-      "vi": "Silic (SiO 2hh )",
-      "text": "硅（SiO₂hh）"
+      "vi": "Silic (SiO₂hh)",
+      "text": "有效硅（SiO₂）"
     },
     {
       "vi": "Silic: Tăng cường độ dày thành tế bào, giúp cây cứng cáp, chống gãy đổ, hạn chế sâu bệnh và chống chịu thời tiết bất thuận.",
@@ -1781,14 +1765,6 @@
       "text": "50 公斤"
     },
     {
-      "vi": "Lân hữu hiệu (P 2 O 5hh )",
-      "text": "有效磷（P₂O₅hh）"
-    },
-    {
-      "vi": "Kali hữu hiệu (K 2 O hh )",
-      "text": "有效钾（K₂Ohh）"
-    },
-    {
       "vi": "Cây ngắn ngày: Lúa, ngô, khoai, đậu, mía, cỏ bò sữa, rau màu…",
       "text": "短期作物：水稻、玉米、薯类、豆类、甘蔗、奶牛牧草、蔬菜…"
     },
@@ -1953,30 +1929,6 @@
       "text": "复混肥料"
     },
     {
-      "vi": "Lân hữu hiệu (P2O5hh)",
-      "text": "有效磷（P₂O₅hh）"
-    },
-    {
-      "vi": "Kali hữu hiệu (K2Ohh)",
-      "text": "有效钾（K₂Ohh）"
-    },
-    {
-      "vi": "……………………….300 ppm",
-      "text": "……………………….300 ppm"
-    },
-    {
-      "vi": "…………………….50 ppm",
-      "text": "…………………….50 ppm"
-    },
-    {
-      "vi": "…………………250 ppm",
-      "text": "…………………250 ppm"
-    },
-    {
-      "vi": "………………50 ppm",
-      "text": "………………50 ppm"
-    },
-    {
       "vi": "– Làm tăng năng suất và chất lượng nông sản.",
       "text": "– 提高农产品产量和品质。"
     },
@@ -2117,18 +2069,6 @@
       "text": "Tiến Nông NPK 20-10-10+MNC"
     },
     {
-      "vi": "20%; Lân hữu hiệu (P₂O₅hh): 10%; Kali hữu hiệu (K₂Ohh): 10%;",
-      "text": "20%；有效磷（P₂O₅hh）：10%；有效钾（K₂Ohh）：10%；"
-    },
-    {
-      "vi": "250 ppm; Mangan (Mn): 100 ppm; Đồng (Cu): 150 ppm;",
-      "text": "250 ppm；锰（Mn）：100 ppm；铜（Cu）：150 ppm；"
-    },
-    {
-      "vi": "100 ppm; Độ ẩm: 5%.",
-      "text": "100 ppm；水分：5%。"
-    },
-    {
       "vi": "Cây lâu năm (Cà phê, ca cao, nhãn, vải, cây ăn quả)",
       "text": "多年生作物（咖啡、可可、龙眼、荔枝、果树）"
     },
@@ -2163,10 +2103,6 @@
     {
       "vi": "NPK 20-5-5 Tiến Nông",
       "text": "Tiến Nông NPK 20-5-5"
-    },
-    {
-      "vi": "20%; Lân hữu hiệu (P₂O₅hh): 5%; Kali hữu hiệu (K₂Ohh): 5%; Độ ẩm: 5%.",
-      "text": "20%；有效磷（P₂O₅hh）：5%；有效钾（K₂Ohh）：5%；水分：5%。"
     },
     {
       "vi": "Cây cà phê",
@@ -2857,8 +2793,8 @@
       "text": "有机无机复混肥料"
     },
     {
-      "vi": "pHhh₂O",
-      "text": "pH（H₂O）"
+      "vi": "Hữu cơ",
+      "text": "有机型"
     },
     {
       "vi": "Sản phẩm thích hợp với sản xuất nông nghiệp hữu cơ bền vững, nâng cao chất lượng và giá trị nông sản Việt Nam.",
@@ -2983,6 +2919,94 @@
     {
       "vi": "Phân trung lượng lân PA Tiến Nông – ứng dụng thực tế",
       "text": "Tiến Nông PA 磷中量元素肥 – 田间应用"
+    },
+    {
+      "vi": "20% ; Magie (Mg): 8%",
+      "text": "20%；镁（Mg）：8%"
+    },
+    {
+      "vi": "CaO ≥ 28%; MgO ≥ 13,3%; Độ ẩm: 4%.",
+      "text": "CaO ≥ 28%；MgO ≥ 13.3%；水分：4%。"
+    },
+    {
+      "vi": "Đạm tổng số (N ts )",
+      "text": "总氮（Nts）"
+    },
+    {
+      "vi": "pH H2O",
+      "text": "pH H₂O"
+    },
+    {
+      "vi": "pHₕ₂ₒ",
+      "text": "pH（H₂O）"
+    },
+    {
+      "vi": "Đạm (N ts )",
+      "text": "氮（Nts）"
+    },
+    {
+      "vi": "Lân (P 2 O 5hh )",
+      "text": "磷（P₂O₅hh）"
+    },
+    {
+      "vi": "Kali (K 2 O hh )",
+      "text": "钾（K₂Ohh）"
+    },
+    {
+      "vi": "Silic (SiO 2hh )",
+      "text": "硅（SiO₂hh）"
+    },
+    {
+      "vi": "Lân hữu hiệu (P 2 O 5hh )",
+      "text": "有效磷（P₂O₅hh）"
+    },
+    {
+      "vi": "Kali hữu hiệu (K 2 O hh )",
+      "text": "有效钾（K₂Ohh）"
+    },
+    {
+      "vi": "Lân hữu hiệu (P2O5hh)",
+      "text": "有效磷（P₂O₅hh）"
+    },
+    {
+      "vi": "Kali hữu hiệu (K2Ohh)",
+      "text": "有效钾（K₂Ohh）"
+    },
+    {
+      "vi": "……………………….300 ppm",
+      "text": "……………………….300 ppm"
+    },
+    {
+      "vi": "…………………….50 ppm",
+      "text": "…………………….50 ppm"
+    },
+    {
+      "vi": "…………………250 ppm",
+      "text": "…………………250 ppm"
+    },
+    {
+      "vi": "………………50 ppm",
+      "text": "………………50 ppm"
+    },
+    {
+      "vi": "20%; Lân hữu hiệu (P₂O₅hh): 10%; Kali hữu hiệu (K₂Ohh): 10%;",
+      "text": "20%；有效磷（P₂O₅hh）：10%；有效钾（K₂Ohh）：10%；"
+    },
+    {
+      "vi": "250 ppm; Mangan (Mn): 100 ppm; Đồng (Cu): 150 ppm;",
+      "text": "250 ppm；锰（Mn）：100 ppm；铜（Cu）：150 ppm；"
+    },
+    {
+      "vi": "100 ppm; Độ ẩm: 5%.",
+      "text": "100 ppm；水分：5%。"
+    },
+    {
+      "vi": "20%; Lân hữu hiệu (P₂O₅hh): 5%; Kali hữu hiệu (K₂Ohh): 5%; Độ ẩm: 5%.",
+      "text": "20%；有效磷（P₂O₅hh）：5%；有效钾（K₂Ohh）：5%；水分：5%。"
+    },
+    {
+      "vi": "pHhh₂O",
+      "text": "pH（H₂O）"
     }
   ]
 }

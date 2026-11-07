@@ -1,8 +1,12 @@
 {
   "items": [
     {
-      "vi": "Về Tiến Nông",
-      "text": "About Tiến Nông"
+      "vi": "Về Tiến Nông – hơn 30 năm phụng sự nhà nông",
+      "text": "About Tiến Nông – 30+ years serving farmers"
+    },
+    {
+      "vi": "Thành lập năm 1995 tại Thanh Hóa, Tiến Nông là doanh nghiệp KH&CN đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam, được tặng Huân chương Lao động hạng Ba và 6 lần Sao Vàng Đất Việt.",
+      "text": "Founded in Thanh Hóa in 1995, Tiến Nông is the first science and technology enterprise in plant nutrition in Vietnam, awarded the Third-Class Labour Order and six Sao Vàng Đất Việt (Vietnam Golden Star) Awards."
     },
     {
       "vi": "Trang chủ",
@@ -99,34 +103,6 @@
     {
       "vi": "Ảnh nền lời chào (ảnh ngang tông xanh đậm, khoảng 1920×1000)",
       "text": "Background for the welcome message (dark green landscape photo, about 1920×1000)"
-    },
-    {
-      "vi": "THƯ NGỎ CỦA TỔNG GIÁM ĐỐC",
-      "text": "AN OPEN LETTER FROM THE GENERAL DIRECTOR"
-    },
-    {
-      "vi": "“Mùa vụ không chỉ là những gì chúng tôi trồng trọt, mà là những cuộc đời chúng tôi cùng vun đắp và tương lai chúng tôi cùng kiến tạo.”",
-      "text": "\"A season is not only what we grow, but the lives we nurture together and the future we build together.\""
-    },
-    {
-      "vi": "Hơn ba thập kỷ qua, Tiến Nông kiên định với một lựa chọn: lấy khoa học làm nền tảng và lấy lợi ích của nhà nông làm thước đo cho mọi quyết định. Chúng tôi tin khoa học nông nghiệp phải bắt đầu từ chính đất Việt: hiểu thổ nhưỡng, hiểu hệ vi sinh bản địa, thay vì sao chép công thức có sẵn. Tiến Nông không chỉ bán phân bón, mà mang đến giải pháp khoa học cho từng chân ruộng, dựa trên ba điểm tựa: nông dân là trung tâm, đất đai là nền tảng, khoa học công nghệ là động lực. Khi người nông dân canh tác hiệu quả hơn, mỗi vụ mùa sẽ góp phần vào sự thịnh vượng chung của đất nước.",
-      "text": "For more than three decades, Tiến Nông has held firm to one choice: science as our foundation, and the benefit of farmers as the measure of every decision. We believe agricultural science must start from Vietnam's own soil – understanding its soils and native microbial life rather than copying ready-made formulas. Tiến Nông does not simply sell fertiliser; we bring a scientific solution to every field, built on three pillars: farmers at the centre, land as the foundation, and science and technology as the driving force. When farmers grow more efficiently, every harvest contributes to the shared prosperity of the nation."
-    },
-    {
-      "vi": "Nguyễn Hồng Phong",
-      "text": "Nguyễn Hồng Phong"
-    },
-    {
-      "vi": "Tổng Giám đốc",
-      "text": "General Director"
-    },
-    {
-      "vi": "Lời chào từ",
-      "text": "A welcome from the"
-    },
-    {
-      "vi": "Phụng sự nhà nông – Kiến tạo tương lai",
-      "text": "Serving farmers – Building the future"
     },
     {
       "vi": "SỨ MỆNH",
@@ -231,6 +207,10 @@
     {
       "vi": "Chân dung ông Nguyễn Hồng Phong",
       "text": "Portrait of Mr Nguyễn Hồng Phong"
+    },
+    {
+      "vi": "Nguyễn Hồng Phong",
+      "text": "Nguyễn Hồng Phong"
     },
     {
       "vi": "Phó Chủ tịch HĐQT · Tổng Giám đốc",
@@ -1057,12 +1037,32 @@
       "text": "Drone photo of the factory today"
     },
     {
-      "vi": "Về Tiến Nông – hơn 30 năm phụng sự nhà nông",
-      "text": "About Tiến Nông – 30+ years serving farmers"
+      "vi": "Về Tiến Nông",
+      "text": "About Tiến Nông"
     },
     {
-      "vi": "Thành lập năm 1995 tại Thanh Hóa, Tiến Nông là doanh nghiệp KH&CN đầu tiên trong lĩnh vực dinh dưỡng cây trồng tại Việt Nam, được tặng Huân chương Lao động hạng Ba và 6 lần Sao Vàng Đất Việt.",
-      "text": "Founded in Thanh Hóa in 1995, Tiến Nông is the first science and technology enterprise in plant nutrition in Vietnam, awarded the Third-Class Labour Order and six Sao Vàng Đất Việt (Vietnam Golden Star) Awards."
+      "vi": "THƯ NGỎ CỦA TỔNG GIÁM ĐỐC",
+      "text": "AN OPEN LETTER FROM THE GENERAL DIRECTOR"
+    },
+    {
+      "vi": "“Mùa vụ không chỉ là những gì chúng tôi trồng trọt, mà là những cuộc đời chúng tôi cùng vun đắp và tương lai chúng tôi cùng kiến tạo.”",
+      "text": "\"A season is not only what we grow, but the lives we nurture together and the future we build together.\""
+    },
+    {
+      "vi": "Hơn ba thập kỷ qua, Tiến Nông kiên định với một lựa chọn: lấy khoa học làm nền tảng và lấy lợi ích của nhà nông làm thước đo cho mọi quyết định. Chúng tôi tin khoa học nông nghiệp phải bắt đầu từ chính đất Việt: hiểu thổ nhưỡng, hiểu hệ vi sinh bản địa, thay vì sao chép công thức có sẵn. Tiến Nông không chỉ bán phân bón, mà mang đến giải pháp khoa học cho từng chân ruộng, dựa trên ba điểm tựa: nông dân là trung tâm, đất đai là nền tảng, khoa học công nghệ là động lực. Khi người nông dân canh tác hiệu quả hơn, mỗi vụ mùa sẽ góp phần vào sự thịnh vượng chung của đất nước.",
+      "text": "For more than three decades, Tiến Nông has held firm to one choice: science as our foundation, and the benefit of farmers as the measure of every decision. We believe agricultural science must start from Vietnam's own soil – understanding its soils and native microbial life rather than copying ready-made formulas. Tiến Nông does not simply sell fertiliser; we bring a scientific solution to every field, built on three pillars: farmers at the centre, land as the foundation, and science and technology as the driving force. When farmers grow more efficiently, every harvest contributes to the shared prosperity of the nation."
+    },
+    {
+      "vi": "Tổng Giám đốc",
+      "text": "General Director"
+    },
+    {
+      "vi": "Lời chào từ",
+      "text": "A welcome from the"
+    },
+    {
+      "vi": "Phụng sự nhà nông – Kiến tạo tương lai",
+      "text": "Serving farmers – Building the future"
     }
   ]
 }

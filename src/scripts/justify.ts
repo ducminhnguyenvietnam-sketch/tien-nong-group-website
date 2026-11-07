@@ -59,9 +59,24 @@ function ungluedFromMarkup() {
     }
   }
 }
+/** Phones: justified lines are short, so whole kept-together words (2–3 syllables joined) leave wide gaps.
+ *  There every block gets ordinary spaces back: the text is still justified, but evenly and tightly. */
+const phone = matchMedia('(max-width: 599.98px)');
+function phoneUnglue() {
+  if (!phone.matches) return;
+  for (const el of textBlocks()) {
+    if (el.hasAttribute('data-unglued')) continue;
+    el.setAttribute('data-unglued', '');
+    const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    for (let n = walk.nextNode(); n; n = walk.nextNode()) {
+      if (n.textContent && n.textContent.includes('\u00A0')) n.textContent = n.textContent.replace(/\u00A0/g, ' ');
+    }
+  }
+}
 let t = 0;
-const later = () => { clearTimeout(t); t = window.setTimeout(() => { unglue(); run(); }, 120); };
+const later = () => { clearTimeout(t); t = window.setTimeout(() => { phoneUnglue(); unglue(); run(); }, 120); };
 ungluedFromMarkup();
+phoneUnglue();
 unglue();
 run();
 addEventListener('resize', later);

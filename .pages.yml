@@ -122,6 +122,10 @@ content:
     label: 'Báo chí: Tên báo'
     type: string
     description: Chỉ điền khi chuyên mục là "Báo chí nói về Tiến Nông", ví dụ Diễn đàn Doanh nghiệp.
+  - name: source_logo
+    label: 'Báo chí: Logo của báo (tuỳ chọn)'
+    description: Logo hiện trên ảnh bài. Để trống thì web tự dùng logo có sẵn (Nhân Dân, Tiền Phong, Diễn đàn Doanh nghiệp, Công Thương, Nông nghiệp và Môi trường); báo khác thì hiện tên báo.
+    component: photo
   - name: external_url
     label: 'Báo chí: Đường dẫn bài gốc'
     type: string
@@ -2453,45 +2457,31 @@ content:
       - name: t3
         label: 'Liên kết: Xem sản phẩm →'
         type: string
-      - name: img_res_1_1
-        label: 'Ảnh: Bao bì NPK bổ sung Silic'
-        component: photo
-        description: Khung ảnh khoảng 373×240 px trên máy tính — nên dùng ảnh rộng ít nhất 746 px.
-      - name: t4
-        label: 'Nhãn in hoa: CÔNG NGHỆ SẢN XUẤT'
-        type: string
-      - name: t5
-        label: 'Chữ đậm: NPK bổ sung Silic hữu hiệu (SiO₂hh)'
-        type: string
-      - name: t6
-        label: 'Chữ: Giúp cây cứng cáp, tăng khả năng chống đổ và c…'
-        type: string
-      - name: img_res_2_1
-        label: 'Ảnh: Mô hình NPK – hữu cơ – vi sinh'
-        component: photo
-        description: Khung ảnh khoảng 373×240 px trên máy tính — nên dùng ảnh rộng ít nhất 746 px.
-      - name: t7
-        label: 'Nhãn in hoa: GIẢI PHÁP TÍCH HỢP'
-        type: string
-      - name: t8
-        label: 'Chữ đậm: Kết hợp NPK – hữu cơ – vi sinh'
-        type: string
-      - name: t9
-        label: 'Chữ: Nâng cao hiệu quả sử dụng phân bón đồng thời c…'
-        type: string
-      - name: img_res_3_1
-        label: 'Ảnh: Phân bón hữu cơ, phân bón lỏng'
-        component: photo
-        description: Khung ảnh khoảng 373×240 px trên máy tính — nên dùng ảnh rộng ít nhất 746 px.
-      - name: t10
-        label: 'Nhãn in hoa: DINH DƯỠNG THẾ HỆ MỚI'
-        type: string
-      - name: t11
-        label: 'Chữ đậm: Phân bón hữu cơ, phân bón lỏng và các dạng din…'
-        type: string
-      - name: t12
-        label: 'Chữ: Đáp ứng nhu cầu canh tác bền vững và nông nghi…'
-        type: string
+      - name: results
+        label: Các kết quả nghiên cứu (3 ô một hàng; thêm kết quả mới thì tự xuống hàng)
+        description: Bấm "Add an entry" để thêm kết quả. Kéo để đổi thứ tự. Ô thiếu tên sẽ không hiện.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{fields.title}'
+        fields:
+        - name: image
+          label: Ảnh
+          component: photo
+          description: Khung ảnh khoảng 373×240 px trên máy tính — nên dùng ảnh rộng ít nhất 746 px.
+        - name: label
+          label: 'Nhãn in hoa (vd: CÔNG NGHỆ PHÂN BÓN)'
+          type: string
+        - name: title
+          label: Tên kết quả (chữ đậm)
+          type: string
+        - name: text
+          label: Mô tả ngắn (1–2 dòng)
+          type: text
+        - name: link
+          label: Liên kết khi bấm vào ô (tuỳ chọn, vd /san-pham/... hoặc /tin-tuc/...)
+          type: string
     - name: s08_doi_tac_nghien_cuu
       label: 08 · Đối tác nghiên cứu
       type: object
@@ -2563,6 +2553,20 @@ content:
         label: Ảnh
         component: photo
         description: Khung ảnh khoảng 410×380 px trên máy tính — nên dùng ảnh rộng ít nhất 820 px.
+      - name: color
+        label: Màu của lĩnh vực
+        type: select
+        default: bio
+        options:
+          values:
+          - value: lab
+            label: Xanh dương (phân tích, kiểm nghiệm)
+          - value: bio
+            label: Xanh lá (sinh học)
+          - value: soil
+            label: Nâu đất phù sa (đất, cây trồng)
+          - value: factory
+            label: Vàng hổ phách (sản xuất)
     - name: can_le
       label: Căn lề chữ (tuỳ chọn)
       description: Mặc định đoạn văn căn đều 2 bên. Chọn kiểu khác cho cả trang, hoặc thêm từng mục để căn riêng mục đó (căn giữa / trái / phải / đều).
@@ -3372,7 +3376,12 @@ content:
       - name: img_soil_1
         label: 'Ảnh: Bàn tay cầm nắm đất có cây con'
         component: photo
-        description: Khung ảnh khoảng 548×480 px trên máy tính — nên dùng ảnh rộng ít nhất 1096 px.
+        description: Ảnh đầu tiên của trình chiếu bên dưới (dùng khi danh sách trình chiếu còn trống). Khung khoảng 548×560 px — nên dùng ảnh rộng ít nhất 1100 px.
+      - name: slides
+        label: Ảnh trình chiếu quy trình (4–5 ảnh, tự chuyển mỗi 6 giây)
+        description: Thêm/bớt, kéo để đổi thứ tự. Nên dùng ảnh dọc hoặc vuông, rộng ít nhất 1100 px.
+        component: photo
+        list: true
       - name: t1
         label: 'Nhãn in hoa: 03 · SỨC KHỎE ĐẤT'
         type: string
@@ -3969,6 +3978,10 @@ content:
     path: src/content/pages/phat-trien-ben-vung.json
     format: json
     fields:
+    - name: ts_teaser
+      label: Khối Xanh hoá Trường Sa (cuối trang) — mô tả ngắn
+      description: 1–2 dòng; nội dung đầy đủ nằm ở trang Xanh hoá Trường Sa.
+      type: text
     - name: seo
       label: Tiêu đề tab trình duyệt & mô tả Google
       type: object
@@ -4523,6 +4536,69 @@ content:
         - name: title
           label: Tiêu đề
           type: string
+        - name: icon
+          label: Biểu tượng (icon nét mảnh)
+          type: select
+          options:
+            values:
+            - value: store
+              label: Cửa hàng
+            - value: truck
+              label: Xe tải / phân phối
+            - value: sprout
+              label: Mầm cây
+            - value: users
+              label: Nhóm người
+            - value: box
+              label: Kiện hàng
+            - value: qr
+              label: Mã QR
+            - value: scale
+              label: Cân / minh bạch
+            - value: engineer
+              label: Kỹ sư (mũ bảo hộ)
+            - value: megaphone
+              label: Loa / quảng bá
+            - value: award
+              label: Huy chương
+            - value: gift
+              label: Quà tặng
+            - value: handshake
+              label: Bắt tay
+            - value: leaf
+              label: Lá
+            - value: drop
+              label: Giọt nước
+            - value: flask
+              label: Bình thí nghiệm
+            - value: shield
+              label: Khiên bảo vệ
+            - value: sun
+              label: Mặt trời
+            - value: wave
+              label: Sóng biển
+            - value: island
+              label: Đảo
+            - value: soil
+              label: Đất & mầm
+            - value: growth
+              label: Tăng trưởng
+            - value: graduation
+              label: Mũ tốt nghiệp
+            - value: home
+              label: Ngôi nhà
+            - value: heart
+              label: Trái tim
+            - value: factory
+              label: Nhà máy
+            - value: microscope
+              label: Kính hiển vi
+            - value: compass
+              label: La bàn
+            - value: team
+              label: Đội ngũ
+            - value: ship
+              label: Tàu biển
         - name: text
           label: Nội dung
           type: text
@@ -5324,6 +5400,69 @@ content:
         - name: title
           label: Tiêu đề
           type: string
+        - name: icon
+          label: Biểu tượng (icon nét mảnh)
+          type: select
+          options:
+            values:
+            - value: store
+              label: Cửa hàng
+            - value: truck
+              label: Xe tải / phân phối
+            - value: sprout
+              label: Mầm cây
+            - value: users
+              label: Nhóm người
+            - value: box
+              label: Kiện hàng
+            - value: qr
+              label: Mã QR
+            - value: scale
+              label: Cân / minh bạch
+            - value: engineer
+              label: Kỹ sư (mũ bảo hộ)
+            - value: megaphone
+              label: Loa / quảng bá
+            - value: award
+              label: Huy chương
+            - value: gift
+              label: Quà tặng
+            - value: handshake
+              label: Bắt tay
+            - value: leaf
+              label: Lá
+            - value: drop
+              label: Giọt nước
+            - value: flask
+              label: Bình thí nghiệm
+            - value: shield
+              label: Khiên bảo vệ
+            - value: sun
+              label: Mặt trời
+            - value: wave
+              label: Sóng biển
+            - value: island
+              label: Đảo
+            - value: soil
+              label: Đất & mầm
+            - value: growth
+              label: Tăng trưởng
+            - value: graduation
+              label: Mũ tốt nghiệp
+            - value: home
+              label: Ngôi nhà
+            - value: heart
+              label: Trái tim
+            - value: factory
+              label: Nhà máy
+            - value: microscope
+              label: Kính hiển vi
+            - value: compass
+              label: La bàn
+            - value: team
+              label: Đội ngũ
+            - value: ship
+              label: Tàu biển
         - name: text
           label: Nội dung
           type: text
@@ -6214,6 +6353,69 @@ content:
         - name: title
           label: Tiêu đề
           type: string
+        - name: icon
+          label: Biểu tượng (icon nét mảnh)
+          type: select
+          options:
+            values:
+            - value: store
+              label: Cửa hàng
+            - value: truck
+              label: Xe tải / phân phối
+            - value: sprout
+              label: Mầm cây
+            - value: users
+              label: Nhóm người
+            - value: box
+              label: Kiện hàng
+            - value: qr
+              label: Mã QR
+            - value: scale
+              label: Cân / minh bạch
+            - value: engineer
+              label: Kỹ sư (mũ bảo hộ)
+            - value: megaphone
+              label: Loa / quảng bá
+            - value: award
+              label: Huy chương
+            - value: gift
+              label: Quà tặng
+            - value: handshake
+              label: Bắt tay
+            - value: leaf
+              label: Lá
+            - value: drop
+              label: Giọt nước
+            - value: flask
+              label: Bình thí nghiệm
+            - value: shield
+              label: Khiên bảo vệ
+            - value: sun
+              label: Mặt trời
+            - value: wave
+              label: Sóng biển
+            - value: island
+              label: Đảo
+            - value: soil
+              label: Đất & mầm
+            - value: growth
+              label: Tăng trưởng
+            - value: graduation
+              label: Mũ tốt nghiệp
+            - value: home
+              label: Ngôi nhà
+            - value: heart
+              label: Trái tim
+            - value: factory
+              label: Nhà máy
+            - value: microscope
+              label: Kính hiển vi
+            - value: compass
+              label: La bàn
+            - value: team
+              label: Đội ngũ
+            - value: ship
+              label: Tàu biển
         - name: who
           label: Phù hợp với
           type: string
@@ -6250,12 +6452,80 @@ content:
         - name: title
           label: Quyền lợi
           type: string
+        - name: icon
+          label: Biểu tượng (icon nét mảnh)
+          type: select
+          options:
+            values:
+            - value: store
+              label: Cửa hàng
+            - value: truck
+              label: Xe tải / phân phối
+            - value: sprout
+              label: Mầm cây
+            - value: users
+              label: Nhóm người
+            - value: box
+              label: Kiện hàng
+            - value: qr
+              label: Mã QR
+            - value: scale
+              label: Cân / minh bạch
+            - value: engineer
+              label: Kỹ sư (mũ bảo hộ)
+            - value: megaphone
+              label: Loa / quảng bá
+            - value: award
+              label: Huy chương
+            - value: gift
+              label: Quà tặng
+            - value: handshake
+              label: Bắt tay
+            - value: leaf
+              label: Lá
+            - value: drop
+              label: Giọt nước
+            - value: flask
+              label: Bình thí nghiệm
+            - value: shield
+              label: Khiên bảo vệ
+            - value: sun
+              label: Mặt trời
+            - value: wave
+              label: Sóng biển
+            - value: island
+              label: Đảo
+            - value: soil
+              label: Đất & mầm
+            - value: growth
+              label: Tăng trưởng
+            - value: graduation
+              label: Mũ tốt nghiệp
+            - value: home
+              label: Ngôi nhà
+            - value: heart
+              label: Trái tim
+            - value: factory
+              label: Nhà máy
+            - value: microscope
+              label: Kính hiển vi
+            - value: compass
+              label: La bàn
+            - value: team
+              label: Đội ngũ
+            - value: ship
+              label: Tàu biển
         - name: text
           label: Mô tả
           type: text
       - name: image
         label: Ảnh minh hoạ quyền lợi
         component: photo
+      - name: images
+        label: Ảnh trình chiếu quyền lợi (3–4 ảnh, tự chuyển)
+        description: Thêm/bớt, kéo để đổi thứ tự. Khi danh sách trống, dùng "Ảnh minh hoạ quyền lợi" ở trên.
+        component: photo
+        list: true
     - name: spotlight
       label: 06 · Câu chuyện đối tác
       type: object

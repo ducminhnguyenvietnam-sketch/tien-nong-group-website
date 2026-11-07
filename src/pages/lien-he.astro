@@ -222,6 +222,12 @@ const mapsFor = (address: string, custom?: string | null) =>
   .lh-chip:hover span { border-color: var(--green-400); color: var(--green-700); }
   .lh-chip input:checked + span { background: var(--green-800); border-color: var(--green-800); color: #fff; }
   .lh-chip input:focus-visible + span { outline: 2px solid var(--brand-bright); outline-offset: 2px; }
+  /* Phones: the topics take two compact rows that scroll sideways, so the fields to fill in start right away. */
+  @media (max-width: 599.98px) {
+    .lh-f__chips { display: grid; grid-auto-flow: column; grid-template-rows: repeat(2, auto); gap: 6px; overflow-x: auto; scrollbar-width: none; margin-inline: -4px; padding: 2px 28px 4px 4px; -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 32px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 32px), transparent); }
+    .lh-f__chips::-webkit-scrollbar { display: none; }
+    .lh-chip span { min-height: 34px; padding: 0 12px; font-size: 13.5px; white-space: nowrap; }
+  }
   .lh-f__route { margin: 2px 0 0; font-size: 13.5px; color: var(--text-tertiary); }
   .lh-f__route b { color: var(--green-700); }
   .lh-f__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }

@@ -1,0 +1,13 @@
+---
+/**
+ * Small line icons (24 × 24, thin stroke in the current text colour) for cards: partner types,
+ * benefits, the "why fertiliser" points, reasons to join… Chosen in Pages CMS by name ("icon" fields);
+ * an unknown or empty name draws nothing.
+ */
+interface Props { name?: string; size?: number; class?: string }
+const { name = '', size = 26, class: cls } = Astro.props;
+
+import { ICONS } from '../lib/icons';
+const body = ICONS[name];
+---
+{body && <svg class:list={['ico', cls]} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={body} />}

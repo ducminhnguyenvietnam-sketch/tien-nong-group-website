@@ -1,8 +1,12 @@
 {
   "items": [
     {
-      "vi": "Giải pháp cho dự án",
-      "text": "Solutions for projects"
+      "vi": "Giải pháp dinh dưỡng cho dự án, trang trại lớn",
+      "text": "Nutrition solutions for projects and large farms"
+    },
+    {
+      "vi": "Giải pháp dinh dưỡng trọn gói cho dự án, trang trại và vùng nguyên liệu: phân tích đất, quy trình bón riêng, cung ứng từ 3 nhà máy 650.000 tấn/năm. Gửi yêu cầu để kỹ sư liên hệ.",
+      "text": "Complete nutrition programmes for projects, large farms and raw-material zones: soil analysis, tailored fertilising plans and supply from 3 factories with 650,000 tonnes a year."
     },
     {
       "vi": "Trang chủ",
@@ -297,12 +301,8 @@
       "text": "Other"
     },
     {
-      "vi": "Giải pháp dinh dưỡng cho dự án, trang trại lớn",
-      "text": "Nutrition solutions for projects and large farms"
-    },
-    {
-      "vi": "Giải pháp dinh dưỡng trọn gói cho dự án, trang trại và vùng nguyên liệu: phân tích đất, quy trình bón riêng, cung ứng từ 3 nhà máy 650.000 tấn/năm. Gửi yêu cầu để kỹ sư liên hệ.",
-      "text": "Complete nutrition programmes for projects, large farms and raw-material zones: soil analysis, tailored fertilising plans and supply from 3 factories with 650,000 tonnes a year."
+      "vi": "Giải pháp cho dự án",
+      "text": "Solutions for projects"
     }
   ]
 }

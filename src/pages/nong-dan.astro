@@ -51,7 +51,7 @@ const hardship = await Promise.all(c.hardship.items.map(async (h) => {
 <div class="hero-copy" style="max-width:760px;display:flex;flex-direction:column;gap:20px">
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-100)">{c.hero.eyebrow}</span>
 <h1 style="margin:0;font:var(--type-h1);letter-spacing:-.015em;text-wrap:balance">{c.hero.title}</h1>
-<p style="margin:0;font-size:var(--fs-lead);line-height:1.55;color:var(--green-50);text-wrap:pretty">{c.hero.intro}</p>
+<p class="jx-justify" data-unglued style="margin:0;font-size:var(--fs-lead);line-height:1.55;color:var(--green-50)">{c.hero.intro}</p>
 <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;pointer-events:auto">
 <a href="#dang-ky" class="nd-hbtn nd-hbtn--solid">{c.hero.button1}<span aria-hidden="true">↗</span></a>
 <a href="#tra-cham" class="nd-hbtn">{c.hero.button2}<span aria-hidden="true">↗</span></a>
@@ -74,7 +74,7 @@ const hardship = await Promise.all(c.hardship.items.map(async (h) => {
 <Head eyebrow={c.season.eyebrow} title={c.season.title} intro={c.season.intro} split />
 <ol class="nd-season">{c.season.steps.map((s, k) => <li>
 <div class="nd-season__img"><ImageSlot style={fill} id={`season-${k}`} shape="rect" placeholder={s.image?.alt || s.title} image={s.image} cms={`${F}#season.steps.${k}.image`} sizes="(max-width: 899px) 92vw, 400px" /><span class="nd-season__n">{String(k + 1).padStart(2, '0')}</span></div>
-<div class="nd-season__body"><strong>{s.title}</strong><p class="jx-start">{s.text}</p></div>
+<div class="nd-season__body"><strong>{s.title}</strong><p class="jx-justify" data-unglued>{s.text}</p></div>
 </li>)}</ol>
 </div></section>
 
@@ -85,7 +85,7 @@ const hardship = await Promise.all(c.hardship.items.map(async (h) => {
 <div class="st-split__media st-hide-empty" style="--ratio:3/2"><ImageSlot style={fill} id="farmer-deferred" shape="rounded" radius="24" placeholder={c.deferred.image.alt || 'Phân bón trả chậm'} image={c.deferred.image} cms={`${F}#deferred.image`} sizes="(max-width: 899px) 92vw, 600px" /></div>
 </div>
 <h3 class="st-h3">{c.deferred.how_title}</h3>
-<ol class="st-steps" style="--min:220px">{c.deferred.how.map((s) => <li><strong>{s.title}</strong><span>{s.text}</span></li>)}</ol>
+<ol class="st-steps" style="--min:220px">{c.deferred.how.map((s) => <li><strong>{s.title}</strong><span class="jx-justify" data-unglued>{s.text}</span></li>)}</ol>
 {isFilled(c.deferred.timeline_title) && <h3 class="st-h3">{c.deferred.timeline_title}</h3>}
 <YearTabs items={c.deferred.timeline} tone="dark" linkLabel="Xem thêm" autoplay={6000} cms={`${F}#deferred.timeline`} id="deferred-year" />
 <div class="nd-join">
@@ -129,7 +129,7 @@ const hardship = await Promise.all(c.hardship.items.map(async (h) => {
 <div class="st-wrap">
 <Head eyebrow={c.hardship.eyebrow} title={c.hardship.title} intro={c.hardship.intro} />
 <div class="st-grid" style="--min:250px">
-{hardship.map((h, k) => <a class="st-card" href={isFilled(h.link) ? link(h.link) : undefined}><div class="st-card__img st-hide-empty" style="--img-h:180px"><ImageSlot style={fill} id={`hardship-${k}`} shape="rect" placeholder={h.title} image={h.img} cms={`${F}#hardship.items.${k}.image`} sizes="(max-width: 767px) 92vw, 300px" /></div><div class="st-card__body"><span class="st-card__tag">{h.when}</span><strong class="st-card__title">{h.title}</strong><span class="st-card__text jx-start">{h.text}</span>{isFilled(h.link) && <span class="st-card__link">Đọc tin →</span>}</div></a>)}
+{hardship.map((h, k) => <a class="st-card" href={isFilled(h.link) ? link(h.link) : undefined}><div class="st-card__img st-hide-empty" style="--img-h:180px"><ImageSlot style={fill} id={`hardship-${k}`} shape="rect" placeholder={h.title} image={h.img} cms={`${F}#hardship.items.${k}.image`} sizes="(max-width: 767px) 92vw, 300px" /></div><div class="st-card__body"><span class="st-card__tag">{h.when}</span><strong class="st-card__title">{h.title}</strong><span class="st-card__text jx-justify" data-unglued>{h.text}</span>{isFilled(h.link) && <span class="st-card__link">Đọc tin →</span>}</div></a>)}
 </div>
 </div></section>
 
@@ -137,7 +137,7 @@ const hardship = await Promise.all(c.hardship.items.map(async (h) => {
 <div class="st-wrap">
 <div class="nd-ws-head"><Head eyebrow={c.workshops.eyebrow} title={c.workshops.title} intro={c.workshops.intro} split /></div>
 <div class="nd-ws">
-{workshops.map((n) => <a href={newsUrl(n)} {...newsLinkAttrs(n)} class="nd-ws__card"><div class="nd-ws__img"><ImageSlot style={fill} id={`news-${n.id}`} shape="rounded" radius="14" placeholder="Ảnh hội thảo" image={n.data.cover} cms={`${n.filePath}#cover`} sizes="(max-width: 767px) 92vw, 300px" /></div><span class="nd-ws__meta"><strong>{CATEGORIES[n.data.category]}</strong>{n.data.date && <time>{formatDate(n.data.date)}</time>}</span><strong class="nd-ws__title jx-start">{n.data.title}</strong></a>)}
+{workshops.map((n) => <a href={newsUrl(n)} {...newsLinkAttrs(n)} class="nd-ws__card"><div class="nd-ws__img"><ImageSlot style={fill} id={`news-${n.id}`} shape="rounded" radius="14" placeholder="Ảnh hội thảo" image={n.data.cover} cms={`${n.filePath}#cover`} sizes="(max-width: 767px) 92vw, 300px" /></div><span class="nd-ws__meta"><strong>{CATEGORIES[n.data.category]}</strong>{n.data.date && <time>{formatDate(n.data.date)}</time>}</span><strong class="nd-ws__title jx-justify" data-unglued>{n.data.title}</strong></a>)}
 </div>
 {workshops.length === 0 && <span style="color:var(--text-secondary)">{c.workshops.empty}</span>}
 <a href={listUrl('nd')} class="nd-more">{c.workshops.all} <span aria-hidden="true">→</span></a>
@@ -194,7 +194,7 @@ const hardship = await Promise.all(c.hardship.items.map(async (h) => {
   .nd-ws__img { position: relative; aspect-ratio: 16 / 10; }
   .nd-ws__meta { display: flex; justify-content: space-between; gap: 10px; font-size: 13px; color: var(--text-tertiary); }
   .nd-ws__meta strong { color: var(--green-600); }
-  .nd-ws__title { font-size: 16.5px; line-height: 1.4; transition: color var(--motion-fast); }
+  .nd-ws__title { font-size: 16.5px; line-height: 1.4; text-wrap: wrap; hyphens: none; transition: color var(--motion-fast); }
   .nd-more { align-self: flex-start; font-weight: 600; color: var(--brand-bright); }
   @media (max-width: 1099.98px) {
     .nd-promises, .nd-ws { grid-template-columns: repeat(2, minmax(0, 1fr)); }
