@@ -291,7 +291,11 @@
         "when": "2024",
         "title": "Tết gắn kết yêu thương",
         "text": "Quà Tết và học bổng cho 187 em, tổng kinh phí hơn 600 triệu đồng; nhận thêm 20 em ở Nghệ An.",
-        "link": "/tin-tuc/ong-bo-tien-nong-dem-tet-gan-ket-yeu-thuong-den-187-tre-mo-coi/"
+        "link": "/tin-tuc/ong-bo-tien-nong-dem-tet-gan-ket-yeu-thuong-den-187-tre-mo-coi/",
+        "image": {
+          "focus": "50% 40.5%",
+          "zoom": "100"
+        }
       },
       {
         "when": "2025",
