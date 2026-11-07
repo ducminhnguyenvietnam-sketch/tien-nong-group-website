@@ -30,13 +30,28 @@ npk:
   unit: MNC
 composition:
 - name: Đạm tổng số (Nts)
-  value: '20%; Lân hữu hiệu (P₂O₅hh): 10%; Kali hữu hiệu (K₂Ohh): 10%;'
+  value: 20%
+  method: ''
+- name: Lân hữu hiệu (P₂O₅hh)
+  value: 10%
+  method: ''
+- name: Kali hữu hiệu (K₂Ohh)
+  value: 10%
   method: ''
 - name: Kẽm (Zn)
-  value: '250 ppm; Mangan (Mn): 100 ppm; Đồng (Cu): 150 ppm;'
+  value: 250 ppm
+  method: ''
+- name: Mangan (Mn)
+  value: 100 ppm
+  method: ''
+- name: Đồng (Cu)
+  value: 150 ppm
   method: ''
 - name: Bo (B)
-  value: '100 ppm; Độ ẩm: 5%.'
+  value: 100 ppm
+  method: ''
+- name: Độ ẩm
+  value: 5%
   method: ''
 benefits:
 - Cung cấp đầy đủ, cân đối chất dinh dưỡng thiết yếu cho cây trồng.

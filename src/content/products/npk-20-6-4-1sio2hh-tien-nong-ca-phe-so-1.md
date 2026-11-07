@@ -24,20 +24,27 @@ npk:
   - value: "1"
     unit: SiO₂
 composition:
-  - name: Đạm tổng số (Nₜ)
-    value: 20%
-  - name: Lân hữu hiệu (P₂O₅hh)
-    value: 6%
-  - name: Kali hữu hiệu (K₂Ohh)
-    value: 4%
-  - name: Silic hữu hiệu (SiO₂hh)
-    value: 1%
-  - name: Kẽm (Zn)
-    value: 300 ppm
-  - name: Bo (B)
-    value: 100 ppm
-  - name: Độ ẩm
-    value: 5%
+- name: Đạm tổng số (Nₜ)
+  value: 20%
+  method: ''
+- name: Lân hữu hiệu (P₂O₅hh)
+  value: 6%
+  method: ''
+- name: Kali hữu hiệu (K₂Ohh)
+  value: 4%
+  method: ''
+- name: Silic hữu hiệu (SiO₂hh)
+  value: 1%
+  method: ''
+- name: Kẽm (Zn)
+  value: 300 ppm
+  method: ''
+- name: Bo (B)
+  value: 100 ppm
+  method: ''
+- name: Độ ẩm
+  value: 5%
+  method: ''
 benefits:
   - Sản phẩm có tỷ lệ thành phần dinh dưỡng cân đối, có tính linh động cao và
     phân tán nhanh trong đất vì vậy có thể cung cấp dinh dưỡng tốt cho cây thời

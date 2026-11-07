@@ -10,6 +10,8 @@ import FigureCard from '../components/FigureCard.astro';
 import Faq from '../components/story/Faq.astro';
 import Layout from '../layouts/Layout.astro';
 import ImageSlot from '../components/ImageSlot.astro';
+import Icon from '../components/Icon.astro';
+import Slideshow from '../components/Slideshow.astro';
 import PageHero from '../components/PageHero.astro';
 import { url, asset, link } from '../lib/routes';
 import { MAP_W, MAP_H, VN_PATH, PROVINCES, HOANG_SA, TRUONG_SA, project } from '../lib/vn-map';
@@ -44,6 +46,8 @@ const prettyPhone = (phone: string) => {
 const pins = PROVINCES.map(([name, lat, lon]) => ({ name, xy: project(lat, lon), m: ownerOf(name) }));
 const [hsx, hsy] = project(17.25, 111.3);
 const [tsx, tsy] = project(11.75, 112.2);
+/** Benefits photos: the slideshow list, or the single older photo while the list is empty. */
+const benefitSlides = (c.benefits.images ?? []).some((x) => x?.src) ? c.benefits.images : [c.benefits.image];
 ---
 <Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="">
 <PageHero id="partner-hero" image={c.hero.image} cms={`${F}#hero.image`} placeholder="Ảnh đại lý Tiến Nông"
@@ -60,9 +64,9 @@ const [tsx, tsy] = project(11.75, 112.2);
 <div class="pt-models">
 {c.models.items.map((m, k) => (
 <div class="pt-model">
-<span class="pt-model__n">{String(k + 1).padStart(2, '0')}</span>
+<div class="pt-model__top"><span class="pt-ico"><Icon name={m.icon || ['store', 'truck', 'sprout', 'users'][k % 4]} /></span><span class="pt-model__n">{String(k + 1).padStart(2, '0')}</span></div>
 <strong class="pt-model__title">{m.title}</strong>
-<dl><div><dt>{c.models.who_label || 'Đối tượng'}</dt><dd class="jx-start">{m.who}</dd></div><div><dt>{c.models.get_label || 'Quyền lợi chính'}</dt><dd class="jx-start">{m.get}</dd></div></dl>
+<dl><div><dt>{c.models.who_label || 'Đối tượng'}</dt><dd class="jx-justify" data-unglued>{m.who}</dd></div><div><dt>{c.models.get_label || 'Quyền lợi chính'}</dt><dd class="jx-justify" data-unglued>{m.get}</dd></div></dl>
 {isFilled(m.link) && <a class="pt-model__link" href={href(m.link)}>{m.link_label}</a>}
 </div>
 ))}
@@ -73,13 +77,13 @@ const [tsx, tsy] = project(11.75, 112.2);
 <div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:40px">
 <div class="pt-head">
 <div style="display:flex;flex-direction:column;gap:14px"><span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-600)">{c.benefits.eyebrow}</span><h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.benefits.title}</h2><p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{c.benefits.intro}</p></div>
-<div class="pt-photo" data-needs-photos={isFilled(c.benefits.image?.src) ? undefined : ''}><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="partner-benefits" shape="rounded" radius="16" placeholder="Ảnh minh hoạ quyền lợi" image={c.benefits.image} cms={`${F}#benefits.image`} sizes="(max-width: 767px) 92vw, 600px" /></div>
+<div class="pt-photo"><Slideshow id="partner-benefits" slides={benefitSlides} slots={4} interval={6000} cms={`${F}#benefits.images`} label="Ảnh quyền lợi đối tác" radius={16} sizes="(max-width: 767px) 92vw, 600px" /></div>
 </div>
 <div class="pt-benefits">
 {c.benefits.items.map((b, k) => (
 <div style="background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:8px">
-<span style="width:44px;height:44px;border-radius:var(--radius-full);background:var(--green-50);color:var(--green-700);display:flex;align-items:center;justify-content:center;font:700 16px var(--font-display)">{String(k + 1).padStart(2, '0')}</span>
-<strong style="font-size:18px;line-height:1.35">{b.title}</strong><span class="jx-start" style="color:var(--text-secondary);font-size:15px;line-height:1.6">{b.text}</span>
+<span class="pt-ico"><Icon name={b.icon || ['box', 'qr', 'scale', 'engineer', 'megaphone', 'award'][k % 6]} /></span>
+<strong style="font-size:18px;line-height:1.35">{b.title}</strong><span class="jx-justify" data-unglued style="color:var(--text-secondary);font-size:15px;line-height:1.6">{b.text}</span>
 </div>
 ))}
 </div></div></section>
@@ -90,7 +94,7 @@ const [tsx, tsy] = project(11.75, 112.2);
 <div class="pt-stories">
 {partners.map((p, k) => (
 <a class="pt-story" href={isFilled(p.link) ? link(p.link) : undefined}>
-<div class="pt-story__img"><ImageSlot style={fill} id={`partner-${k}`} shape="rect" placeholder={p.image.alt} image={p.image} cms={`${F}#spotlight.partners.${k}.image`} sizes="(max-width: 899px) 92vw, 620px" /><span class="pt-story__kind">{p.kind}</span></div>
+<div class="pt-story__img"><ImageSlot style={fill} id={`partner-${k}`} shape="rect" placeholder={p.image.alt} image={p.image} cms={`${F}#spotlight.partners.${k}.image`} sizes="(max-width: 899px) 92vw, 620px" /><span class="pt-story__kind">{p.kind}</span>{(() => { const f = (p.facts ?? []).filter((x) => isFilled(x.value)).at(-1); return f && <span class="pt-story__fact"><b>{f.value}</b><span>{f.label}</span></span>; })()}</div>
 <span class="pt-story__label">{c.spotlight.card_label || 'CÂU CHUYỆN ĐỐI TÁC'}{isFilled(p.place) && <span> · {p.place}</span>}</span>
 <strong class="pt-story__name">{p.name}</strong>
 <p class="pt-story__line jx-start">{isFilled(p.line) ? p.line : p.story}</p>
@@ -200,7 +204,11 @@ const [tsx, tsy] = project(11.75, 112.2);
   .pt-models { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
   .pt-model { display: flex; flex-direction: column; gap: 12px; padding: 24px 22px; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); transition: box-shadow var(--motion-fast), border-color var(--motion-fast); }
   .pt-model:hover { border-color: var(--green-300); box-shadow: 0 14px 30px rgba(0, 71, 35, .08); }
-  .pt-model__n { font: 700 32px/1 var(--font-display); color: var(--brand-bright); }
+  .pt-model__top { display: flex; justify-content: space-between; align-items: center; }
+  .pt-model__n { font: 700 32px/1 var(--font-display); color: var(--green-200); }
+  /* A soft round badge around a thin line icon (partner types, benefits). */
+  .pt-ico { flex: none; display: inline-grid; place-items: center; width: 52px; height: 52px; border-radius: 16px; background: linear-gradient(145deg, var(--green-50), #f4f9ec); color: var(--green-700); border: 1px solid var(--green-100); }
+  .pt-model:hover .pt-ico { background: var(--green-700); color: #fff; border-color: var(--green-700); transition: background var(--motion-fast), color var(--motion-fast); }
   .pt-model__title { font: 700 18px/1.35 var(--font-display); }
   .pt-model dl { margin: 0; display: flex; flex-direction: column; gap: 10px; }
   .pt-model dt { font: 600 11.5px/1.3 var(--font-display); letter-spacing: .08em; text-transform: uppercase; color: var(--amber-600); }
@@ -213,7 +221,12 @@ const [tsx, tsy] = project(11.75, 112.2);
   .pt-story__img { position: relative; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; margin-bottom: 8px; }
   .pt-story__img :global(.img-slot) { transition: transform .6s var(--ease-out); }
   .pt-story:hover .pt-story__img :global(.img-slot) { transform: scale(1.04); }
-  .pt-story__kind { position: absolute; left: 14px; top: 14px; padding: 5px 10px; border-radius: 6px; background: rgba(2, 53, 26, .82); color: var(--brand-highlight); font: 700 11px/1.2 var(--font-display); letter-spacing: .08em; }
+  /* "Niềm tin được tiếp nối": a gold ribbon with the story's theme, and its key figure large over a deep-green fade. */
+  .pt-story__img::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, rgba(2, 53, 26, .9) 0%, rgba(2, 53, 26, .55) 30%, rgba(2, 53, 26, 0) 58%); }
+  .pt-story__kind { position: absolute; z-index: 1; left: 0; top: 18px; padding: 7px 14px 7px 16px; border-radius: 0 999px 999px 0; background: var(--brand-highlight); color: var(--green-900); font: 800 12px/1.2 var(--font-display); letter-spacing: .1em; box-shadow: 0 6px 16px rgba(0, 0, 0, .18); }
+  .pt-story__fact { position: absolute; z-index: 1; left: 20px; right: 20px; bottom: 16px; display: flex; align-items: baseline; gap: 12px; color: #fff; }
+  .pt-story__fact b { font: 800 clamp(30px, 3.2vw, 44px)/1 var(--font-display); color: var(--brand-highlight); letter-spacing: -.01em; text-shadow: 0 2px 14px rgba(0, 0, 0, .35); white-space: nowrap; }
+  .pt-story__fact span { font: 600 15px/1.35 var(--font-body); color: var(--green-50); text-align: start; }
   .pt-story__label { font: 700 12px/1.3 var(--font-display); letter-spacing: .1em; color: var(--green-600); }
   .pt-story__label span { color: var(--text-tertiary); font-weight: 600; letter-spacing: .02em; }
   .pt-story__name { font: 700 clamp(21px, 1.8vw, 25px)/1.3 var(--font-display); color: var(--green-900); }

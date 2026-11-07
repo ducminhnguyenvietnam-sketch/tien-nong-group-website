@@ -6,6 +6,7 @@ import Layout from '../layouts/Layout.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
+import Slideshow from '../components/Slideshow.astro';
 import { asset, url } from '../lib/routes';
 import { listUrl } from '../lib/news';
 import { findProduct, getProducts, productUrl } from '../lib/products';
@@ -25,6 +26,8 @@ const productHref = (name: string) => { const p = findProduct(allProducts, name)
 
 // The finder opens on the last issue, as in the design.
 const defaultIssue = c.finder_issues.length - 1;
+/** Soil-care process photos: the slideshow list, or the single older photo while the list is empty. */
+const soilSlides = (c.s04_suc_khoe_dat.slides ?? []).some((s) => s?.src) ? c.s04_suc_khoe_dat.slides : [c.s04_suc_khoe_dat.img_soil_1];
 ---
 <Layout align={c.can_le} title={c.seo.title || undefined} description={c.seo.description || undefined} active="Giải pháp">
 <section style="position:relative;min-height:min(70vh,600px);background:var(--green-900);display:flex">
@@ -50,8 +53,8 @@ const defaultIssue = c.finder_issues.length - 1;
 </div></div></section>
 
 <section id="quy-trinh" style="background:var(--green-800);color:#fff;scroll-margin-top:120px">
-<div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px 72px;align-items:center">
-<div class="gp-soil" style="position:relative;height:480px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="soil" shape="rounded" radius="20" placeholder="Bàn tay cầm nắm đất có cây con" image={c.s04_suc_khoe_dat.img_soil_1} cms="src/content/pages/giai-phap.json#s04_suc_khoe_dat.img_soil_1" /></div>
+<div style="max-width:var(--wrap, 1280px);margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px 72px;align-items:stretch">
+<div class="gp-soil"><Slideshow id="soil" slides={soilSlides} slots={5} interval={6000} cms="src/content/pages/giai-phap.json#s04_suc_khoe_dat.slides" label="Ảnh quy trình chăm sóc đất" radius={20} sizes="(max-width: 767px) 92vw, 600px" /></div>
 <div style="display:flex;flex-direction:column;gap:24px">
 <span style="font:var(--type-eyebrow);letter-spacing:.08em;color:var(--green-200)">{c.s04_suc_khoe_dat.t1}</span>
 <h2 style="margin:0;font:var(--type-h2);letter-spacing:-.01em;text-wrap:balance">{c.s04_suc_khoe_dat.t2}</h2>
@@ -180,6 +183,9 @@ const defaultIssue = c.finder_issues.length - 1;
   .gp-tile:hover .gp-tile__img { transform: scale(1.05); }
   .gp-tile:hover .gp-tile__go { background: var(--brand-highlight); color: var(--green-900); }
   /* FAQ: search on top; categories and the photo on the left, questions on the right. */
+  /* Soil process: the slideshow is as tall as the four steps beside it. */
+  .gp-soil { position: relative; min-height: 420px; }
+  .gp-soil > :global(.slideshow) { position: absolute; inset: 0; }
   .gp-faq { background: var(--surface-card); scroll-margin-top: 120px; }
   .gp-faq__search { display: flex; flex-direction: column; gap: 8px; }
   .gp-faq__search span { font: var(--type-eyebrow); letter-spacing: .08em; color: var(--text-tertiary); }
@@ -213,8 +219,15 @@ const defaultIssue = c.finder_issues.length - 1;
     .gp-head { grid-template-columns: minmax(0, 1fr); }
     .gp-faq__grid { grid-template-columns: minmax(0, 1fr); }
     .gp-faq__side { position: static; }
-    .gp-faq__cats { flex-direction: row; flex-wrap: wrap; }
-    .gp-faq__cats button { padding: 10px 14px; }
+    /* Phones: the topics are one row of small chips that scrolls sideways, so the questions start right away. */
+    .gp-faq__side { gap: 0; }
+    .gp-faq__cats { flex-direction: row; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 6px; margin-inline: calc(-1 * clamp(20px, 4vw, 56px)); padding: 2px clamp(20px, 4vw, 56px) 4px; -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 36px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 36px), transparent); }
+    .gp-faq__cats::-webkit-scrollbar { display: none; }
+    .gp-faq__cats button { flex: none; white-space: nowrap; padding: 8px 12px; font-size: 14px; border-radius: 999px; }
+    .gp-faq__cats button i { min-width: 20px; padding: 3px 5px; font-size: 11px; }
+    .gp-faq__search span { display: none; }
+    .gp-faq__search input { padding-block: 11px; }
+    .gp-faq__grid { gap: 14px; }
     .gp-faq__photo { display: none; }
   }
   @media (max-width: 599.98px) {
@@ -240,7 +253,7 @@ const defaultIssue = c.finder_issues.length - 1;
     .gp-hero__scrim { background: linear-gradient(0deg, rgba(2, 53, 26, .94) 0%, rgba(2, 53, 26, .78) 55%, rgba(2, 53, 26, .35) 100%) !important; }
     .gp-h1 { font-size: min(36px, 8.6vw) !important; }
     /* Soil process: a shorter photo. */
-    .gp-soil { height: auto !important; aspect-ratio: 16 / 10; }
+    .gp-soil { min-height: 0 !important; aspect-ratio: 4 / 3; }
     /* Issues: the chips stay pinned under the header while reading, in one sideways-scrolling row,
        and each panel ends with a button to the next issue. */
     .issue-tabs { position: sticky; top: var(--hdr-h, 64px); z-index: 5; flex-wrap: nowrap !important; overflow-x: auto; scrollbar-width: none; margin-inline: calc(-1 * clamp(20px, 4vw, 56px)); padding: 10px clamp(20px, 4vw, 56px); background: var(--surface-card); box-shadow: 0 6px 12px -8px rgba(0, 0, 0, .18); }

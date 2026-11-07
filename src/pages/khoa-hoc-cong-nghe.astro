@@ -6,7 +6,7 @@ import Button from '../components/Button.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import Slideshow from '../components/Slideshow.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { url } from '../lib/routes';
+import { link, url } from '../lib/routes';
 import { localeOf } from '../lib/i18n';
 /** Language of this page (vi / en / zh): content is read in that language. */
 const L = localeOf(Astro.url);
@@ -14,6 +14,7 @@ const L = localeOf(Astro.url);
 const c = withDefaults(raw, 'src/content/pages/khoa-hoc-cong-nghe.json', L);
 const lab = c.s03_trung_tam_r_d as Record<string, any>;
 const labs = [1, 2, 3, 4].map((n) => ({ n, img: lab[`img_lab_${n}_1`], name: lab[`t${2 + n * 2}`], text: lab[`t${3 + n * 2}`] }));
+const results = (c.s07_thanh_qua.results ?? []).filter((r) => isFilled(r.title));
 const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && !d.topics.some((t) => !isFilled(t)));
 
 ---
@@ -55,7 +56,8 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
 <p class="jx-justify" style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);line-height:1.6">{c.s03_trung_tam_r_d.t3}</p>
 </div>
 <span class="rvl-hint">Chạm vào từng phòng để xem chức năng</span>
-<div class="kh-labs" data-reveal-group>
+<span class="kh-labs__hint">Di chuột hoặc bấm vào từng phòng để xem chức năng</span>
+<div class="kh-labs" data-reveal-group data-reveal-scroll>
 {labs.map(({ n, img, name, text }) => (
 <article class="kh-lab" data-reveal>
 <div class="kh-lab__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`lab-${n}`} shape="rect" placeholder={img?.alt} image={img} cms={`src/content/pages/khoa-hoc-cong-nghe.json#s03_trung_tam_r_d.img_lab_${n}_1`} sizes="(max-width: 767px) 92vw, 600px" /></div>
@@ -72,17 +74,17 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
 </div>
 <div data-picker data-pick-swipe class="kh-dom" style="display:flex;flex-wrap:wrap;gap:32px 48px;align-items:flex-start">
 <div class="kh-dom__tabs" role="tablist" aria-orientation="vertical" aria-label="Lĩnh vực nghiên cứu" style="flex:1 1 260px;max-width:340px;display:flex;flex-direction:column;border-top:1px solid var(--border-default)">
-{domains.map((d, k) => <button type="button" role="tab" class="dom-tab" data-pick={k} aria-selected={k === 0 ? 'true' : 'false'} style="display:flex;gap:14px;align-items:baseline;text-align:left;padding:18px 0 18px 16px;border:0;border-bottom:1px solid var(--border-default);border-left:3px solid transparent;background:none;font:600 17px var(--font-body);color:var(--text-secondary);cursor:pointer"><span style="font:600 13px var(--font-mono);color:var(--text-tertiary)">{String(k + 1).padStart(2, '0')}</span>{d.name}</button>)}
+{domains.map((d, k) => <button type="button" role="tab" class={`dom-tab dom--${d.color || 'bio'}`} data-pick={k} aria-selected={k === 0 ? 'true' : 'false'} style="display:flex;gap:14px;align-items:baseline;text-align:left;padding:18px 0 18px 16px;border:0;border-bottom:1px solid var(--border-default);border-left:3px solid transparent;background:none;font:600 17px var(--font-body);color:var(--text-secondary);cursor:pointer"><span style="font:600 13px var(--font-mono);color:var(--text-tertiary)">{String(k + 1).padStart(2, '0')}</span>{d.name}</button>)}
 </div>
 {domains.map((d, k) => (
-<div role="tabpanel" class="kh-dom__panel" data-pick-panel={k} hidden={k !== 0} style="flex:999 1 520px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px 40px">
+<div role="tabpanel" class={`kh-dom__panel dom--${d.color || 'bio'}`} data-pick-panel={k} hidden={k !== 0} style="flex:999 1 520px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px 40px">
 <div class="kh-dom__img" style="position:relative;height:380px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`dom-${k}`} shape="rounded" radius="16" placeholder={d.image.alt} image={d.image} cms={`src/content/pages/khoa-hoc-cong-nghe.json#domains.${k}.image`} /></div>
 <div style="display:flex;flex-direction:column;gap:16px">
-<h3 style="margin:0;font:var(--type-num)">{d.name}</h3>
-<p style="margin:0;color:var(--text-secondary);font-size:var(--fs-body);text-wrap:pretty">{d.body}</p>
+<h3 class="kh-dom__name" style="margin:0;font:var(--type-num)">{d.name}</h3>
+<p class="jx-justify kh-dom__body" style="margin:0;color:var(--text-secondary);font-size:var(--fs-body)">{d.body}</p>
 <div style="display:flex;flex-direction:column;gap:10px;padding-top:12px;border-top:1px solid var(--border-default)">
 <span style="font:var(--type-eyebrow);color:var(--text-tertiary);letter-spacing:.06em">{c.domains_topics_label}</span>
-{d.topics.map((f) => <div style="display:flex;gap:10px;align-items:baseline"><span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--green-500);transform:translateY(-2px)"></span><span>{f}</span></div>)}
+{d.topics.map((f) => <div style="display:flex;gap:10px;align-items:baseline"><span class="kh-dom__dot" style="flex:none;width:6px;height:6px;border-radius:50%;transform:translateY(-2px)"></span><span>{f}</span></div>)}
 </div></div></div>
 ))}
 </div></div></section>
@@ -126,10 +128,13 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
 </div>
 <a href={url('san-pham')} style="font-weight:600">{c.s07_thanh_qua.t3}</a>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(calc((100% - 48px)/3),calc((948px - 100%)*999),100%),1fr));gap:24px">
-<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="res-1" shape="rounded" radius="16" placeholder="Bao bì NPK bổ sung Silic" image={c.s07_thanh_qua.img_res_1_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s07_thanh_qua.img_res_1_1" /></div><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s07_thanh_qua.t4}</span><strong style="font-size:19px;line-height:1.35">{c.s07_thanh_qua.t5}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s07_thanh_qua.t6}</span></div>
-<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="res-2" shape="rounded" radius="16" placeholder="Mô hình NPK – hữu cơ – vi sinh" image={c.s07_thanh_qua.img_res_2_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s07_thanh_qua.img_res_2_1" /></div><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s07_thanh_qua.t7}</span><strong style="font-size:19px;line-height:1.35">{c.s07_thanh_qua.t8}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s07_thanh_qua.t9}</span></div>
-<div style="display:flex;flex-direction:column;gap:14px"><div style="position:relative;height:240px"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id="res-3" shape="rounded" radius="16" placeholder="Phân bón hữu cơ, phân bón lỏng" image={c.s07_thanh_qua.img_res_3_1} cms="src/content/pages/khoa-hoc-cong-nghe.json#s07_thanh_qua.img_res_3_1" /></div><span style="font:var(--type-eyebrow);color:var(--green-600);letter-spacing:.06em">{c.s07_thanh_qua.t10}</span><strong style="font-size:19px;line-height:1.35">{c.s07_thanh_qua.t11}</strong><span style="color:var(--text-secondary);font-size:15px">{c.s07_thanh_qua.t12}</span></div>
+<div class="kh-res">
+{results.map((r, k) => { const body = <>
+<div class="kh-res__img"><ImageSlot style="position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;display:block" id={`res-${k + 1}`} shape="rounded" radius="16" placeholder={r.image?.alt || r.title} image={r.image} cms={`src/content/pages/khoa-hoc-cong-nghe.json#s07_thanh_qua.results.${k}.image`} sizes="(max-width: 767px) 92vw, 420px" /></div>
+{isFilled(r.label) && <span class="kh-res__label">{r.label}</span>}
+<strong class="kh-res__title">{r.title}</strong>
+{isFilled(r.text) && <span class="kh-res__text">{r.text}</span>}
+</>; return isFilled(r.link) ? <a class="kh-res__item" href={link(r.link)}>{body}</a> : <div class="kh-res__item">{body}</div>; })}
 </div></div></section>
 
 <section id="doi-tac" class="kh-partners">
@@ -156,6 +161,16 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
   .kh-hbtn--solid:hover { background: var(--green-500); color: #fff; }
   .kh-hbtn span { font-size: 14px; }
   /* Four labs: 2 × 2 large photos, number, name and the full description over a green fade. */
+  /* Research results: three per row; more results simply add rows. */
+  .kh-res { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 24px; }
+  .kh-res__item { display: flex; flex-direction: column; gap: 12px; color: inherit; text-decoration: none; }
+  .kh-res__img { position: relative; height: 240px; margin-bottom: 2px; }
+  .kh-res__label { font: var(--type-eyebrow); color: var(--green-600); letter-spacing: .06em; }
+  .kh-res__title { font-size: 19px; line-height: 1.35; text-wrap: balance; }
+  .kh-res__text { color: var(--text-secondary); font-size: 15px; line-height: 1.55; }
+  a.kh-res__item:hover .kh-res__title { color: var(--green-700); }
+  @media (max-width: 1023.98px) { .kh-res { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 599.98px) { .kh-res { grid-template-columns: minmax(0, 1fr); } .kh-res__img { height: 220px; } }
   .kh-labs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
   .kh-lab { position: relative; height: clamp(250px, 20vw, 285px); border-radius: var(--radius-lg); overflow: hidden; color: #fff; isolation: isolate; background: var(--green-800); }
   .kh-lab__img { position: absolute; inset: 0; transition: transform .6s var(--ease-out); }
@@ -181,9 +196,37 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
     .kh-partners__head { grid-template-columns: minmax(0, 1fr); }
     .kh-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
-  .dom-tab[aria-selected='true'] { border-left-color: var(--green-500) !important; background: var(--green-50) !important; font-weight: 700 !important; color: var(--green-800) !important; }
-  .dom-tab[aria-selected='true'] span { color: var(--green-600) !important; }
+  /* Each research field has its own colour: lab blue, biotech green, alluvial-soil brown, production amber. */
+  .dom--lab { --dc: #17639a; --dc-bg: #e8f1f9; }
+  .dom--bio { --dc: #13804a; --dc-bg: #e6f5ec; }
+  .dom--soil { --dc: #8a5526; --dc-bg: #f5ebe0; }
+  .dom--factory { --dc: #a86b0a; --dc-bg: #fbf1dc; }
+  .dom-tab { white-space: nowrap; transition: background var(--motion-fast), color var(--motion-fast); }
+  .dom-tab span { color: var(--dc) !important; opacity: .8; }
+  .dom-tab:hover { color: var(--dc) !important; }
+  .dom-tab[aria-selected='true'] { border-left-color: var(--dc) !important; background: var(--dc-bg) !important; font-weight: 700 !important; color: var(--dc) !important; }
+  .dom-tab[aria-selected='true'] span { opacity: 1; }
+  .kh-dom__tabs { flex: 0 0 300px !important; max-width: 300px !important; }
+  .kh-dom__name { color: var(--dc); }
+  .kh-dom__body { line-height: 1.7; hyphens: none; }
+  .kh-dom__dot { background: var(--dc); }
+  .kh-dom__panel { align-items: start !important; }
+  .kh-dom__panel > div:last-child { padding-top: 4px; border-top: 3px solid var(--dc); padding-top: 18px; }
   .kh-lab__head { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; pointer-events: none; }
+  /* Large screens: only the name shows; the description unfolds on hover, focus or click (like the
+     audience cards on the home page). */
+  .kh-labs__hint { display: none; }
+  @media (min-width: 900px) {
+    .kh-labs__hint { display: block; margin-top: -8px; font-size: 14px; color: var(--text-tertiary); }
+    .kh-lab .rvl__more { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 360ms var(--ease-out), opacity 260ms var(--ease-out); }
+    .kh-lab .rvl__more > * { min-height: 0; overflow: hidden; }
+    .kh-lab:hover .rvl__more, .kh-lab:focus-within .rvl__more, .kh-lab.is-open .rvl__more { grid-template-rows: 1fr; opacity: 1; }
+    .kh-lab__text, .kh-lab__head { pointer-events: auto; cursor: pointer; }
+    .kh-lab__head h3 { transition: color var(--motion-fast); }
+    .kh-lab:hover .kh-lab__head h3, .kh-lab.is-open .kh-lab__head h3 { color: var(--brand-highlight); }
+    .kh-lab::after { transition: background 360ms var(--ease-out); }
+    .kh-lab:hover::after, .kh-lab:focus-within::after, .kh-lab.is-open::after { background: linear-gradient(0deg, rgba(2, 53, 26, .95) 0%, rgba(2, 53, 26, .78) 50%, rgba(2, 53, 26, .2) 100%); }
+  }
   @media (max-width: 899.98px) {
     /* Hero: a vertical scrim so the text stays readable over any photo. */
     .kh-hero__scrim { background: linear-gradient(0deg, rgba(2, 53, 26, .94) 0%, rgba(2, 53, 26, .78) 55%, rgba(2, 53, 26, .35) 100%) !important; }
@@ -199,7 +242,8 @@ const domains = c.domains.filter((d) => isFilled(d.name) && isFilled(d.body) && 
     .kh-dom { gap: 16px !important; }
     .kh-dom__tabs { flex: 1 1 100% !important; max-width: none !important; display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; border-top: 0 !important; }
     .kh-dom__tabs .dom-tab { align-items: center !important; padding: 10px 12px !important; border: 1.5px solid var(--border-strong) !important; border-radius: var(--radius-md); font-size: 14.5px !important; line-height: 1.3; background: var(--surface-page) !important; }
-    .kh-dom__tabs .dom-tab[aria-selected='true'] { border-color: var(--green-500) !important; }
+    .kh-dom__tabs .dom-tab { white-space: normal; }
+    .kh-dom__tabs .dom-tab[aria-selected='true'] { border-color: var(--dc) !important; }
     .kh-dom__panel { flex-basis: 100% !important; gap: 14px !important; }
     .kh-dom__img { height: auto !important; aspect-ratio: 16 / 9; }
     .kh-dom__panel h3 { display: none; }

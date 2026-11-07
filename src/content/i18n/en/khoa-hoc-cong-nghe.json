@@ -1,8 +1,12 @@
 {
   "items": [
     {
-      "vi": "Khoa học & Công nghệ",
-      "text": "Science & Technology"
+      "vi": "Khoa học & Công nghệ dinh dưỡng cây trồng",
+      "text": "Plant nutrition science and technology"
+    },
+    {
+      "vi": "Trung tâm R&D từ 2012, phòng thí nghiệm VILAS 1519 (ISO/IEC 17025:2017), 50+ nhà khoa học & kỹ sư, 10.000+ mẫu phân tích mỗi năm. Khoa học là nền tảng, cánh đồng là thước đo.",
+      "text": "R&D centre since 2012, VILAS 1519 laboratory (ISO/IEC 17025:2017), 50+ scientists and engineers, 10,000+ samples analysed a year. Science is the foundation, the field is the measure."
     },
     {
       "vi": "Nhà khoa học thao tác trong phòng thí nghiệm VILAS 1519",
@@ -329,28 +333,32 @@
       "text": "CORE RESEARCH AREAS"
     },
     {
-      "vi": "Công nghệ Sản xuất",
-      "text": "Production technology"
+      "vi": "Phân tích & Kiểm nghiệm",
+      "text": "Analysis & testing"
     },
     {
-      "vi": "Nghiên cứu công thức và công nghệ sản xuất giúp dinh dưỡng được cây hấp thu hiệu quả hơn, giảm thất thoát ra môi trường.",
-      "text": "Research on formulas and production technology that help crops absorb nutrients more efficiently and reduce losses to the environment."
+      "vi": "Kiểm soát chất lượng từ nguyên liệu đầu vào đến từng lô thành phẩm theo tiêu chuẩn VILAS 1519 và các TCVN hiện hành.",
+      "text": "Quality control from incoming raw materials to every finished batch, to VILAS 1519 and current Vietnamese standards (TCVN)."
     },
     {
-      "vi": "NPK phức hợp và bổ sung trung – vi lượng",
-      "text": "Compound NPK with secondary and micronutrients"
+      "vi": "Kiểm nghiệm theo TCVN",
+      "text": "Testing to TCVN"
     },
     {
-      "vi": "Công nghệ bổ sung Silic hữu hiệu",
-      "text": "Available-silicon technology"
+      "vi": "Kiểm soát nguyên liệu đầu vào",
+      "text": "Incoming raw material control"
     },
     {
-      "vi": "Phân bón tan chậm, phân bón lỏng",
-      "text": "Slow-release and liquid fertilisers"
+      "vi": "Truy xuất theo lô sản xuất",
+      "text": "Traceability by production batch"
     },
     {
-      "vi": "Dây chuyền thử nghiệm công thức phân bón",
-      "text": "Pilot line for fertiliser formulas"
+      "vi": "Thiết bị phân tích phòng VILAS",
+      "text": "Analytical equipment in the VILAS laboratory"
+    },
+    {
+      "vi": "lab",
+      "text": "lab"
     },
     {
       "vi": "Công nghệ Sinh học",
@@ -381,6 +389,10 @@
       "text": "Culturing microorganisms in the laboratory"
     },
     {
+      "vi": "bio",
+      "text": "bio"
+    },
+    {
       "vi": "Sức khỏe đất & Cây trồng",
       "text": "Soil & crop health"
     },
@@ -409,28 +421,36 @@
       "text": "Engineer sampling soil in the field"
     },
     {
-      "vi": "Phân tích & Kiểm nghiệm",
-      "text": "Analysis & testing"
+      "vi": "soil",
+      "text": "soil"
     },
     {
-      "vi": "Kiểm soát chất lượng từ nguyên liệu đầu vào đến từng lô thành phẩm theo tiêu chuẩn VILAS 1519 và các TCVN hiện hành.",
-      "text": "Quality control from incoming raw materials to every finished batch, to VILAS 1519 and current Vietnamese standards (TCVN)."
+      "vi": "Công nghệ Sản xuất",
+      "text": "Production technology"
     },
     {
-      "vi": "Kiểm nghiệm theo TCVN",
-      "text": "Testing to TCVN"
+      "vi": "Nghiên cứu công thức và công nghệ sản xuất giúp dinh dưỡng được cây hấp thu hiệu quả hơn, giảm thất thoát ra môi trường.",
+      "text": "Research on formulas and production technology that help crops absorb nutrients more efficiently and reduce losses to the environment."
     },
     {
-      "vi": "Kiểm soát nguyên liệu đầu vào",
-      "text": "Incoming raw material control"
+      "vi": "NPK phức hợp và bổ sung trung – vi lượng",
+      "text": "Compound NPK with secondary and micronutrients"
     },
     {
-      "vi": "Truy xuất theo lô sản xuất",
-      "text": "Traceability by production batch"
+      "vi": "Công nghệ bổ sung Silic hữu hiệu",
+      "text": "Available-silicon technology"
     },
     {
-      "vi": "Thiết bị phân tích phòng VILAS",
-      "text": "Analytical equipment in the VILAS laboratory"
+      "vi": "Phân bón tan chậm, phân bón lỏng",
+      "text": "Slow-release and liquid fertilisers"
+    },
+    {
+      "vi": "Dây chuyền thử nghiệm công thức phân bón",
+      "text": "Pilot line for fertiliser formulas"
+    },
+    {
+      "vi": "factory",
+      "text": "factory"
     },
     {
       "vi": "Dữ liệu & nông nghiệp số",
@@ -455,6 +475,10 @@
     {
       "vi": "Giải pháp theo cây trồng",
       "text": "Solutions by crop"
+    },
+    {
+      "vi": "Khoa học & Công nghệ",
+      "text": "Science & Technology"
     }
   ]
 }

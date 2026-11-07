@@ -22,16 +22,16 @@ npk:
   unit: K₂O
 composition:
 - name: Đạm tổng số (Nts)
-  value: 15%;
+  value: 15%
   method: ''
 - name: Lân hữu hiệu (P₂O₅hh)
-  value: 3%;
+  value: 3%
   method: ''
 - name: Kali hữu hiệu (K₂Ohh)
-  value: 10%;
+  value: 10%
   method: ''
 - name: Độ ẩm
-  value: 5%.
+  value: 5%
   method: ''
 benefits:
 - 'Đạm: Là thành phần cơ bản của protein và là thành phần chính của chất diệp lục. Đạm thúc đẩy sự nảy chồi, ra lá, sự phát triển của quả, giúp tăng lượng sinh khối.'

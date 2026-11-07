@@ -109,6 +109,10 @@
       "text": "Island soil is mostly coral sand with almost no humus, holding water and nutrients very poorly."
     },
     {
+      "vi": "island",
+      "text": "island"
+    },
+    {
       "vi": "Nắng gió, hơi muối",
       "text": "Sun, wind and salt spray"
     },
@@ -117,12 +121,20 @@
       "text": "Harsh sun and salty sea winds all year round; fresh water is precious, so every watering must be planned."
     },
     {
+      "vi": "sun",
+      "text": "sun"
+    },
+    {
       "vi": "Mọi thứ đi bằng tàu",
       "text": "Everything comes by ship"
     },
     {
       "vi": "Phân bón, đất màu đều được vận chuyển từ đất liền, nên mỗi ki-lô-gam phải được dùng hiệu quả nhất.",
       "text": "Fertiliser and topsoil are all shipped from the mainland, so every kilogram must be used as effectively as possible."
+    },
+    {
+      "vi": "ship",
+      "text": "ship"
     },
     {
       "vi": "Phân hữu cơ sinh học bổ sung mùn và vi sinh vật có ích, giúp nền cát giữ ẩm, giữ dinh dưỡng lâu hơn; NPK cung cấp dinh dưỡng nhanh cho rau xanh và cây bóng mát trong giai đoạn sinh trưởng. Hai loại được phối hợp để cây trên đảo vừa lên nhanh, vừa sống bền.",

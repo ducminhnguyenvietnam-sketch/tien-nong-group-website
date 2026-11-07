@@ -30,6 +30,7 @@ const news = defineCollection({
     // Press coverage ("bc") only: newspaper name, link to the original article,
     // and whether to show it in the "Báo chí nói về Tiến Nông" block on the news page.
     source: z.string().default(''),
+    source_logo: image,
     external_url: z.string().default(''),
     press_highlight: z.boolean().default(false),
     // Address of the article on the old WordPress site (tiennong.vn/…), redirected to the new page.

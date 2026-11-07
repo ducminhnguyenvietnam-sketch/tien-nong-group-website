@@ -23,24 +23,33 @@ npk:
   - value: "36"
     unit: K₂O
 composition:
-  - name: ✔️ Đạm tổng số (Nₜ)
-    value: 4%
-  - name: ✔️ Kali hữu hiệu (K₂Ohh)
-    value: 36%
-  - name: ✔️ Magie (Mg)
-    value: 1,2%
-  - name: ✔️ Lưu huỳnh (S)
-    value: 5%
-  - name: ✔️ Kẽm (Zn)
-    value: 1.000 ppm
-  - name: ✔️ Đồng (Cu)
-    value: 100 ppm
-  - name: ✔️ Bo (B)
-    value: 500 ppm
-  - name: ✔️ Molipđen (Mo)
-    value: 50 ppm
-  - name: ✔️ Độ ẩm
-    value: 5%
+- name: ✔️ Đạm tổng số (Nₜ)
+  value: 4%
+  method: ''
+- name: ✔️ Kali hữu hiệu (K₂Ohh)
+  value: 36%
+  method: ''
+- name: ✔️ Magie (Mg)
+  value: 1,2%
+  method: ''
+- name: ✔️ Lưu huỳnh (S)
+  value: 5%
+  method: ''
+- name: ✔️ Kẽm (Zn)
+  value: 1.000 ppm
+  method: ''
+- name: ✔️ Đồng (Cu)
+  value: 100 ppm
+  method: ''
+- name: ✔️ Bo (B)
+  value: 500 ppm
+  method: ''
+- name: ✔️ Molipđen (Mo)
+  value: 50 ppm
+  method: ''
+- name: ✔️ Độ ẩm
+  value: 5%
+  method: ''
 benefits:
   - KALI , yếu tố dinh dưỡng thiết yếu đối với tất cả các loại cây trồng ở mỗi
     thời kỳ sinh trưởng và phát triển, đặc biệt thời kỳ bón thúc. Kali đóng vai

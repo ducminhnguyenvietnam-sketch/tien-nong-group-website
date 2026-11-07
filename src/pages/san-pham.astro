@@ -198,7 +198,12 @@ const breakName = (n: string) => n.replace(/\+/g, '+​');
   .sp-hero__bg { position: absolute; inset: 0; }
   .sp-hero--photo.sp-hero--tint .sp-hero__bg::after { content: ''; position: absolute; inset: 0; pointer-events: none;
     background: linear-gradient(90deg, rgba(0, 58, 28, .82) 0%, rgba(0, 58, 28, .55) 45%, rgba(0, 58, 28, 0) 75%); }
-  @media (max-width: 899.98px) { .sp-hero--photo.sp-hero--tint .sp-hero__bg::after { background: rgba(0, 58, 28, .62); } }
+  /* Phones: plain deep green behind the text — the bag photos stay on larger screens, where they sit
+     beside the text instead of under it. */
+  @media (max-width: 899.98px) {
+    .sp-hero__bg, .sp-hero__visual { display: none !important; }
+    .sp-hero { background: radial-gradient(120% 90% at 85% 0%, #0b5a30 0%, var(--green-800) 55%, #003a1c 100%) !important; }
+  }
   .sp-hero__row { pointer-events: none; }
   .sp-hero__copy, .sp-hero__visual { pointer-events: auto; }
   .sp-hero__visual { position: relative; align-self: stretch; min-height: clamp(280px, 30vw, 420px); }

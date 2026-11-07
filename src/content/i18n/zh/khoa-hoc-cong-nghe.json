@@ -1,8 +1,12 @@
 {
   "items": [
     {
-      "vi": "Khoa học & Công nghệ",
-      "text": "科学与技术"
+      "vi": "Khoa học & Công nghệ dinh dưỡng cây trồng",
+      "text": "植物营养科学与技术"
+    },
+    {
+      "vi": "Trung tâm R&D từ 2012, phòng thí nghiệm VILAS 1519 (ISO/IEC 17025:2017), 50+ nhà khoa học & kỹ sư, 10.000+ mẫu phân tích mỗi năm. Khoa học là nền tảng, cánh đồng là thước đo.",
+      "text": "2012年成立研发中心，VILAS 1519实验室（ISO/IEC 17025:2017），50多名科学家和工程师，每年分析10,000多份样品。科学为基础，田间为标准。"
     },
     {
       "vi": "Nhà khoa học thao tác trong phòng thí nghiệm VILAS 1519",
@@ -329,28 +333,32 @@
       "text": "重点研究方向"
     },
     {
-      "vi": "Công nghệ Sản xuất",
-      "text": "生产工艺"
+      "vi": "Phân tích & Kiểm nghiệm",
+      "text": "分析与检测"
     },
     {
-      "vi": "Nghiên cứu công thức và công nghệ sản xuất giúp dinh dưỡng được cây hấp thu hiệu quả hơn, giảm thất thoát ra môi trường.",
-      "text": "研究配方与生产工艺，使作物更高效地吸收养分，减少向环境流失。"
+      "vi": "Kiểm soát chất lượng từ nguyên liệu đầu vào đến từng lô thành phẩm theo tiêu chuẩn VILAS 1519 và các TCVN hiện hành.",
+      "text": "按照 VILAS 1519 及现行越南国家标准（TCVN），从原料入厂到每批成品进行质量控制。"
     },
     {
-      "vi": "NPK phức hợp và bổ sung trung – vi lượng",
-      "text": "复合 NPK 及中微量元素"
+      "vi": "Kiểm nghiệm theo TCVN",
+      "text": "按照 TCVN 检测"
     },
     {
-      "vi": "Công nghệ bổ sung Silic hữu hiệu",
-      "text": "有效硅添加技术"
+      "vi": "Kiểm soát nguyên liệu đầu vào",
+      "text": "入厂原料控制"
     },
     {
-      "vi": "Phân bón tan chậm, phân bón lỏng",
-      "text": "缓释肥、液体肥"
+      "vi": "Truy xuất theo lô sản xuất",
+      "text": "按生产批次追溯"
     },
     {
-      "vi": "Dây chuyền thử nghiệm công thức phân bón",
-      "text": "肥料配方中试线"
+      "vi": "Thiết bị phân tích phòng VILAS",
+      "text": "VILAS 实验室分析设备"
+    },
+    {
+      "vi": "lab",
+      "text": "lab"
     },
     {
       "vi": "Công nghệ Sinh học",
@@ -381,6 +389,10 @@
       "text": "在实验室中培养微生物"
     },
     {
+      "vi": "bio",
+      "text": "bio"
+    },
+    {
       "vi": "Sức khỏe đất & Cây trồng",
       "text": "土壤与作物健康"
     },
@@ -409,28 +421,36 @@
       "text": "工程师在田间采集土样"
     },
     {
-      "vi": "Phân tích & Kiểm nghiệm",
-      "text": "分析与检测"
+      "vi": "soil",
+      "text": "soil"
     },
     {
-      "vi": "Kiểm soát chất lượng từ nguyên liệu đầu vào đến từng lô thành phẩm theo tiêu chuẩn VILAS 1519 và các TCVN hiện hành.",
-      "text": "按照 VILAS 1519 及现行越南国家标准（TCVN），从原料入厂到每批成品进行质量控制。"
+      "vi": "Công nghệ Sản xuất",
+      "text": "生产工艺"
     },
     {
-      "vi": "Kiểm nghiệm theo TCVN",
-      "text": "按照 TCVN 检测"
+      "vi": "Nghiên cứu công thức và công nghệ sản xuất giúp dinh dưỡng được cây hấp thu hiệu quả hơn, giảm thất thoát ra môi trường.",
+      "text": "研究配方与生产工艺，使作物更高效地吸收养分，减少向环境流失。"
     },
     {
-      "vi": "Kiểm soát nguyên liệu đầu vào",
-      "text": "入厂原料控制"
+      "vi": "NPK phức hợp và bổ sung trung – vi lượng",
+      "text": "复合 NPK 及中微量元素"
     },
     {
-      "vi": "Truy xuất theo lô sản xuất",
-      "text": "按生产批次追溯"
+      "vi": "Công nghệ bổ sung Silic hữu hiệu",
+      "text": "有效硅添加技术"
     },
     {
-      "vi": "Thiết bị phân tích phòng VILAS",
-      "text": "VILAS 实验室分析设备"
+      "vi": "Phân bón tan chậm, phân bón lỏng",
+      "text": "缓释肥、液体肥"
+    },
+    {
+      "vi": "Dây chuyền thử nghiệm công thức phân bón",
+      "text": "肥料配方中试线"
+    },
+    {
+      "vi": "factory",
+      "text": "factory"
     },
     {
       "vi": "Dữ liệu & nông nghiệp số",
@@ -455,6 +475,10 @@
     {
       "vi": "Giải pháp theo cây trồng",
       "text": "作物解决方案"
+    },
+    {
+      "vi": "Khoa học & Công nghệ",
+      "text": "科学与技术"
     }
   ]
 }

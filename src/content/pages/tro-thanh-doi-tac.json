@@ -47,28 +47,32 @@
         "who": "Cửa hàng bán lẻ phân bón, vật tư tại xã, thị trấn.",
         "get": "Nguồn hàng từ nhà phân phối khu vực; biển hiệu, ấn phẩm và kỹ sư hỗ trợ tư vấn.",
         "link_label": "Liên hệ phụ trách khu vực →",
-        "link": "#lien-he-khu-vuc"
+        "link": "#lien-he-khu-vuc",
+        "icon": "store"
       },
       {
         "title": "Nhà phân phối khu vực",
         "who": "Doanh nghiệp có kho bãi và hệ thống đại lý trong huyện, tỉnh.",
         "get": "Chính sách phân phối theo vùng, hỗ trợ phát triển đại lý, hội nghị khách hàng hằng năm.",
         "link_label": "Liên hệ phụ trách khu vực →",
-        "link": "#lien-he-khu-vuc"
+        "link": "#lien-he-khu-vuc",
+        "icon": "truck"
       },
       {
         "title": "Dự án, trang trại, hợp tác xã",
         "who": "Vùng nguyên liệu, trang trại, doanh nghiệp nông nghiệp quy mô lớn.",
         "get": "Phân tích đất, công thức dinh dưỡng riêng, kỹ sư theo dõi suốt vụ.",
         "link_label": "Giải pháp cho dự án →",
-        "link": "/giai-phap-du-an/"
+        "link": "/giai-phap-du-an/",
+        "icon": "sprout"
       },
       {
         "title": "Hội Nông dân, tổ chức đoàn thể",
         "who": "Hội Nông dân các cấp, tổ chức hỗ trợ hội viên tiếp cận vật tư chất lượng.",
         "get": "Chương trình phân bón trả chậm: nhận phân trước, thanh toán sau thu hoạch.",
         "link_label": "Về phân bón trả chậm →",
-        "link": "/nong-dan/#tra-cham"
+        "link": "/nong-dan/#tra-cham",
+        "icon": "users"
       }
     ],
     "who_label": "Đối tượng",
@@ -81,27 +85,33 @@
     "items": [
       {
         "title": "Nguồn hàng ổn định",
-        "text": "Sản phẩm từ ba nhà máy đạt ISO 9001:2015 và ISO 14001:2015, cung ứng đúng hẹn quanh năm."
+        "text": "Sản phẩm từ ba nhà máy đạt ISO 9001:2015 và ISO 14001:2015, cung ứng đúng hẹn quanh năm.",
+        "icon": "box"
       },
       {
         "title": "Hàng chính hãng, có mã QR",
-        "text": "Mỗi bao có mã QR truy xuất nguồn gốc: bà con nhận biết hàng thật, điểm bán giữ được uy tín."
+        "text": "Mỗi bao có mã QR truy xuất nguồn gốc: bà con nhận biết hàng thật, điểm bán giữ được uy tín.",
+        "icon": "qr"
       },
       {
         "title": "Chính sách minh bạch",
-        "text": "Giá thống nhất theo vùng; chiết khấu theo sản lượng, thưởng doanh số theo mùa vụ."
+        "text": "Giá thống nhất theo vùng; chiết khấu theo sản lượng, thưởng doanh số theo mùa vụ.",
+        "icon": "scale"
       },
       {
         "title": "Kỹ sư hỗ trợ tận ruộng",
-        "text": "Cùng đại lý tư vấn cho bà con, tổ chức hội thảo đầu bờ và mô hình trình diễn."
+        "text": "Cùng đại lý tư vấn cho bà con, tổ chức hội thảo đầu bờ và mô hình trình diễn.",
+        "icon": "engineer"
       },
       {
         "title": "Hỗ trợ bán hàng, đào tạo",
-        "text": "Biển hiệu, ấn phẩm, khuyến mại theo mùa vụ; tập huấn sản phẩm và kỹ năng tư vấn."
+        "text": "Biển hiệu, ấn phẩm, khuyến mại theo mùa vụ; tập huấn sản phẩm và kỹ năng tư vấn.",
+        "icon": "megaphone"
       },
       {
         "title": "Tri ân đối tác",
-        "text": "Hội nghị khách hàng, tham quan, khen thưởng đại lý và nhà phân phối tiêu biểu hằng năm."
+        "text": "Hội nghị khách hàng, tham quan, khen thưởng đại lý và nhà phân phối tiêu biểu hằng năm.",
+        "icon": "award"
       }
     ],
     "image": {
@@ -109,7 +119,15 @@
       "focus": "center",
       "zoom": "100",
       "alt": "Đại lý Tiến Nông tư vấn sản phẩm cho bà con"
-    }
+    },
+    "images": [
+      {
+        "src": "/uploads/tin-cu/2025/khi-dai-ly-la-nong-dan-yeu-tien-nong-1.webp",
+        "focus": "center",
+        "zoom": "100",
+        "alt": "Đại lý Tiến Nông tư vấn sản phẩm cho bà con"
+      }
+    ]
   },
   "spotlight": {
     "eyebrow": "NIỀM TIN ĐƯỢC TIẾP NỐI",
@@ -117,7 +135,7 @@
     "intro": "Trích từ chuỗi bài “Hành trình tri ân – kết nối niềm tin” năm 2026, khi Tiến Nông đến thăm những nhà phân phối gắn bó lâu năm.",
     "partners": [
       {
-        "kind": "TỪ NHỮNG NGÀY ĐẦU",
+        "kind": "HAI THẾ HỆ GIỮ CHỮ TÍN",
         "name": "Công ty TNHH Thương mại Lựu Sướng",
         "place": "Xã Hà Long, Thanh Hóa",
         "line": "Từ ngày đầu đồng hành, hai thế hệ cùng gìn giữ cửa hàng và niềm tin của bà con.",
@@ -142,7 +160,7 @@
         "link": "/tin-tuc/hanh-trinh-tri-an-ket-noi-niem-tin-ky-2-7-500-tan-phan-bon-khong-don-thuan-chi/"
       },
       {
-        "kind": "TỪ ĐƠN HÀNG ĐẦU TIÊN",
+        "kind": "BỀN BỈ TỪ ĐƠN HÀNG ĐẦU",
         "name": "Công ty TNHH MTV Mạnh Mùi",
         "place": "Xã Phú Long, Ninh Bình",
         "line": "Năm lần chào hàng cho đơn đầu tiên, nay là lựa chọn quen thuộc của nhà vườn trồng dứa.",
@@ -164,7 +182,7 @@
         "link": "/tin-tuc/hanh-trinh-tri-an-ket-noi-niem-tin-ky-3-tu-khoi-dau-kho-khan-toi-doanh-thu-1000/"
       },
       {
-        "kind": "GẦN 30 NĂM GẮN BÓ",
+        "kind": "HƠN CẢ MỘT MỐI LÀM ĂN",
         "name": "Công ty TNHH Thiên Trang Cung Huề",
         "place": "Xã Yên Thành, Nghệ An",
         "line": "Gần 30 năm gắn bó, một mối quan hệ không chỉ là làm ăn.",
@@ -184,7 +202,7 @@
         "link": "/tin-tuc/hanh-trinh-tri-an-ket-noi-niem-tin-ky-5-nhung-khach-hang-nghin-tan-cua-tien/"
       },
       {
-        "kind": "ĐANG TĂNG TRƯỞNG",
+        "kind": "CHỌN TIẾN NÔNG LÀM TRỌNG TÂM",
         "name": "Công ty TNHH VTNN Dũng Yến",
         "place": "Xã Nam Đàn, Nghệ An",
         "line": "Phân phối Tiến Nông từ năm 2015, chủ động chọn tập trung vào sản phẩm Tiến Nông.",

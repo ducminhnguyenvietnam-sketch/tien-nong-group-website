@@ -1,8 +1,12 @@
 {
   "items": [
     {
-      "vi": "Giải pháp theo cây trồng",
-      "text": "Solutions by crop"
+      "vi": "Giải pháp dinh dưỡng theo từng cây trồng",
+      "text": "Crop-by-crop nutrition solutions"
+    },
+    {
+      "vi": "Quy trình bón phân Tiến Nông cho lúa, ngô, mía, cà phê, chè, rau màu và cây ăn quả, xây dựng từ phân tích đất và thử nghiệm đồng ruộng. Kỹ sư Tiến Nông đồng hành theo mùa vụ.",
+      "text": "Tiến Nông fertilising programmes for rice, maize, sugarcane, coffee, tea, vegetables and fruit trees, built on soil analysis and field trials, with agronomists alongside farmers each season."
     },
     {
       "vi": "Cận cảnh bông lúa chín trên cánh đồng",
@@ -667,6 +671,10 @@
     {
       "vi": "Nguyên nhân:",
       "text": "Cause:"
+    },
+    {
+      "vi": "Giải pháp theo cây trồng",
+      "text": "Solutions by crop"
     }
   ]
 }

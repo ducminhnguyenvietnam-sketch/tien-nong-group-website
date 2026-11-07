@@ -17,10 +17,16 @@ npk:
   unit: Canxi
 composition:
 - name: Canxi (Ca)
-  value: '20% ; Magie (Mg): 8%'
+  value: 20%
+  method: ''
+- name: Magie (Mg)
+  value: 8%
   method: ''
 - name: Tương đương
-  value: 'CaO ≥ 28%; MgO ≥ 13,3%; Độ ẩm: 4%.'
+  value: CaO ≥ 28%
+  method: ''
+- name: Độ ẩm
+  value: 4%
   method: ''
 benefits: []
 usage:

@@ -25,22 +25,30 @@ npk:
   - value: +
     unit: MNC
 composition:
-  - name: Đạm tổng số (Nₜ)
-    value: 17%
-  - name: Lân hữu hiệu (P₂O₅hh)
-    value: 6%
-  - name: Kali hữu hiệu (K₂Ohh)
-    value: 17%
-  - name: Bo (B)
-    value: 300 ppm
-  - name: Kẽm (Zn)
-    value: 50 ppm
-  - name: Đồng (Cu)
-    value: 250 ppm
-  - name: Mangan (Mn)
-    value: 50 ppm
-  - name: Độ ẩm
-    value: 5%
+- name: Đạm tổng số (Nₜ)
+  value: 17%
+  method: ''
+- name: Lân hữu hiệu (P₂O₅hh)
+  value: 6%
+  method: ''
+- name: Kali hữu hiệu (K₂Ohh)
+  value: 17%
+  method: ''
+- name: Bo (B)
+  value: 300 ppm
+  method: ''
+- name: Kẽm (Zn)
+  value: 50 ppm
+  method: ''
+- name: Đồng (Cu)
+  value: 250 ppm
+  method: ''
+- name: Mangan (Mn)
+  value: 50 ppm
+  method: ''
+- name: Độ ẩm
+  value: 5%
+  method: ''
 benefits:
   - Cung cấp dinh dưỡng cân đối cho cây nuôi trái, cành nhánh phát triển đồng
     đều, khỏe mạnh. Hạn chế sâu bệnh, chống rụng trái. Bổ sung dinh dưỡng kịp

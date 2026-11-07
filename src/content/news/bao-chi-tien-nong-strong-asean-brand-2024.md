@@ -4,7 +4,7 @@ category: bc
 date: 2024-04-25
 author: Vietnam Agriculture
 featured: false
-summary: Tiến Nông được vinh danh Thương hiệu mạnh ASEAN 2024 tại diễn đàn ở Singapore (bài tiếng Anh).
+summary: "Tiến Nông được vinh danh Thương hiệu mạnh ASEAN 2024 tại diễn đàn ở Singapore (bài tiếng Anh)."
 cover:
   src: /uploads/press-bao-chi-tien-nong-strong-asean-bra-mvk9kpmv.jpg
   focus: 50% 85.1%

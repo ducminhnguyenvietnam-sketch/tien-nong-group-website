@@ -138,7 +138,7 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
 <a href={url('phat-trien-ben-vung/xanh-hoa-truong-sa')} class="ts-teaser__link">
 <div class="ts-teaser__photo"><ImageSlot style={fill} id="ts-teaser" shape="rect" placeholder="Ảnh Xanh hoá Trường Sa" image={ts.hero.background} cms="src/content/pages/xanh-hoa-truong-sa.json#hero.background" sizes="100vw" /></div>
 <div class="ts-teaser__scrim" aria-hidden="true"></div>
-<div class="ts-teaser__copy"><span class="ts-teaser__eyebrow">{ts.hero.eyebrow}</span><strong class="ts-teaser__title">{ts.hero.title}</strong><span class="ts-teaser__text">{ts.hero.intro}</span><span class="ts-teaser__btn">Xem chương trình →</span></div>
+<div class="ts-teaser__copy"><span class="ts-teaser__eyebrow">{ts.hero.eyebrow}</span><strong class="ts-teaser__title">{ts.hero.title}</strong><span class="ts-teaser__text jx-justify" data-unglued>{isFilled(c.ts_teaser) ? c.ts_teaser : ts.hero.intro}</span><span class="ts-teaser__btn">Xem chương trình →</span></div>
 </a>
 </section>}
 
@@ -203,10 +203,11 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
     .pv-pillar__body > span:not(.pv-pillar__tag):not(.pv-pillar__go) { display: none; }
     .pv-pillar__go { position: absolute; right: 12px; top: -26px; width: 28px; height: 28px; padding: 0; display: grid; place-items: center; border-radius: 50%; background: rgba(255, 255, 255, .92); color: var(--green-700); font-size: 14px; }
     /* Green factory on phones: the whole photo on top, the card below it on the light page, facts as tiles. */
-    .pv-plant { flex-direction: column; min-height: 0 !important; background: var(--surface-card) !important; }
+    /* Phones: the white card sits on deep green under the factory photo. */
+    .pv-plant { flex-direction: column; min-height: 0 !important; background: linear-gradient(180deg, var(--green-800) 0%, var(--green-900) 100%) !important; }
     .pv-plant__photo { position: relative !important; aspect-ratio: 16 / 10; }
     .pv-plant__wrap { padding: 0 16px 40px !important; margin-top: -48px; }
-    .pv-plant__card { padding: 22px 20px !important; gap: 12px !important; box-shadow: 0 14px 36px rgba(0, 71, 35, .14) !important; }
+    .pv-plant__card { padding: 22px 20px !important; gap: 12px !important; box-shadow: 0 18px 40px rgba(0, 0, 0, .28) !important; }
     .pv-plant__card .st-lead { font-size: 15.5px; text-align: start !important; text-align-last: auto !important; }
     .pv-plant__facts { border-top: 0 !important; padding-top: 0 !important; gap: 8px !important; }
     .pv-plant__fact { padding: 12px; border-radius: var(--radius-md); background: var(--green-50); }
@@ -229,7 +230,7 @@ const facts = c.plant.facts.filter((f) => isFilled(f.value));
   .ts-teaser__copy { position: relative; max-width: var(--wrap, 1280px); margin: 0 auto; min-height: inherit; padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; }
   .ts-teaser__eyebrow { font: var(--type-eyebrow); letter-spacing: .08em; color: var(--green-100); }
   .ts-teaser__title { font: var(--type-h2); }
-  .ts-teaser__text { max-width: 34em; color: var(--green-50); font-size: var(--fs-lead); line-height: 1.55; text-align: start; }
+  .ts-teaser__text { max-width: 34em; color: var(--green-50); font-size: var(--fs-lead); line-height: 1.55; }
   .ts-teaser__btn { margin-top: 6px; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: var(--radius-md); background: #fff; color: var(--green-700); font-weight: 700; }
   @media (max-width: 767.98px) { .ts-teaser__scrim { background: linear-gradient(0deg, rgba(2, 53, 26, .92) 0%, rgba(2, 53, 26, .6) 65%, rgba(2, 53, 26, .25) 100%); } .ts-teaser__copy { justify-content: flex-end; } }
 </style>

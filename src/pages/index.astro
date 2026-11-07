@@ -142,8 +142,8 @@ const bannerText = isFilled(banner?.title);
 <section id="doi-tuong" class="h-sec h-sec--page">
 <div class="h-wrap h-stack">
 <div class="h-head"><span class="h-eyebrow">{g.t1}</span><h2 class="h-h2">{g.t2}</h2></div>
-<div class="aud-grid">
-{audiences.map((a) => <a href={a.href} class="aud">
+<div class="aud-grid" data-reveal-group data-reveal-scroll>
+{audiences.map((a) => <a href={a.href} class="aud" data-reveal>
 <ImageSlot style={FILL} id={`aud-${a.key}`} shape="rect" placeholder={a.ph} image={a.img} cms={`${F}#s04_giai_phap_theo_doi_tuong.img_aud_${a.key}_1`} sizes="(max-width: 767px) 92vw, 600px" />
 <span class="aud__shade" aria-hidden="true"></span>
 <span class="aud__body">
@@ -410,7 +410,10 @@ const bannerText = isFilled(banner?.title);
     .aud { height: auto; min-height: 300px; }
     .aud::after { opacity: 1; background: linear-gradient(0deg, rgba(0, 71, 35, .95) 0%, rgba(0, 71, 35, .75) 55%, rgba(0, 71, 35, .15) 100%); }
     .aud__body { position: relative; min-height: 300px; justify-content: flex-end; }
-    .aud__more { grid-template-rows: 1fr; } .aud__more-in { opacity: 1; }
+    .aud__more { grid-template-rows: 0fr; } .aud__more-in { opacity: 0; }
+    /* Each card's points unfold as it scrolls to the middle of the screen (reveal.ts). */
+    .aud.is-open .aud__more { grid-template-rows: 1fr; } .aud.is-open .aud__more-in { opacity: 1; }
+    .aud::after { opacity: .55; transition: opacity var(--motion-slow) var(--ease-out); } .aud.is-open::after { opacity: 1; }
   }
 
   .org { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
@@ -539,10 +542,11 @@ const bannerText = isFilled(banner?.title);
     .pcard-grid--crops .pcard__body { padding: 12px 14px 14px; }
     .pcard-grid--crops .pcard__title { font-size: 16px; }
     .org__facts { grid-template-columns: minmax(0, 1fr); }
-    .plant { min-height: 0; flex-direction: column; background: var(--surface-card); }
+    /* Phones: the white card sits on a deep-green band under the factory photo, not on more white. */
+    .plant { min-height: 0; flex-direction: column; background: linear-gradient(180deg, var(--green-800) 0%, var(--green-900) 100%); }
     .plant__photo { position: relative; height: auto; aspect-ratio: 16 / 10; }
     .plant__wrap { padding-block: 0 40px; margin-top: -56px; }
-    .plant__card { box-shadow: 0 14px 36px rgba(0, 71, 35, .14); }
+    .plant__card { box-shadow: 0 18px 40px rgba(0, 0, 0, .28); }
     /* Product banner: the whole wide banner, nothing cropped (or the phone banner from the CMS). */
     .promo--image .promo__link { aspect-ratio: 1920 / 565; }
     .promo--image .promo__photo :global(.img-slot__img) { object-position: center !important; }

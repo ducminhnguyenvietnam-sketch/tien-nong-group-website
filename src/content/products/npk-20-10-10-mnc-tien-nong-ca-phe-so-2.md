@@ -23,22 +23,30 @@ npk:
   - value: +
     unit: MNC
 composition:
-  - name: Đạm tổng số (Nₜ)
-    value: 20%
-  - name: Lân hữu hiệu (P₂O₅hh)
-    value: 10%
-  - name: Kali hữu hiệu (K₂Ohh)
-    value: 10%
-  - name: Kẽm (Zn)
-    value: 250 ppm
-  - name: Mangan (Mn)
-    value: 100 ppm
-  - name: Đồng (Cu)
-    value: 150 ppm
-  - name: Bo (B)
-    value: 100 ppm
-  - name: Độ ẩm
-    value: 5%
+- name: Đạm tổng số (Nₜ)
+  value: 20%
+  method: ''
+- name: Lân hữu hiệu (P₂O₅hh)
+  value: 10%
+  method: ''
+- name: Kali hữu hiệu (K₂Ohh)
+  value: 10%
+  method: ''
+- name: Kẽm (Zn)
+  value: 250 ppm
+  method: ''
+- name: Mangan (Mn)
+  value: 100 ppm
+  method: ''
+- name: Đồng (Cu)
+  value: 150 ppm
+  method: ''
+- name: Bo (B)
+  value: 100 ppm
+  method: ''
+- name: Độ ẩm
+  value: 5%
+  method: ''
 benefits:
   - Cung cấp dinh dưỡng cân đối giúp cây cà phê phát triển cành nhánh mạnh, trái
     lớn đồng đều, không bị chen trái và rụng trái non.

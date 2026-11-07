@@ -1,6 +1,7 @@
 {
   "seo": {
-    "title": "Khoa học & Công nghệ"
+    "title": "Khoa học & Công nghệ dinh dưỡng cây trồng",
+    "description": "Trung tâm R&D từ 2012, phòng thí nghiệm VILAS 1519 (ISO/IEC 17025:2017), 50+ nhà khoa học & kỹ sư, 10.000+ mẫu phân tích mỗi năm. Khoa học là nền tảng, cánh đồng là thước đo."
   },
   "s01_hero": {
     "img_khcn_hero_1": {
@@ -114,33 +115,44 @@
     "t1": "KẾT QUẢ NGHIÊN CỨU",
     "t2": "Khoa học được chuyển hóa thành sản phẩm và giải pháp",
     "t3": "Xem sản phẩm →",
-    "img_res_1_1": {
-      "focus": "56.1% 60%",
-      "zoom": "100",
-      "alt": "Bao bì NPK bổ sung Silic",
-      "src": "/uploads/res-1-mvgcjv25.jpg"
-    },
-    "t4": "CÔNG NGHỆ PHÂN BÓN",
-    "t5": "NPK bổ sung Silic hữu hiệu (SiO₂hh)",
-    "t6": "Giúp cây cứng cáp, tăng khả năng chống đổ và chống chịu sâu bệnh.",
-    "img_res_2_1": {
-      "focus": "57.6% 80.5%",
-      "zoom": "141",
-      "alt": "Mô hình NPK – hữu cơ – vi sinh",
-      "src": "/uploads/res-2-mvc7awp0.jpg"
-    },
-    "t7": "GIẢI PHÁP TÍCH HỢP",
-    "t8": "Kết hợp NPK – hữu cơ – vi sinh",
-    "t9": "Nâng cao hiệu quả sử dụng phân bón đồng thời cải thiện sức khỏe đất.",
-    "img_res_3_1": {
-      "focus": "32.1% 52.3%",
-      "zoom": "100",
-      "alt": "Phân bón hữu cơ, phân bón lỏng",
-      "src": "/uploads/res-3-mvgcp45s.jpg"
-    },
-    "t10": "DINH DƯỠNG THẾ HỆ MỚI",
-    "t11": "Phân bón hữu cơ, phân bón lỏng và các dạng dinh dưỡng mới",
-    "t12": "Đáp ứng nhu cầu canh tác bền vững và nông nghiệp công nghệ cao."
+    "results": [
+      {
+        "image": {
+          "focus": "56.1% 60%",
+          "zoom": "100",
+          "alt": "Bao bì NPK bổ sung Silic",
+          "src": "/uploads/res-1-mvgcjv25.jpg"
+        },
+        "label": "CÔNG NGHỆ PHÂN BÓN",
+        "title": "NPK bổ sung Silic hữu hiệu (SiO₂hh)",
+        "text": "Giúp cây cứng cáp, tăng khả năng chống đổ và chống chịu sâu bệnh.",
+        "link": ""
+      },
+      {
+        "image": {
+          "focus": "57.6% 80.5%",
+          "zoom": "141",
+          "alt": "Mô hình NPK – hữu cơ – vi sinh",
+          "src": "/uploads/res-2-mvc7awp0.jpg"
+        },
+        "label": "GIẢI PHÁP TÍCH HỢP",
+        "title": "Kết hợp NPK – hữu cơ – vi sinh",
+        "text": "Nâng cao hiệu quả sử dụng phân bón đồng thời cải thiện sức khỏe đất.",
+        "link": ""
+      },
+      {
+        "image": {
+          "focus": "32.1% 52.3%",
+          "zoom": "100",
+          "alt": "Phân bón hữu cơ, phân bón lỏng",
+          "src": "/uploads/res-3-mvgcp45s.jpg"
+        },
+        "label": "DINH DƯỠNG THẾ HỆ MỚI",
+        "title": "Phân bón hữu cơ, phân bón lỏng và các dạng dinh dưỡng mới",
+        "text": "Đáp ứng nhu cầu canh tác bền vững và nông nghiệp công nghệ cao.",
+        "link": ""
+      }
+    ]
   },
   "s08_doi_tac_nghien_cuu": {
     "t1": "HỢP TÁC NGHIÊN CỨU",
@@ -189,19 +201,20 @@
   "domains_topics_label": "HƯỚNG NGHIÊN CỨU TRỌNG TÂM",
   "domains": [
     {
-      "name": "Công nghệ Sản xuất",
-      "body": "Nghiên cứu công thức và công nghệ sản xuất giúp dinh dưỡng được cây hấp thu hiệu quả hơn, giảm thất thoát ra môi trường.",
+      "name": "Phân tích & Kiểm nghiệm",
+      "body": "Kiểm soát chất lượng từ nguyên liệu đầu vào đến từng lô thành phẩm theo tiêu chuẩn VILAS 1519 và các TCVN hiện hành.",
       "topics": [
-        "NPK phức hợp và bổ sung trung – vi lượng",
-        "Công nghệ bổ sung Silic hữu hiệu",
-        "Phân bón tan chậm, phân bón lỏng"
+        "Kiểm nghiệm theo TCVN",
+        "Kiểm soát nguyên liệu đầu vào",
+        "Truy xuất theo lô sản xuất"
       ],
       "image": {
-        "src": "/uploads/dom-0-mw04av5y.jpg",
-        "focus": "50% 63.8%",
-        "zoom": "100",
-        "alt": "Dây chuyền thử nghiệm công thức phân bón"
-      }
+        "src": "/uploads/dom-3-mw0577cs.jpg",
+        "focus": "0% 44.8%",
+        "zoom": "105",
+        "alt": "Thiết bị phân tích phòng VILAS"
+      },
+      "color": "lab"
     },
     {
       "name": "Công nghệ Sinh học",
@@ -217,7 +230,8 @@
         "focus": "15% 50%",
         "zoom": "100",
         "alt": "Nuôi cấy vi sinh trong phòng thí nghiệm"
-      }
+      },
+      "color": "bio"
     },
     {
       "name": "Sức khỏe đất & Cây trồng",
@@ -233,22 +247,24 @@
         "focus": "43.2% 0%",
         "zoom": "100",
         "alt": "Kỹ sư lấy mẫu đất tại ruộng"
-      }
+      },
+      "color": "soil"
     },
     {
-      "name": "Phân tích & Kiểm nghiệm",
-      "body": "Kiểm soát chất lượng từ nguyên liệu đầu vào đến từng lô thành phẩm theo tiêu chuẩn VILAS 1519 và các TCVN hiện hành.",
+      "name": "Công nghệ Sản xuất",
+      "body": "Nghiên cứu công thức và công nghệ sản xuất giúp dinh dưỡng được cây hấp thu hiệu quả hơn, giảm thất thoát ra môi trường.",
       "topics": [
-        "Kiểm nghiệm theo TCVN",
-        "Kiểm soát nguyên liệu đầu vào",
-        "Truy xuất theo lô sản xuất"
+        "NPK phức hợp và bổ sung trung – vi lượng",
+        "Công nghệ bổ sung Silic hữu hiệu",
+        "Phân bón tan chậm, phân bón lỏng"
       ],
       "image": {
-        "src": "/uploads/dom-3-mw0577cs.jpg",
-        "focus": "0% 44.8%",
-        "zoom": "105",
-        "alt": "Thiết bị phân tích phòng VILAS"
-      }
+        "src": "/uploads/dom-0-mw04av5y.jpg",
+        "focus": "50% 63.8%",
+        "zoom": "100",
+        "alt": "Dây chuyền thử nghiệm công thức phân bón"
+      },
+      "color": "factory"
     },
     {
       "name": "Dữ liệu & nông nghiệp số",
@@ -263,7 +279,8 @@
         "focus": "0% 70.6%",
         "zoom": "106",
         "alt": "Kỹ sư sử dụng thiết bị đo tại đồng ruộng"
-      }
+      },
+      "color": "bio"
     }
   ],
   "s09_cta": {

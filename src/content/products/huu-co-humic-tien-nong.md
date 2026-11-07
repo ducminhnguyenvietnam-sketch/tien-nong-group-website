@@ -21,19 +21,19 @@ standards: ''
 npk: []
 composition:
 - name: Chất hữu cơ
-  value: ……………………………………..23%
+  value: 23%
   method: ''
 - name: Axit Humic (C)
-  value: ………………………………….2,5%
+  value: 2,5%
   method: ''
-- name: Đạm tổng số (N ts )
-  value: ……………………………. 2,5%
+- name: Đạm tổng số (Nts)
+  value: 2,5%
   method: ''
-- name: pH H2O
-  value: ……………………………………………….5
+- name: pH (H₂O)
+  value: '5'
   method: ''
 - name: Độ ẩm
-  value: ……………………………………………..30%
+  value: 30%
   method: ''
 benefits:
 - 'Là loại phân bón được sản xuất bởi các nguồn hữu cơ có nguồn gốc sinh học được xử lý bằng công nghệ tiên tiến nhằm gia tăng giá trị sử dụng cho cây trồng. Sản phẩm đáp ứng yêu cầu sản xuất nông nghiệp hữu cơ, hiện đại và bền vững dựa trên nền tảng:'

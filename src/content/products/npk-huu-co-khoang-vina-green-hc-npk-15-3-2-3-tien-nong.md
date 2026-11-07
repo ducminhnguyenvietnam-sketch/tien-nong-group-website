@@ -19,11 +19,13 @@ shelf_life: 36 tháng kể từ NSX
 production: In trên bao
 standards: ISO 9001:2015 · ISO 14001:2015
 npk:
-- value: '15'
+- value: 15%
+  unit: Hữu cơ
+- value: 3%
   unit: N
-- value: '3'
+- value: 2%
   unit: P₂O₅
-- value: '2'
+- value: 3%
   unit: K₂O
 composition:
 - name: Chất hữu cơ
@@ -38,7 +40,7 @@ composition:
 - name: Kali hữu hiệu (K₂Ohh)
   value: 3%
   method: ''
-- name: pHhh₂O
+- name: pH (H₂O)
   value: '5'
   method: ''
 - name: Độ ẩm

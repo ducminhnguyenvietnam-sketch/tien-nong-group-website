@@ -313,16 +313,12 @@
       "text": "– Corrects soil pH, creating favourable conditions for strong plant growth and development."
     },
     {
-      "vi": "20% ; Magie (Mg): 8%",
-      "text": "20%; Magnesium (Mg): 8%"
-    },
-    {
       "vi": "Tương đương",
       "text": "Equivalent to"
     },
     {
-      "vi": "CaO ≥ 28%; MgO ≥ 13,3%; Độ ẩm: 4%.",
-      "text": "CaO ≥ 28%; MgO ≥ 13.3%; Moisture: 4%."
+      "vi": "CaO ≥ 28%",
+      "text": "CaO ≥ 28%"
     },
     {
       "vi": "bón: Bón từ 300 – 1.500 kg/ha, căn cứ trị số pH đất.",
@@ -489,14 +485,6 @@
       "text": "Humic acid (C)"
     },
     {
-      "vi": "Đạm tổng số (N ts )",
-      "text": "Total nitrogen (Nts)"
-    },
-    {
-      "vi": "pH H2O",
-      "text": "pH H₂O"
-    },
-    {
       "vi": "Là loại phân bón được sản xuất bởi các nguồn hữu cơ có nguồn gốc sinh học được xử lý bằng công nghệ tiên tiến nhằm gia tăng giá trị sử dụng cho cây trồng. Sản phẩm đáp ứng yêu cầu sản xuất nông nghiệp hữu cơ, hiện đại và bền vững dựa trên nền tảng:",
       "text": "A fertiliser made from organic sources of biological origin, processed with advanced technology to increase its value for crops. It meets the requirements of organic, modern and sustainable agriculture, based on:"
     },
@@ -583,10 +571,6 @@
     {
       "vi": "1×10⁶ CFU/g",
       "text": "1×10⁶ CFU/g"
-    },
-    {
-      "vi": "pHₕ₂ₒ",
-      "text": "pH(H₂O)"
     },
     {
       "vi": "Vi sinh vật hữu ích còn là “chiến binh” trong lòng đất, giúp thẩm kim hãm, tiêu diệt các vi sinh vật gây hại, ngăn ngừa mầm mống sâu bệnh, giúp cây trồng được bảo vệ tốt hơn.",
@@ -1165,20 +1149,20 @@
       "text": "Nitrogen: a basic component of protein and the main component of chlorophyll. Nitrogen promotes budding, leaf growth and fruit development, increasing biomass."
     },
     {
-      "vi": "Đạm (N ts )",
+      "vi": "Đạm (Nts)",
       "text": "Nitrogen (Nts)"
     },
     {
-      "vi": "Lân (P 2 O 5hh )",
-      "text": "Phosphorus (P₂O₅hh)"
+      "vi": "Lân (P₂O₅hh)",
+      "text": "Phosphorus (P₂O₅ available)"
     },
     {
-      "vi": "Kali (K 2 O hh )",
-      "text": "Potassium (K₂Ohh)"
+      "vi": "Kali (K₂Ohh)",
+      "text": "Potassium (K₂O available)"
     },
     {
-      "vi": "Silic (SiO 2hh )",
-      "text": "Silicon (SiO₂hh)"
+      "vi": "Silic (SiO₂hh)",
+      "text": "Silicon (SiO₂ available)"
     },
     {
       "vi": "Silic: Tăng cường độ dày thành tế bào, giúp cây cứng cáp, chống gãy đổ, hạn chế sâu bệnh và chống chịu thời tiết bất thuận.",
@@ -1781,14 +1765,6 @@
       "text": "50 kg"
     },
     {
-      "vi": "Lân hữu hiệu (P 2 O 5hh )",
-      "text": "Available phosphorus (P₂O₅hh)"
-    },
-    {
-      "vi": "Kali hữu hiệu (K 2 O hh )",
-      "text": "Available potassium (K₂Ohh)"
-    },
-    {
       "vi": "Cây ngắn ngày: Lúa, ngô, khoai, đậu, mía, cỏ bò sữa, rau màu…",
       "text": "Short-duration crops: rice, maize, potatoes, beans, sugarcane, dairy forage grass, vegetables…"
     },
@@ -1953,30 +1929,6 @@
       "text": "Compound fertiliser"
     },
     {
-      "vi": "Lân hữu hiệu (P2O5hh)",
-      "text": "Available phosphorus (P₂O₅hh)"
-    },
-    {
-      "vi": "Kali hữu hiệu (K2Ohh)",
-      "text": "Available potassium (K₂Ohh)"
-    },
-    {
-      "vi": "……………………….300 ppm",
-      "text": "……………………….300 ppm"
-    },
-    {
-      "vi": "…………………….50 ppm",
-      "text": "…………………….50 ppm"
-    },
-    {
-      "vi": "…………………250 ppm",
-      "text": "…………………250 ppm"
-    },
-    {
-      "vi": "………………50 ppm",
-      "text": "………………50 ppm"
-    },
-    {
       "vi": "– Làm tăng năng suất và chất lượng nông sản.",
       "text": "– Increases yield and produce quality."
     },
@@ -2117,18 +2069,6 @@
       "text": "Tiến Nông NPK 20-10-10+MNC"
     },
     {
-      "vi": "20%; Lân hữu hiệu (P₂O₅hh): 10%; Kali hữu hiệu (K₂Ohh): 10%;",
-      "text": "20%; Available phosphorus (P₂O₅hh): 10%; Available potassium (K₂Ohh): 10%;"
-    },
-    {
-      "vi": "250 ppm; Mangan (Mn): 100 ppm; Đồng (Cu): 150 ppm;",
-      "text": "250 ppm; Manganese (Mn): 100 ppm; Copper (Cu): 150 ppm;"
-    },
-    {
-      "vi": "100 ppm; Độ ẩm: 5%.",
-      "text": "100 ppm; Moisture: 5%."
-    },
-    {
       "vi": "Cây lâu năm (Cà phê, ca cao, nhãn, vải, cây ăn quả)",
       "text": "Perennial crops (coffee, cocoa, longan, lychee, fruit trees)"
     },
@@ -2163,10 +2103,6 @@
     {
       "vi": "NPK 20-5-5 Tiến Nông",
       "text": "Tiến Nông NPK 20-5-5"
-    },
-    {
-      "vi": "20%; Lân hữu hiệu (P₂O₅hh): 5%; Kali hữu hiệu (K₂Ohh): 5%; Độ ẩm: 5%.",
-      "text": "20%; Available phosphorus (P₂O₅hh): 5%; Available potassium (K₂Ohh): 5%; Moisture: 5%."
     },
     {
       "vi": "Cây cà phê",
@@ -2857,8 +2793,8 @@
       "text": "Organo-mineral fertiliser"
     },
     {
-      "vi": "pHhh₂O",
-      "text": "pH(H₂O)"
+      "vi": "Hữu cơ",
+      "text": "Organic"
     },
     {
       "vi": "Sản phẩm thích hợp với sản xuất nông nghiệp hữu cơ bền vững, nâng cao chất lượng và giá trị nông sản Việt Nam.",
@@ -2983,6 +2919,94 @@
     {
       "vi": "Phân trung lượng lân PA Tiến Nông – ứng dụng thực tế",
       "text": "Tiến Nông PA Phosphate secondary nutrient fertiliser – in the field"
+    },
+    {
+      "vi": "20% ; Magie (Mg): 8%",
+      "text": "20%; Magnesium (Mg): 8%"
+    },
+    {
+      "vi": "CaO ≥ 28%; MgO ≥ 13,3%; Độ ẩm: 4%.",
+      "text": "CaO ≥ 28%; MgO ≥ 13.3%; Moisture: 4%."
+    },
+    {
+      "vi": "Đạm tổng số (N ts )",
+      "text": "Total nitrogen (Nts)"
+    },
+    {
+      "vi": "pH H2O",
+      "text": "pH H₂O"
+    },
+    {
+      "vi": "pHₕ₂ₒ",
+      "text": "pH(H₂O)"
+    },
+    {
+      "vi": "Đạm (N ts )",
+      "text": "Nitrogen (Nts)"
+    },
+    {
+      "vi": "Lân (P 2 O 5hh )",
+      "text": "Phosphorus (P₂O₅hh)"
+    },
+    {
+      "vi": "Kali (K 2 O hh )",
+      "text": "Potassium (K₂Ohh)"
+    },
+    {
+      "vi": "Silic (SiO 2hh )",
+      "text": "Silicon (SiO₂hh)"
+    },
+    {
+      "vi": "Lân hữu hiệu (P 2 O 5hh )",
+      "text": "Available phosphorus (P₂O₅hh)"
+    },
+    {
+      "vi": "Kali hữu hiệu (K 2 O hh )",
+      "text": "Available potassium (K₂Ohh)"
+    },
+    {
+      "vi": "Lân hữu hiệu (P2O5hh)",
+      "text": "Available phosphorus (P₂O₅hh)"
+    },
+    {
+      "vi": "Kali hữu hiệu (K2Ohh)",
+      "text": "Available potassium (K₂Ohh)"
+    },
+    {
+      "vi": "……………………….300 ppm",
+      "text": "……………………….300 ppm"
+    },
+    {
+      "vi": "…………………….50 ppm",
+      "text": "…………………….50 ppm"
+    },
+    {
+      "vi": "…………………250 ppm",
+      "text": "…………………250 ppm"
+    },
+    {
+      "vi": "………………50 ppm",
+      "text": "………………50 ppm"
+    },
+    {
+      "vi": "20%; Lân hữu hiệu (P₂O₅hh): 10%; Kali hữu hiệu (K₂Ohh): 10%;",
+      "text": "20%; Available phosphorus (P₂O₅hh): 10%; Available potassium (K₂Ohh): 10%;"
+    },
+    {
+      "vi": "250 ppm; Mangan (Mn): 100 ppm; Đồng (Cu): 150 ppm;",
+      "text": "250 ppm; Manganese (Mn): 100 ppm; Copper (Cu): 150 ppm;"
+    },
+    {
+      "vi": "100 ppm; Độ ẩm: 5%.",
+      "text": "100 ppm; Moisture: 5%."
+    },
+    {
+      "vi": "20%; Lân hữu hiệu (P₂O₅hh): 5%; Kali hữu hiệu (K₂Ohh): 5%; Độ ẩm: 5%.",
+      "text": "20%; Available phosphorus (P₂O₅hh): 5%; Available potassium (K₂Ohh): 5%; Moisture: 5%."
+    },
+    {
+      "vi": "pHhh₂O",
+      "text": "pH(H₂O)"
     }
   ]
 }
