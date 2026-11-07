@@ -331,8 +331,8 @@
       "area": "Miền Trung, Tây Nguyên & Nam Bộ",
       "image": {
         "src": "/uploads/tranmanhtien-1.jpg",
-        "focus": "center",
-        "zoom": "80",
+        "focus": "50% 19.4%",
+        "zoom": "100",
         "alt": "Trần Mạnh Tiến"
       },
       "phone": "0974678229",
