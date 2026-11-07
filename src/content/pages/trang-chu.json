@@ -155,6 +155,11 @@
         "focus": "63.8% 0%",
         "zoom": "100",
         "alt": "Thiết bị phân tích hiện đại trong phòng thí nghiệm"
+      },
+      {
+        "focus": "center",
+        "zoom": "100",
+        "alt": "abc"
       }
     ]
   },
@@ -429,7 +434,11 @@
       "zoom": "100",
       "alt": "Giải pháp dinh dưỡng toàn diện cho cây trồng – các dòng phân bón Tiến Nông"
     },
-    "link": "/san-pham/"
+    "link": "/san-pham/",
+    "image_mobile": {
+      "focus": "center",
+      "zoom": "100"
+    }
   },
   "can_le": {
     "mac_dinh": "justify"
