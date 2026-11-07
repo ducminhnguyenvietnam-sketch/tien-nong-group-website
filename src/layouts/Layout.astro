@@ -149,7 +149,11 @@ const website = isHome ? [{ '@context': 'https://schema.org', '@type': 'WebSite'
 {canonical && <meta property="og:url" content={canonical} />}
 {shareImage && <meta property="og:image" content={abs(shareImage)} />}
 <meta name="twitter:card" content={shareImage ? 'summary_large_image' : 'summary'} />
+<link rel="icon" href={asset("favicon.ico")} sizes="48x48" />
+<link rel="icon" type="image/png" sizes="32x32" href={asset("favicon-32.png")} />
 <link rel="icon" type="image/svg+xml" href={asset("favicon.svg")} />
+<link rel="apple-touch-icon" href={asset("apple-touch-icon.png")} />
+<link rel="manifest" href={asset("site.webmanifest")} />
 <script is:inline>
   // "js" lets CSS hide elements that are about to animate in; without JS nothing is hidden.
   document.documentElement.classList.add('js');
