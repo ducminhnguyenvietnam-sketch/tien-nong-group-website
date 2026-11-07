@@ -49,8 +49,11 @@ jobs:
           # Where the lead forms send their data (Settings → Secrets and variables → Actions → Variables).
           # Empty = the forms are replaced by call / Zalo / email buttons.
           PUBLIC_FORM_ENDPOINT: ${{ vars.FORM_ENDPOINT }}
-          # Preview copy: kept out of Google (noindex + robots.txt), no analytics.
-          PUBLIC_PREVIEW: '1'
+          # The live site (tiennong.com) is served from here. NOINDEX = 1 hides it from Google again.
+          PUBLIC_PREVIEW: ${{ vars.NOINDEX }}
+          # Google Tag Manager container (GA4, Google Ads, Meta / TikTok pixels) and Search Console tag.
+          PUBLIC_GTM_ID: ${{ vars.GTM_ID }}
+          PUBLIC_GSC_VERIFY: ${{ vars.GSC_VERIFY }}
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: dist
