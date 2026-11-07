@@ -38,11 +38,9 @@
     "img_ceo_portrait_1": {
       "focus": "50% 50%",
       "zoom": "100",
-      "alt": "Chân dung Tổng Giám đốc Nguyễn Hồng Phong",
-      "src": "/uploads/ceo-portrait-mw1iry3v.png"
+      "alt": "Chân dung Tổng Giám đốc Nguyễn Hồng Phong"
     },
     "image_desktop": {
-      "src": "/uploads/loi-chao-tgd-1920x895.jpg",
       "focus": "0% 100%",
       "zoom": "100",
       "alt": "Tổng Giám đốc Nguyễn Hồng Phong"
@@ -52,16 +50,7 @@
       "zoom": "100",
       "alt": "Ảnh nền lời chào (ảnh ngang tông xanh đậm, khoảng 1920×1000)"
     },
-    "background_overlay": true,
-    "t1": "THƯ NGỎ CỦA TỔNG GIÁM ĐỐC",
-    "t2": "“Mùa vụ không chỉ là những gì chúng tôi trồng trọt, mà là những cuộc đời chúng tôi cùng vun đắp và tương lai chúng tôi cùng kiến tạo.”",
-    "t3": "Hơn ba thập kỷ qua, Tiến Nông kiên định với một lựa chọn: lấy khoa học làm nền tảng và lấy lợi ích của nhà nông làm thước đo cho mọi quyết định. Chúng tôi tin khoa học nông nghiệp phải bắt đầu từ chính đất Việt: hiểu thổ nhưỡng, hiểu hệ vi sinh bản địa, thay vì sao chép công thức có sẵn. Tiến Nông không chỉ bán phân bón, mà mang đến giải pháp khoa học cho từng chân ruộng, dựa trên ba điểm tựa: nông dân là trung tâm, đất đai là nền tảng, khoa học công nghệ là động lực. Khi người nông dân canh tác hiệu quả hơn, mỗi vụ mùa sẽ góp phần vào sự thịnh vượng chung của đất nước.",
-    "t4": "Nguyễn Hồng Phong",
-    "t5": "Tổng Giám đốc",
-    "roles": "",
-    "heading_small": "Lời chào từ",
-    "heading": "Tổng Giám đốc",
-    "slogan": "Phụng sự nhà nông – Kiến tạo tương lai"
+    "background_overlay": false
   },
   "s03_su_menh_gia_tri": {
     "t1": "SỨ MỆNH",
