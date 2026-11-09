@@ -1,17 +1,22 @@
 ---
 old_url: /tien-nong-tiep-don-truong-cao-dang-fpt-polytechnic-thanh-hoa-tham-quan-trai-nghiem-thuc-te/
-title: Tiến Nông tiếp đón Trường Cao đẳng FPT Polytechnic Thanh Hóa tham quan trải nghiệm thực tế
+title: Tiến Nông tiếp đón Trường Cao đẳng FPT Polytechnic Thanh Hóa tham quan
+  trải nghiệm thực tế
 category: tn
 date: 2026-10-16
 author: Phòng Truyền thông
-featured: true
-summary: Sáng 15/8/2026, tại Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn, Công ty Cổ phần Công Nông nghiệp Tiến Nông tổ chức đón tiếp đoàn cán bộ, giảng viên và sinh viên Trường Cao đẳng FPT Polytechnic Thanh Hóa đến tham quan, trải nghiệm thực tế.
+featured: false
+summary: Sáng 15/8/2026, tại Nhà máy Dinh dưỡng cây trồng Tiến Nông Bỉm Sơn,
+  Công ty Cổ phần Công Nông nghiệp Tiến Nông tổ chức đón tiếp đoàn cán bộ, giảng
+  viên và sinh viên Trường Cao đẳng FPT Polytechnic Thanh Hóa đến tham quan,
+  trải nghiệm thực tế.
 cover:
   src: /uploads/news-tien-nong-tiep-don-truong-cao-dang--mvekhwej.jpg
   focus: 43.5% 50%
   zoom: "100"
   alt: Ảnh đại diện bài viết (ảnh đẹp nhất)
-cover_caption: Sinh viên Trường Cao đẳng FPT Polytechnic Thanh Hóa chụp ảnh lưu niệm tại Tiến Nông.
+cover_caption: Sinh viên Trường Cao đẳng FPT Polytechnic Thanh Hóa chụp ảnh lưu
+  niệm tại Tiến Nông.
 album:
   - focus: center
     zoom: "100"
@@ -26,8 +31,11 @@ tags:
   - Giáo dục
   - Tham quan nhà máy
   - Tuyển dụng
+source_logo:
+  focus: center
+  zoom: "100"
+press_highlight: false
 ---
-
 ![Tiến Nông tiếp đón Trường Cao đẳng FPT Polytechnic Thanh Hóa tham quan trải nghiệm thực tế](/uploads/tin-cu/2026/tien-nong-tiep-don-truong-cao-dang-fpt-polytechnic-thanh-hoa-1.webp)
 
 *Hai đơn vị chụp ảnh lưu niệm tại chương trình*
