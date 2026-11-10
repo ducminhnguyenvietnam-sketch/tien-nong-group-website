@@ -44,35 +44,35 @@
     "items": [
       {
         "title": "Đại lý, cửa hàng vật tư nông nghiệp",
+        "icon": "store",
         "who": "Cửa hàng bán lẻ phân bón, vật tư tại xã, thị trấn.",
         "get": "Nguồn hàng từ nhà phân phối khu vực; biển hiệu, ấn phẩm và kỹ sư hỗ trợ tư vấn.",
         "link_label": "Liên hệ phụ trách khu vực →",
-        "link": "#lien-he-khu-vuc",
-        "icon": "store"
+        "link": "#lien-he-khu-vuc"
       },
       {
         "title": "Nhà phân phối khu vực",
+        "icon": "truck",
         "who": "Doanh nghiệp có kho bãi và hệ thống đại lý trong huyện, tỉnh.",
         "get": "Chính sách phân phối theo vùng, hỗ trợ phát triển đại lý, hội nghị khách hàng hằng năm.",
         "link_label": "Liên hệ phụ trách khu vực →",
-        "link": "#lien-he-khu-vuc",
-        "icon": "truck"
+        "link": "#lien-he-khu-vuc"
       },
       {
         "title": "Dự án, trang trại, hợp tác xã",
+        "icon": "sprout",
         "who": "Vùng nguyên liệu, trang trại, doanh nghiệp nông nghiệp quy mô lớn.",
         "get": "Phân tích đất, công thức dinh dưỡng riêng, kỹ sư theo dõi suốt vụ.",
         "link_label": "Giải pháp cho dự án →",
-        "link": "/giai-phap-du-an/",
-        "icon": "sprout"
+        "link": "/giai-phap-du-an/"
       },
       {
         "title": "Hội Nông dân, tổ chức đoàn thể",
+        "icon": "users",
         "who": "Hội Nông dân các cấp, tổ chức hỗ trợ hội viên tiếp cận vật tư chất lượng.",
         "get": "Chương trình phân bón trả chậm: nhận phân trước, thanh toán sau thu hoạch.",
         "link_label": "Về phân bón trả chậm →",
-        "link": "/nong-dan/#tra-cham",
-        "icon": "users"
+        "link": "/nong-dan/#tra-cham"
       }
     ],
     "who_label": "Đối tượng",
@@ -85,33 +85,33 @@
     "items": [
       {
         "title": "Nguồn hàng ổn định",
-        "text": "Sản phẩm từ ba nhà máy đạt ISO 9001:2015 và ISO 14001:2015, cung ứng đúng hẹn quanh năm.",
-        "icon": "box"
+        "icon": "box",
+        "text": "Sản phẩm từ ba nhà máy đạt ISO 9001:2015 và ISO 14001:2015, cung ứng đúng hẹn quanh năm."
       },
       {
         "title": "Hàng chính hãng, có mã QR",
-        "text": "Mỗi bao có mã QR truy xuất nguồn gốc: bà con nhận biết hàng thật, điểm bán giữ được uy tín.",
-        "icon": "qr"
+        "icon": "qr",
+        "text": "Mỗi bao có mã QR truy xuất nguồn gốc: bà con nhận biết hàng thật, điểm bán giữ được uy tín."
       },
       {
         "title": "Chính sách minh bạch",
-        "text": "Giá thống nhất theo vùng; chiết khấu theo sản lượng, thưởng doanh số theo mùa vụ.",
-        "icon": "scale"
+        "icon": "scale",
+        "text": "Giá thống nhất theo vùng; chiết khấu theo sản lượng, thưởng doanh số theo mùa vụ."
       },
       {
         "title": "Kỹ sư hỗ trợ tận ruộng",
-        "text": "Cùng đại lý tư vấn cho bà con, tổ chức hội thảo đầu bờ và mô hình trình diễn.",
-        "icon": "engineer"
+        "icon": "engineer",
+        "text": "Cùng đại lý tư vấn cho bà con, tổ chức hội thảo đầu bờ và mô hình trình diễn."
       },
       {
         "title": "Hỗ trợ bán hàng, đào tạo",
-        "text": "Biển hiệu, ấn phẩm, khuyến mại theo mùa vụ; tập huấn sản phẩm và kỹ năng tư vấn.",
-        "icon": "megaphone"
+        "icon": "megaphone",
+        "text": "Biển hiệu, ấn phẩm, khuyến mại theo mùa vụ; tập huấn sản phẩm và kỹ năng tư vấn."
       },
       {
         "title": "Tri ân đối tác",
-        "text": "Hội nghị khách hàng, tham quan, khen thưởng đại lý và nhà phân phối tiêu biểu hằng năm.",
-        "icon": "award"
+        "icon": "award",
+        "text": "Hội nghị khách hàng, tham quan, khen thưởng đại lý và nhà phân phối tiêu biểu hằng năm."
       }
     ],
     "image": {
@@ -322,7 +322,7 @@
   "managers": [
     {
       "name": "Nguyễn Trung Trụ",
-      "title": "Giám đốc Kinh doanh Vùng 1",
+      "title": "Giám đốc Kinh doanh Phòng 1",
       "region": "Vùng 1",
       "area": "Thanh Hóa & Đồng bằng sông Hồng",
       "image": {
@@ -344,7 +344,7 @@
     },
     {
       "name": "Trần Mạnh Tiến",
-      "title": "Giám đốc Kinh doanh Vùng 2",
+      "title": "Giám đốc Kinh doanh Phòng 2",
       "region": "Vùng 2",
       "area": "Miền Trung, Tây Nguyên & Nam Bộ",
       "image": {
@@ -367,7 +367,7 @@
     },
     {
       "name": "Lê Viết Thiện",
-      "title": "Giám đốc Kinh doanh",
+      "title": "Giám đốc Kinh doanh Phòng 3",
       "region": "Vùng 3",
       "area": "Trung du & miền núi phía Bắc",
       "image": {
