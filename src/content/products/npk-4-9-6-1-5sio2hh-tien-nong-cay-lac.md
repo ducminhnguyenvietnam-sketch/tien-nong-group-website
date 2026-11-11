@@ -72,4 +72,5 @@ field2:
 field3:
   focus: center
   zoom: "100"
+pack: 25 kg
 ---
