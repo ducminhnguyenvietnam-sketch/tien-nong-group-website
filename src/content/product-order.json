@@ -2,6 +2,8 @@
   "items": [
     "src/content/products/npk-8-6-4-1-5sio2hh-tien-nong-lua-1.md",
     "src/content/products/npk-12-3-10-2sio2hh-tien-nong-lua-2.md",
+    "src/content/products/npk-6-10-3-3sio2hh-tien-nong-ngo-chuyen-lot.md",
+    "src/content/products/npk-15-3-10-tien-nong-ngo-thuc.md",
     "src/content/products/npk-10-6-4-1sio2hh-tien-nong-mot-mau.md",
     "src/content/products/npk-6-9-3-1sio2hh-tien-nong.md",
     "src/content/products/npk-9-3-6-1sio2hh-tien-nong.md",
@@ -49,8 +51,6 @@
     "src/content/products/npk-10-6-4-1sio2hh-tien-nong-cay-che.md",
     "src/content/products/npk-9-6-3-1sio2hh-tien-nong-cay-lam-nghiep.md",
     "src/content/products/npk-16-6-18-1sio2hh-tien-nong-cay-dua.md",
-    "src/content/products/npk-15-3-10-tien-nong-ngo-thuc.md",
-    "src/content/products/npk-6-10-3-3sio2hh-tien-nong-ngo-chuyen-lot.md",
     "src/content/products/nk-vi-luong-da-nang-sieu-dam-tien-nong.md"
   ]
 }
