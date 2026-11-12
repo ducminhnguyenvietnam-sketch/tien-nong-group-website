@@ -1,5 +1,5 @@
 ---
-name: Cà Phê Số 3 Giữa và cuối mùa mưa (NPK 17-6-17+MNC Tiến Nông)
+name: Cà phê Số 3 Giữa và cuối mùa mưa (NPK 17-6-17+MNC Tiến Nông)
 line: cd
 order: 45
 crops:
