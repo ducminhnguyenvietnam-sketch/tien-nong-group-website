@@ -40,19 +40,25 @@ composition:
     value: 5%
     method: TCVN 5815:2018
 benefits:
-  - "Đạm: Là thành phần cơ bản của protein và là thành phần chính của chất diệp
+  - >-
+    Đạm: Là thành phần cơ bản của protein và là thành phần chính của chất diệp
     lục. Đạm thúc đẩy sự nảy chồi, ra lá, sự phát triển của quả, giúp tăng lượng
-    sinh khối."
-  - "Lân: Cần cho sự phân chia tế bào, thúc đẩy việc ra rễ, sự hình thành mầm
-    hoa và phát triển quả non."
-  - "Kali: Xúc tiến quá trình quang hợp, tổng hợp hydrat cacbon và gluxit của
+    sinh khối.
+
+    Lân: Cần cho sự phân chia tế bào, thúc đẩy việc ra rễ, sự hình thành mầm hoa
+    và phát triển quả non.
+
+    Kali: Xúc tiến quá trình quang hợp, tổng hợp hydrat cacbon và gluxit của
     cây, tạo đường, tạo tinh bột và tăng cường sự vận chuyển các sản phẩm quang
-    hợp về các cơ quan dự trữ làm tăng năng suất và chất lượng nông sản."
-  - "Silic: Tăng cường độ dày thành tế bào, giúp cây cứng cáp, chống gãy đổ, hạn
-    chế sâu bệnh và chống chịu thời tiết bất thuận."
-  - Là loại phân bón được bổ sung đầy đủ thành phần, tỷ lệ và hàm lượng dinh
+    hợp về các cơ quan dự trữ làm tăng năng suất và chất lượng nông sản.
+
+    Silic: Tăng cường độ dày thành tế bào, giúp cây cứng cáp, chống gãy đổ, hạn
+    chế sâu bệnh và chống chịu thời tiết bất thuận.
+  - >-
+    Là loại phân bón được bổ sung đầy đủ thành phần, tỷ lệ và hàm lượng dinh
     dưỡng thích hợp cho nhu cầu sinh trưởng, phát triển cây chè.
-  - Sử dụng hợp lý giúp thân cành phát triển cân đối, tán tốt, đâm lộc – bật
+
+    Sử dụng hợp lý giúp thân cành phát triển cân đối, tán tốt, đâm lộc – bật
     chồi mạnh, tăng năng suất, chất lượng và phẩm cấp chè, kéo dài chu kỳ khai
     thác và rút ngắn thời gian thu hái giữa các lứa trong năm.
 usage:
