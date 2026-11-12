@@ -1,5 +1,5 @@
 ---
-name: Cà phê số 2 (NPK 20-10-10+MNC Tiến Nông)
+name: Cà phê số 2 Mùa mưa (NPK 20-10-10+MNC Tiến Nông)
 line: cd
 order: 44
 crops:
@@ -23,30 +23,22 @@ npk:
   - value: +
     unit: MNC
 composition:
-- name: Đạm tổng số (Nₜ)
-  value: 20%
-  method: ''
-- name: Lân hữu hiệu (P₂O₅hh)
-  value: 10%
-  method: ''
-- name: Kali hữu hiệu (K₂Ohh)
-  value: 10%
-  method: ''
-- name: Kẽm (Zn)
-  value: 250 ppm
-  method: ''
-- name: Mangan (Mn)
-  value: 100 ppm
-  method: ''
-- name: Đồng (Cu)
-  value: 150 ppm
-  method: ''
-- name: Bo (B)
-  value: 100 ppm
-  method: ''
-- name: Độ ẩm
-  value: 5%
-  method: ''
+  - name: Đạm tổng số (Nts)
+    value: 20%
+  - name: Lân hữu hiệu (P₂O₅hh)
+    value: 10%
+  - name: Kali hữu hiệu (K₂Ohh)
+    value: 10%
+  - name: Kẽm (Zn)
+    value: 250 ppm
+  - name: Mangan (Mn)
+    value: 100 ppm
+  - name: Đồng (Cu)
+    value: 150 ppm
+  - name: Bo (B)
+    value: 100 ppm
+  - name: Độ ẩm
+    value: 5%
 benefits:
   - Cung cấp dinh dưỡng cân đối giúp cây cà phê phát triển cành nhánh mạnh, trái
     lớn đồng đều, không bị chen trái và rụng trái non.
@@ -87,4 +79,5 @@ field2:
 field3:
   focus: center
   zoom: "100"
+pack: 25 kg
 ---
