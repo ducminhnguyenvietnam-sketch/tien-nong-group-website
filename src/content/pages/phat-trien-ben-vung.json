@@ -71,10 +71,10 @@
         "text": "Sản xuất theo ISO 14001, nước thải tuần hoàn, truy xuất nguồn gốc.",
         "anchor": "nha-may-xanh",
         "image": {
+          "src": "/uploads/esg-plant-mvby1c2t.jpg",
           "focus": "56.3% 100%",
           "zoom": "100",
-          "alt": "Flycam khuôn viên nhà máy với cây xanh",
-          "src": "/uploads/esg-plant-mvby1c2t.jpg"
+          "alt": "Flycam khuôn viên nhà máy với cây xanh"
         }
       },
       {
@@ -82,10 +82,10 @@
         "text": "Phân bón trả chậm, kỹ sư tận ruộng, đồng hành khi mùa vụ gặp khó.",
         "anchor": "nha-nong",
         "image": {
+          "src": "/uploads/pillar-2-mw0k1sl4.jpg",
           "focus": "25.5% 50%",
           "zoom": "100",
-          "alt": "Lớp tập huấn kỹ thuật cho nông dân",
-          "src": "/uploads/pillar-2-mw0k1sl4.jpg"
+          "alt": "Lớp tập huấn kỹ thuật cho nông dân"
         }
       },
       {
@@ -250,8 +250,8 @@
       },
       {
         "value": "8–12",
-        "unit": "triệu đồng",
-        "label": "Hỗ trợ mỗi em / năm"
+        "label": "Hỗ trợ mỗi em / năm",
+        "unit": "triệu đồng"
       }
     ],
     "story_title": "Người con đầu tiên",
@@ -267,25 +267,41 @@
         "when": "1998",
         "title": "Bắt đầu nhận đỡ đầu",
         "text": "Những em nhỏ mồ côi đầu tiên ở Thanh Hóa được nhận trợ cấp hằng tháng.",
-        "link": "/tin-tuc/diem-tua-tinh-thuong-cua-hang-chuc-tre-mo-coi-xu-thanh/"
+        "link": "/tin-tuc/diem-tua-tinh-thuong-cua-hang-chuc-tre-mo-coi-xu-thanh/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       },
       {
         "when": "2018",
         "title": "50 em tại Thanh Hóa",
         "text": "Gặp mặt “Đại gia đình Tiến Nông với trẻ mồ côi” nhân Ngày Gia đình Việt Nam, cùng Hội Bảo trợ người khuyết tật và trẻ mồ côi tỉnh.",
-        "link": "/tin-tuc/nguoi-chap-canh-uoc-mo-cho-nhung-manh-doi-bat-hanh/"
+        "link": "/tin-tuc/nguoi-chap-canh-uoc-mo-cho-nhung-manh-doi-bat-hanh/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       },
       {
         "when": "2019",
         "title": "Lan tỏa thành chương trình 1.000 trẻ",
         "text": "Mô hình của Tiến Nông trở thành chương trình “Doanh nhân trẻ Việt Nam nhận đỡ đầu 1.000 trẻ mồ côi” của Hội Doanh nhân trẻ Việt Nam.",
-        "link": "/tin-tuc/hoi-bao-tro-nguoi-khuyet-tat-va-tre-mo-coi-viet-nam-to-chuc-hoi-nghi-so-ket/"
+        "link": "/tin-tuc/hoi-bao-tro-nguoi-khuyet-tat-va-tre-mo-coi-viet-nam-to-chuc-hoi-nghi-so-ket/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       },
       {
         "when": "2021",
         "title": "138 em tại Thanh Hóa",
         "text": "Cán bộ đến từng gia đình ở 15 huyện, thị của Thanh Hóa để tìm hiểu hoàn cảnh trước khi nhận đỡ đầu.",
-        "link": "/tin-tuc/cong-ty-tien-nong-tiep-tuc-nhan-do-dau-25-tre-mo-coi-va-trao-hoc-bong-cho-138/"
+        "link": "/tin-tuc/cong-ty-tien-nong-tiep-tuc-nhan-do-dau-25-tre-mo-coi-va-trao-hoc-bong-cho-138/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       },
       {
         "when": "2024",
@@ -301,13 +317,21 @@
         "when": "2025",
         "title": "200+ em đang được đỡ đầu",
         "text": "Ở ba tỉnh Thanh Hóa, Nghệ An, Hà Tĩnh — hỗ trợ tài chính, học tập và chăm sóc tinh thần định kỳ.",
-        "link": "/tin-tuc/thang-hanh-dong-vi-tre-em-2025-tien-nong-tiep-tuc-hanh-trinh-trao-yeu-thuong/"
+        "link": "/tin-tuc/thang-hanh-dong-vi-tre-em-2025-tien-nong-tiep-tuc-hanh-trinh-trao-yeu-thuong/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       },
       {
         "when": "2026",
         "title": "Chương trình “Hoa dâng Bác”",
         "text": "Tiến Nông luôn đồng hành cùng công tác khuyến học, khuyến tài, hỗ trợ hàng trăm học sinh và sinh viên là trẻ mồ côi, có hoàn cảnh khó khăn",
-        "link": "https://vhds.baothanhhoa.vn/tien-nong-uom-mam-tri-thuc-chap-canh-tuong-lai-45222.htm"
+        "link": "https://vhds.baothanhhoa.vn/tien-nong-uom-mam-tri-thuc-chap-canh-tuong-lai-45222.htm",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       }
     ],
     "photo_caption": "Được hưởng thụ phải sẻ chia",
@@ -433,7 +457,7 @@
       {
         "when": "2026",
         "title": "Thực hành",
-        "text": "ISO 14001, chương trình cộng đồng và tập huấn nhà nông được duy trì thường xuyên."
+        "text": "ISO 14001:2015, chương trình cộng đồng và tập huấn nhà nông được duy trì thường xuyên."
       },
       {
         "when": "07/2026",
@@ -447,5 +471,8 @@
       }
     ]
   },
-  "ts_teaser": "Mùa hè 2026, Tiến Nông mang 230 tấn phân bón, hơn 1.600 lời chúc và 133 lá thư từ đất liền ra với quân và dân Trường Sa."
+  "ts_teaser": "Mùa hè 2026, Tiến Nông mang 230 tấn phân bón, hơn 1.600 lời chúc và 133 lá thư từ đất liền ra với quân và dân Trường Sa.",
+  "can_le": {
+    "mac_dinh": "justify"
+  }
 }
