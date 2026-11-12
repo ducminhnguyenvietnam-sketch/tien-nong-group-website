@@ -1,5 +1,5 @@
 ---
-name: Cà Phê Số 3 (NPK 17-6-17+MNC Tiến Nông)
+name: Cà Phê Số 3 Giữa và cuối mùa mưa (NPK 17-6-17+MNC Tiến Nông)
 line: cd
 order: 45
 crops:
@@ -25,30 +25,22 @@ npk:
   - value: +
     unit: MNC
 composition:
-- name: Đạm tổng số (Nₜ)
-  value: 17%
-  method: ''
-- name: Lân hữu hiệu (P₂O₅hh)
-  value: 6%
-  method: ''
-- name: Kali hữu hiệu (K₂Ohh)
-  value: 17%
-  method: ''
-- name: Bo (B)
-  value: 300 ppm
-  method: ''
-- name: Kẽm (Zn)
-  value: 50 ppm
-  method: ''
-- name: Đồng (Cu)
-  value: 250 ppm
-  method: ''
-- name: Mangan (Mn)
-  value: 50 ppm
-  method: ''
-- name: Độ ẩm
-  value: 5%
-  method: ''
+  - name: Đạm tổng số (Nₜ)
+    value: 17%
+  - name: Lân hữu hiệu (P₂O₅hh)
+    value: 6%
+  - name: Kali hữu hiệu (K₂Ohh)
+    value: 17%
+  - name: Bo (B)
+    value: 300 ppm
+  - name: Kẽm (Zn)
+    value: 50 ppm
+  - name: Đồng (Cu)
+    value: 250 ppm
+  - name: Mangan (Mn)
+    value: 50 ppm
+  - name: Độ ẩm
+    value: 5%
 benefits:
   - Cung cấp dinh dưỡng cân đối cho cây nuôi trái, cành nhánh phát triển đồng
     đều, khỏe mạnh. Hạn chế sâu bệnh, chống rụng trái. Bổ sung dinh dưỡng kịp
@@ -90,4 +82,5 @@ field2:
 field3:
   focus: center
   zoom: "100"
+pack: 25 kg
 ---
