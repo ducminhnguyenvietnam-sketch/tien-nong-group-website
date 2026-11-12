@@ -57,9 +57,9 @@ usage:
   - title: "Cây lâu năm: (Cây cà phê, ca cao, điều, hồ tiêu, thanh long, cam, bưởi,
       na, táo, mơ, mận)"
     rate: "•\tThời kỳ kiến thiết cơ bản: 0,3 – 0,6 kg/gốc/lần (150 – 250 g/m² tán
-      cây), bón 2 – 3 lần/năm, bón đầu mùa mưa, giữa mùa mưa và cuối mùa mưa."
-    timing: "kinh doanh: 0,5 – 2,0 kg/gốc/lần (150 – 250 g/m² tán cây), bón phục hồi
-      cây sau thu quả, hoặc bón thúc lộc, phân hóa hoa."
+      cây), bón 2 – 3 lần/năm, bón đầu mùa mưa, giữa mùa mưa và cuối mùa
+      mưa.•\tThời kỳ kinh doanh: 0,5 – 2,0 kg/gốc/lần (150 – 250 g/m² tán cây),
+      bón phục hồi cây sau thu quả, hoặc bón thúc lộc, phân hóa hoa."
     method: Đánh rãnh so le từ 3/4 tán lá ra mép tán hoặc bổ hốc bón phân, lấp đất
       kết hợp tưới nước nếu độ ẩm đất không đảm bảo.
 safety:
