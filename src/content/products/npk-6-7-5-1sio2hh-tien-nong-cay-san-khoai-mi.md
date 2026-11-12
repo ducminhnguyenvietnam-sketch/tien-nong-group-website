@@ -30,7 +30,7 @@ npk:
   - value: "1"
     unit: SiO₂
 composition:
-  - name: Hàm lượng đạm tổng số (Nₜ)
+  - name: Hàm lượng đạm tổng số (Nts)
     value: 6%
     method: TCVN 5815:2018
   - name: Hàm lượng Photpho hữu hiệu (P₂O₅hh)
@@ -56,6 +56,8 @@ usage:
       hoặc rải đều trên mặt ruộng kết hợp tưới nước.
   - title: "Cây lâu năm: (Cây cà phê, ca cao, điều, hồ tiêu, thanh long, cam, bưởi,
       na, táo, mơ, mận)"
+    rate: "•\tThời kỳ kiến thiết cơ bản: 0,3 – 0,6 kg/gốc/lần (150 – 250 g/m² tán
+      cây), bón 2 – 3 lần/năm, bón đầu mùa mưa, giữa mùa mưa và cuối mùa mưa."
     timing: "kinh doanh: 0,5 – 2,0 kg/gốc/lần (150 – 250 g/m² tán cây), bón phục hồi
       cây sau thu quả, hoặc bón thúc lộc, phân hóa hoa."
     method: Đánh rãnh so le từ 3/4 tán lá ra mép tán hoặc bổ hốc bón phân, lấp đất
@@ -90,4 +92,5 @@ field2:
 field3:
   focus: center
   zoom: "100"
+pack: 25 kg
 ---
