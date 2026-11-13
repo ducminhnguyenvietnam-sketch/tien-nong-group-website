@@ -1,7 +1,7 @@
 ---
 name: Cây dứa (NPK 16-6-18+1SiO₂hh Tiến Nông)
 line: cd
-order: 51
+order: 48
 crops:
   - Cây ăn quả
 summary: Cung cấp đầy đủ, cân đối chất dinh dưỡng thiết yếu cho cây trồng.
