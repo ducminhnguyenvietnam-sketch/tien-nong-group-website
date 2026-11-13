@@ -31,28 +31,23 @@ npk:
     unit: Đạm
   - value: 2%
     unit: Lân
+  - value: 2%
+    unit: Kali hữu hiệu (K₂Ohh)
 composition:
-- name: Chất hữu cơ
-  value: 50%
-  method: ''
-- name: Đạm tổng số (Nts)
-  value: 3%
-  method: ''
-- name: Lân hữu hiệu (P₂O₅hh)
-  value: 2%
-  method: ''
-- name: Kali hữu hiệu (K₂Ohh)
-  value: 2%
-  method: ''
-- name: Tỷ lệ C/N
-  value: '12'
-  method: ''
-- name: Độ ẩm
-  value: 25%
-  method: ''
-- name: pH (H₂O)
-  value: '5'
-  method: ''
+  - name: Chất hữu cơ
+    value: 50%
+  - name: Đạm tổng số (Nts)
+    value: 3%
+  - name: Lân hữu hiệu (P₂O₅hh)
+    value: 2%
+  - name: Kali hữu hiệu (K₂Ohh)
+    value: 2%
+  - name: Tỷ lệ C/N
+    value: "12"
+  - name: Độ ẩm
+    value: 25%
+  - name: pH (H₂O)
+    value: "5"
 benefits:
   - Hữu Cơ Organic là phân bón có hàm lượng hữu cơ cao với thành phần dinh dưỡng
     khoáng đạt lượng phù hợp cho sinh trưởng, phát triển của các loại cây trồng.
