@@ -1,7 +1,7 @@
 ---
 name: Cây Lạc (NPK 4-9-6+1,5SiO₂hh Tiến Nông)
 line: cd
-order: 46
+order: 47
 crops:
   - Lạc
 summary: Cung cấp đầy đủ, cân đối chất dinh dưỡng thiết yếu cho cây trồng.
