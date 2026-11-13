@@ -33,7 +33,7 @@ npk:
 composition:
   - name: Chất hữu cơ
     value: 15%
-  - name: Đạm tổng số (Nₜ)
+  - name: Đạm tổng số (Nts)
     value: 3%
   - name: Lân hữu hiệu (P₂O₅hh)
     value: 2%
