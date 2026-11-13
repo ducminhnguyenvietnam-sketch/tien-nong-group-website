@@ -32,7 +32,7 @@ npk:
   - value: 2%
     unit: Lân
   - value: 2%
-    unit: Kali hữu hiệu (K₂Ohh)
+    unit: K₂Ohh
 composition:
   - name: Chất hữu cơ
     value: 50%
