@@ -1,7 +1,7 @@
 ---
 name: Cây sắn, khoai mì (NPK 6-7-5+1SiO₂hh Tiến Nông)
 line: cd
-order: 6
+order: 46
 crops:
   - Lúa
   - Ngô
