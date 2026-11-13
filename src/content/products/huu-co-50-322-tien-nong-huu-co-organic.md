@@ -28,11 +28,11 @@ npk:
   - value: 50%
     unit: Chất hữu cơ
   - value: 3%
-    unit: Đạm
+    unit: Đạm tổng số
   - value: 2%
-    unit: Lân
+    unit: Lân hữu hiệu
   - value: 2%
-    unit: K₂Ohh
+    unit: Kali hữu hiệu
 composition:
   - name: Chất hữu cơ
     value: 50%
