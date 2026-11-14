@@ -26,9 +26,10 @@
       "button2_link": "/nong-dan/",
       "show_text": true,
       "image": {
-        "focus": "center",
+        "focus": "50% 32.2%",
         "zoom": "100",
-        "alt": "Người nông dân trên cánh đồng lúa chín"
+        "alt": "Người nông dân trên cánh đồng lúa chín",
+        "src": "/uploads/hero-1-mwfq8za8.jpg"
       }
     },
     {
