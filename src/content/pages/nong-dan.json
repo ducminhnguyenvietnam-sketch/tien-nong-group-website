@@ -26,9 +26,9 @@
       "sub": "Canh tác cùng Tiến Nông"
     },
     {
-      "value": "Từ 2014",
-      "label": "phân bón trả chậm",
-      "sub": "Qua Hội Nông dân các tỉnh"
+      "value": "200+",
+      "label": "Nhà phân phối",
+      "sub": "Trên cả nước"
     },
     {
       "value": "10.000+",
@@ -44,7 +44,6 @@
   "promises": {
     "eyebrow": "CAM KẾT VỚI BÀ CON",
     "title": "Bốn điều Tiến Nông giữ với nhà nông",
-    "intro": "",
     "items": [
       {
         "title": "Hàng thật, quét là biết",
@@ -129,29 +128,40 @@
         "when": "11/2014",
         "title": "Bắt đầu tại Hoằng Hóa",
         "text": "Hội nghị triển khai đầu tiên cùng Hội Nông dân huyện Hoằng Hóa (Thanh Hóa), với lãnh đạo Hội của 43 xã.",
-        "link": "/tin-tuc/hoi-nghi-trien-khai-chuong-trinh-dich-vu-ho-tro-cung-ung-phan-bon-tra-cham-cho/"
+        "link": "/tin-tuc/hoi-nghi-trien-khai-chuong-trinh-dich-vu-ho-tro-cung-ung-phan-bon-tra-cham-cho/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       },
       {
         "when": "2015–2016",
         "title": "Mở rộng ra nhiều tỉnh",
         "text": "Theo chỉ đạo của Trung ương Hội Nông dân Việt Nam, Hội Nông dân tỉnh Bắc Giang trực tiếp ký kết với Tiến Nông; chương trình đến với Hòa Bình và nhiều huyện của Thanh Hóa.",
-        "link": "/tin-tuc/bac-giang-cung-ung-phan-bon-tra-cham-cho-nong-dan-gan-ket-hoi-vien-voi-to-chuc/"
+        "link": "/tin-tuc/bac-giang-cung-ung-phan-bon-tra-cham-cho-nong-dan-gan-ket-hoi-vien-voi-to-chuc/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       },
       {
         "when": "2016",
         "title": "Sản phẩm mang logo Hội Nông dân",
         "text": "Phân bón N.P.K.Si “Vì nông dân Việt” được Trung ương Hội Nông dân Việt Nam thẩm định và cho in logo của Hội lên bao bì.",
-        "link": "/tin-tuc/nha-nong-bac-giang-huong-loi-voi-phan-bon-tra-cham/"
+        "link": "/tin-tuc/nha-nong-bac-giang-huong-loi-voi-phan-bon-tra-cham/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       },
       {
         "when": "2019",
         "title": "Phủ khắp 183 xã ở Bắc Giang",
         "text": "Các cấp Hội Nông dân tỉnh Bắc Giang cung ứng phân bón trả chậm cho hội viên ở 183 xã, thị trấn thuộc 10 huyện, thành phố.",
-        "link": "",
         "image": {
+          "src": "/uploads/deferred-year-3-mw0k7vug.jpg",
           "focus": "50% 57.5%",
           "zoom": "100",
-          "src": "/uploads/deferred-year-3-mw0k7vug.jpg",
           "alt": "Phủ khắp 183 xã ở Bắc Giang"
         }
       },
@@ -159,13 +169,21 @@
         "when": "03/2024",
         "title": "Tổng kết 5 năm cùng Hội Nông dân Thanh Hóa",
         "text": "Tổng kết chương trình phối hợp giai đoạn 2019–2023 và ký kết giai đoạn mới.",
-        "link": "/tin-tuc/tien-nong-tiep-tuc-cung-ung-phan-bon-tra-cham-toi-nong-dan/"
+        "link": "/tin-tuc/tien-nong-tiep-tuc-cung-ung-phan-bon-tra-cham-toi-nong-dan/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       },
       {
         "when": "07/2025",
         "title": "Triển khai tại Bắc Ninh",
         "text": "Tiếp tục chương trình tại tỉnh Bắc Ninh sau khi sáp nhập với Bắc Giang.",
-        "link": "/tin-tuc/hoi-nghi-trien-khai-chuong-trinh-cung-ung-phan-bon-tien-nong-tra-cham-cho-nong/"
+        "link": "/tin-tuc/hoi-nghi-trien-khai-chuong-trinh-cung-ung-phan-bon-tien-nong-tra-cham-cho-nong/",
+        "image": {
+          "focus": "center",
+          "zoom": "100"
+        }
       }
     ],
     "join_title": "Bà con muốn tham gia?",
@@ -282,7 +300,6 @@
   "hardship": {
     "eyebrow": "KHI MÙA VỤ GẶP KHÓ",
     "title": "Không để bà con đứng một mình",
-    "intro": "",
     "items": [
       {
         "when": "02/2020",
@@ -290,7 +307,6 @@
         "text": "Khi dưa hấu Gia Lai không xuất khẩu được vì dịch Covid-19, Tiến Nông mua 30 tấn dưa của bà con Krông Pa, phát miễn phí cho người lao động và người dân.",
         "link": "/tin-tuc/gia-dinh-tien-nong-giai-cuu-30-tan-dua-hau-ho-tro-nong-dan-trong-dua-trong-mua/",
         "image": {
-          "src": "",
           "focus": "center",
           "zoom": "100",
           "alt": "Giải cứu 30 tấn dưa hấu mùa dịch"
@@ -302,7 +318,6 @@
         "text": "Đồng hành cùng nhà vườn Lục Ngạn tiêu thụ vải thiều trong mùa dịch.",
         "link": "/tin-tuc/tien-nong-tiep-tuc-lan-toa-tinh-than-se-chia-dong-hanh-cung-nong-dan-bac-giang/",
         "image": {
-          "src": "",
           "focus": "center",
           "zoom": "100",
           "alt": "Cùng Bắc Giang tiêu thụ vải thiều"
@@ -314,7 +329,6 @@
         "text": "Trao tặng hơn 100 tấn phân bón hữu cơ sinh học humic, kèm hướng dẫn chăm sóc đất và cây sau ngập.",
         "link": "/tin-tuc/cong-ty-tien-nong-trao-tang-hon-100-tan-phan-bon-huu-co-sinh-hoc-humic-tien/",
         "image": {
-          "src": "",
           "focus": "center",
           "zoom": "100",
           "alt": "Phân bón cho bà con sau bão lũ"
@@ -326,7 +340,6 @@
         "text": "Kỹ sư lấy mẫu đất, mẫu cây trên vùng dứa bị ngập để tìm cách phục hồi.",
         "link": "/tin-tuc/sau-ngap-ung-o-yen-phu-tien-nong-xuong-dong-tim-loi-giai-tu-dat-va-cay/",
         "image": {
-          "src": "",
           "focus": "center",
           "zoom": "100",
           "alt": "Xuống đồng sau ngập úng ở Yên Phú"
@@ -345,5 +358,8 @@
     "title": "Cần kỹ sư tư vấn cho ruộng vườn?",
     "text": "Gọi hotline hoặc để lại thông tin, kỹ sư Tiến Nông phụ trách khu vực sẽ liên hệ với bà con.",
     "contact": "Để lại thông tin"
+  },
+  "can_le": {
+    "mac_dinh": "justify"
   }
 }
