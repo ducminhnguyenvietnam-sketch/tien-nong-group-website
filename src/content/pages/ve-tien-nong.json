@@ -763,6 +763,42 @@
           "zoom": "100"
         },
         "featured": false
+      },
+      {
+        "name": "VNU",
+        "logo": {
+          "src": "/uploads/5.png",
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "featured": false
+      },
+      {
+        "name": "Viện thổ nhưỡng",
+        "logo": {
+          "src": "/uploads/56.png",
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "featured": false
+      },
+      {
+        "name": "BVe thực vật",
+        "logo": {
+          "src": "/uploads/999logo(1)-1.png",
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "featured": false
+      },
+      {
+        "name": "Nacentech",
+        "logo": {
+          "src": "/uploads/NACENTECH_Main-Logo-G.png",
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "featured": false
       }
     ]
   },
