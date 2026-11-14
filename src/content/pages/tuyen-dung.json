@@ -54,18 +54,18 @@
     "items": [
       {
         "title": "Công việc có ý nghĩa",
-        "text": "Mỗi công thức phân bón, mỗi buổi hội thảo đều đến với một thửa ruộng thật, một gia đình nông dân thật. Bạn nhìn thấy kết quả công việc của mình ngay trên đồng.",
-        "icon": "sprout"
+        "icon": "sprout",
+        "text": "Mỗi công thức phân bón, mỗi buổi hội thảo đều đến với một thửa ruộng thật, một gia đình nông dân thật. Bạn nhìn thấy kết quả công việc của mình ngay trên đồng."
       },
       {
-        "title": "Được học và lớn lên",
-        "text": "Đào tạo nội bộ hằng năm, cơ hội đào tạo trong và ngoài nước. Nhiều quản lý hôm nay đã đi lên từ vị trí nhân viên.",
-        "icon": "graduation"
+        "title": "Không ngừng học tập và trưởng thành",
+        "icon": "graduation",
+        "text": "Đào tạo nội bộ hằng năm, cơ hội đào tạo trong và ngoài nước. Nhiều quản lý hôm nay đã đi lên từ vị trí nhân viên."
       },
       {
         "title": "Được chăm lo như người nhà",
-        "text": "Du lịch nước ngoài, tặng vàng và Bảo Bình tri ân người gắn bó, quan tâm tới gia đình và con em cán bộ — trong một tập thể sống theo năm điều tâm niệm.",
-        "icon": "home"
+        "icon": "home",
+        "text": "Du lịch nước ngoài, tặng vàng và Bảo Bình tri ân người gắn bó, quan tâm tới gia đình và con em cán bộ — trong một tập thể sống theo năm điều tâm niệm."
       }
     ],
     "link_label": "Tìm hiểu văn hóa Tiến Nông →"
