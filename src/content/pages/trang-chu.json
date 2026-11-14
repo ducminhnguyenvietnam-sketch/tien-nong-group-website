@@ -26,10 +26,10 @@
       "button2_link": "/nong-dan/",
       "show_text": true,
       "image": {
+        "src": "/uploads/hero-1-mwfqd9eg.jpg",
         "focus": "0% 58.6%",
         "zoom": "109",
-        "alt": "Người nông dân trên cánh đồng lúa chín",
-        "src": "/uploads/hero-1-mwfqd9eg.jpg"
+        "alt": "Người nông dân trên cánh đồng lúa chín"
       }
     },
     {
@@ -40,12 +40,12 @@
       "button1_link": "/san-pham/",
       "button2_label": "Tìm đại lý gần nhất",
       "button2_link": "/lien-he/#dai-ly",
-      "show_text": true,
+      "show_text": false,
       "image": {
+        "src": "/uploads/hero-2-mwfqjp68.jpg",
         "focus": "50% 78%",
         "zoom": "100",
-        "alt": "Ảnh thiết kế giới thiệu sản phẩm NPK hữu cơ vi sinh (chiến dịch marketing)",
-        "src": "/uploads/hero-2-mwfqjp68.jpg"
+        "alt": "Ảnh thiết kế giới thiệu sản phẩm NPK hữu cơ vi sinh (chiến dịch marketing)"
       }
     }
   ],
