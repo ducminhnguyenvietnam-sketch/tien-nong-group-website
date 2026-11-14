@@ -42,9 +42,10 @@
       "button2_link": "/lien-he/#dai-ly",
       "show_text": true,
       "image": {
-        "focus": "center",
+        "focus": "50% 78%",
         "zoom": "100",
-        "alt": "Ảnh thiết kế giới thiệu sản phẩm NPK hữu cơ vi sinh (chiến dịch marketing)"
+        "alt": "Ảnh thiết kế giới thiệu sản phẩm NPK hữu cơ vi sinh (chiến dịch marketing)",
+        "src": "/uploads/hero-2-mwfqjp68.jpg"
       }
     }
   ],
