@@ -128,21 +128,21 @@
         "alt": "Đại lý Tiến Nông tư vấn sản phẩm cho bà con"
       },
       {
+        "src": "/uploads/partner-benefits-1-mwg3qnnj.jpg",
         "focus": "50% 100%",
         "zoom": "100",
-        "src": "/uploads/partner-benefits-1-mwg3qnnj.jpg",
         "alt": "Ảnh quyền lợi đối tác"
       },
       {
+        "src": "/uploads/partner-benefits-2-mwg501q3.jpg",
         "focus": "50% 43.8%",
         "zoom": "100",
-        "src": "/uploads/partner-benefits-2-mwg501q3.jpg",
         "alt": "Ảnh quyền lợi đối tác"
       },
       {
+        "src": "/uploads/partner-benefits-3-mwg4qf8t.jpg",
         "focus": "50% 42.2%",
         "zoom": "100",
-        "src": "/uploads/partner-benefits-3-mwg4qf8t.jpg",
         "alt": "Ảnh quyền lợi đối tác"
       }
     ]
@@ -356,7 +356,8 @@
         "Hà Nội",
         "Hải Phòng",
         "Quảng Ninh",
-        "Bắc Ninh",
+        "Cao Bằng",
+        "Lạng Sơn",
         "Hưng Yên"
       ]
     },
