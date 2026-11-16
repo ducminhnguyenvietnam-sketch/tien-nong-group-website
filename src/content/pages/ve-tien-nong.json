@@ -661,16 +661,6 @@
     },
     "partners": [
       {
-        "name": "Tiến Nông Garden",
-        "logo": {
-          "src": "/uploads/partner-0-mw0jepsy.png",
-          "focus": "50% 50%",
-          "zoom": "100",
-          "alt": "Logo Tiến Nông Garden"
-        },
-        "featured": false
-      },
-      {
         "name": "Hacheco",
         "logo": {
           "src": "/uploads/eco-2-mvbxybod.jpg",
@@ -779,6 +769,16 @@
           "src": "/uploads/56.png",
           "focus": "50% 50%",
           "zoom": "100"
+        },
+        "featured": false
+      },
+      {
+        "name": "Tiến Nông Garden",
+        "logo": {
+          "src": "/uploads/partner-0-mw0jepsy.png",
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Logo Tiến Nông Garden"
         },
         "featured": false
       },
