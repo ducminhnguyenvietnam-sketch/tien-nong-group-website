@@ -2,17 +2,17 @@
 name: Phân bón hữu cơ - Khoáng HC-NPK 15-3-2-3 Tiến Nông
 line: hc
 featured: false
-summary: >
-  Cung cấp cân đối dinh dưỡng cho cây trồng. Cải tạo đất, tăng độ mùn, làm cho
-  đất tơi xốp. Kích thích cây ra rễ, bộ rễ phát triển mạnh. Tăng khả năng chịu
-  hạn, chịu rét và thời tiết bất thuận. Làm tăng năng suất, chất lượng nông sản.
+summary: |
+  Cung cấp cân đối dinh dưỡng cho cây trồng. Cải tạo đất, tăng độ mùn, làm cho đất tơi xốp. Kích thích cây ra rễ, bộ rễ phát triển mạnh. Tăng khả năng chịu hạn, chịu rét và thời tiết bất thuận. Làm tăng năng suất, chất lượng nông sản.
 front:
   src: /uploads/HC NPK 15-3-2-3.png
   focus: center
   zoom: "100"
 back:
-  focus: center
+  focus: 50% 50%
   zoom: "100"
+  src: /uploads/pd-phan-bon-huu-co-khoang-hc-npk-15-3-2--mwinhqyq.png
+  alt: Mặt sau
 granule:
   focus: center
   zoom: "100"
@@ -64,11 +64,9 @@ usage:
   - title: Cây ngắn ngày (Lúa, ngô, khoai, đậu, rau màu)
     rate: 1.500 - 2.500 kg/ha.
     timing: Bón lót.
-    method: Bón rải theo hàng, theo gốc kết hợp làm cỏ xới xáo, lấp phân vun gốc,
-      hoặc rải đều trên mặt ruộng kết hợp tưới nước.
+    method: Bón rải theo hàng, theo gốc kết hợp làm cỏ xới xáo, lấp phân vun gốc, hoặc rải đều trên mặt ruộng kết hợp tưới nước.
   - title: Cây dài ngày (cà phê, ca cao, điều, hồ tiêu, bưởi, cam)
-    rate: "Thời kỳ kiến thiết cơ bản: 1-3 kg/gốc/lần; Thời kỳ kinh doanh: 2-5
-      kg/gốc/lần."
+    rate: "Thời kỳ kiến thiết cơ bản: 1-3 kg/gốc/lần; Thời kỳ kinh doanh: 2-5 kg/gốc/lần."
     method: Rạch rãnh xung quanh tán cây, rải phân lấp đất nhẹ và tưới nước.
 safety:
   - Không nguy hiểm khi tiếp xúc trực tiếp.
