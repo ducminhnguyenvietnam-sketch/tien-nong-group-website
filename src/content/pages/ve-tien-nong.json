@@ -773,16 +773,6 @@
         "featured": false
       },
       {
-        "name": "Tiến Nông Garden",
-        "logo": {
-          "src": "/uploads/partner-0-mw0jepsy.png",
-          "focus": "50% 50%",
-          "zoom": "100",
-          "alt": "Logo Tiến Nông Garden"
-        },
-        "featured": false
-      },
-      {
         "name": "BVe thực vật",
         "logo": {
           "src": "/uploads/999logo(1)-1.png",
@@ -806,6 +796,25 @@
           "src": "/uploads/44.png",
           "focus": "50% 50%",
           "zoom": "100"
+        },
+        "featured": false
+      },
+      {
+        "name": "BoA",
+        "logo": {
+          "src": "/uploads/22.png",
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "featured": false
+      },
+      {
+        "name": "Tiến Nông Garden",
+        "logo": {
+          "src": "/uploads/partner-0-mw0jepsy.png",
+          "focus": "50% 50%",
+          "zoom": "100",
+          "alt": "Logo Tiến Nông Garden"
         },
         "featured": false
       }
