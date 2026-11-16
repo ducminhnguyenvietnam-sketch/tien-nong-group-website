@@ -821,6 +821,16 @@
       {
         "name": "Sao Khuê",
         "logo": {
+          "src": "/uploads/4141.png",
+          "focus": "center",
+          "zoom": "100"
+        },
+        "featured": false
+      },
+      {
+        "name": "Lựu sướng",
+        "logo": {
+          "src": "/uploads/12312311.png",
           "focus": "center",
           "zoom": "100"
         },
