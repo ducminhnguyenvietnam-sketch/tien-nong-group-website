@@ -793,7 +793,7 @@
       {
         "name": "Vinacontrol",
         "logo": {
-          "src": "/uploads/44.png",
+          "src": "/uploads/44-1.png",
           "focus": "50% 50%",
           "zoom": "100"
         },
@@ -815,6 +815,14 @@
           "focus": "50% 50%",
           "zoom": "100",
           "alt": "Logo Tiến Nông Garden"
+        },
+        "featured": false
+      },
+      {
+        "name": "Sao Khuê",
+        "logo": {
+          "focus": "center",
+          "zoom": "100"
         },
         "featured": false
       }
