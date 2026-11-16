@@ -341,7 +341,6 @@
     {
       "name": "Nguyễn Trung Trụ",
       "title": "Giám đốc Kinh doanh Phòng 1",
-      "region": "Vùng 1",
       "area": "Thanh Hóa & Đồng bằng sông Hồng",
       "image": {
         "src": "/uploads/dir-0-mw4vyhl7.jpg",
@@ -364,7 +363,6 @@
     {
       "name": "Trần Mạnh Tiến",
       "title": "Giám đốc Kinh doanh Phòng 2",
-      "region": "Vùng 2",
       "area": "Miền Trung, Tây Nguyên & Nam Bộ",
       "image": {
         "src": "/uploads/tranmanhtien-1.jpg",
@@ -388,7 +386,6 @@
     {
       "name": "Lê Viết Thiện",
       "title": "Giám đốc Kinh doanh Phòng 3",
-      "region": "Vùng 3",
       "area": "Trung du & miền núi phía Bắc",
       "image": {
         "src": "/uploads/levietthien-1.jpg",
