@@ -11,7 +11,7 @@ front:
 back:
   focus: 50% 50%
   zoom: "100"
-  src: /uploads/pd-phan-bon-huu-co-khoang-hc-npk-15-3-2--mwinhqyq.png
+  src: /uploads/pd-phan-bon-huu-co-khoang-hc-npk-15-3-2--mwinkcgi.png
   alt: Mặt sau
 granule:
   focus: center
