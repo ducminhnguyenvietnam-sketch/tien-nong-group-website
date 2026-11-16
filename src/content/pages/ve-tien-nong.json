@@ -719,6 +719,15 @@
         "featured": false
       },
       {
+        "name": "Nacentech",
+        "logo": {
+          "src": "/uploads/NACENTECH_Main-Logo-G.png",
+          "focus": "50% 50%",
+          "zoom": "100"
+        },
+        "featured": false
+      },
+      {
         "name": "AN THANH PHAT",
         "logo": {
           "src": "/uploads/logo-anthanhphat-2.png",
@@ -776,15 +785,6 @@
         "name": "BVe thực vật",
         "logo": {
           "src": "/uploads/999logo(1)-1.png",
-          "focus": "50% 50%",
-          "zoom": "100"
-        },
-        "featured": false
-      },
-      {
-        "name": "Nacentech",
-        "logo": {
-          "src": "/uploads/NACENTECH_Main-Logo-G.png",
           "focus": "50% 50%",
           "zoom": "100"
         },
