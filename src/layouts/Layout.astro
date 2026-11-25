@@ -105,11 +105,48 @@ const shareImage = Astro.props.image || homeHero;
 const origin = Astro.site ? Astro.site.origin : '';
 const abs = (p?: string) => (p ? (/^https?:/.test(p) ? p : `${origin}${asset(p)}`) : undefined);
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+/** Verified facts for AI assistants and search engines (source of truth: the "Về Tiến Nông" page). Awards keep
+ *  their official Vietnamese names; years are left out where the website itself still disagrees. */
+const ORG_ID = origin ? `${origin}${asset('/')}#organization` : undefined;
+const AWARDS = [
+  'Huân chương Lao động hạng Ba',
+  'Bằng khen của Thủ tướng Chính phủ',
+  'Bằng khen Bộ trưởng Bộ Nông nghiệp và Phát triển nông thôn (2022)',
+  'Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam (2014)',
+  'Giải thưởng KOVA (2013)',
+  'Nhà Khoa học của Nhà nông (2018)',
+  'Doanh nghiệp Khoa học và Công nghệ tiêu biểu (2025)',
+  'Giải thưởng Sao Đỏ (2001)',
+  'Giải thưởng Chất lượng Việt Nam (2002)',
+  'Sao Vàng Đất Việt (2003, 2005, 2007, 2009, 2013, 2024)',
+  'Sản phẩm Nông nghiệp tiêu biểu (2016)',
+  'Nhãn hiệu Cạnh tranh Việt Nam (2018)',
+  'Thương hiệu Vàng Nông nghiệp Việt Nam (2023, 2024, 2025)',
+  'Thương hiệu nổi tiếng ASEAN (2011)',
+  'Nhà Doanh nghiệp xuất sắc châu Á (2015)',
+  'Top 10 Thương hiệu mạnh ASEAN (2024)',
+];
+const CREDENTIALS = [
+  ['Doanh nghiệp Khoa học và Công nghệ – Giấy chứng nhận số 228/DNKHCN (2014)', 'Chứng nhận doanh nghiệp KH&CN'],
+  ['Phòng thí nghiệm VILAS 1519 – ISO/IEC 17025:2017', 'Công nhận phòng thí nghiệm'],
+  ['Phòng thí nghiệm VALAS 262', 'Công nhận phòng thí nghiệm'],
+  ['ISO 9001:2015', 'Hệ thống quản lý chất lượng'],
+  ['ISO 14001:2015', 'Hệ thống quản lý môi trường'],
+].map(([name, credentialCategory]) => ({ '@type': 'EducationalOccupationalCredential', name, credentialCategory }));
+const FACTORIES = [
+  ['Nhà máy Dinh dưỡng Cây trồng Tiến Nông Bỉm Sơn', 'Khu B, Khu công nghiệp Bỉm Sơn', 'Phường Bỉm Sơn', 'Thanh Hóa'],
+  ['Nhà máy Dinh dưỡng Cây trồng Tiến Nông 3', 'Km 312 Quốc lộ 1A', 'Hoằng Phú', 'Thanh Hóa'],
+  ['Nhà máy Dinh dưỡng Cây trồng Tiến Nông Gia Lai', undefined, 'Chư Sê', 'Gia Lai'],
+].map(([name, streetAddress, addressLocality, addressRegion]) => ({ '@type': 'Place', name,
+  address: { '@type': 'PostalAddress', streetAddress, addressLocality, addressRegion, addressCountry: 'VN' } }));
 const org = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': ORG_ID,
   name: tr(site.company?.name || 'Công ty Cổ phần Công Nông nghiệp Tiến Nông', L),
-  alternateName: 'Tiến Nông Group',
+  alternateName: ['Tiến Nông Group', 'Tiến Nông', 'Công ty Tiến Nông', 'Phân bón Tiến Nông', 'Tien Nong Group',
+    'Tien Nong Industrial and Agricultural Joint Stock Company'],
+  description: tr(DEFAULT_DESCRIPTION, L),
   url: origin ? `${origin}${asset('/')}` : undefined,
   logo: abs('/assets/logo-mark.png'),
   foundingDate: '1995-01-04',
@@ -120,12 +157,21 @@ const org = {
   legalName: 'Công ty Cổ phần Công Nông nghiệp Tiến Nông',
   taxID: '2800142141',
   slogan: tr('Khoa học phụng sự nhà nông', L),
-  knowsAbout: ['Phân bón', 'Dinh dưỡng cây trồng', 'Phân bón NPK', 'Phân bón hữu cơ', 'Phân tích đất'],
+  knowsAbout: ['Phân bón', 'Dinh dưỡng cây trồng', 'Phân bón NPK', 'Phân bón hữu cơ', 'Phân tích đất',
+    'Phân bón chậm tan', 'Công nghệ bọc nhả chậm SCT (Slow-release Coating Technology)', 'Sức khỏe đất'],
+  founder: { '@type': 'Person', name: 'Nguyễn Xuân Cộng', jobTitle: 'Chủ tịch Hội đồng quản trị, Người sáng lập' },
+  employee: [{ '@type': 'Person', name: 'Nguyễn Hồng Phong', jobTitle: 'Phó Chủ tịch Hội đồng quản trị, Tổng Giám đốc' }],
+  numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 400 },
+  areaServed: ['Việt Nam', 'Đông Nam Á', 'Châu Á'],
+  award: AWARDS,
+  hasCredential: CREDENTIALS,
+  location: FACTORIES,
   contactPoint: site.company?.phone ? [{ '@type': 'ContactPoint', telephone: site.company.phone, email: site.company?.email || undefined,
     contactType: 'customer service', areaServed: 'VN', availableLanguage: ['vi'] }] : undefined,
 };
 /** Home page: the site itself (name shown in Google results). */
-const website = isHome ? [{ '@context': 'https://schema.org', '@type': 'WebSite', name: 'Tiến Nông Group', alternateName: 'Tiến Nông', url: org.url, inLanguage: meta.html }] : [];
+const website = isHome ? [{ '@context': 'https://schema.org', '@type': 'WebSite', name: 'Tiến Nông Group', alternateName: 'Tiến Nông', url: org.url, inLanguage: meta.html,
+  publisher: ORG_ID ? { '@id': ORG_ID } : undefined }] : [];
 ---
 <!doctype html>
 <html lang={meta.html} data-hotline={(site.company?.hotline || site.company?.phone || undefined)}>

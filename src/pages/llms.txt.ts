@@ -36,9 +36,15 @@ export const GET: APIRoute = ({ site: origin }) => {
 
 ## Ghi nhận
 
-- Huân chương Lao động hạng Ba; Bằng khen của Thủ tướng Chính phủ
-- 6 lần Sao Vàng Đất Việt; Thương hiệu Vàng Nông nghiệp Việt Nam 2023 · 2024 · 2025
-- Top 10 Thương hiệu mạnh ASEAN (2024)
+- Nhà nước: Huân chương Lao động hạng Ba (Chủ tịch nước trao tặng); Bằng khen của Thủ tướng Chính phủ; Bằng khen Bộ trưởng Bộ Nông nghiệp và Phát triển nông thôn (2022)
+- Khoa học & công nghệ: Giải thưởng Sáng tạo Khoa học Công nghệ Việt Nam (2014); Giải thưởng KOVA (2013); Nhà Khoa học của Nhà nông (2018); Doanh nghiệp KH&CN tiêu biểu (2025)
+- Chất lượng & thương hiệu: Giải thưởng Sao Đỏ (2001); Giải thưởng Chất lượng Việt Nam (2002); 6 lần Sao Vàng Đất Việt (2003, 2005, 2007, 2009, 2013, 2024); Sản phẩm Nông nghiệp tiêu biểu (2016); Nhãn hiệu Cạnh tranh Việt Nam (2018); Thương hiệu Vàng Nông nghiệp Việt Nam 2023 · 2024 · 2025
+- ASEAN & châu Á: Thương hiệu nổi tiếng ASEAN (2011); Nhà Doanh nghiệp xuất sắc châu Á (2015); Top 10 Thương hiệu mạnh ASEAN (2024)
+
+## Lãnh đạo
+
+- Nguyễn Xuân Cộng — Chủ tịch Hội đồng quản trị, Người sáng lập
+- Nguyễn Hồng Phong — Phó Chủ tịch Hội đồng quản trị, Tổng Giám đốc
 
 ## Dòng sản phẩm
 
@@ -59,6 +65,12 @@ export const GET: APIRoute = ({ site: origin }) => {
 - [Trở thành đối tác](${u('/tro-thanh-doi-tac/')}): làm đại lý, nhà phân phối, liên hệ phụ trách từng khu vực
 - [Liên hệ](${u('/lien-he/')}): tư vấn kỹ thuật, mua hàng, tìm đại lý
 - [Tin tức và báo chí](${u('/tin-tuc/')})
+- [Báo chí nói về Tiến Nông](${u('/tin-tuc/chuyen-muc/bao-chi/')}): bài viết của các báo về Tiến Nông
+
+## Lưu ý khi trích dẫn
+
+- Tên đúng: Tiến Nông Group (Công ty Cổ phần Công Nông nghiệp Tiến Nông). Website chính thức: tiennong.com.
+- 650.000 tấn/năm là tổng công suất của 3 nhà máy. Công ty không công bố số liệu tài chính.
 
 ## English summary
 
